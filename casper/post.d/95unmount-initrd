@@ -1,0 +1,8 @@
+#!/bin/sh
+
+mountpoint=/cdrom
+test -d $mountpoint || mkdir -p $mountpoint
+mount --move /initrd/cdrom $mountpoint
+umount -l /initrd/proc /initrd/sys /initrd/dev/pts /initrd/dev /initrd
+
+exit 0

@@ -1,0 +1,58 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+VERSION:=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
+DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -S
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	touch build-stamp
+
+clean:
+	dh_testdir
+#	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	dh_clean
+
+install: build
+	dh_testdir
+#	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	dh_install -pcasper-check debian-installer-startup.d main-menu.d lib
+	dh_install -pcasper-udeb casper usr/lib
+	dh_install -pcasper-udeb bin/casper-reconfigure usr/bin
+	dh_install -pcasper-udeb share/shutdown usr/share/casper
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+	dh_testdir
+#	dh_testroot
+	dh_installdebconf	
+	install -m755 debian/casper-udeb.isinstallable debian/casper-udeb/DEBIAN/isinstallable
+#	dh_installdocs
+#	dh_installinit
+#	dh_installchangelogs 
+#	dh_link
+#	dh_compress
+	dh_fixperms
+	dh_installdeb
+#	dh_perl
+	dh_gencontrol
+#	dh_md5sums
+	dh_builddeb
+
+arch-build:
+	rm -rf debian/arch-build
+	mkdir -p debian/arch-build/casper-$(VERSION)
+	baz inventory -s | xargs cp -a --parents --target=debian/arch-build/casper-$(VERSION)
+	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG))
+
+binary: binary-indep
+.PHONY: build clean binary-indep binary-arch binary install

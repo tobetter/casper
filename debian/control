@@ -1,0 +1,23 @@
+Source: casper
+Section: misc
+Priority: optional
+Maintainer: Matt Zimmerman <mdz@ubuntu.com>
+Build-Depends: debhelper (>> 4.2.0)
+Standards-Version: 3.6.1
+
+Package: casper-udeb
+Architecture: all
+Section: debian-installer
+Priority: optional
+XB-Installer-Menu-Item: 40
+XC-Package-Type: udeb
+Depends: casper-check, cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+Provides: target-base-system
+Description: Run a "live" preinstalled system from read-only media
+
+Package: casper-check
+Architecture: all
+Section: debian-installer
+Priority: standard
+XC-Package-Type: udeb
+Description: enter casper (live) mode if requested

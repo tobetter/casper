@@ -1,0 +1,10 @@
+# This is here so that you can boot with "casper/enable=true"; it will never
+# be displayed, so there is no point in translating this.
+Template: casper/enable
+Type: boolean
+Default: false
+Description: Enable casper mode?
+
+Template: casper/backtitle
+Type: title
+_Description: Ubuntu Live

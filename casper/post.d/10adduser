@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. /usr/share/debconf/confmodule
+
+USERNAME="ubuntu"
+
+for question in username user-fullname user-password user-password-again; do
+    db_register debian-installer/dummy passwd/$question
+    db_set passwd/$question $USERNAME
+    db_fset passwd/$question seen true
+done
+
+casper-reconfigure -fpassthrough passwd
+
+if [ -f /etc/sudoers ]; then
+    sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /etc/sudoers
+fi
+
+# Lock the user's password
+passwd -l $USERNAME
+
+exit 0

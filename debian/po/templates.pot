@@ -1,0 +1,151 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-02-24 19:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:3
+msgid "Enter preinstalled session"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:7
+msgid "Preparing for live session"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:11
+msgid "Preparing for live session..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:15
+msgid "Loading modules..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:19
+msgid "Configuring snapshot..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:23
+msgid "Mounting temporary filesystems..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:27
+msgid "Creating user..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:31
+msgid "Configuring autologin..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:35
+msgid "Configuring graphics hardware (the screen may blank)..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:39
+msgid "Setting font preferences..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:43
+msgid "Configuring panel..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:47
+msgid "Configuring initialization process..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:51
+msgid "Configuring swap..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:55
+msgid "Freeing bootstrap memory..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../casper-udeb.templates:59
+msgid "Configuring language..."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../casper-udeb.templates:63
+msgid "Step '${step}' failed"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../casper-udeb.templates:68
+msgid "Which device should be used to store session data?"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../casper-udeb.templates:73
+msgid "How much memory should be used to store session data?"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../casper-udeb.templates:78
+msgid "What is the path to the filesystem image you would like to use?"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../casper-udeb.templates:83
+msgid "Which devices should be used for swap space?"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../casper-udeb.templates:87
+msgid "What runlevel should be entered?"
+msgstr ""

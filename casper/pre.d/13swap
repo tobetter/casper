@@ -1,0 +1,44 @@
+#!/bin/sh
+
+set -e
+
+FSTAB=/target/etc/fstab
+
+log() {
+    logger -t casper "$@"
+}
+
+. /usr/share/debconf/confmodule
+
+db_input low casper-udeb/swap/devices || true
+db_go
+
+db_get casper-udeb/swap/devices
+devices="$RET"
+
+if [ "$devices" = "auto" ]; then
+    log "Scanning for swap devices..."
+    devices=""
+    for device in /dev/[hs]d[a-z][0-9]*; do
+        if [ "$device" = "/dev/hd[a-z][0-9]*" ]; then
+            break
+        fi
+
+        magic=$(dd if="$device" bs=4086 skip=1 count=1 2>/dev/null | dd bs=10 count=1 2>/dev/null) || continue
+
+        if [ "$magic" = "SWAPSPACE2" -o "$magic" = "SWAP-SPACE" ]; then
+            log "Found $device"
+            devices="$devices $device"
+        fi
+    done
+fi
+
+log "Using swap devices: $devices"
+
+for device in $devices; do
+    cat >> $FSTAB <<EOF
+$device swap swap defaults 0 0
+EOF
+done
+
+exit 0

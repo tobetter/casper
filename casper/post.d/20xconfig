@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ "$TERM_TYPE" = "serial" ]; then
+    # Don't bother trying to configure or start X on a serial console
+    rm -f /etc/rc?.d/S??[gxk]dm
+    exit 0
+fi
+
+. /usr/share/debconf/confmodule
+
+# XXX
+# Copy information from cdebconf to debconf. This is a horrible hack around
+# the lack of a debconf-copydb that works with cdebconf's rfc822db.
+target_debconf () {
+        env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
+                -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
+                DEBCONF_READFD=0 DEBCONF_WRITEFD=3 \
+                debconf -o d-i "$@"
+}
+
+for q in debian-installer/keymap; do
+        db_get "$q" || continue
+        value="$RET"
+        db_fget "$q" seen
+        seen="$RET"
+        target_debconf sh -c '
+                . /usr/share/debconf/confmodule
+                db_register "$1" "$1"
+                db_set "$1" "$2"
+                db_fset "$1" seen "$3"' debconf "$q" "$value" "$seen"
+done
+
+casper-reconfigure -fpassthrough xserver-xorg

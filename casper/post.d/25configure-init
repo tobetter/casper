@@ -1,0 +1,40 @@
+#!/bin/sh
+
+. /usr/share/debconf/confmodule
+
+# Configure default runlevel
+db_input low casper-udeb/runlevel || true
+db_go
+db_get casper-udeb/runlevel
+RUNLEVEL="$RET"
+if [ -n "$RUNLEVEL" ]; then
+    echo "Setting runlevel '$RUNLEVEL'"
+    sed -i -e "s/^\([^:]*\):[^:]*:\(initdefault:\)/\1:$RUNLEVEL:\2/" /etc/inittab
+fi
+
+# Arrange for shells on virtual consoles, rather than login prompts
+db_get passwd/username
+USERNAME="$RET"
+if [ -n "$USERNAME" ]; then
+    sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(tty[0-9]*\).*$|\1:/bin/login -f $USERNAME </dev/\2 >/dev/\2 2>\&1|" /etc/inittab
+fi
+
+# This has the nice side effect of the cron.{daily,weekly,monthly} jobs in
+# /etc/crontab remaining disabled, yet also not run by anacron
+rm -f /etc/rc?.d/S??anacron
+
+# No point, really
+rm -f /etc/rc?.d/[SK]??postfix
+
+# Avoid clobbering the user's clock
+rm -f /etc/rc?.d/K??hwclock.sh
+
+# Install shutdown script
+if [ -f /etc/rc0.d/S90halt ]; then
+    cp -a /initrd/usr/share/casper/shutdown /etc/rc0.d/S89casper
+fi
+if [ -f /etc/rc6.d/S90reboot ]; then
+    cp -a /initrd/usr/share/casper/shutdown /etc/rc6.d/S89casper
+fi
+
+exit 0

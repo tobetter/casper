@@ -5,6 +5,6 @@ Type: boolean
 Default: false
 Description: Enable casper mode?
 
-Template: casper/backtitle
+Template: casper/info
 Type: title
 _Description: Ubuntu Live

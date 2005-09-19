@@ -14,9 +14,9 @@ Template: casper-udeb/progress/load-modules
 Type: text
 _Description: Loading modules...
 
-Template: casper-udeb/progress/snapshot
+Template: casper-udeb/progress/filesystem
 Type: text
-_Description: Configuring snapshot...
+_Description: Setting up filesystem...
 
 Template: casper-udeb/progress/mount
 Type: text
@@ -57,6 +57,10 @@ _Description: Freeing bootstrap memory...
 Template: casper-udeb/progress/localechooser
 Type: text
 _Description: Configuring language...
+
+Template: casper-udeb/progress/usplash
+Type: text
+_Description: Initializing splash screen...
 
 Template: casper-udeb/step-failed
 Type: error

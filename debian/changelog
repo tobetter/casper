@@ -1,3 +1,169 @@
+casper (1.18) breezy; urgency=low
+
+  * Update translations from Rosetta: Greek, Spanish, French, Hungarian,
+    Brazilian Portuguese.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Sep 2005 20:05:02 +0100
+
+casper (1.17) breezy; urgency=low
+
+  * Set /apps/gnome-screensaver/lock if gnome-screensaver is installed
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 16 Sep 2005 15:24:35 -0700
+
+casper (1.16) breezy; urgency=low
+
+  * Install a fake script in /lib/debian-installer.d/S72menu-exit after
+    pivoting that just calls sleep, to prevent scary console messages as d-i
+    tries to exit without its root filesystem.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Sep 2005 10:28:06 +0100
+
+casper (1.15) breezy; urgency=low
+
+  * Neutralize branding in startup message
+  * Use clear in addition to reset, in hopes of concealing error messages on
+    the console from d-i's death throes
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  9 Sep 2005 11:24:14 -0700
+
+casper (1.14) breezy; urgency=low
+
+  * Set RUNNING_UNDER_GDM=yes in the user's environment to stop xscreensaver
+    locking the screen (Ubuntu #7150).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu,  8 Sep 2005 13:37:00 +0100
+
+casper (1.13) breezy; urgency=low
+
+  * Use reset, rather than clear, to clean up after the colored dialogs on vt1
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  7 Sep 2005 16:09:45 -0700
+
+casper (1.12) breezy; urgency=low
+
+  * Kill bterm after pivoting so that we can use vt1 rather than vt2,
+    thereby avoiding a fight between gdm and the X server (closes: Ubuntu
+    #14851).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed,  7 Sep 2005 15:48:40 +0100
+
+casper (1.11) breezy; urgency=low
+
+  * Remove debugging code which crept into 1.10
+  * Revert changes to casper-udeb.postinst which were intended for
+    starting usplash earlier (pre-1.10)
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  2 Sep 2005 13:43:03 -0700
+
+casper (1.10) breezy; urgency=low
+
+  * Instead of starting usplash directly, create an init script which will
+    start it later (after the new init), to avoid it being killed by
+    busybox init
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 20:26:58 -0700
+
+casper (1.9) breezy; urgency=low
+
+  * Remember to re-run 30copy-dev from 94usplash, in order to preserve the
+    device nodes clobbered by udev
+  * Redirect stdin of /etc/init.d/udev from /dev/console, to avoid
+    incredibly obnoxious 60-second sleep because it thinks we're
+    interactive
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 18:30:38 -0700
+
+casper (1.8) breezy; urgency=low
+
+  * Add usplash support
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 17:30:57 -0700
+
+casper (1.7) breezy; urgency=low
+
+  * Set DEBUG_XORG_PACKAGE=yes when reconfiguring xserver-xorg.  The
+    output is only written to post.log and isn't visible to the user, and
+    can be invaluable for debugging
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 22 Aug 2005 10:25:38 -0700
+
+casper (1.6) breezy; urgency=low
+
+  * Use debconf-copydb again (thanks, Tollef)
+  * Rename pre.d/20xconfig to pre.d/20prexconfig so that it is distinct from
+    post.d/20xconfig for purposes of the progress bar (no text for it; it's
+    very fast)
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 17 Aug 2005 14:55:24 -0700
+
+casper (1.5) breezy; urgency=low
+
+  * Call MAKEDEV console in post.d/20xconfig as a workaround for bug
+    #13523
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 16 Aug 2005 15:24:06 -0700
+
+casper (1.4) breezy; urgency=low
+
+  * Revert to the old debconf hack; the debconf-copydb approach needs more
+    work
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 15 Aug 2005 22:48:11 -0700
+
+casper (1.3) breezy; urgency=low
+
+  * Revert unintentional release of experimental unionfs code in 1.2
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 13 Aug 2005 11:19:50 -0700
+
+casper (1.2) breezy; urgency=low
+
+  * Fix debconf-copydb regex in 20xconfig
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 13 Aug 2005 11:07:46 -0700
+
+casper (1.1) breezy; urgency=low
+
+  * Cope with xserver-xorg's rename of force_keyboard_detection to
+    autodetect_keyboard
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon,  4 Jul 2005 02:52:07 -0700
+
+casper (1.0) breezy; urgency=low
+
+  * Version number bump (we've been through a stable Ubuntu release, after
+    all)
+  * Rename pre.d/10snapshot to post.d/10filesystem, as it is about to
+    become more generic
+  * Seed xserver-xorg/force_keyboard_detection to true in 20xconfig, so as
+    to cause the keyboard layout to (continue to) be autodetected based on
+    d-i settings
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 16 Jun 2005 11:21:54 -0700
+
+casper (0.65) breezy; urgency=low
+
+  * As a performance optimization, only reconfigure gnome-panel-data if
+    booting on a laptop
+  * Disable the "lock screen" menu item (Ubuntu bug#7150)
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  8 Jun 2005 16:02:14 -0700
+
+casper (0.64) breezy; urgency=low
+
+  * Merge colin.watson@canonical.com--2005/casper--debconf-copydb--0
+    - Use debconf-copydb rather than our temporary hack
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 31 May 2005 12:08:51 -0700
+
+casper (0.63) breezy; urgency=low
+
+  * Merge colin.watson@canonical.com--2005/casper--cdebconf-info--0
+    - Update for cdebconf 0.75: use db_info rather than db_x_setbacktitle.
+
+ -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 18 Apr 2005 20:59:58 -0700
+
 casper (0.62) hoary; urgency=low
 
   * Updated translations from

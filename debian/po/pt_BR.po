@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-24 19:11+0000\n"
+"Report-Msgid-Bugs-To: mdz@ubuntu.com\n"
+"POT-Creation-Date: 2005-09-19 19:56+0100\n"
 "PO-Revision-Date: 2005-03-25 17:10-0300\n"
 "Last-Translator: Carlos Eduardo Pedroza Santiviago <segfault@core-dumped."
 "org>\n"
@@ -42,13 +42,13 @@ msgstr "Preparando para uma sessão \"live\"..."
 #. Description
 #: ../casper-udeb.templates:15
 msgid "Loading modules..."
-msgstr "Carregando módulos do kernel"
+msgstr "Carregando módulos..."
 
 #. Type: text
 #. Description
 #: ../casper-udeb.templates:19
-msgid "Configuring snapshot..."
-msgstr "Configurando imagem..."
+msgid "Setting up filesystem..."
+msgstr "Configurando o sistema de arquivos..."
 
 #. Type: text
 #. Description
@@ -110,38 +110,47 @@ msgstr "Liberando memória usada na inicialização..."
 msgid "Configuring language..."
 msgstr "Configurando idioma ..."
 
-#. Type: error
+#. Type: text
 #. Description
 #: ../casper-udeb.templates:63
+msgid "Initializing splash screen..."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../casper-udeb.templates:67
 msgid "Step '${step}' failed"
-msgstr "Passo '${step}' falhou"
+msgstr "Etapa '${step}' falhou"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:68
+#: ../casper-udeb.templates:72
 msgid "Which device should be used to store session data?"
 msgstr "Qual dispositivo deve ser usado para armazenzar dados da sessão?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:73
+#: ../casper-udeb.templates:77
 msgid "How much memory should be used to store session data?"
 msgstr "Quanto de memória deve ser usado para armazenar dados da sessão?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:78
+#: ../casper-udeb.templates:82
 msgid "What is the path to the filesystem image you would like to use?"
-msgstr "Qual é o caminho para a imagem de sistema de arquivos que quer usar?"
+msgstr "Qual é o caminho para a imagem de sistema de arquivos que deseja usar?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:83
+#: ../casper-udeb.templates:87
 msgid "Which devices should be used for swap space?"
 msgstr "Quais dispositivos devem ser usados como área de troca?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:87
+#: ../casper-udeb.templates:91
 msgid "What runlevel should be entered?"
 msgstr "Qual nível de inicialização deve ser usado?"
+
+#~ msgid "Configuring snapshot..."
+#~ msgstr "Configurando imagem..."

@@ -1,3 +1,10 @@
 #!/bin/sh
 
-casper-reconfigure gnome-panel-data
+if laptop-detect; then
+    casper-reconfigure gnome-panel-data
+fi
+
+panel_version=$(dpkg-query -W --showformat='${Version}' gnome-panel-data 2>/dev/null) || panel_version=""
+if [ -n "$panel_version" ]; then
+    gconftool-2 -t bool -s /apps/panel/global/disable_lock_screen true
+fi

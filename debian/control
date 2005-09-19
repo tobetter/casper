@@ -11,7 +11,7 @@ Section: debian-installer
 Priority: optional
 XB-Installer-Menu-Item: 40
 XC-Package-Type: udeb
-Depends: casper-check, cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+Depends: casper-check, cdebconf-udeb (>= 0.78), cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
 Provides: target-base-system
 Description: Run a "live" preinstalled system from read-only media
 

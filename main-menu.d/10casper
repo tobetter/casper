@@ -2,5 +2,5 @@
 . /usr/share/debconf/confmodule
 db_get casper/enable
 if [ "$RET" = true ]; then
-        db_x_setbacktitle casper/backtitle
+	db_info casper/info
 fi

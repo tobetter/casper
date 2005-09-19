@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if which usplash >/dev/null; then
+    # Need to start as soon as possible after udev for maximum prettiness
+    if [ -e /etc/rcS.d/S04udev ]; then
+        init=/etc/rcS.d/S04usplash
+
+        cat <<'EOF' > $init
+#!/bin/sh
+
+case "$1" in
+  start)
+    usplash -c &
+    ;;
+  stop|restart|force-reload)
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+    exit 1
+    ;;
+esac
+
+exit 0
+EOF
+        chmod 755 $init
+    fi
+fi
+
+exit 0

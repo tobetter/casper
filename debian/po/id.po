@@ -19,8 +19,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-24 19:11+0000\n"
+"Report-Msgid-Bugs-To: mdz@ubuntu.com\n"
+"POT-Creation-Date: 2005-09-19 19:56+0100\n"
 "PO-Revision-Date: 2005-03-27 11:46+0700\n"
 "Last-Translator: Yoppy Hidayanto <yoppy.hidayanto@gmail.com>\n"
 "Language-Team:  <en@li.org>\n"
@@ -59,8 +59,8 @@ msgstr "Memuat modul-modul..."
 #. Description
 #: ../casper-udeb.templates:19
 #, fuzzy
-msgid "Configuring snapshot..."
-msgstr "Mengonfigurasi 'snapshot'..."
+msgid "Setting up filesystem..."
+msgstr "Sedang memasang filesystem temporer...."
 
 #. Type: text
 #. Description
@@ -128,42 +128,52 @@ msgstr "Membebaskan memori bootstrap..."
 msgid "Configuring language..."
 msgstr "Mengonfigurasi bahasa..."
 
-#. Type: error
+#. Type: text
 #. Description
 #: ../casper-udeb.templates:63
+msgid "Initializing splash screen..."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../casper-udeb.templates:67
 msgid "Step '${step}' failed"
 msgstr "Langkah '${step}' gagal"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:68
+#: ../casper-udeb.templates:72
 #, fuzzy
 msgid "Which device should be used to store session data?"
 msgstr "Device mana yang akan digunakan untuk menyimpan data sesi?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:73
+#: ../casper-udeb.templates:77
 msgid "How much memory should be used to store session data?"
 msgstr "Berapa banyak memori yang digunakan untuk menyimpan data sesi?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:78
+#: ../casper-udeb.templates:82
 #, fuzzy
 msgid "What is the path to the filesystem image you would like to use?"
 msgstr "Direktori citra filesystem manakah yang ingin anda gunakan?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:83
+#: ../casper-udeb.templates:87
 #, fuzzy
 msgid "Which devices should be used for swap space?"
 msgstr "Dimanakah ruang swap akan diletakkan?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:87
+#: ../casper-udeb.templates:91
 #, fuzzy
 msgid "What runlevel should be entered?"
 msgstr "Runlevel mana yang ingin dimasuki?"
+
+#, fuzzy
+#~ msgid "Configuring snapshot..."
+#~ msgstr "Mengonfigurasi 'snapshot'..."

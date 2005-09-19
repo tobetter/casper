@@ -1,0 +1,11 @@
+#! /bin/sh
+
+# XXX for now, ubuntu-express will need to clean this up
+
+for script in /lib/debian-installer.d/S72menu-exit; do
+	mkdir -p "${script%/*}"
+	(echo '#! /bin/sh'; echo 'sleep 3600') > "$script"
+	chmod +x "$script"
+done
+
+exit 0

@@ -66,17 +66,21 @@ for hook in $post_hooks; do
     /initrd/$hook
 done
 
-# XXX VC #1 is a mess, so clear and switch over to VC #2 for now
-TERM=linux clear > /dev/tty2
-echo "Starting Ubuntu..." > /dev/tty2
-chvt 2
+# Kill bterm so that we can use VC #1. Make sure we don't get killed
+# ourselves in the process.
+trap '' HUP
+killall bterm
+
+TERM=linux reset > /dev/tty1
+TERM=linux clear > /dev/tty1
+echo "Loading, please wait..." > /dev/tty1
 
 # Signal init to re-exec itself.  Since we've pivoted into the new
 # root, this will be the real init, rather than the busybox one, and
 # will read the real /etc/inittab.  /proc must be mounted!
 kill -USR1 1
 
-# We should be killed by init soon after the post-hooks run, so wait around for it to happen
+# We should be killed by init soon, so wait around for it to happen
 sleep 60
 
 # Something went very wrong, and it's far too late to do anything about it

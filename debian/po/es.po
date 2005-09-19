@@ -38,8 +38,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-24 19:11+0000\n"
+"Report-Msgid-Bugs-To: mdz@ubuntu.com\n"
+"POT-Creation-Date: 2005-09-19 19:56+0100\n"
 "PO-Revision-Date: 2005-03-29 09:58+0200\n"
 "Last-Translator: Enrique Matias Sanchez <cronopios@gmail.com>\n"
 "Language-Team: Castilian aka Spanish <es@li.org>\n"
@@ -75,8 +75,8 @@ msgstr "Cargando los módulos..."
 #. Type: text
 #. Description
 #: ../casper-udeb.templates:19
-msgid "Configuring snapshot..."
-msgstr "Configurando la instantánea..."
+msgid "Setting up filesystem..."
+msgstr "Configurando sistema de archivos..."
 
 #. Type: text
 #. Description
@@ -139,38 +139,47 @@ msgstr "Liberando la memoria usada en el arranque..."
 msgid "Configuring language..."
 msgstr "Configurando el idioma..."
 
-#. Type: error
+#. Type: text
 #. Description
 #: ../casper-udeb.templates:63
+msgid "Initializing splash screen..."
+msgstr "Iniciando pantalla de bienvenida..."
+
+#. Type: error
+#. Description
+#: ../casper-udeb.templates:67
 msgid "Step '${step}' failed"
 msgstr "El paso «${step}» ha fallado"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:68
+#: ../casper-udeb.templates:72
 msgid "Which device should be used to store session data?"
 msgstr "¿Qué dispositivo debe usarse para almacenar los datos de la sesión?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:73
+#: ../casper-udeb.templates:77
 msgid "How much memory should be used to store session data?"
 msgstr "¿Cuánta memoria debe usarse para almacenar los datos de la sesión?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:78
+#: ../casper-udeb.templates:82
 msgid "What is the path to the filesystem image you would like to use?"
 msgstr "¿Cuál es la ruta a la imagen de sistema de ficheros que desea usar?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:83
+#: ../casper-udeb.templates:87
 msgid "Which devices should be used for swap space?"
 msgstr "¿Qué dispositivos deben usarse para el área de intercambio (swap)?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:87
+#: ../casper-udeb.templates:91
 msgid "What runlevel should be entered?"
 msgstr "¿A que nivel de ejecución se debe entrar?"
+
+#~ msgid "Configuring snapshot..."
+#~ msgstr "Configurando la instantánea..."

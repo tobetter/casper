@@ -16,8 +16,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: debian-installer\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-24 19:11+0000\n"
+"Report-Msgid-Bugs-To: mdz@ubuntu.com\n"
+"POT-Creation-Date: 2005-09-19 19:56+0100\n"
 "PO-Revision-Date: 2005-04-04 21:08+0200\n"
 "Last-Translator: Terance Edward Sola <terance@lyse.net>\n"
 "Language-Team:  <en@li.org>\n"
@@ -53,8 +53,9 @@ msgstr "Laster moduler..."
 #. Type: text
 #. Description
 #: ../casper-udeb.templates:19
-msgid "Configuring snapshot..."
-msgstr "Setter opp øyeblikksbilde..."
+#, fuzzy
+msgid "Setting up filesystem..."
+msgstr "Monterer midlertidige filsystemer..."
 
 #. Type: text
 #. Description
@@ -116,38 +117,47 @@ msgstr "Frigjør bootstrap-minne"
 msgid "Configuring language..."
 msgstr "Setter opp språk..."
 
-#. Type: error
+#. Type: text
 #. Description
 #: ../casper-udeb.templates:63
+msgid "Initializing splash screen..."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../casper-udeb.templates:67
 msgid "Step '${step}' failed"
 msgstr "Steg '${step}' feilet"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:68
+#: ../casper-udeb.templates:72
 msgid "Which device should be used to store session data?"
 msgstr "Hvilken enhet bør bli brukt til å lagre øktinstillinger?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:73
+#: ../casper-udeb.templates:77
 msgid "How much memory should be used to store session data?"
 msgstr "Hvor mye minne bør bli brukt til å lagre øktinstillinger?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:78
+#: ../casper-udeb.templates:82
 msgid "What is the path to the filesystem image you would like to use?"
 msgstr "Hva er stien til filsystembildet du vil bruke?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:83
+#: ../casper-udeb.templates:87
 msgid "Which devices should be used for swap space?"
 msgstr "Hvilke enheter skal bli brukt som vekselfil?"
 
 #. Type: string
 #. Description
-#: ../casper-udeb.templates:87
+#: ../casper-udeb.templates:91
 msgid "What runlevel should be entered?"
 msgstr "Hvilket kjørenivå bør bli startet?"
+
+#~ msgid "Configuring snapshot..."
+#~ msgstr "Setter opp øyeblikksbilde..."

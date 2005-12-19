@@ -1,0 +1,47 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+FSTAB=/root/etc/fstab
+
+log() {
+    :
+}
+
+log "Scanning for swap devices..."
+devices=""
+for device in /dev/[hs]d[a-z][0-9]*; do
+    if ! [ -b "$device" ]; then
+        continue
+    fi
+
+    magic=$(dd if="$device" bs=4086 skip=1 count=1 2>/dev/null | dd bs=10 count=1 2>/dev/null) || continue
+    
+    if [ "$magic" = "SWAPSPACE2" -o "$magic" = "SWAP-SPACE" ]; then
+        log "Found $device"
+        devices="$devices $device"
+        fi
+done
+
+log "Using swap devices: $devices"
+
+for device in $devices; do
+    cat >> $FSTAB <<EOF
+$device swap swap defaults 0 0
+EOF
+done
+
+exit 0

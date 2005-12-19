@@ -1,4 +1,4 @@
-#!/usr/bin/make -f
+#! /usr/bin/make -f
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
@@ -24,35 +24,25 @@ install: build
 #	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	dh_install -pcasper-check debian-installer-startup.d main-menu.d lib
-	dh_install -pcasper-udeb casper usr/lib
-	dh_install -pcasper-udeb bin/casper-reconfigure usr/bin
-	dh_install -pcasper-udeb share/shutdown usr/share/casper
+	dh_install
+	install -m644 debian/casper.initramfs debian/casper/usr/share/initramfs-tools/scripts/casper
+	install -m755 debian/casper.initramfs-hooks debian/casper/usr/share/initramfs-tools/hooks/casper
+
 
 # Build architecture-independent files here.
 binary-indep: build install
-# We have nothing to do by default.
 	dh_testdir
-#	dh_testroot
-	dh_installdebconf	
-	install -m755 debian/casper-udeb.isinstallable debian/casper-udeb/DEBIAN/isinstallable
-#	dh_installdocs
+	dh_testroot
+	dh_installdocs
 #	dh_installinit
-#	dh_installchangelogs 
-#	dh_link
-#	dh_compress
+	dh_installchangelogs 
+	dh_link
+	dh_compress
 	dh_fixperms
 	dh_installdeb
-#	dh_perl
 	dh_gencontrol
-#	dh_md5sums
+	dh_md5sums
 	dh_builddeb
-
-arch-build:
-	rm -rf debian/arch-build
-	mkdir -p debian/arch-build/casper-$(VERSION)
-	baz inventory -s | xargs cp -a --parents --target=debian/arch-build/casper-$(VERSION)
-	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG); dpkg-genchanges -S > ../casper_$(VERSION)_source.changes)
 
 binary: binary-indep
 .PHONY: build clean binary-indep binary-arch binary install

@@ -1,0 +1,40 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+if [ "$TERM_TYPE" = "serial" ]; then
+    # Don't bother trying to configure or start X on a serial console
+    rm -f /etc/rc?.d/S??[gxk]dm
+    exit 0
+fi
+
+for x in $(cat /proc/cmdline); do
+                case $x in
+                        debian-installer/locale=*)
+                                locale=${x#debian-installer/locale=}
+                                ;;
+                esac
+done
+
+mount -n -o bind /sys /root/sys
+mount -n -o bind /proc /root/proc
+
+echo set xserver-xorg/autodetect_keyboard true | chroot /root debconf-communicate -fnoninteractive
+echo fset xserver-xorg/autodetect_keyboard seen true | chroot /root debconf-communicate -fnoninteractive
+
+LANG=$(grep ^$locale /root/usr/share/i18n/SUPPORTED | sed -e 's, .*,,' -e q) casper-reconfigure xserver-xorg
+umount /root/sys
+umount /root/proc

@@ -1,13 +1,5 @@
 #!/bin/sh
 
-# XXX devfs compatibility junk, see 30copy-dev
-CDROMS=/root/cdroms
-if [ -d $CDROMS ]; then
-    mount -wo remount /dev
-    cp -a $CDROMS /dev
-    mount -ro remount /dev
-fi
-
 # Try to cache everything we're likely to need after ejecting.  This
 # is fragile and simple-minded, but our options are limited.
 cache_path() {

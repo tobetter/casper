@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+if chroot /root /bin/sh -c laptop-detect; then
+    casper-reconfigure gnome-panel-data
+fi
+
+panel_version=$(chroot /target /usr/bin/dpkg-query-query -W --showformat='${Version}' gnome-panel-data 2>/dev/null) || panel_version=""
+if [ -n "$panel_version" ]; then
+    chroot /root /bin/sh -c 'gconftool-2 -t bool -s /apps/panel/global/disable_lock_screen true'
+fi

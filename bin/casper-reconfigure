@@ -1,52 +1,51 @@
 #!/bin/sh
 
 set -e
+PATH=/usr/bin:/usr/sbin:/sbin:/bin
 
 frontend=noninteractive
 
-eval set -- $(getopt -o "f:" -n casper-reconfigure -- "$@")
+findcommandinroot() {
+    ROOT="$1/"
+    shift
+    while [ "$#" -ge 1 ]; do
+        P="$PATH"
+        while [ "$P" ]; do
+            D=${P%%:*}
+            P=${P#*:}
+            if [ "$D" = "$P" ]; then
+                P=
+            fi
+            if [ -z "$D" ]; then
+                D=.
+            fi
+            if [ -x "$ROOT$D/$1" ]; then
+                echo "$D/$1"
+                return 0
+            fi
+        done
+        shift
+    done
+    return 1
+}
 
-while true; do
-    case "$1" in
-        -f)
-            frontend="$2"
-            shift 2
-            ;;
-        --)
-            shift
-            break
-            ;;
-        *)
-            echo "Internal error!" 
-            exit 1
-            ;;
-    esac
-done
+runcommandinroot() {
+    C=$(findcommandinroot "$1" "$2")
+    ROOT="$1"
+    shift
+    shift
+    [ -n "$C" ] && chroot "$ROOT" "$C" "$@"
+}
 
 package="$1"
-version=$(dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+
+version=$(runcommandinroot /root dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
 
 if [ -z "$version" ]; then
     echo "$0: package '$package' is not installed"
     exit 0
 fi
 
-case "$frontend" in
-    passthrough)
-        env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
-            -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
-            DEBCONF_READFD=0 DEBCONF_WRITEFD=3 \
-            dpkg-reconfigure -fpassthrough "$package"
-        ;;
-    noninteractive)
-        env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
-            -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
-            dpkg-reconfigure -fnoninteractive "$package"
-        ;;
-    *)
-        echo "Unknown frontend: $frontend"
-        exit 1
-        ;;
-esac
+runcommandinroot /root dpkg-reconfigure -fnoninteractive "$package"
 
 exit 0

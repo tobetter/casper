@@ -1,10 +1,23 @@
 #!/bin/sh
 
-. /usr/share/debconf/confmodule
-db_get passwd/username
-username="$RET"
+PREREQ=""
 
-if [ -f /etc/gdm/gdm.conf ]; then
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+username="ubuntu"
+
+if [ -f /root/etc/gdm/gdm.conf ]; then
     # Configure GDM autologin
 
     sed -i \
@@ -13,22 +26,22 @@ if [ -f /etc/gdm/gdm.conf ]; then
         -e "s/^TimedLoginEnable=.*\$/TimedLoginEnable=true/" \
         -e "s/^TimedLogin=.*\$/TimedLogin=$username/" \
         -e "s/^TimedLoginDelay=.*\$/TimedLoginDelay=10/" \
-        /etc/gdm/gdm.conf
+        /root/etc/gdm/gdm.conf
 fi
 
-if [ -f /etc/kde3/kdm/kdmrc ]; then
+if [ -f /root/etc/kde3/kdm/kdmrc ]; then
     # Configure KDM autologin
     sed -i -r \
         -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$username/" \
         -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
-        /etc/kde3/kdm/kdmrc
+        /root/etc/kde3/kdm/kdmrc
 fi
 
-if which kpersonalizer >/dev/null; then
+if chroot /root /usr/bin/which kpersonalizer >/dev/null; then
     # Disable first-login wizard for KDE
-    if [ ! -f /etc/kde3/kpersonalizerrc ]; then
-        cat > /etc/kde3/kpersonalizerrc <<EOF
+    if [ ! -f /root/etc/kde3/kpersonalizerrc ]; then
+        cat > /root/etc/kde3/kpersonalizerrc <<EOF
 [General]
 FirstLogin=false
 EOF

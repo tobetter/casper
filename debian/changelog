@@ -1,3 +1,28 @@
+casper (1.20) dapper; urgency=low
+
+  * Remove a large bunch of debugging output
+  * Depend on dmsetup so the hook script can copy in that
+  * Handle both squashfs and cloop images, with run-time detection
+  * Use devmapper + cloop on powerpc, not unionfs, since unionfs is a
+    disaster there.
+  * Make sure we have both SCSI and IDE CDROM modules available in the
+    initramfs.
+  * Do some initial keyboard setup handling so X will, at least in some
+    cases, have a chance of giving the user a sane keymap.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 19 Dec 2005 14:23:13 +0100
+
+casper (1.19) unstable; urgency=low
+
+  * Switch to initramfs, so casper only survives in spirit
+  * Use unionfs instead of a writeable devmapper snapshot
+  * Remove all debconfiscation, since we're an initramfs script now
+  * Make the postinst call update-initramfs -u
+  * Mount the CD read-only explicitly
+  * Make udevinfo silent if the device is not found.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 13 Dec 2005 16:22:45 +0100
+
 casper (1.18) breezy; urgency=low
 
   * Update translations from Rosetta: Greek, Spanish, French, Hungarian,

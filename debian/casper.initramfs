@@ -1,0 +1,141 @@
+#!/bin/sh
+
+# set -e
+
+mountpoint=/cdrom
+test -d $mountpoint || mkdir $mountpoint 2>/dev/null || true
+
+overlay_method=unionfs
+if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
+    overlay_method=devmapper
+fi
+
+casper_path() {
+    path=$1
+    if [ -e "$path/casper/filesystem.cloop" ]; then
+        echo "$path/casper/filesystem.cloop"
+        return 0
+    elif [ -e "$path/casper/filesystem.squashfs" ]; then
+        echo "$path/casper/filesystem.squashfs"
+        return 0
+    fi
+    return 1
+}
+
+get_backing_device() {
+	case "$1" in
+            *.cloop)
+                echo $(setup_loop "$1" "cloop" "/sys/block/cloop*")
+			;;
+            *.squashfs)
+                echo $(setup_loop "$1" "loop" "/sys/block/loop*")
+                ;;
+            *)
+                panic "Unrecognized casper filesystem: $1"
+                ;;
+	esac
+}
+
+setup_cow() {
+	case "$1" in
+            unionfs)
+                setup_unionfs "$2" "$rootmnt"
+                ;;
+            devmapper)
+                setup_devmapper "$2" "$rootmnt"
+	esac
+}
+
+setup_loop() {
+    local fspath=$1
+    local module=$2
+    local pattern=$3
+
+    modprobe -Qb "$module"
+    udevplug -W
+ 
+    for loopdev in $pattern; do
+        if [ "$(cat $loopdev/size)" -eq 0 ]; then
+            dev=$(udevinfo -q name -p ${loopdev#/sys} 2>/dev/null|| echo /dev/${loopdev##*/})
+            losetup "$dev" "$fspath"
+            echo "$dev"
+            return 0
+        fi
+    done
+    return 1
+}
+
+get_fstype() {
+             local FSTYPE
+             local FSSIZE
+             eval $(fstype < $1)
+             echo $FSTYPE
+}
+
+setup_devmapper() {
+    backdev="$1"
+    rootmnt="$2"
+
+    modprobe -Qb dm-mod
+    COW_DEVICE=/dev/ram1
+    COW_NAME="casper-cow"
+
+    BACKING_FILE_SIZE=$(blockdev --getsize "$backdev")
+    MAX_COW_SIZE=$(blockdev --getsize "$COW_DEVICE")
+    CHUNK_SIZE=8 # sectors
+
+    if [ -z "$COW_SIZE" -o "$COW_SIZE" -gt "$MAX_COW_SIZE" ]; then
+        COW_SIZE=$MAX_COW_SIZE
+    fi
+
+    echo "0 $COW_SIZE linear $COW_DEVICE 0" | dmsetup create $COW_NAME
+
+    echo "0 $BACKING_FILE_SIZE snapshot $backdev /dev/mapper/$COW_NAME p $CHUNK_SIZE" | \
+        dmsetup create casper-snapshot
+	mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt || panic "Can not mount /dev/mapper/casper/snapshot on $rootmnt"
+
+}
+
+setup_unionfs() {
+	backdev="$1"
+	rootmnt="$2"
+
+	modprobe -Qb unionfs
+	mkdir /cow
+	mount -t tmpfs tmpfs /cow
+
+	mkdir /rofs
+	mount -t $(get_fstype "$backdev") -o ro "$backdev" /rofs || panic "Can not mount $backdev on /rofs"
+
+	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"
+}
+
+find_cd() {
+	mounted=
+        for sysblock in /sys/block/*; do
+            devname=$(udevinfo -q name -p ${sysblock#/sys})
+            if /lib/udev/cdrom_id /dev/$devname > /dev/null; then
+                mount -t iso9660 -o ro "/dev/$devname" $mountpoint || continue
+                if casper_path $mountpoint; then
+                    echo $(casper_path $mountpoint)
+                    return;
+                else
+                    umount $mountpoint
+                fi
+            fi
+        done
+}
+
+mountroot() {
+	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
+	run_scripts /scripts/casper-premount
+	[ "$quiet" != "y" ] && log_end_msg
+	live_image=$(find_cd)
+        if [ "$?" -gt 0 ]; then
+            panic "Unable to find a CD-ROM containing a live file system"
+        fi
+	setup_cow "$overlay_method" "$(get_backing_device $live_image)" "$rootmnt"
+	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
+	PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
+	[ "$quiet" != "y" ] && log_end_msg
+}

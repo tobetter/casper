@@ -1,0 +1,42 @@
+#!/bin/sh
+
+PREREQ=""
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+# Arrange for shells on virtual consoles, rather than login prompts
+USERNAME="ubuntu"
+if [ -n "$USERNAME" ]; then
+    sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(tty[0-9]*\).*$|\1:/bin/login -f $USERNAME </dev/\2 >/dev/\2 2>\&1|" /root/etc/inittab
+fi
+
+# This has the nice side effect of the cron.{daily,weekly,monthly} jobs in
+# /etc/crontab remaining disabled, yet also not run by anacron
+rm -f /root/etc/rc?.d/S??anacron
+
+# No point, really
+rm -f /root/etc/rc?.d/[SK]??postfix
+
+# Avoid clobbering the user's clock
+rm -f /root/etc/rc?.d/K??hwclock.sh
+
+# Install shutdown script
+if [ -f /root/etc/rc0.d/S90halt ]; then
+    cp -a /lib/casper/shutdown /root/etc/rc0.d/S89casper
+fi
+if [ -f /etc/rc6.d/S90reboot ]; then
+    cp -a /lib/casper/shutdown /root/etc/rc6.d/S89casper
+fi
+
+exit 0

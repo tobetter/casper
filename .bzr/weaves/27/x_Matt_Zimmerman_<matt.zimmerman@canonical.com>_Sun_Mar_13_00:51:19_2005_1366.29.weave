@@ -1,0 +1,135 @@
+# bzr weave file v5
+i
+1 01e084013d61cc7c5c5afac5198227c0e9a78ad4
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i 0
+1 3a595df384f141731e2a84d7e571ee2bf5e0909c
+n mdz@mizar-20051205225817-93f41a294916187e
+
+i
+1 556915038a465327470bcd42d13f52879c84beea
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 2
+1 69aae1690a68cb910736a8e9607e5be1ca74344f
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-2
+
+i 3
+1 01e084013d61cc7c5c5afac5198227c0e9a78ad4
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-25
+
+i 3
+1 01e084013d61cc7c5c5afac5198227c0e9a78ad4
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 3
+1 01e084013d61cc7c5c5afac5198227c0e9a78ad4
+n Arch-1:colin.watson@canonical.com--2005%casper--debconf-copydb--0--patch-1
+
+i 4 1
+1 3a595df384f141731e2a84d7e571ee2bf5e0909c
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 7
+1 963b131be5615084ceb1958fd63e54228c9d1f9b
+n tfheen@ubuntu.com-20051214120917-0eae7163985c81fd
+
+i 8
+1 94f8037cb9e850b2e8e7179f720423e8fc1fb016
+n tfheen@ubuntu.com-20051219110305-f723ae41d39fdd4f
+
+w
+{ 0
+. Source: casper
+. Section: misc
+. Priority: optional
+. Maintainer: Matt Zimmerman <mdz@ubuntu.com>
+. Build-Depends: debhelper (>> 4.2.0)
+. Standards-Version: 3.6.1
+. 
+[ 8
+. Package: casper-udeb
+. Architecture: all
+. Section: debian-installer
+. Priority: optional
+. XB-Installer-Menu-Item: 40
+. XC-Package-Type: udeb
+. Depends: casper-check, cdebconf-udeb (>= 0.78), cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+. Provides: target-base-system
+. Description: Run a "live" preinstalled system from read-only media
+. 
+. Package: casper-check
+. Architecture: all
+. Section: debian-installer
+. Priority: standard
+. XC-Package-Type: udeb
+. Description: enter casper (live) mode if requested
+}
+{ 1
+. 
+] 8
+. Package: casper
+. Architecture: all
+[ 8
+. Priority: optional
+] 8
+{ 8
+. Section: misc
+. Priority: extra
+}
+[ 9
+. Depends: initramfs-tools, usplash
+}
+{ 2
+[ 7
+. Source: casper
+. Section: misc
+. Priority: optional
+. Maintainer: Matt Zimmerman <mdz@ubuntu.com>
+. Build-Depends: debhelper (>> 4.2.0)
+. Standards-Version: 3.6.1
+. 
+. Package: casper-udeb
+. Architecture: all
+. Section: debian-installer
+. Priority: optional
+. XB-Installer-Menu-Item: 40
+. XC-Package-Type: udeb
+[ 4
+[ 5
+[ 6
+. Depends: casper-check, cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+{ 3
+] 4
+{ 4
+. Depends: casper-check, cdebconf-udeb (>= 0.78), cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+}
+] 5
+{ 5
+. Depends: casper-check, cdebconf-udeb (>= 0.78), cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+}
+] 6
+{ 6
+. Depends: casper-check, cdebconf-udeb (>= 0.78), cdrom-detect, dmsetup-udeb, loop-modules, ext2-modules, md-modules, harddrive-detection
+}
+. Provides: target-base-system
+}
+. Description: Run a "live" preinstalled system from read-only media
+. 
+. Package: casper-check
+. Architecture: all
+. Section: debian-installer
+. Priority: standard
+. XC-Package-Type: udeb
+. Description: enter casper (live) mode if requested
+}
+] 7
+{ 8
+] 9
+{ 9
+. Depends: initramfs-tools, dmsetup
+}
+. Description: Run a "live" preinstalled system from read-only media
+}
+W

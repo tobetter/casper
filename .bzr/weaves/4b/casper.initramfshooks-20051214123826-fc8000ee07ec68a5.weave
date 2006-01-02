@@ -1,0 +1,110 @@
+# bzr weave file v5
+i
+1 66c33673b9eae694bd59a3c6db1c60e48e1583e6
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+i 0
+1 5ae661abc903b11a47662064b8d893fe4185533a
+n tfheen@ubuntu.com-20051214124825-89ead86bf4751314
+
+i 1
+1 92c52f06241e4aa329bf7132bc481df3aeec1f66
+n tfheen@ubuntu.com-20051214125253-ac92194945d63ec4
+
+i 2
+1 dfaa3eaa2b8ab368909e0b9b2352f48c5a73ef65
+n tfheen@ubuntu.com-20051214130430-b464c22cacec4eec
+
+i 3
+1 ae74245e213c0e43614aa2221d1647e80618fec9
+n tfheen@ubuntu.com-20051214130954-4c10539f299fff78
+
+i 4
+1 7fc7d8288746ce9928a64b9c5b5cb20eb2dfd856
+n tfheen@ubuntu.com-20051215094153-cf91313035d937e8
+
+i 5
+1 f145565e3e93657e374d0a1adb6e67c948caba14
+n tfheen@ubuntu.com-20051215105559-47762a27fd1aeab1
+
+i 6
+1 c56f03dad3aeecf4cc5245decd896c465c25ee32
+n tfheen@ubuntu.com-20051216050734-3c595c6c9e44beae
+
+i 7
+1 d8145f34d3c3837eea2cabad71c3cea077d6f57d
+n tfheen@ubuntu.com-20051219110734-c131dad06e17b7d0
+
+w
+{ 0
+. #!/bin/sh -e
+. # initramfs hook for casper
+. 
+. PREREQS=""
+. 
+. # Output pre-requisites
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case "$1" in
+.     prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. . /usr/share/initramfs-tools/hook-functions
+. 
+. # cloop is needed
+. manual_add_modules cloop
+. manual_add_modules unionfs
+. 
+. # We need losetup
+. copy_exec /sbin/losetup /sbin
+. 
+. # Casper hooks
+. mkdir -p ${DESTDIR}/lib/casper
+. copy_exec /usr/share/casper/shutdown /lib/casper
+}
+{ 1
+. copy_exec /usr/share/casper/casper-reconfigure /bin
+}
+{ 2
+. 
+[ 3
+. # Needed for casper-reconfigure
+. copy_exec /usr/bin/getopt /bin
+}
+] 3
+{ 4
+. mkdir -p ${DESTDIR}/lib/udev
+. copy_exec /lib/udev/cdrom_id /lib/udev
+. copy_exec /usr/bin/udevinfo /bin
+. 
+}
+{ 5
+. # Needed for devmapper
+. copy_exec /sbin/blockdev /sbin
+[ 6
+, copy_exec /sbin/dmsetup /sbin
+}
+] 6
+{ 6
+. copy_exec /sbin/dmsetup /sbin
+. manual_add_modules dm-snapshot
+}
+{ 7
+. 
+. # squashfs
+. manual_add_modules squashfs
+. manual_add_modules loop
+}
+{ 8
+. 
+. # cdrom modules
+. manual_add_modules sr_mod
+. manual_add_modules ide-cd
+}
+W

@@ -1,3 +1,14 @@
+casper (1.21) dapper; urgency=low
+
+  * If locale is unset, use en_US.UTF8, not whatever comes first in the
+    list of supported locales.
+  * Generate locale and set the locale in /etc/environment
+  * Use user-setup to create the user, rather than doing it ourselves.
+  * Various cleanups and fixes, such as making debconf-communicate silent
+  * Disable checkroot when booting
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon,  2 Jan 2006 11:00:25 +0100
+
 casper (1.20) dapper; urgency=low
 
   * Remove a large bunch of debugging output
@@ -12,7 +23,7 @@ casper (1.20) dapper; urgency=low
 
  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 19 Dec 2005 14:23:13 +0100
 
-casper (1.19) unstable; urgency=low
+casper (1.19) dapper; urgency=low
 
   * Switch to initramfs, so casper only survives in spirit
   * Use unionfs instead of a writeable devmapper snapshot

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6dffeef823ba67ebfa100bf6e6be97b2c1c1c016" revision_id="tfheen@ubuntu.com-20051219131857-5ce3baaa1637471d" timestamp="1134998337.818723917" timezone="3600">
+<message>panic if we cannot mount the casper image</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051219121523-7adec0cf8c9c338a" />
+</parents>
+<properties><property name="branch-nick">squashfs</property>
+</properties>
+</revision>

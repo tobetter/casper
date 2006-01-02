@@ -15,15 +15,13 @@ prereqs)
        ;;
 esac
 
-USERNAME="ubuntu"
+echo set passwd/root-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
+echo set passwd/user-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
+echo set passwd/user-fullname 'Ubuntu LiveCD user' | chroot /root debconf-communicate -fnoninteractive
+echo set passwd/username 'ubuntu' | chroot /root debconf-communicate -fnoninteractive
+echo set passwd/user-uid 999 | chroot /root debconf-communicate -fnoninteractive
 
-chroot /root /usr/sbin/adduser --gecos "" --disabled-password  "$USERNAME"
-chroot /root /usr/sbin/adduser --group --system admin
-chroot /root /usr/sbin/adduser "$USERNAME" admin
-chroot /root /usr/sbin/adduser "$USERNAME" plugdev
-chroot /root /usr/sbin/adduser "$USERNAME" audio
-chroot /root /usr/sbin/adduser "$USERNAME" video
-chroot /root /usr/sbin/adduser "$USERNAME" scanner
+chroot /root /usr/lib/user-setup/user-setup-apply
 
 if [ -f /root/etc/sudoers ]; then
     grep -q '^%admin' /root/etc/sudoers && sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers || echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6b4c82e29f5c593e7574541e7ef41c204d77528c" revision_id="tfheen@ubuntu.com-20051219110734-c131dad06e17b7d0" timestamp="1134990454.899101019" timezone="3600">
+<message>Make sure we have both SCSI and IDE CDROM modules in the initramfs</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051219095202-6eb65f82a9935e72" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

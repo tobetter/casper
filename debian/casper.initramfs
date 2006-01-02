@@ -92,7 +92,10 @@ setup_devmapper() {
 
     echo "0 $BACKING_FILE_SIZE snapshot $backdev /dev/mapper/$COW_NAME p $CHUNK_SIZE" | \
         dmsetup create casper-snapshot
-	mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt || panic "Can not mount /dev/mapper/casper/snapshot on $rootmnt"
+    if [ "$(get_fstype $backdev)" = "unknown" ]; then
+        panic "Unknown file system type on $backdev"
+    fi
+    mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt || panic "Can not mount /dev/mapper/casper/snapshot on $rootmnt"
 
 }
 
@@ -105,6 +108,9 @@ setup_unionfs() {
 	mount -t tmpfs tmpfs /cow
 
 	mkdir /rofs
+    if [ "$(get_fstype $backdev)" = "unknown" ]; then
+        panic "Unknown file system type on $backdev"
+    fi
 	mount -t $(get_fstype "$backdev") -o ro "$backdev" /rofs || panic "Can not mount $backdev on /rofs"
 
 	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="07ce36a8e49763576280f037d7235eb5bf8f5307" revision_id="tfheen@ubuntu.com-20051214130034-c6ca52855429553b" timestamp="1134565234.021900892" timezone="3600">
+<message>make sure the admin group exists, also in /etc/sudoers</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214125932-6dcb0d911b12a48f" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

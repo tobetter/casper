@@ -1,0 +1,60 @@
+# bzr weave file v5
+i
+1 edcab3e8a21a9ae299a91af82558b38cf39a1abd
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 5664144933433117cf1ab8af69686de385187ac5
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 edcab3e8a21a9ae299a91af82558b38cf39a1abd
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-21
+
+i 1
+1 edcab3e8a21a9ae299a91af82558b38cf39a1abd
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 1
+1 edcab3e8a21a9ae299a91af82558b38cf39a1abd
+n Arch-1:colin.watson@canonical.com--2005%casper--cdebconf-info--0--patch-1
+
+i 2 0
+1 edcab3e8a21a9ae299a91af82558b38cf39a1abd
+n mdz@mizar-20051205230117-c327e75be767f237
+
+w
+{ 0
+. #! /bin/sh
+. . /usr/share/debconf/confmodule
+. db_get casper/enable
+. if [ "$RET" = true ]; then
+. 	db_info casper/info
+. fi
+}
+{ 1
+[ 5
+. #! /bin/sh
+. . /usr/share/debconf/confmodule
+. db_get casper/enable
+. if [ "$RET" = true ]; then
+[ 2
+[ 3
+[ 4
+.         db_x_setbacktitle casper/backtitle
+] 2
+{ 2
+. 	db_info casper/info
+}
+] 3
+{ 3
+. 	db_info casper/info
+}
+] 4
+{ 4
+. 	db_info casper/info
+}
+. fi
+}
+] 5
+W

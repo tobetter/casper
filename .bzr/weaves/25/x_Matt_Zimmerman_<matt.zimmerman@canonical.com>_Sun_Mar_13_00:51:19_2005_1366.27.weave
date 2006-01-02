@@ -1,0 +1,2068 @@
+# bzr weave file v5
+i
+1 be9f9b86809af0a70adcab9328cdb3cd0b7d3ba3
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 5f0f6e047f4d96c4583ad9c1e478efedc05d622a
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 9b06b182804a50ce60fcf3068d5fd5fee1850ddd
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-2
+
+i 2
+1 484f5b0bc771fdbf534f47d726b253e888ed8b4b
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-4
+
+i 3
+1 561ff64699bc4dba2ee58db6d6dd8f584758b2eb
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-3
+
+i 3
+1 30cf67e0c223836cfa4ed1bd4fea52f0759af4ca
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-5
+
+i 4
+1 acebb016d3a683bbf7d970477ac73b12ea4c55fb
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-7
+
+i 5
+1 1fe69ec932f28c6ed39fd046a18fa32d20bbe77b
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-6
+
+i 6
+1 bf5507d2119b50c411a15e99f648dc1aeb1e5f96
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-11
+
+i 7
+1 0f40c7cb0f0cf72ab0f4b25e978c6bffe3e40b7b
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-8
+
+i 8
+1 bd4d02a666eaf0a65a1372ce2ef8820639b3f4a5
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-15
+
+i 9
+1 f866b0f29df76f7356d7852dda3ee548c8412594
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-10
+
+i 10
+1 fb13dfb084aa74b59bb64a451252e506e5a3685c
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 11
+1 aa8a8053572c4eed87da9cd378e7d4ca4bf8bdff
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-11
+
+i 12
+1 e8ccde2673ab6cc6a03c1100c1dc34731261b1bf
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-19
+
+i 13
+1 561ff64699bc4dba2ee58db6d6dd8f584758b2eb
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-12
+
+i 15
+1 acebb016d3a683bbf7d970477ac73b12ea4c55fb
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-14
+
+i 16
+1 bf5507d2119b50c411a15e99f648dc1aeb1e5f96
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-16
+
+i 17
+1 bd4d02a666eaf0a65a1372ce2ef8820639b3f4a5
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-18
+
+i 18
+1 502e45c4206f8644fd660a8fb9d754ad346f8203
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-20
+
+i 19
+1 cb34c9447f5bea9b99bab674abcf722ad00580d8
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-22
+
+i 20
+1 c8182c1a345ba57b1f9269be9adc4e3340d46fd4
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-23
+
+i 21
+1 be9f9b86809af0a70adcab9328cdb3cd0b7d3ba3
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-26
+
+i 22 0
+1 05f696563ac166be41d6232068e5ec266af073cd
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-1
+
+i 23
+1 f2de87edf93be9805e876f931d201a9a6c8456e5
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-2
+
+i 24
+1 d7d97eeb4508a43887c8fdee0321aee16406e16d
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-3
+
+i 25
+1 149e59a6ba336e6a172a74fe4c0a32889e3d1fab
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-4
+
+i 26
+1 f4bba5e58121099c83c264efbbb7a8314ea4fcf3
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5
+
+i 27
+1 8c3cfa3f37e51516944207b67ab1bb793a59865b
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-6
+
+i 28
+1 31b261edc1e91773ebd16af838dd8d4cebae4fa5
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-11
+
+i 29
+1 3441f958dc157ab6b456659c423b4766a474961b
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-12
+
+i 30
+1 346521227b106c33c51f17d96c3e40a425b9b44a
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-13
+
+i 31
+1 6a9ccb029504eb44a1c19ec9e42939096392ad56
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-14
+
+i 32
+1 bb8630ae571a8c7921627c5af334315669f82676
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-17
+
+i 33
+1 f7853743e005c7db77cd0ebeff4551e10a5b0f97
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-18
+
+i 34
+1 7b19ff687edfbfded744f27394705fe77129eadc
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-19
+
+i 35
+1 233f6ba7dd6e8e2ae94b6b045e13520dab56214b
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-20
+
+i 36
+1 d571161948126da905ac877fbe72d91106f85afc
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-21
+
+i 37
+1 cd016579e313bfc107881cda342a27b1f87074ec
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-22
+
+i 38
+1 f0ef30b6043f6eb761599ffb4e6bc4d7831425bd
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-1
+
+i 38
+1 f0ef30b6043f6eb761599ffb4e6bc4d7831425bd
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-24
+
+i 39
+1 6ad945a36c2a775224d5e5b00a3a4a9550041932
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2
+
+i 40
+1 6ad945a36c2a775224d5e5b00a3a4a9550041932
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25
+
+i 41
+1 0824966db3b284b95018d01217b646dc5c2fc758
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-3
+
+i 42
+1 f2e975376c4661d623c0c30f916b7551d836eb1d
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-26
+
+i 43
+1 668dcdd79cd9d54b31b5b5ef1a299dab80f12230
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-4
+
+i 44
+1 fb13dfb084aa74b59bb64a451252e506e5a3685c
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-27
+
+i 45
+1 65f9489b2c77da78f013f4f8881701159731308a
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-5
+
+i 46
+1 e7b98ac3f96aa92376ad47b1ab85e16ac474fd77
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-28
+
+i 47
+1 470ad773e9154c18c657c7280c119046ce318969
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-6
+
+i 48
+1 8e4bee253289638c7c10d6589d38ba165409a8d3
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-29
+
+i 49
+1 77445b7dc5cb3e7257c591c31078ed8402204442
+n Arch-1:colin.watson@canonical.com--2005%casper--vtfix--0--patch-1
+
+i 49
+1 74a2580795813fe122f0335166f23df08d38ee47
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-7
+
+i 50
+1 b46226d3cdd988cd334a7568e49babf368ef59c3
+n mdz@mizar-20051205225817-93f41a294916187e
+
+i 51
+1 74a2580795813fe122f0335166f23df08d38ee47
+n Arch-1:colin.watson@canonical.com--2005%casper--vtfix--0--patch-2
+
+i 52
+1 b6ec518b06f3571f8d443aa6dd5c7d74b363b8c7
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-8
+
+i 55
+1 d3ffa71a2c9b6ac6ca2c4950f2b22d7f33950b7d
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-9
+
+i 56
+1 02d9e6beb62fed831ad8a76652abb419d9247a04
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-10
+
+i 57
+1 d5a6e870101fee99637cb1b15395a317d8715530
+n Arch-1:colin.watson@canonical.com--2005%casper--quieten--0--patch-1
+
+i 57
+1 d5a6e870101fee99637cb1b15395a317d8715530
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-11
+
+i 59
+1 f2e975376c4661d623c0c30f916b7551d836eb1d
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-12
+
+i 60
+1 fb13dfb084aa74b59bb64a451252e506e5a3685c
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-13
+
+i 61
+1 e8ccde2673ab6cc6a03c1100c1dc34731261b1bf
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-14
+
+i 62
+1 e7b98ac3f96aa92376ad47b1ab85e16ac474fd77
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-15
+
+i 63
+1 c69523546620890dceb672f67163ce69004dcbef
+n Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--patch-1
+
+i 64
+1 8e4bee253289638c7c10d6589d38ba165409a8d3
+n Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--patch-2
+
+i 65
+1 3a56439b3c4d5fcc061d696fefd216ff7b3e7806
+n colin.watson@canonical.com-20051205220508-2a2f232b5f328480
+
+i 53 66
+1 72035ebbe6b26e8bc494a8a990a9ea83426265d0
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 67
+1 4a35f767212e7965eea7b86d2663b531053f35ef
+n tfheen@ubuntu.com-20051214131705-c950986352233efc
+
+i 68
+1 7f1cf6c50ccb910e8823c4ccbf6ac850818ad264
+n tfheen@ubuntu.com-20051214132208-df294e9a60f9b27f
+
+i 69
+1 1fd1fbc7a441238fa380e740dd29b572f5e880a7
+n tfheen@ubuntu.com-20051214132627-4749c4ce7e95989a
+
+i 70
+1 9121e065565c2439e51017645110112d6c17703d
+n tfheen@ubuntu.com-20051214132711-75394bb77e11c559
+
+i 71
+1 5c04dfa9ca85c67928b94fb96aa134d3f1cb533e
+n tfheen@ubuntu.com-20051214132843-57eb6377d82956ac
+
+i 72
+1 b043bb5002cf3d1b524fb1292d9b539478e51c1e
+n tfheen@ubuntu.com-20051219132335-470b4188b74f3324
+
+i 73
+1 ebe0c2e77b362ce249b642a8e9b21f98d8983193
+n tfheen@ubuntu.com-20051219134623-2e798b17e609f40e
+
+i 74
+1 765da26ad3c6a645caf15744647f0dc6b15659c8
+n tfheen@ubuntu.com-20060102101900-7623af6089bd9092
+
+i 75
+1 7bd819e000d69017a878f4d08bd1e718d3a548a8
+n tfheen@ubuntu.com-20060102121808-24cd694a35a7ca60
+
+w
+{ 0
+{ 23
+{ 26
+[ 28
+. casper (0.66) breezy; urgency=low
+. 
+[ 27
+.   * 
+] 27
+{ 27
+] 28
+{ 28
+{ 29
+{ 30
+{ 31
+{ 32
+[ 34
+. casper (1.4) unstable; urgency=low
+] 34
+{ 34
+{ 35
+[ 36
+. casper (1.5) unstable; urgency=low
+] 36
+{ 36
+{ 37
+{ 39
+{ 41
+{ 43
+{ 45
+{ 47
+{ 51
+[ 54
+. casper (1.12) UNRELEASED; urgency=low
+] 54
+{ 54
+. casper (1.12) breezy; urgency=low
+}
+. 
+.   * Kill bterm after pivoting so that we can use vt1 rather than vt2,
+.     thereby avoiding a fight between gdm and the X server (closes: Ubuntu
+.     #14851).
+. 
+[ 54
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed,  7 Sep 2005 15:47:11 +0100
+] 54
+{ 54
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed,  7 Sep 2005 15:48:40 +0100
+}
+. 
+}
+{ 52
+{ 55
+[ 57
+. casper (1.14) breezy; urgency=low
+] 57
+{ 57
+{ 58
+. casper (1.16) UNRELEASED; urgency=low
+. 
+.   * Install a fake script in /lib/debian-installer.d/S72menu-exit after
+.     pivoting that just calls sleep, to prevent scary console messages as d-i
+.     tries to exit without its root filesystem.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Sep 2005 10:28:06 +0100
+. 
+}
+{ 59
+[ 60
+. casper (1.16) UNRELEASED; urgency=low
+] 60
+{ 60
+{ 61
+{ 62
+[ 63
+. casper (1.18) UNRELEASED; urgency=low
+] 63
+{ 63
+{ 64
+[ 68
+. casper (1.19) UNRELEASED; urgency=low
+. 
+[ 67
+.   * Fix arguments to db_input if a step fails.
+{ 65
+.   * Fix arguments to db_input for snapshot configuration.
+}
+{ 66
+.   * Avoid annoying screen-clear in casper-check.
+}
+] 67
+{ 67
+.   * [Colin Watson]
+.     - Fix arguments to db_input if a step fails.
+.     - Fix arguments to db_input for snapshot configuration.
+.     - Avoid annoying screen-clear in casper-check.
+.   * [Tollef Fog Heen]
+.     - Add support for unionfs
+}
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Fri, 18 Nov 2005 14:43:26 +0000
+[ 67
+. 
+}
+. casper (1.18) breezy; urgency=low
+}
+. 
+.   * Update translations from Rosetta: Greek, Spanish, French, Hungarian,
+.     Brazilian Portuguese.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Sep 2005 20:05:02 +0100
+. 
+}
+. casper (1.17) breezy; urgency=low
+. 
+.   * Set /apps/gnome-screensaver/lock if gnome-screensaver is installed
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 16 Sep 2005 15:24:35 -0700
+. 
+}
+. casper (1.16) breezy; urgency=low
+}
+. 
+.   * Install a fake script in /lib/debian-installer.d/S72menu-exit after
+.     pivoting that just calls sleep, to prevent scary console messages as d-i
+.     tries to exit without its root filesystem.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Sep 2005 10:28:06 +0100
+. 
+}
+. casper (1.15) breezy; urgency=low
+}
+. 
+.   * Neutralize branding in startup message
+[ 56
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  9 Sep 2005 11:21:40 -0700
+] 56
+{ 56
+.   * Use clear in addition to reset, in hopes of concealing error messages on
+.     the console from d-i's death throes
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  9 Sep 2005 11:24:14 -0700
+}
+{ 57
+. 
+. casper (1.14) breezy; urgency=low
+. 
+.   * Set RUNNING_UNDER_GDM=yes in the user's environment to stop xscreensaver
+.     locking the screen (Ubuntu #7150).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Thu,  8 Sep 2005 13:37:00 +0100
+}
+. 
+. casper (1.13) breezy; urgency=low
+. 
+.   * Use reset, rather than clear, to clean up after the colored dialogs on vt1
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  7 Sep 2005 16:09:45 -0700
+. 
+}
+. casper (1.12) breezy; urgency=low
+. 
+.   * Kill bterm after pivoting so that we can use vt1 rather than vt2,
+.     thereby avoiding a fight between gdm and the X server (closes: Ubuntu
+.     #14851).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed,  7 Sep 2005 15:48:40 +0100
+. 
+}
+. casper (1.11) breezy; urgency=low
+. 
+.   * Remove debugging code which crept into 1.10
+[ 49
+. 
+.  --
+] 49
+{ 49
+.   * Revert changes to casper-udeb.postinst which were intended for
+.     starting usplash earlier (pre-1.10)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  2 Sep 2005 13:43:03 -0700
+}
+. 
+}
+. casper (1.10) breezy; urgency=low
+. 
+.   * Instead of starting usplash directly, create an init script which will
+.     start it later (after the new init), to avoid it being killed by
+.     busybox init
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 20:26:58 -0700
+. 
+}
+. casper (1.9) breezy; urgency=low
+. 
+.   * Remember to re-run 30copy-dev from 94usplash, in order to preserve the
+.     device nodes clobbered by udev
+.   * Redirect stdin of /etc/init.d/udev from /dev/console, to avoid
+.     incredibly obnoxious 60-second sleep because it thinks we're
+.     interactive
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 18:30:38 -0700
+. 
+}
+. casper (1.8) breezy; urgency=low
+. 
+.   * Add usplash support
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 17:30:57 -0700
+. 
+}
+. casper (1.7) breezy; urgency=low
+. 
+.   * Set DEBUG_XORG_PACKAGE=yes when reconfiguring xserver-xorg.  The
+.     output is only written to post.log and isn't visible to the user, and
+.     can be invaluable for debugging
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 22 Aug 2005 10:25:38 -0700
+. 
+}
+{ 40
+{ 42
+{ 44
+{ 46
+{ 48
+{ 50
+. casper (1.19) UNRELEASED; urgency=low
+. 
+.   * Fix arguments to db_input if a step fails.
+.   * Fix arguments to db_input for snapshot configuration.
+[ 53
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Fri, 18 Nov 2005 14:43:26 +0000
+] 53
+{ 53
+.   * Merge Tollef's unionfs branch
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon,  5 Dec 2005 14:58:01 -0800
+}
+] 67
+] 68
+{ 68
+[ 72
+. casper (1.20) unstable; urgency=low
+] 72
+{ 72
+{ 73
+{ 75
+. casper (1.21) UNRELEASED; urgency=low
+. 
+.   * If locale is unset, use en_US.UTF8, not whatever comes first in the
+.     list of supported locales.
+.   * Generate locale and set the locale in /etc/environment
+{ 76
+.   * Use user-setup to create the user, rather than doing it ourselves.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon,  2 Jan 2006 11:00:25 +0100
+. 
+}
+. casper (1.20) dapper; urgency=low
+. 
+.   * Remove a large bunch of debugging output
+.   * Depend on dmsetup so the hook script can copy in that
+.   * Handle both squashfs and cloop images, with run-time detection
+.   * Use devmapper + cloop on powerpc, not unionfs, since unionfs is a
+.     disaster there.
+.   * Make sure we have both SCSI and IDE CDROM modules available in the
+.     initramfs.
+.   * Do some initial keyboard setup handling so X will, at least in some
+.     cases, have a chance of giving the user a sane keymap.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 19 Dec 2005 14:23:13 +0100
+. 
+}
+[ 74
+. casper (1.19) unstable; urgency=low
+}
+] 74
+{ 74
+. casper (1.19) dapper; urgency=low
+}
+. 
+.   * Switch to initramfs, so casper only survives in spirit
+.   * Use unionfs instead of a writeable devmapper snapshot
+.   * Remove all debconfiscation, since we're an initramfs script now
+{ 69
+.   * Make the postinst call update-initramfs -u
+}
+{ 70
+.   * Mount the CD read-only explicitly
+}
+{ 71
+.   * Make udevinfo silent if the device is not found.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 13 Dec 2005 16:22:45 +0100
+}
+. 
+}
+. casper (1.18) breezy; urgency=low
+. 
+.   * Update translations from Rosetta: Greek, Spanish, French, Hungarian,
+.     Brazilian Portuguese.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Sep 2005 20:05:02 +0100
+. 
+}
+. casper (1.17) breezy; urgency=low
+. 
+.   * Set /apps/gnome-screensaver/lock if gnome-screensaver is installed
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 16 Sep 2005 15:24:35 -0700
+. 
+}
+. casper (1.16) breezy; urgency=low
+. 
+.   * Install a fake script in /lib/debian-installer.d/S72menu-exit after
+.     pivoting that just calls sleep, to prevent scary console messages as d-i
+.     tries to exit without its root filesystem.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Sep 2005 10:28:06 +0100
+. 
+. casper (1.15) breezy; urgency=low
+. 
+.   * Neutralize branding in startup message
+.   * Use clear in addition to reset, in hopes of concealing error messages on
+.     the console from d-i's death throes
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  9 Sep 2005 11:24:14 -0700
+. 
+. casper (1.14) breezy; urgency=low
+. 
+.   * Set RUNNING_UNDER_GDM=yes in the user's environment to stop xscreensaver
+.     locking the screen (Ubuntu #7150).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Thu,  8 Sep 2005 13:37:00 +0100
+. 
+. casper (1.13) breezy; urgency=low
+. 
+.   * Use reset, rather than clear, to clean up after the colored dialogs on vt1
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  7 Sep 2005 16:09:45 -0700
+. 
+. casper (1.12) breezy; urgency=low
+. 
+.   * Kill bterm after pivoting so that we can use vt1 rather than vt2,
+.     thereby avoiding a fight between gdm and the X server (closes: Ubuntu
+.     #14851).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed,  7 Sep 2005 15:48:40 +0100
+. 
+. casper (1.11) breezy; urgency=low
+. 
+.   * Remove debugging code which crept into 1.10
+.   * Revert changes to casper-udeb.postinst which were intended for
+.     starting usplash earlier (pre-1.10)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  2 Sep 2005 13:43:03 -0700
+. 
+. casper (1.10) breezy; urgency=low
+. 
+.   * Instead of starting usplash directly, create an init script which will
+.     start it later (after the new init), to avoid it being killed by
+.     busybox init
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 20:26:58 -0700
+. 
+. casper (1.9) breezy; urgency=low
+. 
+.   * Remember to re-run 30copy-dev from 94usplash, in order to preserve the
+.     device nodes clobbered by udev
+.   * Redirect stdin of /etc/init.d/udev from /dev/console, to avoid
+.     incredibly obnoxious 60-second sleep because it thinks we're
+.     interactive
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 18:30:38 -0700
+. 
+}
+. casper (1.8) breezy; urgency=low
+. 
+.   * Add usplash support
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 17:30:57 -0700
+. 
+}
+. casper (1.7) breezy; urgency=low
+. 
+.   * Set DEBUG_XORG_PACKAGE=yes when reconfiguring xserver-xorg.  The
+.     output is only written to post.log and isn't visible to the user, and
+.     can be invaluable for debugging
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 22 Aug 2005 10:25:38 -0700
+. 
+}
+. casper (1.6) breezy; urgency=low
+. 
+[ 38
+.   * Use debconf-copydb again.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 17 Aug 2005 23:43:57 +0200
+] 38
+{ 38
+.   * Use debconf-copydb again (thanks, Tollef)
+.   * Rename pre.d/20xconfig to pre.d/20prexconfig so that it is distinct from
+.     post.d/20xconfig for purposes of the progress bar (no text for it; it's
+.     very fast)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 17 Aug 2005 14:55:24 -0700
+}
+. 
+}
+. casper (1.5) breezy; urgency=low
+}
+. 
+.   * Call MAKEDEV console in post.d/20xconfig as a workaround for bug
+.     #13523
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 16 Aug 2005 15:24:06 -0700
+. 
+}
+. casper (1.4) breezy; urgency=low
+}
+. 
+[ 33
+.   * Restore old debconf hack; the debconf-copydb approach needs more work
+] 33
+{ 33
+.   * Revert to the old debconf hack; the debconf-copydb approach needs more
+.     work
+}
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 15 Aug 2005 22:48:11 -0700
+. 
+}
+. casper (1.3) breezy; urgency=low
+. 
+.   * Revert unintentional release of experimental unionfs code in 1.2
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 13 Aug 2005 11:19:50 -0700
+. 
+}
+. casper (1.2) breezy; urgency=low
+. 
+.   * Fix debconf-copydb regex in 20xconfig
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 13 Aug 2005 11:07:46 -0700
+. 
+}
+. casper (1.1) breezy; urgency=low
+. 
+.   * Cope with xserver-xorg's rename of force_keyboard_detection to
+.     autodetect_keyboard
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon,  4 Jul 2005 02:52:07 -0700
+. 
+}
+. casper (1.0) breezy; urgency=low
+. 
+.   * Version number bump (we've been through a stable Ubuntu release, after
+.     all)
+}
+.   * Rename pre.d/10snapshot to post.d/10filesystem, as it is about to
+.     become more generic
+}
+[ 28
+. 
+.  --
+] 28
+{ 28
+.   * Seed xserver-xorg/force_keyboard_detection to true in 20xconfig, so as
+.     to cause the keyboard layout to (continue to) be autodetected based on
+.     d-i settings
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 16 Jun 2005 11:21:54 -0700
+}
+. 
+}
+. casper (0.65) breezy; urgency=low
+. 
+.   * As a performance optimization, only reconfigure gnome-panel-data if
+.     booting on a laptop
+{ 24
+.   * Disable the "lock screen" menu item (Ubuntu bug#7150)
+}
+. 
+[ 25
+.  --
+] 25
+{ 25
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  8 Jun 2005 16:02:14 -0700
+}
+. 
+}
+. casper (0.64) breezy; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--debconf-copydb--0
+.     - Use debconf-copydb rather than our temporary hack
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 31 May 2005 12:08:51 -0700
+. 
+. casper (0.63) breezy; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--cdebconf-info--0
+.     - Update for cdebconf 0.75: use db_info rather than db_x_setbacktitle.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 18 Apr 2005 20:59:58 -0700
+. 
+. casper (0.62) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (nb)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  5 Apr 2005 09:01:02 -0700
+. 
+. casper (0.61) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (el, es, ro)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  5 Apr 2005 08:06:51 -0700
+. 
+. casper (0.60) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (hu, id, pl)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 28 Mar 2005 11:26:21 -0800
+. 
+. casper (0.59) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (de, pt_BR)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 25 Mar 2005 16:51:17 -0800
+. 
+. casper (0.58) hoary; urgency=low
+. 
+.   * Remove postfix shutdown links, as well as startup, to avoid an ugly error
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 24 Mar 2005 18:24:03 -0800
+. 
+. casper (0.57) hoary; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--translations--0 up to
+.     patch-2
+.   * Preseed netcfg/wireless_essid_again for noninteractive network setup, +new
+.     in netcfg 1.08ubuntu3 [colin.watson@canonical.com--2005/casper--netcfg--0]
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 23 Mar 2005 08:33:46 -0800
+. 
+. casper (0.56) hoary; urgency=low
+. 
+.   * Suppress error output from eject
+.   * Remind the user to close the CD tray if they have one (Ubuntu #6668)
+.   * Add arch-build target to debian/rules
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 22 Mar 2005 10:21:41 -0800
+. 
+. casper (0.55) hoary; urgency=low
+. 
+.   * Remove the hack introduced in 0.54, xorg 6.8.2-5 should be fixed
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 16 Mar 2005 18:11:05 -0800
+. 
+. casper (0.54) hoary; urgency=low
+. 
+.   * Temporarily set RECONFIGURE=true when reconfiguring xserver-xorg, to work
+.     around a bug introduced in 6.8.2-3
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 16 Mar 2005 15:08:45 -0800
+. 
+. casper (0.53) hoary; urgency=low
+. 
+.   * Provide target-base-system (i.e. base system installed in /target, also
+.     provided by base-installer).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 15 Mar 2005 13:01:53 +0000
+. 
+. casper (0.52) hoary; urgency=low
+. 
+.   * Arrange for $LANG to be set after pivot_root, so that (e.g.)
+.     xserver-xorg can use it to infer the keymap (Ubuntu #7138)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 12 Mar 2005 02:10:59 -0800
+. 
+. casper (0.51) hoary; urgency=low
+. 
+.   * Disable kpersonalizer startup on first login
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat,  5 Mar 2005 13:47:13 -0800
+. 
+. casper (0.50) hoary; urgency=low
+. 
+.   * Add support for configuring kdm autologin
+.   * Rename 15gdm-autologin to 15autologin, and the corresponding debconf template
+.   * Remove obsolete XORG_FORCE_PROBE from 20xconfig
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu,  3 Mar 2005 10:37:31 -0800
+. 
+. casper (0.49) hoary; urgency=low
+. 
+.   * Fix 20xconfig harder
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Mar 2005 21:20:03 -0800
+. 
+. casper (0.48) hoary; urgency=low
+. 
+.   * Source confmodule in 20xconfig
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Mar 2005 21:02:35 -0800
+. 
+. casper (0.47) hoary; urgency=low
+. 
+.   * Copy over the value of debian-installer/keymap into the target system,
+.     to allow the new logic in xserver-xorg.config to work
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Mar 2005 20:45:38 -0800
+. 
+. casper (0.46) hoary; urgency=low
+. 
+.   * Lock the live user's password entirely.  Since the user is now
+.     automagically logged in, continuously, both on the console and in X,
+.     their password is irrelevant.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 28 Feb 2005 08:31:13 -0800
+. 
+. casper (0.45) hoary; urgency=low
+. 
+.   * Enable TimedLogin in gdm, so that if the user logs out, they are
+.     automatically logged back in after a few seconds (Ubuntu #6667)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sun, 27 Feb 2005 16:06:16 -0800
+. 
+. casper (0.44) hoary; urgency=low
+. 
+.   * Configure init to spawn shells on virtual consoles, rather than login
+.     prompts (Ubuntu #6666)
+.   * Skip X configuration if a serial console is in use
+.   * Set the live user's password to be blank, rather than "ubuntu".  This
+.     is, paradoxically, more secure if the user decides to install
+.     openssh-server, since empty passwords are disallowed by default
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sun, 27 Feb 2005 15:40:15 -0800
+. 
+. casper (0.43) hoary; urgency=low
+. 
+.   * Override localechooser progress bar text to be more appropriate for the
+.     live CD (closes: Ubuntu #6664).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Thu, 24 Feb 2005 19:12:00 +0000
+. 
+. casper (0.42) hoary; urgency=low
+. 
+.   * Preseed netcfg/no_interfaces, to avoid prompt when no network interfaces
+.     can be configured (closes: Ubuntu #6107).
+.   * Remove redundant DH_COMPAT setting in debian/rules, since there's
+.     already a (different) debian/compat.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 22 Feb 2005 12:43:43 +0000
+. 
+. casper (0.41) hoary; urgency=low
+. 
+.   * Cope with change in default /etc/sudoers (admin group).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 22 Feb 2005 09:14:30 +0000
+. 
+. casper (0.40) hoary; urgency=low
+. 
+.   * Copy /dev/tts to the live system as well as /dev/vc, for serial console.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Mon, 21 Feb 2005 19:03:54 +0000
+. 
+. casper (0.39) hoary; urgency=low
+. 
+.   * Fix reboot operation (cache the reboot binary)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 10 Feb 2005 20:51:08 -0800
+. 
+. casper (0.38) hoary; urgency=low
+. 
+.   * Eject the CD during shutdown/reboot
+.     - Awful hack to copy /dev/cdroms to the live system, because the CD is
+.       mounted using devfs names
+.     - Add /usr/share/casper/shutdown script to casper-udeb
+.     - Copy /usr/share/casper/shutdown to /etc/rc[06].d in 25configure-init
+.   * Remove caspermon binary package, inadvertently enabled (not even
+.     remotely ready)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 10 Feb 2005 13:43:56 -0800
+. 
+. casper (0.37) hoary; urgency=low
+. 
+.   * Fix casper-udeb/runlevel template
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  8 Feb 2005 19:37:43 -0800
+. 
+. casper (0.36) hoary; urgency=low
+. 
+.   * Rename post.d/25disable-init-scripts to 25configure-init
+.   * Add casper-udeb/runlevel, to allow the default runlevel
+.     to be set
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  8 Feb 2005 19:14:16 -0800
+. 
+. casper (0.35) hoary; urgency=low
+. 
+.   * Preseed netcfg/wireless_essid
+.   * Remove obsolete confmodule load from pre.d/12fstab
+.   * Don't mount a tmpfs on /var/run; it doesn't save a huge amount of
+.     snapshot space, and packages expect their directories there to be
+.     persistent
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon,  7 Feb 2005 15:46:52 -0800
+. 
+. casper (0.34) hoary; urgency=low
+. 
+.   * Use casper-reconfigure in 10adduser as well
+.   * Add post.d/93save-logs to save copies of the bootstrap logs to
+.     /var/log/casper
+.   * Stop reconfiguring fontconfig; it insists on rebuilding the entire
+.     font cache, and the only benefit was to unable subpixel hints
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Feb 2005 10:42:19 -0800
+. 
+. casper (0.33) hoary; urgency=low
+. 
+.   * Re-upload to fix borked source package
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sun, 30 Jan 2005 12:21:07 -0800
+. 
+. casper (0.32) hoary; urgency=low
+. 
+.   * Factor out debconf hackery into casper-reconfigure
+.   * Mount sysfs earlier, so we don't need to mess with it in 20xconfig
+.   * Break 22simple-reconfig into 22fontconfig and 22gnome-panel-data, and
+.     create progress bar text for them
+.   * Preseed netcfg/dhcp_failed, to avoid a prompt when DHCP fails
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 29 Jan 2005 14:03:36 -0800
+. 
+. casper (0.31) hoary; urgency=low
+. 
+.   * Clear tty2 and print a nice message, before signalling init
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 29 Jan 2005 13:15:44 -0800
+. 
+. casper (0.30) hoary; urgency=low
+. 
+.   * Reconfigure fontconfig, to enable subpixel rendering based on the
+.     hardware in use
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 27 Jan 2005 14:21:49 -0800
+. 
+. casper (0.29) hoary; urgency=low
+. 
+.   * Fix the problem described in 0.28 by preseeding a default for
+.     netcfg/get_hostname
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 25 Jan 2005 23:04:03 -0800
+. 
+. casper (0.28) hoary; urgency=low
+. 
+.   * Suppress network configuration questions
+.   
+.     - The goal is to make a reasonable effort to configure one interface
+.     automatically, but if that is not possible, fall back to no
+.     configuration.  We aren't quite there yet.
+.   
+.     - If we fail to resolve our IP into a hostname using DNS, netcfg seems
+.     to fall back to an empty value, rather than the default in the
+.     template.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 25 Jan 2005 22:55:35 -0800
+. 
+. casper (0.27) hoary; urgency=low
+. 
+.   * Add post.d/22simple-reconfig
+.     - Reconfigure gnome-panel-data if it is installed, to set up the GNOME
+.       session based on whether the system is a laptop
+.     - Corresponding progress template
+.     - mount /proc earlier (needed for, e.g. laptop-detect)
+.   * Warn about screen blanking in X configuration progress message
+.   * Simplify post.d/20xconfig and pre.d/13swap a bit
+.   * Update TODO
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 22 Jan 2005 15:56:49 -0800
+. 
+. casper (0.26) hoary; urgency=low
+. 
+.   * Set NOPASSWD in /etc/sudoers for the initial user
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 16:53:49 -0800
+. 
+. casper (0.25) hoary; urgency=low
+. 
+.   * mount /proc before signalling init, as it now uses /proc to determine
+.     what is and is not a kernel thread
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 16:04:52 -0800
+. 
+. casper (0.24) hoary; urgency=low
+. 
+.   * Add a backtitle properly
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 09:07:19 -0800
+. 
+. casper (0.23) hoary; urgency=low
+. 
+.   * Add a backtitle
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 09:02:01 -0800
+. 
+. casper (0.22) hoary; urgency=low
+. 
+.   * Search for swap on SCSI disks as well as IDE
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 14:27:09 -0800
+. 
+. casper (0.21) unstable; urgency=low
+. 
+.   * Cosmetic changes to debconf templates
+.   * Fix 10adduser to register debconf questions before setting their
+.     values and flags
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 14:14:20 -0800
+. 
+. casper (0.20) hoary; urgency=low
+. 
+.   * Remove legacy symlinks from casper/pre.d; they are now contained in
+.     the relevant udebs
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 13:22:33 -0800
+. 
+. casper (0.19) hoary; urgency=low
+. 
+.   * Update TODO
+.   * casper-udeb Depends: md-modules
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 11:23:51 -0800
+. 
+. casper (0.18) hoary; urgency=low
+. 
+.   * Enable new adduser code, using db_fset ... seen to suppress the questions
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 18 Jan 2005 15:06:48 -0800
+. 
+. casper (0.17) hoary; urgency=low
+. 
+.   * Convert snapshot setup to use debconf instead of hardcoded parameters
+.   * Remove obselete-before-being-used username template
+.   * Convert post.d/10adduser to use debconf passthrough to the passwd package,
+.     and thus share its user-adding code rather than duplicating it.
+.     - But don't enable it yet, since we need to find a way to prevent its
+.     questions from being asked
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 18 Jan 2005 13:04:48 -0800
+. 
+. casper (0.16) hoary; urgency=low
+. 
+.   * casper-udeb Depends: casper-check, harddrive-detection
+.   * Automatically find and enable swap devices
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 18 Jan 2005 11:23:48 -0800
+. 
+. casper (0.15) hoary; urgency=low
+. 
+.   * Set anna/standard_modules to false at startup to suppress unnecessary
+.     udeb retrieval.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 18 Jan 2005 13:41:00 +0000
+. 
+. casper (0.14) hoary; urgency=low
+. 
+.   * Enable X autoconfiguration(!)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 15 Jan 2005 02:19:58 -0800
+. 
+. casper (0.13) hoary; urgency=low
+. 
+.   * Rename templates so that they are named after the {pre,post}.d hook
+.     which uses them
+.   * Remove some unused templates
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 14 Jan 2005 10:11:02 -0800
+. 
+. casper (0.12) hoary; urgency=low
+. 
+.   * Add debconf templates for various things that we currently hardcode.
+.     Not actually used yet due to need for testing, but having the
+.     templates present greatly simplifies testing the remaining integration
+.     work
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 13 Jan 2005 20:32:39 -0800
+. 
+. casper (0.11) hoary; urgency=low
+. 
+.   * Update post.d/20xconfig to use debconf passthrough to cdebconf
+.     (requires debconf 1.4.42 and cdebconf 0.75), but leave it disabled for
+.     now
+.   * Create /etc/fstab in the target (this also seems to solve the problem
+.     with noatime disappearing, and so should reduce snapshot utilization)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Thu, 13 Jan 2005 18:25:36 -0800
+. 
+. casper (0.10) hoary; urgency=low
+. 
+.   * Remove rc?.d/K??hwclock.sh links, to avoid changing the system clock
+.     during reboot or shutdown
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Thu, 13 Jan 2005 18:13:31 -0800
+. 
+. casper (0.9) hoary; urgency=low
+. 
+.   * Fix gdm autologin configuration (broken in 0.8)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Wed, 12 Jan 2005 10:52:05 -0800
+. 
+. casper (0.8) hoary; urgency=low
+. 
+.   * Add debian-installer/casper-udeb/title template, to specify more
+.     readable menu item text
+.   * Create /usr/lib/casper/{pre,post}.d and move all of our internal logic
+.     there
+.   * Create temporary symlinks in pre.d for the prebaseconfig.d items we
+.     want
+.   * Convert errors into proper error dialogs
+.   * Make some pre.d scripts idempotent, for ease of testing
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Tue, 11 Jan 2005 16:59:35 -0800
+. 
+. casper (0.7) hoary; urgency=low
+. 
+.   * Disable X configuration temporarily; need to resolve debconf issues
+. 
+.  -- Matt Zimmerman <mdz@canonical.com>  Tue, 11 Jan 2005 13:14:43 -0800
+. 
+. casper (0.6) hoary; urgency=low
+. 
+.   * Allow "modprobe ext2" to fail; apparently it's sometimes compiled in
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Tue, 11 Jan 2005 12:12:28 -0800
+. 
+. casper (0.5) hoary; urgency=low
+. 
+.   * Attempt to configure X
+.     - This doesn't work very well yet (PCI BusID doesn't seem to get
+.     updated, for example), so we still don't start gdm by default)
+.   * Conditionalize some of the configuration code, so we automatically do
+.     the right thing if gdm or X isn't installed
+.   * Add German translation from Andreas Mueller
+.   * modprobe ext2, to let powerpc work (this should probably happen
+.     elsewhere, but for now...)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Sun,  9 Jan 2005 17:49:56 -0800
+. 
+. casper (0.4) hoary; urgency=low
+. 
+.   * Mount tmpfs on /tmp and /var/run, should save many writes to the snapshot
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Fri,  7 Jan 2005 18:35:26 -0800
+. 
+. casper (0.3) hoary; urgency=low
+. 
+.   * Disable anacron and postfix startup
+.   * Don't cripple /bin/apt-install in d-i (this was a workaround to
+.     prevent d-i from installing packages which should have been present in
+.     the filesystem image anyway, but weren't)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Fri,  7 Jan 2005 18:10:55 -0800
+. 
+. casper (0.2) hoary; urgency=low
+. 
+.   * Use mount --move to move the cdrom mount point, so that we can unmount
+.     /initrd and free up the memory used by d-i
+.   * Use /dev/ram1 rather than /dev/ram0 for the COW stuff, since /dev/ram0
+.     is used for initrds and we want to avoid confusion
+.   * Organize casper-udeb.postinst into shell functions
+.   * Add a progress bar
+.   * Add a debian/compat file (version 4)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Fri,  7 Jan 2005 08:01:21 -0800
+. 
+. casper (0.1) hoary; urgency=low
+. 
+.   * Initial Release. 
+.   
+.  -- Matt Zimmerman <mdz@canonical.com>  Wed,  5 Jan 2005 14:30:28 -0800
+. 
+}
+{ 1
+{ 2
+{ 3
+{ 4
+{ 6
+{ 8
+{ 10
+{ 12
+{ 14
+. casper (1.18) UNRELEASED; urgency=low
+. 
+.   * Update translations from Rosetta: Greek, Spanish, French, Hungarian,
+.     Brazilian Portuguese.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Sep 2005 20:05:02 +0100
+. 
+}
+. casper (1.17) breezy; urgency=low
+. 
+.   * Set /apps/gnome-screensaver/lock if gnome-screensaver is installed
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 16 Sep 2005 15:24:35 -0700
+. 
+. casper (1.16) breezy; urgency=low
+. 
+.   * Install a fake script in /lib/debian-installer.d/S72menu-exit after
+.     pivoting that just calls sleep, to prevent scary console messages as d-i
+.     tries to exit without its root filesystem.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed, 14 Sep 2005 10:28:06 +0100
+. 
+. casper (1.15) breezy; urgency=low
+. 
+.   * Neutralize branding in startup message
+.   * Use clear in addition to reset, in hopes of concealing error messages on
+.     the console from d-i's death throes
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  9 Sep 2005 11:24:14 -0700
+. 
+. casper (1.14) breezy; urgency=low
+. 
+.   * Set RUNNING_UNDER_GDM=yes in the user's environment to stop xscreensaver
+.     locking the screen (Ubuntu #7150).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Thu,  8 Sep 2005 13:37:00 +0100
+. 
+. casper (1.13) breezy; urgency=low
+. 
+.   * Use reset, rather than clear, to clean up after the colored dialogs on vt1
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  7 Sep 2005 16:09:45 -0700
+. 
+. casper (1.12) breezy; urgency=low
+. 
+.   * Kill bterm after pivoting so that we can use vt1 rather than vt2,
+.     thereby avoiding a fight between gdm and the X server (closes: Ubuntu
+.     #14851).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Wed,  7 Sep 2005 15:48:40 +0100
+. 
+. casper (1.11) breezy; urgency=low
+. 
+.   * Remove debugging code which crept into 1.10
+.   * Revert changes to casper-udeb.postinst which were intended for
+.     starting usplash earlier (pre-1.10)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri,  2 Sep 2005 13:43:03 -0700
+. 
+. casper (1.10) breezy; urgency=low
+. 
+.   * Instead of starting usplash directly, create an init script which will
+.     start it later (after the new init), to avoid it being killed by
+.     busybox init
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 20:26:58 -0700
+. 
+. casper (1.9) breezy; urgency=low
+. 
+.   * Remember to re-run 30copy-dev from 94usplash, in order to preserve the
+.     device nodes clobbered by udev
+.   * Redirect stdin of /etc/init.d/udev from /dev/console, to avoid
+.     incredibly obnoxious 60-second sleep because it thinks we're
+.     interactive
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 18:30:38 -0700
+. 
+. casper (1.8) breezy; urgency=low
+. 
+.   * Add usplash support
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 29 Aug 2005 17:30:57 -0700
+. 
+. casper (1.7) breezy; urgency=low
+. 
+.   * Set DEBUG_XORG_PACKAGE=yes when reconfiguring xserver-xorg.  The
+.     output is only written to post.log and isn't visible to the user, and
+.     can be invaluable for debugging
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 22 Aug 2005 10:25:38 -0700
+. 
+. casper (1.6) breezy; urgency=low
+. 
+.   * Use debconf-copydb again (thanks, Tollef)
+.   * Rename pre.d/20xconfig to pre.d/20prexconfig so that it is distinct from
+.     post.d/20xconfig for purposes of the progress bar (no text for it; it's
+.     very fast)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 17 Aug 2005 14:55:24 -0700
+. 
+. casper (1.5) breezy; urgency=low
+. 
+.   * Call MAKEDEV console in post.d/20xconfig as a workaround for bug
+.     #13523
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 16 Aug 2005 15:24:06 -0700
+. 
+. casper (1.4) breezy; urgency=low
+. 
+.   * Revert to the old debconf hack; the debconf-copydb approach needs more
+.     work
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 15 Aug 2005 22:48:11 -0700
+. 
+. casper (1.3) breezy; urgency=low
+. 
+.   * Revert unintentional release of experimental unionfs code in 1.2
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 13 Aug 2005 11:19:50 -0700
+. 
+. casper (1.2) breezy; urgency=low
+. 
+.   * Fix debconf-copydb regex in 20xconfig
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 13 Aug 2005 11:07:46 -0700
+. 
+. casper (1.1) breezy; urgency=low
+. 
+.   * Cope with xserver-xorg's rename of force_keyboard_detection to
+.     autodetect_keyboard
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon,  4 Jul 2005 02:52:07 -0700
+. 
+. casper (1.0) breezy; urgency=low
+. 
+.   * Version number bump (we've been through a stable Ubuntu release, after
+.     all)
+.   * Rename pre.d/10snapshot to post.d/10filesystem, as it is about to
+.     become more generic
+.   * Seed xserver-xorg/force_keyboard_detection to true in 20xconfig, so as
+.     to cause the keyboard layout to (continue to) be autodetected based on
+.     d-i settings
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 16 Jun 2005 11:21:54 -0700
+. 
+. casper (0.65) breezy; urgency=low
+. 
+.   * As a performance optimization, only reconfigure gnome-panel-data if
+.     booting on a laptop
+.   * Disable the "lock screen" menu item (Ubuntu bug#7150)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  8 Jun 2005 16:02:14 -0700
+. 
+. casper (0.64) breezy; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--debconf-copydb--0
+.     - Use debconf-copydb rather than our temporary hack
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 31 May 2005 12:08:51 -0700
+. 
+. casper (0.63) breezy; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--cdebconf-info--0
+.     - Update for cdebconf 0.75: use db_info rather than db_x_setbacktitle.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 18 Apr 2005 20:59:58 -0700
+. 
+. casper (0.62) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (nb)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  5 Apr 2005 09:01:02 -0700
+. 
+}
+. casper (0.61) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (el, es, ro)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  5 Apr 2005 08:06:51 -0700
+. 
+}
+. casper (0.60) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (hu, id, pl)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 28 Mar 2005 11:26:21 -0800
+. 
+}
+. casper (0.59) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (de, pt_BR)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 25 Mar 2005 16:51:17 -0800
+. 
+}
+. casper (0.58) hoary; urgency=low
+. 
+.   * Remove postfix shutdown links, as well as startup, to avoid an ugly error
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 24 Mar 2005 18:24:03 -0800
+. 
+. casper (0.57) hoary; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--translations--0 up to
+.     patch-2
+.   * Preseed netcfg/wireless_essid_again for noninteractive network setup, +new
+.     in netcfg 1.08ubuntu3 [colin.watson@canonical.com--2005/casper--netcfg--0]
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 23 Mar 2005 08:33:46 -0800
+. 
+}
+{ 9
+{ 15
+{ 16
+{ 17
+{ 18
+{ 19
+{ 20
+[ 21
+. casper (0.63) hoary; urgency=low
+] 21
+{ 21
+{ 22
+[ 23
+. casper (0.64) breezy; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--debconf-copydb--0
+.     - Use debconf-copydb rather than our temporary hack
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 31 May 2005 12:08:51 -0700
+. 
+}
+. casper (0.63) breezy; urgency=low
+}
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--cdebconf-info--0
+.     - Update for cdebconf 0.75: use db_info rather than db_x_setbacktitle.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 18 Apr 2005 20:59:58 -0700
+. 
+}
+. casper (0.62) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (nb)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  5 Apr 2005 09:01:02 -0700
+. 
+}
+. casper (0.61) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (el, es, ro)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  5 Apr 2005 08:06:51 -0700
+. 
+}
+. casper (0.60) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (hu, id, pl)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 28 Mar 2005 11:26:21 -0800
+. 
+}
+. casper (0.59) hoary; urgency=low
+. 
+.   * Updated translations from
+.     colin.watson@canonical.com--2005/casper--translations--0 (de, pt_BR)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 25 Mar 2005 16:51:17 -0800
+. 
+}
+. casper (0.58) hoary; urgency=low
+. 
+.   * Remove postfix shutdown links, as well as startup, to avoid an ugly error
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 24 Mar 2005 18:24:03 -0800
+. 
+}
+. casper (0.57) hoary; urgency=low
+. 
+.   * Merge colin.watson@canonical.com--2005/casper--translations--0 up to
+.     patch-2
+{ 11
+.   * Preseed netcfg/wireless_essid_again for noninteractive network setup, +new
+.     in netcfg 1.08ubuntu3 [colin.watson@canonical.com--2005/casper--netcfg--0]
+}
+. 
+[ 13
+.  -- 
+] 13
+{ 13
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 23 Mar 2005 08:33:46 -0800
+}
+. 
+}
+. casper (0.56) hoary; urgency=low
+. 
+.   * Suppress error output from eject
+.   * Remind the user to close the CD tray if they have one (Ubuntu #6668)
+[ 4
+{ 7
+.   * Add arch-build target to debian/rules
+}
+. 
+[ 5
+.  -- 
+] 4
+{ 4
+.   * Add arch-build target to debian/rules
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 22 Mar 2005 10:21:41 -0800
+}
+] 5
+{ 5
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 22 Mar 2005 10:21:41 -0800
+}
+. 
+}
+. casper (0.55) hoary; urgency=low
+. 
+.   * Remove the hack introduced in 0.54, xorg 6.8.2-5 should be fixed
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 16 Mar 2005 18:11:05 -0800
+. 
+. casper (0.54) hoary; urgency=low
+. 
+.   * Temporarily set RECONFIGURE=true when reconfiguring xserver-xorg, to work
+.     around a bug introduced in 6.8.2-3
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 16 Mar 2005 15:08:45 -0800
+. 
+. casper (0.53) hoary; urgency=low
+. 
+.   * Provide target-base-system (i.e. base system installed in /target, also
+.     provided by base-installer).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 15 Mar 2005 13:01:53 +0000
+. 
+}
+. casper (0.52) hoary; urgency=low
+. 
+.   * Arrange for $LANG to be set after pivot_root, so that (e.g.)
+.     xserver-xorg can use it to infer the keymap (Ubuntu #7138)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 12 Mar 2005 02:10:59 -0800
+. 
+. casper (0.51) hoary; urgency=low
+. 
+.   * Disable kpersonalizer startup on first login
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat,  5 Mar 2005 13:47:13 -0800
+. 
+. casper (0.50) hoary; urgency=low
+. 
+.   * Add support for configuring kdm autologin
+.   * Rename 15gdm-autologin to 15autologin, and the corresponding debconf template
+.   * Remove obsolete XORG_FORCE_PROBE from 20xconfig
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu,  3 Mar 2005 10:37:31 -0800
+. 
+. casper (0.49) hoary; urgency=low
+. 
+.   * Fix 20xconfig harder
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Mar 2005 21:20:03 -0800
+. 
+. casper (0.48) hoary; urgency=low
+. 
+.   * Source confmodule in 20xconfig
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Mar 2005 21:02:35 -0800
+. 
+. casper (0.47) hoary; urgency=low
+. 
+.   * Copy over the value of debian-installer/keymap into the target system,
+.     to allow the new logic in xserver-xorg.config to work
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Mar 2005 20:45:38 -0800
+. 
+. casper (0.46) hoary; urgency=low
+. 
+.   * Lock the live user's password entirely.  Since the user is now
+.     automagically logged in, continuously, both on the console and in X,
+.     their password is irrelevant.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon, 28 Feb 2005 08:31:13 -0800
+. 
+. casper (0.45) hoary; urgency=low
+. 
+.   * Enable TimedLogin in gdm, so that if the user logs out, they are
+.     automatically logged back in after a few seconds (Ubuntu #6667)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sun, 27 Feb 2005 16:06:16 -0800
+. 
+. casper (0.44) hoary; urgency=low
+. 
+.   * Configure init to spawn shells on virtual consoles, rather than login
+.     prompts (Ubuntu #6666)
+.   * Skip X configuration if a serial console is in use
+.   * Set the live user's password to be blank, rather than "ubuntu".  This
+.     is, paradoxically, more secure if the user decides to install
+.     openssh-server, since empty passwords are disallowed by default
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sun, 27 Feb 2005 15:40:15 -0800
+. 
+. casper (0.43) hoary; urgency=low
+. 
+.   * Override localechooser progress bar text to be more appropriate for the
+.     live CD (closes: Ubuntu #6664).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Thu, 24 Feb 2005 19:12:00 +0000
+. 
+. casper (0.42) hoary; urgency=low
+. 
+.   * Preseed netcfg/no_interfaces, to avoid prompt when no network interfaces
+.     can be configured (closes: Ubuntu #6107).
+.   * Remove redundant DH_COMPAT setting in debian/rules, since there's
+.     already a (different) debian/compat.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 22 Feb 2005 12:43:43 +0000
+. 
+. casper (0.41) hoary; urgency=low
+. 
+.   * Cope with change in default /etc/sudoers (admin group).
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 22 Feb 2005 09:14:30 +0000
+. 
+. casper (0.40) hoary; urgency=low
+. 
+.   * Copy /dev/tts to the live system as well as /dev/vc, for serial console.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Mon, 21 Feb 2005 19:03:54 +0000
+. 
+. casper (0.39) hoary; urgency=low
+. 
+.   * Fix reboot operation (cache the reboot binary)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 10 Feb 2005 20:51:08 -0800
+. 
+. casper (0.38) hoary; urgency=low
+. 
+.   * Eject the CD during shutdown/reboot
+.     - Awful hack to copy /dev/cdroms to the live system, because the CD is
+.       mounted using devfs names
+.     - Add /usr/share/casper/shutdown script to casper-udeb
+.     - Copy /usr/share/casper/shutdown to /etc/rc[06].d in 25configure-init
+.   * Remove caspermon binary package, inadvertently enabled (not even
+.     remotely ready)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 10 Feb 2005 13:43:56 -0800
+. 
+. casper (0.37) hoary; urgency=low
+. 
+.   * Fix casper-udeb/runlevel template
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  8 Feb 2005 19:37:43 -0800
+. 
+. casper (0.36) hoary; urgency=low
+. 
+.   * Rename post.d/25disable-init-scripts to 25configure-init
+.   * Add casper-udeb/runlevel, to allow the default runlevel
+.     to be set
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue,  8 Feb 2005 19:14:16 -0800
+. 
+. casper (0.35) hoary; urgency=low
+. 
+.   * Preseed netcfg/wireless_essid
+.   * Remove obsolete confmodule load from pre.d/12fstab
+.   * Don't mount a tmpfs on /var/run; it doesn't save a huge amount of
+.     snapshot space, and packages expect their directories there to be
+.     persistent
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Mon,  7 Feb 2005 15:46:52 -0800
+. 
+. casper (0.34) hoary; urgency=low
+. 
+.   * Use casper-reconfigure in 10adduser as well
+.   * Add post.d/93save-logs to save copies of the bootstrap logs to
+.     /var/log/casper
+.   * Stop reconfiguring fontconfig; it insists on rebuilding the entire
+.     font cache, and the only benefit was to unable subpixel hints
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed,  2 Feb 2005 10:42:19 -0800
+. 
+. casper (0.33) hoary; urgency=low
+. 
+.   * Re-upload to fix borked source package
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sun, 30 Jan 2005 12:21:07 -0800
+. 
+. casper (0.32) hoary; urgency=low
+. 
+.   * Factor out debconf hackery into casper-reconfigure
+.   * Mount sysfs earlier, so we don't need to mess with it in 20xconfig
+.   * Break 22simple-reconfig into 22fontconfig and 22gnome-panel-data, and
+.     create progress bar text for them
+.   * Preseed netcfg/dhcp_failed, to avoid a prompt when DHCP fails
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 29 Jan 2005 14:03:36 -0800
+. 
+. casper (0.31) hoary; urgency=low
+. 
+.   * Clear tty2 and print a nice message, before signalling init
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 29 Jan 2005 13:15:44 -0800
+. 
+. casper (0.30) hoary; urgency=low
+. 
+.   * Reconfigure fontconfig, to enable subpixel rendering based on the
+.     hardware in use
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 27 Jan 2005 14:21:49 -0800
+. 
+. casper (0.29) hoary; urgency=low
+. 
+.   * Fix the problem described in 0.28 by preseeding a default for
+.     netcfg/get_hostname
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 25 Jan 2005 23:04:03 -0800
+. 
+. casper (0.28) hoary; urgency=low
+. 
+.   * Suppress network configuration questions
+.   
+.     - The goal is to make a reasonable effort to configure one interface
+.     automatically, but if that is not possible, fall back to no
+.     configuration.  We aren't quite there yet.
+.   
+.     - If we fail to resolve our IP into a hostname using DNS, netcfg seems
+.     to fall back to an empty value, rather than the default in the
+.     template.
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 25 Jan 2005 22:55:35 -0800
+. 
+. casper (0.27) hoary; urgency=low
+. 
+.   * Add post.d/22simple-reconfig
+.     - Reconfigure gnome-panel-data if it is installed, to set up the GNOME
+.       session based on whether the system is a laptop
+.     - Corresponding progress template
+.     - mount /proc earlier (needed for, e.g. laptop-detect)
+.   * Warn about screen blanking in X configuration progress message
+.   * Simplify post.d/20xconfig and pre.d/13swap a bit
+.   * Update TODO
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 22 Jan 2005 15:56:49 -0800
+. 
+. casper (0.26) hoary; urgency=low
+. 
+.   * Set NOPASSWD in /etc/sudoers for the initial user
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 16:53:49 -0800
+. 
+. casper (0.25) hoary; urgency=low
+. 
+.   * mount /proc before signalling init, as it now uses /proc to determine
+.     what is and is not a kernel thread
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 16:04:52 -0800
+. 
+. casper (0.24) hoary; urgency=low
+. 
+.   * Add a backtitle properly
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 09:07:19 -0800
+. 
+. casper (0.23) hoary; urgency=low
+. 
+.   * Add a backtitle
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 21 Jan 2005 09:02:01 -0800
+. 
+. casper (0.22) hoary; urgency=low
+. 
+.   * Search for swap on SCSI disks as well as IDE
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 14:27:09 -0800
+. 
+. casper (0.21) unstable; urgency=low
+. 
+.   * Cosmetic changes to debconf templates
+.   * Fix 10adduser to register debconf questions before setting their
+.     values and flags
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 14:14:20 -0800
+. 
+. casper (0.20) hoary; urgency=low
+. 
+.   * Remove legacy symlinks from casper/pre.d; they are now contained in
+.     the relevant udebs
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 13:22:33 -0800
+. 
+. casper (0.19) hoary; urgency=low
+. 
+.   * Update TODO
+.   * casper-udeb Depends: md-modules
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Jan 2005 11:23:51 -0800
+. 
+. casper (0.18) hoary; urgency=low
+. 
+.   * Enable new adduser code, using db_fset ... seen to suppress the questions
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 18 Jan 2005 15:06:48 -0800
+. 
+. casper (0.17) hoary; urgency=low
+. 
+.   * Convert snapshot setup to use debconf instead of hardcoded parameters
+.   * Remove obselete-before-being-used username template
+.   * Convert post.d/10adduser to use debconf passthrough to the passwd package,
+.     and thus share its user-adding code rather than duplicating it.
+.     - But don't enable it yet, since we need to find a way to prevent its
+.     questions from being asked
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 18 Jan 2005 13:04:48 -0800
+. 
+. casper (0.16) hoary; urgency=low
+. 
+.   * casper-udeb Depends: casper-check, harddrive-detection
+.   * Automatically find and enable swap devices
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Tue, 18 Jan 2005 11:23:48 -0800
+. 
+. casper (0.15) hoary; urgency=low
+. 
+.   * Set anna/standard_modules to false at startup to suppress unnecessary
+.     udeb retrieval.
+. 
+.  -- Colin Watson <cjwatson@ubuntu.com>  Tue, 18 Jan 2005 13:41:00 +0000
+. 
+. casper (0.14) hoary; urgency=low
+. 
+.   * Enable X autoconfiguration(!)
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Sat, 15 Jan 2005 02:19:58 -0800
+. 
+. casper (0.13) hoary; urgency=low
+. 
+.   * Rename templates so that they are named after the {pre,post}.d hook
+.     which uses them
+.   * Remove some unused templates
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Fri, 14 Jan 2005 10:11:02 -0800
+. 
+. casper (0.12) hoary; urgency=low
+. 
+.   * Add debconf templates for various things that we currently hardcode.
+.     Not actually used yet due to need for testing, but having the
+.     templates present greatly simplifies testing the remaining integration
+.     work
+. 
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Thu, 13 Jan 2005 20:32:39 -0800
+. 
+. casper (0.11) hoary; urgency=low
+. 
+.   * Update post.d/20xconfig to use debconf passthrough to cdebconf
+.     (requires debconf 1.4.42 and cdebconf 0.75), but leave it disabled for
+.     now
+.   * Create /etc/fstab in the target (this also seems to solve the problem
+.     with noatime disappearing, and so should reduce snapshot utilization)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Thu, 13 Jan 2005 18:25:36 -0800
+. 
+. casper (0.10) hoary; urgency=low
+. 
+.   * Remove rc?.d/K??hwclock.sh links, to avoid changing the system clock
+.     during reboot or shutdown
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Thu, 13 Jan 2005 18:13:31 -0800
+. 
+. casper (0.9) hoary; urgency=low
+. 
+.   * Fix gdm autologin configuration (broken in 0.8)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Wed, 12 Jan 2005 10:52:05 -0800
+. 
+. casper (0.8) hoary; urgency=low
+. 
+.   * Add debian-installer/casper-udeb/title template, to specify more
+.     readable menu item text
+.   * Create /usr/lib/casper/{pre,post}.d and move all of our internal logic
+.     there
+.   * Create temporary symlinks in pre.d for the prebaseconfig.d items we
+.     want
+.   * Convert errors into proper error dialogs
+.   * Make some pre.d scripts idempotent, for ease of testing
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Tue, 11 Jan 2005 16:59:35 -0800
+. 
+. casper (0.7) hoary; urgency=low
+. 
+.   * Disable X configuration temporarily; need to resolve debconf issues
+. 
+.  -- Matt Zimmerman <mdz@canonical.com>  Tue, 11 Jan 2005 13:14:43 -0800
+. 
+. casper (0.6) hoary; urgency=low
+. 
+.   * Allow "modprobe ext2" to fail; apparently it's sometimes compiled in
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Tue, 11 Jan 2005 12:12:28 -0800
+. 
+. casper (0.5) hoary; urgency=low
+. 
+.   * Attempt to configure X
+.     - This doesn't work very well yet (PCI BusID doesn't seem to get
+.     updated, for example), so we still don't start gdm by default)
+.   * Conditionalize some of the configuration code, so we automatically do
+.     the right thing if gdm or X isn't installed
+.   * Add German translation from Andreas Mueller
+.   * modprobe ext2, to let powerpc work (this should probably happen
+.     elsewhere, but for now...)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Sun,  9 Jan 2005 17:49:56 -0800
+. 
+. casper (0.4) hoary; urgency=low
+. 
+.   * Mount tmpfs on /tmp and /var/run, should save many writes to the snapshot
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Fri,  7 Jan 2005 18:35:26 -0800
+. 
+. casper (0.3) hoary; urgency=low
+. 
+.   * Disable anacron and postfix startup
+.   * Don't cripple /bin/apt-install in d-i (this was a workaround to
+.     prevent d-i from installing packages which should have been present in
+.     the filesystem image anyway, but weren't)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Fri,  7 Jan 2005 18:10:55 -0800
+. 
+. casper (0.2) hoary; urgency=low
+. 
+.   * Use mount --move to move the cdrom mount point, so that we can unmount
+.     /initrd and free up the memory used by d-i
+.   * Use /dev/ram1 rather than /dev/ram0 for the COW stuff, since /dev/ram0
+.     is used for initrds and we want to avoid confusion
+.   * Organize casper-udeb.postinst into shell functions
+.   * Add a progress bar
+.   * Add a debian/compat file (version 4)
+. 
+.  -- Matt Zimmerman <mdz@debian.org>  Fri,  7 Jan 2005 08:01:21 -0800
+. 
+. casper (0.1) hoary; urgency=low
+. 
+.   * Initial Release. 
+.   
+.  -- Matt Zimmerman <mdz@canonical.com>  Wed,  5 Jan 2005 14:30:28 -0800
+. 
+}
+] 23
+W

@@ -1,0 +1,13 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="d1430af95a731033a5063c3e5ea75caa52825039" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-27" timestamp="1126910063.000000000">
+<message>merg breezy
+Patches applied:
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-13
+   Set /apps/gnome-screensaver/lock if gnome-screensaver is installed
+
+</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-26" />
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-13" />
+</parents>
+</revision>

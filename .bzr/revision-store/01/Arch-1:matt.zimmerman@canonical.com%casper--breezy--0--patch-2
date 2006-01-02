@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="398151e1c37c4090013bbdbb4269a4ae40bbb24d" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2" timestamp="1125364107.000000000">
+<message>Add usplash support</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-1" />
+</parents>
+</revision>

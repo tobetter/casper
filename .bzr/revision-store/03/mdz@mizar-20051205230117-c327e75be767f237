@@ -1,0 +1,7 @@
+<revision committer="Matt Zimmerman &lt;mdz@mizar&gt;" format="5" inventory_sha1="b5b1753601d3451686dda31cadd45edb5bff3797" revision_id="mdz@mizar-20051205230117-c327e75be767f237" timestamp="1133823677.591428995" timezone="-28800">
+<message>Merge http://people.ubuntu.com/~cjwatson/bzr/casper/fixes</message>
+<parents>
+<revision_ref revision_id="mdz@mizar-20051205225817-93f41a294916187e" />
+<revision_ref revision_id="colin.watson@canonical.com-20051205220508-2a2f232b5f328480" />
+</parents>
+</revision>

@@ -1,0 +1,255 @@
+# bzr weave file v5
+i
+1 5cd1707d9c6445d727a8cc2d8efcc38c34fa484e
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 8dbc75eb224b25d82712398ab36cc09c9e8cf6da
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 5cd1707d9c6445d727a8cc2d8efcc38c34fa484e
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-3
+
+i 1
+1 5cd1707d9c6445d727a8cc2d8efcc38c34fa484e
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-6
+
+i 2
+1 11e47ce0dbc2266b74d07e54cf9ae20b84cdd76e
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 3 0
+1 c98fe5c0f8bd67650e70b9e237187159880d98ee
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-7
+
+i 5
+1 a1b67a57a09c35454e4c4a5ef330b3df66481e35
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-8
+
+i 6
+1 384977e65d60a05d312eab5212bf548496d88945
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-9
+
+i 7
+1 11e47ce0dbc2266b74d07e54cf9ae20b84cdd76e
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-10
+
+i 8
+1 39ab3cae547c9491c1a060fbb98a6a8171e20f34
+n tfheen@ubuntu.com-20051214120917-0eae7163985c81fd
+
+i 9
+1 a97c184f8468f186ef6e5fb70b03874b8f33aa03
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+w
+{ 0
+[ 9
+. #!/usr/bin/make -f
+] 9
+{ 9
+. #! /usr/bin/make -f
+}
+. 
+. # Uncomment this to turn on verbose mode.
+. #export DH_VERBOSE=1
+. 
+. VERSION:=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
+[ 6
+. DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -S
+] 6
+{ 6
+[ 7
+. DEB_BUILD_PROG:=dpkg-buildpackage -us -uc
+}
+] 7
+{ 7
+. DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -rfakeroot
+}
+. 
+. build: build-stamp
+. build-stamp:
+. 	dh_testdir
+. 
+. 	touch build-stamp
+. 
+. clean:
+. 	dh_testdir
+. #	dh_testroot
+. 	rm -f build-stamp configure-stamp
+. 
+. 	dh_clean
+. 
+. install: build
+. 	dh_testdir
+. #	dh_testroot
+. 	dh_clean -k
+. 	dh_installdirs
+[ 9
+. 	dh_install -pcasper-check debian-installer-startup.d main-menu.d lib
+. 	dh_install -pcasper-udeb casper usr/lib
+] 9
+[ 10
+. 	dh_install -pcasper-udeb bin/casper-reconfigure usr/bin
+. 	dh_install -pcasper-udeb share/shutdown usr/share/casper
+] 10
+{ 10
+. 	dh_install
+. 	install -m644 debian/casper.initramfs debian/casper/usr/share/initramfs-tools/scripts/casper
+. 	install -m755 debian/casper.initramfs-hooks debian/casper/usr/share/initramfs-tools/hooks/casper
+. 
+}
+. 
+. # Build architecture-independent files here.
+. binary-indep: build install
+[ 9
+. # We have nothing to do by default.
+] 9
+. 	dh_testdir
+[ 9
+. #	dh_testroot
+. 	dh_installdebconf	
+. 	install -m755 debian/casper-udeb.isinstallable debian/casper-udeb/DEBIAN/isinstallable
+. #	dh_installdocs
+] 9
+{ 9
+. 	dh_testroot
+. 	dh_installdocs
+}
+. #	dh_installinit
+[ 9
+. #	dh_installchangelogs 
+. #	dh_link
+. #	dh_compress
+] 9
+{ 9
+. 	dh_installchangelogs 
+. 	dh_link
+. 	dh_compress
+}
+. 	dh_fixperms
+. 	dh_installdeb
+[ 9
+. #	dh_perl
+] 9
+. 	dh_gencontrol
+[ 9
+. #	dh_md5sums
+] 9
+{ 9
+. 	dh_md5sums
+}
+. 	dh_builddeb
+[ 9
+. 
+. arch-build:
+. 	rm -rf debian/arch-build
+. 	mkdir -p debian/arch-build/casper-$(VERSION)
+. 	baz inventory -s | xargs cp -a --parents --target=debian/arch-build/casper-$(VERSION)
+[ 5
+. 	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG))
+] 5
+{ 5
+[ 8
+. 	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG); dpkg-genchanges -S > ../casper_$(DEBVER)_source.changes)
+}
+] 8
+{ 8
+. 	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG); dpkg-genchanges -S > ../casper_$(VERSION)_source.changes)
+}
+] 9
+. 
+. binary: binary-indep
+. .PHONY: build clean binary-indep binary-arch binary install
+}
+{ 1
+[ 5
+. #!/usr/bin/make -f
+. 
+. # Uncomment this to turn on verbose mode.
+. #export DH_VERBOSE=1
+{ 2
+. 
+. VERSION:=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
+[ 4
+. DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -S
+}
+{ 3
+. 
+. VERSION:=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
+. DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -S
+}
+] 4
+{ 4
+. DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -rfakeroot
+}
+. 
+. build: build-stamp
+. build-stamp:
+. 	dh_testdir
+. 
+. 	touch build-stamp
+. 
+. clean:
+. 	dh_testdir
+. #	dh_testroot
+. 	rm -f build-stamp configure-stamp
+. 
+. 	dh_clean
+. 
+. install: build
+. 	dh_testdir
+. #	dh_testroot
+. 	dh_clean -k
+. 	dh_installdirs
+. 	dh_install -pcasper-check debian-installer-startup.d main-menu.d lib
+. 	dh_install -pcasper-udeb casper usr/lib
+. 	dh_install -pcasper-udeb bin/casper-reconfigure usr/bin
+. 	dh_install -pcasper-udeb share/shutdown usr/share/casper
+. 
+. # Build architecture-independent files here.
+. binary-indep: build install
+. # We have nothing to do by default.
+. 	dh_testdir
+. #	dh_testroot
+. 	dh_installdebconf	
+. 	install -m755 debian/casper-udeb.isinstallable debian/casper-udeb/DEBIAN/isinstallable
+. #	dh_installdocs
+. #	dh_installinit
+. #	dh_installchangelogs 
+. #	dh_link
+. #	dh_compress
+. 	dh_fixperms
+. 	dh_installdeb
+. #	dh_perl
+. 	dh_gencontrol
+. #	dh_md5sums
+. 	dh_builddeb
+. 
+{ 2
+. arch-build:
+. 	rm -rf debian/arch-build
+. 	mkdir -p debian/arch-build/casper-$(VERSION)
+. 	baz inventory -s | xargs cp -a --parents --target=debian/arch-build/casper-$(VERSION)
+[ 4
+. 	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG))
+] 4
+{ 4
+. 	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG); dpkg-genchanges -S > ../casper_$(VERSION)_source.changes)
+}
+. 
+}
+{ 3
+. arch-build:
+. 	rm -rf debian/arch-build
+. 	mkdir -p debian/arch-build/casper-$(VERSION)
+. 	baz inventory -s | xargs cp -a --parents --target=debian/arch-build/casper-$(VERSION)
+. 	(cd debian/arch-build/casper-$(VERSION); $(DEB_BUILD_PROG))
+. 
+}
+. binary: binary-indep
+. .PHONY: build clean binary-indep binary-arch binary install
+}
+] 5
+W

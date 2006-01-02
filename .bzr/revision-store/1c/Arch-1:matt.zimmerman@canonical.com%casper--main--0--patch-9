@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="ee2c008a06b6ea8a89bb4c3ea8b2a91009593901" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-9" timestamp="1118946238.000000000">
+<message>Build with fakeroot</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-8" />
+</parents>
+</revision>

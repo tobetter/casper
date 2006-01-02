@@ -1,0 +1,552 @@
+# bzr weave file v5
+i
+1 391933c77ba8d01406b815523ddc69f6ad0d6dac
+n tfheen@ubuntu.com-20051214120917-0eae7163985c81fd
+
+i 0
+1 8bb1db95daed9397aa0950fc7faae3284da202d8
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+i 1
+1 f4e6fc42f3329fe627866bd1d67f82df46351e40
+n tfheen@ubuntu.com-20051214124642-89138620ced37930
+
+i 2
+1 96e7c7cd760d1ea06f2957fff9bda8c759b10039
+n tfheen@ubuntu.com-20051214130606-0de0e2952225e999
+
+i 3
+1 7d6d5e367845db81ae3ca7c9a7c8efed0987cf18
+n tfheen@ubuntu.com-20051214130656-9823b174be137318
+
+i 4
+1 7bcff76812f7b5f67a9f14ac0c78cd28ef5967f5
+n tfheen@ubuntu.com-20051214130821-7a475ecbea28ec78
+
+i 4
+1 7bcff76812f7b5f67a9f14ac0c78cd28ef5967f5
+n tfheen@ubuntu.com-20051214130924-6afc3baaec8afcd0
+
+i 6
+1 6d31945b1c23f36304504283c67696e850b211d3
+n tfheen@ubuntu.com-20051214131115-0c4a7359035044d1
+
+i 7
+1 9ba9538c52f3c666129d65d14ac478c2be6b84bb
+n tfheen@ubuntu.com-20051214131201-35bfbf665c8b054b
+
+i 8
+1 70f2ff293b9991a55e8452419301c849abd2f626
+n tfheen@ubuntu.com-20051214131232-af52ed74f91fb717
+
+i 9
+1 58ce3d41d4e48adcf84c6ca7802220202039024a
+n tfheen@ubuntu.com-20051214132627-4749c4ce7e95989a
+
+i 10
+1 5a64c0d2dbb017f53a4b1488af905b1c9f4e5f2f
+n tfheen@ubuntu.com-20051214132711-75394bb77e11c559
+
+i 11
+1 c5196625d798ac81c300d460932e3e9a999cd072
+n tfheen@ubuntu.com-20051214140312-1e06364ef45e19b7
+
+i 12
+1 06fe268ed97a2d0a9db0139bd74117a154eb9dd8
+n tfheen@ubuntu.com-20051215094048-37dd242c553b6e20
+
+i 13
+1 fbdd605243cdb3a67be3b2a21ac97c11bf04e849
+n tfheen@ubuntu.com-20051215095632-229550aec480ae83
+
+i 14
+1 c7b08884c29a859f0bdf13c60972a2a9c49f8013
+n tfheen@ubuntu.com-20051215100529-fae277deb3f30fea
+
+i 15
+1 fb8c381a1dde162500cc4310567e5b126b67ae18
+n tfheen@ubuntu.com-20051215101842-f3e34ef1c04c2758
+
+i 16
+1 c28f115c037fe13819e4623ad3c479e5872e1445
+n tfheen@ubuntu.com-20051215103937-14030edfd49b9ec8
+
+i 17
+1 6e6dba4b074e65e9298f993db1c24b0743cd408e
+n tfheen@ubuntu.com-20051215131344-ebe82457399fe788
+
+i 18
+1 2dd3f992d4f0e340d864640766e46cd7111a3ed9
+n tfheen@ubuntu.com-20051215141501-5f7ee7f14735373d
+
+i 19
+1 403c4405c045af7539910e31213e2868c470d2ba
+n tfheen@ubuntu.com-20051216050734-3c595c6c9e44beae
+
+i 20
+1 5128d5a4ac716d655f76e538ba229e0746387d59
+n tfheen@ubuntu.com-20051216051707-76d5e4b4988a5f9a
+
+i 21
+1 1cd4b38930ca710683d2669a524a4bf8e8c7c944
+n tfheen@ubuntu.com-20051216052959-d84d0b1aaacd8ae5
+
+i 22
+1 01e034b4a2cfa01760e1559d3ee949c2059646cc
+n tfheen@ubuntu.com-20051216054945-b543cf3b0b9d0fbc
+
+i 23
+1 d99ec2c3bbc6fb079d5494b61966a9804b96730e
+n tfheen@ubuntu.com-20051218121838-1c6d966af3954328
+
+i 24
+1 992c1dfca228e046dfb9a9226f8afcd94c107190
+n tfheen@ubuntu.com-20051219105508-7f4f96c1ab1dd8bb
+
+i 25
+1 a9de8efd5e72b74eabf64ea37fa5aa0a79ac38bc
+n tfheen@ubuntu.com-20051219121523-7adec0cf8c9c338a
+
+i 26
+1 b6cadc5efba053f592b3218f4465783de756913e
+n tfheen@ubuntu.com-20051219131857-5ce3baaa1637471d
+
+i 27
+1 7f3370abe37589397b1aa649a94027123ebbb2c6
+n tfheen@ubuntu.com-20060103095632-02e91f84ca023db6
+
+i 28
+1 e106dd7d475680805d6284beccc7e749b0c52cfa
+n tfheen@ubuntu.com-20060103111833-1947f5a94872a513
+
+w
+{ 0
+. #!/bin/sh
+. 
+. # set -e
+[ 4
+. set -x
+] 4
+{ 13
+[ 16
+. set -x
+}
+] 16
+. 
+. mountpoint=/cdrom
+. test -d $mountpoint || mkdir $mountpoint 2>/dev/null || true
+. 
+[ 21
+. casper_path=/casper/filesystem.cloop
+[ 18
+. 
+. get_params() {
+. 	for x in $(cat /proc/cmdline); do
+. 	        case $x in
+. 			casper_path=*)
+. 				casper_path=${x#casper_path=}
+. 				;;
+. 			casper_cow=*)
+. 				casper_cow=${x#casper_cow=}
+. 				;;
+. 		esac
+. 	done
+. 
+. 	fspath=$mountpoint/${casper_path#/}
+. }
+] 18
+{ 18
+] 21
+{ 21
+[ 24
+. casper_path=/casper/filesystem.squashfs
+}
+] 24
+{ 24
+[ 25
+. casper_path=/casper/filesystem.cloop
+}
+. fspath=$mountpoint/${casper_path#/}
+}
+{ 24
+. 
+] 25
+. overlay_method=unionfs
+. if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
+.     overlay_method=devmapper
+. fi
+}
+. 
+{ 25
+. casper_path() {
+.     path=$1
+.     if [ -e "$path/casper/filesystem.cloop" ]; then
+.         echo "$path/casper/filesystem.cloop"
+.         return 0
+.     elif [ -e "$path/casper/filesystem.squashfs" ]; then
+.         echo "$path/casper/filesystem.squashfs"
+.         return 0
+.     fi
+.     return 1
+. }
+. 
+}
+. get_backing_device() {
+[ 25
+. 	case "$fspath" in
+[ 20
+. 		*.cloop)
+. 			echo $(setup_cloop "$fspath")
+] 20
+{ 20
+] 25
+{ 25
+. 	case "$1" in
+}
+.             *.cloop)
+[ 25
+.                 echo $(setup_loop "$fspath" "cloop" "/sys/block/cloop*")
+] 25
+{ 25
+.                 echo $(setup_loop "$1" "cloop" "/sys/block/cloop*")
+}
+. 			;;
+[ 22
+. 		*.squashfs)
+. 			echo $(setup_loop "$fspath" "loop" "/sys/block/loop*")
+}
+. 			;;
+. 		*)
+. 			panic "Unrecognized casper filesystem: $fspath"
+. 			;;
+] 22
+{ 22
+.             *.squashfs)
+[ 25
+.                 echo $(setup_loop "$fspath" "loop" "/sys/block/loop*")
+] 25
+{ 25
+.                 echo $(setup_loop "$1" "loop" "/sys/block/loop*")
+}
+.                 ;;
+.             *)
+[ 25
+.                 panic "Unrecognized casper filesystem: $fspath"
+] 25
+{ 25
+.                 panic "Unrecognized casper filesystem: $1"
+}
+.                 ;;
+}
+. 	esac
+. }
+. 
+. setup_cow() {
+[ 12
+. 	casper_cow=unionfs # XXX
+. 	case "$casper_cow" in
+. 		unionfs)
+. 			setup_unionfs "$1" "$rootmnt"
+. 			;;
+] 12
+{ 12
+. 	case "$1" in
+.             unionfs)
+.                 setup_unionfs "$2" "$rootmnt"
+.                 ;;
+.             devmapper)
+.                 setup_devmapper "$2" "$rootmnt"
+}
+. 	esac
+. }
+. 
+[ 20
+. setup_cloop() {
+[ 3
+. 	modprobe -q cloop
+. 	# Wait for udev
+. 	while ! [ -e /dev/cloop0 ]; do
+. 		sleep 1
+. 	done
+. 
+] 3
+{ 3
+. 	modprobe -Qb cloop
+.         udevplug -W
+] 20
+{ 20
+. setup_loop() {
+.     local fspath=$1
+.     local module=$2
+.     local pattern=$3
+. 
+.     modprobe -Qb "$module"
+.     udevplug -W
+}
+.  
+}
+[ 5
+[ 6
+. 	losetup /dev/cloop0 "$fspath"
+. 	echo /dev/cloop0
+] 5
+{ 5
+.         for cloopdev in /sys/block/cloop*; do
+.             if [ "$(cat $cloopdev/size)" -eq 0 ]; then
+.                 dev=$(udevinfo -q name -p ${cloopdev#/sys})
+.                losetup "$dev" "$fspath"
+.                 echo "$dev"
+.                 return 0
+.             fi
+.         done
+.         return 1
+}
+] 6
+{ 6
+[ 20
+.         for cloopdev in /sys/block/cloop*; do
+.             if [ "$(cat $cloopdev/size)" -eq 0 ]; then
+[ 7
+.                 dev=$(udevinfo -q name -p ${cloopdev#/sys})
+] 7
+{ 7
+[ 8
+.                 dev=$(udevinfo -q name -p ${cloopdev#/sys} || echo $cloopdev)
+}
+] 8
+{ 8
+[ 9
+.                 dev=$(udevinfo -q name -p ${cloopdev#/sys} || echo /dev/${cloopdev##*/)
+}
+] 9
+{ 9
+[ 11
+.                 dev=$(udevinfo -q name -p ${cloopdev#/sys} || echo /dev/${cloopdev##*/})
+}
+] 11
+{ 11
+.                 dev=$(udevinfo -q name -p ${cloopdev#/sys} 2>/dev/null|| echo /dev/${cloopdev##*/})
+}
+.                losetup "$dev" "$fspath"
+.                 echo "$dev"
+.                 return 0
+.             fi
+.         done
+.         return 1
+}
+] 20
+{ 20
+.     for loopdev in $pattern; do
+.         if [ "$(cat $loopdev/size)" -eq 0 ]; then
+.             dev=$(udevinfo -q name -p ${loopdev#/sys} 2>/dev/null|| echo /dev/${loopdev##*/})
+.             losetup "$dev" "$fspath"
+.             echo "$dev"
+.             return 0
+.         fi
+.     done
+.     return 1
+}
+. }
+. 
+. get_fstype() {
+.              local FSTYPE
+.              local FSSIZE
+.              eval $(fstype < $1)
+.              echo $FSTYPE
+{ 12
+. }
+. 
+. setup_devmapper() {
+{ 14
+[ 18
+.     set -x
+}
+] 18
+.     backdev="$1"
+.     rootmnt="$2"
+. 
+.     modprobe -Qb dm-mod
+.     COW_DEVICE=/dev/ram1
+.     COW_NAME="casper-cow"
+. 
+[ 17
+.     BACKING_FILE_SIZE=$(blockdev --getsize "$LOOP_DEVICE")
+] 17
+{ 17
+.     BACKING_FILE_SIZE=$(blockdev --getsize "$backdev")
+}
+.     MAX_COW_SIZE=$(blockdev --getsize "$COW_DEVICE")
+.     CHUNK_SIZE=8 # sectors
+. 
+.     if [ -z "$COW_SIZE" -o "$COW_SIZE" -gt "$MAX_COW_SIZE" ]; then
+.         COW_SIZE=$MAX_COW_SIZE
+.     fi
+. 
+.     echo "0 $COW_SIZE linear $COW_DEVICE 0" | dmsetup create $COW_NAME
+. 
+[ 15
+.     echo "0 $BACKING_FILE_SIZE snapshot $backdev */dev/mapper/$COW_NAME p $CHUNK_SIZE" | \
+] 15
+{ 15
+.     echo "0 $BACKING_FILE_SIZE snapshot $backdev /dev/mapper/$COW_NAME p $CHUNK_SIZE" | \
+}
+.         dmsetup create casper-snapshot
+[ 27
+. 	mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt
+] 27
+{ 27
+[ 28
+. 	mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt || panic "Can not mount /dev/mapper/casper/snapshot on $rootmnt"
+}
+] 28
+{ 28
+.     if [ "$(get_fstype $backdev)" = "unknown" ]; then
+.         panic "Unknown file system type on $backdev"
+.     fi
+.     mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt || panic "Can not mount /dev/mapper/casper/snapshot on $rootmnt"
+}
+. 
+}
+. }
+. 
+. setup_unionfs() {
+. 	backdev="$1"
+. 	rootmnt="$2"
+. 
+[ 3
+. 	modprobe -q unionfs
+] 3
+{ 3
+. 	modprobe -Qb unionfs
+}
+. 	mkdir /cow
+. 	mount -t tmpfs tmpfs /cow
+. 
+. 	mkdir /rofs
+[ 23
+. 	mount -t $(get_fstype "$backdev") "$backdev" /rofs
+] 23
+{ 23
+[ 27
+. 	mount -t $(get_fstype "$backdev") -o ro "$backdev" /rofs
+}
+] 27
+{ 27
+{ 29
+.     if [ "$(get_fstype $backdev)" = "unknown" ]; then
+.         panic "Unknown file system type on $backdev"
+.     fi
+}
+. 	mount -t $(get_fstype "$backdev") -o ro "$backdev" /rofs || panic "Can not mount $backdev on /rofs"
+}
+. 
+. 	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"
+. }
+. 
+. find_cd() {
+. 	mounted=
+.         for sysblock in /sys/block/*; do
+.             devname=$(udevinfo -q name -p ${sysblock#/sys})
+.             if /lib/udev/cdrom_id /dev/$devname > /dev/null; then
+[ 18
+. 
+[ 10
+.                 mount -t iso9660 "/dev/$devname" $mountpoint || continue
+] 10
+{ 10
+] 18
+.                 mount -t iso9660 -o ro "/dev/$devname" $mountpoint || continue
+}
+[ 25
+.                 if [ -e "$fspath" ]; then
+] 25
+{ 25
+[ 26
+.                 if casper_path $mountpoint;
+] 26
+{ 26
+.                 if casper_path $mountpoint; then
+}
+.                     echo $(casper_path $mountpoint)
+}
+.                     return;
+.                 else
+.                     umount $mountpoint
+.                 fi
+.             fi
+.         done
+[ 25
+. 
+.         panic "Unable to find a CD-ROM containing '$casper_path'"
+] 25
+. }
+. 
+. mountroot() {
+{ 2
+[ 4
+.     set -x
+}
+] 4
+. 	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
+. 	run_scripts /scripts/casper-premount
+. 	[ "$quiet" != "y" ] && log_end_msg
+{ 2
+[ 4
+.     set -x
+}
+] 4
+[ 18
+. 	get_params
+] 18
+[ 25
+. 	find_cd
+[ 12
+. 	setup_cow "$(get_backing_device)" "$rootmnt"
+] 12
+{ 12
+[ 13
+. 	setup_cow unionfs "$(get_backing_device)" "$rootmnt"
+}
+] 13
+{ 13
+[ 19
+. 	setup_cow devmapper "$(get_backing_device)" "$rootmnt"
+}
+] 19
+{ 19
+[ 24
+. 	setup_cow unionfs "$(get_backing_device)" "$rootmnt"
+}
+] 24
+{ 24
+. 	setup_cow "$overlay_method" "$(get_backing_device)" "$rootmnt"
+}
+] 25
+{ 25
+. 	live_image=$(find_cd)
+.         if [ "$?" -gt 0 ]; then
+.             panic "Unable to find a CD-ROM containing a live file system"
+.         fi
+. 	setup_cow "$overlay_method" "$(get_backing_device $live_image)" "$rootmnt"
+}
+. 	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
+[ 1
+. 	run_scripts /scripts/casper-bottom
+] 1
+{ 1
+{ 2
+[ 4
+.     set -x
+}
+] 4
+. 	PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
+}
+{ 2
+[ 4
+.     set -x
+}
+] 4
+. 	[ "$quiet" != "y" ] && log_end_msg
+. }
+}
+W

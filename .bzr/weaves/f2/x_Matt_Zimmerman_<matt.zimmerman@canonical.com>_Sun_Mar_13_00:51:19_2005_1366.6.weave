@@ -1,0 +1,218 @@
+# bzr weave file v5
+i
+1 4248106c18da8e83d990e6d202ab3f4fc68fd51f
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 4248106c18da8e83d990e6d202ab3f4fc68fd51f
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 1 0
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-10
+
+i 0
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-26
+
+i 4 3
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 5
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n tfheen@ubuntu.com-20051214123713-b0c607646607b738
+
+i 6
+1 17a9df4a660b82621a45b950238dd254bd6e7361
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+i 7
+1 49810170d02057fe8c1fadf683d7a23d7b428fc3
+n tfheen@ubuntu.com-20051214124642-89138620ced37930
+
+i 8
+1 301fc6db8963f3908c5f83071e706adf4b6fdcfa
+n tfheen@ubuntu.com-20051214124825-89ead86bf4751314
+
+i 9
+1 8311e62a9f1bef8ac960db38fe6c16ba4165fa55
+n tfheen@ubuntu.com-20051214124902-a8d255ac44a858a2
+
+i 10
+1 edcfb702a8bf0a90e0d5f5986730d3970c7a5bd2
+n tfheen@ubuntu.com-20051214130034-c6ca52855429553b
+
+i 11
+1 5534f5451e698e7feac93784bee4109d94a01132
+n tfheen@ubuntu.com-20051219132042-a0f399338aaacf39
+
+i 12
+1 cc69d581660143c645a74872b9c48b2b69fd279b
+n tfheen@ubuntu.com-20060102121808-24cd694a35a7ca60
+
+i 13
+1 940a1c561568710dd2d97efe8fe0017af22d78e7
+n tfheen@ubuntu.com-20060103153818-fcba68a7a9f881f4
+
+i 14
+1 84911c3bcc0db25d1516db76416163f0e03fae28
+n tfheen@ubuntu.com-20060103154106-b28cc6a50711c94c
+
+w
+{ 0
+. #!/bin/sh
+[ 7
+. 
+. . /usr/share/debconf/confmodule
+] 7
+{ 8
+. 
+. PREREQ=""
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+[ 12
+. 
+. set -x
+}
+] 12
+. 
+[ 13
+. USERNAME="ubuntu"
+] 13
+{ 13
+. echo set passwd/root-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
+. echo set passwd/user-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
+. echo set passwd/user-fullname 'Ubuntu LiveCD user' | chroot /root debconf-communicate -fnoninteractive
+. echo set passwd/username 'ubuntu' | chroot /root debconf-communicate -fnoninteractive
+}
+{ 14
+. echo set passwd/user-uid 999 | chroot /root debconf-communicate -fnoninteractive
+}
+. 
+[ 7
+. for question in username user-fullname user-password user-password-again; do
+.     db_register debian-installer/dummy passwd/$question
+.     db_set passwd/$question $USERNAME
+.     db_fset passwd/$question seen true
+. done
+] 7
+{ 7
+[ 9
+. chroot /root adduser --disabled-password "$USERNAME"
+. chroot /root adduser "$USERNAME" ubuntu
+}
+] 9
+{ 9
+[ 10
+. chroot /root /usr/sbin/adduser --disabled-password "$USERNAME"
+. chroot /root /usr/sbin/adduser "$USERNAME" ubuntu
+}
+] 10
+{ 10
+[ 13
+. chroot /root /usr/sbin/adduser --gecos "" --disabled-password  "$USERNAME"
+{ 11
+. chroot /root /usr/sbin/adduser --group --system admin
+}
+. chroot /root /usr/sbin/adduser "$USERNAME" admin
+. chroot /root /usr/sbin/adduser "$USERNAME" plugdev
+. chroot /root /usr/sbin/adduser "$USERNAME" audio
+. chroot /root /usr/sbin/adduser "$USERNAME" video
+. chroot /root /usr/sbin/adduser "$USERNAME" scanner
+}
+] 13
+{ 13
+[ 15
+. chroot /root user-setup-apply
+}
+] 15
+{ 15
+. chroot /root /usr/lib/user-setup/user-setup-apply
+}
+. 
+[ 7
+. casper-reconfigure -fpassthrough passwd
+. 
+. if [ -f /etc/sudoers ]; then
+.     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /etc/sudoers
+] 7
+{ 7
+. if [ -f /root/etc/sudoers ]; then
+[ 11
+.     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers
+}
+] 11
+{ 11
+.     grep -q '^%admin' /root/etc/sudoers && sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers || echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers
+}
+. fi
+. 
+[ 7
+. # Lock the user's password
+. passwd -l $USERNAME
+. 
+[ 3
+{ 4
+. # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+. echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
+. 
+}
+. exit 0
+}
+{ 1
+. #!/bin/sh
+. 
+. . /usr/share/debconf/confmodule
+. 
+. USERNAME="ubuntu"
+. 
+. for question in username user-fullname user-password user-password-again; do
+.     db_register debian-installer/dummy passwd/$question
+.     db_set passwd/$question $USERNAME
+.     db_fset passwd/$question seen true
+. done
+. 
+. casper-reconfigure -fpassthrough passwd
+. 
+. if [ -f /etc/sudoers ]; then
+.     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /etc/sudoers
+. fi
+. 
+. # Lock the user's password
+. passwd -l $USERNAME
+] 3
+{ 3
+] 7
+. # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+[ 7
+. echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
+}
+] 7
+{ 7
+. echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
+}
+. 
+{ 2
+. # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+. echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
+. 
+}
+. exit 0
+}
+W

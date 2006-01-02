@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="58b2fb3bc1ca4a5b3da65f10e25ba7b016cb2984" revision_id="tfheen@ubuntu.com-20060103111833-1947f5a94872a513" timestamp="1136287113.218911886" timezone="3600">
+<message>also handle unknown file systems when doing unionfs</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060103095632-02e91f84ca023db6" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

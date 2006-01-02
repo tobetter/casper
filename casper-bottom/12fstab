@@ -15,12 +15,12 @@ prereqs)
        ;;
 esac
 
-ROOTDEV=/dev/cloop0
 FSTAB=/root/etc/fstab
 
 cat > $FSTAB <<EOF
-$ROOTDEV / auto noatime 0 0
 tmpfs /tmp tmpfs nosuid,nodev 0 0
 EOF
+
+rm -f /root/etc/rcS.d/S10checkroot.sh
 
 exit 0

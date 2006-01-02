@@ -1,0 +1,11 @@
+# bzr weave file v5
+i
+1 6b1d1631535cdc6149fee4c348b24f0b942d9357
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+w
+{ 0
+. /usr/share/initramfs-tools/hooks/
+. /usr/share/initramfs-tools/scripts
+}
+W

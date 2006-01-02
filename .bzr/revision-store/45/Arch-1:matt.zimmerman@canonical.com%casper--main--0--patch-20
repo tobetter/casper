@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="e34b854c0f0053cfde4fce29e4fb911ae824718d" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-20" timestamp="1124232261.000000000">
+<message>Fix changelog</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-19" />
+</parents>
+</revision>

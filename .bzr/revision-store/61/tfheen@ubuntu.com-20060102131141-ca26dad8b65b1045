@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="3a3dbd4a3f8c290f59124329a3e4b3ec652e4287" revision_id="tfheen@ubuntu.com-20060102131141-ca26dad8b65b1045" timestamp="1136207501.853039980" timezone="3600">
+<message>disable checkroot, since it doesn't make any sense and remove / entry from fstab</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060102121808-24cd694a35a7ca60" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

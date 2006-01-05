@@ -15,11 +15,12 @@ prereqs)
        ;;
 esac
 
-echo set passwd/root-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
-echo set passwd/user-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
-echo set passwd/user-fullname 'Ubuntu LiveCD user' | chroot /root debconf-communicate -fnoninteractive
-echo set passwd/username 'ubuntu' | chroot /root debconf-communicate -fnoninteractive
-echo set passwd/user-uid 999 | chroot /root debconf-communicate -fnoninteractive
+DEBCONFCOMMANDS="set passwd/root-password-crypted *\n"
+DEBCONFCOMMANDS="set passwd/user-password-crypted *\n$DEBCONFCOMMANDS"
+DEBCONFCOMMANDS="set passwd/user-fullname Ubuntu LiveCD user\n$DEBCONFCOMMANDS"
+DEBCONFCOMMANDS="set passwd/username ubuntu\n$DEBCONFCOMMANDS"
+DEBCONFCOMMANDS="set passwd/user-uid 999\n$DEBCONFCOMMANDS"
+echo "$DEBCONFCOMMANDS" | chroot /root debconf-communicate -fnoninteractive
 
 chroot /root /usr/lib/user-setup/user-setup-apply
 

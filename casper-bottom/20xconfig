@@ -34,8 +34,9 @@ done
 mount -n -o bind /sys /root/sys
 mount -n -o bind /proc /root/proc
 
-echo set xserver-xorg/autodetect_keyboard true | chroot /root debconf-communicate -fnoninteractive > /dev/null
-echo fset xserver-xorg/autodetect_keyboard seen true | chroot /root debconf-communicate -fnoninteractive > /dev/null
+DEBCONFCOMMANDS="set xserver-xorg/autodetect_keyboard true\n"
+DEBCONFCOMMANDS="fset xserver-xorg/autodetect_keyboard seen true\n$DEBCONFCOMMANDS"
+echo "$DEBCONFCOMMANDS" | chroot /root debconf-communicate -fnoninteractive > /dev/null
 
 LANG=$(grep ^$locale /root/usr/share/i18n/SUPPORTED | sed -e 's, .*,,' -e q) casper-reconfigure xserver-xorg
 umount /root/sys

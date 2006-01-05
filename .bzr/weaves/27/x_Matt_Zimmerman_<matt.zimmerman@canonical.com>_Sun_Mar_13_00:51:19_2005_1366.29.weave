@@ -39,6 +39,10 @@ i 8
 1 94f8037cb9e850b2e8e7179f720423e8fc1fb016
 n tfheen@ubuntu.com-20051219110305-f723ae41d39fdd4f
 
+i 9
+1 ba6e3a067a96dc112fa4c46b4a9a43b4efd5e9c2
+n tfheen@ubuntu.com-20060105034657-de1c37c76203e67a
+
 w
 { 0
 . Source: casper
@@ -70,11 +74,16 @@ w
 . 
 ] 8
 . Package: casper
+[ 10
 . Architecture: all
 [ 8
 . Priority: optional
 ] 8
 { 8
+] 10
+{ 10
+. Architecture: any
+}
 . Section: misc
 . Priority: extra
 }

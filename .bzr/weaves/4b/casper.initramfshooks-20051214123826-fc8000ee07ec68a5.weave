@@ -35,6 +35,10 @@ i 7
 1 d8145f34d3c3837eea2cabad71c3cea077d6f57d
 n tfheen@ubuntu.com-20051219110734-c131dad06e17b7d0
 
+i 8
+1 d6b0e676e0d8b21012c33ce25488d716cab0ea97
+n tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197
+
 w
 { 0
 . #!/bin/sh -e
@@ -106,5 +110,10 @@ w
 . # cdrom modules
 . manual_add_modules sr_mod
 . manual_add_modules ide-cd
+}
+{ 9
+. 
+. # integrity check
+, copy_exec /usr/lib/casper/casper-md5check /bin
 }
 W

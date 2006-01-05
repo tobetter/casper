@@ -6,7 +6,7 @@ Build-Depends: debhelper (>> 4.2.0)
 Standards-Version: 3.6.1
 
 Package: casper
-Architecture: all
+Architecture: any
 Section: misc
 Priority: extra
 Depends: initramfs-tools, dmsetup

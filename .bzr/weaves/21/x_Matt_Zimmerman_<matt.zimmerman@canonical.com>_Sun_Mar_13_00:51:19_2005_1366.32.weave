@@ -43,6 +43,18 @@ i 9
 1 a97c184f8468f186ef6e5fb70b03874b8f33aa03
 n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
 
+i 10
+1 5e080bf4a13453128755ec74531221180fd45f64
+n tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197
+
+i 11
+1 cb9e19d2a1fb09eda1da5f1578f538c14e0c0b38
+n tfheen@ubuntu.com-20060104134149-b9acc92d9cb9c3aa
+
+i 12
+1 f51b7e00b44b40933901a653deb2b0cfff4e4dc4
+n tfheen@ubuntu.com-20060105093824-313cdac179083995
+
 w
 { 0
 [ 9
@@ -71,6 +83,9 @@ w
 . build: build-stamp
 . build-stamp:
 . 	dh_testdir
+{ 11
+. 	cd casper-md5check && make
+}
 . 
 . 	touch build-stamp
 . 
@@ -78,6 +93,14 @@ w
 . 	dh_testdir
 . #	dh_testroot
 . 	rm -f build-stamp configure-stamp
+{ 11
+[ 12
+. 	cd casper-md5check && make clean
+}
+] 12
+{ 12
+. 	-cd casper-md5check && make clean
+}
 . 
 . 	dh_clean
 . 
@@ -98,14 +121,24 @@ w
 . 	dh_install
 . 	install -m644 debian/casper.initramfs debian/casper/usr/share/initramfs-tools/scripts/casper
 . 	install -m755 debian/casper.initramfs-hooks debian/casper/usr/share/initramfs-tools/hooks/casper
+{ 11
+. 	install -m755 casper-md5check/casper-md5check debian/casper/usr/lib/casper
+}
 . 
 }
 . 
 . # Build architecture-independent files here.
+[ 13
 . binary-indep: build install
 [ 9
 . # We have nothing to do by default.
 ] 9
+] 13
+{ 13
+. binary-indep:
+. 
+. binary-arch: build install
+}
 . 	dh_testdir
 [ 9
 . #	dh_testroot
@@ -160,7 +193,12 @@ w
 }
 ] 9
 . 
+[ 13
 . binary: binary-indep
+] 13
+{ 13
+. binary: binary-indep binary-arch
+}
 . .PHONY: build clean binary-indep binary-arch binary install
 }
 { 1

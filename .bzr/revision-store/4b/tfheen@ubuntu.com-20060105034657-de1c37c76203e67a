@@ -1,0 +1,10 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="3f0502882a045be888ebef77450b8edfc4fc7e98" revision_id="tfheen@ubuntu.com-20060105034657-de1c37c76203e67a" timestamp="1136432817.936774015" timezone="3600">
+<message>Merge in md5 checker
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060104115653-bc7d9af14a7f490f" />
+<revision_ref revision_id="tfheen@ubuntu.com-20060105033706-3bb62e30b3ffd259" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

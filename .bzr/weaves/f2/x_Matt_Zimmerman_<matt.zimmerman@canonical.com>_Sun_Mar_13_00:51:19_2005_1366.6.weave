@@ -63,6 +63,10 @@ i 14
 1 84911c3bcc0db25d1516db76416163f0e03fae28
 n tfheen@ubuntu.com-20060103154106-b28cc6a50711c94c
 
+i 15
+1 9f7ade64329b2cdb5d181739f27614b317aa4961
+n tfheen@ubuntu.com-20060104115653-bc7d9af14a7f490f
+
 w
 { 0
 . #!/bin/sh
@@ -96,6 +100,7 @@ w
 . USERNAME="ubuntu"
 ] 13
 { 13
+[ 16
 . echo set passwd/root-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
 . echo set passwd/user-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
 . echo set passwd/user-fullname 'Ubuntu LiveCD user' | chroot /root debconf-communicate -fnoninteractive
@@ -103,6 +108,15 @@ w
 }
 { 14
 . echo set passwd/user-uid 999 | chroot /root debconf-communicate -fnoninteractive
+}
+] 16
+{ 16
+. DEBCONFCOMMANDS="set passwd/root-password-crypted *\n"
+. DEBCONFCOMMANDS="set passwd/user-password-crypted *\n$DEBCONFCOMMANDS"
+. DEBCONFCOMMANDS="set passwd/user-fullname Ubuntu LiveCD user\n$DEBCONFCOMMANDS"
+. DEBCONFCOMMANDS="set passwd/username ubuntu\n$DEBCONFCOMMANDS"
+. DEBCONFCOMMANDS="set passwd/user-uid 999\n$DEBCONFCOMMANDS"
+. echo "$DEBCONFCOMMANDS" | chroot /root debconf-communicate -fnoninteractive
 }
 . 
 [ 7

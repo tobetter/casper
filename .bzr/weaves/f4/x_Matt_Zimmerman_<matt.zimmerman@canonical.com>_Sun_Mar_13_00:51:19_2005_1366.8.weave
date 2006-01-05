@@ -115,6 +115,10 @@ i 27
 1 0fc29dc621365443151049b5f9b5b6097938c5ef
 n tfheen@ubuntu.com-20060103153417-5b1d1e9db0cea007
 
+i 28
+1 7511d32353d414d8312710a2af437a7d4239e9db
+n tfheen@ubuntu.com-20060104115653-bc7d9af14a7f490f
+
 w
 { 0
 . #!/bin/sh
@@ -356,8 +360,15 @@ w
 }
 ] 28
 { 28
+[ 29
 . echo set xserver-xorg/autodetect_keyboard true | chroot /root debconf-communicate -fnoninteractive > /dev/null
 . echo fset xserver-xorg/autodetect_keyboard seen true | chroot /root debconf-communicate -fnoninteractive > /dev/null
+}
+] 29
+{ 29
+. DEBCONFCOMMANDS="set xserver-xorg/autodetect_keyboard true\n"
+. DEBCONFCOMMANDS="fset xserver-xorg/autodetect_keyboard seen true\n$DEBCONFCOMMANDS"
+. echo "$DEBCONFCOMMANDS" | chroot /root debconf-communicate -fnoninteractive > /dev/null
 }
 . 
 }

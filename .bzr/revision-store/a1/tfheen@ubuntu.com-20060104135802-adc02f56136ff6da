@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2c82123817b4974ec17bf75759006db64d66d496" revision_id="tfheen@ubuntu.com-20060104135802-adc02f56136ff6da" timestamp="1136383082.188122988" timezone="3600">
+<message>rename script so it can go into a script variable</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060104134811-e30014a9ec0ce100" />
+</parents>
+<properties><property name="branch-nick">integrity-check</property>
+</properties>
+</revision>

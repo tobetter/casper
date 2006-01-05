@@ -1,3 +1,19 @@
+casper (1.23) dapper; urgency=low
+
+  * Move the building to binary-dep, since we're an arch: any package
+    now.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Thu,  5 Jan 2006 10:37:31 +0100
+
+casper (1.22) dapper; urgency=low
+
+  * Bunch debconf-communicate commands together to speed up the boot a
+    little bit.
+  * Add integrity checker, this is compiled code, so casper is now arch:
+    any
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed,  4 Jan 2006 12:56:13 +0100
+
 casper (1.21) dapper; urgency=low
 
   * If locale is unset, use en_US.UTF8, not whatever comes first in the

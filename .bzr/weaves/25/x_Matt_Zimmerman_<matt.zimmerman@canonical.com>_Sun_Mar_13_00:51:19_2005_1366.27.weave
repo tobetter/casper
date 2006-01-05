@@ -307,6 +307,18 @@ i 75
 1 7bd819e000d69017a878f4d08bd1e718d3a548a8
 n tfheen@ubuntu.com-20060102121808-24cd694a35a7ca60
 
+i 76
+1 c359411e06813575dd8c7df91f34170f0964886a
+n tfheen@ubuntu.com-20060104115653-bc7d9af14a7f490f
+
+i 77
+1 850eb27ea1bc5ec65907221fc0f4bf762e2ee290
+n tfheen@ubuntu.com-20060105034657-de1c37c76203e67a
+
+i 78
+1 1159ab77a89a189a58575cf6873fcb467bb72002
+n tfheen@ubuntu.com-20060105093824-313cdac179083995
+
 w
 { 0
 { 23
@@ -557,13 +569,47 @@ w
 { 72
 { 73
 { 75
+[ 77
 . casper (1.21) UNRELEASED; urgency=low
+] 77
+{ 77
+[ 78
+. casper (1.22) UNRELEASED; urgency=low
+] 78
+{ 78
+{ 79
+. casper (1.23) dapper; urgency=low
+. 
+.   * Move the building to binary-dep, since we're an arch: any package
+.     now.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Thu,  5 Jan 2006 10:37:31 +0100
+. 
+}
+. casper (1.22) dapper; urgency=low
+}
+. 
+.   * Bunch debconf-communicate commands together to speed up the boot a
+.     little bit.
+{ 78
+.   * Add integrity checker, this is compiled code, so casper is now arch:
+.     any
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed,  4 Jan 2006 12:56:13 +0100
+. 
+. casper (1.21) dapper; urgency=low
+}
 . 
 .   * If locale is unset, use en_US.UTF8, not whatever comes first in the
 .     list of supported locales.
 .   * Generate locale and set the locale in /etc/environment
 { 76
 .   * Use user-setup to create the user, rather than doing it ourselves.
+}
+{ 77
+.   * Various cleanups and fixes, such as making debconf-communicate silent
+.   * Disable checkroot when booting
 }
 . 
 .  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon,  2 Jan 2006 11:00:25 +0100

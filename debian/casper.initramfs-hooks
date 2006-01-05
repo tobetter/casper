@@ -46,3 +46,6 @@ manual_add_modules loop
 # cdrom modules
 manual_add_modules sr_mod
 manual_add_modules ide-cd
+
+# integrity check
+copy_exec /usr/lib/casper/casper-md5check /bin

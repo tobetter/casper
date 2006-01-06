@@ -1,3 +1,12 @@
+casper (1.24) dapper; urgency=low
+
+  * For debconf-communicate, use a here-doc rather than trying to have \n
+    working in shell variables.
+  * The usplash fifo has moved, update paths accordingly.  Also conflict
+    with the old usplash and depend on new enough initramfs-tools.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri,  6 Jan 2006 14:20:37 +0100
+
 casper (1.23) dapper; urgency=low
 
   * Move the building to binary-dep, since we're an arch: any package

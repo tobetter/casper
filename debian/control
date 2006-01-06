@@ -9,5 +9,6 @@ Package: casper
 Architecture: any
 Section: misc
 Priority: extra
-Depends: initramfs-tools, dmsetup
+Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup
+Conflicts: usplash (<< 0.1-30)
 Description: Run a "live" preinstalled system from read-only media

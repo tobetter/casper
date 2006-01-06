@@ -319,6 +319,18 @@ i 78
 1 1159ab77a89a189a58575cf6873fcb467bb72002
 n tfheen@ubuntu.com-20060105093824-313cdac179083995
 
+i 79
+1 f15014e07308613e63b271b50275b45b628606c4
+n tfheen@ubuntu.com-20060106132121-76c1766fab8652e8
+
+i 80
+1 e012b7fcdb915fcbe718402d3514b7378f239459
+n tfheen@ubuntu.com-20060109105158-c46896c744448553
+
+i 81
+1 ea714e398c5cbbfc45b859b43962086889d9f9d3
+n tfheen@ubuntu.com-20060109113811-be0d7410db5abd89
+
 w
 { 0
 { 23
@@ -578,6 +590,24 @@ w
 ] 78
 { 78
 { 79
+{ 80
+[ 82
+. casper (1.24) UNRELEASED; urgency=low
+] 82
+{ 82
+. casper (1.24) dapper; urgency=low
+}
+. 
+.   * For debconf-communicate, use a here-doc rather than trying to have \n
+.     working in shell variables.
+{ 81
+.   * The usplash fifo has moved, update paths accordingly.  Also conflict
+.     with the old usplash and depend on new enough initramfs-tools.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri,  6 Jan 2006 14:20:37 +0100
+. 
+}
 . casper (1.23) dapper; urgency=low
 . 
 .   * Move the building to binary-dep, since we're an arch: any package

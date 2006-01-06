@@ -55,6 +55,10 @@ i 12
 1 56951d38629f8d320af22bb3dcc85d3e76c775a1
 n tfheen@ubuntu.com-20060105033706-3bb62e30b3ffd259
 
+i 13
+1 4362b0d96f2ef6df66897d3ba9d7ba8db3e69d0f
+n tfheen@ubuntu.com-20060109105158-c46896c744448553
+
 w
 { 0
 . /* casper-md5check - a tool to check md5sums and talk to usplash
@@ -92,8 +96,13 @@ w
 . #include <math.h>
 }
 . 
+[ 14
 . #define USPLASH_FIFO "/dev/usplash_fifo"
 { 8
+] 14
+{ 14
+. #define USPLASH_FIFO "/dev/.initramfs/usplash_fifo"
+}
 . #define MAXTRIES 5
 }
 . #include "md5.h"

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="5d1ce37d2c782d8d36629efabef78f28fe3721fc" revision_id="tfheen@ubuntu.com-20060106132121-76c1766fab8652e8" timestamp="1136553681.656513929" timezone="3600">
+<message>use heredoc instead of embedding \n in shell variables</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060105093824-313cdac179083995" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

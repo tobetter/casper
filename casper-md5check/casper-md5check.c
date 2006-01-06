@@ -28,7 +28,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define USPLASH_FIFO "/dev/usplash_fifo"
+#define USPLASH_FIFO "/dev/.initramfs/usplash_fifo"
 #define MAXTRIES 5
 #include "md5.h"
 #define DEBUG

@@ -119,6 +119,14 @@ i 28
 1 e106dd7d475680805d6284beccc7e749b0c52cfa
 n tfheen@ubuntu.com-20060103111833-1947f5a94872a513
 
+i 29
+1 4d5e983d8bf6ffcf1ee05bc08bb6d3eb83f346ca
+n tfheen@ubuntu.com-20060109142534-82c558eec36560d5
+
+i 30
+1 ccd583cbf839c51336e120e85da49f1e5ac69a61
+n tfheen@ubuntu.com-20060109150552-83c5224691efc002
+
 w
 { 0
 . #!/bin/sh
@@ -407,6 +415,16 @@ w
 }
 . 
 }
+{ 30
+.     mkdir "$rootmnt/rofs"
+[ 31
+.     mount -t $(get_fstype "$backdev") "$backdev" "$rootmnt/rofs"
+}
+] 31
+{ 31
+.     echo "0 $BACKING_FILE_SIZE linear $backdev 0" | dmsetup create casper-backing
+.     mount -t $(get_fstype "$backdev") /dev/mapper/casper-backing "$rootmnt/rofs"
+}
 . }
 . 
 . setup_unionfs() {
@@ -441,6 +459,11 @@ w
 }
 . 
 . 	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"
+{ 30
+. 
+.         mkdir "$rootmnt/rofs"
+.         mount -o bind /rofs "$rootmnt/rofs"
+}
 . }
 . 
 . find_cd() {

@@ -1,3 +1,9 @@
+casper (1.25) dapper; urgency=low
+
+  * Make /rofs available to in the target system. 
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon,  9 Jan 2006 15:25:12 +0100
+
 casper (1.24) dapper; urgency=low
 
   * For debconf-communicate, use a here-doc rather than trying to have \n

@@ -97,6 +97,9 @@ setup_devmapper() {
     fi
     mount -t $(get_fstype "$backdev") /dev/mapper/casper-snapshot $rootmnt || panic "Can not mount /dev/mapper/casper/snapshot on $rootmnt"
 
+    mkdir "$rootmnt/rofs"
+    echo "0 $BACKING_FILE_SIZE linear $backdev 0" | dmsetup create casper-backing
+    mount -t $(get_fstype "$backdev") /dev/mapper/casper-backing "$rootmnt/rofs"
 }
 
 setup_unionfs() {
@@ -114,6 +117,9 @@ setup_unionfs() {
 	mount -t $(get_fstype "$backdev") -o ro "$backdev" /rofs || panic "Can not mount $backdev on /rofs"
 
 	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"
+
+        mkdir "$rootmnt/rofs"
+        mount -o bind /rofs "$rootmnt/rofs"
 }
 
 find_cd() {

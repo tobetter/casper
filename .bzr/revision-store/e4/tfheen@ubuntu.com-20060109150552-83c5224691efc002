@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="283fd7f9c61dc4d4b67880bc9288bb51f6597204" revision_id="tfheen@ubuntu.com-20060109150552-83c5224691efc002" timestamp="1136819152.425570965" timezone="3600">
+<message>handle devmapper correctly as well</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060109142534-82c558eec36560d5" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

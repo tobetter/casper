@@ -331,6 +331,14 @@ i 81
 1 ea714e398c5cbbfc45b859b43962086889d9f9d3
 n tfheen@ubuntu.com-20060109113811-be0d7410db5abd89
 
+i 82
+1 d6fc4fa9d302fc5f16ca100c62a9b9366bd02dd3
+n tfheen@ubuntu.com-20060109142534-82c558eec36560d5
+
+i 83
+1 afd3455be3a8d90a050513d54ecdc40190493682
+n tfheen@ubuntu.com-20060109155259-ac925280a5f6f8a1
+
 w
 { 0
 { 23
@@ -595,6 +603,19 @@ w
 . casper (1.24) UNRELEASED; urgency=low
 ] 82
 { 82
+{ 83
+[ 84
+. casper (1.25) UNRELEASED; urgency=low
+] 84
+{ 84
+. casper (1.25) dapper; urgency=low
+}
+. 
+.   * Make /rofs available to in the target system. 
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon,  9 Jan 2006 15:25:12 +0100
+. 
+}
 . casper (1.24) dapper; urgency=low
 }
 . 

@@ -1,6 +1,9 @@
 #!/bin/sh
 
 PREREQ=""
+DESCRIPTION="Adding live cd user"
+
+. /scripts/functions
 
 prereqs()
 {
@@ -15,6 +18,8 @@ prereqs)
        ;;
 esac
 
+log_begin_msg "$DESCRIPTION"
+
 chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
 set passwd/root-password-crypted *
 set passwd/user-password-crypted *
@@ -23,7 +28,7 @@ set passwd/username ubuntu
 set passwd/user-uid 999
 EOF
 
-chroot /root /usr/lib/user-setup/user-setup-apply
+chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
 
 if [ -f /root/etc/sudoers ]; then
     grep -q '^%admin' /root/etc/sudoers && sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers || echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers
@@ -32,4 +37,4 @@ fi
 # XXX - awful hack to stop xscreensaver locking the screen (#7150)
 echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
-exit 0
+log_end_msg

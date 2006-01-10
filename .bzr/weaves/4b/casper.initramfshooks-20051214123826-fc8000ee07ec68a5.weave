@@ -39,6 +39,10 @@ i 8
 1 d6b0e676e0d8b21012c33ce25488d716cab0ea97
 n tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197
 
+i 9
+1 f3604dcc28b7fffe650186255588641bea82e363
+n tfheen@ubuntu.com-20060110120653-7b97d01b816bbfa1
+
 w
 { 0
 . #!/bin/sh -e
@@ -85,6 +89,9 @@ w
 { 4
 . mkdir -p ${DESTDIR}/lib/udev
 . copy_exec /lib/udev/cdrom_id /lib/udev
+{ 10
+. copy_exec /lib/udev/vol_id /lib/udev
+}
 . copy_exec /usr/bin/udevinfo /bin
 . 
 }
@@ -114,6 +121,11 @@ w
 { 9
 . 
 . # integrity check
+[ 10
 , copy_exec /usr/lib/casper/casper-md5check /bin
+}
+] 10
+{ 10
+. copy_exec /usr/lib/casper/casper-md5check /bin
 }
 W

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="1371a569ab3fde6ee9bbb9fc9161f3fc5d2e8b2a" revision_id="tfheen@ubuntu.com-20060110152431-8586697dd35e1ddd" timestamp="1136906671.725017071" timezone="3600">
+<message>sleep for thirty seconds trying to load persistency</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060110135603-cb26a984418a9d05" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

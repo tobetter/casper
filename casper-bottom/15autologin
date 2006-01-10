@@ -1,6 +1,9 @@
 #!/bin/sh
 
 PREREQ=""
+DESCRIPTION="Setting up automatic login"
+
+. /scripts/functions
 
 prereqs()
 {
@@ -14,6 +17,8 @@ prereqs)
        exit 0
        ;;
 esac
+
+log_begin_msg "$DESCRIPTION"
 
 username="ubuntu"
 
@@ -51,4 +56,4 @@ EOF
     fi
 fi
 
-exit 0
+log_end_msg

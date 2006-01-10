@@ -31,12 +31,30 @@ i 6
 1 7c46648395eb3d748e3dfa28c29f5495ad793709
 n tfheen@ubuntu.com-20051219132042-a0f399338aaacf39
 
+i 7
+1 baaaab7e23a818e079894a5a9dcba65038b9eec9
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 7
+1 baaaab7e23a818e079894a5a9dcba65038b9eec9
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
 w
 { 0
 . #!/bin/sh
 { 5
 . 
 . PREREQ=""
+{ 8
+. DESCRIPTION="Setting up automatic login"
+. 
+. . /scripts/functions
+}
+{ 9
+. DESCRIPTION="Setting up automatic login"
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -54,6 +72,14 @@ w
 . set -x
 }
 ] 7
+{ 8
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+{ 9
+. 
+. log_begin_msg "$DESCRIPTION"
+}
 . 
 [ 3
 . . /usr/share/debconf/confmodule
@@ -129,6 +155,8 @@ w
 .     fi
 . fi
 . 
+[ 8
+[ 9
 . exit 0
 }
 { 1
@@ -176,4 +204,12 @@ w
 . exit 0
 }
 ] 2
+] 8
+{ 8
+. log_end_msg
+}
+] 9
+{ 9
+. log_end_msg
+}
 W

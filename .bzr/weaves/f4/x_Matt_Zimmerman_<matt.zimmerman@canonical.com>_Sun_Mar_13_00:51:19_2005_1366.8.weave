@@ -123,12 +123,30 @@ i 29
 1 8e84162e03bbe30c6e8672d5e42212b84a683620
 n tfheen@ubuntu.com-20060106132121-76c1766fab8652e8
 
+i 30
+1 042d95f234a1097043937ed9ef67ca5779fe19af
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 30
+1 042d95f234a1097043937ed9ef67ca5779fe19af
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
 w
 { 0
 . #!/bin/sh
 . 
 { 18
 . PREREQ=""
+{ 31
+. DESCRIPTION="Configuring X"
+. 
+. . /scripts/functions
+}
+{ 32
+. DESCRIPTION="Configuring X"
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -147,6 +165,14 @@ w
 }
 ] 26
 { 26
+{ 31
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+{ 32
+. 
+. log_begin_msg "$DESCRIPTION"
+}
 . 
 }
 . if [ "$TERM_TYPE" = "serial" ]; then
@@ -388,5 +414,13 @@ w
 }
 . umount /root/sys
 . umount /root/proc
+}
+{ 31
+. 
+. log_end_msg
+}
+{ 32
+. 
+. log_end_msg
 }
 W

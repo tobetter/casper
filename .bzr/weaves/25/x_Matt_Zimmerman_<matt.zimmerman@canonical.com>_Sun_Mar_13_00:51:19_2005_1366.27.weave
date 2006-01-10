@@ -339,6 +339,14 @@ i 83
 1 afd3455be3a8d90a050513d54ecdc40190493682
 n tfheen@ubuntu.com-20060109155259-ac925280a5f6f8a1
 
+i 84
+1 2f93dd90f88b8c28dc5612abd4d2410883323943
+n tfheen@ubuntu.com-20060110165421-eed85941716b6a14
+
+i 85
+1 b89ab1a8e6b0824ee8b8b29260e2dd7638d8bc64
+n tfheen@ubuntu.com-20060110195558-b02d8ded30675ff0
+
 w
 { 0
 { 23
@@ -608,6 +616,23 @@ w
 . casper (1.25) UNRELEASED; urgency=low
 ] 84
 { 84
+{ 85
+{ 86
+. casper (1.27) dapper; urgency=low
+. 
+.   * Try using unionfs on ppc again 
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 10 Jan 2006 20:55:19 +0100
+. 
+}
+. casper (1.26) dapper; urgency=low
+. 
+.   * Add persistency support
+.   * Usplash integration
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 10 Jan 2006 17:53:54 +0100
+. 
+}
 . casper (1.25) dapper; urgency=low
 }
 . 

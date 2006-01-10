@@ -1,6 +1,9 @@
 #! /bin/sh
 
 PREREQ=""
+DESCRIPTION="Setting up locales"
+
+. /scripts/functions
 
 prereqs()
 {
@@ -15,6 +18,8 @@ prereqs)
        ;;
 esac
 
+log_begin_msg "$DESCRIPTION"
+
 locale=en_US.UTF-8
 for x in $(cat /proc/cmdline); do
                 case $x in
@@ -28,3 +33,5 @@ LANG=$(grep "^${locale}" /root/usr/share/i18n/SUPPORTED | sed -e 's, .*,,' -e q)
 
 printf 'LANG="%s"\n' "${LANG}" >> /root/etc/environment
 chroot /root /usr/sbin/locale-gen "${LANG}"
+
+log_end_msg

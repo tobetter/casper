@@ -127,6 +127,50 @@ i 30
 1 ccd583cbf839c51336e120e85da49f1e5ac69a61
 n tfheen@ubuntu.com-20060109150552-83c5224691efc002
 
+i 31
+1 72d31331237cffb08cc81d8076360d6456ccef5d
+n tfheen@ubuntu.com-20060110100612-82e0af3a7def57d8
+
+i 32
+1 53d554d978742fdcaeb274c0cce3e636687ae165
+n tfheen@ubuntu.com-20060110113507-23dce0472cd1d7f7
+
+i 33
+1 b7b3094683e332b832f4756bc1b1e837d8dccbb9
+n tfheen@ubuntu.com-20060110114433-55272a2421a96694
+
+i 34
+1 2a65ab6bbf661bfb680021384908a5bcdd0e4a7d
+n tfheen@ubuntu.com-20060110115637-9476ecf6c43f46eb
+
+i 35
+1 40cbdb12e9712ea6cbb689fe204a0ee867a2b6c5
+n tfheen@ubuntu.com-20060110120653-7b97d01b816bbfa1
+
+i 36
+1 ab0cf43d2c93ea36c1d3b4260a242204fe6bb617
+n tfheen@ubuntu.com-20060110130011-65eb194bad3a3adb
+
+i 37
+1 42b9e586b7c289c0a8775daa9d65ba2c1b824808
+n tfheen@ubuntu.com-20060110131611-1fdc6f849f649a3a
+
+i 38
+1 dd52f84489a472a19a4664f9f5785eb0e0045473
+n tfheen@ubuntu.com-20060110133652-6b03b960030af34a
+
+i 39
+1 89e6a875f8ff949b92e78714cf94ad0a48a6edb6
+n tfheen@ubuntu.com-20060110135603-cb26a984418a9d05
+
+i 40
+1 987ac3a923c3f27e0f4eee2cdb39cf512e2452fd
+n tfheen@ubuntu.com-20060110152431-8586697dd35e1ddd
+
+i 41
+1 948415e7ac68b9eb531257968ad548022cbda0f1
+n tfheen@ubuntu.com-20060110195558-b02d8ded30675ff0
+
 w
 { 0
 . #!/bin/sh
@@ -180,9 +224,16 @@ w
 . 
 ] 25
 . overlay_method=unionfs
+[ 42
 . if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
 .     overlay_method=devmapper
 . fi
+}
+] 42
+{ 42
+. #if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
+. #    overlay_method=devmapper
+. #fi
 }
 . 
 { 25
@@ -427,18 +478,96 @@ w
 }
 . }
 . 
+{ 36
+. find_cow_device() {
+{ 37
+.     udevplug -b
+}
+.     for sysblock in /sys/block/*; do
+[ 37
+.         devname=$(udevinfo -q name -p ${sysblock#/sys})
+] 37
+{ 37
+.         devname=$(udevinfo -q name -p ${sysblock#/sys} 2>/dev/null || echo ${sysblock##*/})
+}
+.         for part in /dev/$devname*; do
+[ 38
+.             if [ "$(/lib/udev/vol_id -l $part)" = "casper-cow"]; then
+] 38
+{ 38
+[ 40
+.             if [ "$(/lib/udev/vol_id -l $part)" = "casper-cow" ]; then
+}
+[ 39
+.                 echo "/dev/$part"
+] 39
+{ 39
+] 40
+{ 40
+.             if [ "$(/lib/udev/vol_id -l $part 2>/dev/null)" = "casper-cow" ]; then
+}
+.                 echo "$part"
+}
+.                 return
+.             fi
+.         done
+.     done
+.     
+. }
+. 
+}
 . setup_unionfs() {
 . 	backdev="$1"
 . 	rootmnt="$2"
+{ 33
+[ 36
+.         cowdevice=/dev/disk/by-label/casper-cow # Used if available, else tmpfs
+}
+] 36
+{ 36
+. 
+[ 41
+.         cowdevice=$(find_cow_device) # or tmpfs, if it's not a block device
+}
+] 41
+{ 41
+.         modprobe -Qb unionfs
+.         mkdir /cow
+}
 . 
 [ 3
 . 	modprobe -q unionfs
 ] 3
 { 3
+[ 41
 . 	modprobe -Qb unionfs
 }
 . 	mkdir /cow
+[ 33
 . 	mount -t tmpfs tmpfs /cow
+] 33
+{ 33
+. 	if [ -b "$cowdevice" ]; then
+.             mount -t $(get_fstype "$cowdevice") -o rw "$cowdevice" /cow || panic "Can not mount $cowdevice on /cow"
+] 41
+{ 41
+.         if grep -q persistent /proc/cmdline; then
+.             i=0
+.             # We love udev and the kernel!
+.             while [ "$i" -lt 300 ]; do
+.                 cowdevice=$(find_cow_device) 
+.                 if [ -b "$cowdevice" ]; then
+.                     mount -t $(get_fstype "$cowdevice") -o rw "$cowdevice" /cow || panic "Can not mount $cowdevice on /cow"
+.                     break
+.                 fi
+.                 sleep 0.1
+.                 i=$(( $i + 1 ))
+.             done
+}
+.         else
+.             mount -t tmpfs tmpfs /cow
+.         fi
+}
 . 
 . 	mkdir /rofs
 [ 23
@@ -510,6 +639,7 @@ w
 .     set -x
 }
 ] 4
+[ 32
 . 	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
 . 	run_scripts /scripts/casper-premount
 . 	[ "$quiet" != "y" ] && log_end_msg
@@ -570,6 +700,42 @@ w
 }
 ] 4
 . 	[ "$quiet" != "y" ] && log_end_msg
+] 32
+{ 32
+.     if [ -x /sbin/usplash_write ]; then
+.         /sbin/usplash_write "TIMEOUT 120"
+.     fi
+.     
+.     
+.     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
+.     run_scripts /scripts/casper-premount
+.     [ "$quiet" != "y" ] && log_end_msg
+{ 34
+. 
+}
+.     live_image=$(find_cd)
+.     if [ "$?" -gt 0 ]; then
+.         panic "Unable to find a CD-ROM containing a live file system"
+.     fi
+[ 34
+.     log_msg_end
+] 34
+.     
+.     setup_cow "$overlay_method" "$(get_backing_device $live_image)" "$rootmnt"
+{ 34
+. 
+[ 35
+.     log_msg_end
+] 35
+{ 35
+.     log_end_msg
+}
+. 
+}
+.     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
+.     PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
+.     [ "$quiet" != "y" ] && log_end_msg
+}
 . }
 }
 W

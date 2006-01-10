@@ -11,11 +11,29 @@ i 1
 1 36d65057d6df9d0b815e8e4a61804389ef93e081
 n tfheen@ubuntu.com-20060103153445-a5020bef1ed3b32e
 
+i 2
+1 68ec040831c71d6644ab7b8c8b65bb11da952e00
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 2
+1 68ec040831c71d6644ab7b8c8b65bb11da952e00
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
 w
 { 0
 . #! /bin/sh
 . 
 . PREREQ=""
+{ 3
+. DESCRIPTION="Setting up locales"
+. 
+. . /scripts/functions
+}
+{ 4
+. DESCRIPTION="Setting up locales"
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -30,6 +48,14 @@ w
 .        ;;
 . esac
 . 
+{ 3
+. log_begin_msg "$DESCRIPTION"
+. 
+}
+{ 4
+. log_begin_msg "$DESCRIPTION"
+. 
+}
 . locale=en_US.UTF-8
 . for x in $(cat /proc/cmdline); do
 .                 case $x in
@@ -48,5 +74,13 @@ w
 ] 2
 { 2
 . chroot /root /usr/sbin/locale-gen "${LANG}"
+}
+{ 3
+. 
+. log_end_msg
+}
+{ 4
+. 
+. log_end_msg
 }
 W

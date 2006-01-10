@@ -1,6 +1,9 @@
 #!/bin/sh
 
 PREREQ=""
+DESCRIPTION="Configuring screensaver"
+
+. /scripts/functions
 
 prereqs()
 {
@@ -15,7 +18,11 @@ prereqs)
        ;;
 esac
 
+log_begin_msg "$DESCRIPTION"
+
 gnome_screensaver_version=$(chroot /root dpkg-query -W --showformat='${Version}' gnome-screensaver 2>/dev/null) || gnome_screensaver_version=""
 if [ -n "$gnome_screensaver_version" ]; then
     chroot /root gconftool-2 -t bool -s /apps/gnome-screensaver/lock false
 fi
+
+log_end_msg

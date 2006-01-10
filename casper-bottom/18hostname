@@ -1,5 +1,25 @@
 #! /bin/sh
 
+PREREQ=""
+DESCRIPTION="Setting hostname"
+
+. /scripts/functions
+
+prereqs()
+{
+       echo "$PREREQ"
+}
+
+case $1 in
+# get pre-requisites
+prereqs)
+       prereqs
+       exit 0
+       ;;
+esac
+
+log_begin_msg "$DESCRIPTION"
+
 echo "ubuntu" > /root/etc/hostname
 cat > /root/etc/hosts <<EOF
 127.0.0.1       ubuntu localhost.localdomain       localhost
@@ -13,3 +33,5 @@ ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 
 EOF
+
+log_end_msg

@@ -27,12 +27,32 @@ i 5
 1 0c61ed78717997a94bad63ad87030747200795c2
 n tfheen@ubuntu.com-20060102131141-ca26dad8b65b1045
 
+i 6
+1 701257040ecac69ca201c428faec06bff65e93bb
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 6
+1 701257040ecac69ca201c428faec06bff65e93bb
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
 w
 { 0
 . #!/bin/sh
 { 4
 . 
 . PREREQ=""
+{ 7
+. DESCRIPTION="Configuring fstab"
+. FSTAB=/root/etc/fstab
+. 
+. . /scripts/functions
+}
+{ 8
+. DESCRIPTION="Configuring fstab"
+. FSTAB=/root/etc/fstab
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -59,7 +79,17 @@ w
 [ 6
 . ROOTDEV=/dev/cloop0
 ] 6
+[ 7
+[ 8
 . FSTAB=/root/etc/fstab
+}
+] 7
+{ 7
+. log_begin_msg "$DESCRIPTION"
+}
+] 8
+{ 8
+. log_begin_msg "$DESCRIPTION"
 }
 . 
 . cat > $FSTAB <<EOF
@@ -73,6 +103,8 @@ w
 . rm -f /root/etc/rcS.d/S10checkroot.sh
 . 
 }
+[ 7
+[ 8
 . exit 0
 }
 { 1
@@ -90,4 +122,12 @@ w
 . exit 0
 }
 ] 2
+] 7
+{ 7
+. log_end_msg
+}
+] 8
+{ 8
+. log_end_msg
+}
 W

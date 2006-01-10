@@ -1,3 +1,16 @@
+casper (1.27) dapper; urgency=low
+
+  * Try using unionfs on ppc again 
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 10 Jan 2006 20:55:19 +0100
+
+casper (1.26) dapper; urgency=low
+
+  * Add persistency support
+  * Usplash integration
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 10 Jan 2006 17:53:54 +0100
+
 casper (1.25) dapper; urgency=low
 
   * Make /rofs available to in the target system. 

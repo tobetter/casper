@@ -6,9 +6,9 @@ mountpoint=/cdrom
 test -d $mountpoint || mkdir $mountpoint 2>/dev/null || true
 
 overlay_method=unionfs
-if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
-    overlay_method=devmapper
-fi
+#if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
+#    overlay_method=devmapper
+#fi
 
 casper_path() {
     path=$1
@@ -102,13 +102,42 @@ setup_devmapper() {
     mount -t $(get_fstype "$backdev") /dev/mapper/casper-backing "$rootmnt/rofs"
 }
 
+find_cow_device() {
+    udevplug -b
+    for sysblock in /sys/block/*; do
+        devname=$(udevinfo -q name -p ${sysblock#/sys} 2>/dev/null || echo ${sysblock##*/})
+        for part in /dev/$devname*; do
+            if [ "$(/lib/udev/vol_id -l $part 2>/dev/null)" = "casper-cow" ]; then
+                echo "$part"
+                return
+            fi
+        done
+    done
+    
+}
+
 setup_unionfs() {
 	backdev="$1"
 	rootmnt="$2"
 
-	modprobe -Qb unionfs
-	mkdir /cow
-	mount -t tmpfs tmpfs /cow
+        modprobe -Qb unionfs
+        mkdir /cow
+
+        if grep -q persistent /proc/cmdline; then
+            i=0
+            # We love udev and the kernel!
+            while [ "$i" -lt 300 ]; do
+                cowdevice=$(find_cow_device) 
+                if [ -b "$cowdevice" ]; then
+                    mount -t $(get_fstype "$cowdevice") -o rw "$cowdevice" /cow || panic "Can not mount $cowdevice on /cow"
+                    break
+                fi
+                sleep 0.1
+                i=$(( $i + 1 ))
+            done
+        else
+            mount -t tmpfs tmpfs /cow
+        fi
 
 	mkdir /rofs
     if [ "$(get_fstype $backdev)" = "unknown" ]; then
@@ -139,15 +168,25 @@ find_cd() {
 }
 
 mountroot() {
-	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
-	run_scripts /scripts/casper-premount
-	[ "$quiet" != "y" ] && log_end_msg
-	live_image=$(find_cd)
-        if [ "$?" -gt 0 ]; then
-            panic "Unable to find a CD-ROM containing a live file system"
-        fi
-	setup_cow "$overlay_method" "$(get_backing_device $live_image)" "$rootmnt"
-	[ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
-	PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
-	[ "$quiet" != "y" ] && log_end_msg
+    if [ -x /sbin/usplash_write ]; then
+        /sbin/usplash_write "TIMEOUT 120"
+    fi
+    
+    
+    [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
+    run_scripts /scripts/casper-premount
+    [ "$quiet" != "y" ] && log_end_msg
+
+    live_image=$(find_cd)
+    if [ "$?" -gt 0 ]; then
+        panic "Unable to find a CD-ROM containing a live file system"
+    fi
+    
+    setup_cow "$overlay_method" "$(get_backing_device $live_image)" "$rootmnt"
+
+    log_end_msg
+
+    [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
+    PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
+    [ "$quiet" != "y" ] && log_end_msg
 }

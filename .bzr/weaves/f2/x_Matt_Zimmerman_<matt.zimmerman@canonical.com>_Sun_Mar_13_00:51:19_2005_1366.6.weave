@@ -75,6 +75,14 @@ i 17
 1 14b4eab62924cc9ea94c6c8ab5e640e78ca6837f
 n tfheen@ubuntu.com-20060106132541-07f709ae79e8f305
 
+i 18
+1 379f7f8f0a1955d67635a9f787fffe3b194728f9
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 18
+1 379f7f8f0a1955d67635a9f787fffe3b194728f9
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
 w
 { 0
 . #!/bin/sh
@@ -85,6 +93,16 @@ w
 { 8
 . 
 . PREREQ=""
+{ 19
+. DESCRIPTION="Adding live cd user"
+. 
+. . /scripts/functions
+}
+{ 20
+. DESCRIPTION="Adding live cd user"
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -133,6 +151,14 @@ w
 . chroot /root debconf-communicate -fnoninteractive <<EOF
 ] 18
 { 18
+{ 19
+. log_begin_msg "$DESCRIPTION"
+. 
+}
+{ 20
+. log_begin_msg "$DESCRIPTION"
+. 
+}
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
 }
 . set passwd/root-password-crypted *
@@ -181,7 +207,17 @@ w
 }
 ] 15
 { 15
+[ 19
+[ 20
 . chroot /root /usr/lib/user-setup/user-setup-apply
+}
+] 19
+{ 19
+. chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
+}
+] 20
+{ 20
+. chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
 }
 . 
 [ 7
@@ -251,6 +287,16 @@ w
 . echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
 . 
 }
+[ 19
+[ 20
 . exit 0
+}
+] 19
+{ 19
+. log_end_msg
+}
+] 20
+{ 20
+. log_end_msg
 }
 W

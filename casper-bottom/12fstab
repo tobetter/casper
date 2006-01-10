@@ -1,6 +1,10 @@
 #!/bin/sh
 
 PREREQ=""
+DESCRIPTION="Configuring fstab"
+FSTAB=/root/etc/fstab
+
+. /scripts/functions
 
 prereqs()
 {
@@ -15,7 +19,7 @@ prereqs)
        ;;
 esac
 
-FSTAB=/root/etc/fstab
+log_begin_msg "$DESCRIPTION"
 
 cat > $FSTAB <<EOF
 tmpfs /tmp tmpfs nosuid,nodev 0 0
@@ -23,4 +27,4 @@ EOF
 
 rm -f /root/etc/rcS.d/S10checkroot.sh
 
-exit 0
+log_end_msg

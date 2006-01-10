@@ -1,6 +1,9 @@
 #!/bin/sh
 
 PREREQ=""
+DESCRIPTION="Setting up init"
+
+. /scripts/functions
 
 prereqs()
 {
@@ -14,6 +17,8 @@ prereqs)
        exit 0
        ;;
 esac
+
+log_begin_msg "$DESCRIPTION"
 
 # Arrange for shells on virtual consoles, rather than login prompts
 USERNAME="ubuntu"
@@ -38,5 +43,7 @@ fi
 if [ -f /etc/rc6.d/S90reboot ]; then
     cp -a /lib/casper/shutdown /root/etc/rc6.d/S89casper
 fi
+
+log_end_msg
 
 exit 0

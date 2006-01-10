@@ -43,12 +43,30 @@ i 9
 1 fd8810808aefd76386b75df0070acc530aa9623b
 n tfheen@ubuntu.com-20051219132042-a0f399338aaacf39
 
+i 10
+1 7f028afd1c224030fd5651605c9e59fa479ef437
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 10
+1 7f028afd1c224030fd5651605c9e59fa479ef437
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
 w
 { 0
 . #!/bin/sh
 { 7
 . 
 . PREREQ=""
+{ 11
+. DESCRIPTION="Setting up init"
+. 
+. . /scripts/functions
+}
+{ 12
+. DESCRIPTION="Setting up init"
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -66,6 +84,14 @@ w
 . set -x
 }
 ] 10
+{ 11
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+{ 12
+. 
+. log_begin_msg "$DESCRIPTION"
+}
 . 
 [ 6
 . . /usr/share/debconf/confmodule
@@ -152,6 +178,14 @@ w
 }
 . fi
 . 
+{ 11
+. log_end_msg
+. 
+}
+{ 12
+. log_end_msg
+. 
+}
 . exit 0
 }
 { 1

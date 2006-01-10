@@ -1,6 +1,9 @@
 #!/bin/sh
 
 PREREQ=""
+DESCRIPTION="Configuring gnome-panel-data"
+
+. /scripts/functions
 
 prereqs()
 {
@@ -15,6 +18,8 @@ prereqs)
        ;;
 esac
 
+log_begin_msg "$DESCRIPTION"
+
 if chroot /root /bin/sh -c laptop-detect; then
     casper-reconfigure gnome-panel-data
 fi
@@ -23,3 +28,5 @@ panel_version=$(chroot /target /usr/bin/dpkg-query-query -W --showformat='${Vers
 if [ -n "$panel_version" ]; then
     chroot /root /bin/sh -c 'gconftool-2 -t bool -s /apps/panel/global/disable_lock_screen true'
 fi
+
+log_end_msg

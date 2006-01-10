@@ -31,6 +31,18 @@ i 6
 1 e548b0f01f525f88c40ecbea3dc6a591bb01412d
 n tfheen@ubuntu.com-20051219132042-a0f399338aaacf39
 
+i 7
+1 145776f16531cd0aed0f95f65e10078a6db11028
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 7
+1 145776f16531cd0aed0f95f65e10078a6db11028
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
+i 9
+1 f14ddae2c7354b1adf7cdd0fbcb74cf1070cd33e
+n tfheen@ubuntu.com-20060110102718-75ad2c8d086d84ea
+
 w
 { 0
 . #!/bin/sh
@@ -40,6 +52,18 @@ w
 ] 5
 { 5
 . PREREQ=""
+{ 8
+. DESCRIPTION="Setting up swap"
+. FSTAB=/root/etc/fstab
+. 
+. . /scripts/functions
+}
+{ 9
+. DESCRIPTION="Setting up swap"
+. FSTAB=/root/etc/fstab
+. 
+. . /scripts/functions
+}
 . 
 . prereqs()
 . {
@@ -62,9 +86,21 @@ w
 . FSTAB=/target/etc/fstab
 ] 4
 { 4
+[ 8
+[ 9
 . FSTAB=/root/etc/fstab
 }
+] 8
+{ 8
+. log_begin_msg "$DESCRIPTION"
+}
+] 9
+{ 9
+. log_begin_msg "$DESCRIPTION"
+}
 . 
+[ 8
+[ 9
 . log() {
 [ 6
 .     logger -t casper "$@"
@@ -79,6 +115,8 @@ w
 ] 3
 { 3
 . log "Scanning for swap devices..."
+] 8
+] 9
 . devices=""
 . for device in /dev/[hs]d[a-z][0-9]*; do
 [ 4
@@ -110,7 +148,17 @@ w
 .     magic=$(dd if="$device" bs=4086 skip=1 count=1 2>/dev/null | dd bs=10 count=1 2>/dev/null) || continue
 .     
 .     if [ "$magic" = "SWAPSPACE2" -o "$magic" = "SWAP-SPACE" ]; then
+[ 8
+[ 9
 .         log "Found $device"
+] 8
+{ 8
+. #        log "Found $device"
+}
+] 9
+{ 9
+. #        log "Found $device"
+}
 .         devices="$devices $device"
 }
 .         fi
@@ -129,14 +177,28 @@ w
 . done
 }
 . 
+[ 8
+[ 9
 . log "Using swap devices: $devices"
+] 8
+{ 8
+. log_begin_msg "Using swap devices: $devices"
+}
+] 9
+{ 9
+[ 10
+. log_begin_msg "Using swap devices: $devices"
+}
 . 
+] 10
 . for device in $devices; do
 .     cat >> $FSTAB <<EOF
 . $device swap swap defaults 0 0
 . EOF
 . done
 . 
+[ 8
+[ 9
 . exit 0
 }
 { 1
@@ -187,4 +249,12 @@ w
 . exit 0
 }
 ] 2
+] 8
+{ 8
+. log_end_msg
+}
+] 9
+{ 9
+. log_end_msg
+}
 W

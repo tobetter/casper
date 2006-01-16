@@ -1,3 +1,11 @@
+casper (1.28) dapper; urgency=low
+
+  * Depend on user-setup
+  * First shot at IEEE1394 support.  Add sbp2 and ohci1394 as modules to
+    be copied into the initramfs.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 16 Jan 2006 22:06:35 +0100
+
 casper (1.27) dapper; urgency=low
 
   * Try using unionfs on ppc again 

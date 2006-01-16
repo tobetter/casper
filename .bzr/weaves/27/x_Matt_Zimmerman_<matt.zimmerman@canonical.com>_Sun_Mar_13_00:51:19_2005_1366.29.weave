@@ -47,6 +47,10 @@ i 10
 1 02a85411e0b09ea7481e6662a48ce91283b54e7a
 n tfheen@ubuntu.com-20060109105158-c46896c744448553
 
+i 11
+1 103fd6b6960923de4459908d5ede0ad2ccc9ee0a
+n tfheen@ubuntu.com-20060111164242-5a82d55b64dacd3d
+
 w
 { 0
 . Source: casper
@@ -146,7 +150,12 @@ w
 }
 ] 11
 { 11
+[ 12
 . Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup
+] 12
+{ 12
+. Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup, user-setup
+}
 . Conflicts: usplash (<< 0.1-30)
 }
 . Description: Run a "live" preinstalled system from read-only media

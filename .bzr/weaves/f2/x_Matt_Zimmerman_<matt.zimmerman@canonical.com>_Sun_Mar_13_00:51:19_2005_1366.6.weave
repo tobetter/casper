@@ -83,6 +83,10 @@ i 18
 1 379f7f8f0a1955d67635a9f787fffe3b194728f9
 n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
 
+i 20
+1 39ec92d2665b9e2da2922a169cd394519be15a40
+n tfheen@ubuntu.com-20060112131940-04c4325ddde2d725
+
 w
 { 0
 . #!/bin/sh
@@ -99,7 +103,12 @@ w
 . . /scripts/functions
 }
 { 20
+[ 21
 . DESCRIPTION="Adding live cd user"
+] 21
+{ 21
+. DESCRIPTION="Adding live CD user"
+}
 . 
 . . /scripts/functions
 }

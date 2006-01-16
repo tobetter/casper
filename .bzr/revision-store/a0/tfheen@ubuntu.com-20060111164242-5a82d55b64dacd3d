@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="0fe937e649a04309b3b8e2eb32125aaf1d0b177a" revision_id="tfheen@ubuntu.com-20060111164242-5a82d55b64dacd3d" timestamp="1136997762.457690001" timezone="3600">
+<message>add dependency on user-setup, since we do in reality need that</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060110195558-b02d8ded30675ff0" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

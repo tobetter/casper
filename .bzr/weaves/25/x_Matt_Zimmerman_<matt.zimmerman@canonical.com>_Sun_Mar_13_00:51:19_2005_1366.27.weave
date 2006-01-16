@@ -347,6 +347,14 @@ i 85
 1 b89ab1a8e6b0824ee8b8b29260e2dd7638d8bc64
 n tfheen@ubuntu.com-20060110195558-b02d8ded30675ff0
 
+i 86
+1 ae00c50a0b833da224cd598ee6a998e1faeadc6e
+n tfheen@ubuntu.com-20060112131940-04c4325ddde2d725
+
+i 87
+1 13f246f2ed644dbd6ac0d657d093c8d7e761de87
+n tfheen@ubuntu.com-20060116210647-0f77128359a7c20a
+
 w
 { 0
 { 23
@@ -618,6 +626,22 @@ w
 { 84
 { 85
 { 86
+{ 87
+. casper (1.28) dapper; urgency=low
+. 
+.   * Depend on user-setup
+[ 88
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 11 Jan 2006 17:52:55 +0100
+] 88
+{ 88
+.   * First shot at IEEE1394 support.  Add sbp2 and ohci1394 as modules to
+.     be copied into the initramfs.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 16 Jan 2006 22:06:35 +0100
+}
+. 
+}
 . casper (1.27) dapper; urgency=low
 . 
 .   * Try using unionfs on ppc again 

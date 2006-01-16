@@ -43,6 +43,10 @@ i 9
 1 f3604dcc28b7fffe650186255588641bea82e363
 n tfheen@ubuntu.com-20060110120653-7b97d01b816bbfa1
 
+i 10
+1 be465d5d809109e7376976637566993c8b9c29c1
+n tfheen@ubuntu.com-20060116210647-0f77128359a7c20a
+
 w
 { 0
 . #!/bin/sh -e
@@ -119,6 +123,10 @@ w
 . manual_add_modules ide-cd
 }
 { 9
+{ 11
+. manual_add_modules sbp2
+. manual_add_modules ohci1394
+}
 . 
 . # integrity check
 [ 10

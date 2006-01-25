@@ -1,0 +1,9 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="6086b7a8a5aee0bb40b3a368bea60d87ae488977" revision_id="colin.watson@canonical.com-20060124001417-0942852aacd41333" timestamp="1138061657.135665894">
+<message>* Add espresso-casper package with hooks to repeat some things done by
+  casper in the installed system.</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf" />
+</parents>
+<properties><property name="branch-nick">espresso-hooks</property>
+</properties>
+</revision>

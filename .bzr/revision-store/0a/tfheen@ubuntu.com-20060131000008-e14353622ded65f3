@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="192f0b943942c226a56fa1493b760ba5c8a6cab1" revision_id="tfheen@ubuntu.com-20060131000008-e14353622ded65f3" timestamp="1138665608.993940115" timezone="3600">
+<message>handle the case of a file system being mounted already</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130234120-fa891f67051a2d43" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

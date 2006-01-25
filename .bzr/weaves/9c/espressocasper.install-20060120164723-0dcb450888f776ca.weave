@@ -1,0 +1,11 @@
+# bzr weave file v5
+i
+1 76373ad3d2de7118983ad89cf6288ac9a64a7056
+n colin.watson@canonical.com-20060124001417-0942852aacd41333
+
+w
+{ 0
+. bin/casper-reconfigure usr/bin
+. espresso-hooks/* usr/lib/espresso/target-config
+}
+W

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d9a44db228ca1288701103046f04d13e72a219c7" revision_id="tfheen@ubuntu.com-20060130222456-17f38cfb63e13193" timestamp="1138659896.931137085" timezone="3600">
+<message>try falling back to fstype again</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130221812-118adad70266f7d4" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8042ecaba778c9ce3f4567ca355597499b43b150" revision_id="tfheen@ubuntu.com-20060130192906-2808592d2e093336" timestamp="1138649346.271478891" timezone="3600">
+<message>add some more file system modules</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130190507-1fa6828aee1ae94f" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

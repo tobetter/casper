@@ -1,0 +1,35 @@
+#! /bin/sh
+
+# © Copyright Canonical Limited, 2006
+#
+# Author: Tollef Fog Heen <tfheen@ubuntu.com>
+#
+
+set -e
+
+if [ "$#" -ne 2 ]; then
+    cat <<EOF
+Usage. $0 <path to live cd root> <partition to install on>
+
+Make the partition to install on something like a live cd by
+installing and setting up a bootloader on the root of it, in addition
+to copying over the live cd image.
+
+EOF
+
+LIVECD_ROOT="$1"
+PARTITION="$2"
+
+if [ ! -e "${LIVECD_ROOT}/casper" ]; then
+    echo "${LIVECD_ROOT} does not appear to be the root of a mounted live cd image"
+    exit 1
+fi
+
+if [ ! -b "${PARTITION}" ]; then
+    echo "${PARTITION} is not a block device"
+    exit 1
+fi
+
+mkdir /tmp/casper-to-be-installed
+mount "${PARTITION}" /tmp/casper-to-be-installed
+cp -a ${LIVECD_ROOT}/casper /tmp/casper-to-be-installed

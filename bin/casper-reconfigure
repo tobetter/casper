@@ -37,15 +37,16 @@ runcommandinroot() {
     [ -n "$C" ] && chroot "$ROOT" "$C" "$@"
 }
 
-package="$1"
+root="$1"
+package="$2"
 
-version=$(runcommandinroot /root dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+version=$(runcommandinroot "$root" dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
 
 if [ -z "$version" ]; then
     echo "$0: package '$package' is not installed"
     exit 0
 fi
 
-runcommandinroot /root dpkg-reconfigure -fnoninteractive "$package"
+runcommandinroot "$root" dpkg-reconfigure -fnoninteractive "$package"
 
 exit 0

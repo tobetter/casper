@@ -131,6 +131,10 @@ i 30
 1 042d95f234a1097043937ed9ef67ca5779fe19af
 n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
 
+i 32
+1 5bec9bbc427ce87927eae58642d0ede44323621a
+n colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf
+
 w
 { 0
 . #!/bin/sh
@@ -410,7 +414,12 @@ w
 }
 . 
 }
+[ 33
 . LANG=$(grep ^$locale /root/usr/share/i18n/SUPPORTED | sed -e 's, .*,,' -e q) casper-reconfigure xserver-xorg
+}
+] 33
+{ 33
+. LANG=$(grep ^$locale /root/usr/share/i18n/SUPPORTED | sed -e 's, .*,,' -e q) casper-reconfigure /root xserver-xorg
 }
 . umount /root/sys
 . umount /root/proc

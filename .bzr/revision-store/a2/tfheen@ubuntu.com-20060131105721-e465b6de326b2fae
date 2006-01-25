@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ef046fb85905e00caded746e2533a8cdbc853e92" revision_id="tfheen@ubuntu.com-20060131105721-e465b6de326b2fae" timestamp="1138705041.634712934" timezone="3600">
+<message>try harder to configure networking</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060131084328-073c326401cea6b0" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

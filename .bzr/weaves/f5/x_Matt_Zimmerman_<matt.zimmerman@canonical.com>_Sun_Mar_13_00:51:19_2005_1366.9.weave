@@ -55,6 +55,22 @@ i 11
 1 d51611e41856967a895218ae0cb93f52c7fccdc0
 n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
 
+i 13
+1 a165024264fcd0015ab42fa2241b1c474a98dec7
+n tfheen@ubuntu.com-20060123094356-673d98940c6c0a94
+
+i 13
+1 21073da9c3da6fd37e2dcf8c7b19a88a46af8e09
+n colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf
+
+i 15 14
+1 f147ab96eec3a9862d21363de8a6199696babc71
+n tfheen@ubuntu.com-20060125132601-d46fe36385f39420
+
+i 15 14
+1 f147ab96eec3a9862d21363de8a6199696babc71
+n tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c
+
 w
 { 0
 . #!/bin/sh
@@ -130,7 +146,12 @@ w
 }
 . if chroot /root /bin/sh -c laptop-detect; then
 }
+[ 15
 .     casper-reconfigure gnome-panel-data
+] 15
+{ 15
+.     casper-reconfigure /root gnome-panel-data
+}
 . fi
 }
 { 4
@@ -144,7 +165,12 @@ w
 }
 ] 10
 { 10
+[ 14
 . panel_version=$(chroot /target /usr/bin/dpkg-query-query -W --showformat='${Version}' gnome-panel-data 2>/dev/null) || panel_version=""
+}
+] 14
+{ 14
+. panel_version=$(chroot /target /usr/bin/dpkg-query -W --showformat='${Version}' gnome-panel-data 2>/dev/null) || panel_version=""
 }
 . if [ -n "$panel_version" ]; then
 [ 7
@@ -166,6 +192,11 @@ w
 }
 { 13
 . 
+[ 15
 , log_end_msg
+}
+] 15
+{ 15
+. log_end_msg
 }
 W

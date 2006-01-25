@@ -47,6 +47,30 @@ i 10
 1 be465d5d809109e7376976637566993c8b9c29c1
 n tfheen@ubuntu.com-20060116210647-0f77128359a7c20a
 
+i 11
+1 c853b746ad3a94b7cb733ccbac0f34a9cf1f785e
+n tfheen@ubuntu.com-20060130180925-4cc39ba038be6826
+
+i 12
+1 708fd470f91c1152296b00bcfbb082a965397c27
+n tfheen@ubuntu.com-20060130192906-2808592d2e093336
+
+i 13
+1 b442b559ca778e85e9ac84b8f0218088ac8fd64b
+n tfheen@ubuntu.com-20060130193601-a19ba751e2f1cc8e
+
+i 14
+1 5a7c3dfa646ea2106ba8aecc7e45ca51de340bd6
+n tfheen@ubuntu.com-20060130194232-fe81f195a925528e
+
+i 15
+1 a1c322b69fb367104a304b3c042edcb96c6ca57b
+n tfheen@ubuntu.com-20060130194820-6c21a31a75dc6563
+
+i 16
+1 70c10ae7f9f57decde483ae47393e83458fabd0e
+n tfheen@ubuntu.com-20060131111358-e384e4e0b2e5f472
+
 w
 { 0
 . #!/bin/sh -e
@@ -96,6 +120,9 @@ w
 { 10
 . copy_exec /lib/udev/vol_id /lib/udev
 }
+{ 12
+. copy_exec /lib/udev/path_id /lib/udev
+}
 . copy_exec /usr/bin/udevinfo /bin
 . 
 }
@@ -118,6 +145,28 @@ w
 }
 { 8
 . 
+{ 13
+. # random file system modules
+. manual_add_modules vfat
+. manual_add_modules ext3
+[ 14
+. 
+] 14
+{ 14
+. # needed for vfat. :-/
+. manual_add_modules nls_cp437
+}
+{ 15
+. manual_add_modules nls_utf8
+[ 16
+. manual_add_modules nls_iso_8859-1
+}
+] 16
+{ 16
+. manual_add_modules nls_iso8859-1
+}
+. 
+}
 . # cdrom modules
 . manual_add_modules sr_mod
 . manual_add_modules ide-cd
@@ -135,5 +184,9 @@ w
 ] 10
 { 10
 . copy_exec /usr/lib/casper/casper-md5check /bin
+}
+{ 17
+. 
+. auto_add_modules
 }
 W

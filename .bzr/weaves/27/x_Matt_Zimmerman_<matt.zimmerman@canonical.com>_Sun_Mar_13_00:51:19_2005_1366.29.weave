@@ -51,6 +51,10 @@ i 11
 1 103fd6b6960923de4459908d5ede0ad2ccc9ee0a
 n tfheen@ubuntu.com-20060111164242-5a82d55b64dacd3d
 
+i 12
+1 e2b53214a8a97f46b1f69e1f1bc1e50fc1bc20af
+n colin.watson@canonical.com-20060124001417-0942852aacd41333
+
 w
 { 0
 . Source: casper
@@ -159,5 +163,16 @@ w
 . Conflicts: usplash (<< 0.1-30)
 }
 . Description: Run a "live" preinstalled system from read-only media
+}
+{ 13
+. 
+. Package: espresso-casper
+. Architecture: all
+. Depends: laptop-detect
+. Enhances: espresso
+. Description: Configuration hooks for live installer
+.  This package provides hook scripts for the Espresso live installer that
+.  repeat some pieces of configuration done by the live system boot process in
+.  the system installed by Espresso.
 }
 W

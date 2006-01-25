@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c5555c5ef7ce58f05272fafab1239c70a6f71ebf" revision_id="tfheen@ubuntu.com-20060131084328-073c326401cea6b0" timestamp="1138697008.001800060" timezone="3600">
+<message>do not leak garbage from where_is_mounted</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060131083739-6b334fe03a2af9a6" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

@@ -1,3 +1,24 @@
+casper (1.29) dapper; urgency=low
+    
+  [ Tollef Fog Heen ]
+  * Fix typo in 22gnome_panel_data
+  * Configure all detected network interfaces.
+  * Add support for putting the persistent storage in a loopback file on
+    vfat volumes
+  * Configure all detected network interfaces.
+  * Allow putting the live filesystem image on a VFAT volume
+  * Allow putting the persistent storage in a loopback file on a VFAT
+    volume
+  * Lots of cleanups
+
+  [ Colin Watson ]
+  * Change casper-reconfigure to take the target root filesystem as its
+    first argument.
+  * Add espresso-casper package with hooks to repeat some things done by
+    casper in the installed system.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 25 Jan 2006 14:25:45 +0100
+
 casper (1.28) dapper; urgency=low
 
   * Depend on user-setup

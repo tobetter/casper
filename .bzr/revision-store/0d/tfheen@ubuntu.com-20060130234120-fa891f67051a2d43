@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="714613d66bf0558df737c0f4be4da874c88b9f48" revision_id="tfheen@ubuntu.com-20060130234120-fa891f67051a2d43" timestamp="1138664480.415992022" timezone="3600">
+<message>run-init cannot cope with stuff mounted in subdirectories, so mount everything on / again..</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130232136-5e22207da547f33c" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

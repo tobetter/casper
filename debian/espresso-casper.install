@@ -1,0 +1,2 @@
+bin/casper-reconfigure usr/bin
+espresso-hooks/* usr/lib/espresso/target-config

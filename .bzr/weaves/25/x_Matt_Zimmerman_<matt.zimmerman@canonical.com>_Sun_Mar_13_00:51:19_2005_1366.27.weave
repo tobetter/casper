@@ -355,6 +355,30 @@ i 87
 1 13f246f2ed644dbd6ac0d657d093c8d7e761de87
 n tfheen@ubuntu.com-20060116210647-0f77128359a7c20a
 
+i 88
+1 202c0dd75c8dea8547d9cb7f60c71469eb604f6b
+n tfheen@ubuntu.com-20060123094356-673d98940c6c0a94
+
+i 89
+1 5d4f14af127d3c5d2bfb33639f18d4da33275065
+n tfheen@ubuntu.com-20060123180827-64fa6428c6d794e8
+
+i 88
+1 ab241d591f16cb0bd5e35e03e863239b611533e3
+n colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf
+
+i 91
+1 58267c332e9daf81cc9da6a7d17da83b50278fcc
+n colin.watson@canonical.com-20060124001417-0942852aacd41333
+
+i 90 92
+1 845b975f574adc515a951df45fbb007aa9d88044
+n tfheen@ubuntu.com-20060125132601-d46fe36385f39420
+
+i 90 92
+1 845b975f574adc515a951df45fbb007aa9d88044
+n tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c
+
 w
 { 0
 { 23
@@ -627,6 +651,62 @@ w
 { 85
 { 86
 { 87
+{ 89
+. casper (1.29) UNRELEASED; urgency=low
+[ 93
+[ 94
+. 
+] 93
+{ 93
+.     
+.   [ Tollef Fog Heen ]
+}
+] 94
+{ 94
+.     
+.   [ Tollef Fog Heen ]
+}
+.   * Fix typo in 22gnome_panel_data
+{ 90
+.   * Configure all detected network interfaces.
+}
+. 
+[ 93
+[ 94
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 23 Jan 2006 10:43:34 +0100
+. 
+}
+{ 91
+. casper (1.29) UNRELEASED; urgency=low
+. 
+] 93
+{ 93
+.   [ Colin Watson ]
+}
+] 94
+{ 94
+.   [ Colin Watson ]
+}
+.   * Change casper-reconfigure to take the target root filesystem as its
+.     first argument.
+{ 92
+.   * Add espresso-casper package with hooks to repeat some things done by
+.     casper in the installed system.
+}
+. 
+[ 93
+[ 94
+.  -- Colin Watson <cjwatson@ubuntu.com>  Fri, 20 Jan 2006 16:38:40 +0000
+] 93
+{ 93
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 25 Jan 2006 14:25:45 +0100
+}
+] 94
+{ 94
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 25 Jan 2006 14:25:45 +0100
+}
+. 
+}
 . casper (1.28) dapper; urgency=low
 . 
 .   * Depend on user-setup

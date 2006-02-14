@@ -379,6 +379,14 @@ i 90 92
 1 845b975f574adc515a951df45fbb007aa9d88044
 n tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c
 
+i 94
+1 6b9e33976972600cebbfc231adc3c1c8d51731fb
+n tfheen@ubuntu.com-20060214093048-3ce476e8776e06e4
+
+i 95
+1 fa7b2adeea9f3ff23fff17d3d6c735d8951569e7
+n tfheen@ubuntu.com-20060214134935-8c6c196d4d608ab9
+
 w
 { 0
 { 23
@@ -652,6 +660,7 @@ w
 { 86
 { 87
 { 89
+[ 95
 . casper (1.29) UNRELEASED; urgency=low
 [ 93
 [ 94
@@ -663,12 +672,36 @@ w
 }
 ] 94
 { 94
+] 95
+{ 95
+{ 96
+. casper (1.30) dapper; urgency=low
+. 
+.   * Set a blank password for the ubuntu user.  This hopefully resolves
+.     Malone #30118
+.   * Pass keyboard layout information to xserver-xorg in the "new" scheme.
+.   * Set up the right console keymap.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 14 Feb 2006 14:48:14 +0100
+. 
+}
+. casper (1.29) dapper; urgency=low
+}
 .     
 .   [ Tollef Fog Heen ]
 }
 .   * Fix typo in 22gnome_panel_data
 { 90
 .   * Configure all detected network interfaces.
+}
+{ 95
+.   * Add support for putting the persistent storage in a loopback file on
+.     vfat volumes
+.   * Configure all detected network interfaces.
+.   * Allow putting the live filesystem image on a VFAT volume
+.   * Allow putting the persistent storage in a loopback file on a VFAT
+.     volume
+.   * Lots of cleanups
 }
 . 
 [ 93

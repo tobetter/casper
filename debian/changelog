@@ -1,3 +1,12 @@
+casper (1.30) dapper; urgency=low
+
+  * Set a blank password for the ubuntu user.  This hopefully resolves
+    Malone #30118
+  * Pass keyboard layout information to xserver-xorg in the "new" scheme.
+  * Set up the right console keymap.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 14 Feb 2006 14:48:14 +0100
+
 casper (1.29) dapper; urgency=low
     
   [ Tollef Fog Heen ]

@@ -22,7 +22,7 @@ log_begin_msg "$DESCRIPTION"
 
 chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
 set passwd/root-password-crypted *
-set passwd/user-password-crypted *
+set passwd/user-password-crypted U6aMy0wojraho
 set passwd/user-fullname Ubuntu LiveCD user
 set passwd/username ubuntu
 set passwd/user-uid 999

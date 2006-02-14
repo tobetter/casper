@@ -87,6 +87,10 @@ i 20
 1 39ec92d2665b9e2da2922a169cd394519be15a40
 n tfheen@ubuntu.com-20060112131940-04c4325ddde2d725
 
+i 21
+1 9ea9165f73cebe7c5e5885c58c5c0b2b56e9fd03
+n tfheen@ubuntu.com-20060214134726-d8a61c95a1a555fc
+
 w
 { 0
 . #!/bin/sh
@@ -171,7 +175,12 @@ w
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
 }
 . set passwd/root-password-crypted *
+[ 22
 . set passwd/user-password-crypted *
+] 22
+{ 22
+. set passwd/user-password-crypted U6aMy0wojraho
+}
 . set passwd/user-fullname Ubuntu LiveCD user
 . set passwd/username ubuntu
 . set passwd/user-uid 999

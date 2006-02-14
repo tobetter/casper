@@ -37,11 +37,12 @@ rm -f /root/etc/rc?.d/[SK]??postfix
 rm -f /root/etc/rc?.d/K??hwclock.sh
 
 # Install shutdown script
+cp -a /lib/casper/shutdown /root/etc/init.d/casper-shutdown
 if [ -f /root/etc/rc0.d/S90halt ]; then
-    cp -a /lib/casper/shutdown /root/etc/rc0.d/S89casper
+    ln -s ../init.d/casper-shutdown /root/etc/rc0.d/S89casper
 fi
 if [ -f /etc/rc6.d/S90reboot ]; then
-    cp -a /lib/casper/shutdown /root/etc/rc6.d/S89casper
+    ln -s ../init.d/casper-shutdown /root/etc/rc6.d/S89casper
 fi
 
 log_end_msg

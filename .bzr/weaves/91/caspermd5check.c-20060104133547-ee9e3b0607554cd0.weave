@@ -59,6 +59,10 @@ i 13
 1 4362b0d96f2ef6df66897d3ba9d7ba8db3e69d0f
 n tfheen@ubuntu.com-20060109105158-c46896c744448553
 
+i 14
+1 5ca2cc66591a599554f620c7fcd6b4b09ec0c9ec
+n tfheen@ubuntu.com-20060214135237-70a840f6debc50d8
+
 w
 { 0
 . /* casper-md5check - a tool to check md5sums and talk to usplash
@@ -716,6 +720,9 @@ w
 ] 13
 { 13
 .   usplash_text(pipe_fd, "Check finished, %d checksums failed", failed);
+{ 15
+.   usplash_text(pipe_fd, "Please reboot your system", failed);
+}
 .   usplash_timeout(pipe_fd, 0);
 . 
 .   while (1) {

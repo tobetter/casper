@@ -387,6 +387,22 @@ i 95
 1 fa7b2adeea9f3ff23fff17d3d6c735d8951569e7
 n tfheen@ubuntu.com-20060214134935-8c6c196d4d608ab9
 
+i 96
+1 f9261b1e0e3d691fc56e3c5e48943b8c2095c452
+n tfheen@ubuntu.com-20060214135237-70a840f6debc50d8
+
+i 97
+1 04a2465fa57a40b188a10ad95995bab5ab0e69ea
+n tfheen@ubuntu.com-20060214140509-db63a349f7d2b612
+
+i 98
+1 c89f5b803daf2133807765374635050e20b7b3b9
+n colin.watson@canonical.com-20060215224521-c87c7c33a6444019
+
+i 99
+1 efa1720b04ccf370ae28b82557b06b6c66404591
+n tfheen@ubuntu.com-20060215225142-d95d8b44d66454e7
+
 w
 { 0
 { 23
@@ -675,6 +691,37 @@ w
 ] 95
 { 95
 { 96
+{ 97
+[ 100
+. casper (1.31) UNRELEASED; urgency=low
+] 100
+{ 100
+. casper (1.31) dapper; urgency=low
+}
+. 
+{ 99
+.   [ Tollef Fog Heen ]
+}
+.   * Print message about rebooting the system when the md5 check is
+.     finished.
+[ 98
+. 
+.  -- Tollef Fog Heen <tfheen@debian.org>  Tue, 14 Feb 2006 14:52:16 +0100
+] 98
+{ 98
+.   * Just have one copy of the casper shutdown scripts and symlink those
+.     into the right place.  Malone #20978
+{ 99
+. 
+.   [ Colin Watson ]
+.   * Copy /usr/share/applications/espresso-gtkui.desktop to the live CD
+.     user's desktop.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 14 Feb 2006 14:52:16 +0100
+}
+. 
+}
 . casper (1.30) dapper; urgency=low
 . 
 .   * Set a blank password for the ubuntu user.  This hopefully resolves

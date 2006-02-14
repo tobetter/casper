@@ -51,6 +51,10 @@ i 10
 1 7f028afd1c224030fd5651605c9e59fa479ef437
 n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
 
+i 12
+1 bcee80da506c2351fafe1e5a37d26fc904da8e38
+n tfheen@ubuntu.com-20060214140509-db63a349f7d2b612
+
 w
 { 0
 . #!/bin/sh
@@ -165,8 +169,16 @@ w
 .     cp -a /initrd/usr/share/casper/shutdown /etc/rc0.d/S89casper
 ] 6
 { 6
+{ 13
+. cp -a /lib/casper/shutdown /root/etc/init.d/casper-shutdown
+}
 . if [ -f /root/etc/rc0.d/S90halt ]; then
+[ 13
 .     cp -a /lib/casper/shutdown /root/etc/rc0.d/S89casper
+}
+] 13
+{ 13
+.     ln -s ../init.d/casper-shutdown /root/etc/rc0.d/S89casper
 }
 . fi
 . if [ -f /etc/rc6.d/S90reboot ]; then
@@ -174,7 +186,12 @@ w
 .     cp -a /initrd/usr/share/casper/shutdown /etc/rc6.d/S89casper
 ] 6
 { 6
+[ 13
 .     cp -a /lib/casper/shutdown /root/etc/rc6.d/S89casper
+}
+] 13
+{ 13
+.     ln -s ../init.d/casper-shutdown /root/etc/rc6.d/S89casper
 }
 . fi
 . 

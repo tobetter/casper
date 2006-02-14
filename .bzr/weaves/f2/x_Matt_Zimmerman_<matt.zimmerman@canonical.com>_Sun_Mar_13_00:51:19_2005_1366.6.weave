@@ -91,6 +91,10 @@ i 21
 1 9ea9165f73cebe7c5e5885c58c5c0b2b56e9fd03
 n tfheen@ubuntu.com-20060214134726-d8a61c95a1a555fc
 
+i 22
+1 d35e1468c236ab8ed7dcd6b18e389a46c03dd10e
+n colin.watson@canonical.com-20060215224521-c87c7c33a6444019
+
 w
 { 0
 . #!/bin/sh
@@ -315,6 +319,17 @@ w
 }
 ] 20
 { 20
+{ 23
+. for ui in gtkui; do
+.     file="/usr/share/applications/espresso-$ui.desktop"
+.     if [ -f "$file" ]; then
+.         mkdir -p /home/ubuntu/Desktop
+.         cp -a "$file" /home/ubuntu/Desktop/
+.         break
+.     fi
+. done
+. 
+}
 . log_end_msg
 }
 W

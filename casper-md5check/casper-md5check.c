@@ -224,6 +224,7 @@ int main(int argc, char **argv) {
     free(checkfile);
   }
   usplash_text(pipe_fd, "Check finished, %d checksums failed", failed);
+  usplash_text(pipe_fd, "Please reboot your system", failed);
   usplash_timeout(pipe_fd, 0);
 
   while (1) {

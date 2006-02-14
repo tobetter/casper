@@ -939,6 +939,26 @@ i 233
 1 9ad62469702da7c91afded994361b7e7026aeddc
 n tfheen@ubuntu.com-20060214134935-8c6c196d4d608ab9
 
+i 234
+1 d286d2dd133dcd04a55f298d26f766ba54643b38
+n tfheen@ubuntu.com-20060214135237-70a840f6debc50d8
+
+i 235
+1 5b78728bf66c0474a700fd24bcc5741b3ffec7a7
+n tfheen@ubuntu.com-20060214140509-db63a349f7d2b612
+
+i 236
+1 024adbc33c7ce42f90bb3d1bb77a1ad8ad0d0c90
+n colin.watson@canonical.com-20060215224521-c87c7c33a6444019
+
+i 236 237
+1 024adbc33c7ce42f90bb3d1bb77a1ad8ad0d0c90
+n tfheen@ubuntu.com-20060215224843-9a6d746cbc1de0e9
+
+i 238
+1 5c8f9efb878eece5730e33ec660cc61fb6648cee
+n tfheen@ubuntu.com-20060215225142-d95d8b44d66454e7
+
 w
 { 0
 . <inventory format="5">
@@ -1858,7 +1878,12 @@ w
 }
 ] 233
 { 233
+[ 237
 . <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.6" name="10adduser" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060214134726-d8a61c95a1a555fc" text_sha1="9ea9165f73cebe7c5e5885c58c5c0b2b56e9fd03" text_size="885" />
+}
+] 237
+{ 237
+. <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.6" name="10adduser" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="colin.watson@canonical.com-20060215224521-c87c7c33a6444019" text_sha1="d35e1468c236ab8ed7dcd6b18e389a46c03dd10e" text_size="1098" />
 }
 . <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.16" name="12fstab" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05" text_sha1="701257040ecac69ca201c428faec06bff65e93bb" text_size="360" />
 [ 166
@@ -1910,7 +1935,12 @@ w
 { 229
 . <file executable="yes" file_id="23networking-20060125132628-083d6ccc86925687" name="23networking" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060131114158-e58230824fa469be" text_sha1="391a8acce29fa49c5f511632ab8f797f4f52f1ff" text_size="570" />
 }
+[ 236
 . <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.10" name="25configure_init" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05" text_sha1="7f028afd1c224030fd5651605c9e59fa479ef437" text_size="1029" />
+}
+] 236
+{ 236
+. <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.10" name="25configure_init" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060214140509-db63a349f7d2b612" text_sha1="bcee80da506c2351fafe1e5a37d26fc904da8e38" text_size="1099" />
 }
 . <directory file_id="caspermd5check-20060104133547-9e528b971dc71188" name="casper-md5check" revision="tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197" />
 [ 146
@@ -1984,7 +2014,12 @@ w
 }
 ] 157
 { 157
+[ 235
 . <file file_id="caspermd5check.c-20060104133547-ee9e3b0607554cd0" name="casper-md5check.c" parent_id="caspermd5check-20060104133547-9e528b971dc71188" revision="tfheen@ubuntu.com-20060109105158-c46896c744448553" text_sha1="4362b0d96f2ef6df66897d3ba9d7ba8db3e69d0f" text_size="4861" />
+}
+] 235
+{ 235
+. <file file_id="caspermd5check.c-20060104133547-ee9e3b0607554cd0" name="casper-md5check.c" parent_id="caspermd5check-20060104133547-9e528b971dc71188" revision="tfheen@ubuntu.com-20060214135237-70a840f6debc50d8" text_sha1="5ca2cc66591a599554f620c7fcd6b4b09ec0c9ec" text_size="4923" />
 }
 . <file file_id="md5.c-20060104133547-05db7711464604a0" name="md5.c" parent_id="caspermd5check-20060104133547-9e528b971dc71188" revision="tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197" text_sha1="b061db5633387dc0326420d53bbe441871594ec1" text_size="12434" />
 . <file file_id="md5.h-20060104133547-0462bf85227d1344" name="md5.h" parent_id="caspermd5check-20060104133547-9e528b971dc71188" revision="tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197" text_sha1="c97fb515d06b76bab12ef69e4624c29d3e4c6540" text_size="3392" />
@@ -2629,7 +2664,27 @@ w
 }
 ] 234
 { 234
+[ 235
 . <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="tfheen@ubuntu.com-20060214134935-8c6c196d4d608ab9" text_sha1="fa7b2adeea9f3ff23fff17d3d6c735d8951569e7" text_size="24975" />
+}
+] 235
+{ 235
+[ 236
+. <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="tfheen@ubuntu.com-20060214135237-70a840f6debc50d8" text_sha1="f9261b1e0e3d691fc56e3c5e48943b8c2095c452" text_size="25170" />
+}
+] 236
+{ 236
+[ 237
+. <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="tfheen@ubuntu.com-20060214140509-db63a349f7d2b612" text_sha1="04a2465fa57a40b188a10ad95995bab5ab0e69ea" text_size="25283" />
+}
+] 237
+{ 237
+[ 239
+. <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="colin.watson@canonical.com-20060215224521-c87c7c33a6444019" text_sha1="c89f5b803daf2133807765374635050e20b7b3b9" text_size="25416" />
+}
+] 239
+{ 239
+. <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="tfheen@ubuntu.com-20060215225142-d95d8b44d66454e7" text_sha1="efa1720b04ccf370ae28b82557b06b6c66404591" text_size="25412" />
 }
 . <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.28" name="compat" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="mdz@mizar-20051205230117-c327e75be767f237" text_sha1="9c6b057a2b9d96a4067a749ee3b3b0158d390cf1" text_size="2" />
 [ 54

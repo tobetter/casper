@@ -1,3 +1,17 @@
+casper (1.31) dapper; urgency=low
+
+  [ Tollef Fog Heen ]
+  * Print message about rebooting the system when the md5 check is
+    finished.
+  * Just have one copy of the casper shutdown scripts and symlink those
+    into the right place.  Malone #20978
+
+  [ Colin Watson ]
+  * Copy /usr/share/applications/espresso-gtkui.desktop to the live CD
+    user's desktop.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 14 Feb 2006 14:52:16 +0100
+
 casper (1.30) dapper; urgency=low
 
   * Set a blank password for the ubuntu user.  This hopefully resolves

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f009e49a9f140fdae55094a0af0c5263397fc9fe" revision_id="tfheen@ubuntu.com-20051214132331-6de1268cb50a7b7e" timestamp="1134566611.606209993" timezone="3600">
-<message>actually add the postinst as well</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214132208-df294e9a60f9b27f" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

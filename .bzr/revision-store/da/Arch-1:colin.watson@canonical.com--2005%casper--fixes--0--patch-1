@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="e0528ba82383996887136ea107b5719d99aaa905" revision_id="Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--patch-1" timestamp="1132325039.000000000">
-<message>Fix arguments to db_input if a step fails.</message>
-<parents>
-<revision_ref revision_id="Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--base-0" />
-</parents>
-<properties><property name="branch-nick">rd</property>
-</properties>
-</revision>

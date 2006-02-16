@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="b9b8b1f9e35ea654d49222a7ad883f4a22e1eb82" revision_id="tfheen@ubuntu.com-20051214130954-4c10539f299fff78" timestamp="1134565794.165333033" timezone="3600">
-<message>copy in some parts of udev needed</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214130924-6afc3baaec8afcd0" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

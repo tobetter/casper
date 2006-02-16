@@ -1,3 +1,9 @@
+casper (1.32) dapper; urgency=low
+
+  * Fix copying of /usr/share/applications/espresso-gtkui.desktop.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 16 Feb 2006 16:47:15 +0000
+
 casper (1.31) dapper; urgency=low
 
   [ Tollef Fog Heen ]

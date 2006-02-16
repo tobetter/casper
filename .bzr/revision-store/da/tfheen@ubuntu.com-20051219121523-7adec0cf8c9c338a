@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="91ec13567a52b0e67a0e820d173c5c3342b581a5" revision_id="tfheen@ubuntu.com-20051219121523-7adec0cf8c9c338a" timestamp="1134994523.653584957" timezone="3600">
-<message>fix typo</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051219110305-f723ae41d39fdd4f" />
-</parents>
-<properties><property name="branch-nick">squashfs</property>
-</properties>
-</revision>

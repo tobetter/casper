@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="37c2b923d0763fb9df4dacbf7b56fbdc8872fe35" revision_id="tfheen@ubuntu.com-20051215142724-3e8dab86646cde0d" timestamp="1134656844.333235025" timezone="3600">
-<message>third try..</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215141516-3dd54c4b9cb56234" />
-</parents>
-<properties><property name="branch-nick">kbdsel</property>
-</properties>
-</revision>

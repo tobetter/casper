@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="90ea2c1df54d65492280ab91fef40ea66ce9cc24" revision_id="tfheen@ubuntu.com-20051214124825-89ead86bf4751314" timestamp="1134564505.407294035" timezone="3600">
-<message>path issues</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214124642-89138620ced37930" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

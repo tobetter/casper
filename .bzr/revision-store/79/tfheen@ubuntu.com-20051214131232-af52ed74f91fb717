@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d25f1503311eebc9e074d12fe4fa7e776c03b5b8" revision_id="tfheen@ubuntu.com-20051214131232-af52ed74f91fb717" timestamp="1134565952.093477964" timezone="3600">
-<message>fix syntax error</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214131201-35bfbf665c8b054b" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

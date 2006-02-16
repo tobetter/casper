@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="3e194da33f1aa080753d33887714a03d345b6eb3" revision_id="tfheen@ubuntu.com-20060104143346-938e8027e7d772d1" timestamp="1136385226.477803946" timezone="3600">
-<message>rewrite to not talk to usplash via stdio</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104135802-adc02f56136ff6da" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

@@ -1,9 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="198d3d7f2d6d91d75b6ba4bda071e9a1688eaaf2" revision_id="tfheen@ubuntu.com-20051219131914-2d2a60aeabeab56e" timestamp="1134998354.323975086" timezone="3600">
-<message>panic if we cannot mount the casper image</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051219123849-e090257505a34a1f" />
-<revision_ref revision_id="tfheen@ubuntu.com-20051219131857-5ce3baaa1637471d" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

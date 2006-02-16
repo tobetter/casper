@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="7a203eeb53739d925b083b1df745f1dabaad8c9c" revision_id="tfheen@ubuntu.com-20060102121808-24cd694a35a7ca60" timestamp="1136204288.485681057" timezone="3600">
-<message>Use user-setup to create the user, rather than doing it ourselves.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060102105801-58c660d42b7eabfe" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

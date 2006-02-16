@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8de4d24d13ae9af2d228589702c2290b1c5a7035" revision_id="tfheen@ubuntu.com-20060102102635-b6aab4fc942a367a" timestamp="1136197595.816421986" timezone="3600">
-<message>add missing file</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060102101900-7623af6089bd9092" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

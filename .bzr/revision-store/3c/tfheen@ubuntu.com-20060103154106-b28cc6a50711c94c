@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d30609a94ba7289abb752d8f33512403d827609e" revision_id="tfheen@ubuntu.com-20060103154106-b28cc6a50711c94c" timestamp="1136302866.621043921" timezone="3600">
-<message>use correct path to user-setup-apply</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060103153818-fcba68a7a9f881f4" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

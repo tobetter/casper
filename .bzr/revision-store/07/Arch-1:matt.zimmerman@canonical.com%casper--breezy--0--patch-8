@@ -1,6 +1,0 @@
-<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="976a8659a3feebd0a8abbbc45ce0e8a38a289d8d" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-8" timestamp="1126290184.000000000">
-<message>Neutralize branding in startup message</message>
-<parents>
-<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-7" />
-</parents>
-</revision>

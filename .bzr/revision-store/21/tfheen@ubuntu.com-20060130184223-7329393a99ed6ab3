@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c4b205309195304619f66a2647b6955bc925f781" revision_id="tfheen@ubuntu.com-20060130184223-7329393a99ed6ab3" timestamp="1138646543.221060038" timezone="3600">
-<message>use udev for fstype</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130183849-a82ab38880f0a104" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

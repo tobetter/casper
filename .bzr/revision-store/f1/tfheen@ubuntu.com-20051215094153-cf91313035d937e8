@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c8c096238fa7e67974c1f66f6c4754429addffd0" revision_id="tfheen@ubuntu.com-20051215094153-cf91313035d937e8" timestamp="1134639713.706980944" timezone="3600">
-<message>add blockdev and dmsetup to initramfs</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215094048-37dd242c553b6e20" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

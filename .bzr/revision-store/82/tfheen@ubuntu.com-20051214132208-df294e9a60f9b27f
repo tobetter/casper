@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="32111b64b85fd82781972f448d923059f571d248" revision_id="tfheen@ubuntu.com-20051214132208-df294e9a60f9b27f" timestamp="1134566528.374174118" timezone="3600">
-<message>call update-initramfs in postinst</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214131705-c950986352233efc" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

@@ -1,6 +1,0 @@
-<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="17b86f018b41e19c6f30d8f070818f675006bfa5" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-4" timestamp="1125372945.000000000">
-<message>Start usplash later, after init</message>
-<parents>
-<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-3" />
-</parents>
-</revision>

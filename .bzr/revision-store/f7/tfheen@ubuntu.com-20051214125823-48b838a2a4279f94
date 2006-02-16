@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="fc2f0e6db816733afa1299653975f90843136415" revision_id="tfheen@ubuntu.com-20051214125823-48b838a2a4279f94" timestamp="1134565103.653811932" timezone="3600">
-<message>add runcommandinroot function and use that to run the right command</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214125640-d8c3b3c6ab56f5db" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

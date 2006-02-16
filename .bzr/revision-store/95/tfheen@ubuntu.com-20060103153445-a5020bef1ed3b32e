@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="505fb3d4177ed41ec2e6ec81796a961c614cca9f" revision_id="tfheen@ubuntu.com-20060103153445-a5020bef1ed3b32e" timestamp="1136302485.442424059" timezone="3600">
-<message>call locale-gen with full path, since it is in sbin</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060103153417-5b1d1e9db0cea007" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

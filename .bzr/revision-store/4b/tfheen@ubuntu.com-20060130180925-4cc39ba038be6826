@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8ae040c434b9e258e4de39ffaed4196e04a9a314" revision_id="tfheen@ubuntu.com-20060130180925-4cc39ba038be6826" timestamp="1138644565.126820087" timezone="3600">
-<message>copy in path_id too</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130175728-653909d87f775702" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

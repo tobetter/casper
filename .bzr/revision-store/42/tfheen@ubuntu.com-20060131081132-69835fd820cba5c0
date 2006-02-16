@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="874870927222fe92d8f1a3e10fe6aadc36dc6a70" revision_id="tfheen@ubuntu.com-20060131081132-69835fd820cba5c0" timestamp="1138695092.175796032" timezone="3600">
-<message>stop running udevplug -b</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060131081016-5953ed4d6142cfa9" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="7bcc5e496d7384dda0c0d8b9b05a1105a574c89d" revision_id="tfheen@ubuntu.com-20051215103937-14030edfd49b9ec8" timestamp="1134643177.389199972" timezone="3600">
+<message>use correct variable names</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051215101842-f3e34ef1c04c2758" />
+</parents>
+<properties><property name="branch-nick">devmapper</property>
+</properties>
+</revision>

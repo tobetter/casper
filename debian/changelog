@@ -1,3 +1,13 @@
+casper (1.33) dapper; urgency=low
+
+  * Make sure Desktop and the espresso-$ui.desktop is owned by the Ubuntu
+    user.  Malone #31991
+  * Fix check for rc6.d/S90reboot at the bottom of 25configure_init to
+    actually look in the right place.
+  * Make me the maintainer of the package.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 20 Feb 2006 09:49:02 +0100
+
 casper (1.32) dapper; urgency=low
 
   * Fix copying of /usr/share/applications/espresso-gtkui.desktop.

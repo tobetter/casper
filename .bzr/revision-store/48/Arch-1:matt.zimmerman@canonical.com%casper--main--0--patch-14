@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="6855a0fdc407dd08f5815e2c5755a1e82f290bb0" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-14" timestamp="1124171296.000000000">
+<message>Restore old debconf hack; the debconf-copydb approach needs more work</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-13" />
+</parents>
+</revision>

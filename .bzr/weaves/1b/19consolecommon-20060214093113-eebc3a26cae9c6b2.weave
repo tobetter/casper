@@ -1,0 +1,56 @@
+# bzr weave file v5
+i
+1 97a4abf7708ef2e4c22ec1125b7c3f14d9ee6261
+n tfheen@ubuntu.com-20060214093137-0eadf1071bef7d7e
+
+i 0
+1 1037ca06f9959046f255f6edd6c1bc21dfbc729b
+n tfheen@ubuntu.com-20060214112454-d85ba063e7494de7
+
+w
+{ 0
+. #!/bin/sh
+. 
+. PREREQ=""
+. DESCRIPTION="Setting up keyboard"
+. 
+. . /scripts/functions
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. log_begin_msg "$DESCRIPTION"
+. 
+. kbd=us
+. 
+. for x in $(cat /proc/cmdline); do
+.                 case $x in
+.                         kbd-chooser/method=*)
+.                                 kbd=${x#kbd-chooser/method=}
+.                                 ;;
+.                 esac
+. done
+. 
+[ 1
+. chroot /root install-keymap $kbd
+] 1
+{ 1
+. chroot /root /usr/sbin/install-keymap $kbd
+}
+. chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+. register espresso/dummy debian-installer/keymap
+. set debian-installer/keymap $kbd
+. EOF
+. log_end_msg
+}
+W

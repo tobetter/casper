@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f120c7cc1a521e967548a4b884a7ef8165e4cf0c" revision_id="tfheen@ubuntu.com-20060104145012-d4ade72746ad3e75" timestamp="1136386212.026930094" timezone="3600">
+<message>typos</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060104144402-9dd46cd60a62996d" />
+</parents>
+<properties><property name="branch-nick">integrity-check</property>
+</properties>
+</revision>

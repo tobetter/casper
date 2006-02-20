@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="121cf486c301c6805d3a813437544d8dc7c46167" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-9" timestamp="1126290269.000000000">
+<message>Use clear in addition to reset</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-8" />
+</parents>
+</revision>

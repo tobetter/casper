@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="aa27027281ac160ad7358be3d2ffe984edcd62a4" revision_id="tfheen@ubuntu.com-20060105033036-ae991fa67eaafd65" timestamp="1136431836.232909918" timezone="3600">
+<message>factor write function into its own function</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060105032824-7c201333ba14e586" />
+</parents>
+<properties><property name="branch-nick">integrity-check</property>
+</properties>
+</revision>

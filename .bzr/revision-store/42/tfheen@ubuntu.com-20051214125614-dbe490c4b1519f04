@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c9d69ebce293b96cb972a4ee7f684313a9415f09" revision_id="tfheen@ubuntu.com-20051214125614-dbe490c4b1519f04" timestamp="1134564974.669708967" timezone="3600">
+<message>chroot + bin/sh to run laptop-detect</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214125543-4aad17131b77910a" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

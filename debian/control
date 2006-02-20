@@ -1,7 +1,7 @@
 Source: casper
 Section: misc
 Priority: optional
-Maintainer: Matt Zimmerman <mdz@ubuntu.com>
+Maintainer: Tollef Fog Heen <tfheen@ubuntu.com>
 Build-Depends: debhelper (>> 4.2.0)
 Standards-Version: 3.6.1
 

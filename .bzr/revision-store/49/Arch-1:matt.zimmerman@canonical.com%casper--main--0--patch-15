@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="70c69d72a8a1b72f1e7a614ad7fb1a703f86ccfa" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-15" timestamp="1124171761.000000000">
+<message>Restore seeding of xserver-xorg/autodetect_keyboard</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-14" />
+</parents>
+</revision>

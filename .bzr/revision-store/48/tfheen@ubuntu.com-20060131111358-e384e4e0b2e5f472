@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="fe4711835e96b602579aa31a0d4881dfa2dd0a72" revision_id="tfheen@ubuntu.com-20060131111358-e384e4e0b2e5f472" timestamp="1138706038.718974113" timezone="3600">
+<message>bloat up the initramfs with loads and loads of modules</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060131105721-e465b6de326b2fae" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

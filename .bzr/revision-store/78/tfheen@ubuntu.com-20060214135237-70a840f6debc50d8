@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d286d2dd133dcd04a55f298d26f766ba54643b38" revision_id="tfheen@ubuntu.com-20060214135237-70a840f6debc50d8" timestamp="1139925157.812681913" timezone="3600">
+<message>print message about needing a reboot at the end of md5check</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060214134935-8c6c196d4d608ab9" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="5efc8f4eecb5de4eab068881dba88679fbad86c2" revision_id="tfheen@ubuntu.com-20051214120222-c64e5c0058de53b1" timestamp="1134561742.538515091" timezone="3600">
+<message>nuke main-menu stuff</message>
+<parents>
+<revision_ref revision_id="mdz@mizar-20051205230117-c327e75be767f237" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

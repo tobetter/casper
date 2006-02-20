@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="1fcc196099dfb78d693457d02255e29bbe5708b5" revision_id="tfheen@ubuntu.com-20051214132627-4749c4ce7e95989a" timestamp="1134566787.739972115" timezone="3600">
+<message>mount the cd ro explicitly</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214132331-6de1268cb50a7b7e" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

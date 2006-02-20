@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="4f058ad94220fe584dea855bc1e8f7bf65f988df" revision_id="tfheen@ubuntu.com-20060110130011-65eb194bad3a3adb" timestamp="1136898011.825273991" timezone="3600">
+<message>wait for block devices to settle and do a bit better error detection</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060110120653-7b97d01b816bbfa1" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

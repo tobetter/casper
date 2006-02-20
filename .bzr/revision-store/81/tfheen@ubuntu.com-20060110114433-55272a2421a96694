@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="51151fd9a872b073ccfc422280ccf4d18e0efe8d" revision_id="tfheen@ubuntu.com-20060110114433-55272a2421a96694" timestamp="1136893473.067063093" timezone="3600">
+<message>whitespace, reordering</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060110113507-23dce0472cd1d7f7" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

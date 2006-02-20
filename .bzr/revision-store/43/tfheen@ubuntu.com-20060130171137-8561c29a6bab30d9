@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2851703ed72679a8e7a6fe42d66f03382bacd6ed" revision_id="tfheen@ubuntu.com-20060130171137-8561c29a6bab30d9" timestamp="1138641097.284332037" timezone="3600">
+<message>first shot at finding images on non-cdrom devices</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060125132637-4aba89c844f47fdd" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

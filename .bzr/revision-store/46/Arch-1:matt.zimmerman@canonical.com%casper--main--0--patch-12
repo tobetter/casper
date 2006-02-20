@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="0339eab615e331111eb59fe2b3eccd5e92eb2d79" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-12" timestamp="1123956487.000000000">
+<message>Fix debconf-copydb regex in 20xconfig</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-11" />
+</parents>
+</revision>

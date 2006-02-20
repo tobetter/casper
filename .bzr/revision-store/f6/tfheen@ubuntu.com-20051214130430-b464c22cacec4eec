@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="dfbdb0ae644d3ceae739169dcc92a03df2b271f9" revision_id="tfheen@ubuntu.com-20051214130430-b464c22cacec4eec" timestamp="1134565470.052947998" timezone="3600">
+<message>simplify casper-reconfigure, no need for getopt any more</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214130034-c6ca52855429553b" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

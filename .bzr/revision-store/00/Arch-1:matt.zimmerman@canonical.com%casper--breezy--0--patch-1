@@ -1,0 +1,12 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="36a49a918a0444ca69dcd4fb78f417597e22b30c" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-1" timestamp="1124731573.000000000">
+<message>Set DEBUG_XORG_PACKAGE=yes when reconfiguring xserver-xorg
+
+The output is only written to post.log and isn't visible to the user, and can
+be invaluable for debugging
+
+ 
+</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--base-0" />
+</parents>
+</revision>

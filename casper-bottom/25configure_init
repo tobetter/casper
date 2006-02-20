@@ -41,7 +41,7 @@ cp -a /lib/casper/shutdown /root/etc/init.d/casper-shutdown
 if [ -f /root/etc/rc0.d/S90halt ]; then
     ln -s ../init.d/casper-shutdown /root/etc/rc0.d/S89casper
 fi
-if [ -f /etc/rc6.d/S90reboot ]; then
+if [ -f /root/etc/rc6.d/S90reboot ]; then
     ln -s ../init.d/casper-shutdown /root/etc/rc6.d/S89casper
 fi
 

@@ -1,0 +1,9 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="dacb59e24dbf90f753d70f847e40ab34a6766d52" revision_id="tfheen@ubuntu.com-20060109113811-be0d7410db5abd89" timestamp="1136806691.276768923" timezone="3600">
+<message>Release, so dapper works again
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060109105158-c46896c744448553" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

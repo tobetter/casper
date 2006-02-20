@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a738f6f4e48447c1295e4b0a657bed2bc3ee8170" revision_id="tfheen@ubuntu.com-20051216051707-76d5e4b4988a5f9a" timestamp="1134710227.922571898" timezone="3600">
+<message>use .squashfs rather than .cloop as the name</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051216050734-3c595c6c9e44beae" />
+</parents>
+<properties><property name="branch-nick">squashfs</property>
+</properties>
+</revision>

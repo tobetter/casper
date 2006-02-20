@@ -38,10 +38,9 @@ fi
 echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
 for ui in gtkui; do
-    file="/root/usr/share/applications/espresso-$ui.desktop"
-    if [ -f "$file" ]; then
-        mkdir -p /root/home/ubuntu/Desktop
-        cp -a "$file" /root/home/ubuntu/Desktop/
+    file="/usr/share/applications/espresso-$ui.desktop"
+    if [ -f "/root/$file" ]; then
+        chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop/$(basename "$file")
         break
     fi
 done

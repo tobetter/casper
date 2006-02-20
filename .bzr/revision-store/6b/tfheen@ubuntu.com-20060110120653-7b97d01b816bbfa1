@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="5fec3eb9dd70a82182353f1a11d1220fd8ec49c8" revision_id="tfheen@ubuntu.com-20060110120653-7b97d01b816bbfa1" timestamp="1136894813.937813044" timezone="3600">
+<message>second try at handling cow devices</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060110115637-9476ecf6c43f46eb" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

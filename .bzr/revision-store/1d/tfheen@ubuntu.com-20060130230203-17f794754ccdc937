@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="12b4383c43c3f3c79e659fcf4c5f41de0a4c67a5" revision_id="tfheen@ubuntu.com-20060130230203-17f794754ccdc937" timestamp="1138662123.000049114" timezone="3600">
+<message>actually list subdevices</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130225546-e02cfe02af3e7562" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

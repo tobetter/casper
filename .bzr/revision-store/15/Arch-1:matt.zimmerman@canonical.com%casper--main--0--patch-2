@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="f50a8fd4662e67adfcffb75dcacca8139d97cd34" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-2" timestamp="1118271723.000000000">
+<message>Disable the "lock screen" menu item (Ubuntu bug#7150)</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-1" />
+</parents>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="cc0bda0f4994c922a5309b8642255b6d9cfe92c4" revision_id="tfheen@ubuntu.com-20051215141501-5f7ee7f14735373d" timestamp="1134656101.102652073" timezone="3600">
+<message>switch back to unionfs</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051215135854-99620ceaae1ac6fe" />
+</parents>
+<properties><property name="branch-nick">kbdsel</property>
+</properties>
+</revision>

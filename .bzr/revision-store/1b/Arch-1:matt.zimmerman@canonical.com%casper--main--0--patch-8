@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="2b4f58953095bb932c0d4e73903040a14b610a2b" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-8" timestamp="1118946182.000000000">
+<message>enhanced arch-build rule</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-7" />
+</parents>
+</revision>

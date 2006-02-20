@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c083787c9cb62442f7d83d1e75bf2d2ca31bf736" revision_id="tfheen@ubuntu.com-20060131081016-5953ed4d6142cfa9" timestamp="1138695016.432816982" timezone="3600">
+<message>turn off some debugging, make setup_loop bomb out when no more loop devices are available</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060131080343-6491d00d7efbb652" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

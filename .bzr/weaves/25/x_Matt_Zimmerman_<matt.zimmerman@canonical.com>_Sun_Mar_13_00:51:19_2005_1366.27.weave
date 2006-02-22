@@ -443,6 +443,14 @@ i 109
 1 4872f2210f2c18d85b74323ab5228cdc09e005ae
 n tfheen@ubuntu.com-20060221143554-2a1c483f3bb100a2
 
+i 110
+1 f508f602a9edbf586b52030cdeac1e7d315ae3fe
+n tfheen@ubuntu.com-20060222133624-e0910882b853bfb8
+
+i 111
+1 5cd0a67db88ed5939b66304095d7bfe4cd6cab22
+n tfheen@ubuntu.com-20060222133733-3acf78ce648c6c1e
+
 w
 { 0
 { 23
@@ -747,6 +755,20 @@ w
 . casper (1.33) UNRELEASED; urgency=low
 ] 110
 { 110
+{ 111
+[ 112
+. casper (1.34) UNRELEASED; urgency=low
+] 112
+{ 112
+. casper (1.34) dapper; urgency=low
+}
+. 
+.   [ Luke Yelavich ]
+.   * Add initial accessibility support framework
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 22 Feb 2006 14:36:07 +0100
+. 
+}
 . casper (1.33) dapper; urgency=low
 }
 . 

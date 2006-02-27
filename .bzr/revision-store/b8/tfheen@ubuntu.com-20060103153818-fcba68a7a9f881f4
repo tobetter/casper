@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d5e38bac0051d232eb90a58a326f4eebbdacc8d7" revision_id="tfheen@ubuntu.com-20060103153818-fcba68a7a9f881f4" timestamp="1136302698.472470045" timezone="3600">
-<message>force live user uid to 999</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060103153445-a5020bef1ed3b32e" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

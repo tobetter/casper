@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8ca75a9d917f4be9c4dc3fd51837f778fe9905da" revision_id="tfheen@ubuntu.com-20051214125253-ac92194945d63ec4" timestamp="1134564773.456938982" timezone="3600">
-<message>copy getopt, so casper-reconfigure might work</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214125210-b707328a280a0594" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

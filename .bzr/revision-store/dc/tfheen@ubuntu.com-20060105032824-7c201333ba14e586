@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="19039e87c0bb022d1555705c9b17345185bff9a3" revision_id="tfheen@ubuntu.com-20060105032824-7c201333ba14e586" timestamp="1136431704.296200037" timezone="3600">
-<message>set progress to 0 initially</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104181743-1c28a2141559b449" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

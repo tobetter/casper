@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="1d86912c47c10fe305779ffc5ba0b1c21df643d4" revision_id="tfheen@ubuntu.com-20060105093824-313cdac179083995" timestamp="1136453904.007463932" timezone="3600">
-<message>Move the building to binary-dep, since we're an arch: any package now.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060105034657-de1c37c76203e67a" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

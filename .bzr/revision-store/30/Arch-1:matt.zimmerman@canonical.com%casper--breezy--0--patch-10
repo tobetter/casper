@@ -1,6 +1,0 @@
-<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="c226f8b368ade406c9b041894370aac4809bc389" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-10" timestamp="1126291386.000000000">
-<message>Merge Colin's 1.14</message>
-<parents>
-<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-9" />
-</parents>
-</revision>

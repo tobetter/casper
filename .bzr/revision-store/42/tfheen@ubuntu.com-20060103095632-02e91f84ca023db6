@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="311afcf6795488be7968d5e1d2f002c734d74691" revision_id="tfheen@ubuntu.com-20060103095632-02e91f84ca023db6" timestamp="1136282192.104020119" timezone="3600">
-<message>give sensible error message if we do not understand the file system type</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060102131141-ca26dad8b65b1045" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

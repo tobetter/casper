@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="0b7f59ec43bef087df51659b014060241c8e6c1b" revision_id="Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--base-0" timestamp="1132324775.000000000">
-<message>tag of matt.zimmerman@canonical.com/casper--breezy--0--patch-15</message>
-<parents>
-<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-15" />
-</parents>
-<properties><property name="branch-nick">rd</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="42b28561d2a890c663f1634633f4722ede03bc56" revision_id="tfheen@ubuntu.com-20051216050734-3c595c6c9e44beae" timestamp="1134709654.517147064" timezone="3600">
-<message>first shot at squashfs support</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215144929-f0508f79b0475a1c" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="104d5b1cdeff39f45d63f0580468da7e5f235e21" revision_id="tfheen@ubuntu.com-20051214124902-a8d255ac44a858a2" timestamp="1134564542.366019011" timezone="3600">
-<message>adduser-o-rama</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214124825-89ead86bf4751314" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

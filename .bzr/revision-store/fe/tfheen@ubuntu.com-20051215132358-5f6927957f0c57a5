@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a7916bab16e6087aee0971a08174055e0718b2e1" revision_id="tfheen@ubuntu.com-20051215132358-5f6927957f0c57a5" timestamp="1134653038.571822882" timezone="3600">
-<message>try parsing the locale we get from the boot loader</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215131344-ebe82457399fe788" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

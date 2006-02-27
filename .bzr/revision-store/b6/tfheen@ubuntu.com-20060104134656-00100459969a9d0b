@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="1c45e170ea592c23cb71cac339ca148b4ca0fed2" revision_id="tfheen@ubuntu.com-20060104134656-00100459969a9d0b" timestamp="1136382416.534795046" timezone="3600">
-<message>make 01integrity-check executable</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104134149-b9acc92d9cb9c3aa" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

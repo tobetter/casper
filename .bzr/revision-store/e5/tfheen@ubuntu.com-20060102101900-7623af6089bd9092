@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="0aa7d7f40cdbb20df4ca329715e71a48ed217da4" revision_id="tfheen@ubuntu.com-20060102101900-7623af6089bd9092" timestamp="1136197140.899046898" timezone="3600">
-<message>set locale to sane default value, generate locale and put the value in /etc/environment</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051219134623-2e798b17e609f40e" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="e86ef4b6da490c3fc804c22593b927d0b541d99e" revision_id="tfheen@ubuntu.com-20060130221812-118adad70266f7d4" timestamp="1138659492.991749048" timezone="3600">
-<message>quiet a grep a bit</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130194820-6c21a31a75dc6563" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

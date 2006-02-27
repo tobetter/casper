@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="108c909d4bf63f6a1aaf8878bd15b434b19d651c" revision_id="tfheen@ubuntu.com-20060130231430-10a47739cb4120be" timestamp="1138662870.797626019" timezone="3600">
-<message>give out better dev paths</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130230247-ead8398bf458dde2" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="5952a8243f4418ebee50f4827fdedc310e3ca961" revision_id="tfheen@ubuntu.com-20051215100529-fae277deb3f30fea" timestamp="1134641129.781464100" timezone="3600">
-<message>fix typo</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215095632-229550aec480ae83" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="b1643d15396c2005ed8744ffd42e4b0813fcc08d" revision_id="tfheen@ubuntu.com-20060220092236-43d40e3bb5228937" timestamp="1140427356.710870981" timezone="3600">
-<message>look for $ui.desktop in the right place</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060220092202-0c2a977e1fa744eb" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

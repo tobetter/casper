@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="b223ea4a6b95aed8b63f9f09054729bf8a7d8199" revision_id="tfheen@ubuntu.com-20051214132740-991d005e1cacee07" timestamp="1134566860.200084925" timezone="3600">
-<message>make log silent for now</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214132711-75394bb77e11c559" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

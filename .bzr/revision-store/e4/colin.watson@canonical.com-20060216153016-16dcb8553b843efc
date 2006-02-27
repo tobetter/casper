@@ -1,9 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="024adbc33c7ce42f90bb3d1bb77a1ad8ad0d0c90" revision_id="colin.watson@canonical.com-20060216153016-16dcb8553b843efc" timestamp="1140103816.464131117">
-<message>merge from Tollef</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060215224521-c87c7c33a6444019" />
-<revision_ref revision_id="tfheen@ubuntu.com-20060215224843-9a6d746cbc1de0e9" />
-</parents>
-<properties><property name="branch-nick">espresso-desktop</property>
-</properties>
-</revision>

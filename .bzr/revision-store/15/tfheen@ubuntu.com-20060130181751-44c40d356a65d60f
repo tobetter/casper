@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="3906fca67465ee8dccfdf33d5c14121605c081bf" revision_id="tfheen@ubuntu.com-20060130181751-44c40d356a65d60f" timestamp="1138645071.120728970" timezone="3600">
-<message>simplify use of $devname</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130180925-4cc39ba038be6826" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

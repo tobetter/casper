@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="77b09c94c49289df000ffc8a43deaf251431e929" revision_id="tfheen@ubuntu.com-20060105033706-3bb62e30b3ffd259" timestamp="1136432226.320509911" timezone="3600">
-<message>write number of failures, and just stay around forever at the end</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060105033036-ae991fa67eaafd65" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

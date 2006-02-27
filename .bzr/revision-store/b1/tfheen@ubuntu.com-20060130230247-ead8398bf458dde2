@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="91d99500fccd7dd0f3ed69df8d29bbd9223e3a9f" revision_id="tfheen@ubuntu.com-20060130230247-ead8398bf458dde2" timestamp="1138662167.096462965" timezone="3600">
-<message>use mkdir -p everywhere</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130230203-17f794754ccdc937" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

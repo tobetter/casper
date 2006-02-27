@@ -1,3 +1,10 @@
+casper (1.35) dapper; urgency=low
+
+  * Check for preseed/file= in /proc/cmdline and feed any given file to
+    debconf-set-selections.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 27 Feb 2006 17:32:02 +0000
+
 casper (1.34) dapper; urgency=low
 
   [ Luke Yelavich ]

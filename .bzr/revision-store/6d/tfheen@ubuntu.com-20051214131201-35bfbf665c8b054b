@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="4563689e7181fb7aa9bae0f5d13d99d5c697c06f" revision_id="tfheen@ubuntu.com-20051214131201-35bfbf665c8b054b" timestamp="1134565921.019037008" timezone="3600">
+<message>devices live in /dev..</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214131115-0c4a7359035044d1" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

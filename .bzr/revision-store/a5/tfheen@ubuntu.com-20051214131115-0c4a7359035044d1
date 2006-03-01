@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="7fc3e0f07514f298f71b320fd8a5cfe65a4af940" revision_id="tfheen@ubuntu.com-20051214131115-0c4a7359035044d1" timestamp="1134565875.534966946" timezone="3600">
+<message>udev is not a device db.  Fall back if udevinfo knows nothing</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214130954-4c10539f299fff78" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

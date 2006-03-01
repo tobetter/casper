@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="95669813cf92f6b5ddecdd41357c94fc9c04ddac" revision_id="tfheen@ubuntu.com-20051218121838-1c6d966af3954328" timestamp="1134908318.220067978" timezone="3600">
+<message>use devmapper on ppc</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051216054945-b543cf3b0b9d0fbc" />
+</parents>
+<properties><property name="branch-nick">squashfs</property>
+</properties>
+</revision>

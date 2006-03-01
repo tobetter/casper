@@ -1,0 +1,23 @@
+# bzr weave file v5
+i
+1 9c6b057a2b9d96a4067a749ee3b3b0158d390cf1
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 9c6b057a2b9d96a4067a749ee3b3b0158d390cf1
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1 0
+1 9c6b057a2b9d96a4067a749ee3b3b0158d390cf1
+n mdz@mizar-20051205230117-c327e75be767f237
+
+w
+{ 0
+. 4
+}
+{ 1
+[ 2
+. 4
+}
+] 2
+W

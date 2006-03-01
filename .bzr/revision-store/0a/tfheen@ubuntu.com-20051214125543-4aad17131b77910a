@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2caf746847cdb20ca9ba032df17d54ec3dcaaea8" revision_id="tfheen@ubuntu.com-20051214125543-4aad17131b77910a" timestamp="1134564943.065634012" timezone="3600">
+<message>chroot in casper-reconfigure</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214125455-ecccb700cd377fc9" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f4205ee92e4b3f4c1a7ea19cf4ad26bfc1ae1585" revision_id="tfheen@ubuntu.com-20051214132711-75394bb77e11c559" timestamp="1134566831.026978970" timezone="3600">
+<message>Make udevinfo silent if the device is not found.</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214132627-4749c4ce7e95989a" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

@@ -1,0 +1,68 @@
+# bzr weave file v5
+i
+1 a8390c267f97c26f9718007d71895d98c3396e61
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 fc93f1713dccd280f535bbe39c62fdddae768278
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 a8390c267f97c26f9718007d71895d98c3396e61
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-21
+
+i 1
+1 a8390c267f97c26f9718007d71895d98c3396e61
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 1
+1 a8390c267f97c26f9718007d71895d98c3396e61
+n Arch-1:colin.watson@canonical.com--2005%casper--cdebconf-info--0--patch-1
+
+i 2 0
+1 a8390c267f97c26f9718007d71895d98c3396e61
+n mdz@mizar-20051205230117-c327e75be767f237
+
+w
+{ 0
+. # This is here so that you can boot with "casper/enable=true"; it will never
+. # be displayed, so there is no point in translating this.
+. Template: casper/enable
+. Type: boolean
+. Default: false
+. Description: Enable casper mode?
+. 
+. Template: casper/info
+. Type: title
+. _Description: Ubuntu Live
+}
+{ 1
+[ 5
+. # This is here so that you can boot with "casper/enable=true"; it will never
+. # be displayed, so there is no point in translating this.
+. Template: casper/enable
+. Type: boolean
+. Default: false
+. Description: Enable casper mode?
+. 
+[ 2
+[ 3
+[ 4
+. Template: casper/backtitle
+] 2
+{ 2
+. Template: casper/info
+}
+] 3
+{ 3
+. Template: casper/info
+}
+] 4
+{ 4
+. Template: casper/info
+}
+. Type: title
+. _Description: Ubuntu Live
+}
+] 5
+W

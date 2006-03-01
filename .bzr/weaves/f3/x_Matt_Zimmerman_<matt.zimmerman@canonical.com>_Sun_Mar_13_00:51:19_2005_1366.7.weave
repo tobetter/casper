@@ -1,0 +1,215 @@
+# bzr weave file v5
+i
+1 d98c23a34b3f69378bffe35e39838629596c51a1
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 d98c23a34b3f69378bffe35e39838629596c51a1
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1 0
+1 d98c23a34b3f69378bffe35e39838629596c51a1
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 2
+1 9267c7657c47ad40c70d0ccc695d3e1e350c78ea
+n tfheen@ubuntu.com-20051214123713-b0c607646607b738
+
+i 3
+1 7772077e9d3cafa17990be8104dcca19a0699100
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+i 4
+1 a61635375fa8d08eb921072b2d9ca841ed2dfa33
+n tfheen@ubuntu.com-20051214124642-89138620ced37930
+
+i 5
+1 fae19b1f7aa9b53de3a7665311bac25f4402df6b
+n tfheen@ubuntu.com-20051214124825-89ead86bf4751314
+
+i 6
+1 7c46648395eb3d748e3dfa28c29f5495ad793709
+n tfheen@ubuntu.com-20051219132042-a0f399338aaacf39
+
+i 7
+1 baaaab7e23a818e079894a5a9dcba65038b9eec9
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 7
+1 baaaab7e23a818e079894a5a9dcba65038b9eec9
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
+w
+{ 0
+. #!/bin/sh
+{ 5
+. 
+. PREREQ=""
+{ 8
+. DESCRIPTION="Setting up automatic login"
+. 
+. . /scripts/functions
+}
+{ 9
+. DESCRIPTION="Setting up automatic login"
+. 
+. . /scripts/functions
+}
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+[ 7
+. set -x
+}
+] 7
+{ 8
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+{ 9
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+. 
+[ 3
+. . /usr/share/debconf/confmodule
+. db_get passwd/username
+. username="$RET"
+] 3
+{ 3
+. username="ubuntu"
+}
+. 
+[ 4
+. if [ -f /etc/gdm/gdm.conf ]; then
+] 4
+{ 4
+. if [ -f /root/etc/gdm/gdm.conf ]; then
+}
+.     # Configure GDM autologin
+. 
+.     sed -i \
+.         -e "s/^AutomaticLoginEnable=.*\$/AutomaticLoginEnable=true/" \
+.         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$username/" \
+.         -e "s/^TimedLoginEnable=.*\$/TimedLoginEnable=true/" \
+.         -e "s/^TimedLogin=.*\$/TimedLogin=$username/" \
+.         -e "s/^TimedLoginDelay=.*\$/TimedLoginDelay=10/" \
+[ 4
+.         /etc/gdm/gdm.conf
+] 4
+{ 4
+.         /root/etc/gdm/gdm.conf
+}
+. fi
+. 
+[ 4
+. if [ -f /etc/kde3/kdm/kdmrc ]; then
+] 4
+{ 4
+. if [ -f /root/etc/kde3/kdm/kdmrc ]; then
+}
+.     # Configure KDM autologin
+.     sed -i -r \
+.         -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
+.         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$username/" \
+.         -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
+[ 4
+.         /etc/kde3/kdm/kdmrc
+] 4
+{ 4
+.         /root/etc/kde3/kdm/kdmrc
+}
+. fi
+. 
+[ 6
+. if which kpersonalizer >/dev/null; then
+] 6
+{ 6
+. if chroot /root /usr/bin/which kpersonalizer >/dev/null; then
+}
+.     # Disable first-login wizard for KDE
+[ 4
+.     if [ ! -f /etc/kde3/kpersonalizerrc ]; then
+.         cat > /etc/kde3/kpersonalizerrc <<EOF
+] 4
+{ 4
+.     if [ ! -f /root/etc/kde3/kpersonalizerrc ]; then
+.         cat > /root/etc/kde3/kpersonalizerrc <<EOF
+}
+. [General]
+. FirstLogin=false
+. EOF
+.     else
+.         echo "I'm not smart enough to disable kpersonalizer startup" >&2
+.         echo "Because kpersonalizerrc already exists" >&2
+.     fi
+. fi
+. 
+[ 8
+[ 9
+. exit 0
+}
+{ 1
+[ 2
+. #!/bin/sh
+. 
+. . /usr/share/debconf/confmodule
+. db_get passwd/username
+. username="$RET"
+. 
+. if [ -f /etc/gdm/gdm.conf ]; then
+.     # Configure GDM autologin
+. 
+.     sed -i \
+.         -e "s/^AutomaticLoginEnable=.*\$/AutomaticLoginEnable=true/" \
+.         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$username/" \
+.         -e "s/^TimedLoginEnable=.*\$/TimedLoginEnable=true/" \
+.         -e "s/^TimedLogin=.*\$/TimedLogin=$username/" \
+.         -e "s/^TimedLoginDelay=.*\$/TimedLoginDelay=10/" \
+.         /etc/gdm/gdm.conf
+. fi
+. 
+. if [ -f /etc/kde3/kdm/kdmrc ]; then
+.     # Configure KDM autologin
+.     sed -i -r \
+.         -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
+.         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$username/" \
+.         -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
+.         /etc/kde3/kdm/kdmrc
+. fi
+. 
+. if which kpersonalizer >/dev/null; then
+.     # Disable first-login wizard for KDE
+.     if [ ! -f /etc/kde3/kpersonalizerrc ]; then
+.         cat > /etc/kde3/kpersonalizerrc <<EOF
+. [General]
+. FirstLogin=false
+. EOF
+.     else
+.         echo "I'm not smart enough to disable kpersonalizer startup" >&2
+.         echo "Because kpersonalizerrc already exists" >&2
+.     fi
+. fi
+. 
+. exit 0
+}
+] 2
+] 8
+{ 8
+. log_end_msg
+}
+] 9
+{ 9
+. log_end_msg
+}
+W

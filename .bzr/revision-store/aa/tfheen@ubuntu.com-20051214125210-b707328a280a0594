@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="562a9fa0b51c99a2294e44c0bdbdd7c765cb8a44" revision_id="tfheen@ubuntu.com-20051214125210-b707328a280a0594" timestamp="1134564730.926554918" timezone="3600">
+<message>hopefully shut down sanely</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214125143-820b3f91961101d1" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

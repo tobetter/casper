@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="84af3e0a406e360f895436888547885583f55825" revision_id="tfheen@ubuntu.com-20060130194232-fe81f195a925528e" timestamp="1138650152.404551029" timezone="3600">
+<message>more nls modules too</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130193601-a19ba751e2f1cc8e" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

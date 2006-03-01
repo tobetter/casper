@@ -1,3 +1,15 @@
+casper (1.36) dapper; urgency=low
+
+  [ Tollef Fog Heen ]
+  * Fix typo in find_cow_device so block devices didn't work at all.
+    Malone #31639.  Thanks to Richard Nemec for the catch.
+  * Update accessibility framework, thanks to Luke Yelavich.
+
+  [ Colin Watson ]
+  * Move the /cdrom mount into the new root filesystem.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed,  1 Mar 2006 11:13:54 +0100
+
 casper (1.35) dapper; urgency=low
 
   * Check for preseed/file= in /proc/cmdline and feed any given file to

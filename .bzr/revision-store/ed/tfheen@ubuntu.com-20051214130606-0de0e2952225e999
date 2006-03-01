@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="0e2b884d801b4e2dd81f577c9bd09fdfb5b12f02" revision_id="tfheen@ubuntu.com-20051214130606-0de0e2952225e999" timestamp="1134565566.157793999" timezone="3600">
+<message>use modprobe -Qb and udevplug -W rather than home-hacked solutions</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214130430-b464c22cacec4eec" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="3c0a0e5cd530d669ddcc03b3be47b5f32e81d4a8" revision_id="tfheen@ubuntu.com-20051215094048-37dd242c553b6e20" timestamp="1134639648.412786961" timezone="3600">
+<message>use devmapper by default in this branch.  Add set -x to aid debugging</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214140312-1e06364ef45e19b7" />
+</parents>
+<properties><property name="branch-nick">devmapper</property>
+</properties>
+</revision>

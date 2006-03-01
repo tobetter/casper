@@ -1,0 +1,9 @@
+<revision committer="Luke Yelavich &lt;luke@linden&gt;" format="5" inventory_sha1="ddf39e0e0791c902b4f9d8424855e532105f8633" revision_id="luke@linden-20060223114738-1c2015797af3acb7" timestamp="1140695258.801080942" timezone="39600">
+<message>Moved accessibility settings into appropriate profiles where needed.
+</message>
+<parents>
+<revision_ref revision_id="luke@linden-20060223040245-b37bfbd33684674c" />
+</parents>
+<properties><property name="branch-nick">casper</property>
+</properties>
+</revision>

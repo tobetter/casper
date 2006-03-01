@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c3f66e2c044cb50c0009123d965f2c78fea9a0b4" revision_id="tfheen@ubuntu.com-20060228102108-9519af5eefd1c760" timestamp="1141122068.664635897" timezone="3600">
+<message>get rid of "write-script-then-run-it hack in 30accessibility</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060228101719-ebe4394c1963b995" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

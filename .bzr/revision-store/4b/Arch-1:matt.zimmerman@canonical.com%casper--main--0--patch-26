@@ -1,0 +1,55 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="42d6a219afd325a46dde3a4d6cd4b0303a917c5b" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-26" timestamp="1126735985.000000000">
+<message>merge from breezy
+Patches applied:
+
+ * colin.watson@canonical.com--2005/casper--quieten--0--base-0
+   tag of matt.zimmerman@canonical.com/casper--breezy--0--patch-10
+
+ * colin.watson@canonical.com--2005/casper--quieten--0--patch-1
+   Install a fake script in /lib/debian-installer.d/S72menu-exit after ...
+
+ * colin.watson@canonical.com--2005/casper--vtfix--0--base-0
+   tag of matt.zimmerman@canonical.com/casper--breezy--0--patch-6
+
+ * colin.watson@canonical.com--2005/casper--vtfix--0--patch-1
+   Kill bterm after pivoting so that we can use vt1 rather than vt2, ...
+
+ * colin.watson@canonical.com--2005/casper--vtfix--0--patch-2
+   releasing version 1.12
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-3
+   Fix usplash stuff
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-4
+   Start usplash later, after init
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-5
+   Remove debug
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-6
+   Revert changes to casper-udeb.postinst which were intended for starting usplash earlier (pre-1.10)
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-7
+   merge colin.watson@canonical.com--2005/casper--vtfix--0
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-8
+   Neutralize branding in startup message
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-9
+   Use clear in addition to reset
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-10
+   Merge Colin's 1.14
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-11
+   Merge colin.watson@canonical.com--2005/casper--quieten--0
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-12
+   changelog
+
+</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25" />
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-12" />
+</parents>
+</revision>

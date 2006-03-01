@@ -1,0 +1,163 @@
+# bzr weave file v5
+i
+1 56b121ecb0b99433e944c7b867076bfb4016e9a9
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25
+
+i 0
+1 5decac51a3636dd2b5062f184074dcdf0aa27355
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-26
+
+i
+1 56b121ecb0b99433e944c7b867076bfb4016e9a9
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2
+
+i 2
+1 1aa794bf41584702758bfb53f0491259c9c3385e
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-3
+
+i 3
+1 9f98c122824f999f4c4e596e2488d10bce3e4952
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-4
+
+i 4
+1 5decac51a3636dd2b5062f184074dcdf0aa27355
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-5
+
+i
+1 5decac51a3636dd2b5062f184074dcdf0aa27355
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 1 5
+1 5decac51a3636dd2b5062f184074dcdf0aa27355
+n mdz@mizar-20051205230117-c327e75be767f237
+
+w
+{ 0
+. #!/bin/sh
+. 
+. if which usplash >/dev/null; then
+[ 1
+.     /etc/init.d/udev start
+] 1
+{ 1
+.     # Need to start as soon as possible after udev for maximum prettiness
+.     if [ -e /etc/rcS.d/S04udev ]; then
+.         init=/etc/rcS.d/S04usplash
+. 
+.         cat <<'EOF' > $init
+. #!/bin/sh
+. 
+. case "$1" in
+.   start)
+}
+.     usplash -c &
+{ 1
+.     ;;
+.   stop|restart|force-reload)
+.     ;;
+.   *)
+.     echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+.     exit 1
+.     ;;
+. esac
+. 
+. exit 0
+. EOF
+.         chmod 755 $init
+.     fi
+}
+. fi
+. 
+[ 1
+. sleep 10000
+. 
+] 1
+. exit 0
+}
+{ 2
+[ 7
+. #!/bin/sh
+. 
+. if which usplash >/dev/null; then
+[ 3
+.     /etc/init.d/udev start
+] 3
+{ 3
+[ 4
+.     /etc/init.d/udev start </dev/console
+.     # XXX redo the devfs hack from 30copy-dev
+.     /initrd/usr/lib/casper/post.d/??copy-dev
+}
+] 4
+{ 4
+.     # Need to start as soon as possible after udev for maximum prettiness
+.     if [ -e /etc/rcS.d/S04udev ]; then
+.         init=/etc/rcS.d/S04usplash
+. 
+.         cat <<'EOF' > $init
+. #!/bin/sh
+. 
+. case "$1" in
+.   start)
+[ 5
+.     echo "Hello, trying to start usplash now" >&2
+.     ls -l /dev/usplash_fifo >&2
+}
+] 5
+.     usplash -c &
+{ 4
+.     ;;
+.   stop|restart|force-reload)
+.     ;;
+.   *)
+.     echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+.     exit 1
+.     ;;
+. esac
+. 
+. exit 0
+. EOF
+.         chmod 755 $init
+.     fi
+}
+. fi
+. 
+[ 3
+. sleep 10000
+. 
+] 3
+. exit 0
+}
+{ 6
+. #!/bin/sh
+. 
+. if which usplash >/dev/null; then
+.     # Need to start as soon as possible after udev for maximum prettiness
+.     if [ -e /etc/rcS.d/S04udev ]; then
+.         init=/etc/rcS.d/S04usplash
+. 
+.         cat <<'EOF' > $init
+. #!/bin/sh
+. 
+. case "$1" in
+.   start)
+.     usplash -c &
+.     ;;
+.   stop|restart|force-reload)
+.     ;;
+.   *)
+.     echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+.     exit 1
+.     ;;
+. esac
+. 
+. exit 0
+. EOF
+.         chmod 755 $init
+.     fi
+. fi
+. 
+. exit 0
+}
+] 7
+W

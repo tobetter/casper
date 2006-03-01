@@ -1,0 +1,13 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="71d0c92037c49be17237d58334fd2da5125d9a4c" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25" timestamp="1125364153.000000000">
+<message>Merge casper--breezy--0
+Patches applied:
+
+ * matt.zimmerman@canonical.com/casper--breezy--0--patch-2
+   Add usplash support
+
+</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-24" />
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2" />
+</parents>
+</revision>

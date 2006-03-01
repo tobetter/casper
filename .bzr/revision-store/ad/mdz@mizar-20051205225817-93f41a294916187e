@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;mdz@mizar&gt;" format="5" inventory_sha1="82289be5cd5fcb6b3b2a73e8de4f33f0e76d7293" revision_id="mdz@mizar-20051205225817-93f41a294916187e" timestamp="1133823497.701544046" timezone="-28800">
+<message>Update changelog</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-29" />
+</parents>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="ffffc11e507c072832512f91ce2fd6e1a2789055" revision_id="colin.watson@canonical.com-20060216165103-82c4fa584e456cf9" timestamp="1140108663.662560940">
+<message>releasing version 1.32</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060216153441-ecbd333c570ef78c" />
+</parents>
+<properties><property name="branch-nick">espresso-desktop</property>
+</properties>
+</revision>

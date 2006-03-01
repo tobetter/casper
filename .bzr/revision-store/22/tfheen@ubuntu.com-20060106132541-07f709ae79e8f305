@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f3b1754aa376d8d88000c87a4e2e5d1e6c27b825" revision_id="tfheen@ubuntu.com-20060106132541-07f709ae79e8f305" timestamp="1136553941.470187902" timezone="3600">
+<message>make debconf-communicate a bit more silent</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060106132121-76c1766fab8652e8" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

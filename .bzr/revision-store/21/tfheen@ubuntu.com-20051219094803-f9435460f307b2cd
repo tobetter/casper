@@ -1,0 +1,10 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="14470c6682f69ea974f45a38b6d246f97d4327cb" revision_id="tfheen@ubuntu.com-20051219094803-f9435460f307b2cd" timestamp="1134985683.320034981" timezone="3600">
+<message>Merge in simplified live cd stuff
+</message>
+<parents>
+<revision_ref revision_id="mdz@mizar-20051205230117-c327e75be767f237" />
+<revision_ref revision_id="tfheen@ubuntu.com-20051214132843-57eb6377d82956ac" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

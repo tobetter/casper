@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d50754d88a605d0fdb606fcb3515da27a8b6bbf6" revision_id="tfheen@ubuntu.com-20051214130924-6afc3baaec8afcd0" timestamp="1134565764.787462950" timezone="3600">
+<message>handle the insane case of /dev/cloop already being allocated, or being called something else</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214130656-9823b174be137318" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

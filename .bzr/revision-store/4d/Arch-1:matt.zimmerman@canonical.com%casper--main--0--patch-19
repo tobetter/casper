@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="c1495e9e6b381f04a28655c385eebfd4aabc6524" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-19" timestamp="1124231067.000000000">
+<message>Call MAKEDEV console in post.d/20xconfig as a workaround for bug #13523</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-18" />
+</parents>
+</revision>

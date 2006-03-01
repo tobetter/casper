@@ -1,0 +1,8 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="54b825b20b54e7a86705f49b07e520bc8da8c95f" revision_id="colin.watson@canonical.com-20051205220508-2a2f232b5f328480" timestamp="1133820308.914856911">
+<message>* Avoid annoying screen-clear in casper-check.</message>
+<parents>
+<revision_ref revision_id="Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--patch-2" />
+</parents>
+<properties><property name="branch-nick">fixes</property>
+</properties>
+</revision>

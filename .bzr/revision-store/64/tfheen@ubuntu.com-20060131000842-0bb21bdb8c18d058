@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="59357507c189b4ad2048b82bdf1404bc9a33da30" revision_id="tfheen@ubuntu.com-20060131000842-0bb21bdb8c18d058" timestamp="1138666122.716815948" timezone="3600">
+<message>verbosity</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060131000828-64a63567e04c88b6" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

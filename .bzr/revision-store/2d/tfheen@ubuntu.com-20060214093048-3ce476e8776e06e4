@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="40baa2472becce81373126ad883440f93c05c011" revision_id="tfheen@ubuntu.com-20060214093048-3ce476e8776e06e4" timestamp="1139909448.712116003" timezone="3600">
+<message>check in changes in 1.29; changelog and minor faff</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060131114158-e58230824fa469be" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

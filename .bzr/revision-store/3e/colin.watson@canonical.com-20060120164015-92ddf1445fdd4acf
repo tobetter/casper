@@ -1,0 +1,9 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="a3acafc0079580fb8f2c09ca97ba6f8b2ac48028" revision_id="colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf" timestamp="1137775215.052407980">
+<message>* Change casper-reconfigure to take the target root filesystem as its
+  first argument.</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060116210647-0f77128359a7c20a" />
+</parents>
+<properties><property name="branch-nick">espresso-hooks</property>
+</properties>
+</revision>

@@ -479,6 +479,14 @@ i 118
 1 02bf92d9292ae5d84f3079b09535a72cb5bfb860
 n tfheen@ubuntu.com-20060302142034-b7e3565daba526dd
 
+i 119
+1 a5758b1fc4ed884f719b85d5e3720d0f78f10183
+n tfheen@ubuntu.com-20060304105607-291034865b058859
+
+i 120
+1 58e920358d71aea843b421240cb4d56325669a35
+n tfheen@ubuntu.com-20060306094059-184e8fedffa4fb0b
+
 w
 { 0
 { 23
@@ -798,6 +806,27 @@ w
 . casper (1.36) UNRELEASED; urgency=low
 ] 119
 { 119
+{ 120
+[ 121
+. casper (1.37) UNRELEASED; urgency=low
+] 121
+{ 121
+. casper (1.37) dapper; urgency=low
+}
+. 
+.   * Add support for having the squashfs directly on a device, thanks to
+[ 121
+.     Paul Sladen for idea and a patch. 
+] 121
+{ 121
+.     Paul Sladen for idea and a patch.
+.   * If a directory "Examples" exists in ~ after we've run adduser, move it
+.     to the Desktop subdirectory for greater visibility.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Sat,  4 Mar 2006 11:55:50 +0100
+. 
+}
 . casper (1.36) dapper; urgency=low
 }
 . 

@@ -210,8 +210,9 @@ find_cd() {
 	mounted=
         for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -v loop | grep -v ram); do
             devname=$(sys2dev "${sysblock}")
+            fstype=$(get_fstype "${devname}")
             if /lib/udev/cdrom_id ${devname} > /dev/null; then
-                mount -t $(get_fstype "${devname}") -o ro "$devname" $mountpoint || continue
+                mount -t ${fstype} -o ro "$devname" $mountpoint || continue
                 if casper_path $mountpoint; then
                     echo $(casper_path $mountpoint)
                     return
@@ -221,9 +222,10 @@ find_cd() {
             elif is_usb_device "$sysblock"; then
                 for dev in $(subdevices "${sysblock}"); do
                     devname=$(sys2dev "${dev}")
-                    case $(get_fstype "${devname}") in
+                    fstype=$(get_fstype "${devname}")
+                    case ${fstype} in
                         vfat|iso9660|udf)
-                            mount -t $(get_fstype "${devname}") -o ro "${devname}" $mountpoint || continue
+                            mount -t ${fstype} -o ro "${devname}" $mountpoint || continue
                             if casper_path $mountpoint; then
                                 echo $(casper_path $mountpoint)
                                 return
@@ -233,6 +235,15 @@ find_cd() {
                             ;;
                     esac
                 done
+	    elif [ "${fstype}" = "squashfs" ]; then
+
+                # This is an ugly hack situation, the block device has
+                # a squashfs image directly on it.  It's hopefully
+                # casper, so take it and run with it.
+
+                ln -s "${devname}" "${devname}.${fstype}"
+                echo "${devname}.${fstype}"
+                return
             fi
         done
 }

@@ -37,6 +37,7 @@ fi
 # XXX - awful hack to stop xscreensaver locking the screen (#7150)
 echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
+mkdir -p /root/home/ubuntu/Desktop
 for ui in gtkui; do
     file="/usr/share/applications/espresso-$ui.desktop"
     if [ -f "/root/$file" ]; then
@@ -44,5 +45,9 @@ for ui in gtkui; do
         break
     fi
 done
+
+if [ -L /root/home/ubuntu/Examples ]; then
+    mv /root/home/ubuntu/Examples /root/home/ubuntu/Desktop/
+fi
 
 log_end_msg

@@ -1,3 +1,12 @@
+casper (1.37) dapper; urgency=low
+
+  * Add support for having the squashfs directly on a device, thanks to
+    Paul Sladen for idea and a patch.
+  * If a directory "Examples" exists in ~ after we've run adduser, move it
+    to the Desktop subdirectory for greater visibility.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Sat,  4 Mar 2006 11:55:50 +0100
+
 casper (1.36) dapper; urgency=low
 
   [ Tollef Fog Heen ]

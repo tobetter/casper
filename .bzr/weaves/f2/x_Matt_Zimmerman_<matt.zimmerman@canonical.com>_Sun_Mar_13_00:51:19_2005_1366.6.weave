@@ -119,6 +119,14 @@ i 28
 1 4fcb5bc225ed1aa84cc841f258380d0b9ff8d573
 n tfheen@ubuntu.com-20060220093555-fd9fee9d0dcb80aa
 
+i 29
+1 301bc0d71e8a3792cf6f88ae96e28f0a6568e7b3
+n tfheen@xoog-20060306082333-7644eee4d7c780ae
+
+i 30
+1 ce38ef88975bf264eeec627a453293833a504678
+n tfheen@xoog-20060306084103-44f8961ee73fd023
+
 w
 { 0
 . #!/bin/sh
@@ -344,6 +352,9 @@ w
 ] 20
 { 20
 { 23
+{ 30
+. mkdir -p /root/home/ubuntu/Desktop
+}
 . for ui in gtkui; do
 [ 24
 .     file="/usr/share/applications/espresso-$ui.desktop"
@@ -388,6 +399,17 @@ w
 .         break
 .     fi
 . done
+. 
+}
+{ 30
+[ 31
+. if [ -e /root/home/ubuntu/Examples ]; then
+] 31
+{ 31
+. if [ -L /root/home/ubuntu/Examples ]; then
+}
+.     mv /root/home/ubuntu/Examples /root/home/ubuntu/Desktop/
+. fi
 . 
 }
 . log_end_msg

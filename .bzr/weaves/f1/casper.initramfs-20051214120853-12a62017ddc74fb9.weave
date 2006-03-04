@@ -315,6 +315,10 @@ i 77
 1 5bad5d1cd6b90184d1992580dca25012c17c3c62
 n tfheen@ubuntu.com-20060301101657-a840995c6b2c5bdd
 
+i 78
+1 a646d7599983ee88e1b4bf27646ae608ea85f4fc
+n tfheen@ubuntu.com-20060304105607-291034865b058859
+
 w
 { 0
 . #!/bin/sh
@@ -1136,9 +1140,17 @@ w
 .         for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -v loop | grep -v ram); do
 }
 .             devname=$(sys2dev "${sysblock}")
+{ 79
+.             fstype=$(get_fstype "${devname}")
+}
 .             if /lib/udev/cdrom_id ${devname} > /dev/null; then
 }
+[ 79
 .                 mount -t $(get_fstype "${devname}") -o ro "$devname" $mountpoint || continue
+}
+] 79
+{ 79
+.                 mount -t ${fstype} -o ro "$devname" $mountpoint || continue
 }
 .                 if casper_path $mountpoint; then
 }
@@ -1215,9 +1227,20 @@ w
 { 55
 .                 for dev in $(subdevices "${sysblock}"); do
 .                     devname=$(sys2dev "${dev}")
+[ 79
 .                     case $(get_fstype "${devname}") in
+] 79
+{ 79
+.                     fstype=$(get_fstype "${devname}")
+.                     case ${fstype} in
+}
 .                         vfat|iso9660|udf)
+[ 79
 .                             mount -t $(get_fstype "${devname}") -o ro "${devname}" $mountpoint || continue
+] 79
+{ 79
+.                             mount -t ${fstype} -o ro "${devname}" $mountpoint || continue
+}
 .                             if casper_path $mountpoint; then
 .                                 echo $(casper_path $mountpoint)
 .                                 return
@@ -1228,6 +1251,17 @@ w
 .                     esac
 }
 .                 done
+}
+{ 79
+. 	    elif [ "${fstype}" = "squashfs" ]; then
+. 
+.                 # This is an ugly hack situation, the block device has
+.                 # a squashfs image directly on it.  It's hopefully
+.                 # casper, so take it and run with it.
+. 
+.                 ln -s "${devname}" "${devname}.${fstype}"
+.                 echo "${devname}.${fstype}"
+.                 return
 }
 .             fi
 .         done

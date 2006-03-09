@@ -36,6 +36,9 @@ rm -f /root/etc/rc?.d/[SK]??postfix
 # Avoid clobbering the user's clock
 rm -f /root/etc/rc?.d/K??hwclock.sh
 
+# Disable readahead since it doesn't play well with squashfs + unionfs
+mv /root/sbin/readahead-list /root/sbin/readahead-list.disabled
+
 # Install shutdown script
 cp -a /lib/casper/shutdown /root/etc/init.d/casper-shutdown
 if [ -f /root/etc/rc0.d/S90halt ]; then

@@ -59,6 +59,10 @@ i 13
 1 cf05dc30daadf3909a2f4ba88111dad6fe8ed265
 n tfheen@ubuntu.com-20060220093515-4963f5054dcef61f
 
+i 14
+1 219fe65ad53c5707ffae2888735311090bef1443
+n tfheen@ubuntu.com-20060309084432-803bae73ba98185f
+
 w
 { 0
 . #!/bin/sh
@@ -167,6 +171,11 @@ w
 . rm -f /root/etc/rc?.d/K??hwclock.sh
 }
 . 
+{ 15
+. # Disable readahead since it doesn't play well with squashfs + unionfs
+. mv /root/sbin/readahead-list /root/sbin/readahead-list.disabled
+. 
+}
 . # Install shutdown script
 [ 6
 . if [ -f /etc/rc0.d/S90halt ]; then

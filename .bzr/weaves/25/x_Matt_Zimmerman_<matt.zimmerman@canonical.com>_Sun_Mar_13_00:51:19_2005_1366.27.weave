@@ -487,6 +487,10 @@ i 120
 1 58e920358d71aea843b421240cb4d56325669a35
 n tfheen@ubuntu.com-20060306094059-184e8fedffa4fb0b
 
+i 121
+1 083072cc2a98cfcb4bfe3fa0cdca086981104fcc
+n tfheen@ubuntu.com-20060309084432-803bae73ba98185f
+
 w
 { 0
 { 23
@@ -811,6 +815,14 @@ w
 . casper (1.37) UNRELEASED; urgency=low
 ] 121
 { 121
+{ 122
+. casper (1.38) dapper; urgency=low
+. 
+.   * Disable readahead since it breaks too much with squashfs and unionfs.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Thu,  9 Mar 2006 09:43:39 +0100
+. 
+}
 . casper (1.37) dapper; urgency=low
 }
 . 

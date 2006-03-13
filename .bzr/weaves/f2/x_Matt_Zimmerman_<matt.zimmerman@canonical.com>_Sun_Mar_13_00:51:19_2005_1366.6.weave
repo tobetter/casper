@@ -127,6 +127,10 @@ i 30
 1 ce38ef88975bf264eeec627a453293833a504678
 n tfheen@xoog-20060306084103-44f8961ee73fd023
 
+i 31
+1 d93780dc369ee0bba9b7356b6ec8eeb35a63488e
+n colin.watson@canonical.com-20060317151231-dc9f5567bbb3e35d
+
 w
 { 0
 . #!/bin/sh
@@ -281,6 +285,17 @@ w
 .     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /etc/sudoers
 ] 7
 { 7
+{ 32
+. # Clear out debconf database again to avoid confusing espresso later.
+. chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+. set passwd/root-password-crypted
+. set passwd/user-password-crypted
+. set passwd/user-fullname
+. set passwd/username
+. set passwd/user-uid
+. EOF
+. 
+}
 . if [ -f /root/etc/sudoers ]; then
 [ 11
 .     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers

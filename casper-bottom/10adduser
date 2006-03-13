@@ -30,6 +30,15 @@ EOF
 
 chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
 
+# Clear out debconf database again to avoid confusing espresso later.
+chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+set passwd/root-password-crypted
+set passwd/user-password-crypted
+set passwd/user-fullname
+set passwd/username
+set passwd/user-uid
+EOF
+
 if [ -f /root/etc/sudoers ]; then
     grep -q '^%admin' /root/etc/sudoers && sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers || echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers
 fi

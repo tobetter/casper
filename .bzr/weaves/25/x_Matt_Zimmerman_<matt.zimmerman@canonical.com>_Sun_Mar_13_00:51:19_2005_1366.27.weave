@@ -491,6 +491,18 @@ i 121
 1 083072cc2a98cfcb4bfe3fa0cdca086981104fcc
 n tfheen@ubuntu.com-20060309084432-803bae73ba98185f
 
+i 122
+1 150906d57117620d1bc9c039fda0caeefa854a86
+n tfheen@ubuntu.com-20060313103849-493a2047f21ebafe
+
+i 123
+1 f3388197d5e0501a459e846913d55d2e9ae9e2e6
+n colin.watson@canonical.com-20060317151231-dc9f5567bbb3e35d
+
+i 124
+1 bcb27ed9c547b1b4225c7ab689268a3ead1ae043
+n tfheen@ubuntu.com-20060321151742-c3b07a1629d7b11c
+
 w
 { 0
 { 23
@@ -816,6 +828,30 @@ w
 ] 121
 { 121
 { 122
+{ 123
+[ 125
+. casper (1.39) UNRELEASED; urgency=low
+] 125
+{ 125
+. casper (1.39) dapper; urgency=low
+}
+. 
+{ 124
+.   [ Tollef Fog Heen ]
+}
+.   * Disable update-notifier by default, as it won't make much sense for
+.     most people.
+{ 124
+. 
+.   [ Colin Watson ]
+.   * Clear out user-setup questions from the debconf database after creating
+.     the live CD user, to avoid confusing espresso into offering "Ubuntu
+.     LiveCD user" as the user's default full name.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 13 Mar 2006 11:38:39 +0100
+. 
+}
 . casper (1.38) dapper; urgency=low
 . 
 .   * Disable readahead since it breaks too much with squashfs and unionfs.

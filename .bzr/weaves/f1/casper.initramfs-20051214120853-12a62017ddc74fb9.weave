@@ -319,6 +319,10 @@ i 78
 1 a646d7599983ee88e1b4bf27646ae608ea85f4fc
 n tfheen@ubuntu.com-20060304105607-291034865b058859
 
+i 79
+1 ccb639c7588b9e17dcf7fc12720c863dc41fbdf8
+n tfheen@ubuntu.com-20060310211050-e989fd3d20e44395
+
 w
 { 0
 . #!/bin/sh
@@ -653,7 +657,12 @@ w
 ] 76
 .     local FSTYPE
 .     local FSSIZE
+[ 80
 .     eval $(fstype $1)
+] 80
+{ 80
+.     eval $(fstype < $1)
+}
 .     if [ "$FSTYPE" != "unknown" ]; then
 }
 .         echo $FSTYPE

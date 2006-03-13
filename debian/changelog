@@ -1,3 +1,16 @@
+casper (1.39) dapper; urgency=low
+
+  [ Tollef Fog Heen ]
+  * Disable update-notifier by default, as it won't make much sense for
+    most people.
+
+  [ Colin Watson ]
+  * Clear out user-setup questions from the debconf database after creating
+    the live CD user, to avoid confusing espresso into offering "Ubuntu
+    LiveCD user" as the user's default full name.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 13 Mar 2006 11:38:39 +0100
+
 casper (1.38) dapper; urgency=low
 
   * Disable readahead since it breaks too much with squashfs and unionfs.

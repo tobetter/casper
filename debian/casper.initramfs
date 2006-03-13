@@ -85,7 +85,7 @@ setup_loop() {
 get_fstype() {
     local FSTYPE
     local FSSIZE
-    eval $(fstype $1)
+    eval $(fstype < $1)
     if [ "$FSTYPE" != "unknown" ]; then
         echo $FSTYPE
         return 0

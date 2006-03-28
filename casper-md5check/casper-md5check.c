@@ -19,6 +19,8 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <sys/reboot.h>
+#include <linux/reboot.h>
 #include <string.h>
 #include <errno.h>
 #include <stdarg.h>
@@ -27,6 +29,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <math.h>
+#include <termios.h>
 
 #define USPLASH_FIFO "/dev/.initramfs/usplash_fifo"
 #define MAXTRIES 5
@@ -131,6 +134,18 @@ void usplash_progress(int fd, int progress) {
   free(s);
 }
 
+int set_nocanonical_tty(int fd) {
+  struct termios t;
+
+  if (tcgetattr(fd, &t) == -1) {
+    perror("tcgetattr");
+  }
+  t.c_lflag &= ~ICANON;
+  t.c_cc[VMIN] = 1;
+  t.c_cc[VTIME] = 0;
+  return tcsetattr(fd, TCSANOW, &t);
+}
+
 int main(int argc, char **argv) {
   
   int pipe_fd, check_fd;
@@ -224,13 +239,11 @@ int main(int argc, char **argv) {
     free(checkfile);
   }
   usplash_text(pipe_fd, "Check finished, %d checksums failed", failed);
-  usplash_text(pipe_fd, "Please reboot your system", failed);
+  usplash_text(pipe_fd, "Press any key to reboot your system");
   usplash_timeout(pipe_fd, 0);
-
-  while (1) {
-    sleep(3600);
-  }
-  
+  set_nocanonical_tty(0);
+  getchar();
+  reboot(LINUX_REBOOT_CMD_RESTART);
   return 0;
   
 }

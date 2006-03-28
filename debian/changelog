@@ -1,3 +1,14 @@
+casper (1.40) dapper; urgency=low
+
+  * Add snd_powermac to /etc/modules on ppc.  (Malone: #27862)
+  * Use chmod -x instead of mv to disable readahead in order to not
+    trigger unionfs bugs
+  * Reboot the system when a key is pressed at the end of the integrity
+    check.  (Malone: #29203)
+  * Use usplash_write too when doing shutdown.  (Malone: #34537)
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 28 Mar 2006 10:09:49 +0200
+
 casper (1.39) dapper; urgency=low
 
   [ Tollef Fog Heen ]

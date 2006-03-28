@@ -63,6 +63,14 @@ i 14
 1 219fe65ad53c5707ffae2888735311090bef1443
 n tfheen@ubuntu.com-20060309084432-803bae73ba98185f
 
+i 15
+1 f0926740f9fcbfc5b305075ee371236907de98ce
+n tfheen@ubuntu.com-20060328085939-82093ef1c8161c25
+
+i 15
+1 f0926740f9fcbfc5b305075ee371236907de98ce
+n tfheen@ubuntu.com-20060328085955-c49b871c0f29a01d
+
 w
 { 0
 . #!/bin/sh
@@ -173,7 +181,19 @@ w
 . 
 { 15
 . # Disable readahead since it doesn't play well with squashfs + unionfs
+[ 16
+[ 17
 . mv /root/sbin/readahead-list /root/sbin/readahead-list.disabled
+] 16
+{ 16
+. # use chmod instead of mv to not trigger unionfs bugs.
+. chmod -x /root/sbin/readahead-list
+}
+] 17
+{ 17
+. # use chmod instead of mv to not trigger unionfs bugs.
+. chmod -x /root/sbin/readahead-list
+}
 . 
 }
 . # Install shutdown script

@@ -63,6 +63,18 @@ i 14
 1 5ca2cc66591a599554f620c7fcd6b4b09ec0c9ec
 n tfheen@ubuntu.com-20060214135237-70a840f6debc50d8
 
+i 15
+1 24b7df78ef0024099ace5778210cbe9a1ece064f
+n tfheen@ubuntu.com-20060328091855-6ad82d6576c032a1
+
+i 16
+1 4e4d09ba3fc008440dd656fbca352dfe5db26b9f
+n tfheen@ubuntu.com-20060328093010-88dde5d8633ac188
+
+i 17
+1 51311f5679822c8df957c6b9df45f410eb7c522e
+n root@xoog-20060328113153-b786f6aa65256d06
+
 w
 { 0
 . /* casper-md5check - a tool to check md5sums and talk to usplash
@@ -86,6 +98,12 @@ w
 . 
 . #include <stdio.h>
 . #include <unistd.h>
+{ 16
+. #include <sys/reboot.h>
+}
+{ 17
+. #include <linux/reboot.h>
+}
 . #include <string.h>
 . #include <errno.h>
 . #include <stdarg.h>
@@ -98,6 +116,9 @@ w
 ] 6
 { 7
 . #include <math.h>
+}
+{ 18
+. #include <termios.h>
 }
 . 
 [ 14
@@ -478,6 +499,20 @@ w
 . }
 . 
 }
+{ 18
+. int set_nocanonical_tty(int fd) {
+.   struct termios t;
+. 
+.   if (tcgetattr(fd, &t) == -1) {
+.     perror("tcgetattr");
+.   }
+.   t.c_lflag &= ~ICANON;
+.   t.c_cc[VMIN] = 1;
+.   t.c_cc[VTIME] = 0;
+.   return tcsetattr(fd, TCSANOW, &t);
+. }
+. 
+}
 . int main(int argc, char **argv) {
 [ 4
 . 	int pipe_fd, check_fd;
@@ -721,15 +756,29 @@ w
 { 13
 .   usplash_text(pipe_fd, "Check finished, %d checksums failed", failed);
 { 15
+[ 16
 .   usplash_text(pipe_fd, "Please reboot your system", failed);
 }
+] 16
+{ 16
+.   usplash_text(pipe_fd, "Press any key to reboot your system");
+}
 .   usplash_timeout(pipe_fd, 0);
+[ 16
 . 
 .   while (1) {
 .     sleep(3600);
 .   }
 }
 .   
+] 16
+{ 16
+{ 18
+.   set_nocanonical_tty(0);
+}
+.   getchar();
+.   reboot(LINUX_REBOOT_CMD_RESTART);
+}
 .   return 0;
 .   
 }

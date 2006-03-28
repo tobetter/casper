@@ -19,6 +19,10 @@ i 3
 1 28b4f20f39bbd46d6c8d9fd9b3bcaf737a9c0ce7
 n tfheen@ubuntu.com-20051214125210-b707328a280a0594
 
+i 4
+1 3b372fc0533a87ee733ee37f8c75a43bc803d941
+n tfheen@ubuntu.com-20060328114038-18560924f7bc62e7
+
 w
 { 0
 . #!/bin/sh
@@ -60,6 +64,12 @@ w
 . 
 . # XXX - i18n
 . echo -n "Please remove the disc, close the tray (if any) and press ENTER: "
+{ 5
+. if [ -x /sbin/usplash_write ]; then
+.     /sbin/usplash_write "TEXT Please remove the disc, close the tray (if any) and press ENTER"
+. fi
+. 
+}
 . read x
 . 
 . exit 0

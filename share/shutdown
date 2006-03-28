@@ -27,6 +27,10 @@ eject -p -m /cdrom >/dev/null 2>&1
 
 # XXX - i18n
 echo -n "Please remove the disc, close the tray (if any) and press ENTER: "
+if [ -x /sbin/usplash_write ]; then
+    /sbin/usplash_write "TEXT Please remove the disc, close the tray (if any) and press ENTER"
+fi
+
 read x
 
 exit 0

@@ -503,6 +503,38 @@ i 124
 1 bcb27ed9c547b1b4225c7ab689268a3ead1ae043
 n tfheen@ubuntu.com-20060321151742-c3b07a1629d7b11c
 
+i 125
+1 9ccf6ba804a4cfcc47250d4568671b0d9e62a145
+n tfheen@ubuntu.com-20060328081047-bc661f90fa93b206
+
+i 125
+1 9ccf6ba804a4cfcc47250d4568671b0d9e62a145
+n tfheen@ubuntu.com-20060328082159-1d699f245162d1bb
+
+i 127
+1 7bf653a053c5bd5f84881622358b45e9877c4c6b
+n tfheen@ubuntu.com-20060328085939-82093ef1c8161c25
+
+i 127
+1 7bf653a053c5bd5f84881622358b45e9877c4c6b
+n tfheen@ubuntu.com-20060328085955-c49b871c0f29a01d
+
+i 129
+1 3af681b34f4a73649525913867f58622b145e9d4
+n tfheen@ubuntu.com-20060328091855-6ad82d6576c032a1
+
+i 130
+1 0b4449751fa6aa70501a6df9f632c32e216d7f02
+n tfheen@ubuntu.com-20060328113432-5bbdd450c4446867
+
+i 131
+1 a12b903fcc4c87d561d40a9481bd58f6dcf08e3d
+n tfheen@ubuntu.com-20060328114038-18560924f7bc62e7
+
+i 132
+1 4b0480534eb5834cd45c2f955733a5252f1df87e
+n tfheen@ubuntu.com-20060328115541-b8dde1d7f0512bac
+
 w
 { 0
 { 23
@@ -833,6 +865,47 @@ w
 . casper (1.39) UNRELEASED; urgency=low
 ] 125
 { 125
+{ 126
+. casper (1.40) UNRELEASED; urgency=low
+. 
+.   * Add snd_powermac to /etc/modules on ppc.  (Malone: #27862)
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 28 Mar 2006 10:09:49 +0200
+. 
+}
+{ 127
+[ 133
+. casper (1.40) UNRELEASED; urgency=low
+] 133
+{ 133
+. casper (1.40) dapper; urgency=low
+}
+. 
+.   * Add snd_powermac to /etc/modules on ppc.  (Malone: #27862)
+{ 128
+.   * Use chmod -x instead of mv to disable readahead in order to not
+.     trigger unionfs bugs
+}
+{ 129
+.   * Use chmod -x instead of mv to disable readahead in order to not
+.     trigger unionfs bugs
+}
+{ 130
+.   * Reboot the system when a key is pressed at the end of the integrity
+[ 131
+.     check.
+}
+] 131
+{ 131
+.     check.  (Malone: #29203)
+}
+{ 132
+.   * Use usplash_write too when doing shutdown.  (Malone: #34537)
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 28 Mar 2006 10:09:49 +0200
+. 
+}
 . casper (1.39) dapper; urgency=low
 }
 . 

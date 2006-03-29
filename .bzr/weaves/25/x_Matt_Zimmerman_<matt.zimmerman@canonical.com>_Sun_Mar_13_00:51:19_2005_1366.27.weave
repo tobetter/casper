@@ -535,6 +535,10 @@ i 132
 1 4b0480534eb5834cd45c2f955733a5252f1df87e
 n tfheen@ubuntu.com-20060328115541-b8dde1d7f0512bac
 
+i 133
+1 40d53fc3ce4eb84a2ceb4ee7bfdbb22d086002f3
+n tfheen@ubuntu.com-20060329095059-a18375120a6adcfa
+
 w
 { 0
 { 23
@@ -878,6 +882,15 @@ w
 . casper (1.40) UNRELEASED; urgency=low
 ] 133
 { 133
+{ 134
+. casper (1.41) dapper; urgency=low
+. 
+.   * Don't mkdir then install -D, just install -D (this should prevent
+.     ~ubuntu/Desktop being owned by root)
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 29 Mar 2006 10:52:42 +0200
+. 
+}
 . casper (1.40) dapper; urgency=low
 }
 . 

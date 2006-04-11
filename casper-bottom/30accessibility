@@ -21,56 +21,49 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 gct() {
-chroot /root gconftool-2 "$@"
+chroot /root su ubuntu -- gconftool-2 -s "$@"
 }
 
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
                         access=v1)
-                        gct -s -t string /desktop/gnome/interface/gtk_thene HighContrastLargePrint
-                        gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
-                        gct -s -t string /apps/metacity/general/theme Atlanta
+                        gct -t string /desktop/gnome/interface/gtk_thene HighContrastLargePrint
+                        gct -t string /desktop/gnome/interface/icon_theme HighContrast
+                        gct -t string /apps/metacity/general/theme Atlanta
 # TODO - Mouse cursor.
                         ;;
                         # Moderate Visual Impairment
                         access=v2)
-                        gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
-                        gct -s -t bool /apps/gnopernicus/magnifier/schema1/generic_zoomer/zoom_factor_lock true
-                        gct -s -t float /apps/gnopernicus/magnifier/schema1/generic_zoomer/zoom_factor_size_x 8
-                        gct -s -t float /apps/gnopernicus/magnifier/schema1/generic_zoomer/zoom_factor_y 8
-                        gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_top 540
-                        gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_height 767
-                        gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_left 0
-                        gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_width 1023
-                        gct -s -t bool /apps/gnopernicus/srcore/mag_active true
-                        gct -s -t bool /apps/gnopernicus/srcore/sp_active false
+                        gct -t bool /desktop/gnome/interface/accessibility true
+                        gct -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
+                        gct -t bool /apps/gnopernicus/srcore/mag_active true
+                        gct -t bool /apps/gnopernicus/srcore/sp_active false
                         ;;
                         # Blindness
                         access=v3)
-                        gct -s -t bool /desktop/gnome/sound/enable_esd false
-                        gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
-                        gct -s -t bool /apps/gnopernicus/srcore/sp_active true
+                        gct -t bool /desktop/gnome/sound/enable_esd false
+                        gct -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
+                        gct -t bool /apps/gnopernicus/srcore/sp_active true
                         ;;
                         # Minor Motor Difficulties
                         access=m1)
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep true
-                        gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
-                        gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
-                        gct -s -t integer /desktop/gnome/peripherals/keyboard/delay 700
-                        gct -s -t integer /desktop/gnome/peripherals/keyboard/rate 10
+                        gct -t bool /desktop/gnome/accessibility/keyboard/enable true
+                        gct -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
+                        gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
+                        gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep true
+                        gct -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
+                        gct -t bool /desktop/gnome/peripherals/keyboard/repeat true
+                        gct -t integer /desktop/gnome/peripherals/keyboard/delay 700
+                        gct -t integer /desktop/gnome/peripherals/keyboard/rate 10
                         ;;
                         # Motor Difficulties - pointing devices
                         access=m2)
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
-                        gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
-                        gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gok
+                        gct -t bool /desktop/gnome/accessibility/keyboard/enable true
+                        gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
+                        gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
+                        gct -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
+                        gct -t list /desktop/gnome/accessibility/startup/exe_ats gok
                         ;;
 		esac
 done

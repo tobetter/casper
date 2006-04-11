@@ -20,6 +20,6 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-rm /root/etc/xdf/autostart/update-notifier.desktop
+rm /root/etc/xdg/autostart/update-notifier.desktop
 
 log_end_msg

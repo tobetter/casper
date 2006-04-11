@@ -71,6 +71,18 @@ i 15 14
 1 f147ab96eec3a9862d21363de8a6199696babc71
 n tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c
 
+i 17
+1 66c6e979f95779b44e2420dc53c07a29db9832d6
+n tfheen@ubuntu.com-20060411133748-e43472f5e52001dc
+
+i 18
+1 d0a6ac4ba05710c569e76fbed1aa350e132cbc07
+n tfheen@ubuntu.com-20060411141541-6e87088e8da2ef74
+
+i 19
+1 835e64edcbb484b4680fb283d705491574747aaa
+n tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0
+
 w
 { 0
 . #!/bin/sh
@@ -182,7 +194,22 @@ w
 }
 ] 10
 { 10
+[ 18
 .     chroot /root /bin/sh -c 'gconftool-2 -t bool -s /apps/panel/global/disable_lock_screen true'
+}
+] 18
+{ 18
+[ 19
+.     chroot /root su ubuntu -c gconftool-2 -t bool -s /apps/panel/global/disable_lock_screen true
+}
+] 19
+{ 19
+[ 20
+.     chroot /root su ubuntu -- gconftool-2 --direct -s -t bool /apps/panel/global/disable_lock_screen true
+}
+] 20
+{ 20
+.     chroot /root su ubuntu -- gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
 }
 . fi
 }

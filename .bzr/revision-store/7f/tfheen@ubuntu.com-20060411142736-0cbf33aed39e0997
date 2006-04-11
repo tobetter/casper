@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="e3cba58925fca358a9a198576e1d682fc18cb515" revision_id="tfheen@ubuntu.com-20060411142736-0cbf33aed39e0997" timestamp="1144765656.822408915" timezone="7200">
+<message>Fix typo in 31disable_update_notifier so we now actually disable update-notifier</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

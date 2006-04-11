@@ -1,0 +1,10 @@
+<revision committer="themuso@themuso.com" format="5" inventory_sha1="7b891a3b5a4d00901effcf964aa8f8f3acfe2b96" revision_id="themuso@themuso.com-20060403121419-96918035d2d4f256" timestamp="1144066459.269624949" timezone="36000">
+<message>Removed some settings from accessibility profiles as these are now in the
+relevant packages.
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060329095059-a18375120a6adcfa" />
+</parents>
+<properties><property name="branch-nick">casper</property>
+</properties>
+</revision>

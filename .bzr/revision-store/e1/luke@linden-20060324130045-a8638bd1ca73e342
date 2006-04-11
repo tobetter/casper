@@ -1,0 +1,9 @@
+<revision committer="Luke Yelavich &lt;luke@linden&gt;" format="5" inventory_sha1="818916d2c4d310dc19997e7c07b6ed3e8ceec5df" revision_id="luke@linden-20060324130045-a8638bd1ca73e342" timestamp="1143205245.773857117" timezone="39600">
+<message>Removed gconf calls for some profile specific settings. Settings can be found in packages.
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060321151742-c3b07a1629d7b11c" />
+</parents>
+<properties><property name="branch-nick">casper</property>
+</properties>
+</revision>

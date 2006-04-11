@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="67041101154be6fb8d4c67be490ca6caae394cb7" revision_id="tfheen@ubuntu.com-20060411133748-e43472f5e52001dc" timestamp="1144762668.834122896" timezone="7200">
+<message>Make sure to set the gconf values for the ubuntu user, not for root</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060403122035-ddaeadc8a798f1bd" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

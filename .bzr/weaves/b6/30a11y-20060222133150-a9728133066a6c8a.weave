@@ -19,6 +19,30 @@ i 3
 1 d4870698cd3617dc5c4d06fe62276c3c07ff30a2
 n tfheen@ubuntu.com-20060228102108-9519af5eefd1c760
 
+i 4
+1 aa7a25ee26e0c1e734e9767069e7285f19a023b2
+n luke@linden-20060324130045-a8638bd1ca73e342
+
+i 4
+1 aa7a25ee26e0c1e734e9767069e7285f19a023b2
+n themuso@themuso.com-20060403121419-96918035d2d4f256
+
+i 4
+1 aa7a25ee26e0c1e734e9767069e7285f19a023b2
+n themuso@themuso.com-20060403121328-e7cdf0cc1ec71c68
+
+i 6
+1 c06a3ecf63014945a24cdd07ce60d34e066a59a2
+n tfheen@ubuntu.com-20060411133748-e43472f5e52001dc
+
+i 8
+1 f327a78a50d100aa549c3bbd870deeeb7ef276fd
+n tfheen@ubuntu.com-20060411141541-6e87088e8da2ef74
+
+i 9
+1 4df74bfd6be64193aa73980317adadc20610dba1
+n tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0
+
 w
 { 0
 . #!/bin/sh
@@ -73,7 +97,22 @@ w
 ] 4
 { 4
 . gct() {
+[ 8
 . chroot /root gconftool-2 "$@"
+] 8
+{ 8
+[ 9
+. chroot /root su ubuntu -c gconftool-2 -s --direct "$@"
+}
+] 9
+{ 9
+[ 10
+. chroot /root su ubuntu -- gconftool-2 --direct -s "$@"
+}
+] 10
+{ 10
+. chroot /root su ubuntu -- gconftool-2 -s "$@"
+}
 . }
 }
 . 
@@ -89,9 +128,16 @@ w
 . EOF
 ] 4
 { 4
+[ 8
 .                         gct -s -t string /desktop/gnome/interface/gtk_thene HighContrastLargePrint
 .                         gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
 .                         gct -s -t string /apps/metacity/general/theme Atlanta
+}
+] 8
+{ 8
+.                         gct -t string /desktop/gnome/interface/gtk_thene HighContrastLargePrint
+.                         gct -t string /desktop/gnome/interface/icon_theme HighContrast
+.                         gct -t string /apps/metacity/general/theme Atlanta
 }
 . # TODO - Mouse cursor.
 [ 4
@@ -136,8 +182,12 @@ w
 .                                 ;;
 ] 4
 { 4
+[ 8
 .                         gct -s -t bool /desktop/gnome/interface/accessibility true
 .                         gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
+[ 5
+[ 6
+[ 7
 .                         gct -s -t bool /apps/gnopernicus/magnifier/schema1/generic_zoomer/zoom_factor_lock true
 .                         gct -s -t float /apps/gnopernicus/magnifier/schema1/generic_zoomer/zoom_factor_size_x 8
 .                         gct -s -t float /apps/gnopernicus/magnifier/schema1/generic_zoomer/zoom_factor_y 8
@@ -145,8 +195,18 @@ w
 .                         gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_height 767
 .                         gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_left 0
 .                         gct -s -t integer /apps/gnopernicus/magnifier/schema1/generic_zoomer/zp_width 1023
+] 5
+] 6
+] 7
 .                         gct -s -t bool /apps/gnopernicus/srcore/mag_active true
 .                         gct -s -t bool /apps/gnopernicus/srcore/sp_active false
+] 8
+{ 8
+.                         gct -t bool /desktop/gnome/interface/accessibility true
+.                         gct -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
+.                         gct -t bool /apps/gnopernicus/srcore/mag_active true
+.                         gct -t bool /apps/gnopernicus/srcore/sp_active false
+}
 .                         ;;
 }
 .                         # Blindness
@@ -165,9 +225,16 @@ w
 .                                 ;;
 ] 4
 { 4
+[ 8
 .                         gct -s -t bool /desktop/gnome/sound/enable_esd false
 .                         gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
 .                         gct -s -t bool /apps/gnopernicus/srcore/sp_active true
+] 8
+{ 8
+.                         gct -t bool /desktop/gnome/sound/enable_esd false
+.                         gct -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
+.                         gct -t bool /apps/gnopernicus/srcore/sp_active true
+}
 .                         ;;
 }
 .                         # Minor Motor Difficulties
@@ -186,6 +253,7 @@ w
 .                                 ;;
 ] 4
 { 4
+[ 8
 .                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 .                         gct -s -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
 .                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
@@ -194,6 +262,17 @@ w
 .                         gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
 .                         gct -s -t integer /desktop/gnome/peripherals/keyboard/delay 700
 .                         gct -s -t integer /desktop/gnome/peripherals/keyboard/rate 10
+] 8
+{ 8
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/enable true
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep true
+.                         gct -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
+.                         gct -t bool /desktop/gnome/peripherals/keyboard/repeat true
+.                         gct -t integer /desktop/gnome/peripherals/keyboard/delay 700
+.                         gct -t integer /desktop/gnome/peripherals/keyboard/rate 10
+}
 .                         ;;
 }
 .                         # Motor Difficulties - pointing devices
@@ -209,11 +288,20 @@ w
 .                                 ;;
 ] 4
 { 4
+[ 8
 .                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 .                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
 .                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
 .                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
 .                         gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gok
+] 8
+{ 8
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/enable true
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
+.                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
+.                         gct -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
+.                         gct -t list /desktop/gnome/accessibility/startup/exe_ats gok
+}
 .                         ;;
 }
 . 		esac

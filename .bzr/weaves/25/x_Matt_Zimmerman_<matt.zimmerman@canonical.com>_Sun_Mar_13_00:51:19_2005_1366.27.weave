@@ -539,6 +539,26 @@ i 133
 1 40d53fc3ce4eb84a2ceb4ee7bfdbb22d086002f3
 n tfheen@ubuntu.com-20060329095059-a18375120a6adcfa
 
+i 134
+1 195ffb5d71567404f278dda64b66c6f94810d186
+n themuso@themuso.com-20060403121419-96918035d2d4f256
+
+i 134
+1 a4d6db141a04a2e45ec14fad49ebf3edac9a94f8
+n themuso@themuso.com-20060403121328-e7cdf0cc1ec71c68
+
+i 135
+1 0cd01dcee4f299505249f892d9eddc963957db7c
+n tfheen@ubuntu.com-20060411135439-35ea2f6cc9a56477
+
+i 137
+1 f1863c8ab22dd629ce11b7a3e6b8fb9b173cae5e
+n tfheen@ubuntu.com-20060411142736-0cbf33aed39e0997
+
+i 138
+1 ef4ddfa577149cf4e22819d892fc04e31bec08c7
+n tfheen@ubuntu.com-20060411143614-a42fec2b35df9b44
+
 w
 { 0
 { 23
@@ -883,6 +903,48 @@ w
 ] 133
 { 133
 { 134
+{ 135
+[ 139
+. casper (1.42) UNRELEASED; urgency=low
+] 139
+{ 139
+. casper (1.42) dapper; urgency=low
+}
+. 
+{ 137
+.   [ Luke Yelavich ]
+}
+.   * casper-bottom/30accessibility:
+.     - Removed some settings from accessibility profiles as these are now
+.       in the relevant packages.
+. 
+[ 137
+.  -- Luke Yelavich <themuso@themuso.com>  Mon,  3 Apr 2006 22:12:28 +1000
+] 137
+{ 137
+.   [ Tollef Fog Heen ]
+.   * Make sure to call gconftool as the right user.  Malone #38408
+.   * Write an entry for / in fstab.  Hopefully fixes Malone #34330
+.   * Change gdm-cdd.conf if it exists, not gdm.conf. Malone #37467
+{ 138
+.   * Really disable update-notifier, this time by removing the correct
+.     file.
+}
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 11 Apr 2006 15:43:24 +0200
+}
+. 
+}
+{ 136
+. casper (1.42) dapper; urgency=low
+. 
+.   * casper-bottom/30accessibility:
+.     - Removed some settings from accessibility profiles as these are now
+.       in the relevant packages.
+. 
+.  -- Luke Yelavich <themuso@themuso.com>  Mon,  3 Apr 2006 22:12:28 +1000
+. 
+}
 . casper (1.41) dapper; urgency=low
 . 
 .   * Don't mkdir then install -D, just install -D (this should prevent

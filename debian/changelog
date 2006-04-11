@@ -1,3 +1,19 @@
+casper (1.42) dapper; urgency=low
+
+  [ Luke Yelavich ]
+  * casper-bottom/30accessibility:
+    - Removed some settings from accessibility profiles as these are now
+      in the relevant packages.
+
+  [ Tollef Fog Heen ]
+  * Make sure to call gconftool as the right user.  Malone #38408
+  * Write an entry for / in fstab.  Hopefully fixes Malone #34330
+  * Change gdm-cdd.conf if it exists, not gdm.conf. Malone #37467
+  * Really disable update-notifier, this time by removing the correct
+    file.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 11 Apr 2006 15:43:24 +0200
+
 casper (1.41) dapper; urgency=low
 
   * Don't mkdir then install -D, just install -D (this should prevent

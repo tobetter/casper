@@ -39,6 +39,10 @@ i 7
 1 baaaab7e23a818e079894a5a9dcba65038b9eec9
 n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
 
+i 9
+1 bc14883c22ad0cccb17e8fd2313f122e3d254609
+n tfheen@ubuntu.com-20060411135304-36163b74e275dbf4
+
 w
 { 0
 . #!/bin/sh
@@ -94,10 +98,23 @@ w
 . if [ -f /etc/gdm/gdm.conf ]; then
 ] 4
 { 4
+[ 10
 . if [ -f /root/etc/gdm/gdm.conf ]; then
 }
-.     # Configure GDM autologin
+] 10
+{ 10
+. if [ -f /root/etc/gdm/gdm-cdd.conf ]; then
+.     GDMCONF=/root/etc/gdm/gdm-cdd.conf
+. else
+.     GDMCONF=/root/etc/gdm/gdm.conf
+. fi
 . 
+. if [ -f ${GDMCONF} ]; then
+}
+.     # Configure GDM autologin
+[ 10
+. 
+] 10
 .     sed -i \
 .         -e "s/^AutomaticLoginEnable=.*\$/AutomaticLoginEnable=true/" \
 .         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$username/" \
@@ -108,7 +125,12 @@ w
 .         /etc/gdm/gdm.conf
 ] 4
 { 4
+[ 10
 .         /root/etc/gdm/gdm.conf
+}
+] 10
+{ 10
+.         ${GDMCONF}
 }
 . fi
 . 

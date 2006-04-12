@@ -323,6 +323,14 @@ i 79
 1 ccb639c7588b9e17dcf7fc12720c863dc41fbdf8
 n tfheen@ubuntu.com-20060310211050-e989fd3d20e44395
 
+i 80
+1 28fcb0588e779e981ba7057985b5d4029e7c1c96
+n tfheen@ubuntu.com-20060412121831-e6455b4f935ef63c
+
+i 81
+1 fa22c303521a95a58e99a1680ecd4e8690db03c2
+n tfheen@ubuntu.com-20060412122044-3e34f210826f632d
+
 w
 { 0
 . #!/bin/sh
@@ -348,8 +356,10 @@ w
 { 62
 ] 65
 { 65
+[ 82
 . set -x 
 }
+] 82
 . mountpoint=/cdrom
 }
 . 
@@ -936,8 +946,10 @@ w
 { 41
 ] 76
 { 76
+[ 82
 .         set -x
 }
+] 82
 .         modprobe -Qb unionfs
 [ 56
 .         mkdir /cow
@@ -1280,6 +1292,7 @@ w
 ] 25
 . }
 . 
+[ 81
 . mountroot() {
 { 2
 [ 4
@@ -1349,15 +1362,34 @@ w
 . 	[ "$quiet" != "y" ] && log_end_msg
 ] 32
 { 32
+] 81
+{ 81
+. set_usplash_timeout() {
+}
 .     if [ -x /sbin/usplash_write ]; then
 .         /sbin/usplash_write "TIMEOUT 120"
 .     fi
+[ 81
 .     
 .     
+] 81
+{ 81
+. }
+. 
+. mountroot() {
+.     set_usplash_timeout
+}
 .     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
 .     run_scripts /scripts/casper-premount
 .     [ "$quiet" != "y" ] && log_end_msg
 { 34
+{ 81
+. 
+.     # Needed here too because some things (*cough* udev *cough*)
+.     # changes the timeout
+. 
+.     set_usplash_timeout
+}
 . 
 }
 [ 44

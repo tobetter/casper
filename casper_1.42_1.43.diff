@@ -1,0 +1,82 @@
+diff -x.bzr -Nru /tmp/casper-1.43/casper-bottom/10adduser ./casper-bottom/10adduser
+--- /tmp/casper-1.43/casper-bottom/10adduser	2006-04-13 21:30:54.000000000 +0200
++++ ./casper-bottom/10adduser	2006-04-18 11:37:45.000000000 +0200
+@@ -46,7 +46,7 @@
+ # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+ echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
+ 
+-for file in /usr/share/applications/espresso-*.desktop /usr/share/applications/kde/espresso-*.desktop; do
++for file in /usr/share/applications/espresso-gtkui.desktop /usr/share/applications/kde/espresso-kdeui.desktop; do
+     if [ -f "/root/$file" ]; then
+         chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop/$(basename "$file")
+         break
+@@ -54,6 +54,7 @@
+ done
+ 
+ if [ -L /root/home/ubuntu/Examples ]; then
++    chroot /root install -o ubuntu -g ubuntu -d /home/ubuntu/Desktop/
+     mv /root/home/ubuntu/Examples /root/home/ubuntu/Desktop/
+ fi
+ 
+diff -x.bzr -Nru /tmp/casper-1.43/debian/casper.initramfs ./debian/casper.initramfs
+--- /tmp/casper-1.43/debian/casper.initramfs	2006-04-13 21:30:54.000000000 +0200
++++ ./debian/casper.initramfs	2006-04-12 14:20:28.000000000 +0200
+@@ -1,7 +1,6 @@
+ #!/bin/sh
+ 
+ # set -e
+-set -x 
+ mountpoint=/cdrom
+ 
+ mkdir -p $mountpoint
+@@ -165,7 +164,6 @@
+ setup_unionfs() {
+ 	backdev="$1"
+ 	rootmnt="$2"
+-        set -x
+         modprobe -Qb unionfs
+         mkdir -p /cow
+ 
+@@ -248,16 +246,23 @@
+         done
+ }
+ 
+-mountroot() {
++set_usplash_timeout() {
+     if [ -x /sbin/usplash_write ]; then
+         /sbin/usplash_write "TIMEOUT 120"
+     fi
+-    
+-    
++}
++
++mountroot() {
++    set_usplash_timeout
+     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
+     run_scripts /scripts/casper-premount
+     [ "$quiet" != "y" ] && log_end_msg
+ 
++    # Needed here too because some things (*cough* udev *cough*)
++    # changes the timeout
++
++    set_usplash_timeout
++
+     for i in 0 1 2 3 4 5 6 7 8 9 a b c d e f 10 11 12 13; do
+         live_image=$(find_cd)
+         if [ "${live_image}" ]; then
+diff -x.bzr -Nru /tmp/casper-1.43/debian/changelog ./debian/changelog
+--- /tmp/casper-1.43/debian/changelog	2006-04-13 21:30:54.000000000 +0200
++++ ./debian/changelog	2006-04-18 11:08:16.000000000 +0200
+@@ -1,3 +1,12 @@
++casper (1.44) dapper; urgency=low
++
++  * Reset the timeout after casper-premount has run so we're sure that the
++    timeout is what we want it to be.  Udev seems to change it too.
++  * Remove a few set -x commands to make the boot slightly less verbose.
++  * Fix 10adduser to actually install the correct icons for espresso.
++
++ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 12 Apr 2006 14:20:53 +0200
++
+ casper (1.43) dapper; urgency=low
+ 
+   * Copy espresso-kdeui.desktop file to user's desktop 

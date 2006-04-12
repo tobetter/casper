@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="193ff281c564b7112acc46fa74d4ceb3e5cae5ec" revision_id="tfheen@ubuntu.com-20060418094053-aa2664fa92517365" timestamp="1145353253.357878923" timezone="7200">
+<message>release 1.44</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060418094008-4544e7575ebcd146" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

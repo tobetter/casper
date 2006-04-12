@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a7799a3253600a910c3f2ffb83e26ce240d78031" revision_id="tfheen@ubuntu.com-20060328081047-bc661f90fa93b206" timestamp="1143533447.490550995" timezone="7200">
+<message>Add snd_powermac to /etc/modules on ppc.  (Malone: #27862)</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060321151742-c3b07a1629d7b11c" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

@@ -1,3 +1,12 @@
+casper (1.44) dapper; urgency=low
+
+  * Reset the timeout after casper-premount has run so we're sure that the
+    timeout is what we want it to be.  Udev seems to change it too.
+  * Remove a few set -x commands to make the boot slightly less verbose.
+  * Fix 10adduser to actually install the correct icons for espresso.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 12 Apr 2006 14:20:53 +0200
+
 casper (1.43) dapper; urgency=low
 
   * Copy espresso-kdeui.desktop file to user's desktop 

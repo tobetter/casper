@@ -1,3 +1,10 @@
+casper (1.43) dapper; urgency=low
+
+  * Copy espresso-kdeui.desktop file to user's desktop 
+    Branch at http://kubuntu.org/~jriddell/bzr/casper/trunk/
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 13 Apr 2006 15:37:49 +0100
+
 casper (1.42) dapper; urgency=low
 
   [ Luke Yelavich ]

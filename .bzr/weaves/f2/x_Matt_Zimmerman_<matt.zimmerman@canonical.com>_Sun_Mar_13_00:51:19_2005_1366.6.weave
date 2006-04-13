@@ -135,6 +135,10 @@ i 32
 1 46f08823321ec71acf0dd51f4de9a7f5cbf47773
 n tfheen@ubuntu.com-20060329095059-a18375120a6adcfa
 
+i 33
+1 06bae405ef4593924363e036a02ef082af918687
+n jriddell@ubuntu.com-20060413144230-a2ecfef0b10ee1bf
+
 w
 { 0
 . #!/bin/sh
@@ -376,6 +380,7 @@ w
 . mkdir -p /root/home/ubuntu/Desktop
 }
 ] 33
+[ 34
 . for ui in gtkui; do
 [ 24
 .     file="/usr/share/applications/espresso-$ui.desktop"
@@ -403,6 +408,10 @@ w
 { 25
 ] 28
 { 28
+] 34
+{ 34
+. for file in /usr/share/applications/espresso-*.desktop /usr/share/applications/kde/espresso-*.desktop; do
+}
 .     if [ -f "/root/$file" ]; then
 }
 [ 29

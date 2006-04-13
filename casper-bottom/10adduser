@@ -46,8 +46,7 @@ fi
 # XXX - awful hack to stop xscreensaver locking the screen (#7150)
 echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
-for ui in gtkui; do
-    file="/usr/share/applications/espresso-$ui.desktop"
+for file in /usr/share/applications/espresso-*.desktop /usr/share/applications/kde/espresso-*.desktop; do
     if [ -f "/root/$file" ]; then
         chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop/$(basename "$file")
         break

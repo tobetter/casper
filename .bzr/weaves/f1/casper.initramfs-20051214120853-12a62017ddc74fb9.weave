@@ -331,6 +331,10 @@ i 81
 1 fa22c303521a95a58e99a1680ecd4e8690db03c2
 n tfheen@ubuntu.com-20060412122044-3e34f210826f632d
 
+i 82
+1 d56ec206636b552ccbc63d7454141ed5da55bbaf
+n tfheen@ubuntu.com-20060419093807-68430e9169f244a6
+
 w
 { 0
 . #!/bin/sh
@@ -415,9 +419,16 @@ w
 }
 ] 42
 { 42
+[ 83
 . #if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
 . #    overlay_method=devmapper
 . #fi
+}
+] 83
+{ 83
+. if [ "${DPKG_ARCH}" = "ia64" ] || [ "${DPKG_ARCH}" = "hppa" ] || [ "${DPKG_ARCH}" = "sparc" ]; then
+.     overlay_method=devmapper
+. fi
 }
 . 
 { 25

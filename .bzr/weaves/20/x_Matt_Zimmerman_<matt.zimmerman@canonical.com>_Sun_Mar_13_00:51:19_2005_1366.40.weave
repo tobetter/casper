@@ -23,6 +23,10 @@ i 4
 1 3b372fc0533a87ee733ee37f8c75a43bc803d941
 n tfheen@ubuntu.com-20060328114038-18560924f7bc62e7
 
+i 5
+1 9a306ded60c0aaff41888509552d27933d9f86a9
+n tfheen@ubuntu.com-20060419093518-c2a5c65c0a4779df
+
 w
 { 0
 . #!/bin/sh
@@ -66,7 +70,14 @@ w
 . echo -n "Please remove the disc, close the tray (if any) and press ENTER: "
 { 5
 . if [ -x /sbin/usplash_write ]; then
+[ 6
 .     /sbin/usplash_write "TEXT Please remove the disc, close the tray (if any) and press ENTER"
+] 6
+{ 6
+.     /sbin/usplash_write "TIMEOUT 0"
+.     /sbin/usplash_write "TEXT Please remove the disc, close the tray (if any)"
+.     /sbin/usplash_write "TEXT and press ENTER to continue"
+}
 . fi
 . 
 }

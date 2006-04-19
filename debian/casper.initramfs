@@ -6,9 +6,9 @@ mountpoint=/cdrom
 mkdir -p $mountpoint
 
 overlay_method=unionfs
-#if [ "$(uname -m)" = "ppc" ] || [ "$(uname -m)" = "ppc64" ] || [ "$(uname -m)" = "powerpc" ]; then
-#    overlay_method=devmapper
-#fi
+if [ "${DPKG_ARCH}" = "ia64" ] || [ "${DPKG_ARCH}" = "hppa" ] || [ "${DPKG_ARCH}" = "sparc" ]; then
+    overlay_method=devmapper
+fi
 
 casper_path() {
     path=$1

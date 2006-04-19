@@ -583,6 +583,14 @@ i 144
 1 39d4138d41480aeb572c82a01b44eefb079464cf
 n tfheen@ubuntu.com-20060418094053-aa2664fa92517365
 
+i 145
+1 503112f5e380201669219a4ba304f031b933adc2
+n tfheen@ubuntu.com-20060419093518-c2a5c65c0a4779df
+
+i 146
+1 e58600c46eef30589875d553a3d82028949b441b
+n tfheen@ubuntu.com-20060419093807-68430e9169f244a6
+
 w
 { 0
 { 23
@@ -942,6 +950,26 @@ w
 }
 ] 145
 { 145
+{ 146
+. casper (1.45) dapper; urgency=low
+. 
+{ 147
+.   [ Matt Zimmerman ]
+}
+.   * [share/shutdown] Disable the usplash timeout and wrap the prompt to two
+.     lines
+. 
+[ 147
+.  -- Matt Zimmerman <mdz@ubuntu.com>  Wed, 19 Apr 2006 01:28:13 -0700
+] 147
+{ 147
+.   [ Tollef Fog Heen ]
+.   * Use devmapper for ia64, hppa and sparc.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 19 Apr 2006 11:36:49 +0200
+}
+. 
+}
 . casper (1.44) dapper; urgency=low
 }
 . 

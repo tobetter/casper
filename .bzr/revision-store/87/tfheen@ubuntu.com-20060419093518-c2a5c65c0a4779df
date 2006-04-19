@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="85e6e47138f424a6496a7d71cbfaad31d706b695" revision_id="tfheen@ubuntu.com-20060419093518-c2a5c65c0a4779df" timestamp="1145439318.061661005" timezone="7200">
+<message>Disable the usplash timeout and wrap the prompt to two lines (from mdz)</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060418094053-aa2664fa92517365" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

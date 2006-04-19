@@ -1,3 +1,14 @@
+casper (1.45) dapper; urgency=low
+
+  [ Matt Zimmerman ]
+  * [share/shutdown] Disable the usplash timeout and wrap the prompt to two
+    lines
+
+  [ Tollef Fog Heen ]
+  * Use devmapper for ia64, hppa and sparc.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 19 Apr 2006 11:36:49 +0200
+
 casper (1.44) dapper; urgency=low
 
   * Reset the timeout after casper-premount has run so we're sure that the

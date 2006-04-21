@@ -13,11 +13,11 @@ Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup, user-setup
 Conflicts: usplash (<< 0.1-30)
 Description: Run a "live" preinstalled system from read-only media
 
-Package: espresso-casper
+Package: ubiquity-casper
 Architecture: all
 Depends: laptop-detect
-Enhances: espresso
+Enhances: ubiquity
 Description: Configuration hooks for live installer
- This package provides hook scripts for the Espresso live installer that
+ This package provides hook scripts for the Ubiquity live installer that
  repeat some pieces of configuration done by the live system boot process in
- the system installed by Espresso.
+ the system installed by Ubiquity.

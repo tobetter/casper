@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ff24cc0a2917b7f7f18aad1a35dbca4624f866e5" revision_id="tfheen@ubuntu.com-20051215135854-99620ceaae1ac6fe" timestamp="1134655134.835042953" timezone="3600">
-<message>try to force autodetection</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215134309-599259b94b02fc3a" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

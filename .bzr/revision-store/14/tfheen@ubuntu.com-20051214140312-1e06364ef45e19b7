@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8c3f6345f9fc40e369cf6bf48a66c5df1fc8ccde" revision_id="tfheen@ubuntu.com-20051214140312-1e06364ef45e19b7" timestamp="1134568992.485538960" timezone="3600">
-<message>add devmapper support</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214132843-57eb6377d82956ac" />
-</parents>
-<properties><property name="branch-nick">simplifiedlivecd</property>
-</properties>
-</revision>

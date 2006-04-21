@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8f24ce5080f7cdcf08c4063840066b5b9a7beefc" revision_id="tfheen@ubuntu.com-20051214125049-fd5f3c3ac3945d09" timestamp="1134564649.291626930" timezone="3600">
-<message>switch the user back to ubuntu, since this should work now</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214124902-a8d255ac44a858a2" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

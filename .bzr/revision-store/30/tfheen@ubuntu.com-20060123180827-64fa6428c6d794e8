@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="e0fffb9cbc1a8d5aa7d1fc85aacf77fee2c7f87b" revision_id="tfheen@ubuntu.com-20060123180827-64fa6428c6d794e8" timestamp="1138039707.229638100" timezone="3600">
-<message>Configure all detected network interfaces.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060123094356-673d98940c6c0a94" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

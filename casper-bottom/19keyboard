@@ -32,7 +32,7 @@ done
 
 chroot /root /usr/sbin/install-keymap $kbd
 chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
-register espresso/dummy debian-installer/keymap
+register debian-installer/dummy debian-installer/keymap
 set debian-installer/keymap $kbd
 EOF
 log_end_msg

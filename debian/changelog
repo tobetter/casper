@@ -1,3 +1,12 @@
+casper (1.46) dapper; urgency=low
+
+  * Use debian-installer/dummy for preseeding rather than espresso/dummy,
+    since the latter was removed in espresso 0.99.38.
+  * espresso is being renamed to ubiquity. Rename espresso-casper to
+    ubiquity-casper to match.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 21 Apr 2006 12:52:48 +0100
+
 casper (1.45) dapper; urgency=low
 
   [ Matt Zimmerman ]

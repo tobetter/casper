@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d983481218ed19a6398dad65248dd34ac67a131d" revision_id="tfheen@ubuntu.com-20060328091855-6ad82d6576c032a1" timestamp="1143537535.917186975" timezone="7200">
-<message>Reboot the system when a key is pressed at the end of the integrity check</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060328085955-c49b871c0f29a01d" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

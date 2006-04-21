@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a8146d0ad7e2dc043d036b2a9068fe5bf7c6074e" revision_id="tfheen@ubuntu.com-20060110100612-82e0af3a7def57d8" timestamp="1136887572.884390116" timezone="3600">
-<message>increase timeout and write ok message after mounting /</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

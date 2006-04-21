@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="9b93829a188429c17fbff40a85076303b5a1a4cf" revision_id="tfheen@ubuntu.com-20060418084638-32b33baa3a012e58" timestamp="1145349998.291361094" timezone="7200">
-<message>Make 10adduser install the .desktop files for espresso correctly</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060418084529-4c090d4c3b5a21fd" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

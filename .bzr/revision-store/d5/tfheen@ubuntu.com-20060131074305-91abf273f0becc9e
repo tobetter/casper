@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="7c616260b661cbe2d0560f8416d638a885983199" revision_id="tfheen@ubuntu.com-20060131074305-91abf273f0becc9e" timestamp="1138693385.923897028" timezone="3600">
-<message>fiddle with get_fstype</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060131073327-f918c7bce597abd4" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

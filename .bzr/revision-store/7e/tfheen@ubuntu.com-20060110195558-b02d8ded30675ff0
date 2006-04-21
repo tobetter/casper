@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a0cd746a3bd83ace8a1cae34edf39fd7026a8e17" revision_id="tfheen@ubuntu.com-20060110195558-b02d8ded30675ff0" timestamp="1136922958.957134008" timezone="3600">
-<message>use unionfs on ppc again</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060110165421-eed85941716b6a14" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

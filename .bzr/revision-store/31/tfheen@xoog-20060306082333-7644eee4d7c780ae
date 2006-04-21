@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@xoog&gt;" format="5" inventory_sha1="73b17cfb7465465e6123bf6ed43aea72952e5f48" revision_id="tfheen@xoog-20060306082333-7644eee4d7c780ae" timestamp="1141633413.563977957" timezone="3600">
-<message>Put example-content handling into adduser script</message>
-<parents>
-<revision_ref revision_id="tfheen@xoog-20060306075605-47217368f6bc37b8" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="45bda614774e5ce497f9fa58d94ffb937d02267e" revision_id="tfheen@ubuntu.com-20060130232136-5e22207da547f33c" timestamp="1138663296.643066883" timezone="3600">
-<message>fix /rofs and /cow paths</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130231430-10a47739cb4120be" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

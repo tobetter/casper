@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f5171115de250b2e36b956987b3625c9ca0fffc9" revision_id="tfheen@ubuntu.com-20060131001653-651d780984a87b79" timestamp="1138666613.170638084" timezone="3600">
-<message>make sure to actually return 0 if the file system is mounted too</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060131000842-0bb21bdb8c18d058" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

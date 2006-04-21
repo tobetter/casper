@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="fca861ccbc0ebafd4559ca174e02a3a65a554cf0" revision_id="tfheen@ubuntu.com-20060123094356-673d98940c6c0a94" timestamp="1138009436.759274006" timezone="3600">
-<message>Fix typo in 22gnome_panel_data</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060116210647-0f77128359a7c20a" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

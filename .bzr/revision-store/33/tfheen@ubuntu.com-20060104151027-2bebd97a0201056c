@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="754546949b57423c773e6d51f4cc028674346972" revision_id="tfheen@ubuntu.com-20060104151027-2bebd97a0201056c" timestamp="1136387427.072243929" timezone="3600">
-<message>first stab at progress support</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104150000-c22feb07ce4c4bc8" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

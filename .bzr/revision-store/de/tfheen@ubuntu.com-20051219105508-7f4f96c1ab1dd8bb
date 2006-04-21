@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f3897d1485cbb503b2e2c2ef1ec5a6fa8c7c9fed" revision_id="tfheen@ubuntu.com-20051219105508-7f4f96c1ab1dd8bb" timestamp="1134989708.331821918" timezone="3600">
-<message>handle both squashfs and cloop images</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051218121838-1c6d966af3954328" />
-</parents>
-<properties><property name="branch-nick">squashfs</property>
-</properties>
-</revision>

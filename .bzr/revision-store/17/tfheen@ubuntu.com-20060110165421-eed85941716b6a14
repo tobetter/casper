@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="af1889548319857e4ea217472d7da403a0ac691e" revision_id="tfheen@ubuntu.com-20060110165421-eed85941716b6a14" timestamp="1136912061.146934986" timezone="3600">
-<message>release 1.26</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060110152431-8586697dd35e1ddd" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

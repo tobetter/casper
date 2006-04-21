@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6ba1232ffa271287255a628fa2e5628d0aef4021" revision_id="tfheen@ubuntu.com-20060131002329-49de86683d3f3979" timestamp="1138667009.309412003" timezone="3600">
-<message>mount without fstab is stupid, give both device and mountpoint</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060131001653-651d780984a87b79" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

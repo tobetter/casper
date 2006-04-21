@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="9ffdec6b913143249dbb22d46f920f1c63ac4c1c" revision_id="tfheen@ubuntu.com-20051214124352-2cea5fc08eac982a" timestamp="1134564232.665757895" timezone="3600">
-<message>install casper-bottom stuff to the right directory</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214124305-81e6c50220b71a59" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

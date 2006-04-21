@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="1e15e5ac086db8b3deb048cdb6dfcecd0b5f388c" revision_id="tfheen@ubuntu.com-20060214134726-d8a61c95a1a555fc" timestamp="1139924846.982122898" timezone="3600">
-<message>set a blank password for the user</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060214112454-d85ba063e7494de7" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

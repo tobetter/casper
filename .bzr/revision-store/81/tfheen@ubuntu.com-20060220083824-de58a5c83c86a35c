@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="05c12c052a119cf54f8c45f0b152955c31772d0c" revision_id="tfheen@ubuntu.com-20060220083824-de58a5c83c86a35c" timestamp="1140424704.207382917" timezone="3600">
-<message>make sure owner of espresso-$ui.desktop (and ~ubuntu/Desktop) is ubuntu</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060220083110-4b0c442e21acddec" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

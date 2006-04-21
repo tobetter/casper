@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="7ffc238171945b6a4dd39c958a8f663c5b67b23d" revision_id="tfheen@ubuntu.com-20060222133624-e0910882b853bfb8" timestamp="1140615384.649616003" timezone="3600">
-<message>Add initial accessibility support framework</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060221143554-2a1c483f3bb100a2" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

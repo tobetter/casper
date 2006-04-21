@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="edd42df087a77592b50f70d56c2819e8744ccd5f" revision_id="tfheen@ubuntu.com-20060130171200-053a781ef4e1daa6" timestamp="1138641120.268321991" timezone="3600">
-<message>try harder to find the live image</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130171137-8561c29a6bab30d9" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

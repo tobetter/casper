@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="453da2207bc996bbe4903eb83914801913b787fa" revision_id="tfheen@ubuntu.com-20051214130656-9823b174be137318" timestamp="1134565616.107872009" timezone="3600">
-<message>get rid of some set -x-es</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214130606-0de0e2952225e999" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

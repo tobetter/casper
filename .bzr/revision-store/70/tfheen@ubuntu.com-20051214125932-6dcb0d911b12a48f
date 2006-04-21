@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="cf651d449644ae49d835d138c0c545a9fc6edb4a" revision_id="tfheen@ubuntu.com-20051214125932-6dcb0d911b12a48f" timestamp="1134565172.116094112" timezone="3600">
-<message>search paths using chroot</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214125903-ace67dae9d783dc3" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

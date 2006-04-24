@@ -1,0 +1,50 @@
+# bzr weave file v5
+i
+1 b8852e31ef24d40805f4f0efd76a7ecdc640a1c1
+n daniel.holbach@ubuntu.com-20060301183603-08bf831b95ef2b9b
+
+i 0
+1 2d591babfa98bcd396dfd19ddd4e27db0a8d21f3
+n tfheen@xoog-20060306075605-47217368f6bc37b8
+
+w
+{ 0
+. #!/bin/sh
+. 
+. PREREQ=""
+. DESCRIPTION="Adding Example Content"
+. 
+. . /scripts/functions
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. log_begin_msg "$DESCRIPTION"
+. 
+[ 1
+. if [ -L /etc/skel/Examples ]; then
+. 	rm -f /etc/skel/Examples
+. 	mkdir -p /etc/skel/Desktop
+. 	ln -s /usr/share/example-content /etc/skel/Desktop/Examples
+] 1
+{ 1
+. if [ -L /root/etc/skel/Examples ]; then
+. 	rm -f /root/etc/skel/Examples
+. 	mkdir -p /root/etc/skel/Desktop
+. 	ln -s /usr/share/example-content /root/etc/skel/Desktop/Examples
+}
+. fi
+. 
+. log_end_msg
+}
+W

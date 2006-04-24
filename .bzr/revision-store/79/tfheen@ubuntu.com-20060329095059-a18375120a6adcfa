@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="f3860dd54ba99105d6167abf26d4bd6159c61669" revision_id="tfheen@ubuntu.com-20060329095059-a18375120a6adcfa" timestamp="1143625859.027770996" timezone="7200">
+<message>make ~ubuntu/Desktop not being owned by root, release 1.41</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060328115859-927252a839cf0ffa" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

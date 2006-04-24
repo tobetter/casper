@@ -1,0 +1,77 @@
+# bzr weave file v5
+i
+1 29294761deea6f0fced95f7391a7edc158c14e6c
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 29294761deea6f0fced95f7391a7edc158c14e6c
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1 0
+1 29294761deea6f0fced95f7391a7edc158c14e6c
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 2
+1 61cba5fa680dd28c6f2db130afd86b16d6bfb3c3
+n tfheen@ubuntu.com-20051214120917-0eae7163985c81fd
+
+w
+{ 0
+[ 3
+. Author: Matt Zimmerman <mdz@canonical.com>
+] 3
+{ 3
+. Author: Tollef Fog Heen <tfheen@canonical.com>
+.         Matt Zimmerman <mdz@canonical.com>
+}
+. 
+. Copyright:
+. 
+. Copyright Canonical Ltd., released under the GNU General Public License,
+. version 2.
+. 
+.     This program is free software; you can redistribute it and/or modify
+.     it under the terms of the GNU General Public License as published by
+.     the Free Software Foundation; either version 2 of the License, or
+.     (at your option) any later version.
+. 
+.     This program is distributed in the hope that it will be useful,
+.     but WITHOUT ANY WARRANTY; without even the implied warranty of
+.     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.     GNU General Public License for more details.
+. 
+.     You should have received a copy of the GNU General Public License
+.     along with this program; if not, write to the Free Software
+.     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+. 
+. On Ubuntu systems, a copy of the GNU General Public License may be found in the
+. file /usr/share/common-licenses/GPL.
+}
+{ 1
+[ 2
+. Author: Matt Zimmerman <mdz@canonical.com>
+. 
+. Copyright:
+. 
+. Copyright Canonical Ltd., released under the GNU General Public License,
+. version 2.
+. 
+.     This program is free software; you can redistribute it and/or modify
+.     it under the terms of the GNU General Public License as published by
+.     the Free Software Foundation; either version 2 of the License, or
+.     (at your option) any later version.
+. 
+.     This program is distributed in the hope that it will be useful,
+.     but WITHOUT ANY WARRANTY; without even the implied warranty of
+.     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.     GNU General Public License for more details.
+. 
+.     You should have received a copy of the GNU General Public License
+.     along with this program; if not, write to the Free Software
+.     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+. 
+. On Ubuntu systems, a copy of the GNU General Public License may be found in the
+. file /usr/share/common-licenses/GPL.
+}
+] 2
+W

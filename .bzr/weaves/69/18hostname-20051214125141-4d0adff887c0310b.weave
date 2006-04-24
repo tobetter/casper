@@ -1,0 +1,103 @@
+# bzr weave file v5
+i
+1 507e84ccee0d58b58dfaa1b310137702a7949778
+n tfheen@ubuntu.com-20051214125143-820b3f91961101d1
+
+i 0
+1 7f3afe9e993a7fe684ae927ed1540bc82a1d64f1
+n tfheen@ubuntu.com-20051214125640-d8c3b3c6ab56f5db
+
+i 1
+1 5e896d92fb3e2cb22e3cb282b48df879adb733ce
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 1
+1 5e896d92fb3e2cb22e3cb282b48df879adb733ce
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
+i 3
+1 bc528312cbf8fbc552bc49060c82f5c77b52859f
+n tfheen@ubuntu.com-20060424085501-a8b30bb0dd4c902a
+
+w
+{ 0
+. #! /bin/sh
+{ 2
+. 
+. PREREQ=""
+. DESCRIPTION="Setting hostname"
+. 
+. . /scripts/functions
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+{ 3
+. 
+. PREREQ=""
+. DESCRIPTION="Setting hostname"
+. 
+. . /scripts/functions
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. log_begin_msg "$DESCRIPTION"
+}
+. 
+. echo "ubuntu" > /root/etc/hostname
+[ 1
+. cat > /etc/hosts <<EOF
+] 1
+{ 1
+. cat > /root/etc/hosts <<EOF
+}
+[ 4
+. 127.0.0.1       ubuntu localhost.localdomain       localhost
+] 4
+{ 4
+. 127.0.0.1 localhost
+. 127.0.1.1 ubuntu
+}
+. 
+. # The following lines are desirable for IPv6 capable hosts
+. ::1     ip6-localhost ip6-loopback
+. fe00::0 ip6-localnet
+. ff00::0 ip6-mcastprefix
+. ff02::1 ip6-allnodes
+. ff02::2 ip6-allrouters
+. ff02::3 ip6-allhosts
+. 
+. EOF
+}
+{ 2
+. 
+. log_end_msg
+}
+{ 3
+. 
+. log_end_msg
+}
+W

@@ -1,0 +1,51 @@
+<inventory format="5">
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.0" name="TODO" />
+<directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" name="bin" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.2" name="casper-reconfigure" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" />
+<directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" name="casper-bottom" />
+<file file_id="01integritycheck-20060104133608-01245f4ab805a9f0" name="01integrity_check" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="05mountpoints-20060302134819-352318c6c9c57e98" name="05mountpoints" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.6" name="10adduser" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.16" name="12fstab" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.17" name="13swap" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="14locales-20060102102630-33012df28c2185d9" name="14locales" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.7" name="15autologin" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="18hostname-20051214125141-4d0adff887c0310b" name="18hostname" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file executable="yes" file_id="19consolecommon-20060214093113-eebc3a26cae9c6b2" name="19keyboard" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.8" name="20xconfig" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.9" name="22gnome_panel_data" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Fri_Sep_16_15:23:59_2005_17182.0" name="22screensaver" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="23etc_modules-20060328082134-da4ef8324f4bd1a5" name="23etc_modules" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="23networking-20060125132628-083d6ccc86925687" name="23networking" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="24preseed-20060227172322-21191f5c187775d8" name="24preseed" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.10" name="25configure_init" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="30a11y-20060222133150-a9728133066a6c8a" name="30accessibility" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file file_id="31disable_update_notifier-20060313103523-eefea3aeaef078cd" name="31disable_update_notifier" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<directory file_id="caspermd5check-20060104133547-9e528b971dc71188" name="casper-md5check" />
+<file file_id="Makefile-20060104133547-60794be7ea62712a" name="Makefile" parent_id="caspermd5check-20060104133547-9e528b971dc71188" />
+<file file_id="caspermd5check.c-20060104133547-ee9e3b0607554cd0" name="casper-md5check.c" parent_id="caspermd5check-20060104133547-9e528b971dc71188" />
+<file file_id="md5.c-20060104133547-05db7711464604a0" name="md5.c" parent_id="caspermd5check-20060104133547-9e528b971dc71188" />
+<file file_id="md5.h-20060104133547-0462bf85227d1344" name="md5.h" parent_id="caspermd5check-20060104133547-9e528b971dc71188" />
+<directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.18" name="caspermon" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.19" name="GNOME_PythonAppletCasper.server" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.18" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.20" name="caspermon-applet" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.18" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.21" name="caspermond" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.18" />
+<directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" name="debian" />
+<file file_id="casper.dirs-20051214123805-47c8bc71eb6d357f" name="casper.dirs" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="casper.initramfs-20051214120853-12a62017ddc74fb9" name="casper.initramfs" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="casper.initramfshooks-20051214123826-fc8000ee07ec68a5" name="casper.initramfs-hooks" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="casper.install-20051214123842-fbc9ae8e189dea9c" name="casper.install" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="casper.postinst-20051214132323-ccf6e50760b075cd" name="casper.postinst" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.28" name="compat" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.29" name="control" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.30" name="copyright" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.32" name="rules" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="espressocasper.install-20060120164723-0dcb450888f776ca" name="ubiquity-casper.install" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.39" name="share" />
+<file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.40" name="shutdown" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.39" />
+<directory file_id="espressohooks-20060120162836-e768a7d0fab4a538" name="ubiquity-hooks" />
+<file file_id="20xconfig-20060120164659-0cb93dfee821b064" name="20xconfig" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
+<file file_id="22gnome_panel_data-20060120164659-3da59bf07f0d734c" name="22gnome_panel_data" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
+<file file_id="25modules-20060424093159-40364a306c3f9707" name="25modules" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
+</inventory>

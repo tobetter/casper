@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@xoog&gt;" format="5" inventory_sha1="0e834c801f9943c13249f4d3496c6e094f311f20" revision_id="tfheen@xoog-20060306075605-47217368f6bc37b8" timestamp="1141631765.085186005" timezone="3600">
+<message>prefix paths correctly</message>
+<parents>
+<revision_ref revision_id="tfheen@xoog-20060306062441-9b6e0662c8f098e8" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

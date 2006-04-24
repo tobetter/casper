@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # set -e
+
 mountpoint=/cdrom
 
 mkdir -p $mountpoint
@@ -253,6 +254,11 @@ set_usplash_timeout() {
 }
 
 mountroot() {
+    exec 6>&1
+    exec 7>&2
+    exec > casper.log
+    exec 2>&1
+
     set_usplash_timeout
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
     run_scripts /scripts/casper-premount
@@ -281,4 +287,8 @@ mountroot() {
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
     PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
     [ "$quiet" != "y" ] && log_end_msg
+
+    exec 1>&6 6>&-
+    exec 2>&7 7>&-
+    cp casper.log "${rootmnt}/var/log/"
 }

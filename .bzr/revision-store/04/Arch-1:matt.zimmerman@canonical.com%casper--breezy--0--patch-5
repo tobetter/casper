@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="c55037aa7884fe7d0498ecb17b995279e4e9de90" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-5" timestamp="1125373010.000000000">
+<message>Remove debug</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-4" />
+</parents>
+</revision>

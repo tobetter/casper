@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c5609e7ed3856e2a5c67a02196504c1683286994" revision_id="tfheen@ubuntu.com-20051214124305-81e6c50220b71a59" timestamp="1134564185.280323029" timezone="3600">
+<message>bugfixing</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214123713-b0c607646607b738" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

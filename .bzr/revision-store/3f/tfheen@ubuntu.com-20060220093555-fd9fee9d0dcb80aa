@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="868eb361e4dc05f76136fbb71155f37e9b4ca153" revision_id="tfheen@ubuntu.com-20060220093555-fd9fee9d0dcb80aa" timestamp="1140428155.849338055" timezone="3600">
+<message>fix install line</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060220093515-4963f5054dcef61f" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

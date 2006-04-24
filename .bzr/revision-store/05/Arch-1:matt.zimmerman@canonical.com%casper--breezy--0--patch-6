@@ -1,0 +1,9 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="2cba735c8025e08042c9676201f93a2e82f3067e" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-6" timestamp="1125693819.000000000">
+<message>Revert changes to casper-udeb.postinst which were intended for starting usplash earlier (pre-1.10)
+
+
+</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-5" />
+</parents>
+</revision>

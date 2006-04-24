@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d6e483914fe46ab8cb4c1af3737c4689aeb9767b" revision_id="tfheen@ubuntu.com-20060328085939-82093ef1c8161c25" timestamp="1143536379.484005928" timezone="7200">
+<message>Use chmod -x instead of mv to disable readahead in order to not</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060328082159-1d699f245162d1bb" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

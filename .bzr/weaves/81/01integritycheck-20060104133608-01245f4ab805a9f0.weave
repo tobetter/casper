@@ -1,0 +1,53 @@
+# bzr weave file v5
+i
+1 12dd551034e67149bc3ebbc3f7add34bbc930900
+n tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197
+
+i 0
+1 12dd551034e67149bc3ebbc3f7add34bbc930900
+n tfheen@ubuntu.com-20060104134656-00100459969a9d0b
+
+i 1
+1 912799c998944d826f370c0777153f866c7a1ff0
+n tfheen@ubuntu.com-20060104134811-e30014a9ec0ce100
+
+i 2
+1 912799c998944d826f370c0777153f866c7a1ff0
+n tfheen@ubuntu.com-20060104135802-adc02f56136ff6da
+
+i 3
+1 955890294737091e63fe0354338a3d7837bc6195
+n tfheen@ubuntu.com-20060421141119-8e1fed9f0fc885ab
+
+w
+{ 0
+. #!/bin/sh
+. 
+. PREREQ=""
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+[ 2
+. grep integrity-check /proc/cmdline && casper-md5check "$rootmnt" "$rootmnt"/md5sum.txt
+}
+] 2
+{ 2
+[ 4
+. grep integrity-check /proc/cmdline && casper-md5check /cdrom /cdrom/md5sum.txt
+}
+] 4
+{ 4
+. grep integrity-check /proc/cmdline && casper-md5check /cdrom /cdrom/md5sum.txt < /dev/tty8
+}
+W

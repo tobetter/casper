@@ -1,0 +1,9 @@
+<revision committer="Jonathan Riddell &lt;jriddell@ubuntu.com&gt;" format="5" inventory_sha1="7592fa425fd72075a9b44b04fa7ae4a8f21d6e06" revision_id="jriddell@ubuntu.com-20060413144230-a2ecfef0b10ee1bf" timestamp="1144939350.167450905" timezone="3600">
+<message>Copy kdeui .desktop file
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060411143614-a42fec2b35df9b44" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

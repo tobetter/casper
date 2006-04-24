@@ -16,6 +16,8 @@ Description: Run a "live" preinstalled system from read-only media
 Package: ubiquity-casper
 Architecture: all
 Depends: laptop-detect
+Conflicts: espresso-casper
+Replaces: espresso-casper
 Enhances: ubiquity
 Description: Configuration hooks for live installer
  This package provides hook scripts for the Ubiquity live installer that

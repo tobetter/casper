@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="4bb44cf42c2c67d76a58cc8d8cacf548e5a5b705" revision_id="tfheen@ubuntu.com-20051219134623-2e798b17e609f40e" timestamp="1134999983.641058922" timezone="3600">
+<message>fix up 0.19 upload target</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051219132335-470b4188b74f3324" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

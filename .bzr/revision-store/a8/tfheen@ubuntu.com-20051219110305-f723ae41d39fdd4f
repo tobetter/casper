@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2d55e99c47248ca0f99162e752000ae674148410" revision_id="tfheen@ubuntu.com-20051219110305-f723ae41d39fdd4f" timestamp="1134990185.607058048" timezone="3600">
+<message>depend on dmsetup, not on usplash any more</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051219105508-7f4f96c1ab1dd8bb" />
+</parents>
+<properties><property name="branch-nick">squashfs</property>
+</properties>
+</revision>

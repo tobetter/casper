@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="878f7580d6aa4a0fe43611a7ca62c4ccbf5cdcec" revision_id="tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197" timestamp="1136381911.070100069" timezone="3600">
+<message>initial shot at md5 checking support</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060103154106-b28cc6a50711c94c" />
+</parents>
+<properties><property name="branch-nick">integrity-check</property>
+</properties>
+</revision>

@@ -1,0 +1,10 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2ea824ef667c4921116e2c55ad6d359d8714c1b4" revision_id="tfheen@ubuntu.com-20051219123849-e090257505a34a1f" timestamp="1134995929.968987942" timezone="3600">
+<message>Autodetect live fs type, depend on dmsetup
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051219110734-c131dad06e17b7d0" />
+<revision_ref revision_id="tfheen@ubuntu.com-20051219121523-7adec0cf8c9c338a" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

@@ -24,7 +24,7 @@ if chroot /root /bin/sh -c laptop-detect; then
     casper-reconfigure /root gnome-panel-data
 fi
 
-panel_version=$(chroot /target /usr/bin/dpkg-query -W --showformat='${Version}' gnome-panel-data 2>/dev/null) || panel_version=""
+panel_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gnome-panel-data 2>/dev/null) || panel_version=""
 if [ -n "$panel_version" ]; then
     chroot /root su ubuntu -- gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
 fi

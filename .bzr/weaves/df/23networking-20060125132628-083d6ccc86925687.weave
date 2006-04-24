@@ -1,0 +1,75 @@
+# bzr weave file v5
+i
+1 8feb80c7253850a44f34c7336d04a5bcbbe901c4
+n tfheen@ubuntu.com-20060125132637-4aba89c844f47fdd
+
+i 0
+1 072f868931ae6b2936051d14b49b41860cd194fe
+n tfheen@ubuntu.com-20060131105721-e465b6de326b2fae
+
+i 1
+1 391a8acce29fa49c5f511632ab8f797f4f52f1ff
+n tfheen@ubuntu.com-20060131114158-e58230824fa469be
+
+w
+{ 0
+. #! /bin/sh
+. 
+. PREREQ=""
+. DESCRIPTION="Preconfiguring networking"
+. IFFILE="/root/etc/network/interfaces"
+. 
+. . /scripts/functions
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. log_begin_msg "$DESCRIPTION"
+. 
+[ 1
+. cat >> "$IFFILE" <<EOF
+] 1
+{ 1
+. cat > "$IFFILE" <<EOF
+}
+. auto lo
+. iface lo inet loopback
+. 
+. EOF
+. 
+[ 1
+. for interface in /sys/class/net/eth*; do
+] 1
+{ 1
+[ 2
+. udevplug -Cnet -s
+. udevplug -W
+] 2
+{ 2
+. udevplug -Bpci -Iclass="0x02*"
+}
+. 
+. for interface in /sys/class/net/eth* /sys/class/net/ath*; do
+.     [ -e $interface ] || continue
+}
+.     i="$(basename $interface)"
+.     cat >> "$IFFILE" <<EOF
+. auto $i
+. iface $i inet dhcp
+. 
+. EOF
+. done
+. 
+. log_end_msg
+}
+W

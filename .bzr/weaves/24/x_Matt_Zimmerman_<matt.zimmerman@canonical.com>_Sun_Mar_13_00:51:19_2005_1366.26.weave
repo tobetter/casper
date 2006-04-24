@@ -1,0 +1,267 @@
+# bzr weave file v5
+i
+1 88880907ceaa4e6ffd7f01bce451cbb43e4edfa3
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 88880907ceaa4e6ffd7f01bce451cbb43e4edfa3
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 4a6fc4091c10077d2a505540a6bdddbb0a89cb09
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 1 0
+1 4a49125ffa802c74b4b1933354a87cbdfc101e9c
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5
+
+i 3
+1 4a6fc4091c10077d2a505540a6bdddbb0a89cb09
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2
+
+i 3
+1 9c46620b88e7efae36fb8ff9b5f2d8b6c42e3038
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-23
+
+i 5
+1 b519c51506b670350a480d23b388f662a4fb46ff
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25
+
+i 6 4
+1 b519c51506b670350a480d23b388f662a4fb46ff
+n mdz@mizar-20051205230117-c327e75be767f237
+
+w
+{ 0
+. Template: debian-installer/casper-udeb/title
+. Type: text
+. _Description: Enter preinstalled session
+. 
+. Template: casper-udeb/progress/title
+. Type: text
+. _Description: Preparing for live session
+. 
+. Template: casper-udeb/progress/fallback
+. Type: text
+. _Description: Preparing for live session...
+. 
+. Template: casper-udeb/progress/load-modules
+. Type: text
+. _Description: Loading modules...
+. 
+[ 3
+. Template: casper-udeb/progress/snapshot
+] 3
+{ 3
+. Template: casper-udeb/progress/filesystem
+}
+. Type: text
+[ 3
+. _Description: Configuring snapshot...
+] 3
+{ 3
+. _Description: Setting up filesystem...
+}
+. 
+. Template: casper-udeb/progress/mount
+. Type: text
+. _Description: Mounting temporary filesystems...
+. 
+. Template: casper-udeb/progress/adduser
+. Type: text
+. _Description: Creating user...
+. 
+. Template: casper-udeb/progress/autologin
+. Type: text
+. _Description: Configuring autologin...
+. 
+. Template: casper-udeb/progress/xconfig
+. Type: text
+. _Description: Configuring graphics hardware (the screen may blank)...
+. 
+. Template: casper-udeb/progress/fontconfig
+. Type: text
+. _Description: Setting font preferences...
+. 
+. Template: casper-udeb/progress/gnome-panel-data
+. Type: text
+. _Description: Configuring panel...
+. 
+. Template: casper-udeb/progress/configure-init
+. Type: text
+. _Description: Configuring initialization process...
+. 
+. Template: casper-udeb/progress/swap
+. Type: text
+. _Description: Configuring swap...
+. 
+. Template: casper-udeb/progress/unmount-initrd
+. Type: text
+. _Description: Freeing bootstrap memory...
+. 
+. Template: casper-udeb/progress/localechooser
+. Type: text
+. _Description: Configuring language...
+. 
+{ 4
+. Template: casper-udeb/progress/usplash
+. Type: text
+. _Description: Initializing splash screen...
+. 
+}
+{ 6
+[ 7
+. Template: casper-udeb/progress/usplash
+. Type: text
+. _Description: Initializing splash screen...
+. 
+}
+] 7
+. Template: casper-udeb/step-failed
+. Type: error
+. _Description: Step '${step}' failed
+. 
+. Template: casper-udeb/snapshot/cow-device
+. Type: string
+. Default: /dev/ram1
+. _Description: Which device should be used to store session data?
+. 
+. Template: casper-udeb/snapshot/cow-size
+. Type: string
+. Default: auto
+. _Description: How much memory should be used to store session data?
+. 
+. Template: casper-udeb/snapshot/backing-file
+. Type: string
+. Default: /cdrom/casper/filesystem.cloop
+. _Description: What is the path to the filesystem image you would like to use?
+. 
+. Template: casper-udeb/swap/devices
+. Type: string
+. Default: auto
+. _Description: Which devices should be used for swap space?
+. 
+. Template: casper-udeb/runlevel
+. Type: string
+. _Description: What runlevel should be entered?
+}
+{ 1
+[ 3
+. Template: debian-installer/casper-udeb/title
+. Type: text
+. _Description: Enter preinstalled session
+. 
+. Template: casper-udeb/progress/title
+. Type: text
+. _Description: Preparing for live session
+. 
+. Template: casper-udeb/progress/fallback
+. Type: text
+. _Description: Preparing for live session...
+. 
+. Template: casper-udeb/progress/load-modules
+. Type: text
+. _Description: Loading modules...
+. 
+[ 2
+. Template: casper-udeb/progress/snapshot
+] 2
+{ 2
+. Template: casper-udeb/progress/filesystem
+}
+. Type: text
+[ 2
+. _Description: Configuring snapshot...
+] 2
+{ 2
+. _Description: Setting up filesystem...
+}
+. 
+. Template: casper-udeb/progress/mount
+. Type: text
+. _Description: Mounting temporary filesystems...
+. 
+. Template: casper-udeb/progress/adduser
+. Type: text
+. _Description: Creating user...
+. 
+. Template: casper-udeb/progress/autologin
+. Type: text
+. _Description: Configuring autologin...
+. 
+. Template: casper-udeb/progress/xconfig
+. Type: text
+. _Description: Configuring graphics hardware (the screen may blank)...
+. 
+. Template: casper-udeb/progress/fontconfig
+. Type: text
+. _Description: Setting font preferences...
+. 
+. Template: casper-udeb/progress/gnome-panel-data
+. Type: text
+. _Description: Configuring panel...
+. 
+. Template: casper-udeb/progress/configure-init
+. Type: text
+. _Description: Configuring initialization process...
+. 
+. Template: casper-udeb/progress/swap
+. Type: text
+. _Description: Configuring swap...
+. 
+. Template: casper-udeb/progress/unmount-initrd
+. Type: text
+. _Description: Freeing bootstrap memory...
+. 
+. Template: casper-udeb/progress/localechooser
+. Type: text
+. _Description: Configuring language...
+. 
+{ 2
+. Template: casper-udeb/progress/usplash
+. Type: text
+. _Description: Initializing splash screen...
+. 
+}
+. Template: casper-udeb/step-failed
+. Type: error
+. _Description: Step '${step}' failed
+. 
+. Template: casper-udeb/snapshot/cow-device
+. Type: string
+. Default: /dev/ram1
+. _Description: Which device should be used to store session data?
+. 
+. Template: casper-udeb/snapshot/cow-size
+. Type: string
+. Default: auto
+. _Description: How much memory should be used to store session data?
+. 
+. Template: casper-udeb/snapshot/backing-file
+. Type: string
+. Default: /cdrom/casper/filesystem.cloop
+. _Description: What is the path to the filesystem image you would like to use?
+. 
+. Template: casper-udeb/swap/devices
+. Type: string
+. Default: auto
+. _Description: Which devices should be used for swap space?
+. 
+. Template: casper-udeb/runlevel
+. Type: string
+. _Description: What runlevel should be entered?
+}
+] 3
+{ 5
+. 
+. Template: casper-udeb/snapshot/cow-mode
+. Type: select
+. _Choices: Device mapper, UnionFS
+. _Default: UnionFS
+. _Description: Copy-on-write mode
+.  Please select whether you want to use device mapper or unionfs as the
+.  backend for the copy-on-write device.
+.  .
+.  Device mapper is the safe choice.
+}
+W

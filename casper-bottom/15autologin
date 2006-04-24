@@ -22,15 +22,15 @@ log_begin_msg "$DESCRIPTION"
 
 username="ubuntu"
 
-if [ -f /root/etc/gdm/gdm-cdd.conf ]; then
-    GDMCONF=/root/etc/gdm/gdm-cdd.conf
+if chroot /root [ -f /etc/gdm/gdm-cdd.conf ]; then
+    GDMCONF=/etc/gdm/gdm-cdd.conf
 else
-    GDMCONF=/root/etc/gdm/gdm.conf
+    GDMCONF=/etc/gdm/gdm.conf
 fi
 
-if [ -f ${GDMCONF} ]; then
+if chroot /root [ -f ${GDMCONF} ]; then
     # Configure GDM autologin
-    sed -i \
+    chroot /root sed -i \
         -e "s/^AutomaticLoginEnable=.*\$/AutomaticLoginEnable=true/" \
         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$username/" \
         -e "s/^TimedLoginEnable=.*\$/TimedLoginEnable=true/" \

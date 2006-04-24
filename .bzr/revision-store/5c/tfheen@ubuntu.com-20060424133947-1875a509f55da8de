@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6f25b94ab831eb11e17550e9b1b6edc74d673528" revision_id="tfheen@ubuntu.com-20060424133947-1875a509f55da8de" timestamp="1145885987.702775002" timezone="7200">
+<message>/etc/gdm/gdm-cdd.conf can be a symlink.  Cope with that.  Malone: #40767</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060424093506-df3a4c67bb309f74" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

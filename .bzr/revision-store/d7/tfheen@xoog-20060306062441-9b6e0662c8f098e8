@@ -1,0 +1,9 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@xoog&gt;" format="5" inventory_sha1="f5cf0e2716473c6e4c98fe89741839bb4f3805fe" revision_id="tfheen@xoog-20060306062441-9b6e0662c8f098e8" timestamp="1141626281.519458055" timezone="3600">
+<message>Merge example-content handling from Daniel Holbach</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060304105607-291034865b058859" />
+<revision_ref revision_id="daniel.holbach@ubuntu.com-20060301183603-08bf831b95ef2b9b" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

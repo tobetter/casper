@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="7d3fbec691e37670c593d70d2cd27a09280eb8fe" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5" timestamp="1118338145.000000000">
+<message>Rename 10snapshot to 10filesystem</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-4" />
+</parents>
+</revision>

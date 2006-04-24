@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="bfc3e72cbfc46cf0a376bc4b6bb315e726659c82" revision_id="tfheen@ubuntu.com-20051216054945-b543cf3b0b9d0fbc" timestamp="1134712185.880347967" timezone="3600">
+<message>do not try to mount /rofs rw</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051216052959-d84d0b1aaacd8ae5" />
+</parents>
+<properties><property name="branch-nick">squashfs</property>
+</properties>
+</revision>

@@ -1,0 +1,490 @@
+# bzr weave file v5
+i
+1 4248106c18da8e83d990e6d202ab3f4fc68fd51f
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 4248106c18da8e83d990e6d202ab3f4fc68fd51f
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n Arch-1:colin.watson@canonical.com--2005%casper--translations--0--patch-17
+
+i 1 0
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-10
+
+i 0
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-26
+
+i 4 3
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 5
+1 66f24f4a9fa62cc8879dc975fcd29a5e4176b546
+n tfheen@ubuntu.com-20051214123713-b0c607646607b738
+
+i 6
+1 17a9df4a660b82621a45b950238dd254bd6e7361
+n tfheen@ubuntu.com-20051214124305-81e6c50220b71a59
+
+i 7
+1 49810170d02057fe8c1fadf683d7a23d7b428fc3
+n tfheen@ubuntu.com-20051214124642-89138620ced37930
+
+i 8
+1 301fc6db8963f3908c5f83071e706adf4b6fdcfa
+n tfheen@ubuntu.com-20051214124825-89ead86bf4751314
+
+i 9
+1 8311e62a9f1bef8ac960db38fe6c16ba4165fa55
+n tfheen@ubuntu.com-20051214124902-a8d255ac44a858a2
+
+i 10
+1 edcfb702a8bf0a90e0d5f5986730d3970c7a5bd2
+n tfheen@ubuntu.com-20051214130034-c6ca52855429553b
+
+i 11
+1 5534f5451e698e7feac93784bee4109d94a01132
+n tfheen@ubuntu.com-20051219132042-a0f399338aaacf39
+
+i 12
+1 cc69d581660143c645a74872b9c48b2b69fd279b
+n tfheen@ubuntu.com-20060102121808-24cd694a35a7ca60
+
+i 13
+1 940a1c561568710dd2d97efe8fe0017af22d78e7
+n tfheen@ubuntu.com-20060103153818-fcba68a7a9f881f4
+
+i 14
+1 84911c3bcc0db25d1516db76416163f0e03fae28
+n tfheen@ubuntu.com-20060103154106-b28cc6a50711c94c
+
+i 15
+1 9f7ade64329b2cdb5d181739f27614b317aa4961
+n tfheen@ubuntu.com-20060104115653-bc7d9af14a7f490f
+
+i 16
+1 1b7068afc9f1cdc0be84c26ed5ff39347ce064a8
+n tfheen@ubuntu.com-20060106132121-76c1766fab8652e8
+
+i 17
+1 14b4eab62924cc9ea94c6c8ab5e640e78ca6837f
+n tfheen@ubuntu.com-20060106132541-07f709ae79e8f305
+
+i 18
+1 379f7f8f0a1955d67635a9f787fffe3b194728f9
+n tfheen@ubuntu.com-20060110093740-3067387b91e09676
+
+i 18
+1 379f7f8f0a1955d67635a9f787fffe3b194728f9
+n tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05
+
+i 20
+1 39ec92d2665b9e2da2922a169cd394519be15a40
+n tfheen@ubuntu.com-20060112131940-04c4325ddde2d725
+
+i 21
+1 9ea9165f73cebe7c5e5885c58c5c0b2b56e9fd03
+n tfheen@ubuntu.com-20060214134726-d8a61c95a1a555fc
+
+i 22
+1 d35e1468c236ab8ed7dcd6b18e389a46c03dd10e
+n colin.watson@canonical.com-20060215224521-c87c7c33a6444019
+
+i 23
+1 e4d14b5cc8f72987cd147fd334b4cf34f402bb10
+n colin.watson@canonical.com-20060216153441-ecbd333c570ef78c
+
+i 24
+1 5b74b911a1cce808b51de92effde2a36dd78f499
+n tfheen@ubuntu.com-20060220083824-de58a5c83c86a35c
+
+i 24
+1 aa15993ed35bf042468c3f89de72119fb612c94e
+n colin.watson@canonical.com-20060217164022-826b5234dd632eaf
+
+i 26 25
+1 5b74b911a1cce808b51de92effde2a36dd78f499
+n tfheen@ubuntu.com-20060220092202-0c2a977e1fa744eb
+
+i 27
+1 7fd06c695bfc330e7787f6e71efd63561614fc98
+n tfheen@ubuntu.com-20060220092236-43d40e3bb5228937
+
+i 28
+1 4fcb5bc225ed1aa84cc841f258380d0b9ff8d573
+n tfheen@ubuntu.com-20060220093555-fd9fee9d0dcb80aa
+
+i 29
+1 301bc0d71e8a3792cf6f88ae96e28f0a6568e7b3
+n tfheen@xoog-20060306082333-7644eee4d7c780ae
+
+i 30
+1 ce38ef88975bf264eeec627a453293833a504678
+n tfheen@xoog-20060306084103-44f8961ee73fd023
+
+i 31
+1 d93780dc369ee0bba9b7356b6ec8eeb35a63488e
+n colin.watson@canonical.com-20060317151231-dc9f5567bbb3e35d
+
+i 32
+1 46f08823321ec71acf0dd51f4de9a7f5cbf47773
+n tfheen@ubuntu.com-20060329095059-a18375120a6adcfa
+
+i 33
+1 306cbbdc3a783fbc1da86dcc3b75c44d63629bcc
+n tfheen@ubuntu.com-20060417171949-7f64aac2c569b6c9
+
+i 33
+1 06bae405ef4593924363e036a02ef082af918687
+n jriddell@ubuntu.com-20060413144230-a2ecfef0b10ee1bf
+
+i 34 35
+1 2a9a14fffeb38a0dc3eb781623710002e78a548a
+n tfheen@ubuntu.com-20060418084529-4c090d4c3b5a21fd
+
+i 36
+1 3218dabfadc8a629ddfd4b8e860af5bba9af153f
+n tfheen@ubuntu.com-20060418084638-32b33baa3a012e58
+
+i 37
+1 9fe4c9ea9b1646d3bb0d80fcfa6118566f533d65
+n tfheen@ubuntu.com-20060418094008-4544e7575ebcd146
+
+i 38
+1 7ffc53157eba0be3e6898a33439db4181d60a398
+n colin.watson@canonical.com-20060421113456-15cfebb20d5506ef
+
+w
+{ 0
+. #!/bin/sh
+[ 7
+. 
+. . /usr/share/debconf/confmodule
+] 7
+{ 8
+. 
+. PREREQ=""
+{ 19
+. DESCRIPTION="Adding live cd user"
+. 
+. . /scripts/functions
+}
+{ 20
+[ 21
+. DESCRIPTION="Adding live cd user"
+] 21
+{ 21
+. DESCRIPTION="Adding live CD user"
+}
+. 
+. . /scripts/functions
+}
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+[ 12
+. 
+. set -x
+}
+] 12
+. 
+[ 13
+. USERNAME="ubuntu"
+] 13
+{ 13
+[ 16
+. echo set passwd/root-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
+. echo set passwd/user-password-crypted '*' | chroot /root debconf-communicate -fnoninteractive
+. echo set passwd/user-fullname 'Ubuntu LiveCD user' | chroot /root debconf-communicate -fnoninteractive
+. echo set passwd/username 'ubuntu' | chroot /root debconf-communicate -fnoninteractive
+}
+{ 14
+. echo set passwd/user-uid 999 | chroot /root debconf-communicate -fnoninteractive
+}
+] 16
+{ 16
+[ 17
+. DEBCONFCOMMANDS="set passwd/root-password-crypted *\n"
+. DEBCONFCOMMANDS="set passwd/user-password-crypted *\n$DEBCONFCOMMANDS"
+. DEBCONFCOMMANDS="set passwd/user-fullname Ubuntu LiveCD user\n$DEBCONFCOMMANDS"
+. DEBCONFCOMMANDS="set passwd/username ubuntu\n$DEBCONFCOMMANDS"
+. DEBCONFCOMMANDS="set passwd/user-uid 999\n$DEBCONFCOMMANDS"
+. echo "$DEBCONFCOMMANDS" | chroot /root debconf-communicate -fnoninteractive
+}
+] 17
+{ 17
+[ 18
+. chroot /root debconf-communicate -fnoninteractive <<EOF
+] 18
+{ 18
+{ 19
+. log_begin_msg "$DESCRIPTION"
+. 
+}
+{ 20
+. log_begin_msg "$DESCRIPTION"
+. 
+}
+. chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+}
+. set passwd/root-password-crypted *
+[ 22
+. set passwd/user-password-crypted *
+] 22
+{ 22
+. set passwd/user-password-crypted U6aMy0wojraho
+}
+. set passwd/user-fullname Ubuntu LiveCD user
+. set passwd/username ubuntu
+. set passwd/user-uid 999
+. EOF
+}
+. 
+[ 7
+. for question in username user-fullname user-password user-password-again; do
+.     db_register debian-installer/dummy passwd/$question
+.     db_set passwd/$question $USERNAME
+.     db_fset passwd/$question seen true
+. done
+] 7
+{ 7
+[ 9
+. chroot /root adduser --disabled-password "$USERNAME"
+. chroot /root adduser "$USERNAME" ubuntu
+}
+] 9
+{ 9
+[ 10
+. chroot /root /usr/sbin/adduser --disabled-password "$USERNAME"
+. chroot /root /usr/sbin/adduser "$USERNAME" ubuntu
+}
+] 10
+{ 10
+[ 13
+. chroot /root /usr/sbin/adduser --gecos "" --disabled-password  "$USERNAME"
+{ 11
+. chroot /root /usr/sbin/adduser --group --system admin
+}
+. chroot /root /usr/sbin/adduser "$USERNAME" admin
+. chroot /root /usr/sbin/adduser "$USERNAME" plugdev
+. chroot /root /usr/sbin/adduser "$USERNAME" audio
+. chroot /root /usr/sbin/adduser "$USERNAME" video
+. chroot /root /usr/sbin/adduser "$USERNAME" scanner
+}
+] 13
+{ 13
+[ 15
+. chroot /root user-setup-apply
+}
+] 15
+{ 15
+[ 19
+[ 20
+. chroot /root /usr/lib/user-setup/user-setup-apply
+}
+] 19
+{ 19
+. chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
+}
+] 20
+{ 20
+. chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
+}
+. 
+[ 7
+. casper-reconfigure -fpassthrough passwd
+. 
+. if [ -f /etc/sudoers ]; then
+.     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /etc/sudoers
+] 7
+{ 7
+{ 32
+[ 39
+. # Clear out debconf database again to avoid confusing espresso later.
+] 39
+{ 39
+. # Clear out debconf database again to avoid confusing ubiquity later.
+}
+. chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+. set passwd/root-password-crypted
+. set passwd/user-password-crypted
+. set passwd/user-fullname
+. set passwd/username
+. set passwd/user-uid
+. EOF
+. 
+}
+. if [ -f /root/etc/sudoers ]; then
+[ 11
+.     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers
+}
+] 11
+{ 11
+.     grep -q '^%admin' /root/etc/sudoers && sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers || echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers
+}
+. fi
+. 
+[ 7
+. # Lock the user's password
+. passwd -l $USERNAME
+. 
+[ 3
+{ 4
+. # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+. echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
+. 
+}
+. exit 0
+}
+{ 1
+. #!/bin/sh
+. 
+. . /usr/share/debconf/confmodule
+. 
+. USERNAME="ubuntu"
+. 
+. for question in username user-fullname user-password user-password-again; do
+.     db_register debian-installer/dummy passwd/$question
+.     db_set passwd/$question $USERNAME
+.     db_fset passwd/$question seen true
+. done
+. 
+. casper-reconfigure -fpassthrough passwd
+. 
+. if [ -f /etc/sudoers ]; then
+.     sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /etc/sudoers
+. fi
+. 
+. # Lock the user's password
+. passwd -l $USERNAME
+] 3
+{ 3
+] 7
+. # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+[ 7
+. echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
+}
+] 7
+{ 7
+. echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
+}
+. 
+{ 2
+. # XXX - awful hack to stop xscreensaver locking the screen (#7150)
+. echo 'RUNNING_UNDER_GDM="yes"' >> /etc/environment
+. 
+}
+[ 19
+[ 20
+. exit 0
+}
+] 19
+{ 19
+. log_end_msg
+}
+] 20
+{ 20
+{ 23
+{ 30
+[ 33
+. mkdir -p /root/home/ubuntu/Desktop
+}
+] 33
+[ 35
+. for ui in gtkui; do
+[ 24
+.     file="/usr/share/applications/espresso-$ui.desktop"
+] 24
+{ 24
+[ 25
+.     file="/root/usr/share/applications/espresso-$ui.desktop"
+}
+] 25
+{ 25
+.     file="/usr/share/applications/espresso-$ui.desktop"
+}
+[ 28
+.     if [ -f "$file" ]; then
+[ 24
+.         mkdir -p /home/ubuntu/Desktop
+.         cp -a "$file" /home/ubuntu/Desktop/
+] 24
+{ 24
+[ 25
+.         mkdir -p /root/home/ubuntu/Desktop
+.         cp -a "$file" /root/home/ubuntu/Desktop/
+}
+] 25
+{ 25
+] 28
+{ 28
+] 35
+{ 35
+[ 37
+. for file in /usr/share/applications/espresso-*.desktop /usr/share/applications/kde/espresso-*.desktop; do
+}
+] 37
+{ 37
+[ 39
+. for file in /usr/share/applications/espresso-gtkui.desktop /usr/share/applications/kde/espresso-kdeui.desktop; do
+}
+] 39
+{ 39
+. for file in /usr/share/applications/ubiquity-gtkui.desktop /usr/share/applications/kde/ubiquity-kdeui.desktop; do
+}
+.     if [ -f "/root/$file" ]; then
+}
+[ 29
+.         chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop
+}
+{ 26
+[ 27
+.         chown ubuntu:ubuntu "/root/home/ubuntu/Desktop/espresso-$ui.desktop"
+}
+] 27
+] 29
+{ 29
+.         chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop/$(basename "$file")
+}
+.         break
+.     fi
+. done
+. 
+}
+{ 30
+[ 31
+. if [ -e /root/home/ubuntu/Examples ]; then
+] 31
+{ 31
+. if [ -L /root/home/ubuntu/Examples ]; then
+}
+{ 34
+[ 38
+.     mkdir -p /root/home/ubuntu/Desktop/
+}
+] 38
+{ 38
+.     chroot /root install -o ubuntu -g ubuntu -d /home/ubuntu/Desktop/
+}
+.     mv /root/home/ubuntu/Examples /root/home/ubuntu/Desktop/
+. fi
+. 
+}
+. log_end_msg
+}
+W

@@ -1,0 +1,240 @@
+# bzr weave file v5
+i
+1 cf252c8bdbf10dc341c572a335de4299bac7eb86
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 cf252c8bdbf10dc341c572a335de4299bac7eb86
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1 0
+1 cf252c8bdbf10dc341c572a335de4299bac7eb86
+n mdz@mizar-20051205230117-c327e75be767f237
+
+i 2
+1 a11586b9d3b84c45bd695ec69b83da29b74069dd
+n tfheen@ubuntu.com-20051214125543-4aad17131b77910a
+
+i 3
+1 4071a778d8767a2099637c99d66a504d84c05a5f
+n tfheen@ubuntu.com-20051214125823-48b838a2a4279f94
+
+i 4
+1 6f50dca5e1f7d9991c2e3d18e43d00524a950600
+n tfheen@ubuntu.com-20051214130430-b464c22cacec4eec
+
+i 5
+1 05fd19f71129d1437a94cd0f0ec34b9ad04be1b2
+n colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf
+
+w
+{ 0
+. #!/bin/sh
+. 
+. set -e
+[ 5
+. 
+{ 4
+] 5
+. PATH=/usr/bin:/usr/sbin:/sbin:/bin
+. 
+}
+. frontend=noninteractive
+{ 4
+. 
+. findcommandinroot() {
+.     ROOT="$1/"
+.     shift
+.     while [ "$#" -ge 1 ]; do
+.         P="$PATH"
+.         while [ "$P" ]; do
+.             D=${P%%:*}
+.             P=${P#*:}
+.             if [ "$D" = "$P" ]; then
+.                 P=
+.             fi
+.             if [ -z "$D" ]; then
+.                 D=.
+.             fi
+.             if [ -x "$ROOT$D/$1" ]; then
+.                 echo "$D/$1"
+.                 return 0
+.             fi
+.         done
+.         shift
+.     done
+.     return 1
+. }
+. 
+. runcommandinroot() {
+.     C=$(findcommandinroot "$1" "$2")
+.     ROOT="$1"
+.     shift
+.     shift
+[ 5
+.     [ -z "$C" ] && chroot "$ROOT" "$C" "$@"
+] 5
+{ 5
+.     [ -n "$C" ] && chroot "$ROOT" "$C" "$@"
+}
+. }
+}
+[ 5
+. 
+. eval set -- $(getopt -o "f:" -n casper-reconfigure -- "$@")
+. 
+. while true; do
+.     case "$1" in
+.         -f)
+.             frontend="$2"
+.             shift 2
+.             ;;
+.         --)
+.             shift
+.             break
+.             ;;
+.         *)
+.             echo "Internal error!" 
+.             exit 1
+.             ;;
+.     esac
+. done
+] 5
+. 
+[ 6
+. package="$1"
+[ 3
+. version=$(dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+] 3
+{ 3
+[ 4
+. version=$(chroot /root dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+}
+] 4
+{ 4
+] 6
+{ 6
+. root="$1"
+. package="$2"
+}
+. 
+[ 6
+. version=$(runcommandinroot /root dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+}
+] 6
+{ 6
+. version=$(runcommandinroot "$root" dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+}
+. 
+. if [ -z "$version" ]; then
+.     echo "$0: package '$package' is not installed"
+.     exit 0
+. fi
+. 
+[ 5
+. case "$frontend" in
+.     passthrough)
+.         env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
+.             -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
+.             DEBCONF_READFD=0 DEBCONF_WRITEFD=3 \
+[ 3
+.             dpkg-reconfigure -fpassthrough "$package"
+] 3
+{ 3
+[ 4
+.             chroot /root dpkg-reconfigure -fpassthrough "$package"
+}
+] 4
+{ 4
+.             runcommandinroot /root dpkg-reconfigure -fpassthrough "$package"
+}
+.         ;;
+.     noninteractive)
+.         env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
+.             -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
+[ 3
+.             dpkg-reconfigure -fnoninteractive "$package"
+] 3
+{ 3
+[ 4
+.             chroot /root dpkg-reconfigure -fnoninteractive "$package"
+}
+] 4
+{ 4
+.             runcommandinroot /root dpkg-reconfigure -fnoninteractive "$package"
+}
+.         ;;
+.     *)
+.         echo "Unknown frontend: $frontend"
+.         exit 1
+.         ;;
+. esac
+] 5
+{ 5
+[ 6
+. runcommandinroot /root dpkg-reconfigure -fnoninteractive "$package"
+}
+] 6
+{ 6
+. runcommandinroot "$root" dpkg-reconfigure -fnoninteractive "$package"
+}
+. 
+. exit 0
+}
+{ 1
+[ 2
+. #!/bin/sh
+. 
+. set -e
+. 
+. frontend=noninteractive
+. 
+. eval set -- $(getopt -o "f:" -n casper-reconfigure -- "$@")
+. 
+. while true; do
+.     case "$1" in
+.         -f)
+.             frontend="$2"
+.             shift 2
+.             ;;
+.         --)
+.             shift
+.             break
+.             ;;
+.         *)
+.             echo "Internal error!" 
+.             exit 1
+.             ;;
+.     esac
+. done
+. 
+. package="$1"
+. version=$(dpkg-query -W --showformat='${Version}' "$package" 2>/dev/null) || version=""
+. 
+. if [ -z "$version" ]; then
+.     echo "$0: package '$package' is not installed"
+.     exit 0
+. fi
+. 
+. case "$frontend" in
+.     passthrough)
+.         env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
+.             -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
+.             DEBCONF_READFD=0 DEBCONF_WRITEFD=3 \
+.             dpkg-reconfigure -fpassthrough "$package"
+.         ;;
+.     noninteractive)
+.         env -u DEBIAN_HAS_FRONTEND -u DEBIAN_FRONTEND \
+.             -u DEBCONF_REDIR -u DEBCONF_OLD_FD_BASE \
+.             dpkg-reconfigure -fnoninteractive "$package"
+.         ;;
+.     *)
+.         echo "Unknown frontend: $frontend"
+.         exit 1
+.         ;;
+. esac
+. 
+. exit 0
+}
+] 2
+W

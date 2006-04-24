@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="65d272401e9d732839a99d44626bbe82fd6454d4" revision_id="tfheen@ubuntu.com-20060104144402-9dd46cd60a62996d" timestamp="1136385842.052161932" timezone="3600">
+<message>use atomic writes to not confuse usplash</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060104143346-938e8027e7d772d1" />
+</parents>
+<properties><property name="branch-nick">integrity-check</property>
+</properties>
+</revision>

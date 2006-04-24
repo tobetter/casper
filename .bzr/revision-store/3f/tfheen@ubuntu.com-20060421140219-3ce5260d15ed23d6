@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a904885e451fa766ee2fbd5696250e346410a3ed" revision_id="tfheen@ubuntu.com-20060421140219-3ce5260d15ed23d6" timestamp="1145628139.529938936" timezone="7200">
+<message>Only look at UTF-8 locales</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060421132712-45911197c086e49f" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

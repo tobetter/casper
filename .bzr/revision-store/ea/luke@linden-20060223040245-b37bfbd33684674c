@@ -1,0 +1,9 @@
+<revision committer="Luke Yelavich &lt;luke@linden&gt;" format="5" inventory_sha1="0498bf3ec7b145b6c5b11df86934c58b29aa3da5" revision_id="luke@linden-20060223040245-b37bfbd33684674c" timestamp="1140667365.783201933" timezone="39600">
+<message>Added settings for Accessibility profiles.
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060222133733-3acf78ce648c6c1e" />
+</parents>
+<properties><property name="branch-nick">casper</property>
+</properties>
+</revision>

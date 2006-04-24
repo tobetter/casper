@@ -1,0 +1,12 @@
+# bzr weave file v5
+i
+1 f5e5ce47e7f9515809bced25e433b42dc65ca9b5
+n tfheen@ubuntu.com-20051214132331-6de1268cb50a7b7e
+
+w
+{ 0
+. #! /bin/sh
+. 
+. update-initramfs -u
+}
+W

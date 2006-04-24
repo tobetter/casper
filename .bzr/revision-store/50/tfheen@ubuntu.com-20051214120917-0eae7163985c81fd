@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a13ddbc33df2bdeba7459cadf234c3f98687041f" revision_id="tfheen@ubuntu.com-20051214120917-0eae7163985c81fd" timestamp="1134562157.319669008" timezone="3600">
+<message>initramfs-ise a bit</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214120322-f98c9ac59f992158" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="4ce8081909af312c6fc1bd2b3ea3fc785ab0e952" revision_id="tfheen@ubuntu.com-20060411135304-36163b74e275dbf4" timestamp="1144763584.997121096" timezone="7200">
+<message>Use gdm-cdd.conf if it exists</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060411133902-216b58b972899d46" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

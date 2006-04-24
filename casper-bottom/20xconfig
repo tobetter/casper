@@ -44,7 +44,7 @@ set xserver-xorg/autodetect_keyboard true
 fset xserver-xorg/autodetect_keyboard seen true
 EOF
 
-LANG=$(grep ^$locale /root/usr/share/i18n/SUPPORTED | sed -e 's, .*,,' -e q) casper-reconfigure /root xserver-xorg
+DEBUG_XORG_PACKAGE=1 DEBUG_XORG_DEBCONF=1 LANG=$(grep "^${locale}" /root/usr/share/i18n/SUPPORTED | grep UTF-8 | sed -e 's, .*,,' -e q) casper-reconfigure /root xserver-xorg
 umount /root/sys
 umount /root/proc
 

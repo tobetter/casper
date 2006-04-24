@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="4a76e72ad9486fb53d992264fb6e3fa985019d85" revision_id="tfheen@ubuntu.com-20060116210647-0f77128359a7c20a" timestamp="1137445607.693509102" timezone="3600">
+<message>first shot at ieee1394 support</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060112131940-04c4325ddde2d725" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

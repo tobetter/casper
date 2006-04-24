@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="273c930a990a0db9f1b64a8676595c5380e89a03" revision_id="tfheen@ubuntu.com-20060304105607-291034865b058859" timestamp="1141469767.319868088" timezone="3600">
+<message>Add support for putting the squashfs directly on a device</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060302142034-b7e3565daba526dd" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

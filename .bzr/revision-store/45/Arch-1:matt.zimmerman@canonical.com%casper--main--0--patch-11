@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="d1ac85fa5e9d948b03426ecf4cd9848e41863b38" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-11" timestamp="1120470769.000000000">
+<message>force_keyboard_detection-&gt;autodetect_keyboard</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-10" />
+</parents>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="18284f8cf3a8c51cc663407d14988832c7d058be" revision_id="tfheen@ubuntu.com-20051215144929-f0508f79b0475a1c" timestamp="1134658169.816797018" timezone="3600">
+<message>mark autodetect_keyboard as seen</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051215142724-3e8dab86646cde0d" />
+</parents>
+<properties><property name="branch-nick">kbdsel</property>
+</properties>
+</revision>

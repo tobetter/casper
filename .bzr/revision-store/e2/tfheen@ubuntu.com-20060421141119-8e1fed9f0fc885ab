@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c83b475b2de754f66128345b38e952909c47ce03" revision_id="tfheen@ubuntu.com-20060421141119-8e1fed9f0fc885ab" timestamp="1145628679.840065956" timezone="7200">
+<message>Make casper-md5check ready from the usplash tty</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060421140301-f46188b56ac5f79e" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

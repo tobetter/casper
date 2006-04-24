@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="dfa73adc03bda5246cdf445e5fb666608e70505f" revision_id="tfheen@ubuntu.com-20060328093010-88dde5d8633ac188" timestamp="1143538210.338835955" timezone="7200">
+<message>add missing include</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060328091855-6ad82d6576c032a1" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

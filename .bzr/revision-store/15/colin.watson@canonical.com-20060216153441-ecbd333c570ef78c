@@ -1,0 +1,8 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="5a17af19d01bde97178275a0466cbd071e1fabbb" revision_id="colin.watson@canonical.com-20060216153441-ecbd333c570ef78c" timestamp="1140104081.669962883">
+<message>* Fix copying of /usr/share/applications/espresso-gtkui.desktop.</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060216153402-a4fcd5e97c45e18d" />
+</parents>
+<properties><property name="branch-nick">espresso-desktop</property>
+</properties>
+</revision>

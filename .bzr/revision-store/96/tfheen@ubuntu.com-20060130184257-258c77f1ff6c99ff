@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="480cd1e6e8f347b7a9fafcc6c88f98ed0feb44c3" revision_id="tfheen@ubuntu.com-20060130184257-258c77f1ff6c99ff" timestamp="1138646577.637025118" timezone="3600">
+<message>make udevinfo a bit more quiet</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060130184223-7329393a99ed6ab3" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

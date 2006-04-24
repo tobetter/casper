@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="214a3eab003506de10123e21530bbd22334ed1e4" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-6" timestamp="1118946122.000000000">
+<message>Seed xserver-xorg/force_keyboard_detection to true in 20xconfig</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5" />
+</parents>
+</revision>

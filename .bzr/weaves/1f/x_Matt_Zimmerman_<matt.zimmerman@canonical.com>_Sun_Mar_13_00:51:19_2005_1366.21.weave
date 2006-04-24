@@ -1,0 +1,39 @@
+# bzr weave file v5
+i
+1 9e2e681ca531f7a456b48d84066f733426429179
+n Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0
+
+i
+1 9e2e681ca531f7a456b48d84066f733426429179
+n Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0
+
+i 1 0
+1 9e2e681ca531f7a456b48d84066f733426429179
+n mdz@mizar-20051205230117-c327e75be767f237
+
+w
+{ 0
+. #!/bin/sh
+. 
+. STATEFILE=/var/run/caspermond/status.casper-snapshot
+. 
+. while true; do
+.     dmsetup status /dev/mapper/casper-snapshot > $STATEFILE.new
+.     mv $STATEFILE.new $STATEFILE
+.     sleep 60
+. done
+}
+{ 1
+[ 2
+. #!/bin/sh
+. 
+. STATEFILE=/var/run/caspermond/status.casper-snapshot
+. 
+. while true; do
+.     dmsetup status /dev/mapper/casper-snapshot > $STATEFILE.new
+.     mv $STATEFILE.new $STATEFILE
+.     sleep 60
+. done
+}
+] 2
+W

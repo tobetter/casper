@@ -1,0 +1,9 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="3a73d59d1005a2876603355fb5e8068dc94379c4" revision_id="colin.watson@canonical.com-20060421103044-006c214172862b8d" timestamp="1145615444.364820957" timezone="3600">
+<message>* Use debian-installer/dummy for preseeding rather than espresso/dummy,
+  since the latter was removed in espresso 0.99.38.</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060419093807-68430e9169f244a6" />
+</parents>
+<properties><property name="branch-nick">ubiquity</property>
+</properties>
+</revision>

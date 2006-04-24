@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="66dbbae6ed8f9a4958bbf40783c901a3469d3ea4" revision_id="tfheen@ubuntu.com-20051215105559-47762a27fd1aeab1" timestamp="1134644159.092581034" timezone="3600">
+<message>we need dm-snapshot..</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051215103937-14030edfd49b9ec8" />
+</parents>
+<properties><property name="branch-nick">devmapper</property>
+</properties>
+</revision>

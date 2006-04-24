@@ -1,0 +1,10 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="18284f8cf3a8c51cc663407d14988832c7d058be" revision_id="tfheen@ubuntu.com-20051219095139-90c301fbeed625c3" timestamp="1134985899.196232080" timezone="3600">
+<message>Merge in keyboard selection stuff
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051219094940-4913af7e6ad36286" />
+<revision_ref revision_id="tfheen@ubuntu.com-20051215144929-f0508f79b0475a1c" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

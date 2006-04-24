@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="46759e5bc441928e48c53c7a990fe08916b8a5dd" revision_id="tfheen@ubuntu.com-20060104134149-b9acc92d9cb9c3aa" timestamp="1136382109.672907114" timezone="3600">
+<message>ignore clean failures</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197" />
+</parents>
+<properties><property name="branch-nick">integrity-check</property>
+</properties>
+</revision>

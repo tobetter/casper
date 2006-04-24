@@ -1,0 +1,6 @@
+<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="5b40cdd36c2b5503b2b916bef1d82f8b7381cacf" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-1" timestamp="1118271616.000000000">
+<message>only reconfigure gnome-panel-data on laptops</message>
+<parents>
+<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0" />
+</parents>
+</revision>

@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="03bbcef61f2d009528915f910c2c591dc407ed44" revision_id="tfheen@ubuntu.com-20060421124950-5f003d09a0d7c145" timestamp="1145623790.533663034" timezone="7200">
+<message>Turn on X config debugging</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060421115845-81fe88ff7ed64097" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

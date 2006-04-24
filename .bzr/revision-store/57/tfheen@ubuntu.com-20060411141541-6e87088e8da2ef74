@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d947d5e2536ebfc37a13179e15098edaf75bea1f" revision_id="tfheen@ubuntu.com-20060411141541-6e87088e8da2ef74" timestamp="1144764941.714745045" timezone="7200">
+<message>twiddle command lines to make everybody (including su) happy</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060411135439-35ea2f6cc9a56477" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

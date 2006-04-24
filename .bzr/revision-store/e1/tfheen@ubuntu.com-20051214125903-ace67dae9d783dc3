@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="fffdbdd568b6499d3e7971afc1396b6a23fed39e" revision_id="tfheen@ubuntu.com-20051214125903-ace67dae9d783dc3" timestamp="1134565143.867386103" timezone="3600">
+<message>mount sys and proc, since they're needed for the xserver-xorg config script</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20051214125823-48b838a2a4279f94" />
+</parents>
+<properties><property name="branch-nick">main</property>
+</properties>
+</revision>

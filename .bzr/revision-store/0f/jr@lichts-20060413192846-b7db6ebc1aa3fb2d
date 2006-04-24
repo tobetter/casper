@@ -1,0 +1,9 @@
+<revision committer="jr &lt;jr@lichts&gt;" format="5" inventory_sha1="654e143030f1e56d70dc7a94f14d5051c328b38c" revision_id="jr@lichts-20060413192846-b7db6ebc1aa3fb2d" timestamp="1144956526.278820992" timezone="3600">
+<message>Add note saying where branch is
+</message>
+<parents>
+<revision_ref revision_id="jriddell@ubuntu.com-20060413144230-a2ecfef0b10ee1bf" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

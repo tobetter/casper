@@ -1,3 +1,24 @@
+casper (1.47) dapper; urgency=low
+
+  [ Tollef Fog Heen ]
+  * Turn on debugging of the X config.
+  * Log to a file which gets copied to /var/log/casper.log.  Malone: #39895
+  * Only pick UTF-8 locales.  Malone: #40178
+  * Use correct /root rather than /target for seeing what version of
+    gnome-panel-data is installed.
+  * Make festival (and probably some other apps) happier by using
+    127.0.1.1 for our ubuntu hostname and 127.0.0.1 just resolves to
+    "localhost".
+  * Make casper-md5check read from tty8 since it wants to get keypresses
+    from the active console (where usplash runs).  Malone: #40490.
+  * Copy /etc/modules when installing with ubiquity.  Malone: #40311
+  * /etc/gdm/gdm-cdd.conf can be a symlink.  Cope with that.  Malone: #40767  
+
+  [ Colin Watson ]
+  * ubiquity-casper conflicts/replaces espresso-casper.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 24 Apr 2006 09:41:14 +0200
+
 casper (1.46) dapper; urgency=low
 
   * Use debian-installer/dummy for preseeding rather than espresso/dummy,

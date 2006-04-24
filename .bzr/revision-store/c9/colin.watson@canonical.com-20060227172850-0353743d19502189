@@ -1,0 +1,9 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="7e8be77e6ead01d972f32a6503059e9766601989" revision_id="colin.watson@canonical.com-20060227172850-0353743d19502189" timestamp="1141061330.094580889">
+<message>* Check for preseed/file= in /proc/cmdline and feed any given file to
+  debconf-set-selections.</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060222133733-3acf78ce648c6c1e" />
+</parents>
+<properties><property name="branch-nick">preseed</property>
+</properties>
+</revision>

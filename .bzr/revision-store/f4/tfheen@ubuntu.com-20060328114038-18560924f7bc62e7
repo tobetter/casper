@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="e81176291ea5825a904f7cee8ae63f699e8abc8f" revision_id="tfheen@ubuntu.com-20060328114038-18560924f7bc62e7" timestamp="1143546038.142725945" timezone="7200">
+<message>Use usplash_write too when doing shutdown.  (Malone: #34537)</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060328113432-5bbdd450c4446867" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

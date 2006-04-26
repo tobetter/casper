@@ -39,4 +39,13 @@ iface $i inet dhcp
 EOF
 done
 
+for i in eth0 eth1 eth2 ath0 wlan0; do
+    [ ! -e /sys/class/net/$i ] || continue
+    cat >> "$IFFILE" <<EOF
+auto $i
+iface $i inet dhcp
+
+EOF
+done
+
 log_end_msg

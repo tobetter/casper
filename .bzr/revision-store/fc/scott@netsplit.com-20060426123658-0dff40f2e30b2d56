@@ -1,0 +1,10 @@
+<revision committer="Scott James Remnant &lt;scott@netsplit.com&gt;" format="5" inventory_sha1="67ccee87cfd16f2875181bd6c11f230f3d2cf05d" revision_id="scott@netsplit.com-20060426123658-0dff40f2e30b2d56" timestamp="1146055018.338398933" timezone="3600">
+<message>add /etc/network/interface entries for known likely interfaces even if
+we don't have the hardware for them
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060424134005-f412190f164e3ddf" />
+</parents>
+<properties><property name="branch-nick">casper-1.48</property>
+</properties>
+</revision>

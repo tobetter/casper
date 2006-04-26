@@ -11,6 +11,14 @@ i 1
 1 391a8acce29fa49c5f511632ab8f797f4f52f1ff
 n tfheen@ubuntu.com-20060131114158-e58230824fa469be
 
+i 2
+1 8b9a89b9de6cd617f2674224a305ca02e804bd02
+n scott@netsplit.com-20060426123658-0dff40f2e30b2d56
+
+i 3
+1 e6a8b090690a39e44227702fe028c4b5d6faa8ca
+n scott@netsplit.com-20060426123734-e954d4e1d54b8215
+
 w
 { 0
 . #! /bin/sh
@@ -59,7 +67,12 @@ w
 . udevplug -Bpci -Iclass="0x02*"
 }
 . 
+[ 4
 . for interface in /sys/class/net/eth* /sys/class/net/ath*; do
+] 4
+{ 4
+. for interface in /sys/class/net/eth* /sys/class/net/ath* /sys/class/net/wlan*; do
+}
 .     [ -e $interface ] || continue
 }
 .     i="$(basename $interface)"
@@ -70,6 +83,17 @@ w
 . EOF
 . done
 . 
+{ 3
+. for i in eth0 eth1 eth2 ath0 wlan0; do
+.     [ ! -e /sys/class/net/$i ] || continue
+.     cat >> "$IFFILE" <<EOF
+. auto $i
+. iface $i inet dhcp
+. 
+. EOF
+. done
+. 
+}
 . log_end_msg
 }
 W

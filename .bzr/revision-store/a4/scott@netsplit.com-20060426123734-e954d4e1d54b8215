@@ -1,0 +1,9 @@
+<revision committer="Scott James Remnant &lt;scott@netsplit.com&gt;" format="5" inventory_sha1="236aaad06eb35de2d39fa4ff5ccae3315b8a3ea2" revision_id="scott@netsplit.com-20060426123734-e954d4e1d54b8215" timestamp="1146055054.798978090" timezone="3600">
+<message>add checks for wlan* hardware too
+</message>
+<parents>
+<revision_ref revision_id="scott@netsplit.com-20060426123658-0dff40f2e30b2d56" />
+</parents>
+<properties><property name="branch-nick">casper-1.49</property>
+</properties>
+</revision>

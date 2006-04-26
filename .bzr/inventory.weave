@@ -1347,6 +1347,14 @@ i 335
 1 8d8f3f98e5945e2fc0e57b682c8047aa5f98a744
 n tfheen@ubuntu.com-20060424134005-f412190f164e3ddf
 
+i 336
+1 67ccee87cfd16f2875181bd6c11f230f3d2cf05d
+n scott@netsplit.com-20060426123658-0dff40f2e30b2d56
+
+i 337
+1 236aaad06eb35de2d39fa4ff5ccae3315b8a3ea2
+n scott@netsplit.com-20060426123734-e954d4e1d54b8215
+
 w
 { 0
 [ 296
@@ -1643,7 +1651,17 @@ w
 }
 ] 336
 { 336
+[ 337
 . <inventory format="5" revision_id="tfheen@ubuntu.com-20060424134005-f412190f164e3ddf">
+}
+] 337
+{ 337
+[ 338
+. <inventory format="5" revision_id="scott@netsplit.com-20060426123658-0dff40f2e30b2d56">
+}
+] 338
+{ 338
+. <inventory format="5" revision_id="scott@netsplit.com-20060426123734-e954d4e1d54b8215">
 }
 . <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.0" name="TODO" revision="mdz@mizar-20051205230117-c327e75be767f237" text_sha1="9e1a14cf24b2d0b35d4ca83580188d91806dda58" text_size="209" />
 . <directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" name="bin" revision="mdz@mizar-20051205230117-c327e75be767f237" />
@@ -2710,6 +2728,7 @@ w
 }
 . <file executable="yes" file_id="23etc_modules-20060328082134-da4ef8324f4bd1a5" name="23etc_modules" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060328115859-927252a839cf0ffa" text_sha1="97813ab93f53e90fb6821705c94e888bed64febb" text_size="370" />
 }
+[ 337
 . <file executable="yes" file_id="23networking-20060125132628-083d6ccc86925687" name="23networking" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="tfheen@ubuntu.com-20060131114158-e58230824fa469be" text_sha1="391a8acce29fa49c5f511632ab8f797f4f52f1ff" text_size="570" />
 }
 [ 234
@@ -2723,6 +2742,15 @@ w
 ] 248
 { 248
 { 254
+] 337
+{ 337
+[ 338
+. <file executable="yes" file_id="23networking-20060125132628-083d6ccc86925687" name="23networking" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="scott@netsplit.com-20060426123658-0dff40f2e30b2d56" text_sha1="8b9a89b9de6cd617f2674224a305ca02e804bd02" text_size="717" />
+}
+] 338
+{ 338
+. <file executable="yes" file_id="23networking-20060125132628-083d6ccc86925687" name="23networking" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="scott@netsplit.com-20060426123734-e954d4e1d54b8215" text_sha1="e6a8b090690a39e44227702fe028c4b5d6faa8ca" text_size="738" />
+}
 . <file executable="yes" file_id="24preseed-20060227172322-21191f5c187775d8" name="24preseed" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" revision="colin.watson@canonical.com-20060227172850-0353743d19502189" text_sha1="506ab3e2f774e7583f27d5cc926a735334d31a56" text_size="435" />
 }
 [ 274
@@ -3877,7 +3905,17 @@ w
 }
 ] 336
 { 336
+[ 337
 . <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="tfheen@ubuntu.com-20060424134005-f412190f164e3ddf" text_sha1="dd1737517644f0036e2fd413198c3cd88095820b" text_size="31089" />
+}
+] 337
+{ 337
+[ 338
+. <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="scott@netsplit.com-20060426123658-0dff40f2e30b2d56" text_sha1="8b826b1149b9d475ed5a70f1801ef292e4953f08" text_size="31367" />
+}
+] 338
+{ 338
+. <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="scott@netsplit.com-20060426123734-e954d4e1d54b8215" text_sha1="8bfd5c70c1f5648d735a8c81f717c673f56d930b" text_size="31519" />
 }
 . <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.28" name="compat" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" revision="mdz@mizar-20051205230117-c327e75be767f237" text_sha1="9c6b057a2b9d96a4067a749ee3b3b0158d390cf1" text_size="2" />
 [ 54

@@ -1,3 +1,9 @@
+casper (1.49) dapper; urgency=low
+
+  * Also look for hardware named wlan*
+
+ -- Scott James Remnant <scott@ubuntu.com>  Wed, 26 Apr 2006 13:37:13 +0100
+
 casper (1.48) dapper; urgency=low
 
   * Write /etc/network/interfaces entries for eth0, eth1, eth2, ath0 and

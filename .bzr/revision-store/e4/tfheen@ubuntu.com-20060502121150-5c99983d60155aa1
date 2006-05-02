@@ -1,0 +1,9 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="79887b1a3a5248da06bdce49211300e2a1336c15" revision_id="tfheen@ubuntu.com-20060502121150-5c99983d60155aa1" timestamp="1146571910.239362001" timezone="7200">
+<message>Merge HOST/USER branch from Daniele Favara</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060502114055-09dfc2941ca2b0c8" />
+<revision_ref revision_id="danjele@gmail.com-20060429175258-d0f8fe6df0f14396" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

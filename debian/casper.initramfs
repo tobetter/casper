@@ -11,6 +11,14 @@ if [ "${DPKG_ARCH}" = "ia64" ] || [ "${DPKG_ARCH}" = "hppa" ] || [ "${DPKG_ARCH}
     overlay_method=devmapper
 fi
 
+USERNAME=ubuntu
+USERFULLNAME="Ubuntu LiveCD user"
+HOST=ubuntu
+
+[ -f /etc/casper.conf ] && . /etc/casper.conf
+
+export USERNAME USERFULLNAME HOST
+
 casper_path() {
     path=$1
     if [ -e "$path/casper/filesystem.cloop" ]; then

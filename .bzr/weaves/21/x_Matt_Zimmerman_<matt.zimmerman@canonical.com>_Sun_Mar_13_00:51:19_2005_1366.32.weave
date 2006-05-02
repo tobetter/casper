@@ -59,6 +59,18 @@ i 13
 1 18b3b18fe80b8bed8080ce4820fc8fe902210629
 n colin.watson@canonical.com-20060124001417-0942852aacd41333
 
+i 14
+1 e081cc0d4b131682cab0bf03afebf207be96eb75
+n danjele@gmail.com-20060429175225-d67784434d71598d
+
+i 14
+1 e081cc0d4b131682cab0bf03afebf207be96eb75
+n danjele@gmail.com-20060429175258-d0f8fe6df0f14396
+
+i 16
+1 2ce18ecdb03f3250df5599d182631c8e486fa2c1
+n tfheen@ubuntu.com-20060502121637-abde26582766aaa2
+
 w
 { 0
 [ 9
@@ -128,8 +140,20 @@ w
 { 11
 . 	install -m755 casper-md5check/casper-md5check debian/casper/usr/lib/casper
 }
+[ 15
+[ 16
 . 
 }
+] 15
+{ 15
+. 	install -m644 debian/casper.conf debian/casper/usr/share/doc/initramfs-tools/examples/example_conf_casper
+}
+] 16
+{ 16
+[ 17
+. 	install -m644 debian/casper.conf debian/casper/usr/share/doc/initramfs-tools/examples/example_conf_casper
+}
+] 17
 . 
 . # Build architecture-independent files here.
 [ 13
@@ -146,6 +170,9 @@ w
 . binary-indep: build install
 . 	dh_testdir
 . 	dh_testroot
+{ 17
+. 	dh_installexamples -i casper.conf
+}
 . 	dh_installdocs -i
 . 	dh_installchangelogs -i
 . 	dh_compress -i

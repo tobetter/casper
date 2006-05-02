@@ -51,6 +51,14 @@ i 11
 1 f5b23f7ba181aa0e9ce373295e2302cd6ba0af4a
 n tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0
 
+i 12
+1 4c311b5387d2cf6de0764e986f2d6b9c15fbde6b
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
+i 12
+1 4c311b5387d2cf6de0764e986f2d6b9c15fbde6b
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
 w
 { 0
 . #!/bin/sh
@@ -119,7 +127,17 @@ w
 }
 ] 12
 { 12
+[ 13
+[ 14
 .     chroot /root su ubuntu -- gconftool-2 -t bool -s /apps/gnome-screensaver/lock false
+}
+] 13
+{ 13
+.     chroot /root su $USERNAME -- gconftool-2 -t bool -s /apps/gnome-screensaver/lock false
+}
+] 14
+{ 14
+.     chroot /root su $USERNAME -- gconftool-2 -t bool -s /apps/gnome-screensaver/lock false
 }
 . fi
 }

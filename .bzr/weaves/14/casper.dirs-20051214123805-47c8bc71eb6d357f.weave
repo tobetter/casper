@@ -7,12 +7,32 @@ i 0
 1 5615dc69ef1709c94c444ace800ef31eb751b388
 n tfheen@ubuntu.com-20060104133831-6464ce2d1d0a5197
 
+i 1
+1 5c2d760f27d786f31ca280d032de074879e3c18c
+n danjele@gmail.com-20060429175258-d0f8fe6df0f14396
+
+i 1
+1 5c2d760f27d786f31ca280d032de074879e3c18c
+n danjele@gmail.com-20060429175225-d67784434d71598d
+
+i 2
+1 5615dc69ef1709c94c444ace800ef31eb751b388
+n tfheen@ubuntu.com-20060502123551-02bac52c081f6279
+
 w
 { 0
 . /usr/share/initramfs-tools/hooks/
 . /usr/share/initramfs-tools/scripts
 }
 { 1
+{ 2
+[ 4
+. /usr/share/doc/initramfs-tools/examples/
+}
+{ 3
+. /usr/share/doc/initramfs-tools/examples/
+}
+] 4
 . /usr/lib/casper
 }
 W

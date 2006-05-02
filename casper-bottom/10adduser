@@ -18,13 +18,13 @@ prereqs)
        ;;
 esac
 
-log_begin_msg "$DESCRIPTION"
+log_begin_msg "$DESCRIPTION $USERNAME"
 
 chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
 set passwd/root-password-crypted *
 set passwd/user-password-crypted U6aMy0wojraho
-set passwd/user-fullname Ubuntu LiveCD user
-set passwd/username ubuntu
+set passwd/user-fullname $USERFULLNAME 
+set passwd/username $USERNAME
 set passwd/user-uid 999
 EOF
 
@@ -48,14 +48,14 @@ echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
 for file in /usr/share/applications/ubiquity-gtkui.desktop /usr/share/applications/kde/ubiquity-kdeui.desktop; do
     if [ -f "/root/$file" ]; then
-        chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop/$(basename "$file")
+        chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
         break
     fi
 done
 
-if [ -L /root/home/ubuntu/Examples ]; then
-    chroot /root install -o ubuntu -g ubuntu -d /home/ubuntu/Desktop/
-    mv /root/home/ubuntu/Examples /root/home/ubuntu/Desktop/
+if [ -L /root/home/$USERNAME/Examples ]; then
+    chroot /root install -o $USERNAME -g $USERNAME -d /home/$USERNAME/Desktop/
+    mv /root/home/$USERNAME/Examples /root/home/$USERNAME/Desktop/
 fi
 
 log_end_msg

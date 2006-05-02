@@ -1,0 +1,49 @@
+# bzr weave file v5
+i
+1 4f2a2d4fe8fccd001b8b3b2719ca7bcf5cb4a8a3
+n danjele@gmail.com-20060429175258-d0f8fe6df0f14396
+
+i 0
+1 8ee57577a9c88bb5f8a5195e561d6209c01c03b1
+n danjele@gmail.com-20060429181520-46e372aebc6d746f
+
+i 0
+1 4f2a2d4fe8fccd001b8b3b2719ca7bcf5cb4a8a3
+n tfheen@ubuntu.com-20060502121637-abde26582766aaa2
+
+i 2
+1 82bd7ccd8e1b88951e09145d71cdf40af29a52e0
+n tfheen@ubuntu.com-20060502121734-5ce81e211063f20b
+
+w
+{ 0
+. # This file should go in 
+. #  conf/conf.d/
+. # Supported variables are:
+[ 1
+. # USERNAME, USERFULLNAME, HOST
+] 1
+{ 1
+. # USERNAME, USERFULLNAME, HOST, blacklist
+}
+. 
+[ 3
+. export USERNAME="ubuntero"
+] 3
+{ 3
+. export USERNAME="ubuntu"
+}
+. export USERFULLNAME="Custom LiveCD user"
+[ 3
+. export HOST="custom"
+{ 1
+. export blacklist="22gnome_panel_data \
+.                  31disable_update_notifier"
+}
+] 3
+{ 3
+. export HOST="ubuntu"
+}
+. 
+}
+W

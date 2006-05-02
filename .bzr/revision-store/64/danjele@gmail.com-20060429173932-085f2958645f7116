@@ -1,0 +1,9 @@
+<revision committer="Daniele Favara &lt;danjele@gmail.com&gt;" format="5" inventory_sha1="948015b7f8926f5b5282650d62ab59ff4b110854" revision_id="danjele@gmail.com-20060429173932-085f2958645f7116" timestamp="1146332372.469100952" timezone="7200">
+<message>* Changelog
+</message>
+<parents>
+<revision_ref revision_id="danjele@gmail.com-20060429171643-07d7080bf80fad80" />
+</parents>
+<properties><property name="branch-nick">casper</property>
+</properties>
+</revision>

@@ -343,6 +343,30 @@ i 84
 1 f27bd6f9712a83725120dfd9e972bf4facd31954
 n tfheen@ubuntu.com-20060421131249-3e4b1ed4b812b9bb
 
+i 85
+1 82d3c3181632cf1eea2bf2cc532fb93382389f20
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
+i 85
+1 82d3c3181632cf1eea2bf2cc532fb93382389f20
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
+i 86
+1 0dc4bfc4f6f70582f10a1c8ed06be7e5ace8641f
+n danjele@gmail.com-20060429174128-51296aec9fcbe6fb
+
+i 86
+1 e55d521e476a45f6870ddeb352ca38c47a2a270e
+n danjele@gmail.com-20060429180901-e839dd23276f3884
+
+i 86
+1 0dc4bfc4f6f70582f10a1c8ed06be7e5ace8641f
+n danjele@gmail.com-20060429175545-61fb2e673f21ee05
+
+i 86
+1 f90db9c4b8598834df5d9bae45b77a7ccd620a23
+n tfheen@ubuntu.com-20060502123156-559d7f9ecc8aa2bc
+
 w
 { 0
 . #!/bin/sh
@@ -439,7 +463,142 @@ w
 { 83
 . if [ "${DPKG_ARCH}" = "ia64" ] || [ "${DPKG_ARCH}" = "hppa" ] || [ "${DPKG_ARCH}" = "sparc" ]; then
 .     overlay_method=devmapper
+{ 86
 . fi
+. 
+[ 91
+. # Check if the following variables are empty
+. # ex (/conf/conf.d/00custom):
+. # export USERNAME="ubuntero"
+. # export USERFULLNAME="Custom LiveCD user"
+. # export HOST="custom"
+. if [ x"$USERNAME" = x ];then
+.         export USERNAME=ubuntu
+. fi
+. 
+. if [ x"$USERFULLNAME" = x ];then
+.         export USERFULLNAME="Ubuntu LiveCD user"
+. fi
+. 
+. if [ x"$HOST" = x ];then
+.         export HOST=ubuntu
+}
+{ 87
+. fi
+. 
+. # Check if the following variables are empty
+. # ex (/conf/conf.d/00custom):
+. # export USERNAME="ubuntero"
+. # export USERFULLNAME="Custom LiveCD user"
+. # export HOST="custom"
+. if [ x"$USERNAME" = x ];then
+.         export USERNAME=ubuntu
+. fi
+. 
+. if [ x"$USERFULLNAME" = x ];then
+.         export USERFULLNAME="Ubuntu LiveCD user"
+. fi
+. 
+. if [ x"$HOST" = x ];then
+.         export HOST=ubuntu
+}
+. fi
+}
+{ 88
+. 
+. 
+. # Support blacklist:
+. # this could improve performance and help derivatives.
+. # ex (/conf/conf.d/01blacklist):
+. # export blacklist="22gnome_panel_data 31disable_update_notifier"
+. set_initlist()
+. {
+. 	unset initlist
+. 	for si_x in ${initdir}/*; do
+. 		if [ ! -x ${si_x} ]; then
+. 			continue
+. 		fi
+. 		# FIXME: probably it exists something better
+. 		if ! echo ${blacklist} | tr ' ' '\n' | grep -q ^$(basename ${si_x})$ ; then
+. 			initlist="${initlist} $(basename ${si_x})"
+. 		fi
+. 	done
+. }
+. 
+. run_scripts()
+. {
+. 	initdir=${1}
+. 	get_prereqs
+. 	reduce_prereqs
+. 	call_scripts
+. }
+}
+{ 89
+. 
+. # Support blacklist:
+. # this could improve performance and help derivatives.
+. # ex (/conf/conf.d/01blacklist):
+. # export blacklist="22gnome_panel_data 31disable_update_notifier"
+. set_initlist()
+. {
+. 	unset initlist
+. 	for si_x in ${initdir}/*; do
+. 		if [ ! -x ${si_x} ]; then
+. 			continue
+. 		fi
+. 		# FIXME: probably it exists something better
+. 		if ! echo ${blacklist} | tr ' ' '\n' | grep -q ^$(basename ${si_x})$ ; then
+. 			initlist="${initlist} $(basename ${si_x})"
+. 		fi
+. 	done
+. }
+. 
+. run_scripts()
+. {
+. 	initdir=${1}
+. 	get_prereqs
+. 	reduce_prereqs
+. 	call_scripts
+. }
+}
+{ 90
+. 
+. 
+. # Support blacklist:
+. # this could improve performance and help derivatives.
+. # ex (/conf/conf.d/01blacklist):
+. # export blacklist="22gnome_panel_data 31disable_update_notifier"
+. set_initlist()
+. {
+. 	unset initlist
+. 	for si_x in ${initdir}/*; do
+. 		if [ ! -x ${si_x} ]; then
+. 			continue
+. 		fi
+. 		# FIXME: probably it exists something better
+. 		if ! echo ${blacklist} | tr ' ' '\n' | grep -q ^$(basename ${si_x})$ ; then
+. 			initlist="${initlist} $(basename ${si_x})"
+. 		fi
+. 	done
+. }
+. 
+. run_scripts()
+. {
+. 	initdir=${1}
+. 	get_prereqs
+. 	reduce_prereqs
+. 	call_scripts
+. }
+}
+] 91
+{ 91
+. USERNAME=ubuntu
+. USERFULLNAME="Ubuntu LiveCD user"
+. HOST=ubuntu
+. 
+. [ -f /etc/casper.conf ] && . /etc/casper.conf
+. 
+. export USERNAME USERFULLNAME HOST
 }
 . 
 { 25

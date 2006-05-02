@@ -1,3 +1,27 @@
+casper (1.50) dapper; urgency=low
+
+  [ Luke Yelavich ]
+  * Fixed some typos, and added missing settings to some accessibility
+    profiles, as they were either not working properly, or at all. Malone:
+    #39472, #39473
+  * Removed the desktop wallpaper, and changed the background colour to gray
+    for the v1 accessibility profile.
+  * Set the whiteglass mouse theme for the v1 accessibility profile.
+  * Moved the gconftool-2 -s flag to individual gct calls, to allow for future
+    use of gconftool-2 flags that are incompatible with -s.
+  
+  [ Daniele Favara ]
+  * Allow custom HOST, USERNAME, USERFULLNAME.  Malone: #42118
+  * Add example file
+    - debian/casper.dir: Add examples dir 
+    - debian/casper.conf: Explain briefly how to use new variables 
+    - debian/rules: Install casper.conf as example_conf_casper
+  
+  [ Tollef Fog Heen ]
+  * Stylistic changes to Daniele's changes.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue,  2 May 2006 14:12:31 +0200
+
 casper (1.49) dapper; urgency=low
 
   * Also look for hardware named wlan*

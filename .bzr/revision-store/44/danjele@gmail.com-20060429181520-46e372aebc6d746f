@@ -1,0 +1,9 @@
+<revision committer="Daniele Favara &lt;danjele@gmail.com&gt;" format="5" inventory_sha1="994a1eee8aa7797a79029b43c3b193840de46378" revision_id="danjele@gmail.com-20060429181520-46e372aebc6d746f" timestamp="1146334520.334853888" timezone="7200">
+<message>* Add blacklist example in casper.conf
+</message>
+<parents>
+<revision_ref revision_id="danjele@gmail.com-20060429181041-9d6d0e3e2aabd9d8" />
+</parents>
+<properties><property name="branch-nick">casper.def</property>
+</properties>
+</revision>

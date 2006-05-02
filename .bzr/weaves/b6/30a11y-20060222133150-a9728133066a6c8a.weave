@@ -43,6 +43,26 @@ i 9
 1 4df74bfd6be64193aa73980317adadc20610dba1
 n tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0
 
+i 10
+1 fb13d831e71f944107f2686f7388104f8322107e
+n themuso@ubuntu.com-20060425135538-afe6e568d2171365
+
+i 10
+1 268cba451ff1b711da57579ccedcf292db133033
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
+i 10
+1 268cba451ff1b711da57579ccedcf292db133033
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
+i 12 11
+1 79091cae682e8f7c722cd76598a2c14191f426d6
+n tfheen@ubuntu.com-20060502124652-b1c792ed94cdd093
+
+i 12 11
+1 79091cae682e8f7c722cd76598a2c14191f426d6
+n tfheen@ubuntu.com-20060502124713-8a0136a2075031d7
+
 w
 { 0
 . #!/bin/sh
@@ -111,7 +131,32 @@ w
 }
 ] 10
 { 10
+[ 11
+[ 12
+[ 13
 . chroot /root su ubuntu -- gconftool-2 -s "$@"
+}
+] 11
+{ 11
+. chroot /root su ubuntu -- gconftool-2 "$@"
+}
+] 12
+{ 12
+[ 14
+[ 15
+. chroot /root su $USERNAME -- gconftool-2 -s "$@"
+}
+] 13
+{ 13
+. chroot /root su $USERNAME -- gconftool-2 -s "$@"
+}
+] 14
+{ 14
+.     chroot /root su $USERNAME -- gconftool-2 "$@"
+}
+] 15
+{ 15
+.     chroot /root su $USERNAME -- gconftool-2 "$@"
 }
 . }
 }
@@ -135,6 +180,7 @@ w
 }
 ] 8
 { 8
+[ 11
 .                         gct -t string /desktop/gnome/interface/gtk_thene HighContrastLargePrint
 .                         gct -t string /desktop/gnome/interface/icon_theme HighContrast
 .                         gct -t string /apps/metacity/general/theme Atlanta
@@ -144,6 +190,19 @@ w
 .                                 ;;
 ] 4
 { 4
+] 11
+{ 11
+.                         gct -s -t string /desktop/gnome/interface/gtk_theme HighContrastLargePrint
+.                         gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
+.                         gct -s -t string /apps/metacity/general/theme Atlanta
+.                         gct -s -t string /desktop/gnome/background/picture_filename ""
+.                         gct -s -t string /desktop/gnome/background/picture_options none
+.                         gct "-s -t string /desktop/gnome/background/primary_color \#666666"
+.                         gct "-s -t string /desktop/gnome/background/secondary_color \#7F7F7F"
+.                         gct -s -t string /desktop/gnome/background/color_shading_type solid
+.                         gct -s -t int /desktop/gnome/peripherals/mouse/cursor_size 48
+.                         gct -s -t string /desktop/gnome/peripherals/mouse/cursor_theme whiteglass
+}
 .                         ;;
 }
 .                         # Moderate Visual Impairment
@@ -202,10 +261,18 @@ w
 .                         gct -s -t bool /apps/gnopernicus/srcore/sp_active false
 ] 8
 { 8
+[ 11
 .                         gct -t bool /desktop/gnome/interface/accessibility true
 .                         gct -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
 .                         gct -t bool /apps/gnopernicus/srcore/mag_active true
 .                         gct -t bool /apps/gnopernicus/srcore/sp_active false
+}
+] 11
+{ 11
+.                         gct -s -t bool /desktop/gnome/interface/accessibility true
+.                         gct -s -t list --list-s -type=string /desktop/gnome/accessibility/startup/exec_ats [gnopernicus]
+.                         gct -s -t bool /apps/gnopernicus/srcore/mag_active true
+.                         gct -s -t bool /apps/gnopernicus/srcore/sp_active false
 }
 .                         ;;
 }
@@ -231,9 +298,18 @@ w
 .                         gct -s -t bool /apps/gnopernicus/srcore/sp_active true
 ] 8
 { 8
+[ 11
 .                         gct -t bool /desktop/gnome/sound/enable_esd false
 .                         gct -t list /desktop/gnome/accessibility/startup/exe_ats gnopernicus
 .                         gct -t bool /apps/gnopernicus/srcore/sp_active true
+}
+] 11
+{ 11
+.                         gct -s -t bool /desktop/gnome/sound/enable_esd false
+.                         gct -s -t bool /desktop/gnome/interface/accessibility true
+.                         gct -s -t list --list-s -type=string /desktop/gnome/accessibility/startup/exec_ats [gnopernicus]
+.                         gct -s -t bool /apps/gnopernicus/srcore/sp_active true
+.                         gct -s -t bool /apps/gnopernicus/srcore/mag_active false
 }
 .                         ;;
 }
@@ -264,6 +340,7 @@ w
 .                         gct -s -t integer /desktop/gnome/peripherals/keyboard/rate 10
 ] 8
 { 8
+[ 11
 .                         gct -t bool /desktop/gnome/accessibility/keyboard/enable true
 .                         gct -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
 .                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
@@ -272,6 +349,18 @@ w
 .                         gct -t bool /desktop/gnome/peripherals/keyboard/repeat true
 .                         gct -t integer /desktop/gnome/peripherals/keyboard/delay 700
 .                         gct -t integer /desktop/gnome/peripherals/keyboard/rate 10
+}
+] 11
+{ 11
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep true
+.                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
+.                         gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
+.                         gct -s -t int /desktop/gnome/peripherals/keyboard/delay 700
+.                         gct -s -t int /desktop/gnome/peripherals/keyboard/rate 10
+.                         accessx_applet
 }
 .                         ;;
 }
@@ -296,11 +385,22 @@ w
 .                         gct -s -t list /desktop/gnome/accessibility/startup/exe_ats gok
 ] 8
 { 8
+[ 11
 .                         gct -t bool /desktop/gnome/accessibility/keyboard/enable true
 .                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
 .                         gct -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
 .                         gct -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
 .                         gct -t list /desktop/gnome/accessibility/startup/exe_ats gok
+}
+] 11
+{ 11
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
+.                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
+.                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
+.                         gct -s -t bool /desktop/gnome/interface/accessibility true
+.                         gct -s -t list /desktop/gnome/accessibility/startup/exec_ats gok
+.                         accessx_applet
 }
 .                         ;;
 }

@@ -47,6 +47,14 @@ i 10
 1 0dcf33af10a35d1cef55370e322ebf1112dd6b0b
 n tfheen@ubuntu.com-20060424133947-1875a509f55da8de
 
+i 11
+1 e9f03ca15be57f5edffd734d112de509d02294bf
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
+i 11
+1 e9f03ca15be57f5edffd734d112de509d02294bf
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
 w
 { 0
 . #!/bin/sh
@@ -95,6 +103,8 @@ w
 . username="$RET"
 ] 3
 { 3
+[ 12
+[ 13
 . username="ubuntu"
 }
 . 
@@ -112,6 +122,8 @@ w
 .     GDMCONF=/root/etc/gdm/gdm-cdd.conf
 ] 11
 { 11
+] 12
+] 13
 . if chroot /root [ -f /etc/gdm/gdm-cdd.conf ]; then
 .     GDMCONF=/etc/gdm/gdm-cdd.conf
 }
@@ -142,9 +154,29 @@ w
 .     chroot /root sed -i \
 }
 .         -e "s/^AutomaticLoginEnable=.*\$/AutomaticLoginEnable=true/" \
+[ 12
+[ 13
 .         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$username/" \
+] 12
+{ 12
+.         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$USERNAME/" \
+}
+] 13
+{ 13
+.         -e "s/^AutomaticLogin=.*\$/AutomaticLogin=$USERNAME/" \
+}
 .         -e "s/^TimedLoginEnable=.*\$/TimedLoginEnable=true/" \
+[ 12
+[ 13
 .         -e "s/^TimedLogin=.*\$/TimedLogin=$username/" \
+] 12
+{ 12
+.         -e "s/^TimedLogin=.*\$/TimedLogin=$USERNAME/" \
+}
+] 13
+{ 13
+.         -e "s/^TimedLogin=.*\$/TimedLogin=$USERNAME/" \
+}
 .         -e "s/^TimedLoginDelay=.*\$/TimedLoginDelay=10/" \
 [ 4
 .         /etc/gdm/gdm.conf
@@ -168,7 +200,17 @@ w
 .     # Configure KDM autologin
 .     sed -i -r \
 .         -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
+[ 12
+[ 13
 .         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$username/" \
+] 12
+{ 12
+.         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$USERNAME/" \
+}
+] 13
+{ 13
+.         -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$USERNAME/" \
+}
 .         -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
 [ 4
 .         /etc/kde3/kdm/kdmrc

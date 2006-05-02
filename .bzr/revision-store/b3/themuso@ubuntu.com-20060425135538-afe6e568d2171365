@@ -1,0 +1,16 @@
+<revision committer="themuso@ubuntu.com" format="5" inventory_sha1="9635c4c925503e82e2ed76827fa2df0c991f7c53" revision_id="themuso@ubuntu.com-20060425135538-afe6e568d2171365" timestamp="1145973338.359415054" timezone="36000">
+<message>* Fixed some typos, and added missing settings to some accessibility
+  profiles, as they were either not working properly, or at all. Malone:
+  #39472, #39473
+* Removed the desktop wallpaper, and changed the background colour to gray
+  for the v1 accessibility profile.
+* Set the whiteglass mouse theme for the v1 accessibility profile.
+* Moved the gconftool-2 -s flag to individual gct calls, to allow for future
+  use of gconftool-2 flags that are incompatible with -s.
+</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060424134005-f412190f164e3ddf" />
+</parents>
+<properties><property name="branch-nick">casper</property>
+</properties>
+</revision>

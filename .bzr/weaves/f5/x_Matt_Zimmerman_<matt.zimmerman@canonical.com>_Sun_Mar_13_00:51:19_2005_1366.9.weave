@@ -87,6 +87,14 @@ i 20
 1 80c5b865d63e131d95bea05d6fc250f3183c1385
 n tfheen@ubuntu.com-20060424074108-a4de498d1eac4983
 
+i 21
+1 892ea8848a59722b15bd58fe69ec407ae2f83bcb
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
+i 21
+1 892ea8848a59722b15bd58fe69ec407ae2f83bcb
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
 w
 { 0
 . #!/bin/sh
@@ -218,7 +226,17 @@ w
 }
 ] 20
 { 20
+[ 22
+[ 23
 .     chroot /root su ubuntu -- gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
+}
+] 22
+{ 22
+.     chroot /root su $USERNAME -- gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
+}
+] 23
+{ 23
+.     chroot /root su $USERNAME -- gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
 }
 . fi
 }

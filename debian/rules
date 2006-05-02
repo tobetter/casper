@@ -31,11 +31,11 @@ install: build
 	install -m755 debian/casper.initramfs-hooks debian/casper/usr/share/initramfs-tools/hooks/casper
 	install -m755 casper-md5check/casper-md5check debian/casper/usr/lib/casper
 
-
 # Build architecture-independent files here.
 binary-indep: build install
 	dh_testdir
 	dh_testroot
+	dh_installexamples -i casper.conf
 	dh_installdocs -i
 	dh_installchangelogs -i
 	dh_compress -i

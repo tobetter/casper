@@ -159,6 +159,14 @@ i 38
 1 7ffc53157eba0be3e6898a33439db4181d60a398
 n colin.watson@canonical.com-20060421113456-15cfebb20d5506ef
 
+i 39
+1 c9d7d4f58cf52e227283c5b0698e39d76150a729
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
+i 39
+1 c9d7d4f58cf52e227283c5b0698e39d76150a729
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
 w
 { 0
 . #!/bin/sh
@@ -237,7 +245,17 @@ w
 . 
 }
 { 20
+[ 40
+[ 41
 . log_begin_msg "$DESCRIPTION"
+] 40
+{ 40
+. log_begin_msg "$DESCRIPTION $USERNAME"
+}
+] 41
+{ 41
+. log_begin_msg "$DESCRIPTION $USERNAME"
+}
 . 
 }
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
@@ -249,8 +267,20 @@ w
 { 22
 . set passwd/user-password-crypted U6aMy0wojraho
 }
+[ 40
+[ 41
 . set passwd/user-fullname Ubuntu LiveCD user
 . set passwd/username ubuntu
+] 40
+{ 40
+. set passwd/user-fullname $USERFULLNAME 
+. set passwd/username $USERNAME
+}
+] 41
+{ 41
+. set passwd/user-fullname $USERFULLNAME 
+. set passwd/username $USERNAME
+}
 . set passwd/user-uid 999
 . EOF
 }
@@ -459,7 +489,17 @@ w
 ] 27
 ] 29
 { 29
+[ 40
+[ 41
 .         chroot /root install -D -o ubuntu -g ubuntu $file /home/ubuntu/Desktop/$(basename "$file")
+}
+] 40
+{ 40
+.         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
+}
+] 41
+{ 41
+.         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
 }
 .         break
 .     fi
@@ -471,6 +511,8 @@ w
 . if [ -e /root/home/ubuntu/Examples ]; then
 ] 31
 { 31
+[ 40
+[ 41
 . if [ -L /root/home/ubuntu/Examples ]; then
 }
 { 34
@@ -482,6 +524,18 @@ w
 .     chroot /root install -o ubuntu -g ubuntu -d /home/ubuntu/Desktop/
 }
 .     mv /root/home/ubuntu/Examples /root/home/ubuntu/Desktop/
+] 40
+{ 40
+. if [ -L /root/home/$USERNAME/Examples ]; then
+.     chroot /root install -o $USERNAME -g $USERNAME -d /home/$USERNAME/Desktop/
+.     mv /root/home/$USERNAME/Examples /root/home/$USERNAME/Desktop/
+}
+] 41
+{ 41
+. if [ -L /root/home/$USERNAME/Examples ]; then
+.     chroot /root install -o $USERNAME -g $USERNAME -d /home/$USERNAME/Desktop/
+.     mv /root/home/$USERNAME/Examples /root/home/$USERNAME/Desktop/
+}
 . fi
 . 
 }

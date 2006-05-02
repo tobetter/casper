@@ -648,12 +648,60 @@ i 160
 n tfheen@ubuntu.com-20060424134005-f412190f164e3ddf
 
 i 161
+1 78353089de1929ed68df4992d02bd501abf4cee1
+n themuso@ubuntu.com-20060425135538-afe6e568d2171365
+
+i 161
 1 8b826b1149b9d475ed5a70f1801ef292e4953f08
 n scott@netsplit.com-20060426123658-0dff40f2e30b2d56
 
-i 162
+i 163
 1 8bfd5c70c1f5648d735a8c81f717c673f56d930b
 n scott@netsplit.com-20060426123734-e954d4e1d54b8215
+
+i 164
+1 4ebaab1aa3e62026f1cc5bfa8ab95fc45dfa8ca8
+n danjele@gmail.com-20060429173932-085f2958645f7116
+
+i 165
+1 4c9aa82003fcddabd98a0a8d7febf2146374ec16
+n danjele@gmail.com-20060429175258-d0f8fe6df0f14396
+
+i 166
+1 29f260b877bca7a366698242712dac6a5f5d5d2c
+n danjele@gmail.com-20060429175646-1761f738b35c92de
+
+i 165
+1 4c9aa82003fcddabd98a0a8d7febf2146374ec16
+n danjele@gmail.com-20060429175225-d67784434d71598d
+
+i 164
+1 41cb363c6aa314a9b3e429483c14285625f2fc79
+n danjele@gmail.com-20060429173741-8cd613d0adb5a1ab
+
+i 166
+1 ca5c9a7a468c43273cab42f48eeba8024f30d52d
+n danjele@gmail.com-20060429181041-9d6d0e3e2aabd9d8
+
+i 166
+1 73739ac2e643e9b532aa8ac260b601699d0e76ab
+n tfheen@ubuntu.com-20060502123431-e70a682e15b608ae
+
+i 171
+1 f0656d7081fa4aee1f89712a1392c1296af7fd8b
+n tfheen@ubuntu.com-20060502123628-f2477d781955658b
+
+i 172 162
+1 cbe059f4950b029e68f861582101aac586a9888a
+n tfheen@ubuntu.com-20060502124652-b1c792ed94cdd093
+
+i 172 162
+1 cbe059f4950b029e68f861582101aac586a9888a
+n tfheen@ubuntu.com-20060502124713-8a0136a2075031d7
+
+i 174
+1 43bf901484368c1fb9143e28a96d684822ef2fa9
+n tfheen@ubuntu.com-20060502143305-f128fd12a6aaae06
 
 w
 { 0
@@ -1026,7 +1074,141 @@ w
 ] 161
 { 161
 { 162
+[ 173
+[ 174
+. casper (1.48) UNRELEASED; urgency=low
+. 
+] 173
+{ 173
+. casper (1.50) UNRELEASED; urgency=low
+. 
+.   [ Luke Yelavich ]
+}
+] 174
+{ 174
+[ 175
+. casper (1.50) UNRELEASED; urgency=low
+] 175
+{ 175
+. casper (1.50) dapper; urgency=low
+}
+. 
+.   [ Luke Yelavich ]
+}
+.   * Fixed some typos, and added missing settings to some accessibility
+.     profiles, as they were either not working properly, or at all. Malone:
+.     #39472, #39473
+.   * Removed the desktop wallpaper, and changed the background colour to gray
+.     for the v1 accessibility profile.
+.   * Set the whiteglass mouse theme for the v1 accessibility profile.
+.   * Moved the gconftool-2 -s flag to individual gct calls, to allow for future
+.     use of gconftool-2 flags that are incompatible with -s.
+[ 173
+[ 174
+. 
+.  -- Luke Yelavich <themuso@ubuntu.com>  Tue, 25 Apr 2006 23:08:30 +1000
+. 
+}
 { 163
+{ 164
+{ 165
+. casper (1.50) UNRELEASED; urgency=low
+. 
+[ 166
+[ 168
+.   * Allow custom HOST, USERNAME, USERFULLNAME 
+. 
+.  -- Daniele Favara <danjele@gmail.com>  Sat, 29 Apr 2006 19:38:42 +0200
+] 166
+{ 166
+{ 171
+] 173
+{ 173
+.   
+}
+] 174
+{ 174
+.   
+}
+.   [ Daniele Favara ]
+}
+[ 172
+.   * Allow custom HOST, USERNAME, USERFULLNAME
+] 172
+{ 172
+.   * Allow custom HOST, USERNAME, USERFULLNAME.  Malone: #42118
+}
+.   * Add example file
+[ 167
+[ 170
+[ 171
+.    -debian/casper.dir: Add examples dir 
+.    -debian/casper.conf: Explain briefly how to use new variables 
+] 167
+{ 167
+.    -debian/casper.dir: Add examples dir
+.    -debian/casper.conf: Explain briefly how to use new variables
+}
+] 170
+{ 170
+.    -debian/casper.dir: Add examples dir
+.    -debian/casper.conf: Explain briefly how to use new variables
+}
+.    -debian/rules: Install casper.conf as example_conf_casper
+[ 167
+[ 170
+. 
+.  -- Daniele Favara <danjele@gmail.com>  Sat, 29 Apr 2006 19:44:00 +0200
+}
+] 167
+{ 167
+.   * Allow to use a blacklist 
+. 
+.  -- Daniele Favara <danjele@gmail.com>  Sat, 29 Apr 2006 19:56:01 +0200
+}
+] 168
+{ 168
+.   * Allow custom HOST, USERNAME, USERFULLNAME
+.   * Add example file
+.    -debian/casper.dir: Add examples dir 
+.    -debian/casper.conf: Explain briefly how to use new variables 
+.    -debian/rules: Install casper.conf as example_conf_casper
+. 
+.  -- Daniele Favara <danjele@gmail.com>  Sat, 29 Apr 2006 19:44:00 +0200
+}
+] 170
+{ 170
+.   * Allow a blacklist
+.    - ex: blacklist="22gnome_panel_data" 
+. 
+.  -- Daniele Favara <danjele@gmail.com>  Sat, 29 Apr 2006 20:09:06 +0200
+}
+] 171
+{ 171
+.     - debian/casper.dir: Add examples dir 
+.     - debian/casper.conf: Explain briefly how to use new variables 
+.     - debian/rules: Install casper.conf as example_conf_casper
+.   
+.   [ Tollef Fog Heen ]
+.   * Stylistic changes to Daniele's changes.
+. 
+[ 175
+.  -- Tollef Fog Heen <tfheen@debian.org>  Tue,  2 May 2006 14:12:31 +0200
+}
+] 175
+{ 175
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue,  2 May 2006 14:12:31 +0200
+}
+. 
+}
+{ 169
+. casper (1.50) dapper; urgency=low
+. 
+.   * Allow custom HOST, USERNAME, USERFULLNAME
+. 
+.  -- Daniele Favara <danjele@gmail.com>  Sat, 29 Apr 2006 19:35:26 +0200
+. 
+}
 . casper (1.49) dapper; urgency=low
 . 
 .   * Also look for hardware named wlan*

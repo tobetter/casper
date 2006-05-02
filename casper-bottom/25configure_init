@@ -21,7 +21,7 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 # Arrange for shells on virtual consoles, rather than login prompts
-USERNAME="ubuntu"
+
 if [ -n "$USERNAME" ]; then
     sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(tty[0-9]*\).*$|\1:/bin/login -f $USERNAME </dev/\2 >/dev/\2 2>\&1|" /root/etc/inittab
 fi

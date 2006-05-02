@@ -71,6 +71,14 @@ i 15
 1 f0926740f9fcbfc5b305075ee371236907de98ce
 n tfheen@ubuntu.com-20060328085955-c49b871c0f29a01d
 
+i 17
+1 8ade0829f37cdd1289934b6ba4a6291cba147ba5
+n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
+
+i 17
+1 8ade0829f37cdd1289934b6ba4a6291cba147ba5
+n danjele@gmail.com-20060429171643-07d7080bf80fad80
+
 w
 { 0
 . #!/bin/sh
@@ -143,7 +151,17 @@ w
 }
 ] 9
 { 9
+[ 18
+[ 19
 . USERNAME="ubuntu"
+}
+] 18
+{ 18
+. 
+}
+] 19
+{ 19
+. 
 }
 . if [ -n "$USERNAME" ]; then
 [ 6

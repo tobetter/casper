@@ -31,6 +31,10 @@ i 6
 1 f7ca87cab7ca2ed7b9f99fcf3031c38adca63243
 n colin.watson@canonical.com-20060510185251-7c40fc787f3d26ca
 
+i 7
+1 0a2e2ca16d55fd72d91797da9ebedc68e43768ab
+n tfheen@ubuntu.com-20060511190439-e4aa4b712344e349
+
 w
 { 0
 . #!/bin/sh
@@ -40,7 +44,12 @@ w
 . 
 { 4
 ] 5
+[ 8
 . PATH=/usr/bin:/usr/sbin:/sbin:/bin
+] 8
+{ 8
+. export PATH=/usr/bin:/usr/sbin:/sbin:/bin
+}
 . 
 }
 . frontend=noninteractive

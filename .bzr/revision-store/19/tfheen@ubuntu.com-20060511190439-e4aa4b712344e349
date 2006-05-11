@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="b521d66195f76f0b4708fe7c60d51b40160118a0" revision_id="tfheen@ubuntu.com-20060511190439-e4aa4b712344e349" timestamp="1147374279.221066952" timezone="7200">
+<message>Export the path in casper-reconfigure so X and friends actually have sbin in their path.</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511135101-aaf297623dd28663" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

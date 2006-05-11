@@ -767,6 +767,14 @@ i 190
 1 a4a3ff1f71de69afb9816d07fcfd788db0420a6c
 n tfheen@ubuntu.com-20060511135101-aaf297623dd28663
 
+i 191
+1 c126ef950957d1bede61aaa19093d7e7944ea3ad
+n tfheen@ubuntu.com-20060511190439-e4aa4b712344e349
+
+i 192
+1 83b1ece39b97cfbc3339b8760dc75504fee8fd3f
+n tfheen@ubuntu.com-20060511191858-9483e406a93b517f
+
 w
 { 0
 { 23
@@ -1178,6 +1186,20 @@ w
 . casper (1.51) UNRELEASED; urgency=low
 ] 191
 { 191
+{ 192
+[ 193
+. casper (1.52) UNRELEASED; urgency=low
+] 193
+{ 193
+. casper (1.52) dapper; urgency=low
+}
+. 
+.   * Export the path in casper-reconfigure so X and friends actually have
+.     sbin in their path.
+. 
+.  -- Tollef Fog Heen <tfheen@ubuntu.com>  Thu, 11 May 2006 21:04:11 +0200
+. 
+}
 . casper (1.51) dapper; urgency=low
 }
 . 

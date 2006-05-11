@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="e6386dfcdfb6fc3cd463710c2872535511eb785e" revision_id="tfheen@ubuntu.com-20060511125021-237be769e22d7ca4" timestamp="1147351821.377266884" timezone="7200">
+<message>Fix permissions for 32disable_hibernation</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511124823-96ccf98a600f0805" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

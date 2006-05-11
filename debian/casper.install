@@ -1,3 +1,4 @@
 bin/casper-reconfigure usr/share/casper
+bin/casper-preseed usr/share/casper
 share/shutdown usr/share/casper
 casper-bottom usr/share/initramfs-tools/scripts

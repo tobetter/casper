@@ -23,6 +23,18 @@ i 4
 1 8edba03ad7e1f748befa7654314b247c936b5e46
 n tfheen@ubuntu.com-20060421140219-3ce5260d15ed23d6
 
+i 5
+1 009aec0206506e203d1c4f95b6188caf7afe7d17
+n colin.watson@canonical.com-20060510112717-634e72d336fc348a
+
+i 6
+1 0d9699f339b172796d2d92c433c2576df3be9cfe
+n colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9
+
+i 7
+1 5e9387eb8b5b02d35b14774651755dcb1af162ff
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #! /bin/sh
@@ -34,7 +46,12 @@ w
 . . /scripts/functions
 }
 { 4
+[ 8
 . DESCRIPTION="Setting up locales"
+] 8
+{ 8
+. DESCRIPTION="Setting up locales..."
+}
 . 
 . . /scripts/functions
 }
@@ -90,6 +107,20 @@ w
 }
 { 4
 . 
+{ 6
+[ 7
+. if ! echo "set debian-installer/locale $locale" | chroot /root debconf-communicate -fnoninteractive casper >/dev/null; then
+. 	chroot /root debconf-communicate -fnoninteractive casper >/dev/null <<EOF
+. register debian-installer/dummy debian-installer/locale
+. set debian-installer/locale $locale
+. EOF
+. fi
+] 7
+{ 7
+. casper-preseed /root debian-installer/locale "$locale"
+}
+. 
+}
 . log_end_msg
 }
 W

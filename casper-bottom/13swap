@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Setting up swap"
+DESCRIPTION="Setting up swap..."
 FSTAB=/root/etc/fstab
 
 . /scripts/functions

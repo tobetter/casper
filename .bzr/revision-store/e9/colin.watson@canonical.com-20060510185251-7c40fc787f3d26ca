@@ -1,0 +1,9 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="5e9bd39e70d65638a8b00f137a162c97e14bbf64" revision_id="colin.watson@canonical.com-20060510185251-7c40fc787f3d26ca" timestamp="1147287171.403490067" timezone="3600">
+<message>* Use new dpkg-reconfigure --no-reload option (debconf 1.4.72ubuntu6) to
+  avoid needlessly rewriting templates.dat.</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060510185118-32e5bd788ae0e162" />
+</parents>
+<properties><property name="branch-nick">ubiquity</property>
+</properties>
+</revision>

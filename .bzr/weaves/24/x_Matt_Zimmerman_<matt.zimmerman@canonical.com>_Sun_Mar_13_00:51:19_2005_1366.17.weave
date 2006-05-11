@@ -43,6 +43,10 @@ i 9
 1 f14ddae2c7354b1adf7cdd0fbcb74cf1070cd33e
 n tfheen@ubuntu.com-20060110102718-75ad2c8d086d84ea
 
+i 10
+1 0609bb0a42b71963acb5b2a6b64ee828a04de27b
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -59,7 +63,12 @@ w
 . . /scripts/functions
 }
 { 9
+[ 11
 . DESCRIPTION="Setting up swap"
+] 11
+{ 11
+. DESCRIPTION="Setting up swap..."
+}
 . FSTAB=/root/etc/fstab
 . 
 . . /scripts/functions

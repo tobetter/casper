@@ -1,0 +1,10 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="07b34b7209be2547e6fdbbfdb8c0a32008dcc777" revision_id="colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9" timestamp="1147277140.214941025" timezone="3600">
+<message>* Factor out preseeding code into casper-preseed; this knows that it only
+  needs to register a question if it fails to set it, which saves memory
+  by avoiding debconf having to rewrite templates.dat.</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060510155341-44c4f96df724edaf" />
+</parents>
+<properties><property name="branch-nick">ubiquity</property>
+</properties>
+</revision>

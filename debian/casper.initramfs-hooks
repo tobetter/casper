@@ -29,6 +29,7 @@ copy_exec /sbin/losetup /sbin
 mkdir -p ${DESTDIR}/lib/casper
 copy_exec /usr/share/casper/shutdown /lib/casper
 copy_exec /usr/share/casper/casper-reconfigure /bin
+copy_exec /usr/share/casper/casper-preseed /bin
 
 mkdir -p ${DESTDIR}/lib/udev
 copy_exec /lib/udev/cdrom_id /lib/udev

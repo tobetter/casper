@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="bdb8f54361ff49d2b97cc33437fd0951849bd781" revision_id="tfheen@ubuntu.com-20060511102258-9a830e4df6940b65" timestamp="1147342978.139981031" timezone="7200">
+<message>Add maybe_break casper-bottom to allow breaking before running casper-bottom scripts</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511101145-7eff26852b90d05c" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

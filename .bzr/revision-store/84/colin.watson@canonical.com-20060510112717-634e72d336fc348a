@@ -1,0 +1,9 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="4ec346cb780253648af09939929c298416ddcd7d" revision_id="colin.watson@canonical.com-20060510112717-634e72d336fc348a" timestamp="1147260437.540559053" timezone="3600">
+<message>* Pass debian-installer/locale to /root's debconf db (closes: Malone
+  #41896).</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060510112435-834c062170fd9df9" />
+</parents>
+<properties><property name="branch-nick">ubiquity</property>
+</properties>
+</revision>

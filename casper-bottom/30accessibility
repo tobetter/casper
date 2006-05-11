@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Configuring accessibility options"
+DESCRIPTION="Configuring accessibility options..."
 
 . /scripts/functions
 
@@ -42,7 +42,7 @@ for x in $(cat /proc/cmdline); do
                         # Moderate Visual Impairment
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t list --list-s -type=string /desktop/gnome/accessibility/startup/exec_ats [gnopernicus]
+                        gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats [gnopernicus]
                         gct -s -t bool /apps/gnopernicus/srcore/mag_active true
                         gct -s -t bool /apps/gnopernicus/srcore/sp_active false
                         ;;
@@ -50,7 +50,7 @@ for x in $(cat /proc/cmdline); do
                         access=v3)
                         gct -s -t bool /desktop/gnome/sound/enable_esd false
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t list --list-s -type=string /desktop/gnome/accessibility/startup/exec_ats [gnopernicus]
+                        gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats [gnopernicus]
                         gct -s -t bool /apps/gnopernicus/srcore/sp_active true
                         gct -s -t bool /apps/gnopernicus/srcore/mag_active false
                         ;;
@@ -64,7 +64,6 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
                         gct -s -t int /desktop/gnome/peripherals/keyboard/delay 700
                         gct -s -t int /desktop/gnome/peripherals/keyboard/rate 10
-                        accessx_applet
                         ;;
                         # Motor Difficulties - pointing devices
                         access=m2)
@@ -73,8 +72,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t list /desktop/gnome/accessibility/startup/exec_ats gok
-                        accessx_applet
+                        gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats gok
                         ;;
 		esac
 done

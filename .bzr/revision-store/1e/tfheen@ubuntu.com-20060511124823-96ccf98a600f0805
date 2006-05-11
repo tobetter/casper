@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="404ff2ea023175f0ae5537ec67f690440452edd4" revision_id="tfheen@ubuntu.com-20060511124823-96ccf98a600f0805" timestamp="1147351703.982238054" timezone="7200">
+<message>Disable hibernation and enable sleep where appropriate.  Malone #23882</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511122422-49b369d9be47df93" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

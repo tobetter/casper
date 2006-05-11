@@ -75,6 +75,10 @@ i 17
 1 236309f4c625c5223a1a49bfc541bb593a2e6c17
 n tfheen@ubuntu.com-20060214093048-3ce476e8776e06e4
 
+i 18
+1 cbcb2b45ca44ce6a9e8358c8777197ceffd29046
+n colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9
+
 w
 { 0
 . #!/bin/sh -e
@@ -112,6 +116,9 @@ w
 . copy_exec /usr/share/casper/casper-reconfigure /bin
 }
 { 2
+{ 19
+. copy_exec /usr/share/casper/casper-preseed /bin
+}
 . 
 [ 3
 . # Needed for casper-reconfigure

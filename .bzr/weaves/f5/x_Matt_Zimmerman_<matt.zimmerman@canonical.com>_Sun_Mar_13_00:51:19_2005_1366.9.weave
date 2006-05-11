@@ -95,6 +95,10 @@ i 21
 1 892ea8848a59722b15bd58fe69ec407ae2f83bcb
 n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
 
+i 22
+1 ce528115428d253f7f46957156a79a5c504db16e
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -107,7 +111,12 @@ w
 . . /scripts/functions
 }
 { 13
+[ 24
 . DESCRIPTION="Configuring gnome-panel-data"
+] 24
+{ 24
+. DESCRIPTION="Configuring gnome-panel-data..."
+}
 . 
 . . /scripts/functions
 }

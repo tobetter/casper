@@ -11,6 +11,10 @@ i 1
 1 4ff26a25eac6ede5efa8d35b380c7407ddec1abf
 n tfheen@ubuntu.com-20051214124825-89ead86bf4751314
 
+i 2
+1 798e76f7b4c9ad816ee00987c2c0ddc7131daa6d
+n colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9
+
 w
 { 0
 [ 2
@@ -24,6 +28,9 @@ w
 ] 2
 { 2
 . bin/casper-reconfigure usr/share/casper
+{ 3
+. bin/casper-preseed usr/share/casper
+}
 . share/shutdown usr/share/casper
 }
 . casper-bottom usr/share/initramfs-tools/scripts

@@ -27,6 +27,10 @@ i 4
 1 aef7d155014b20fe21f9386f02832e35c71400cc
 n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
 
+i 5
+1 4c269a14a240f2b25663e67ae6b532c72410020c
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #! /bin/sh
@@ -55,7 +59,12 @@ w
 { 3
 . 
 . PREREQ=""
+[ 7
 . DESCRIPTION="Setting hostname"
+] 7
+{ 7
+. DESCRIPTION="Setting hostname..."
+}
 . 
 . . /scripts/functions
 . 

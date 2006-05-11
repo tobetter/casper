@@ -79,6 +79,10 @@ i 17
 1 8ade0829f37cdd1289934b6ba4a6291cba147ba5
 n danjele@gmail.com-20060429171643-07d7080bf80fad80
 
+i 19
+1 d545fa4f9b9e357b47ef71965ddaaa84e0c6d418
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -91,7 +95,12 @@ w
 . . /scripts/functions
 }
 { 12
+[ 20
 . DESCRIPTION="Setting up init"
+] 20
+{ 20
+. DESCRIPTION="Setting up init..."
+}
 . 
 . . /scripts/functions
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Adding live CD user"
+DESCRIPTION="Adding live CD user..."
 
 . /scripts/functions
 
@@ -18,9 +18,9 @@ prereqs)
        ;;
 esac
 
-log_begin_msg "$DESCRIPTION $USERNAME"
+log_begin_msg "$DESCRIPTION"
 
-chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
 set passwd/root-password-crypted *
 set passwd/user-password-crypted U6aMy0wojraho
 set passwd/user-fullname $USERFULLNAME 
@@ -31,7 +31,7 @@ EOF
 chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
 
 # Clear out debconf database again to avoid confusing ubiquity later.
-chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
 set passwd/root-password-crypted
 set passwd/user-password-crypted
 set passwd/user-fullname

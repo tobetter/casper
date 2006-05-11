@@ -167,6 +167,18 @@ i 39
 1 c9d7d4f58cf52e227283c5b0698e39d76150a729
 n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
 
+i 40
+1 9fbb60c66fd4adcbb45e7e33e05d2903f991796c
+n colin.watson@canonical.com-20060510155341-44c4f96df724edaf
+
+i 42
+1 91793c8fb76a5446150341c047a678f000e5dd68
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
+i 43
+1 d2a9b6b6af225570591cc22932511b2f62ed614c
+n tfheen@ubuntu.com-20060511113624-4fa606cb8538bfa9
+
 w
 { 0
 . #!/bin/sh
@@ -187,7 +199,12 @@ w
 . DESCRIPTION="Adding live cd user"
 ] 21
 { 21
+[ 43
 . DESCRIPTION="Adding live CD user"
+}
+] 43
+{ 43
+. DESCRIPTION="Adding live CD user..."
 }
 . 
 . . /scripts/functions
@@ -250,15 +267,25 @@ w
 . log_begin_msg "$DESCRIPTION"
 ] 40
 { 40
+[ 44
 . log_begin_msg "$DESCRIPTION $USERNAME"
 }
 ] 41
 { 41
 . log_begin_msg "$DESCRIPTION $USERNAME"
 }
+] 44
+{ 44
+. log_begin_msg "$DESCRIPTION"
+}
 . 
 }
+[ 42
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+}
+] 42
+{ 42
+. chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
 }
 . set passwd/root-password-crypted *
 [ 22
@@ -350,7 +377,12 @@ w
 { 39
 . # Clear out debconf database again to avoid confusing ubiquity later.
 }
+[ 42
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+] 42
+{ 42
+. chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
+}
 . set passwd/root-password-crypted
 . set passwd/user-password-crypted
 . set passwd/user-fullname

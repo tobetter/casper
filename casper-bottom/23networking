@@ -1,7 +1,7 @@
 #! /bin/sh
 
 PREREQ=""
-DESCRIPTION="Preconfiguring networking"
+DESCRIPTION="Preconfiguring networking..."
 IFFILE="/root/etc/network/interfaces"
 
 . /scripts/functions

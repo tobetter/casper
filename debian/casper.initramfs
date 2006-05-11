@@ -200,7 +200,10 @@ setup_unionfs() {
 	mount -t $(get_fstype "$backdev") -o ro "$backdev" /rofs || panic "Can not mount $backdev on /rofs"
 
 	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"
-
+        if grep -q show-cow /proc/cmdline; then
+            mkdir -p "$rootmnt/cow"
+            mount -o bind /cow "$rootmnt/cow"
+        fi
         mkdir -p "$rootmnt/rofs"
         mount -o bind /rofs "$rootmnt/rofs"
 }
@@ -292,7 +295,9 @@ mountroot() {
 
     log_end_msg
 
+    maybe_break casper-bottom
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
+
     PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
     [ "$quiet" != "y" ] && log_end_msg
 

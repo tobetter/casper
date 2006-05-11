@@ -1,6 +1,0 @@
-- Start using priority critical?
-  - Don't preseed passwd/user-password-again
-- Performance
-  - conditionalize panel reconfiguration
-  - conditionalize language stuff?
-- Mount hard disk partitions - os-prober

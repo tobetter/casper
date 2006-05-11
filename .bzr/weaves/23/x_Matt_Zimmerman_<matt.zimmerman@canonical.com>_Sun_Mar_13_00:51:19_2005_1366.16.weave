@@ -39,6 +39,10 @@ i 8
 1 f600aec88b95b6fed02843cd08972ef476c3ca3c
 n tfheen@ubuntu.com-20060411133902-216b58b972899d46
 
+i 9
+1 89c0f701a5b8f33b3ad20d07fb34b99028043b8e
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -52,7 +56,12 @@ w
 . . /scripts/functions
 }
 { 8
+[ 10
 . DESCRIPTION="Configuring fstab"
+] 10
+{ 10
+. DESCRIPTION="Configuring fstab..."
+}
 . FSTAB=/root/etc/fstab
 . 
 . . /scripts/functions

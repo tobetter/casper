@@ -1,7 +1,7 @@
 #! /bin/sh
 
 PREREQ=""
-DESCRIPTION="Loading preseed file"
+DESCRIPTION="Loading preseed file..."
 
 . /scripts/functions
 

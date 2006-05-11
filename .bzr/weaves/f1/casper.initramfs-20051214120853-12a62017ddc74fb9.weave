@@ -367,6 +367,14 @@ i 86
 1 f90db9c4b8598834df5d9bae45b77a7ccd620a23
 n tfheen@ubuntu.com-20060502123156-559d7f9ecc8aa2bc
 
+i 91
+1 94b29b1048067d658000950c3004b8590d340840
+n tfheen@ubuntu.com-20060511102258-9a830e4df6940b65
+
+i 92
+1 6805e183a241bce903851b6e78e718216b72676c
+n tfheen@ubuntu.com-20060511115945-805f3cca647fe7e0
+
 w
 { 0
 . #!/bin/sh
@@ -1257,6 +1265,7 @@ w
 . 
 . 	mount -t unionfs -o dirs=/cow=rw:/rofs=ro unionfs "$rootmnt"
 }
+[ 93
 . 
 [ 59
 .         mkdir "$rootmnt/rofs"
@@ -1267,6 +1276,13 @@ w
 { 56
 ] 59
 { 59
+] 93
+{ 93
+.         if grep -q show-cow /proc/cmdline; then
+.             mkdir -p "$rootmnt/cow"
+.             mount -o bind /cow "$rootmnt/cow"
+.         fi
+}
 .         mkdir -p "$rootmnt/rofs"
 }
 [ 62
@@ -1615,7 +1631,13 @@ w
 }
 . 
 }
+{ 92
+.     maybe_break casper-bottom
+}
 .     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
+{ 92
+. 
+}
 .     PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:$PATH run_scripts /scripts/casper-bottom
 .     [ "$quiet" != "y" ] && log_end_msg
 }

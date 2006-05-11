@@ -3,12 +3,21 @@ i
 1 506ab3e2f774e7583f27d5cc926a735334d31a56
 n colin.watson@canonical.com-20060227172850-0353743d19502189
 
+i 0
+1 aa3a5fa72f25bed0fc56f979c6f3aea879beec56
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #! /bin/sh
 . 
 . PREREQ=""
+[ 1
 . DESCRIPTION="Loading preseed file"
+] 1
+{ 1
+. DESCRIPTION="Loading preseed file..."
+}
 . 
 . . /scripts/functions
 . 

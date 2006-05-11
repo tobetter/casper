@@ -59,6 +59,10 @@ i 12
 1 4c311b5387d2cf6de0764e986f2d6b9c15fbde6b
 n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
 
+i 13
+1 3bb528944cc1801b40db71327e45537752ea0701
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -71,7 +75,12 @@ w
 . . /scripts/functions
 }
 { 9
+[ 15
 . DESCRIPTION="Configuring screensaver"
+] 15
+{ 15
+. DESCRIPTION="Configuring screensaver..."
+}
 . 
 . . /scripts/functions
 }

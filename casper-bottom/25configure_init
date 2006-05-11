@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Setting up init"
+DESCRIPTION="Setting up init..."
 
 . /scripts/functions
 

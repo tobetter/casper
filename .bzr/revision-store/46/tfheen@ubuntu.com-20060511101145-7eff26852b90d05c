@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="b510f54e48ee459d3f4fd927b3b5c10de52360ab" revision_id="tfheen@ubuntu.com-20060511101145-7eff26852b90d05c" timestamp="1147342305.260327101" timezone="7200">
+<message>Add ... to the end of all usplash messages.  Malone #43856</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511095620-d054b4356357b13f" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

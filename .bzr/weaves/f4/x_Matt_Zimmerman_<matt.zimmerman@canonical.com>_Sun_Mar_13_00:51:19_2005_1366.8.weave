@@ -143,6 +143,14 @@ i 34
 1 e1b47d1e855557267fb0eb3bca8648ab360bef9e
 n tfheen@ubuntu.com-20060421140219-3ce5260d15ed23d6
 
+i 35
+1 f5ef1aa0476660102fbdc3b3ff4946446ad47be5
+n colin.watson@canonical.com-20060510155341-44c4f96df724edaf
+
+i 36
+1 d1712e74f755176fdd53f84774bec0ad5aff4482
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -155,7 +163,12 @@ w
 . . /scripts/functions
 }
 { 32
+[ 37
 . DESCRIPTION="Configuring X"
+] 37
+{ 37
+. DESCRIPTION="Configuring X..."
+}
 . 
 . . /scripts/functions
 }
@@ -415,7 +428,12 @@ w
 }
 ] 30
 { 30
+[ 36
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+] 36
+{ 36
+. chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
+}
 . set xserver-xorg/autodetect_keyboard true
 . fset xserver-xorg/autodetect_keyboard seen true
 . EOF

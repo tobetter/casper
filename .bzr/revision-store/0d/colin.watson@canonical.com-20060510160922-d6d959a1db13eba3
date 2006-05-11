@@ -1,0 +1,10 @@
+<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="1f1b16c4c76c4c1704fe1fd369a1cf8272b1cee7" revision_id="colin.watson@canonical.com-20060510160922-d6d959a1db13eba3" timestamp="1147277362.604840994" timezone="3600">
+<message>* Preseed kbd-chooser/method as well as debian-installer/keymap, so that
+  kbd-chooser run from ubiquity picks up the selected keyboard (closes:
+  Malone #42202).</message>
+<parents>
+<revision_ref revision_id="colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9" />
+</parents>
+<properties><property name="branch-nick">ubiquity</property>
+</properties>
+</revision>

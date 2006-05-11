@@ -19,12 +19,21 @@ i 3
 1 e6a8b090690a39e44227702fe028c4b5d6faa8ca
 n scott@netsplit.com-20060426123734-e954d4e1d54b8215
 
+i 4
+1 5388d5009df292c2ad06c947d728bb6b47f9a8cc
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #! /bin/sh
 . 
 . PREREQ=""
+[ 5
 . DESCRIPTION="Preconfiguring networking"
+] 5
+{ 5
+. DESCRIPTION="Preconfiguring networking..."
+}
 . IFFILE="/root/etc/network/interfaces"
 . 
 . . /scripts/functions

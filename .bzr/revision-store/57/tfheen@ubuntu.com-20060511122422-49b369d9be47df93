@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d2d2db7ef3417aa9e15f456f17c657c13ac07fec" revision_id="tfheen@ubuntu.com-20060511122422-49b369d9be47df93" timestamp="1147350262.847760916" timezone="7200">
+<message>Disable the Kubuntu update notifier too.  Malone #43806</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511122032-5e291aebe3a92fa3" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

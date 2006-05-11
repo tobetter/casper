@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Configuring X"
+DESCRIPTION="Configuring X..."
 
 . /scripts/functions
 
@@ -39,7 +39,7 @@ done
 mount -n -o bind /sys /root/sys
 mount -n -o bind /proc /root/proc
 
-chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
+chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
 set xserver-xorg/autodetect_keyboard true
 fset xserver-xorg/autodetect_keyboard seen true
 EOF

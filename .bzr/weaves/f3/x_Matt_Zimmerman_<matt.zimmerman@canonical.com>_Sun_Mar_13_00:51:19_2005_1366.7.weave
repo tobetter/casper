@@ -55,6 +55,10 @@ i 11
 1 e9f03ca15be57f5edffd734d112de509d02294bf
 n nomed@nomed-laptop-20060429171329-515c4760fc1b01c9
 
+i 12
+1 87a37cd3505f60566b43ab8682b9766febf1822e
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
@@ -67,7 +71,12 @@ w
 . . /scripts/functions
 }
 { 9
+[ 14
 . DESCRIPTION="Setting up automatic login"
+] 14
+{ 14
+. DESCRIPTION="Setting up automatic login..."
+}
 . 
 . . /scripts/functions
 }

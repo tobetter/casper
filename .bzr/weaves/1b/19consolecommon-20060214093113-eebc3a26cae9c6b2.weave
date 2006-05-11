@@ -11,12 +11,33 @@ i 1
 1 17a8a421e96c57245f8dcfe70196726ff3b7a641
 n colin.watson@canonical.com-20060421103044-006c214172862b8d
 
+i 2
+1 2aea59fdcafc22ee30418278ae7cbd36f328f6e2
+n colin.watson@canonical.com-20060510155341-44c4f96df724edaf
+
+i 3
+1 53a694476e3ae56a919c9306b28725dc85ce1e3d
+n colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9
+
+i 4
+1 7c58e3e8650ec01c132e66fa7af077c74cf1e5da
+n colin.watson@canonical.com-20060510160922-d6d959a1db13eba3
+
+i 5
+1 d672d6ff3024698e0725d67224a447b79cee49b1
+n tfheen@ubuntu.com-20060511101145-7eff26852b90d05c
+
 w
 { 0
 . #!/bin/sh
 . 
 . PREREQ=""
+[ 6
 . DESCRIPTION="Setting up keyboard"
+] 6
+{ 6
+. DESCRIPTION="Setting up keyboard..."
+}
 . 
 . . /scripts/functions
 . 
@@ -51,15 +72,28 @@ w
 { 1
 . chroot /root /usr/sbin/install-keymap $kbd
 }
+[ 3
 . chroot /root debconf-communicate -fnoninteractive > /dev/null <<EOF
 [ 2
 . register espresso/dummy debian-installer/keymap
 ] 2
 { 2
+] 3
+{ 3
+[ 4
+. chroot /root debconf-communicate -fnoninteractive casper > /dev/null <<EOF
+}
 . register debian-installer/dummy debian-installer/keymap
 }
 . set debian-installer/keymap $kbd
 . EOF
+] 4
+{ 4
+. casper-preseed /root debian-installer/keymap "$kbd"
+}
+{ 5
+. casper-preseed /root kbd-chooser/method "$kbd"
+}
 . log_end_msg
 }
 W

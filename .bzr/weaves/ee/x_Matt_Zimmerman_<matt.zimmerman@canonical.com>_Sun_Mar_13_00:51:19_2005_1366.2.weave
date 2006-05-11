@@ -27,6 +27,10 @@ i 5
 1 05fd19f71129d1437a94cd0f0ec34b9ad04be1b2
 n colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf
 
+i 6
+1 f7ca87cab7ca2ed7b9f99fcf3031c38adca63243
+n colin.watson@canonical.com-20060510185251-7c40fc787f3d26ca
+
 w
 { 0
 . #!/bin/sh
@@ -176,7 +180,12 @@ w
 }
 ] 6
 { 6
+[ 7
 . runcommandinroot "$root" dpkg-reconfigure -fnoninteractive "$package"
+}
+] 7
+{ 7
+. runcommandinroot "$root" dpkg-reconfigure -fnoninteractive --no-reload "$package"
 }
 . 
 . exit 0

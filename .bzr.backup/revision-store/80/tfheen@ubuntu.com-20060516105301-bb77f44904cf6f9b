@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="9c7e14b4f5aa2bb44786ff4fe32dbd6f91a8c41f" revision_id="tfheen@ubuntu.com-20060516105301-bb77f44904cf6f9b" timestamp="1147776781.676939964" timezone="7200">
+<message>Release 1.53</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060516105131-3da0a032d73f367e" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

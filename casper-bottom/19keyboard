@@ -32,5 +32,4 @@ done
 
 chroot /root /usr/sbin/install-keymap $kbd
 casper-preseed /root debian-installer/keymap "$kbd"
-casper-preseed /root kbd-chooser/method "$kbd"
 log_end_msg

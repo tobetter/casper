@@ -1,0 +1,8 @@
+<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="27b5bb07c3055a140a4b4aa336c83009130de6c2" revision_id="tfheen@ubuntu.com-20060513081459-ccaadb8d94b2c4ff" timestamp="1147508099.232703924" timezone="7200">
+<message>Disable fglrx and nvidida drivers by default.  Somewhat addresses #43706</message>
+<parents>
+<revision_ref revision_id="tfheen@ubuntu.com-20060511191858-9483e406a93b517f" />
+</parents>
+<properties><property name="branch-nick">trunk</property>
+</properties>
+</revision>

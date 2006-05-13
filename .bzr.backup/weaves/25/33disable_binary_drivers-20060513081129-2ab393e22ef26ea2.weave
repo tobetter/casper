@@ -1,0 +1,32 @@
+# bzr weave file v5
+i
+1 b669081f4fc88853e35e55fc3906bbae6bdb6224
+n tfheen@ubuntu.com-20060513081459-ccaadb8d94b2c4ff
+
+w
+{ 0
+. #! /bin/sh
+. 
+. PREREQ=""
+. DESCRIPTION="Configuring some drivers..."
+. 
+. . /scripts/functions
+. 
+. prereqs()
+. {
+.        echo "$PREREQ"
+. }
+. 
+. case $1 in
+. # get pre-requisites
+. prereqs)
+.        prereqs
+.        exit 0
+.        ;;
+. esac
+. 
+. log_begin_msg "$DESCRIPTION"
+. 
+. echo 'DISABLED_MODULES="fglrx nv"' >> /root/etc/default/linux-restricted-modules-common
+}
+W

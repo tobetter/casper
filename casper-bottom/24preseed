@@ -26,6 +26,11 @@ for x in $(cat /proc/cmdline); do
 		preseed/file=*)
 			location="${x#preseed/file=}"
 			;;
+		*/*=*)
+			question="${x%%=*}"
+			value="${x#*=}"
+			casper-preseed /root "$question" "$value"
+			;;
 	esac
 done
 

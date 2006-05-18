@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a595208dfd48b716d7fa240695e2ede74255d84f" revision_id="tfheen@ubuntu.com-20060109142534-82c558eec36560d5" timestamp="1136816734.370382071" timezone="3600">
-<message>Make /rofs available to in the target system. </message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060109113811-be0d7410db5abd89" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

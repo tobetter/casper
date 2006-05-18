@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c862ede30daed505186f30adbe2d7014cb4f21fe" revision_id="tfheen@ubuntu.com-20051215134309-599259b94b02fc3a" timestamp="1134654189.584487915" timezone="3600">
-<message>use sed rather than head + cut</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215132358-5f6927957f0c57a5" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

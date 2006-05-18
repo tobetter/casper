@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="cdd7781b09ca929cb7307b20abeb7df02a702a10" revision_id="tfheen@ubuntu.com-20060104181743-1c28a2141559b449" timestamp="1136398663.497698069" timezone="3600">
-<message>do not write no-op progress instructions</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104181118-5198da49b20a73df" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

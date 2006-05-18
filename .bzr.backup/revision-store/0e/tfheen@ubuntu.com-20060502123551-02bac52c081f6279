@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a1053d156d4c7304e942e29e52c2a2fffa20b01e" revision_id="tfheen@ubuntu.com-20060502123551-02bac52c081f6279" timestamp="1146573351.215015888" timezone="7200">
-<message>Do not make /usr/share/doc/initramfs-tools/examples/ any more</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060502123431-e70a682e15b608ae" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

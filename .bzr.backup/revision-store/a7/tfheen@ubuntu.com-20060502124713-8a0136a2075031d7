@@ -1,9 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2b3c27a738c5e208dd6679abb1d602646236f8fe" revision_id="tfheen@ubuntu.com-20060502124713-8a0136a2075031d7" timestamp="1146574033.071114063" timezone="7200">
-<message>Merge from Luke</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060502123628-f2477d781955658b" />
-<revision_ref revision_id="themuso@ubuntu.com-20060425135538-afe6e568d2171365" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

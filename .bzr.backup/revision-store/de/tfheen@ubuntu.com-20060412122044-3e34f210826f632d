@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="b7d08c803d7ad006d540917be6879f7bf7b93ec2" revision_id="tfheen@ubuntu.com-20060412122044-3e34f210826f632d" timestamp="1144844444.574671030" timezone="7200">
-<message>Remove a few set -x-es since there is no need to be so verbose</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060412121831-e6455b4f935ef63c" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="707f798e2cb6e85f6fa51eadef96a9df5236c4ae" revision_id="tfheen@ubuntu.com-20060421131249-3e4b1ed4b812b9bb" timestamp="1145625169.926544905" timezone="7200">
-<message>Fix order of redirects and save stderr too</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060421125725-9698d71e2496f016" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="c716ff070fcc06968f2e9783a8afd8219b853cdc" revision_id="colin.watson@canonical.com-20060510155341-44c4f96df724edaf" timestamp="1147276421.591847897" timezone="3600">
-<message>* Identify ourselves as casper when communicating with debconf.</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060510112717-634e72d336fc348a" />
-</parents>
-<properties><property name="branch-nick">ubiquity</property>
-</properties>
-</revision>

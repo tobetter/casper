@@ -1,9 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ca570855e6752d06e5d58c8f624d3b365a84e55e" revision_id="tfheen@ubuntu.com-20060516105131-3da0a032d73f367e" timestamp="1147776691.659015894" timezone="7200">
-<message>Merge from Colin</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060513081459-ccaadb8d94b2c4ff" />
-<revision_ref revision_id="colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

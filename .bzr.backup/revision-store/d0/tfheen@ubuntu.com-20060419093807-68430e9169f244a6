@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="583a541add6ddf09dbd81072ea1e55e15a64e0ba" revision_id="tfheen@ubuntu.com-20060419093807-68430e9169f244a6" timestamp="1145439487.977094889" timezone="7200">
-<message>Use devmapper for ia64, hppa and sparc.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060419093518-c2a5c65c0a4779df" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

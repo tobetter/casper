@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="7a1bae60cfb3ba33f7d3b37f1bc487f1a341a5c5" revision_id="tfheen@ubuntu.com-20060309084432-803bae73ba98185f" timestamp="1141893872.450038910" timezone="3600">
-<message>disable readahead, release 1.38</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060306094059-184e8fedffa4fb0b" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

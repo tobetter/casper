@@ -1,9 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="2a9be78c2975691a63e8e4e4f36d1175bf3f58ef" revision_id="colin.watson@canonical.com-20060510112435-834c062170fd9df9" timestamp="1147260275.510587931" timezone="3600">
-<message>Merge from Tollef</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060421221206-300b50952892a3a2" />
-<revision_ref revision_id="tfheen@ubuntu.com-20060502124713-8a0136a2075031d7" />
-</parents>
-<properties><property name="branch-nick">ubiquity</property>
-</properties>
-</revision>

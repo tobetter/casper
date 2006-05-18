@@ -1,9 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="be7a9301919e67fb89b4e004b2a433662f256a4d" revision_id="colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93" timestamp="1147775980.106129885" timezone="3600">
-<message>* Pass all command-line preseed arguments (other than preseed/file) to
-  /root's debconf db.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060513081459-ccaadb8d94b2c4ff" />
-</parents>
-<properties><property name="branch-nick">preseed</property>
-</properties>
-</revision>

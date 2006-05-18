@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@xoog&gt;" format="5" inventory_sha1="5527131bd49f32c54dce2a028bf745837f4ee8d6" revision_id="tfheen@xoog-20060306084103-44f8961ee73fd023" timestamp="1141634463.157839060" timezone="3600">
-<message>use -L, not -e, since we don't chroot</message>
-<parents>
-<revision_ref revision_id="tfheen@xoog-20060306082333-7644eee4d7c780ae" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

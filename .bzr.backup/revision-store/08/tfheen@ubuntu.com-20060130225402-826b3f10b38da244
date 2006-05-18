@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d08b3b15cfb5de974dfc022b33d25d349152042f" revision_id="tfheen@ubuntu.com-20060130225402-826b3f10b38da244" timestamp="1138661642.319818020" timezone="3600">
-<message>try to handle loop files on vfat</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130224610-23f695b548826932" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

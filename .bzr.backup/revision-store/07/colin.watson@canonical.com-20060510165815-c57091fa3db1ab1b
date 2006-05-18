@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="1bce8bbcbc4eaddac119d6ea3f0d983f94b1db92" revision_id="colin.watson@canonical.com-20060510165815-c57091fa3db1ab1b" timestamp="1147280295.307229996" timezone="3600">
-<message>whoops, actually add casper-preseed</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060510160922-d6d959a1db13eba3" />
-</parents>
-<properties><property name="branch-nick">ubiquity</property>
-</properties>
-</revision>

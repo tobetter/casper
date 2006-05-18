@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="e88302f9fe30ac445ff73f605e1b3843e8fa10b4" revision_id="tfheen@ubuntu.com-20060424085501-a8b30bb0dd4c902a" timestamp="1145868901.885308981" timezone="7200">
-<message>Make 127.0.0.1 resolve to localhost only.  Make 127.0.1.1 resolve to ubuntu</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060424074211-15c4bc3ba263e661" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

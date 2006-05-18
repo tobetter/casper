@@ -1,8 +1,0 @@
-<revision committer="Daniel Holbach &lt;daniel.holbach@ubuntu.com&gt;" format="5" inventory_sha1="8eb552ad79a3255a1377f667cf5e6e1ec92dc6f2" revision_id="daniel.holbach@ubuntu.com-20060301183603-08bf831b95ef2b9b" timestamp="1141238163.030658960" timezone="3600">
-<message>added initial example-content hack</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060301104002-2fedad77f77dad8a" />
-</parents>
-<properties><property name="branch-nick">casper--dholbach</property>
-</properties>
-</revision>

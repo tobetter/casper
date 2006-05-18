@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6f6568d11336e157eb6b53df8beee933a5efa3da" revision_id="tfheen@ubuntu.com-20060511125641-eda2bbe7b18106e0" timestamp="1147352201.911801100" timezone="7200">
-<message>Disable hibernation for KDE too</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060511125021-237be769e22d7ca4" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

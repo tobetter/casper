@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="5b78728bf66c0474a700fd24bcc5741b3ffec7a7" revision_id="tfheen@ubuntu.com-20060214140509-db63a349f7d2b612" timestamp="1139925909.878781080" timezone="3600">
-<message>provide a single copy of the shutdown script and stow it in init.d, where it belongs</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060214135237-70a840f6debc50d8" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

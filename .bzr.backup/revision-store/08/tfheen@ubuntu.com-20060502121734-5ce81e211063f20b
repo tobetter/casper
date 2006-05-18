@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="cf2a56e7177b4b34da0bb2a14dd20ae9aea6176f" revision_id="tfheen@ubuntu.com-20060502121734-5ce81e211063f20b" timestamp="1146572254.747704983" timezone="7200">
-<message>Change to shipping defaults</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060502121637-abde26582766aaa2" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

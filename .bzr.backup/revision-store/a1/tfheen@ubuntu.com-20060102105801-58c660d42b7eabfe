@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6765c3a0073443e713bf117ca4a77414771bb101" revision_id="tfheen@ubuntu.com-20060102105801-58c660d42b7eabfe" timestamp="1136199481.918380022" timezone="3600">
-<message>make the locales setup stuff actually executable</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060102102635-b6aab4fc942a367a" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

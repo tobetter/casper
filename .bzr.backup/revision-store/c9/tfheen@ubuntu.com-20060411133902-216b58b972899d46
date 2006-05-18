@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="c64363193df2ffa362a25e4f204949b05bfd432c" revision_id="tfheen@ubuntu.com-20060411133902-216b58b972899d46" timestamp="1144762742.508791924" timezone="7200">
-<message>set up a bit more sensible / in fstab</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060411133748-e43472f5e52001dc" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8f0fe50284e3d57868c13390ee8bd12eb306d339" revision_id="tfheen@ubuntu.com-20060131114158-e58230824fa469be" timestamp="1138707718.631474972" timezone="3600">
-<message>udevplug the right way around</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060131111358-e384e4e0b2e5f472" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

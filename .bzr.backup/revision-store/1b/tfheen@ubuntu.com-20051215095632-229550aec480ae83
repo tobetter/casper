@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="eb6d156773fe42162d15075f473d1d516a283149" revision_id="tfheen@ubuntu.com-20051215095632-229550aec480ae83" timestamp="1134640592.737271070" timezone="3600">
-<message>add a bit of debugging</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215094153-cf91313035d937e8" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

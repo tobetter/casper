@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="5f0b8f47796be566f27da18e4c37008dc2b4958f" revision_id="tfheen@ubuntu.com-20060301101657-a840995c6b2c5bdd" timestamp="1141208217.643140078" timezone="3600">
-<message>Fix typo which broke persistent block devices</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060228102108-9519af5eefd1c760" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

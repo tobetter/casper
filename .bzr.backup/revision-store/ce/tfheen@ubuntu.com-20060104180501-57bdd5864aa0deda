@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8d435facd9779e5b0b9c12722bcff5dc7b4b6213" revision_id="tfheen@ubuntu.com-20060104180501-57bdd5864aa0deda" timestamp="1136397901.515388966" timezone="3600">
-<message>retry if the write would block</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104151217-5f6cc3ebb6f15a98" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

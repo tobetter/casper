@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ce86d0b4d03c4b5e52dcd7cf1596961b2a83e4e2" revision_id="tfheen@ubuntu.com-20060313103849-493a2047f21ebafe" timestamp="1142246329.932490110" timezone="3600">
-<message>disable update-notifier</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060310211050-e989fd3d20e44395" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

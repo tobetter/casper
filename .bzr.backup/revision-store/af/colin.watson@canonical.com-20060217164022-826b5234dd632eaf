@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="e14c0576fbcceb71d2d784d921799d80fb90ca2b" revision_id="colin.watson@canonical.com-20060217164022-826b5234dd632eaf" timestamp="1140194422.540096998">
-<message>* Make ~ubuntu/Desktop/espresso-gtkui.desktop be owned by root.</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060216165103-82c4fa584e456cf9" />
-</parents>
-<properties><property name="branch-nick">espresso-desktop</property>
-</properties>
-</revision>

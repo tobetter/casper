@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="04c4d79e3fffa1566eb31a65d5cd22020bd5cfba" revision_id="tfheen@ubuntu.com-20060130175728-653909d87f775702" timestamp="1138643848.979075909" timezone="3600">
-<message>typo</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130171200-053a781ef4e1daa6" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

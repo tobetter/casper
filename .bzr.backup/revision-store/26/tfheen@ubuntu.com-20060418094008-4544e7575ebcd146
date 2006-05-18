@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="030eed8241bcfc6fe8325b4461777aaac989d3ec" revision_id="tfheen@ubuntu.com-20060418094008-4544e7575ebcd146" timestamp="1145353208.878938913" timezone="7200">
-<message>use install rather than mkdir -p to ensure correct owner/group</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060418084638-32b33baa3a012e58" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

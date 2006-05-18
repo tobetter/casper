@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="0702f01dfd184fc465d9ffcf4e3a5a73c2729a63" revision_id="tfheen@ubuntu.com-20051216052959-d84d0b1aaacd8ae5" timestamp="1134710999.984750986" timezone="3600">
-<message>a bit of consistent indentation</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051216051707-76d5e4b4988a5f9a" />
-</parents>
-<properties><property name="branch-nick">squashfs</property>
-</properties>
-</revision>

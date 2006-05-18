@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="74be0228cf71dcfde94e1478928e95c5e7f935fc" revision_id="colin.watson@canonical.com-20060421115540-bd304c5841e47302" timestamp="1145620540.960700989" timezone="3600">
-<message>releasing version 1.46</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060421113456-15cfebb20d5506ef" />
-</parents>
-<properties><property name="branch-nick">casper</property>
-</properties>
-</revision>

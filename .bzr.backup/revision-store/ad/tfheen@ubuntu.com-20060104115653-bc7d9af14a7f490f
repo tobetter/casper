@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="6e2dd171eff751787d8559adf89482fc9e440aa7" revision_id="tfheen@ubuntu.com-20060104115653-bc7d9af14a7f490f" timestamp="1136375813.350824118" timezone="3600">
-<message>Bunch debconf-communicate commands together to speed up the boot a little bit</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060103154106-b28cc6a50711c94c" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

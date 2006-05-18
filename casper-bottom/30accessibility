@@ -30,6 +30,8 @@ for x in $(cat /proc/cmdline); do
                         access=v1)
                         gct -s -t string /desktop/gnome/interface/gtk_theme HighContrastLargePrint
                         gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
+                        gct -s -t string /desktop/gnome/interface/monospace_font_name "monospace 18"
+                        gct -s -t string /desktop/gnome/interface/font_name "sans 18"
                         gct -s -t string /apps/metacity/general/theme Atlanta
                         gct -s -t string /desktop/gnome/background/picture_filename ""
                         gct -s -t string /desktop/gnome/background/picture_options none

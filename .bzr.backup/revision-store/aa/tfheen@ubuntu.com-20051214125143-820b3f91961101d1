@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ba60aebcfe7105c8f4e782684a76695c0a8a4c1a" revision_id="tfheen@ubuntu.com-20051214125143-820b3f91961101d1" timestamp="1134564703.424015045" timezone="3600">
-<message>set the hostname</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214125049-fd5f3c3ac3945d09" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="649506cd04168cf62616001f930339346cefa3ac" revision_id="tfheen@ubuntu.com-20051219132042-a0f399338aaacf39" timestamp="1134998442.544972897" timezone="3600">
-<message>remove a bunch of set -x-es</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051219131914-2d2a60aeabeab56e" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

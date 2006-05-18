@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8ce9874c3c2523a369d10001d0a67237d7878ba2" revision_id="tfheen@ubuntu.com-20060110135603-cb26a984418a9d05" timestamp="1136901363.111181021" timezone="3600">
-<message>make vol_id quiet</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060110133652-6b03b960030af34a" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

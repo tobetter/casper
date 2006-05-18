@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="83d53b45f227557aba07b524afa1d080db6d6cec" revision_id="tfheen@ubuntu.com-20060328085955-c49b871c0f29a01d" timestamp="1143536395.177071095" timezone="7200">
-<message>Use chmod -x instead of mv to disable readahead in order to not trigger unionfs bugs</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060328082159-1d699f245162d1bb" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

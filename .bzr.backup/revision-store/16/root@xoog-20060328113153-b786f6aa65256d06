@@ -1,8 +1,0 @@
-<revision committer="root &lt;root@xoog&gt;" format="5" inventory_sha1="05a9460528b163e123de67fcbbe6e39f75bb58cd" revision_id="root@xoog-20060328113153-b786f6aa65256d06" timestamp="1143545513.505769014" timezone="7200">
-<message>fix up reboot code so we reboot on any key, not any key + enter</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060328093010-88dde5d8633ac188" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

@@ -1,9 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="024adbc33c7ce42f90bb3d1bb77a1ad8ad0d0c90" revision_id="colin.watson@canonical.com-20060215224521-c87c7c33a6444019" timestamp="1140043521.248586893">
-<message>* Copy /usr/share/applications/espresso-gtkui.desktop to the live CD
-  user's desktop.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060214140509-db63a349f7d2b612" />
-</parents>
-<properties><property name="branch-nick">espresso-desktop</property>
-</properties>
-</revision>

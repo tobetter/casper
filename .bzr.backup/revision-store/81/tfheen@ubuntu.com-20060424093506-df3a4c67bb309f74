@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="8587f2d644318205fdd13e98eccb13622dc74c34" revision_id="tfheen@ubuntu.com-20060424093506-df3a4c67bb309f74" timestamp="1145871306.743489981" timezone="7200">
-<message>Copy /etc/modules when installing with ubiquity.  Malone: #40311</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060424091145-d992da23a7de89a2" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

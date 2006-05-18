@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="34bee0db866dbdc02b12b317d6c4c0b3c86e83a6" revision_id="tfheen@ubuntu.com-20060502121637-abde26582766aaa2" timestamp="1146572197.340208054" timezone="7200">
-<message>Move casper.conf and install to a better path</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060502121150-5c99983d60155aa1" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

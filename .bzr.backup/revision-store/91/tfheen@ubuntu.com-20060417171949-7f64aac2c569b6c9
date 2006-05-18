@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="d40a35f67691b591ad0569ee6db9b87807775c58" revision_id="tfheen@ubuntu.com-20060417171949-7f64aac2c569b6c9" timestamp="1145294389.691299915" timezone="7200">
-<message>make sure Desktop exists before trying to copy stuff into it</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060412122251-248a89d2020e6ad0" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

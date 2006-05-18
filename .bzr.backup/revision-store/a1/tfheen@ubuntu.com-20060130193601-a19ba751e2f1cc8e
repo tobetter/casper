@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="554473d0403e89b24f24c5d3b150284d54387d1e" revision_id="tfheen@ubuntu.com-20060130193601-a19ba751e2f1cc8e" timestamp="1138649761.849461079" timezone="3600">
-<message>add nls_cp437 too</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130192906-2808592d2e093336" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

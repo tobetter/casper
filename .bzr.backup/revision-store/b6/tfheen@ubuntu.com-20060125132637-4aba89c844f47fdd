@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="2c823738247643a60a2f5b15d35cd079f7912a33" revision_id="tfheen@ubuntu.com-20060125132637-4aba89c844f47fdd" timestamp="1138195597.084789038" timezone="3600">
-<message>actually add the network configuation too</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

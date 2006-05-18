@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="fcb2ead7cba1c7afe5df1432610aa4e9b8f6dcbe" revision_id="tfheen@ubuntu.com-20060511122032-5e291aebe3a92fa3" timestamp="1147350032.328849077" timezone="7200">
-<message>Remove outdated TODO file</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060511115945-805f3cca647fe7e0" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

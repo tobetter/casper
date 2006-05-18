@@ -1,9 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="6876d44cbb453b575f9dcd3aa6215b450e51b831" revision_id="colin.watson@canonical.com-20060421113456-15cfebb20d5506ef" timestamp="1145619296.523438931" timezone="3600">
-<message>* espresso is being renamed to ubiquity. Rename espresso-casper to
-  ubiquity-casper to match.</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060421103044-006c214172862b8d" />
-</parents>
-<properties><property name="branch-nick">ubiquity</property>
-</properties>
-</revision>

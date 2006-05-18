@@ -1,9 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ed425b5b5602002fc0987afb60d48de1a987232f" revision_id="tfheen@ubuntu.com-20060418084529-4c090d4c3b5a21fd" timestamp="1145349929.167789936" timezone="7200">
-<message>Merge in 1.43 upload from Riddell</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060417171949-7f64aac2c569b6c9" />
-<revision_ref revision_id="jr@lichts-20060413192846-b7db6ebc1aa3fb2d" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

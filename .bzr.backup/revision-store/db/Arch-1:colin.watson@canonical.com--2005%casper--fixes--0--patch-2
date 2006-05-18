@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="7eee942e9261be3724f2085dd64e99f54bf29f4a" revision_id="Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--patch-2" timestamp="1132325205.000000000">
-<message>Fix arguments to db_input for snapshot configuration.</message>
-<parents>
-<revision_ref revision_id="Arch-1:colin.watson@canonical.com--2005%casper--fixes--0--patch-1" />
-</parents>
-<properties><property name="branch-nick">rd</property>
-</properties>
-</revision>

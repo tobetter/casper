@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="03607ce9fee54c22700d882e616b7bf595f81752" revision_id="tfheen@ubuntu.com-20051215101842-f3e34ef1c04c2758" timestamp="1134641922.205281973" timezone="3600">
-<message>remove some debugging so I can hopefully see the forest for trees..</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051215100529-fae277deb3f30fea" />
-</parents>
-<properties><property name="branch-nick">devmapper</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="12ec11d6580b1e5ca4cdd575ba44f20cfe3b2210" revision_id="tfheen@ubuntu.com-20051214120322-f98c9ac59f992158" timestamp="1134561802.703903913" timezone="3600">
-<message>nuke debian-installer-startup.d</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214120222-c64e5c0058de53b1" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

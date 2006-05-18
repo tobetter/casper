@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="a25ca9848730e415aa15f2b2f2ac7836750e8d41" revision_id="tfheen@ubuntu.com-20060220093515-4963f5054dcef61f" timestamp="1140428115.644064903" timezone="3600">
-<message>fix check for S90reboot so it looks in the right place</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060220092236-43d40e3bb5228937" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

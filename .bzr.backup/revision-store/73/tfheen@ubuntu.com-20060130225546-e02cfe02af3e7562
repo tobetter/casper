@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="43120d8556c70a2913dd563726fbae6742bf0469" revision_id="tfheen@ubuntu.com-20060130225546-e02cfe02af3e7562" timestamp="1138661746.166218042" timezone="3600">
-<message>fix more paths</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060130225402-826b3f10b38da244" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

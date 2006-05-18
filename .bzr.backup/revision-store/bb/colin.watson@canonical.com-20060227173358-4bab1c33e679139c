@@ -1,8 +1,0 @@
-<revision committer="Colin Watson &lt;colin.watson@canonical.com&gt;" format="5" inventory_sha1="f83f3e210954abfb138da0b72cbc5b243e9da352" revision_id="colin.watson@canonical.com-20060227173358-4bab1c33e679139c" timestamp="1141061638.621089935">
-<message>releasing version 1.35</message>
-<parents>
-<revision_ref revision_id="colin.watson@canonical.com-20060227172850-0353743d19502189" />
-</parents>
-<properties><property name="branch-nick">preseed</property>
-</properties>
-</revision>

@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="48b680e8f7b9c2cdf007f65ff240a25507759990" revision_id="tfheen@ubuntu.com-20051214125640-d8c3b3c6ab56f5db" timestamp="1134565000.791768074" timezone="3600">
-<message>make sure to touch the right hosts file</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214125614-dbe490c4b1519f04" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

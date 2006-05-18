@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="dc2218940f5674342b7f3ebc0c1d9a5c9d48636d" revision_id="tfheen@ubuntu.com-20060511113624-4fa606cb8538bfa9" timestamp="1147347384.718640089" timezone="7200">
-<message>Do not show the name of the live cd user that is added.</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060511102258-9a830e4df6940b65" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

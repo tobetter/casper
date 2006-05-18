@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ceaa3e8653e7f3c25c6419b8349b849015e89c59" revision_id="tfheen@ubuntu.com-20051214123713-b0c607646607b738" timestamp="1134563833.631865978" timezone="3600">
-<message>more initramfsify</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214120917-0eae7163985c81fd" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

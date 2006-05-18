@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="69a06ff1b0bd77e47b744f78063c9233fa772d9e" revision_id="tfheen@ubuntu.com-20051214124642-89138620ced37930" timestamp="1134564402.763052940" timezone="3600">
-<message>add debugging, rename files so they can be shell variable names</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20051214124352-2cea5fc08eac982a" />
-</parents>
-<properties><property name="branch-nick">main</property>
-</properties>
-</revision>

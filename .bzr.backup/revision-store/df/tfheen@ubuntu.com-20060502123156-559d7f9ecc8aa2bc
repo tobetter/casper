@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="ab62acb7ef15e8c78932f863c2593a74aec88735" revision_id="tfheen@ubuntu.com-20060502123156-559d7f9ecc8aa2bc" timestamp="1146573116.322349072" timezone="7200">
-<message>Grab variables from /etc/casper.conf if it exists in the initramfs</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060502121734-5ce81e211063f20b" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

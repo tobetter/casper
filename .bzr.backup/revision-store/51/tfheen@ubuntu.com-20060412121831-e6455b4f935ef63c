@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="9cfdb090db9bd1b6b4e77f68962734e9341beb42" revision_id="tfheen@ubuntu.com-20060412121831-e6455b4f935ef63c" timestamp="1144844311.287338972" timezone="7200">
-<message>Set the usplash timeout after premount too, since udev changes it</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060411143614-a42fec2b35df9b44" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

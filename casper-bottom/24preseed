@@ -35,7 +35,7 @@ for x in $(cat /proc/cmdline); do
 done
 
 if [ "$location" ]; then
-	chroot /root debconf-set-selections < "$location"
+	chroot /root debconf-set-selections < "/root$location"
 fi
 
 log_end_msg

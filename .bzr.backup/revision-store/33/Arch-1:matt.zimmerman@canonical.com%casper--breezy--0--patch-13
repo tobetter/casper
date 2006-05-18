@@ -1,6 +1,0 @@
-<revision committer="Matt Zimmerman &lt;matt.zimmerman@canonical.com&gt;" format="5" inventory_sha1="6c6a613c13a85625f73225b65499fd433cd3daf3" revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-13" timestamp="1126909491.000000000">
-<message>Set /apps/gnome-screensaver/lock if gnome-screensaver is installed</message>
-<parents>
-<revision_ref revision_id="Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-12" />
-</parents>
-</revision>

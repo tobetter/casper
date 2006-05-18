@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="17f758f9a45281c599beef60b4de0e3e9d2e8c02" revision_id="tfheen@ubuntu.com-20060104134811-e30014a9ec0ce100" timestamp="1136382491.625598907" timezone="3600">
-<message>use correct path to mountpoint</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060104134656-00100459969a9d0b" />
-</parents>
-<properties><property name="branch-nick">integrity-check</property>
-</properties>
-</revision>

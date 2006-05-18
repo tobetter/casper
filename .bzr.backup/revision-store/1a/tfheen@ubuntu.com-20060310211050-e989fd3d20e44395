@@ -1,8 +1,0 @@
-<revision committer="Tollef Fog Heen &lt;tfheen@ubuntu.com&gt;" format="5" inventory_sha1="888bb54741b9162aabd8d273bf3e267f109a5c27" revision_id="tfheen@ubuntu.com-20060310211050-e989fd3d20e44395" timestamp="1142025050.217659950" timezone="3600">
-<message>use fstype &lt; instead of just fstype, since newer fstypes seems to want that</message>
-<parents>
-<revision_ref revision_id="tfheen@ubuntu.com-20060309084432-803bae73ba98185f" />
-</parents>
-<properties><property name="branch-nick">trunk</property>
-</properties>
-</revision>

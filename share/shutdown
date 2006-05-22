@@ -33,6 +33,6 @@ if [ -x /sbin/usplash_write ]; then
     /sbin/usplash_write "TEXT and press ENTER to continue"
 fi
 
-read x
+read x < /dev/console
 
 exit 0

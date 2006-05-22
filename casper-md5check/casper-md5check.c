@@ -17,6 +17,7 @@
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
    USA. */
 
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/reboot.h>
@@ -53,11 +54,11 @@ int write_and_retry(int fd, char *s) {
     ret = write(fd, s, strlen(s)+1);
     try++;
   }
+  return (s+ret == end ? 0 : 1);
 }
 
-int usplash_timeout(int fd, int timeout) {
+void usplash_timeout(int fd, int timeout) {
   char *s;
-  int try;
 
   asprintf(&s, "TIMEOUT %d", timeout);
 
@@ -69,7 +70,6 @@ int usplash_timeout(int fd, int timeout) {
 
 void usplash_failure(int fd, char *format, ...) {
   char *s, *s1;
-  int try;
   va_list argp;
 
   va_start(argp, format);
@@ -86,7 +86,6 @@ void usplash_failure(int fd, char *format, ...) {
 
 void usplash_text(int fd, char *format, ...) {
   char *s, *s1;
-  int try;
   va_list argp;
 
   va_start(argp, format);
@@ -103,7 +102,6 @@ void usplash_text(int fd, char *format, ...) {
 
 void usplash_success(int fd, char *format, ...) {
   char *s, *s1;
-  int try;
   va_list argp;
 
   va_start(argp, format);
@@ -121,7 +119,6 @@ void usplash_success(int fd, char *format, ...) {
 void usplash_progress(int fd, int progress) {
   static int prevprogress = -1;
   char *s;
-  int try;
 
   if (progress == prevprogress)
     return;
@@ -163,7 +160,7 @@ int main(int argc, char **argv) {
 
   if (argc != 3) {
     fprintf(stderr,"Wrong number of arguments\n");
-    fprintf(stderr,"%s <root directory> <md5sum file>\n");
+    fprintf(stderr,"%s <root directory> <md5sum file>\n", argv[0]);
     exit(1);
   }
   
@@ -217,7 +214,7 @@ int main(int argc, char **argv) {
 
     while (rsize > 0) {
       csize += rsize;
-      usplash_progress(pipe_fd, floor(100*csize/tsize));
+      usplash_progress(pipe_fd, floorl(100*csize/tsize));
 
       md5_append(&state, (const md5_byte_t *)buf, rsize);
       rsize = read(check_fd, buf, sizeof(buf));

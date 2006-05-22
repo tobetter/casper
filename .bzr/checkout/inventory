@@ -51,4 +51,5 @@
 <file file_id="20xconfig-20060120164659-0cb93dfee821b064" name="20xconfig" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file file_id="22gnome_panel_data-20060120164659-3da59bf07f0d734c" name="22gnome_panel_data" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file file_id="25modules-20060424093159-40364a306c3f9707" name="25modules" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
+<file file_id="32gnome_power_manager-20060522091701-ee013ecaa2372586" name="32gnome_power_manager" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 </inventory>

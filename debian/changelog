@@ -1,3 +1,10 @@
+casper (1.55) dapper; urgency=low
+
+  * Reconfigure gnome-power-manager when doing live installations.
+    Malone #45654
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 22 May 2006 11:16:46 +0200
+
 casper (1.54) dapper; urgency=low
 
   [ Luke Yelavich ]

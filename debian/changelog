@@ -1,3 +1,11 @@
+casper (1.57) dapper; urgency=low
+
+  * Rename the anacron rc.d/S* symlinks to K*, instead of removing them.
+    Because otherwise pbbuttonsd decides that starting anacron on the
+    LiveCD would be a clever thing to do.
+
+ -- Scott James Remnant <scott@ubuntu.com>  Wed, 24 May 2006 23:06:04 +0100
+
 casper (1.56) dapper; urgency=low
 
   * Hopefully work a bit better when checking DVDs on 32 bit

@@ -28,7 +28,9 @@ fi
 
 # This has the nice side effect of the cron.{daily,weekly,monthly} jobs in
 # /etc/crontab remaining disabled, yet also not run by anacron
-rm -f /root/etc/rc?.d/S??anacron
+for STUPID in /root/etc/rc?.d/S??anacron; do
+    mv $STUPID $(dirname $STUPID)/K00anacron
+done
 
 # No point, really
 rm -f /root/etc/rc?.d/[SK]??postfix

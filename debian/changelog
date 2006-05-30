@@ -1,3 +1,21 @@
+casper (1.60) edgy; urgency=low
+
+  * Change start symlinks to kill symlinks for anacron, to avoid it being
+    started by invoke-rc.d and similar.
+  * Rearrange source package.
+  * Redo how the init script works and require it to be installed in the
+    live fs.
+  * Bump version number to be higher than Debian's so we don't
+    automatically sync.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 31 May 2006 00:01:40 +0200
+
+casper (1.58) dapper; urgency=low
+
+  * Really rename properly, without dirname.
+
+ -- Scott James Remnant <scott@ubuntu.com>  Tue, 30 May 2006 22:47:04 +0100
+
 casper (1.57) dapper; urgency=low
 
   * Rename the anacron rc.d/S* symlinks to K*, instead of removing them.

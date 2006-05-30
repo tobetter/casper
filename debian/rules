@@ -15,20 +15,16 @@ build-stamp:
 
 clean:
 	dh_testdir
-#	dh_testroot
-	rm -f build-stamp configure-stamp
+	rm -f build-stamp
 	-cd casper-md5check && make clean
 
 	dh_clean
 
 install: build
 	dh_testdir
-#	dh_testroot
 	dh_clean -k
 	dh_installdirs
 	dh_install
-	install -m644 debian/casper.initramfs debian/casper/usr/share/initramfs-tools/scripts/casper
-	install -m755 debian/casper.initramfs-hooks debian/casper/usr/share/initramfs-tools/hooks/casper
 	install -m755 casper-md5check/casper-md5check debian/casper/usr/lib/casper
 
 # Build architecture-independent files here.
@@ -49,7 +45,7 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs -a
-#	dh_installinit -a
+	dh_installinit -a -r --no-start -- start 89 0 6 .
 	dh_installchangelogs -a
 	dh_link -a
 	dh_compress -a

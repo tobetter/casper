@@ -1,4 +1,6 @@
-#!/bin/sh
+#! /bin/sh
+
+grep -qs boot=casper /proc/cmdline || exit 0
 
 # Try to cache everything we're likely to need after ejecting.  This
 # is fragile and simple-minded, but our options are limited.

@@ -1,3 +1,10 @@
+casper (1.61) edgy; urgency=low
+
+  * Move PATH setting to top of casper script to avoid silliness where
+    PATH isn't correctly set.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 17 Jul 2006 12:53:59 +0200
+
 casper (1.60) edgy; urgency=low
 
   * Change start symlinks to kill symlinks for anacron, to avoid it being

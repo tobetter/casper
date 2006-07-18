@@ -3,20 +3,13 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-VERSION:=$(shell dpkg-parsechangelog |sed -n -e '/^Version:/s/^Version: //p')
-DEB_BUILD_PROG:=dpkg-buildpackage -us -uc -rfakeroot
-
-build: build-stamp
-build-stamp:
+build:
 	dh_testdir
-	cd casper-md5check && make
-
-	touch build-stamp
+	$(MAKE) -C casper-md5check
 
 clean:
 	dh_testdir
-	rm -f build-stamp
-	-cd casper-md5check && make clean
+	$(MAKE) -C casper-md5check clean
 
 	dh_clean
 
@@ -26,12 +19,12 @@ install: build
 	dh_installdirs
 	dh_install
 	install -m755 casper-md5check/casper-md5check debian/casper/usr/lib/casper
+	install -m644 casper.conf debian/casper/etc/casper.conf
 
-# Build architecture-independent files here.
 binary-indep: build install
 	dh_testdir
 	dh_testroot
-	dh_installexamples -i casper.conf
+	dh_installexamples -i
 	dh_installdocs -i
 	dh_installchangelogs -i
 	dh_compress -i

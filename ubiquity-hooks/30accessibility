@@ -7,7 +7,7 @@ DESCRIPTION="Configuring accessibility options..."
 USERNAME=$(db_get passwd/username)
 
 gct() {
-    chroot /root su $USERNAME -- gconftool-2 "$@"
+    chroot /target su $USERNAME -- gconftool-2 "$@"
 }
 
 for x in $(cat /proc/cmdline); do
@@ -64,4 +64,3 @@ for x in $(cat /proc/cmdline); do
                         ;;
 		esac
 done
-log_end_msg

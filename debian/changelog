@@ -1,3 +1,9 @@
+casper (1.65) edgy; urgency=low
+
+  * Update to call udevsettle/udevtrigger instead of udevplug
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon, 21 Aug 2006 19:37:58 +0200
+
 casper (1.64) edgy; urgency=low
 
   * Fix moving of squashfs mount points so that /proc/mounts in the

@@ -2,9 +2,5 @@
 
 Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 0 651  :
 Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 fulltext 651 658  :
-mdz@mizar-20051205230117-c327e75be767f237 line-delta 1309 111 1 0 :
-tfheen@ubuntu.com-20051214120917-0eae7163985c81fd line-delta 1420 184 2 :
-marco.amadori@gmail.com-20060616103317-3bf4aa56c343df45 line-delta 1604 269 3 :
-marco.amadori@gmail.com-20060616124546-89f58fd6d63e30ac line-delta 1873 148 .marco.amadori@gmail.com-20060616103317-3bf4aa56c343df45 :
-marco.amadori@gmail.com-20060616132104-96f1ea122577ecee line-delta 2021 826 .marco.amadori@gmail.com-20060616124546-89f58fd6d63e30ac :
-marco.amadori@gmail.com-20060616134926-d89ee0798151daae line-delta 2847 684 .marco.amadori@gmail.com-20060616132104-96f1ea122577ecee :
+mdz@mizar-20051205230117-c327e75be767f237 line-delta 1309 111 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 :
+tfheen@ubuntu.com-20051214120917-0eae7163985c81fd line-delta 1420 184 .mdz@mizar-20051205230117-c327e75be767f237 :

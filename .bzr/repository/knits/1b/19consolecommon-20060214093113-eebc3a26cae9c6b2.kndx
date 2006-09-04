@@ -1,10 +1,10 @@
 # bzr knit index 8
 
 tfheen@ubuntu.com-20060214093137-0eadf1071bef7d7e fulltext 0 500  :
-tfheen@ubuntu.com-20060214112454-d85ba063e7494de7 line-delta 500 158 0 :
-colin.watson@canonical.com-20060421103044-006c214172862b8d line-delta 658 163 1 :
-colin.watson@canonical.com-20060510155341-44c4f96df724edaf line-delta 821 185 2 :
-colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9 line-delta 1006 169 3 :
-colin.watson@canonical.com-20060510160922-d6d959a1db13eba3 line-delta 1175 163 4 :
-tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 1338 162 5 :
-colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93 line-delta 1500 128 6 :
+tfheen@ubuntu.com-20060214112454-d85ba063e7494de7 line-delta 500 158 .tfheen@ubuntu.com-20060214093137-0eadf1071bef7d7e :
+colin.watson@canonical.com-20060421103044-006c214172862b8d line-delta 658 163 .tfheen@ubuntu.com-20060214112454-d85ba063e7494de7 :
+colin.watson@canonical.com-20060510155341-44c4f96df724edaf line-delta 821 185 .colin.watson@canonical.com-20060421103044-006c214172862b8d :
+colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9 line-delta 1006 169 .colin.watson@canonical.com-20060510155341-44c4f96df724edaf :
+colin.watson@canonical.com-20060510160922-d6d959a1db13eba3 line-delta 1175 163 .colin.watson@canonical.com-20060510160540-1eed5686c70c3fc9 :
+tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 1338 162 .colin.watson@canonical.com-20060510160922-d6d959a1db13eba3 :
+colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93 line-delta 1500 128 .tfheen@ubuntu.com-20060511101145-7eff26852b90d05c :

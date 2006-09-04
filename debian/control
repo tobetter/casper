@@ -9,13 +9,13 @@ Package: casper
 Architecture: any
 Section: misc
 Priority: extra
-Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup, user-setup
+Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup, user-setup, sudo
 Conflicts: usplash (<< 0.1-30)
 Description: Run a "live" preinstalled system from read-only media
 
 Package: ubiquity-casper
 Architecture: all
-Depends: laptop-detect
+Depends: laptop-detect, sudo
 Conflicts: espresso-casper
 Replaces: espresso-casper
 Enhances: ubiquity

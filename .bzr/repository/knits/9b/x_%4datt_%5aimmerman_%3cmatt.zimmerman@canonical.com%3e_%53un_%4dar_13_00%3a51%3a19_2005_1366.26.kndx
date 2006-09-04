@@ -1,9 +1,9 @@
 # bzr knit index 8
 
-Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 fulltext 0 744  :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 744 734  :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 line-delta 1478 198 0 1 :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-23 line-delta 1676 314 2 :
-Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2 line-delta 1990 210 2 :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25 line-delta 2200 211 3 :
-mdz@mizar-20051205230117-c327e75be767f237 line-delta 2411 111 5 4 :
+Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 0 734  :
+Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 fulltext 734 744  :
+Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 line-delta 1478 198 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 :
+Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-23 line-delta 1676 314 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 :
+Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25 line-delta 1990 211 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-23 :
+Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2 line-delta 2201 210 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 :
+mdz@mizar-20051205230117-c327e75be767f237 line-delta 2411 111 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-25 .Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-2 :

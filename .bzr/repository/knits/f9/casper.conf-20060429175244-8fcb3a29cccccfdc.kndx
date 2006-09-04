@@ -1,10 +1,7 @@
 # bzr knit index 8
 
 danjele@gmail.com-20060429175258-d0f8fe6df0f14396 fulltext 0 254  :
-danjele@gmail.com-20060429181520-46e372aebc6d746f line-delta 254 223 0 :
-tfheen@ubuntu.com-20060502121637-abde26582766aaa2 line-delta 477 116 0 :
-tfheen@ubuntu.com-20060502121734-5ce81e211063f20b line-delta 593 162 2 :
-marco.amadori@gmail.com-20060616103317-3bf4aa56c343df45 line-delta 755 186 3 :
-tfheen@ubuntu.com-20060721113410-417c4bc39934790b line-delta 941 162 3 :
-tfheen@ubuntu.com-20060721113505-40a1d909c3152b75 line-delta 1103 162 3 :
-tfheen@ubuntu.com-20060721113523-8490506b0b2d5ecf line-delta 1265 155 6 :
+tfheen@ubuntu.com-20060502121637-abde26582766aaa2 line-delta 254 116 .danjele@gmail.com-20060429175258-d0f8fe6df0f14396 :
+tfheen@ubuntu.com-20060502121734-5ce81e211063f20b line-delta 370 162 .tfheen@ubuntu.com-20060502121637-abde26582766aaa2 :
+tfheen@ubuntu.com-20060721113505-40a1d909c3152b75 line-delta 532 162 .tfheen@ubuntu.com-20060502121734-5ce81e211063f20b :
+tfheen@ubuntu.com-20060721113523-8490506b0b2d5ecf line-delta 694 155 .tfheen@ubuntu.com-20060721113505-40a1d909c3152b75 :

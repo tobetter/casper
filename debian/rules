@@ -6,6 +6,11 @@
 build:
 	dh_testdir
 	$(MAKE) -C casper-md5check
+	set -e; \
+	for x in bin/* scripts/casper scripts/casper-bottom/* \
+	         ubiquity-hooks/*; do \
+		sh -n $$x; \
+	done
 
 clean:
 	dh_testdir

@@ -246,7 +246,7 @@ setup_unionfs() {
 
 is_usb_device() {
     sysfs_path="${1#/sys}"
-    if /lib/udev/path_id "${sysfs_path}" | grep -q "ID_PATH=(usb|pci-[^-]*-usb)"; then
+    if /lib/udev/path_id "${sysfs_path}" | grep -E -q "ID_PATH=(usb|pci-[^-]*-usb)"; then
         return 0
     fi
     return 1

@@ -3,7 +3,7 @@
 PREREQ=""
 DESCRIPTION="Setting up keyboard..."
 
-. /scripts/functions
+. /scripts/casper-functions
 
 prereqs()
 {

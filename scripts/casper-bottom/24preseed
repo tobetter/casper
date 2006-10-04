@@ -3,7 +3,7 @@
 PREREQ=""
 DESCRIPTION="Loading preseed file..."
 
-. /scripts/functions
+. /scripts/casper-functions
 
 prereqs ()
 {

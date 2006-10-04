@@ -26,6 +26,9 @@ for x in $(cat /proc/cmdline); do
 		preseed/file=*)
 			location="${x#preseed/file=}"
 			;;
+		file=*)
+			location="${x#file=}"
+			;;
 		*/*=*)
 			question="${x%%=*}"
 			value="${x#*=}"

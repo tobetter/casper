@@ -30,9 +30,9 @@ eject -p -m /cdrom >/dev/null 2>&1
 # XXX - i18n
 echo -n "Please remove the disc, close the tray (if any) and press ENTER: "
 if [ -x /sbin/usplash_write ]; then
-    /sbin/usplash_write "TIMEOUT 0"
-    /sbin/usplash_write "TEXT Please remove the disc, close the tray (if any)"
-    /sbin/usplash_write "TEXT and press ENTER to continue"
+    /sbin/usplash_write "TIMEOUT 86400"
+    /sbin/usplash_write "TEXT-URGENT Please remove the disc, close the tray (if any)"
+    /sbin/usplash_write "TEXT-URGENT and press ENTER to continue"
 fi
 
 read x < /dev/console

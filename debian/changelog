@@ -1,3 +1,11 @@
+casper (1.72) edgy; urgency=low
+
+  * Force suspend and hibernate both off, since reconfiguring
+    gnome-power-manager kills usplash here.  Fixes Malone: #61535
+    completely.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri,  6 Oct 2006 14:22:23 +0200
+
 casper (1.71) edgy; urgency=low
 
   * Use TEXT-URGENT in shutdown script to make sure we display the "please

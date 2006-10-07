@@ -48,8 +48,8 @@
 <file executable="yes" file_id="31disable_update_notifier-20060313103523-eefea3aeaef078cd" name="31disable_update_notifier" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file executable="yes" file_id="32disable_hibernation-20060511124722-5d6b3107779e39b6" name="32disable_hibernation" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file executable="yes" file_id="33disable_binary_drivers-20060513081129-2ab393e22ef26ea2" name="33disable_binary_drivers" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
-<file file_id="34disable_kwallet-20061005120331-0hfoursu42lx6fl6-1" name="34disable_kwallet" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
-<file file_id="35fix_language_selec-20061005132424-0iwum7h2kpw9f1a5-1" name="35fix_language_selector" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file executable="yes" file_id="34disable_kwallet-20061005120331-0hfoursu42lx6fl6-1" name="34disable_kwallet" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file executable="yes" file_id="35fix_language_selec-20061005132424-0iwum7h2kpw9f1a5-1" name="35fix_language_selector" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file file_id="casperfunctions-20061005141909-fpi3s6vfs5mmvabd-1" name="casper-functions" parent_id="scripts-20060615082119-ed123b8182c36eab" />
 <directory file_id="espressohooks-20060120162836-e768a7d0fab4a538" name="ubiquity-hooks" />
 <file executable="yes" file_id="20xconfig-20060120164659-0cb93dfee821b064" name="20xconfig" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />

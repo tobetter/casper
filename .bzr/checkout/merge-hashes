@@ -1,6 +1,78 @@
 BZR merge-modified list format 1
-file_id: 24preseed-20060227172322-21191f5c187775d8
-hash: 09fa928851a1811d7637d843495131ed16b4d7f5
+file_id: 14locales-20060102102630-33012df28c2185d9
+hash: 78afb5faccdc6d7eb5eb96a05961dfdc4d0a5c23
+
+file_id: 34disable_kwallet-20061005120331-0hfoursu42lx6fl6-1
+hash: 0ee08e019f41500f3ace6f9bebe1ef58d6bd6cbc
+
+file_id: 18hostname-20051214125141-4d0adff887c0310b
+hash: c796b9a6c2204d07058ee1610f3c5fddf44700c7
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.10
+hash: d9d1e6957f25386d5305d8056a4ee47ee6fcc594
+
+file_id: 35fix_language_selec-20061005132424-0iwum7h2kpw9f1a5-1
+hash: 69f13ee93c446dac94d4eed67df5b303ec0f248b
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.16
+hash: 244b9946089fbc4343273677b3933ba31a0115c9
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.17
+hash: 32a532d8282321d8f28b5d1f1253c7c4bae83c00
+
+file_id: 19consolecommon-20060214093113-eebc3a26cae9c6b2
+hash: 0cc00c945d1b0e86a22d845a1fa56b48530119c3
 
 file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.27
-hash: e04ae16ba8d5f61f67dada07f59f97d2aecc053f
+hash: ee6e9257bbc5ced49bc5710b8b433eccc0a64e45
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.40
+hash: 4252ab65e280ddacea59deac95a7a9dbab01205a
+
+file_id: casperfunctions-20061005141909-fpi3s6vfs5mmvabd-1
+hash: 6827a9fa616a6e134daa1b21223f7dd8671df5c9
+
+file_id: 05mountpoints-20060302134819-352318c6c9c57e98
+hash: fd83d189dcacb8dda120f93842389ec595c0c843
+
+file_id: 30a11y-20060222133150-a9728133066a6c8a
+hash: ebf87c2595496b63b73229864eeef9e199e8f792
+
+file_id: 24preseed-20060227172322-21191f5c187775d8
+hash: 82a43c111479dbe4805890e5b8ad04e57005ac19
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Fri_Sep_16_15:23:59_2005_17182.0
+hash: 25ad361a7eb9452db24155acbf86d6d9c9c4627d
+
+file_id: 32disable_hibernation-20060511124722-5d6b3107779e39b6
+hash: ab7be9a3add53ad9ca0dc3670b39d446f662ff7c
+
+file_id: 23networking-20060125132628-083d6ccc86925687
+hash: 25ca564732fe9865c2407bbf6f1dde9ddff89eb7
+
+file_id: 31disable_update_notifier-20060313103523-eefea3aeaef078cd
+hash: 660124dcd8f498844359b0e9fa569afde6f5fb8d
+
+file_id: casper.initramfshooks-20051214123826-fc8000ee07ec68a5
+hash: 11bc4ea909ec71e46a3cb1595d8bb1d56f84d547
+
+file_id: 33disable_binary_drivers-20060513081129-2ab393e22ef26ea2
+hash: c7008f948e4bdbb197346d7fcc089b8d5d834ef8
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.6
+hash: 1829103ca216bfd1f154218d866e2709ecfc254e
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.7
+hash: 61ce6f8119393b6322aba1323ef6f8c909e1b911
+
+file_id: casper.initramfs-20051214120853-12a62017ddc74fb9
+hash: 8ecf0fdacfba9a32b53c856b2e85d6fc866b5ea0
+
+file_id: 23etc_modules-20060328082134-da4ef8324f4bd1a5
+hash: b0f24e47d7c032ffb9ee7e6576b0592e16cafa02
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.8
+hash: 1de1d7b05c1046fa28ba0d63380254bd7de210c4
+
+file_id: x_Matt_Zimmerman_<matt.zimmerman@canonical.com>_Sun_Mar_13_00:51:19_2005_1366.9
+hash: 54d575db83abd22f6821bf44d8fdb7c1da881533

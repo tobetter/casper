@@ -1,3 +1,11 @@
+casper (1.73) edgy; urgency=low
+
+  * Never run install-keymap or preseed debian-installer/keymap if
+    console-setup is detected, even if console-setup wasn't explicitly
+    preseeded. Contributes to Malone #60067.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sat,  7 Oct 2006 01:56:20 +0100
+
 casper (1.72) edgy; urgency=low
 
   * Force suspend and hibernate both off, since reconfiguring

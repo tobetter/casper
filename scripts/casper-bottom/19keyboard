@@ -38,13 +38,14 @@ for x in $(cat /proc/cmdline); do
         esac
 done
 
-if [ "$cslayout" ] && [ -x /root/bin/setupcon ] && \
-   [ -f /root/etc/default/console-setup ]; then
-        chroot /root sed -i "s/^XKBLAYOUT=.*/XKBLAYOUT=\"$cslayout\"/" \
-                /etc/default/console-setup
-        if [ "$csvariant" ]; then
-                chroot /root sed -i "s/^XKBVARIANT=.*/XKBVARIANT=\"$csvariant\"/" \
+if [ -x /root/bin/setupcon ] && [ -f /root/etc/default/console-setup ]; then
+        if [ "$cslayout" ]; then
+                chroot /root sed -i "s/^XKBLAYOUT=.*/XKBLAYOUT=\"$cslayout\"/" \
                         /etc/default/console-setup
+                if [ "$csvariant" ]; then
+                        chroot /root sed -i "s/^XKBVARIANT=.*/XKBVARIANT=\"$csvariant\"/" \
+                                /etc/default/console-setup
+                fi
         fi
 else
         chroot /root /usr/sbin/install-keymap $kbd

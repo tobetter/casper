@@ -20,7 +20,7 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gconf-2 2>/dev/null) || gconf_version=""
+gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || gconf_version=""
 
 gct() {
     if [ "$gconf_version" ]; then

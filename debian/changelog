@@ -1,3 +1,15 @@
+casper (1.74) edgy; urgency=low
+
+  [ Tollef Fog Heen ]
+  * Sync up ubiquity-hooks/30accessibility with
+    scripts/casper-bottom/30accessibility fixing spelling errors and
+    enabling accessibility in KDE.
+
+  [ Colin Watson ]
+  * Fix check for presence of gconf2 (closes: Malone #58836).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 11 Oct 2006 11:18:00 +0100
+
 casper (1.73) edgy; urgency=low
 
   * Never run install-keymap or preseed debian-installer/keymap if

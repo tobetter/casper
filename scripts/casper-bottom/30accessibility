@@ -86,6 +86,7 @@ for x in $(cat /proc/cmdline); do
                         # Motor Difficulties - pointing devices
                         access=m2)
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
+			gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false

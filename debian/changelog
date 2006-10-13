@@ -1,3 +1,10 @@
+casper (1.75) edgy; urgency=low
+
+  * Turn on accessibility in "Motor Difficulties - pointing devices" which
+    makes onboard start properly.  closes: Malone: #65861.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri, 13 Oct 2006 14:12:10 +0200
+
 casper (1.74) edgy; urgency=low
 
   [ Tollef Fog Heen ]

@@ -45,7 +45,12 @@ if [ -x /root/bin/setupcon ] && [ -f /root/etc/default/console-setup ]; then
                 if [ "$csvariant" ]; then
                         chroot /root sed -i "s/^XKBVARIANT=.*/XKBVARIANT=\"$csvariant\"/" \
                                 /etc/default/console-setup
+                else
+                        casper-preseed /root console-setup/variantcode '' false
                 fi
+        else
+                casper-preseed /root console-setup/layoutcode '' false
+                casper-preseed /root console-setup/variantcode '' false
         fi
 else
         chroot /root /usr/sbin/install-keymap $kbd

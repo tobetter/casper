@@ -1,3 +1,24 @@
+casper (1.76) edgy; urgency=low
+
+  [ Colin Watson ]
+  * Copy access=m2 accessibility changes into the corresponding ubiquity
+    hook.
+  * Remove spurious quoting from accessibility script.
+  * Clear console-setup/layoutcode and console-setup/variantcode if they
+    aren't supplied on the command line.
+
+  [ Michael Vogt ]
+  * scripts/casper-bottom/35fix_language_selector:
+    - run fontconfig-voodoo if available to make sure that we have
+      optimal fontconfig settings for the CJK languages (lp: #49334)
+
+  [ Henrik Nilsen Omma ]
+  * Fix a few accessibility items that were out of date, changing
+    gnopernicus -> orca and gok -> onboard (the gok entry was missing some
+    brackets as well; patch from Malone #58836, closes: Malone #65861).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 16 Oct 2006 20:20:15 +0100
+
 casper (1.75) edgy; urgency=low
 
   * Turn on accessibility in "Motor Difficulties - pointing devices" which

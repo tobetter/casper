@@ -13,5 +13,5 @@ tfheen@ubuntu.com-20060721103156-bc08f0c73a46d800 line-delta 1884 300 .colin.wat
 tfheen@ubuntu.com-20060721104649-2b3274a04e455973 line-delta 2184 532 .tfheen@ubuntu.com-20060721103156-bc08f0c73a46d800 :
 tfheen@ubuntu.com-20060721105824-e37e434a4ddc4dd1 line-delta 2716 393 .tfheen@ubuntu.com-20060721104649-2b3274a04e455973 :
 tfheen@ubuntu.com-20060721110145-e05a244b8d085fec line-delta 3109 152 .tfheen@ubuntu.com-20060721105824-e37e434a4ddc4dd1 :
-colin.watson@canonical.com-20060803125808-d2b530d90162863a line-delta 3261 176 12 :
-tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 3437 137 13 :
+colin.watson@canonical.com-20060803125808-d2b530d90162863a line-delta 3261 176 .tfheen@ubuntu.com-20060721110145-e05a244b8d085fec :
+tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 3437 137 .colin.watson@canonical.com-20060803125808-d2b530d90162863a :

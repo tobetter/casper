@@ -2,9 +2,9 @@
 
 colin.watson@canonical.com-20060803125936-c499d98697663097 fulltext 0 941  :
 colin.watson@canonical.com-20060803130014-51ab1c2f5158a4d5 line-delta 941 178 .colin.watson@canonical.com-20060803125936-c499d98697663097 :
-colin.watson@canonical.com-20060904141918-84e4dd97bb6838ab line-delta 1119 170 1 :
-colin.watson@canonical.com-20060904143413-0f80fdc704418add line-delta 1289 252 2 :
-jriddell@ubuntu.com-20060905233924-17e22af10151efb4 line-delta 1541 287 3 :
-tfheen@err.no-20061010105237-8953f7e87847ce74 line-delta 1828 351 4 :
-colin.watson@canonical.com-20061013123317-1b61ca44f87d1166 line-delta 2179 175 5 :
-colin.watson@canonical.com-20061016191926-3aff1cdc520c90d2 line-delta 2354 282 6 :
+colin.watson@canonical.com-20060904141918-84e4dd97bb6838ab line-delta 1119 170 .colin.watson@canonical.com-20060803130014-51ab1c2f5158a4d5 :
+colin.watson@canonical.com-20060904143413-0f80fdc704418add line-delta 1289 252 .colin.watson@canonical.com-20060904141918-84e4dd97bb6838ab :
+jriddell@ubuntu.com-20060905233924-17e22af10151efb4 line-delta 1541 287 .colin.watson@canonical.com-20060904143413-0f80fdc704418add :
+tfheen@err.no-20061010105237-8953f7e87847ce74 line-delta 1828 351 .jriddell@ubuntu.com-20060905233924-17e22af10151efb4 :
+colin.watson@canonical.com-20061013123317-1b61ca44f87d1166 line-delta 2179 175 .tfheen@err.no-20061010105237-8953f7e87847ce74 :
+colin.watson@canonical.com-20061016191926-3aff1cdc520c90d2 line-delta 2354 282 .colin.watson@canonical.com-20061013123317-1b61ca44f87d1166 :

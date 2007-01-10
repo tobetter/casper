@@ -1,9 +1,9 @@
 # bzr knit index 8
 
 tfheen@ubuntu.com-20051214125143-820b3f91961101d1 fulltext 0 325  :
-tfheen@ubuntu.com-20051214125640-d8c3b3c6ab56f5db line-delta 325 147 .tfheen@ubuntu.com-20051214125143-820b3f91961101d1 :
-tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 line-delta 472 304 .tfheen@ubuntu.com-20051214125640-d8c3b3c6ab56f5db :
-tfheen@ubuntu.com-20060424085501-a8b30bb0dd4c902a line-delta 776 146 .tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 :
-danjele@gmail.com-20060429171643-07d7080bf80fad80 line-delta 922 172 .tfheen@ubuntu.com-20060424085501-a8b30bb0dd4c902a :
-tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 1094 156 .danjele@gmail.com-20060429171643-07d7080bf80fad80 :
-tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 1250 138 .tfheen@ubuntu.com-20060511101145-7eff26852b90d05c :
+tfheen@ubuntu.com-20051214125640-d8c3b3c6ab56f5db line-delta 325 147 0 :
+tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 line-delta 472 304 1 :
+tfheen@ubuntu.com-20060424085501-a8b30bb0dd4c902a line-delta 776 146 2 :
+danjele@gmail.com-20060429171643-07d7080bf80fad80 line-delta 922 172 3 :
+tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 1094 156 4 :
+tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 1250 138 5 :

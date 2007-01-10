@@ -1,8 +1,8 @@
 # bzr knit index 8
 
 tfheen@ubuntu.com-20060313103849-493a2047f21ebafe fulltext 0 339  :
-tfheen@ubuntu.com-20060328115859-927252a839cf0ffa line-delta 339 116 .tfheen@ubuntu.com-20060313103849-493a2047f21ebafe :
-tfheen@ubuntu.com-20060411142736-0cbf33aed39e0997 line-delta 455 159 .tfheen@ubuntu.com-20060328115859-927252a839cf0ffa :
-tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 614 164 .tfheen@ubuntu.com-20060411142736-0cbf33aed39e0997 :
-tfheen@ubuntu.com-20060511122422-49b369d9be47df93 line-delta 778 188 .tfheen@ubuntu.com-20060511101145-7eff26852b90d05c :
-tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 966 138 .tfheen@ubuntu.com-20060511122422-49b369d9be47df93 :
+tfheen@ubuntu.com-20060328115859-927252a839cf0ffa line-delta 339 116 0 :
+tfheen@ubuntu.com-20060411142736-0cbf33aed39e0997 line-delta 455 159 1 :
+tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 614 164 2 :
+tfheen@ubuntu.com-20060511122422-49b369d9be47df93 line-delta 778 188 3 :
+tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 966 138 4 :

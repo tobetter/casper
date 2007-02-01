@@ -1,3 +1,10 @@
+casper (1.80) feisty; urgency=low
+
+  * scripts/casper-bottom/31disable_update_notifier: Allow update-notifier
+    to run for crash report handling, but disable its apt-check hook.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu,  1 Feb 2007 00:11:06 +0000
+
 casper (1.79) feisty; urgency=low
 
   [ Colin Watson ]

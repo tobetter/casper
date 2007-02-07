@@ -3,8 +3,15 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+# Looking in which build system we are
+BUILD_SYSTEM := $(shell lsb_release --short --id)
+
 build:
 	dh_testdir
+
+	# Setting BUILD_SYSTEM in the binary package
+	sed -i -e 's/\(BUILD_SYSTEM="\).*"/\1'$(BUILD_SYSTEM)'"/g' casper.conf
+
 	$(MAKE) -C casper-md5check
 	set -e; \
 	for x in bin/* scripts/casper scripts/casper-bottom/* \
@@ -43,9 +50,12 @@ binary-arch: build install
 	dh_testdir
 	dh_testroot
 	dh_installdocs -a
+	dh_installman -a
+	dh_installexamples -a
 	dh_installinit -a -r --no-start -- start 89 0 6 .
 	dh_installchangelogs -a
 	dh_link -a
+	dh_strip -a
 	dh_compress -a
 	dh_fixperms -a
 	dh_installdeb -a

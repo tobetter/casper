@@ -1,7 +1,10 @@
 <inventory format="5">
 <directory file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" name="bin" />
+<file executable="yes" file_id="caspergetty-20070207134202-kbirtj153h0uo37c-1" name="casper-getty" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" />
+<file executable="yes" file_id="casperlogin-20070207134229-kwa4glgiczu2heq5-1" name="casper-login" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" />
 <file executable="yes" file_id="casperpreseed-20060510165805-94d832ffa99b04d6" name="casper-preseed" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" />
 <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.2" name="casper-reconfigure" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" />
+<file executable="yes" file_id="caspersnapshot-20070207134241-pupeaj0ililti6km-1" name="casper-snapshot" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.1" />
 <directory file_id="caspermd5check-20060104133547-9e528b971dc71188" name="casper-md5check" />
 <file file_id="Makefile-20060104133547-60794be7ea62712a" name="Makefile" parent_id="caspermd5check-20060104133547-9e528b971dc71188" />
 <file file_id="caspermd5check.c-20060104133547-ee9e3b0607554cd0" name="casper-md5check.c" parent_id="caspermd5check-20060104133547-9e528b971dc71188" />
@@ -16,11 +19,15 @@
 <file file_id="casper.dirs-20051214123805-47c8bc71eb6d357f" name="casper.dirs" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.40" name="casper.init" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="casper.install-20051214123842-fbc9ae8e189dea9c" name="casper.install" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="casper.manpages-20070207134300-8qgekicbrar1pul0-1" name="casper.manpages" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="casper.postinst-20051214132323-ccf6e50760b075cd" name="casper.postinst" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.27" name="changelog" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.28" name="compat" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.29" name="control" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.30" name="copyright" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<directory file_id="manpage-20070207134300-8qgekicbrar1pul0-2" name="manpage" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
+<file file_id="caspersnapshot.1-20070207134300-8qgekicbrar1pul0-3" name="casper-snapshot.1" parent_id="manpage-20070207134300-8qgekicbrar1pul0-2" />
+<file file_id="casper.7-20070207134300-8qgekicbrar1pul0-4" name="casper.7" parent_id="manpage-20070207134300-8qgekicbrar1pul0-2" />
 <file executable="yes" file_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.32" name="rules" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <file file_id="espressocasper.install-20060120164723-0dcb450888f776ca" name="ubiquity-casper.install" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.22" />
 <directory file_id="hooks-20060615082224-df8dae4b8daf3514" name="hooks" />
@@ -51,6 +58,7 @@
 <file executable="yes" file_id="34disable_kwallet-20061005120331-0hfoursu42lx6fl6-1" name="34disable_kwallet" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file executable="yes" file_id="35fix_language_selec-20061005132424-0iwum7h2kpw9f1a5-1" name="35fix_language_selector" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file file_id="casperfunctions-20061005141909-fpi3s6vfs5mmvabd-1" name="casper-functions" parent_id="scripts-20060615082119-ed123b8182c36eab" />
+<file file_id="casperhelpers-20070207134303-ot8ii6p694qiw6eo-1" name="casper-helpers" parent_id="scripts-20060615082119-ed123b8182c36eab" />
 <directory file_id="espressohooks-20060120162836-e768a7d0fab4a538" name="ubiquity-hooks" />
 <file executable="yes" file_id="20xconfig-20060120164659-0cb93dfee821b064" name="20xconfig" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file executable="yes" file_id="22gnome_panel_data-20060120164659-3da59bf07f0d734c" name="22gnome_panel_data" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />

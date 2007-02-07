@@ -1,3 +1,9 @@
+casper (1.81) feisty; urgency=low
+
+  * Merge in Debian's changes.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed,  7 Feb 2007 14:39:30 +0100
+
 casper (1.80) feisty; urgency=low
 
   * scripts/casper-bottom/31disable_update_notifier: Allow update-notifier
@@ -33,6 +39,92 @@ casper (1.78) edgy; urgency=low
     multiply-mounted squashfses for Edgy.
 
  -- Colin Watson <cjwatson@ubuntu.com>  Wed, 25 Oct 2006 12:46:05 +0100
+
+casper (1.77+debian-6) unstable; urgency=medium
+
+  * Improved snapshots features (even still experimental).
+  * Added "live-media-offset=BYTES" boot param, to enable "hiding"
+    feature, thanks to Sebastien Raveau <sebastien.raveau@epita.fr>.
+  * Now it creates /etc/resolv.conf if netbooted.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Fri,  1 Dec 2006 17:43:30 +0100
+
+casper (1.77+debian-5) unstable; urgency=low
+
+  * Fixed preseeding locale and keyboard's variant and options.
+  * Reorganized scans of /proc/cmdline.
+  * Improved manpages, thanks to Oliver Osburg for syntax corrections.
+  * Added "nopersistent" boot option to disable the "persistent" boot param.
+  * Added "xdebconf" boot option, that uses xdebconfigurator on the
+    rootfs to configure X (experimental).
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Mon, 20 Nov 2006 22:12:18 +0100
+
+casper (1.77+debian-4) unstable; urgency=medium
+
+  * Removed -phigh from casper-reconfigure, not needed anymore.
+  * Fixed netboot /etc/network/interfaces generation, thanks to Hadar
+    <whadar@gmail.com>.
+  * Fixed X keyboard setup. Thanks to <ascii_77@yahoo.fr> for the idea.
+  * Fixed keyboard setup.
+  * Allow commandline-device to show up late, thanks to Bas Wijnen
+    <wijnen@debian.org> for the code and the care (Closes: #397320).
+  * Urgency is set to medium to try reaching Etch with important
+    features/bugfixes.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Mon,  6 Nov 2006 19:00:29 +0100
+
+casper (1.77+debian-3) unstable; urgency=medium
+
+  * Fixed "todisk=" parsing.
+  * Urgency is set to medium to try reaching Etch with important
+    features/bugfixes.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Wed,  1 Nov 2006 11:15:56 +0100
+
+casper (1.77+debian-2) unstable; urgency=medium
+
+  [ Marco Amadori ]
+  * Improved snapshotting (but still experimental).
+  * Renamed "host=" boot parameter to "hostname=" and shell variable "HOST" to
+    "HOSTNAME" for consistence, with linux and with username/USERNAME, as
+    requested by many people.
+  * Fixed a "keyb=" typo.
+  * Added dependence on lsb-base (used by init-script and
+    casper-snapshot).
+  * Removed DM support (obsolete).
+  * Changed a bit locale and keyboard handling.
+  * Fixed locale generation.
+  * Urgency is set to medium to try reaching Etch with important
+    features/bugfixes.
+ 
+  [ Otavio Salvador ]
+  * Really lowered usplash conflicts since Debian doesn't has 0.4.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Mon, 30 Oct 2006 17:06:48 +0100
+
+casper (1.77+debian-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added snapshot persistence feature (copy on boot, sync on reboot) via
+    different ways: squashfs, cpio.gz, and block device filesystems.
+  * Added boot parameter "live-media=<device>" to force trying to boot from
+    a specified device.
+  * Added support for "todisk=<device>" to copy the live media to a
+    device filesystem, subsequent boots could use "live-media=<device>".
+  * Slightly polished locales and keyboards handling.
+  * Extendend manpages.
+  * Readded a missing "sleep 1", reworked how live_media is detected,
+    thanks to Bas Wijnen <wijnen@debian.org> for the reports.
+    (Closes: #394308, #394554).
+  * Reworked casper-getty system, thanks to Alex Owen (Closes: #394686).
+  * Postint now rebuild all initramfs.
+  * Casper now Recommends also squashfs-tools and genext2fs, maybe
+    needed by casper-snapshot.
+  * Lowered usplash requirements, since usplash 0.4 is not in debian
+    yet.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Sun, 22 Oct 2006 20:25:38 +0200
 
 casper (1.77) edgy; urgency=low
 
@@ -97,6 +189,14 @@ casper (1.72) edgy; urgency=low
 
  -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri,  6 Oct 2006 14:22:23 +0200
 
+casper (1.71+debian-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added experimental casper-snapshot script and manpage.
+  * Tagged for debtags project.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Thu, 28 Sep 2006 16:04:54 +0200
+
 casper (1.71) edgy; urgency=low
 
   * Use TEXT-URGENT in shutdown script to make sure we display the "please
@@ -134,6 +234,31 @@ casper (1.69) edgy; urgency=low
 
  -- Colin Watson <cjwatson@ubuntu.com>  Mon,  2 Oct 2006 10:58:19 +0100
 
+casper (1.68+debian-3) unstable; urgency=low
+
+  * Really add casper manpage (Closes: #389867).
+  * Lintian cleanness reached.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Thu, 28 Sep 2006 12:36:29 +0200
+
+casper (1.68+debian-2) unstable; urgency=low
+
+  * Changed "staticip=" boot param to just "ip=".
+  * Added a manpage for casper.
+  * Lintian cleanings.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Tue, 26 Sep 2006 00:45:21 +0200
+
+casper (1.68+debian-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added static network configuration support.
+  * Fixed gnome-screensaver-lock differences between ubuntu.
+  * username, host, and userfullname are now also settable
+    via kernel parameters.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Fri,  8 Sep 2006 11:26:02 +0200
+
 casper (1.68) edgy; urgency=low
 
   * Honour console-setup/layoutcode and console-setup/variantcode preseeding
@@ -152,6 +277,13 @@ casper (1.67) edgy; urgency=low
 
  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 23 Aug 2006 14:34:57 +0200
 
+casper (1.66+debian-1) unstable; urgency=low
+
+  * Added "magic" to make it work seamlessy also on ubuntu systems.
+  * Default user password now "live".
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Fri,  1 Sep 2006 17:18:07 +0200
+
 casper (1.66) edgy; urgency=low
 
   * Fix use of db_get in ubiquity accessibility hook.
@@ -161,6 +293,15 @@ casper (1.66) edgy; urgency=low
     was never all that good for arguments containing spaces anyway.
 
  -- Colin Watson <cjwatson@ubuntu.com>  Mon,  4 Sep 2006 15:46:55 +0100
+
+casper (1.65+debian-1) unstable; urgency=low
+
+  * New upstream release.
+  * Re-included ubiquity sources since it is here anyway in diff.gz.
+  * Included remote getty patch from Alex Owen (enable it with "casper-getty"
+    as kernel parameter).
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Thu, 17 Aug 2006 14:06:10 +0200
 
 casper (1.65) edgy; urgency=low
 
@@ -180,6 +321,45 @@ casper (1.64) edgy; urgency=low
     to /target instead of /root (closes: Malone #53277).
 
  -- Colin Watson <cjwatson@ubuntu.com>  Thu,  3 Aug 2006 14:00:22 +0100
+
+casper (1.63+debian-3) unstable; urgency=low
+
+  * Really do not try to eject cd if netbooted.
+  * Fixed unionfs ro param in case of nfs netboot (Closes: 383346).
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Wed, 16 Aug 2006 20:10:11 +0200
+
+casper (1.63+debian-2) unstable; urgency=low
+
+  * Working netboot support (Closes: #380506).
+  * Polished kernel parameters parsing a bit.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Sun, 13 Aug 2006 15:52:14 +0200
+
+casper (1.63+debian-1) unstable; urgency=low
+
+  [Marco Amadori]
+  * New upstream release.
+  * Fixed upstream changelog.
+  * Really fixed the user password issue, now really "debian".
+  * Reincluded casper-md5ckeck in debian/rules and 05mountpoints in
+    script/casper-bottom.
+  * Rewrote netboot support now will support all types of rootfs file images
+    (not only plain dirs) like cd/dvd one.
+  * Included a fix for USB by Davide Natalini <davide.natalini@studio.unibo.it>
+  * Included support for plain directory as RO rootfs.
+  * Removed xfs support (not implemented in make-live, maybe useless).
+
+  [Alex Owen]
+  * Added NFS netboot support (Closes: #380506).
+  * Fixed /etc/inittab editing (Closes: #380488).
+  * Do not try to eject cd if netbooted (Closes: #380502).
+
+  [Daniel Baumann]
+  * Minor debian/rules reordering.
+  * Changed "Section:" from "admin" to "misc".
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Sun, 30 Jul 2006 19:10:23 +0200
 
 casper (1.63) edgy; urgency=low
 
@@ -210,6 +390,25 @@ casper (1.63) edgy; urgency=low
 
  -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 18 Jul 2006 10:20:51 +0200
 
+casper (1.61+debian-2) unstable; urgency=low
+
+  * Set password for user to 'debian'.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 19 Jul 2006 20:56:00 +0200
+
+casper (1.61+debian-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Rebuild tarball without debian directory.
+  * Using dpatch for upstream modifications.
+  * Added patch for proper GDM autologin from Arnaud Cornet
+    <arnaud.cornet@gmail.com>.
+
+  [ Marco Amadori ]
+  * New upstream release (Resynced with 1.61, bzr 258).
+  * Usb discover patch from Malcom Gilles <live@ouabain.org>.
+ -- Marco Amadori <marco.amadori@gmail.com>  Tue, 18 Jul 2006 23:34:59 +0200
+
 casper (1.61) edgy; urgency=low
 
   * Move PATH setting to top of casper script to avoid silliness where
@@ -228,6 +427,38 @@ casper (1.60) edgy; urgency=low
     automatically sync.
 
  -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 31 May 2006 00:01:40 +0200
+
+casper (1.59+debian-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Upload to unstable (Closes: #354539).
+
+  [ Marco Amadori ]
+  * Added possibility to set locale on chroot, not only at runtime.
+  * Removed "persistent" wait.
+  * Fixed persistence lock and added "homepersistence" boot parameter.
+  * Updated locales handling to latest debian policy.
+  * Cleanups
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 22 Jun 2006 06:21:00 +0200
+
+casper (1.59+debian-0) UNRELEASED; urgency=low
+
+  * Added "toram" boot parameter.
+  * Extendend fs support to ext2 and xfs file image.
+  * Changed debian-inexistant "-Q" modprobe option with "-q".
+  * Removed ubiquity code.
+  * USERNAME and HOST defaulted to "debian".
+  * Preliminary netboot (cifs) patch by  
+    "Jason D. Clinton" <me@jasonclinton.com>
+  * Lowered dependence of dmsetup code (now only Suggests).
+  * Checks for replacing "udevplug" (ubuntu-only) with "udevtrigger".
+  * Reworked xorg and anacron patches from  
+    Frederic Lehobey <Frederic.Lehobey@free.fr>.
+  * scripts/casper-bottom/10adduser: configuring only the $USERNAME for sudo
+      instead of group 'admin'.
+
+ -- Marco Amadori <marco.amadori@gmail.com>  Fri, 16 Jun 2006 11:01:48 +0200
 
 casper (1.58) dapper; urgency=low
 

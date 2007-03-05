@@ -57,12 +57,16 @@
 <file executable="yes" file_id="33disable_binary_drivers-20060513081129-2ab393e22ef26ea2" name="33disable_binary_drivers" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file executable="yes" file_id="34disable_kwallet-20061005120331-0hfoursu42lx6fl6-1" name="34disable_kwallet" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file executable="yes" file_id="35fix_language_selec-20061005132424-0iwum7h2kpw9f1a5-1" name="35fix_language_selector" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
+<file executable="yes" file_id="40install_driver_upd-20070214170701-fkhdmcg5ker2z4ti-1" name="40install_driver_updates" parent_id="x_Matt_Zimmerman_&lt;matt.zimmerman@canonical.com&gt;_Sun_Mar_13_00:51:19_2005_1366.5" />
 <file file_id="casperfunctions-20061005141909-fpi3s6vfs5mmvabd-1" name="casper-functions" parent_id="scripts-20060615082119-ed123b8182c36eab" />
 <file file_id="casperhelpers-20070207134303-ot8ii6p694qiw6eo-1" name="casper-helpers" parent_id="scripts-20060615082119-ed123b8182c36eab" />
+<directory file_id="casperpremount-20070214170655-rbq552yxy3sssjhj-1" name="casper-premount" parent_id="scripts-20060615082119-ed123b8182c36eab" />
+<file executable="yes" file_id="10driver_updates-20070214170655-rbq552yxy3sssjhj-2" name="10driver_updates" parent_id="casperpremount-20070214170655-rbq552yxy3sssjhj-1" />
 <directory file_id="espressohooks-20060120162836-e768a7d0fab4a538" name="ubiquity-hooks" />
 <file executable="yes" file_id="20xconfig-20060120164659-0cb93dfee821b064" name="20xconfig" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file executable="yes" file_id="22gnome_panel_data-20060120164659-3da59bf07f0d734c" name="22gnome_panel_data" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file executable="yes" file_id="25modules-20060424093159-40364a306c3f9707" name="25modules" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file executable="yes" file_id="30accessibility-20060803125836-b35d2ac9aea1b217" name="30accessibility" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 <file executable="yes" file_id="32gnome_power_manager-20060522091701-ee013ecaa2372586" name="32gnome_power_manager" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
+<file file_id="40install_driver_upd-20070305111350-ydibl7rv7ynojsjd-1" name="40install_driver_updates" parent_id="espressohooks-20060120162836-e768a7d0fab4a538" />
 </inventory>

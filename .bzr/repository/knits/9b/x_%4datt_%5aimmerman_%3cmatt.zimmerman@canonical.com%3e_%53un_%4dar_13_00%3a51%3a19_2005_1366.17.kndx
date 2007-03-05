@@ -2,13 +2,13 @@
 
 Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 0 577  :
 Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 fulltext 577 585  :
-mdz@mizar-20051205230117-c327e75be767f237 line-delta 1162 109 1 0 :
-tfheen@ubuntu.com-20051214123713-b0c607646607b738 line-delta 1271 362 2 :
-tfheen@ubuntu.com-20051214124305-81e6c50220b71a59 line-delta 1633 186 3 :
-tfheen@ubuntu.com-20051214124642-89138620ced37930 line-delta 1819 230 4 :
-tfheen@ubuntu.com-20051214132740-991d005e1cacee07 line-delta 2049 127 5 :
-tfheen@ubuntu.com-20051219132042-a0f399338aaacf39 line-delta 2176 122 6 :
-tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 line-delta 2298 284 7 :
-tfheen@ubuntu.com-20060110102718-75ad2c8d086d84ea line-delta 2582 121 8 :
-tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 2703 158 9 :
+mdz@mizar-20051205230117-c327e75be767f237 line-delta 1162 109 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 :
+tfheen@ubuntu.com-20051214123713-b0c607646607b738 line-delta 1271 362 .mdz@mizar-20051205230117-c327e75be767f237 :
+tfheen@ubuntu.com-20051214124305-81e6c50220b71a59 line-delta 1633 186 .tfheen@ubuntu.com-20051214123713-b0c607646607b738 :
+tfheen@ubuntu.com-20051214124642-89138620ced37930 line-delta 1819 230 .tfheen@ubuntu.com-20051214124305-81e6c50220b71a59 :
+tfheen@ubuntu.com-20051214132740-991d005e1cacee07 line-delta 2049 127 .tfheen@ubuntu.com-20051214124642-89138620ced37930 :
+tfheen@ubuntu.com-20051219132042-a0f399338aaacf39 line-delta 2176 122 .tfheen@ubuntu.com-20051214132740-991d005e1cacee07 :
+tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 line-delta 2298 284 .tfheen@ubuntu.com-20051219132042-a0f399338aaacf39 :
+tfheen@ubuntu.com-20060110102718-75ad2c8d086d84ea line-delta 2582 121 .tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 :
+tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 2703 158 .tfheen@ubuntu.com-20060110102718-75ad2c8d086d84ea :
 tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 2861 137 10 :

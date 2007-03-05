@@ -71,7 +71,7 @@ do_stop ()
         cache_path "$path"
     done
 
-    eject -p -m /live_media >/dev/null 2>&1
+    eject -p -m /cdrom >/dev/null 2>&1
 
     # XXX - i18n
     echo "Please remove the disc and close the tray (if any) then press ENTER: "

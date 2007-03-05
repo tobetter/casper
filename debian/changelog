@@ -1,3 +1,17 @@
+casper (1.82) feisty; urgency=low
+
+  [ Ben Collins ]
+  * Depends on eject package, and copy it into initramfs.
+  * Add log_wait_msg function to use usplash_write INPUTENTER.
+  * Conflict with usplash older than the one that fixes INPUTENTER.
+  * Add driver-updates hooks.
+
+  [ Colin Watson ]
+  * Fix more leftover /live_media wreckage (LP: #84592).
+  * Add a ubiquity hook to install driver-updates on the target system.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon,  5 Mar 2007 11:19:48 +0000
+
 casper (1.81) feisty; urgency=low
 
   * Merge in Debian's changes.

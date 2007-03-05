@@ -1,7 +1,7 @@
 # bzr knit index 8
 
 Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 fulltext 0 530  :
-Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-9 line-delta 530 203 0 :
+Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-9 line-delta 530 203 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 :
 Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 733 534  :
-colin.watson@canonical.com-20051205220508-2a2f232b5f328480 line-delta 1267 161 1 :
-mdz@mizar-20051205230117-c327e75be767f237 line-delta 1428 182 2 3 :
+colin.watson@canonical.com-20051205220508-2a2f232b5f328480 line-delta 1267 161 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-9 :
+mdz@mizar-20051205230117-c327e75be767f237 line-delta 1428 182 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 .colin.watson@canonical.com-20051205220508-2a2f232b5f328480 :

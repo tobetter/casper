@@ -1,3 +1,13 @@
+casper (1.83) feisty; urgency=low
+
+  * Fix usplash version in Conflicts.
+  * Add XS-Vcs-Bzr field to debian/control.
+  * scripts/casper-bottom/25configure_init: Support for "respawn COMMAND"
+    has been dropped from upstart jobs; cope with /etc/event.d/tty* using
+    "respawn" plus "exec COMMAND" now instead (LP: #92928).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Mar 2007 16:44:22 +0000
+
 casper (1.82) feisty; urgency=low
 
   [ Ben Collins ]

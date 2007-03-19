@@ -4,13 +4,14 @@ Priority: optional
 Maintainer: Tollef Fog Heen <tfheen@ubuntu.com>
 Build-Depends: debhelper (>> 4.2.0), lsb-release
 Standards-Version: 3.6.1
+XS-Vcs-Bzr: http://bazaar.launchpad.net/~ubuntu-core-dev/casper/trunk
 
 Package: casper
 Architecture: any
 Section: misc
 Priority: extra
 Depends: initramfs-tools (>= 0.40ubuntu11), dmsetup, user-setup, sudo, eject
-Conflicts: usplash (<< 0.4-42)
+Conflicts: usplash (<< 0.4-43)
 Tag: admin::boot, admin::filesystem, implemented-in::shell, protocol::smb, role::plugin, scope::utility, special::completely-tagged, works-with-format::iso9660
 Description: Run a "live" preinstalled system from read-only media
 

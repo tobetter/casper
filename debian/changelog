@@ -1,3 +1,24 @@
+casper (1.84) feisty; urgency=low
+
+  [ Jani Monoses ]
+  * scripts/casper-bottom/13swap: Call /bin/dd not dd so it
+    correctly detects and uses existing swap partitions (LP: #62868)
+
+  [ Tollef Fog Heen ]
+  * Make sure that we are settled before trying to set up netbooting.
+    (LP: #96076)
+  * Bind-mount /dev too, when configuring X, this should make it easier
+    for X to be correctly configured on a lot of systems.
+  * Add /root/lib and /root/usr/lib to /etc/ld.so.conf in the initramfs.
+  * Add any sources on the CD to APT using apt-cdrom.
+  * Set the time zone to UTC.  LP: #13782
+  * Fix deletion of checkroot script.  LP: #66585.
+
+  [ Colin Watson ]
+  * Fix error message if do_netmount fails (LP: #95134).
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Fri, 30 Mar 2007 12:37:58 +0200
+
 casper (1.83) feisty; urgency=low
 
   * Fix usplash version in Conflicts.

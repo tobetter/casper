@@ -1,3 +1,9 @@
+casper (1.85) feisty; urgency=low
+
+  * Stop disabling nvidia and fglrx drivers.  LP: #94359
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Mon,  2 Apr 2007 13:16:46 +0200
+
 casper (1.84) feisty; urgency=low
 
   [ Jani Monoses ]

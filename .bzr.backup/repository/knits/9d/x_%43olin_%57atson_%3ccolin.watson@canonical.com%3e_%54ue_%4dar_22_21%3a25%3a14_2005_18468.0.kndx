@@ -1,9 +1,0 @@
-# bzr knit index 8
-
-Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-7 fulltext 0 1460  :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 1460 1458  :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 line-delta 2918 305 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--patch-7 :
-Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-14 line-delta 3223 423 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-23 line-delta 3646 395 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-5 :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-28 line-delta 4041 422 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-23 :
-mdz@mizar-20051205230117-c327e75be767f237 line-delta 4463 383 .Arch-1:matt.zimmerman@canonical.com%casper--breezy--0--patch-14 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-28 :

@@ -1,3 +1,15 @@
+casper (1.87) feisty; urgency=low
+
+  [ Colin Watson ]
+  * Improve language at end of MD5 check (LP: #100088).
+
+  [ Martin Pitt ]
+  * Add casper-bottom/33enable_apport_crashes: Enable apport crash
+    notifications. They are disabled now by default in the installed system
+    for the final release.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon,  9 Apr 2007 14:31:50 +0200
+
 casper (1.86) feisty; urgency=low
 
   [ Luke Yelavich ]

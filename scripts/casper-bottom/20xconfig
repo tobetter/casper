@@ -29,14 +29,14 @@ fi
 locale=en_US.UTF-8
 
 for x in $(cat /proc/cmdline); do
-                case $x in
-                        debian-installer/locale=*)
-                                locale=${x#debian-installer/locale=}
-                                ;;
-                        locale=*)
-                                locale=${x#locale=}
-                                ;;
-                esac
+	case $x in
+		debian-installer/locale=*)
+			locale=${x#debian-installer/locale=}
+			;;
+		locale=*)
+			locale=${x#locale=}
+			;;
+	esac
 done
 
 mount -n -o bind /sys /root/sys

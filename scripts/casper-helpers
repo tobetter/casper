@@ -117,9 +117,16 @@ setup_loop() {
     modprobe ${MP_QUIET} -b "$module"
     udevsettle
 
-    for loopdev in $pattern; do
-        if [ "$(cat $loopdev/size)" -eq 0 ]; then
-            dev=$(sys2dev "${loopdev}")
+    if [ "$module" = loop ]; then
+        if [ ! -e /dev/loop0 ]; then
+            # temporary workaround for kernel bug
+            for i in 0 1 2 3 4 5 6 7; do
+                mknod "/dev/loop$i" b 7 "$i" || true
+            done
+        fi
+
+        dev="$(losetup -f)"
+        if [ "$dev" ]; then
             if [ -n "$offset" ]; then
                 losetup -o "$offset" "$dev" "$fspath"
             else
@@ -127,9 +134,24 @@ setup_loop() {
             fi
             echo "$dev"
             return 0
+        else
+            panic "No loop devices available"
         fi
-    done
-    panic "No loop devices available"
+    else
+        for loopdev in $pattern; do
+            if [ "$(cat $loopdev/size)" -eq 0 ]; then
+                dev=$(sys2dev "${loopdev}")
+                if [ -n "$offset" ]; then
+                    losetup -o "$offset" "$dev" "$fspath"
+                else
+                    losetup "$dev" "$fspath"
+                fi
+                echo "$dev"
+                return 0
+            fi
+        done
+        panic "No loop devices available"
+    fi
 }
 
 try_mount ()

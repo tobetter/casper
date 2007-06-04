@@ -9,6 +9,11 @@ echo "/root/usr/lib" >> /etc/ld.so.conf
 
 mountpoint=/cdrom
 
+root_persistence="casper-rw"
+home_persistence="home-rw"
+root_snapshot_label="casper-sn"
+home_snapshot_label="home-sn"
+
 USERNAME=casper
 USERFULLNAME="Live session user"
 HOST=live
@@ -24,6 +29,17 @@ export USERNAME USERFULLNAME HOST BUILD_SYSTEM
 if [ ! -f /casper.vars ]; then
     touch /casper.vars
 fi
+
+parse_cmdline() {
+    for x in $(cat /proc/cmdline); do
+        case $x in
+            persistent)
+                export PERSISTENT="Yes" ;;
+            nopersistent)
+                export PERSISTENT="" ;;
+        esac
+    done
+}
 
 is_casper_path() {
     path=$1
@@ -488,6 +504,8 @@ mountroot() {
     exec 7>&2
     exec > casper.log
     exec 2>&1
+
+    parse_cmdline
 
     set_usplash_timeout
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"

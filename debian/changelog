@@ -1,3 +1,17 @@
+casper (1.90) gutsy; urgency=low
+
+  * Added to 22screensaver, to stop the screen automatically locking.
+    Fixes LP: #13497 for kubuntu as well.
+
+ -- Sarah Hobbs <hobbsee@ubuntu.com>  Thu, 07 Jun 2007 00:50:42 +1000
+
+casper (1.89) UNRELEASED; urgency=low
+
+  * Update Maintainer field to reflect reality; this package is no longer
+    maintained by me.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Wed, 06 Jun 2007 14:56:46 +0200
+
 casper (1.88) gutsy; urgency=low
 
   * Add default values for root_persistence, home_persistence,

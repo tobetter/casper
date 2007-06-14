@@ -1,7 +1,7 @@
 # bzr knit index 8
 
 tfheen@err.no-20061005132615-088d045599c0fd9a fulltext 0 381  :
-tfheen@err.no-20061005135045-51684f6eac87d62d line-delta 381 183 0 :
-tfheen@err.no-20061005140956-7b91aa32c665d181 line-delta 564 203 1 :
-tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 767 137 2 :
+tfheen@err.no-20061005135045-51684f6eac87d62d line-delta 381 183 .tfheen@err.no-20061005132615-088d045599c0fd9a :
+tfheen@err.no-20061005140956-7b91aa32c665d181 line-delta 564 203 .tfheen@err.no-20061005135045-51684f6eac87d62d :
+tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 767 137 .tfheen@err.no-20061005140956-7b91aa32c665d181 :
 michael.vogt@ubuntu.com-20061016134109-768bfe2993be8727 line-delta 904 205 3 :

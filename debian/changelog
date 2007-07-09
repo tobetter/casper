@@ -1,3 +1,15 @@
+casper (1.92) gutsy; urgency=low
+
+  [ Colin Watson ]
+  * Don't bother chrooting just to run test(1).
+
+  [ Evan Dandrea ]
+  * Added support for URL-based preseeding.
+  * Added 'noninteractive' option that starts ubiquity in noninteractive
+    mode on tty1.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 09 Jul 2007 15:23:51 +0100
+
 casper (1.91) gutsy; urgency=low
 
   * Fix Maintainer field (ubuntu-devel-discuss, not ubuntu-devel).

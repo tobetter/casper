@@ -29,6 +29,20 @@ for x in $(cat /proc/cmdline); do
 		file=*)
 			location="${x#file=}"
 			;;
+		url=*)
+			location="${x#url=}"
+			mount -n -o bind /sys /root/sys
+			mount -n -o bind /proc /root/proc
+			mount -n -o bind /dev /root/dev
+			mkdir -p /root/var/run/network
+			chroot /root ifup -a
+			chroot /root wget -P /tmp "$location"
+			chroot /root ifdown -a
+			umount /root/sys
+			umount /root/proc
+			umount /root/dev
+			location="/tmp/$(basename "$location")"
+			;;
 		*/*=*)
 			question="${x%%=*}"
 			value="${x#*=}"

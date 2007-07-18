@@ -1,3 +1,11 @@
+casper (1.93) gutsy; urgency=low
+
+  * revert gdm-cdd.conf handling for autologin to the chrooted code
+    as we had it in feisty. not chrooting brings up problems with the
+    alternatives system (dead symlinks) used for gdm-cdd.conf
+
+ -- Oliver Grawert <ogra@ubuntu.com>  Wed, 18 Jul 2007 15:08:16 +0200
+
 casper (1.92) gutsy; urgency=low
 
   [ Colin Watson ]

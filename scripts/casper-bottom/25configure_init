@@ -40,6 +40,9 @@ if [ -n "$USERNAME" ]; then
 		esac
 	done
     fi
+
+    # Since we use autologin, lastlog doesn't make sense on the console.
+    sed -i '/^[^#].*pam_lastlog\.so/s/^/# /' /root/etc/pam.d/login
 fi
 
 # This has the nice side effect of the cron.{daily,weekly,monthly} jobs in

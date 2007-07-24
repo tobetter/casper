@@ -63,6 +63,8 @@ if [ -x /root/bin/setupcon ] && [ -f /root/etc/default/console-setup ]; then
                 casper-preseed /root console-setup/variantcode '' false
                 casper-preseed /root console-setup/modelcode '' false
         fi
+
+        sed -i 's/CONSOLE_SCREEN=$/CONSOLE_SCREEN=setupcon/; t END; b; : END; n; b END' /root/etc/init.d/usplash
 else
         chroot /root /usr/sbin/install-keymap $kbd
         casper-preseed /root debian-installer/keymap "$kbd"

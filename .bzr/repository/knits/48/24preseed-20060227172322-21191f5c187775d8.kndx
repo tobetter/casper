@@ -1,9 +1,9 @@
 # bzr knit index 8
 
 colin.watson@canonical.com-20060227172850-0353743d19502189 fulltext 0 440  :
-tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 440 162 0 :
-colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93 line-delta 602 207 1 :
-colin.watson@canonical.com-20060518164754-5c83561b393e1859 line-delta 809 171 2 :
+tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 440 162 .colin.watson@canonical.com-20060227172850-0353743d19502189 :
+colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93 line-delta 602 207 .tfheen@ubuntu.com-20060511101145-7eff26852b90d05c :
+colin.watson@canonical.com-20060518164754-5c83561b393e1859 line-delta 809 171 .colin.watson@canonical.com-20060516103940-0bf26fbf0762ae93 :
 colin.watson@canonical.com-20060803125808-d2b530d90162863a line-delta 980 204 3 :
 colin.watson@canonical.com-20061004075713-820c70d1e0b15bed line-delta 1184 167 4 :
 tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 1351 139 5 :

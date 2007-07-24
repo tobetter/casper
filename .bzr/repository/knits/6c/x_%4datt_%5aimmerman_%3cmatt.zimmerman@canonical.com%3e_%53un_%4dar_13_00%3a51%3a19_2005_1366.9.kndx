@@ -2,25 +2,25 @@
 
 Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 fulltext 0 164  :
 Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 fulltext 164 168  :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-1 line-delta 332 179 1 0 :
-Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-2 line-delta 511 283 2 :
-tfheen@ubuntu.com-20051214123713-b0c607646607b738 line-delta 794 115 3 :
-tfheen@ubuntu.com-20051214124642-89138620ced37930 line-delta 909 233 4 :
-tfheen@ubuntu.com-20051214124825-89ead86bf4751314 line-delta 1142 272 5 :
-tfheen@ubuntu.com-20051214125455-ecccb700cd377fc9 line-delta 1414 149 6 :
-tfheen@ubuntu.com-20051214125614-dbe490c4b1519f04 line-delta 1563 157 7 :
-tfheen@ubuntu.com-20051214125932-6dcb0d911b12a48f line-delta 1720 287 8 :
-tfheen@ubuntu.com-20051219132042-a0f399338aaacf39 line-delta 2007 122 9 :
-tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 no-eol,line-delta 2129 229 10 :
-tfheen@ubuntu.com-20060123094356-673d98940c6c0a94 no-eol,line-delta 2358 235 11 :
-colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf line-delta 2593 176 11 :
-tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c line-delta 2769 238 13 12 :
-tfheen@ubuntu.com-20060411133748-e43472f5e52001dc line-delta 3007 190 14 :
-tfheen@ubuntu.com-20060411141541-6e87088e8da2ef74 line-delta 3197 196 15 :
-tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0 line-delta 3393 189 16 :
-tfheen@ubuntu.com-20060424074108-a4de498d1eac4983 line-delta 3582 216 17 :
-danjele@gmail.com-20060429171643-07d7080bf80fad80 line-delta 3798 204 18 :
-tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 4002 166 19 :
-tfheen@ubuntu.com-20060721105417-b34b612a0ce747dc line-delta 4168 211 20 :
+Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-1 line-delta 332 179 .Arch-1:matt.zimmerman@canonical.com--2004%casper--main--0--base-0 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--base-0 :
+Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-2 line-delta 511 283 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-1 :
+tfheen@ubuntu.com-20051214123713-b0c607646607b738 line-delta 794 115 .Arch-1:matt.zimmerman@canonical.com%casper--main--0--patch-2 :
+tfheen@ubuntu.com-20051214124642-89138620ced37930 line-delta 909 233 .tfheen@ubuntu.com-20051214123713-b0c607646607b738 :
+tfheen@ubuntu.com-20051214124825-89ead86bf4751314 line-delta 1142 272 .tfheen@ubuntu.com-20051214124642-89138620ced37930 :
+tfheen@ubuntu.com-20051214125455-ecccb700cd377fc9 line-delta 1414 149 .tfheen@ubuntu.com-20051214124825-89ead86bf4751314 :
+tfheen@ubuntu.com-20051214125614-dbe490c4b1519f04 line-delta 1563 157 .tfheen@ubuntu.com-20051214125455-ecccb700cd377fc9 :
+tfheen@ubuntu.com-20051214125932-6dcb0d911b12a48f line-delta 1720 287 .tfheen@ubuntu.com-20051214125614-dbe490c4b1519f04 :
+tfheen@ubuntu.com-20051219132042-a0f399338aaacf39 line-delta 2007 122 .tfheen@ubuntu.com-20051214125932-6dcb0d911b12a48f :
+tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 no-eol,line-delta 2129 229 .tfheen@ubuntu.com-20051219132042-a0f399338aaacf39 :
+tfheen@ubuntu.com-20060123094356-673d98940c6c0a94 no-eol,line-delta 2358 235 .tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 :
+colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf line-delta 2593 176 .tfheen@ubuntu.com-20060110094537-060e7579ee3ebe05 :
+tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c line-delta 2769 238 .colin.watson@canonical.com-20060120164015-92ddf1445fdd4acf .tfheen@ubuntu.com-20060123094356-673d98940c6c0a94 :
+tfheen@ubuntu.com-20060411133748-e43472f5e52001dc line-delta 3007 190 .tfheen@ubuntu.com-20060125132622-9c7c8b88d1494d5c :
+tfheen@ubuntu.com-20060411141541-6e87088e8da2ef74 line-delta 3197 196 .tfheen@ubuntu.com-20060411133748-e43472f5e52001dc :
+tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0 line-delta 3393 189 .tfheen@ubuntu.com-20060411141541-6e87088e8da2ef74 :
+tfheen@ubuntu.com-20060424074108-a4de498d1eac4983 line-delta 3582 216 .tfheen@ubuntu.com-20060411142432-5c8e49764aaaf8e0 :
+danjele@gmail.com-20060429171643-07d7080bf80fad80 line-delta 3798 204 .tfheen@ubuntu.com-20060424074108-a4de498d1eac4983 :
+tfheen@ubuntu.com-20060511101145-7eff26852b90d05c line-delta 4002 166 .danjele@gmail.com-20060429171643-07d7080bf80fad80 :
+tfheen@ubuntu.com-20060721105417-b34b612a0ce747dc line-delta 4168 211 .tfheen@ubuntu.com-20060511101145-7eff26852b90d05c :
 colin.watson@canonical.com-20060904143413-0f80fdc704418add line-delta 4379 213 21 :
 tfheen@err.no-20061005142623-f5c02d6d4d760aeb line-delta 4592 137 22 :

@@ -42,6 +42,7 @@ for x in $(cat /proc/cmdline); do
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats [orca]
+                        gct -s -t bool /apps/gksu/disable-grab true
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca gnome-mag
@@ -58,6 +59,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/sound/enable_esd false
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats [orca]
+                        gct -s -t bool /apps/gksu/disable-grab true
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca
@@ -73,6 +75,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
                         gct -s -t int /desktop/gnome/peripherals/keyboard/delay 700
                         gct -s -t int /desktop/gnome/peripherals/keyboard/rate 10
+                        gct -s -t bool /apps/gksu/disable-grab true
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/
                         if [ -e /target/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
                             sed -i 's/0/1/' /target/etc/xdg/xfce4/mcs_settings/keyboard.xml

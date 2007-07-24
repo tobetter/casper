@@ -1,3 +1,24 @@
+casper (1.94) gutsy; urgency=low
+
+  [ Colin Watson ]
+  * Hack around keyboard configuration not being done until after the keymap
+    is set by having /etc/init.d/usplash reconfigure the console
+    (LP: #68487).
+  * Disable pam_lastlog on the console if doing autologin (LP: #126800).
+
+  [ Luke Yelavich ]
+  * scripts/casper-bottom/30accessibility &
+    ubiquity-hooks/30accessibility:
+    - Prevent gksu from grabbing keyboard focus for the v2, v3, and m1
+      accessibility profiles. (LP: #67172)
+  * Start Orca when a Braille device is configured from choosing the
+    Braille option in the Accessibility menu. (Partially fixes Launchpad
+    bug #122024)
+  * Re-enable desktop sounds for the blindness accessibility profile, as
+    eSpeak should be able to speak alongside audio playback.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 24 Jul 2007 16:24:55 +0100
+
 casper (1.93) gutsy; urgency=low
 
   * revert gdm-cdd.conf handling for autologin to the chrooted code

@@ -37,6 +37,12 @@ parse_cmdline() {
                 export PERSISTENT="Yes" ;;
             nopersistent)
                 export PERSISTENT="" ;;
+            ip*)
+                STATICIP=${x#ip=}
+                if [ "${STATICIP}" = "" ]; then
+                    STATICIP="frommedia"
+                fi
+                export STATICIP ;;
         esac
     done
 }

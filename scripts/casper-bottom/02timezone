@@ -1,7 +1,6 @@
 #! /bin/sh
 
 PREREQ=""
-DESCRIPTION="Adding APT-CDROM source..."
 
 . /scripts/casper-functions
 

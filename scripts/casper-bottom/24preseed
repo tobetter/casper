@@ -20,6 +20,10 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
+if [ -e /preseed.cfg ]; then
+	chroot /root debconf-set-selections < /preseed.cfg
+fi
+
 location=
 for x in $(cat /proc/cmdline); do
 	case $x in

@@ -1,3 +1,10 @@
+casper (1.97) gutsy; urgency=low
+
+  * Fix paths in scripts/casper-bottom/10adduser and
+    scripts/casper-bottom/38disable_restricted_manager
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 29 Aug 2007 15:26:33 +0100
+
 casper (1.96) gutsy; urgency=low
 
   [ Colin Watson ]

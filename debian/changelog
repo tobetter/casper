@@ -1,3 +1,9 @@
+casper (1.98) gutsy; urgency=low
+
+  * Load /preseed.cfg if it exists in the initramfs.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 29 Aug 2007 16:18:27 +0100
+
 casper (1.97) gutsy; urgency=low
 
   * Fix paths in scripts/casper-bottom/10adduser and

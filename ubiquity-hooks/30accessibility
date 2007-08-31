@@ -41,7 +41,7 @@ for x in $(cat /proc/cmdline); do
                         # Moderate Visual Impairment
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats [orca]
+                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t bool /apps/gksu/disable-grab true
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
@@ -58,7 +58,7 @@ for x in $(cat /proc/cmdline); do
                         access=v3)
                         gct -s -t bool /desktop/gnome/sound/enable_esd false
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t list --list-type=string /desktop/gnome/accessibility/startup/exec_ats [orca]
+                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t bool /apps/gksu/disable-grab true
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then

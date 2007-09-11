@@ -18,7 +18,4 @@ prereqs)
        ;;
 esac
 
-mkdir -p /root/cdrom
-mount -n -o bind /cdrom /root/cdrom
 chroot /root apt-cdrom -m add
-umount /root/cdrom

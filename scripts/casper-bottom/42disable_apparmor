@@ -2,7 +2,7 @@
 # workaround for AppArmor bug #131976
 
 PREREQ=""
-DESCRIPTION="Disabling AppArmor profile for Cups..."
+DESCRIPTION="Disabling AppArmor (does not work with stacked file systems)..."
 
 . /scripts/casper-functions
 
@@ -21,9 +21,6 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-PROFILE=/root/etc/apparmor.d/usr.sbin.cupsd
-if [ -e "$PROFILE" ]; then
-    sed -i '/{/ s/{/flags=(complain) {/' $PROFILE
-fi
+chroot /root update-rc.d -f apparmor remove
 
 log_end_msg

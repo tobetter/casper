@@ -47,10 +47,9 @@ fi
 
 # This has the nice side effect of the cron.{daily,weekly,monthly} jobs in
 # /etc/crontab remaining disabled, yet also not run by anacron
-if [ -x /root/etc/init.d/anacron ]; then
-    for f in /root/etc/rc?.d/S??anacron; do
-        mv ${f} ${f%/*}/K00anacron
-    done
+if [ -x /root/usr/sbin/anacron ]; then
+    chroot /root dpkg-divert --add --rename --quiet /usr/sbin/anacron
+    ln -s /bin/true /usr/sbin/anacron
 fi
 
 # No point, really

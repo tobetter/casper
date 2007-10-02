@@ -18,11 +18,9 @@ prereqs)
        ;;
 esac
 
-log_begin_msg "$DESCRIPTION"
-
 if [ "$TERM_TYPE" = "serial" ]; then
     # Don't bother trying to configure or start X on a serial console
-    rm -f /etc/rc?.d/S??[gxk]dm
+    rm -f /root/etc/rc?.d/S??[gkx]dm
     exit 0
 fi
 
@@ -36,8 +34,13 @@ for x in $(cat /proc/cmdline); do
 		locale=*)
 			locale=${x#locale=}
 			;;
+		textonly)
+			exit 0
+			;;
 	esac
 done
+
+log_begin_msg "$DESCRIPTION"
 
 mount -n -o bind /sys /root/sys
 mount -n -o bind /proc /root/proc

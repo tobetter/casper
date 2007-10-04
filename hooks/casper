@@ -73,3 +73,9 @@ if [ -e /etc/casper.conf ]; then
     mkdir -p ${DESTDIR}/etc
     cp /etc/casper.conf ${DESTDIR}/etc
 fi
+
+if [ "$CASPER_GENERATE_UUID" ]; then
+    # Unique ID
+    mkdir -p $DESTDIR/conf
+    uuidgen -r > $DESTDIR/conf/uuid.conf
+fi

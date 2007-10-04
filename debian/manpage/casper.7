@@ -65,6 +65,11 @@ A path to a file present on the rootfs could be used to preseed debconf database
 .TP
 .BI "package/question=" VALUE
 All debian installed packages could be preseeded from command-line that way, beware of blanks spaces, they will interfere with parsing, use a preseed file in this case.
+.TP
+.BI ignore_uuid
+Do not check that any UUID embedded in the initramfs matches the discovered medium.
+.B casper
+may be told to generate a UUID by setting CASPER_GENERATE_UUID=1 when building the initramfs.
 
 .SH FILES
 .B /etc/casper.conf

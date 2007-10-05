@@ -67,11 +67,18 @@ do_stop ()
         return 0
     fi
 
-    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default; do
+    prompt=1
+    if grep -qs noprompt /proc/cmdline; then
+	prompt=
+    fi
+
+    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty); do
         cache_path "$path"
     done
 
     eject -p -m /cdrom >/dev/null 2>&1
+
+    [ "$prompt" ] || return 0
 
     stty sane < /dev/console
 

@@ -70,6 +70,9 @@ All debian installed packages could be preseeded from command-line that way, bew
 Do not check that any UUID embedded in the initramfs matches the discovered medium.
 .B casper
 may be told to generate a UUID by setting CASPER_GENERATE_UUID=1 when building the initramfs.
+.TP
+.BI noprompt
+Do not prompt to eject the CD on reboot.
 
 .SH FILES
 .B /etc/casper.conf

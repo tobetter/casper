@@ -513,12 +513,6 @@ find_livefs() {
     return 1
 }
 
-pulsate() {
-    if [ -x /sbin/usplash_write ]; then
-        /sbin/usplash_write "PULSATE"
-    fi
-}
-
 set_usplash_timeout() {
     if [ -x /sbin/usplash_write ]; then
         /sbin/usplash_write "TIMEOUT 120"
@@ -535,7 +529,6 @@ mountroot() {
 
     set_usplash_timeout
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
-    pulsate
     run_scripts /scripts/casper-premount
     [ "$quiet" != "y" ] && log_end_msg
 
@@ -583,7 +576,6 @@ mountroot() {
     maybe_break casper-bottom
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
 
-    pulsate
     run_scripts /scripts/casper-bottom
     [ "$quiet" != "y" ] && log_end_msg
 

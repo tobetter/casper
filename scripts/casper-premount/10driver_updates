@@ -98,12 +98,6 @@ find_driver_updates() {
     return 1
 }
 
-pulsate() {
-    if [ -x /sbin/usplash_write ]; then
-        /sbin/usplash_write "PULSATE"
-    fi
-}
-
 
 updates="false"
 

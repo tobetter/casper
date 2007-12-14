@@ -15,7 +15,7 @@ fi
 
 sys2dev() {
     sysdev=${1#/sys}
-    echo "/dev/$(udevinfo -q name -p ${sysdev} 2>/dev/null|| echo ${sysdev##*/})"
+    echo "/dev/$(/sbin/udevadm info -q name -p ${sysdev} 2>/dev/null|| echo ${sysdev##*/})"
 }
 
 subdevices() {
@@ -115,7 +115,7 @@ setup_loop() {
     local offset=$4
 
     modprobe ${MP_QUIET} -b "$module"
-    udevsettle
+    /sbin/udevadm settle
 
     if [ "$module" = loop ]; then
         if [ ! -e /dev/loop0 ]; then

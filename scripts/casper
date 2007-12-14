@@ -179,8 +179,8 @@ do_netmount() {
 
     modprobe "${MP_QUIET}" af_packet # For DHCP
 
-    udevtrigger
-    udevsettle
+    /sbin/udevadm trigger
+    /sbin/udevadm settle
 
     ipconfig ${DEVICE} /tmp/net-${DEVICE}.conf | tee /netboot.config
 

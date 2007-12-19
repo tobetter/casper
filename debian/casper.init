@@ -23,6 +23,9 @@ DO_SNAPSHOT=/sbin/${NAME}-snapshot
 # Exit if system was not booted by casper
 grep -qs boot=casper /proc/cmdline || exit 0
 
+# Exit if the system was booted from an ISO image rather than a physical CD
+grep -qs find_iso= /proc/cmdline && exit 0
+
 # Read configuration variable file if it is present
 [ -r /etc/$NAME.conf ] && . /etc/$NAME.conf
 

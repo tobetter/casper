@@ -42,7 +42,11 @@ EOF
 
 if [ -f /root/etc/sudoers ]; then
     if [ "${BUILD_SYSTEM}" = "Ubuntu" ]; then
-        grep -q '^%admin' /root/etc/sudoers && sed -i -e '/^%admin/s/ALL$/NOPASSWD: ALL/' /root/etc/sudoers || echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers
+	if grep -q '^%admin' /root/etc/sudoers; then
+	    sed -i -e '/^%admin/s/(ALL) ALL$/(ALL) NOPASSWD: ALL/' /root/etc/sudoers
+	else
+	    echo '%admin  ALL=(ALL) NOPASSWD: ALL' >> /root/etc/sudoers
+	fi
     elif [ "${BUILD_SYSTEM}" = "Debian" ]; then
 		echo "${USERNAME}  ALL=(ALL) NOPASSWD: ALL" >> /root/etc/sudoers
     fi

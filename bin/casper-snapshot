@@ -164,8 +164,7 @@ Is_same_mount ()
 Parse_args ()
 {
 	# Parse command line
-	ARGS="$1"
-	ARGUMENTS="`getopt --longoptions cow:,device:,output,resync-string:,type:,help,usage,version --name=${PROGRAM} --options c:d:o:t:r:,h,u,v --shell sh -- ${ARGS}`"
+	ARGUMENTS="`getopt --longoptions cow:,device:,output,resync-string:,type:,help,usage,version --name=${PROGRAM} --options c:d:o:t:r:,h,u,v --shell sh -- "$@"`"
 
 	if [ "$?" != "0" ]; then
 		echo "Terminating." >&2

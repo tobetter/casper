@@ -306,6 +306,7 @@ int main(int argc, char **argv) {
     free(checksum);
     free(checkfile);
   }
+  fclose(md5_file);
   if (failed) {
     usplash_urgent(pipe_fd, "Check finished: errors found in %d files!", failed);
   } else {

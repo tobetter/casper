@@ -34,7 +34,6 @@ kderc_addtoprefixes() {
         sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /root/etc/kderc
     fi
 }
-
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
@@ -61,9 +60,11 @@ for x in $(cat /proc/cmdline); do
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-                        if [ -e /root/usr/share/pycentral/gnome-orca/site-packages/orca/settings.py ]; then
-                            sed -i '/^enableSpeech\W/ s/True/False/;/^enableMagnifier/ s/False/True/' /root/usr/share/pycentral/gnome-orca/site-packages/orca/settings.py
-                        fi
+			if type orca >/dev/null 2>&1 ; then
+				mkdir -p /root/home/$USERNAME/.orca
+				echo "orca.settings.enableSpeech = True" >> /root/home/$USERNAME/.orca/orca-customizations.py
+				echo "orca.settings.enableMagnifier = True" >> /root/home/$USERNAME/.orca/orca-customizations.py
+			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
                         ;;
@@ -79,9 +80,11 @@ for x in $(cat /proc/cmdline); do
                         braille=ask)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-                        if [ -e /root/usr/share/pycentral/gnome-orca/site-packages/orca/settings.py ]; then
-                            sed -i '/^enableSpeech\W/ s/True/False/;/^enableBraille/ s/False/True/' /root/usr/share/pycentral/gnome-orca/site-packages/orca/settings.py
-                        fi
+			if type orca >/dev/null 2>&1 ; then
+				mkdir -p /root/home/$USERNAME/.orca
+				echo "orca.settings.enableSpeech = True" >> /root/home/$USERNAME/.orca/orca-customizations.py
+				echo "orca.settings.enableBraille = True" >> /root/home/$USERNAME/.orca/orca-customizations.py
+			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         ;;
                         # Minor Motor Difficulties

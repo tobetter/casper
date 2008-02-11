@@ -36,7 +36,7 @@ if [ -n "$USERNAME" ]; then
 					sed -i -e "s|^exec.*|exec /usr/bin/ubiquity noninteractive </dev/tty1 > /dev/tty1 2>\&1|" /root/etc/event.d/tty1
 					rm -f /root/etc/rc?.d/[SK]??[gkx]dm
 					;;
-				textonly)
+				textonly|automatic-ubiquity|only-ubiquity)
 					rm -f /root/etc/rc?.d/[SK]??[gkx]dm
 					;;
 			esac

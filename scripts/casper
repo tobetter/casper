@@ -37,6 +37,8 @@ parse_cmdline() {
                 export PERSISTENT="Yes" ;;
             nopersistent)
                 export PERSISTENT="" ;;
+            union=*)
+                export UNIONFS="${x#union=}";;
             ip*)
                 STATICIP=${x#ip=}
                 if [ "${STATICIP}" = "" ]; then
@@ -47,6 +49,9 @@ parse_cmdline() {
                 IGNORE_UUID="Yes" ;;
         esac
     done
+    if [ "${UNIONFS}" = "" ]; then
+        export UNIONFS="unionfs"
+    fi
 }
 
 is_casper_path() {
@@ -342,7 +347,7 @@ setup_unionfs() {
     image_directory="$1"
     rootmnt="$2"
 
-    modprobe "${MP_QUIET}" -b unionfs
+    modprobe "${MP_QUIET}" -b ${UNIONFS}
 
     # run-init can't deal with images in a subdir, but we're going to
     # move all of these away before it runs anyway.  No, we're not,
@@ -356,6 +361,8 @@ setup_unionfs() {
     rofslist=""
     if [ "${NETBOOT}" = "nfs" ] ; then
         roopt="nfsro" # go aroung a bug in nfs-unionfs locking
+    elif [ "${UNIONFS}" = "aufs" ]; then
+        roopt="rr"
     else
         roopt="ro"
     fi
@@ -398,7 +405,7 @@ setup_unionfs() {
 
     mount ${cowdevice} -t ${cow_fstype} -o rw,noatime /cow || panic "Can not mount $cowdevice on /cow"
 
-    mount -t unionfs -o noatime,dirs=/cow=rw:$rofsstring unionfs "$rootmnt" || panic "Unionfs mount failed"
+    mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
 
     # Adding other custom mounts
     if [ -n "${PERSISTENT}" ]; then

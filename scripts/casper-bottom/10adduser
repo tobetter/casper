@@ -67,12 +67,12 @@ if [ -L /root/home/$USERNAME/Examples ]; then
     mv /root/home/$USERNAME/Examples /root/home/$USERNAME/Desktop/
 fi
 
-if [ -f "/usr/bin/kdesktop" ]; then
+if [ -f "/root/usr/bin/kdesktop" ]; then
     if [ -f "/root/usr/share/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop.tobemoved" ]; then
       chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop.tobemoved /home/$USERNAME/Desktop/about-kubuntu.desktop
     fi
 fi
-if [ -f "/usr/lib/kde4/bin/plasma" ]; then
+if [ -f "/root/usr/lib/kde4/bin/plasma" ]; then
     if [ -f "/root/usr/share/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop.tobemoved" ]; then
       chroot /root ln -s /usr/share/doc/kde/HTML/en/kubuntu/about-kubuntu/index.html "/home/$USERNAME/Desktop/About Kubuntu"
       chroot /root chown $USERNAME.$USERNAME "/home/$USERNAME/Desktop/About Kubuntu"

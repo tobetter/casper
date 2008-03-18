@@ -225,7 +225,6 @@ Defaults ()
 	MOUNTP="/mnt/casper-snapshot"
 	COW="/cow"
 	DEV=""
-	DEST="${MOUNTP}/casper-sn.cpio.gz"
 	TYPE="cpio"
 	DESKTOP_LINK=/home/$USERNAME/Desktop/casper-snapshot
 
@@ -263,6 +262,18 @@ Defaults ()
 				TYPE="cpio" ;;
 			*)
 				Usage "Error: unrecognized snapshot type"
+				;;
+		esac
+		case "${TYPE}" in
+			cpio)
+				DEST="${MOUNTP}/casper-sn.cpio.gz" ;;
+			squashfs)
+				DEST="${MOUNTP}/casper-sn.squashfs" ;;
+			ext2)
+				DEST="${MOUNTP}/casper-sn.ext2" ;;
+			*)
+				echo "Internal error."
+				exit 1
 				;;
 		esac
 		#if [ -d 

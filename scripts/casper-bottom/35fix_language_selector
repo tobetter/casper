@@ -21,7 +21,7 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 if [ -e /root/usr/share/applications/language-selector.desktop ]; then
-    sed -i '/^Exec/ s|/usr/bin/gnome-language-selector|"& -n"|' /root/usr/share/applications/language-selector.desktop
+    sed -i '/^Exec/ s|/usr/bin/gnome-language-selector|& -n|' /root/usr/share/applications/language-selector.desktop
 
 fi
 

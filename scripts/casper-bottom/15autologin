@@ -48,6 +48,15 @@ if [ -f /root/etc/kde3/kdm/kdmrc ]; then
         /root/etc/kde3/kdm/kdmrc
 fi
 
+if [ -f /root/usr/lib/kde4/etc/kde4/kdm/kdmrc ]; then
+    # Configure KDM-KDE4 autologin
+    sed -i -r \
+        -e "s/^#?AutoLoginEnable=.*\$/AutoLoginEnable=true/" \
+        -e "s/^#?AutoLoginUser=.*\$/AutoLoginUser=$USERNAME/" \
+        -e "s/^#?AutoReLogin=.*\$/AutoReLogin=true/" \
+        /root/usr/lib/kde4/etc/kde4/kdm/kdmrc
+fi
+
 if chroot /root /usr/bin/which kpersonalizer >/dev/null; then
     # Disable first-login wizard for KDE
     if [ ! -f /root/etc/kde3/kpersonalizerrc ]; then

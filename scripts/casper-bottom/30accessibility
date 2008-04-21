@@ -25,6 +25,9 @@ gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gc
 
 gct() {
     if [ "$gconf_version" ]; then
+        if grep -q -- -ubiquity /proc/cmdline ; then
+            chroot /root gconftool-2 "$@"
+        fi
         chroot /root sudo -u "$USERNAME" gconftool-2 "$@"
     fi
 }
@@ -65,6 +68,9 @@ for x in $(cat /proc/cmdline); do
 				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableMagnifier = True" >> /root/home/$USERNAME/.orca/user-settings.py
+				if grep -q only-ubiquity /proc/cmdline ; then
+					cp -r /root/home/$USERNAME/.orca /root/root
+				fi
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
@@ -86,6 +92,9 @@ for x in $(cat /proc/cmdline); do
 				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableBraille = True" >> /root/home/$USERNAME/.orca/user-settings.py
+				if grep -q only-ubiquity /proc/cmdline ; then
+					cp -r /root/home/$USERNAME/.orca /root/root
+				fi
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true

@@ -1,3 +1,11 @@
+casper (1.132ubuntu0.1) hardy-proposed; urgency=low
+
+  * Do not scan only vfat volumes when looking for cow devices (LP: #230703)
+  * Allow casper to use a squashfs filesystem within an arbitrary path (LP:
+    #230716, #207137) 
+
+ -- Agostino Russo <agostino.russo@gmail.com>  Thu, 15 May 2008 22:10:50 +0100
+
 casper (1.131) hardy; urgency=low
 
   [ Luke Yelavich ]

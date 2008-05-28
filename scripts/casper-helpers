@@ -29,6 +29,17 @@ subdevices() {
     echo ${r}
 }
 
+is_supported_fs () {
+    # FIXME: do something better like the scan of supported filesystems
+    fstype="${1}"
+    case ${fstype} in
+        vfat|iso9660|udf|ext2|ext3|ntfs)
+            return 0
+            ;;
+    esac
+    return 1
+}
+
 get_fstype() {
     local FSTYPE
     local FSSIZE
@@ -177,7 +188,7 @@ find_cow_device() {
             if [ "$(/lib/udev/vol_id -l $devname 2>/dev/null)" = "${pers_label}" ]; then
                 echo "$devname"
                 return
-            elif [ "$(get_fstype ${devname})" = "vfat" ]; then # FIXME: all supported block devices should be scanned
+            elif is_supported_fs "$(get_fstype ${devname})"; then
                 mkdir -p "${cow_backing}"
                 try_mount "${devname}" "${cow_backing}" "rw"
                 if [ -e "${cow_backing}/${pers_label}" ]; then

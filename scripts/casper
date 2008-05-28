@@ -50,7 +50,7 @@ parse_cmdline() {
         esac
     done
     if [ "${UNIONFS}" = "" ]; then
-        export UNIONFS="unionfs"
+        export UNIONFS="aufs"
     fi
 }
 
@@ -123,17 +123,6 @@ is_nice_device() {
     if /lib/udev/path_id "${sysfs_path}" | grep -E -q "ID_PATH=(usb|pci-[^-]*-[ide|scsi|usb])"; then
         return 0
     fi
-    return 1
-}
-
-is_supported_fs () {
-    # FIXME: do something better like the scan of supported filesystems
-    fstype="${1}"
-    case ${fstype} in
-        vfat|iso9660|udf|ext2|ext3|ntfs)
-            return 0
-            ;;
-    esac
     return 1
 }
 
@@ -458,6 +447,16 @@ check_dev ()
     if [ -n "${LIVEMEDIA_OFFSET}" ]; then
         loopdevname=$(setup_loop "${devname}" "loop" "/sys/block/loop*" "${LIVEMEDIA_OFFSET}")
         devname="${loopdevname}" 
+    fi
+
+    if [ -d "${devname}" ]; then
+        mount -o bind "${devname}" $mountpoint || continue
+        if is_casper_path $mountpoint; then
+            echo $mountpoint
+            return 0
+        else
+            umount $mountpoint
+        fi
     fi
 
     fstype=$(get_fstype "${devname}")

@@ -188,7 +188,7 @@ find_cow_device() {
             if [ "$(/lib/udev/vol_id -l $devname 2>/dev/null)" = "${pers_label}" ]; then
                 echo "$devname"
                 return
-            elif is_supported_fs "$(get_fstype ${devname})"; then
+            elif [ "$(get_fstype ${devname})" = "vfat" ]; then # FIXME: all supported block devices should be scanned
                 mkdir -p "${cow_backing}"
                 try_mount "${devname}" "${cow_backing}" "rw"
                 if [ -e "${cow_backing}/${pers_label}" ]; then

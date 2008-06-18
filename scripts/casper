@@ -444,11 +444,6 @@ check_dev ()
         devname=$(sys2dev "${sysdev}")
     fi
 
-    if [ -n "${LIVEMEDIA_OFFSET}" ]; then
-        loopdevname=$(setup_loop "${devname}" "loop" "/sys/block/loop*" "${LIVEMEDIA_OFFSET}")
-        devname="${loopdevname}" 
-    fi
-
     if [ -d "${devname}" ]; then
         mount -o bind "${devname}" $mountpoint || continue
         if is_casper_path $mountpoint; then
@@ -457,6 +452,11 @@ check_dev ()
         else
             umount $mountpoint
         fi
+    fi
+
+    if [ -n "${LIVEMEDIA_OFFSET}" ]; then
+        loopdevname=$(setup_loop "${devname}" "loop" "/sys/block/loop*" "${LIVEMEDIA_OFFSET}")
+        devname="${loopdevname}" 
     fi
 
     fstype=$(get_fstype "${devname}")

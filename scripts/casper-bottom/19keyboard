@@ -33,11 +33,20 @@ for x in $(cat /proc/cmdline); do
                 console-setup/layoutcode=*)
                         cslayout=${x#console-setup/layoutcode=}
                         ;;
+                console-setup/layoutcode\?=*)
+                        cslayout=${x#console-setup/layoutcode\?=}
+                        ;;
                 console-setup/variantcode=*)
                         csvariant=${x#console-setup/variantcode=}
                         ;;
+                console-setup/variantcode\?=*)
+                        csvariant=${x#console-setup/variantcode\?=}
+                        ;;
                 console-setup/modelcode=*)
                         csmodel=${x#console-setup/modelcode=}
+                        ;;
+                console-setup/modelcode\?=*)
+                        csmodel=${x#console-setup/modelcode\?=}
                         ;;
         esac
 done

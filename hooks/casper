@@ -6,7 +6,7 @@ PREREQS=""
 # Output pre-requisites
 prereqs()
 {
-       echo "$PREREQ"
+       echo "$PREREQS"
 }
 
 case "$1" in

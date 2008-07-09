@@ -394,7 +394,7 @@ setup_unionfs() {
         fi
     fi
 
-    mount ${cowdevice} -t ${cow_fstype} -o ${cow_mountopt} /cow || panic "Can not mount $cowdevice on /cow"
+    mount -t ${cow_fstype} -o ${cow_mountopt} ${cowdevice} /cow || panic "Can not mount $cowdevice on /cow"
 
     mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
 

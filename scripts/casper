@@ -2,10 +2,7 @@
 
 # set -e
 
-export PATH=/root/usr/bin:/root/usr/sbin:/root/bin:/root/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-
-echo "/root/lib" >> /etc/ld.so.conf
-echo "/root/usr/lib" >> /etc/ld.so.conf
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 mountpoint=/cdrom
 

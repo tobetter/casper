@@ -28,7 +28,7 @@ if [ -n "$gpm_version" ]; then
 fi
 
 if [ -d /root/usr/share/kubuntu-default-settings/kde-profile/default/share/config ]; then
-    echo "disableHibernate=1" >> /root/usr/share/kubuntu-default-settings/kde-profile/default/share/config/power-managerrc
+    echo "disableHibernate=1" >> /root/usr/share/kubuntu-default-settings/kde-profile/default/share/config/guidance-power-managerrc
 fi
 
 log_end_msg

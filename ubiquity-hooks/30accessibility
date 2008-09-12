@@ -49,7 +49,7 @@ for x in $(cat /proc/cmdline); do
                           apt-install gnome-orca gnome-mag
                         fi
 
-			if chroot /target type orca >/dev/null 2>&1 ; then
+			if [ -x /target/usr/bin/orca ]; then
 				mkdir -p /target/home/$USERNAME/.orca
 				echo "import orca.settings" >> /target/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableSpeech = True" >> /target/home/$USERNAME/.orca/user-settings.py
@@ -74,7 +74,7 @@ for x in $(cat /proc/cmdline); do
                         braille=ask)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-                        if chroot /target type orca >/dev/null 2>&1 ; then
+                        if [ -x /target/usr/bin/orca ]; then
                                 mkdir -p /target/home/$USERNAME/.orca
 				echo "import orca.settings" >> /target/home/$USERNAME/.orca/user-settings.py
                                 echo "orca.settings.enableSpeech = False" >> /target/home/$USERNAME/.orca/user-settings.py

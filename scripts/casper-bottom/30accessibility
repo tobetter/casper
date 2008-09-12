@@ -63,7 +63,7 @@ for x in $(cat /proc/cmdline); do
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-			if type orca >/dev/null 2>&1 ; then
+			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.orca
 				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.orca/user-settings.py
@@ -87,7 +87,7 @@ for x in $(cat /proc/cmdline); do
                         braille=ask)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-			if type orca >/dev/null 2>&1 ; then
+			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.orca
 				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.orca/user-settings.py

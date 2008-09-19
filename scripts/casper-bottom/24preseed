@@ -47,6 +47,11 @@ for x in $(cat /proc/cmdline); do
 			umount /root/dev
 			location="/tmp/$(basename "$location")"
 			;;
+		*/*\?=*)
+			question="${x%%\?=*}"
+			value="${x#*\?=}"
+			casper-preseed /root "$question" "$value" false
+			;;
 		*/*=*)
 			question="${x%%=*}"
 			value="${x#*=}"

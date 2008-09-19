@@ -69,7 +69,7 @@ matches_uuid() {
     fi
     path="$1"
     uuid="$(cat /conf/uuid.conf)"
-    for try_uuid_file in "$mountpoint/.disk/casper-uuid"*; do
+    for try_uuid_file in "$path/.disk/casper-uuid"*; do
         [ -e "$try_uuid_file" ] || continue
         try_uuid="$(cat "$try_uuid_file")"
         if [ "$uuid" = "$try_uuid" ]; then
@@ -117,7 +117,7 @@ mount_images_in_directory() {
 
 is_nice_device() {
     sysfs_path="${1#/sys}"
-    if /lib/udev/path_id "${sysfs_path}" | grep -E -q "ID_PATH=(usb|pci-[^-]*-[ide|scsi|usb])"; then
+    if /lib/udev/path_id "${sysfs_path}" | grep -E -q "ID_PATH=(usb|pci-[^-]*-(ide|scsi|usb))"; then
         return 0
     fi
     return 1
@@ -491,7 +491,7 @@ find_livefs() {
         fi
     fi
     # or do the scan of block devices
-    for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -v loop | grep -v ram); do
+    for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -vE "/(loop|ram|fd)"; do
         devname=$(sys2dev "${sysblock}")
         fstype=$(get_fstype "${devname}")
         if /lib/udev/cdrom_id ${devname} > /dev/null; then

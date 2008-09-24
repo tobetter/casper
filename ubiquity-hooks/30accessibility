@@ -42,8 +42,8 @@ for x in $(cat /proc/cmdline); do
                         # Moderate Visual Impairment
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t bool /apps/gksu/disable-grab true
+                        gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca gnome-mag
@@ -55,6 +55,9 @@ for x in $(cat /proc/cmdline); do
 				echo "orca.settings.enableSpeech = True" >> /target/home/$USERNAME/.orca/user-settings.py
 				echo "orca.settings.enableMagnifier = True" >> /target/home/$USERNAME/.orca/user-settings.py
 				chroot /target chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
+				mkdir -p /target/home/$USERNAME/.config/autostart
+				cp /target/usr/share/applications/orca.desktop /target/home/$USERNAME/.config/autostart
+				chroot /target chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
 			fi
 
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
@@ -62,9 +65,14 @@ for x in $(cat /proc/cmdline); do
                         # Blindness
                         access=v3)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
+
+			if [ -x /target/usr/bin/orca ]; then
+				mkdir -p /target/home/$USERNAME/.config/autostart
+				cp /target/usr/share/applications/orca.desktop /target/home/$USERNAME/.config/autostart
+				chroot /target chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
+			fi
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca
@@ -80,6 +88,9 @@ for x in $(cat /proc/cmdline); do
                                 echo "orca.settings.enableSpeech = False" >> /target/home/$USERNAME/.orca/user-settings.py
                                 echo "orca.settings.enableBraille = True" >> /target/home/$USERNAME/.orca/user-settings.py
 				chroot /target chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
+				mkdir -p /target/home/$USERNAME/.config/autostart
+				cp /target/usr/share/applications/orca.desktop /target/home/$USERNAME/.config/autostart
+				chroot /target chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
                         fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity

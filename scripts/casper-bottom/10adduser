@@ -72,7 +72,7 @@ fi
 if [ -f "/root/usr/bin/plasma" ]; then
     if [ -f "/root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop.tobemoved" ]; then
       chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
-      chroot /root install -D -o $USERNAME -g $USERNAME /root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop.tobemoved /home/$USERNAME/Desktop/$(basename "$file")
+      chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop.tobemoved /home/$USERNAME/Desktop/$(basename "$file")
     fi
 fi
 

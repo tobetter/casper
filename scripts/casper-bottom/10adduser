@@ -76,4 +76,11 @@ if [ -f "/root/usr/bin/plasma" ]; then
     fi
 fi
 
+#Ubuntu MID wants to be installed with --automatic
+if [ -f "/root/usr/share/ubuntu-mid-default-settings/mid-gui-start" ]; then
+  if [ -f "/root/usr/share/applications/ubiquity-gtkui.desktop" ]; then
+    sed -i 's/--desktop/--automatic --desktop/' "/root/usr/share/applications/ubiquity-gtkui.desktop"
+  fi
+fi
+
 log_end_msg

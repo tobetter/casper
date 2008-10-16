@@ -62,6 +62,8 @@ for x in $(cat /proc/cmdline); do
                         # Moderate Visual Impairment
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
+                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
+                        gct -s -t string /desktop/gnome/applications/at/visual/exec orca
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.orca
 				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
@@ -71,9 +73,6 @@ for x in $(cat /proc/cmdline); do
 					cp -r /root/home/$USERNAME/.orca /root/root
 				fi
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
-				mkdir -p /root/home/$USERNAME/.config/autostart
-				cp /root/usr/share/applications/orca.desktop /root/home/$USERNAME/.config/autostart
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
@@ -84,16 +83,14 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
-
-			if [ -x /root/usr/bin/orca ]; then
-				mkdir -p /root/home/$USERNAME/.config/autostart
-				cp /root/usr/share/applications/orca.desktop /root/home/$USERNAME/.config/autostart
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
-			fi
+                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
+                        gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         ;;
                         # Braille
                         braille=ask)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
+                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
+                        gct -s -t string /desktop/gnome/applications/at/visual/exec orca
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.orca
 				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
@@ -103,9 +100,6 @@ for x in $(cat /proc/cmdline); do
 					cp -r /root/home/$USERNAME/.orca /root/root
 				fi
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
-				mkdir -p /root/home/$USERNAME/.config/autostart
-				cp /root/usr/share/applications/orca.desktop /root/home/$USERNAME/.config/autostart
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity

@@ -33,8 +33,8 @@ gct() {
 }
 
 kderc_addtoprefixes() {
-    if [ -e "/root/etc/kderc" ]; then
-        sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /root/etc/kderc
+    if [ -e "/root/etc/kde4rc" ]; then
+        sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /root/etc/kde4rc
     fi
 }
 for x in $(cat /proc/cmdline); do

@@ -33,7 +33,7 @@ is_supported_fs () {
     # FIXME: do something better like the scan of supported filesystems
     fstype="${1}"
     case ${fstype} in
-        vfat|iso9660|udf|ext2|ext3|ntfs)
+        vfat|iso9660|udf|ext2|ext3|ext4|ntfs)
             return 0
             ;;
     esac

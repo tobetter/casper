@@ -285,7 +285,7 @@ int main(int argc, char **argv) {
 
     while (rsize > 0) {
       csize += rsize;
-      usplash_progress(pipe_fd, floorl(100*((long double)csize)/tsize));
+      usplash_progress(pipe_fd, 100*((long double)csize)/tsize);
 
       md5_append(&state, (const md5_byte_t *)buf, rsize);
       rsize = read(check_fd, buf, sizeof(buf));

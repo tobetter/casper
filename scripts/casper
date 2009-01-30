@@ -30,6 +30,8 @@ fi
 parse_cmdline() {
     for x in $(cat /proc/cmdline); do
         case $x in
+            showmounts|show-cow)
+                export SHOWMOUNTS='Yes' ;;
             persistent)
                 export PERSISTENT="Yes" ;;
             nopersistent)
@@ -507,6 +509,7 @@ find_livefs() {
                 fi
             done
         elif [ "${fstype}" = "squashfs" -o \
+                "${fstype}" = "ext4" -o \
                 "${fstype}" = "ext3" -o \
                 "${fstype}" = "ext2" ]; then
             # This is an ugly hack situation, the block device has

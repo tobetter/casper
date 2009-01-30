@@ -50,6 +50,7 @@ manual_add_modules loop
 # random file system modules
 manual_add_modules vfat
 manual_add_modules ext3
+manual_add_modules ext4
 # needed for vfat. :-/
 manual_add_modules nls_cp437
 manual_add_modules nls_utf8

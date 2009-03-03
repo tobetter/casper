@@ -42,6 +42,22 @@ kderc_addtoprefixes() {
         sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /root/etc/kde4rc
     fi
 }
+
+# Code to remove an applet from the default panel setup
+# This is rather hacky, but I can't think of a one or two line regular
+# expression to do this any more efficiently. Patches welcome.
+# In addition, setting these via gconf also doesn't work for some reason.
+remove_applet()
+{
+	local line_no prior_line next_line
+
+	line_no=$(grep -n "<string>$1</string>" /root/usr/share/gconf/defaults/05_panel-default-setup.entries | cut -f 1 -d :)
+	prior_line=$((line_no-1))
+	next_line=$((line_no+1))
+	sed -i -n "${prior_line},${next_line}!p" /root/usr/share/gconf/defaults/05_panel-default-setup.entries
+	chroot /root update-gconf-defaults
+}
+
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
@@ -88,6 +104,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
+                        remove_applet fast_user_switch
                         ;;
                         # Braille
                         braille=ask)
@@ -104,6 +121,7 @@ for x in $(cat /proc/cmdline); do
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
+                        remove_applet fast_user_switch
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

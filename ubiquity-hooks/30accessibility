@@ -14,10 +14,13 @@ gct() {
 
 laptop_detect()
 {
-    if chroot /target /usr/sbin/laptop-detect ; then
-        echo "orca.settings.orcaModifierKeys = orca.settings.LAPTOP_MODIFIER_KEYS" >> /target/home/$USERNAME/.orca/user-settings.py
-        echo "orca.settings.keyboardLayout = orca.settings.GENERAL_KEYBOARD_LAYOUT_LAPTOP" >> /target/home/$USERNAME/.orca/user-settings.py
-    fi
+    if [ -x /target/usr/bin/orca ]; then
+        if chroot /target /usr/sbin/laptop-detect ; then
+            mkdir -p /target/home/$USERNAME/.orca
+            echo "orca.settings.orcaModifierKeys = orca.settings.LAPTOP_MODIFIER_KEYS" >> /target/home/$USERNAME/.orca/user-settings.py
+            echo "orca.settings.keyboardLayout = orca.settings.GENERAL_KEYBOARD_LAYOUT_LAPTOP" >> /target/home/$USERNAME/.orca/user-settings.py
+        fi
+   fi
 }
 
 kderc_addtoprefixes() {
@@ -93,6 +96,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         remove_applet fast_user_switch
+                        laptop_detect
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca

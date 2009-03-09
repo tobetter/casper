@@ -109,6 +109,8 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         remove_applet fast_user_switch
                         laptop_detect
+                        touch /root/etc/pulse/a11y_nostart
+                        sed -i -e 's/autospawn = yes/autospawn = no/g' /root/etc/pulse/client.conf
                         ;;
                         # Braille
                         braille=ask)

@@ -85,6 +85,7 @@ for x in $(cat /proc/cmdline); do
 				laptop_detect
 				chroot /target chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
 			fi
+                        sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
 
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
                         ;;
@@ -99,6 +100,7 @@ for x in $(cat /proc/cmdline); do
                         laptop_detect
                         touch /target/etc/pulse/a11y_nostart
                         sed -i -e 's/autospawn = yes/autospawn = no/g' /target/etc/pulse/client.conf
+                        sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca
@@ -120,6 +122,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         remove_applet fast_user_switch
+                        sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

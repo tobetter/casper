@@ -98,6 +98,7 @@ for x in $(cat /proc/cmdline); do
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
+                        sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /root/etc/sudoers
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
                         ;;
                         # Blindness
@@ -111,6 +112,7 @@ for x in $(cat /proc/cmdline); do
                         laptop_detect
                         touch /root/etc/pulse/a11y_nostart
                         sed -i -e 's/autospawn = yes/autospawn = no/g' /root/etc/pulse/client.conf
+                        sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /root/etc/sudoers
                         ;;
                         # Braille
                         braille=ask)
@@ -128,6 +130,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         remove_applet fast_user_switch
+                        sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /root/etc/sudoers
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

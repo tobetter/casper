@@ -101,6 +101,8 @@ for x in $(cat /proc/cmdline); do
                         touch /target/etc/pulse/a11y_nostart
                         sed -i -e 's/autospawn = yes/autospawn = no/g' /target/etc/pulse/client.conf
                         sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
+                        mkdir -p /root/home/$USERNAME/.orca
+                        chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca

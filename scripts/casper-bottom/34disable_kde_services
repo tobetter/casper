@@ -21,6 +21,7 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 rm -f /root/usr/share/services/kded/kwalletd.desktop
+rm -f /root/usr/share/kde4/services/kwalletd.desktop
 rm -f /root/usr/share/autostart/kab2kabc.desktop
 rm -f /root/usr/share/autostart/kabcdistlistupdater.desktop
 rm -f /root/usr/share/autostart/korgac.desktop

@@ -68,6 +68,11 @@ if [ -L /root/home/$USERNAME/Examples ]; then
     mv /root/home/$USERNAME/Examples /root/home/$USERNAME/Desktop/
 fi
 
+if [ -f /root/home/$USERNAME/examples.desktop ]; then
+    chroot /root install -o $USERNAME -g $USERNAME -d /home/$USERNAME/Desktop/
+    mv /root/home/$USERNAME/examples.desktop /root/home/$USERNAME/Desktop/
+fi
+
 #Kubuntu
 if [ -f "/root/usr/bin/plasma" ]; then
     if [ -f "/root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop" ]; then
@@ -80,6 +85,13 @@ fi
 if [ -f "/root/usr/share/ubuntu-mid-default-settings/mid-gui-start" ]; then
   if [ -f "/root/usr/share/applications/ubiquity-gtkui.desktop" ]; then
     sed -i 's/--desktop/--automatic --desktop/' "/root/usr/share/applications/ubiquity-gtkui.desktop"
+  fi
+fi
+
+#Ubuntu MID uses kourou, and the ubiquity icon should be easy to find
+if [ -f "/root/usr/lib/hildon-desktop/kourou.py" ]; then
+  if [ -f "/root/etc/xdg/menus/home.menu" ]; then
+    sed -i '/<\/Include>/i\		<Filename>ubiquity-gtkui.desktop</Filename>' "/root/etc/xdg/menus/home.menu"
   fi
 fi
 

@@ -25,7 +25,7 @@ chroot /root dpkg-divert --add --rename --quiet \
         /usr/sbin/update-initramfs
 # Running off a USB disk or other writable media.
 if [ -w /cdrom ]; then
-	cat > /root/usr/sbin/update-initramfs <<EOF
+	cat > /root/usr/sbin/update-initramfs <<'EOF'
 #! /bin/sh
 update-initramfs.distrib "$@"
 cp /initrd.img /cdrom/casper/initrd.gz

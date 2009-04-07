@@ -54,6 +54,7 @@ get_fstype() {
 where_is_mounted() {
     device=$1
     if grep -q "^$device " /proc/mounts; then
+        mountpoint="$(grep "^$device " /proc/mounts | head -n1 | awk '{print $2}')"
         grep "^$device " /proc/mounts | read d mountpoint rest
         echo $mountpoint
         return 0
@@ -190,7 +191,11 @@ find_cow_device() {
             if [ "$(/lib/udev/vol_id -l $devname 2>/dev/null)" = "${pers_label}" ]; then
                 echo "$devname"
                 return
-            elif [ "$(get_fstype ${devname})" = "vfat" ]; then # FIXME: all supported block devices should be scanned
+            # Do not add any filesystem types here that might be able to
+            # mount a journalled filesystem and replay the journal. Doing so
+            # will cause data loss when a live CD is booted on a system
+            # where filesystems are in use by hibernated operating systems.
+            elif [ "$(get_fstype ${devname})" = "vfat" ]; then
                 mkdir -p "${cow_backing}"
                 try_mount "${devname}" "${cow_backing}" "rw"
                 if [ -e "${cow_backing}/${pers_label}" ]; then

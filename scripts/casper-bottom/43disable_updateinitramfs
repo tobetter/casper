@@ -24,7 +24,8 @@ log_begin_msg "$DESCRIPTION"
 chroot /root dpkg-divert --add --rename --quiet \
         /usr/sbin/update-initramfs
 # Running off a USB disk or other writable media.
-if [ -w /cdrom ]; then
+if [ -w /cdrom ] && \
+   ! grep -q '^[^ ]* /cdrom [^ ]* [^ ]*\<ro\>' /proc/mounts; then
 	cat > /root/usr/sbin/update-initramfs <<'EOF'
 #! /bin/sh
 update-initramfs.distrib "$@"

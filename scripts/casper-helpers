@@ -1,8 +1,6 @@
 ## Casper helper functions, used by casper on boot and by casper-snapshot
 
-if [ "${BUILD_SYSTEM}" = "Ubuntu" ]; then
-    MP_QUIET="-Q"
-elif [ "${BUILD_SYSTEM}" = "Debian" ]; then
+if [ "${BUILD_SYSTEM}" = "Debian" ] || [ "${BUILD_SYSTEM}" = "Ubuntu" ]; then
     MP_QUIET="-q"
 else
     MP_QUIET=""

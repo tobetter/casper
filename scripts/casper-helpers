@@ -52,7 +52,7 @@ get_fstype() {
 where_is_mounted() {
     device=$1
     if grep -q "^$device " /proc/mounts; then
-        mountpoint="$(grep "^$device " /proc/mounts | head -n1 | awk '{print $2}')"
+        mountpoint="$(grep "^$device " /proc/mounts | awk '{print $2; exit}')"
         grep "^$device " /proc/mounts | read d mountpoint rest
         echo $mountpoint
         return 0

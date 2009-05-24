@@ -337,7 +337,15 @@ setup_unionfs() {
     image_directory="$1"
     rootmnt="$2"
 
-    modprobe "${MP_QUIET}" -b ${UNIONFS}
+    case ${UNIONFS} in
+        aufs|unionfs)
+            modprobe "${MP_QUIET}" -b ${UNIONFS} || true
+            if ! cut -f2 /proc/filesystems | grep -q "^${UNIONFS}\$" && \
+               [ -x /bin/unionfs-fuse ]; then
+                UNIONFS="unionfs-fuse"
+            fi
+            ;;
+    esac
 
     # run-init can't deal with images in a subdir, but we're going to
     # move all of these away before it runs anyway.  No, we're not,
@@ -353,6 +361,8 @@ setup_unionfs() {
         roopt="nfsro" # go aroung a bug in nfs-unionfs locking
     elif [ "${UNIONFS}" = "aufs" ]; then
         roopt="rr"
+    elif [ "${UNIONFS}" = "unionfs-fuse" ]; then
+        roopt="RO"
     else
         roopt="ro"
     fi
@@ -397,7 +407,14 @@ setup_unionfs() {
 
     mount -t ${cow_fstype} -o ${cow_mountopt} ${cowdevice} /cow || panic "Can not mount $cowdevice on /cow"
 
-    mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
+    case ${UNIONFS} in
+        unionfs-fuse)
+            (ulimit -n 16384; unionfs-fuse -o cow -o noinitgroups -o default_permissions -o allow_other -o use_ino -o suid /cow=RW:$rofsstring "$rootmnt" || panic "${UNIONFS} mount failed")
+            ;;
+        *)
+            mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
+            ;;
+    esac
 
     # Adding other custom mounts
     if [ -n "${PERSISTENT}" ]; then
@@ -433,7 +450,11 @@ setup_unionfs() {
     # move the first mount; no head in busybox-initramfs
     for d in $(mount -t squashfs | cut -d\  -f 3); do
         mkdir -p "${rootmnt}/rofs"
-        mount -o move "${d}" "${rootmnt}/rofs"
+        if [ "${UNIONFS}" = unionfs-fuse ]; then
+            mount -o bind "${d}" "${rootmnt}/rofs"
+        else
+            mount -o move "${d}" "${rootmnt}/rofs"
+        fi
         break
     done
 }
@@ -585,11 +606,21 @@ mountroot() {
 
     log_end_msg
 
+    # unionfs-fuse needs /dev to be bind-mounted for the duration of
+    # casper-bottom; udev's init script will take care of things after that
+    if [ "${UNIONFS}" = unionfs-fuse ]; then
+        mount -n -o bind /dev "${rootmnt}/dev"
+    fi
+
     maybe_break casper-bottom
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-bottom"
 
     run_scripts /scripts/casper-bottom
     [ "$quiet" != "y" ] && log_end_msg
+
+    if [ "${UNIONFS}" = unionfs-fuse ]; then
+        umount "${rootmnt}/dev"
+    fi
 
     exec 1>&6 6>&-
     exec 2>&7 7>&-

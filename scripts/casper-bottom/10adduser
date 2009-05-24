@@ -96,7 +96,7 @@ if [ -f "/root/usr/lib/hildon-desktop/kourou.py" ]; then
 fi
 
 #Ubuntu Netbook Remix needs Categories=Favorites for ubiquity
-if grep -q "Categories=Favorites;" "/root/usr/share/applications/firefox-fav.desktop"; then
+if grep -qs "Categories=Favorites;" "/root/usr/share/applications/firefox-fav.desktop"; then
   if [ -f "/root/usr/share/applications/ubiquity-gtkui.desktop" ]; then
     sed -i '/^Categories/s/$/Favorites;/' "/root/usr/share/applications/ubiquity-gtkui.desktop"
   fi

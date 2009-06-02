@@ -47,7 +47,7 @@ fi
 # /etc/crontab remaining disabled, yet also not run by anacron
 if [ -x /root/usr/sbin/anacron ]; then
 	chroot /root dpkg-divert --add --rename --quiet /usr/sbin/anacron
-	ln -s /bin/true /usr/sbin/anacron
+	ln -s /bin/true /root/usr/sbin/anacron
 fi
 
 # No point, really

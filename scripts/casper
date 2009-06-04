@@ -5,6 +5,7 @@
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 mountpoint=/cdrom
+LIVE_MEDIA_PATH=casper
 
 root_persistence="casper-rw"
 home_persistence="home-rw"
@@ -46,6 +47,9 @@ parse_cmdline() {
                 export STATICIP ;;
             ignore_uuid)
                 IGNORE_UUID="Yes" ;;
+            live-media-path=*)
+                LIVE_MEDIA_PATH="${x#live-media-path=}"
+                export LIVE_MEDIA_PATH ;;
         esac
     done
     if [ "${UNIONFS}" = "" ]; then
@@ -55,10 +59,10 @@ parse_cmdline() {
 
 is_casper_path() {
     path=$1
-    if [ -d "$path/casper" ]; then
-        if [ "$(echo $path/casper/*.squashfs)" != "$path/casper/*.squashfs" ] ||
-            [ "$(echo $path/casper/*.ext2)" != "$path/casper/*.ext2" ] ||
-            [ "$(echo $path/casper/*.dir)" != "$path/casper/*.dir" ]; then
+    if [ -d "$path/$LIVE_MEDIA_PATH" ]; then
+        if [ "$(echo $path/$LIVE_MEDIA_PATH/*.squashfs)" != "$path/$LIVE_MEDIA_PATH/*.squashfs" ] ||
+            [ "$(echo $path/$LIVE_MEDIA_PATH/*.ext2)" != "$path/$LIVE_MEDIA_PATH/*.ext2" ] ||
+            [ "$(echo $path/$LIVE_MEDIA_PATH/*.dir)" != "$path/$LIVE_MEDIA_PATH/*.dir" ]; then
             return 0
         fi
     fi
@@ -108,10 +112,10 @@ match_files_in_dir() {
 mount_images_in_directory() {
     directory="$1"
     rootmnt="$2"
-    if match_files_in_dir "$directory/casper/*.squashfs" ||
-        match_files_in_dir "$directory/casper/*.ext2" ||
-        match_files_in_dir "$directory/casper/*.dir"; then
-        setup_unionfs "$directory/casper" "$rootmnt"
+    if match_files_in_dir "$directory/$LIVE_MEDIA_PATH/*.squashfs" ||
+        match_files_in_dir "$directory/$LIVE_MEDIA_PATH/*.ext2" ||
+        match_files_in_dir "$directory/$LIVE_MEDIA_PATH/*.dir"; then
+        setup_unionfs "$directory/$LIVE_MEDIA_PATH" "$rootmnt"
     else
         :
     fi
@@ -434,11 +438,11 @@ setup_unionfs() {
 
     if [ -n "${SHOWMOUNTS}" ]; then
         for d in ${rofslist}; do
-            mkdir -p "${rootmnt}/casper/${d##*/}"
+            mkdir -p "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
             case d in
-                *.dir) # do nothing # mount -o bind "${d}" "${rootmnt}/casper/${d##*/}"
+                *.dir) # do nothing # mount -o bind "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
                     ;;
-                *) mount -o move "${d}" "${rootmnt}/casper/${d##*/}"
+                *) mount -o move "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
                     ;;
             esac
         done
@@ -555,6 +559,8 @@ mountroot() {
     exec 7>&2
     exec > casper.log
     exec 2>&1
+    tail -f casper.log >&7 &
+    tailpid="$!"
 
     parse_cmdline
 
@@ -624,5 +630,6 @@ mountroot() {
 
     exec 1>&6 6>&-
     exec 2>&7 7>&-
+    kill "$tailpid"
     cp casper.log "${rootmnt}/var/log/"
 }

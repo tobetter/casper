@@ -302,7 +302,16 @@ try_snap ()
             fi
         else
             # cpio.gz snapshot
-            if ! (cd "${snap_mount}" && zcat "${snapback}/${snapfile}" | cpio -i -u -d 2>/dev/null) ; then
+            # Unfortunately klibc's cpio is incompatible with the rest of
+            # the world; everything else requires -u -d, while klibc doesn't
+            # implement them. Try to detect whether it's in use.
+            cpiopath="$(which cpio)" || true
+            if [ "$cpiopath" ] && grep -aq /lib/klibc "$cpiopath"; then
+                cpioargs=
+            else
+                cpioargs='-u -d'
+            fi
+            if ! (cd "${snap_mount}" && zcat "${snapback}/${snapfile}" | cpio -i $cpioargs 2>/dev/null) ; then
                 log_warning_msg "Impossible to include the ${snapfile} Snapshot"
                 return 1
             fi
@@ -333,7 +342,7 @@ try_snap ()
             return 1
         fi
     fi
-    echo "export ${snap_type}SNAP="${snap_mount}":${snapdev}:${snapfile}" >> /etc/casper.conf # for resync on reboot/halt
+    echo "export ${snap_type}SNAP="/cow${snap_mount#$rootmnt}":${snapdev}:${snapfile}" >> /etc/casper.conf # for resync on reboot/halt
     return 0
 }
 
@@ -362,7 +371,7 @@ setup_unionfs() {
     rofsstring=""
     rofslist=""
     if [ "${NETBOOT}" = "nfs" ] ; then
-        roopt="nfsro" # go aroung a bug in nfs-unionfs locking
+        roopt="nfsro" # work around a bug in nfs-unionfs locking
     elif [ "${UNIONFS}" = "aufs" ]; then
         roopt="rr"
     elif [ "${UNIONFS}" = "unionfs-fuse" ]; then
@@ -414,6 +423,8 @@ setup_unionfs() {
     case ${UNIONFS} in
         unionfs-fuse)
             (ulimit -n 16384; unionfs-fuse -o cow -o noinitgroups -o default_permissions -o allow_other -o use_ino -o suid /cow=RW:$rofsstring "$rootmnt" || panic "${UNIONFS} mount failed")
+            mkdir -p /dev/.initramfs/varrun
+            pidof unionfs-fuse >> /dev/.initramfs/varrun/sendsigs.omit || true
             ;;
         *)
             mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
@@ -442,7 +453,12 @@ setup_unionfs() {
             case d in
                 *.dir) # do nothing # mount -o bind "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
                     ;;
-                *) mount -o move "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
+                *)
+                    if [ "${UNIONFS}" = unionfs-fuse ]; then
+                        mount -o bind "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
+                    else
+                        mount -o move "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
+                    fi
                     ;;
             esac
         done
@@ -632,4 +648,7 @@ mountroot() {
     exec 2>&7 7>&-
     kill "$tailpid"
     cp casper.log "${rootmnt}/var/log/"
+    if [ -f /etc/casper.conf ]; then
+        cp /etc/casper.conf "${rootmnt}/etc/"
+    fi
 }

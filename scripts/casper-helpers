@@ -172,7 +172,9 @@ try_mount ()
     opts="${3}"
 
     if where_is_mounted ${dev} > /dev/null; then
+    if [ "${opts}" != "ro" ]; then
         mount -o remount,"${opts}" ${dev} $(where_is_mounted ${dev}) || panic "Remounting failed"
+    fi
         mount -o bind $(where_is_mounted ${dev}) ${mountp} || panic "Cannot bind-mount"
     else
         mount -t $(get_fstype "${dev}") -o "${opts}" "${dev}" "${mountp}" || panic "Cannot mount ${dev} on ${mountp}"

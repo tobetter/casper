@@ -380,6 +380,7 @@ setup_unionfs() {
     mkdir -p /cow
     cowdevice="tmpfs"
     cow_fstype="tmpfs"
+    cow_mountopt="rw,noatime,mode=755"
 
     # Looking for "${root_persistence}" device or file
     if [ -n "${PERSISTENT}" ]; then
@@ -387,12 +388,13 @@ setup_unionfs() {
         if [ -b "${cowprobe}" ]; then
             cowdevice=${cowprobe}
             cow_fstype=$(get_fstype "${cowprobe}")
+	    cow_mountopt="rw,noatime"
         else
             [ "$quiet" != "y" ] && log_warning_msg "Unable to find the persistent medium"
         fi
     fi
 
-    mount ${cowdevice} -t ${cow_fstype} -o rw,noatime,mode=755 /cow || panic "Can not mount $cowdevice on /cow"
+    mount ${cowdevice} -t ${cow_fstype} -o ${cow_mountopt} /cow || panic "Can not mount $cowdevice on /cow"
 
     mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
 

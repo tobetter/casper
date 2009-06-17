@@ -1,3 +1,12 @@
+casper (1.132ubuntu0.3) hardy-proposed; urgency=low
+
+  * Backports from trunk to fix persistence:
+    - Do not use mode= when mounting /cow using persistent mode (LP: #219192).
+    - Skip remounting read-only in try_mount as it's unnecessary and breaks
+      persistence.  Thanks James Westby (LP: #274076).
+
+ -- Evan Dandrea <evand@ubuntu.com>  Wed, 17 Jun 2009 10:39:35 +0100
+
 casper (1.132ubuntu0.2) hardy-proposed; urgency=low
 
   * Test if livemedia is a directory before trying to mount it as a

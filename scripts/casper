@@ -49,7 +49,8 @@ parse_cmdline() {
                 IGNORE_UUID="Yes" ;;
             live-media-path=*)
                 LIVE_MEDIA_PATH="${x#live-media-path=}"
-                export LIVE_MEDIA_PATH ;;
+                export LIVE_MEDIA_PATH
+                echo "export LIVE_MEDIA_PATH=\"$LIVE_MEDIA_PATH\"" >> /etc/casper.conf ;;
         esac
     done
     if [ "${UNIONFS}" = "" ]; then

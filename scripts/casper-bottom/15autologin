@@ -20,10 +20,9 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-# chroot needed to handle symlinks correctly
-if [ -e /root/etc/gdm ]; then
+if [ -d /root/etc/gdm ]; then
     # Configure GDM autologin
-    cat <<EOF > /root/etc/gdm/gdm.conf-custom
+    cat > /root/etc/gdm/custom.conf <<EOF
 [daemon]
 AutomaticLoginEnable=true
 AutomaticLogin=ubuntu

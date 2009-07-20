@@ -25,7 +25,7 @@ if [ -d /root/etc/gdm ]; then
     cat > /root/etc/gdm/custom.conf <<EOF
 [daemon]
 AutomaticLoginEnable=true
-AutomaticLogin=ubuntu
+AutomaticLogin=$USERNAME
 TimedLoginEnable=true
 TimedLogin=$USERNAME
 TimedLoginDelay=10

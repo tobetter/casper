@@ -28,7 +28,7 @@ gct() {
     fi
 }
 
-if ! $(gct -g /apps/netbook-launcher/favorites/favorites_list | grep -q ubiquity) ; then
+if ! gct -g /apps/netbook-launcher/favorites/favorites_list | grep -q ubiquity; then
     gct -s -t string /apps/netbook-launcher/favorites/ubiquity/type application
     gct -s -t string /apps/netbook-launcher/favorites/ubiquity/desktop_file /usr/share/applications/ubiquity-gtkui.desktop
     favs=$(gct -g /apps/netbook-launcher/favorites/favorites_list)

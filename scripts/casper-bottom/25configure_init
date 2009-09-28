@@ -26,8 +26,8 @@ if [ -n "$USERNAME" ]; then
 	if [ -f /root/etc/inittab ]; then
 		sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(tty[0-9]*\).*$|\1:/bin/login -f $USERNAME </dev/\2 >/dev/\2 2>\&1|" /root/etc/inittab
 	fi
-	if [ "/root/etc/event.d/tty*" != "$(echo /root/etc/event.d/tty*)" ]; then
-		for f in /root/etc/event.d/tty*; do
+	if [ "/root/etc/init/tty*" != "$(echo /root/etc/init/tty*)" ]; then
+		for f in /root/etc/init/tty*; do
 			sed -i -e "s|^exec.*|exec /bin/login -f $USERNAME </dev/$(basename $f) > /dev/$(basename $f) 2>\&1|" $f
 		done
 		for x in $(cat /proc/cmdline); do

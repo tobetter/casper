@@ -100,8 +100,8 @@ for x in $(cat /proc/cmdline); do
                         remove_applet fast_user_switch
 			if [ -x /root/usr/bin/pulse-session ]; then
 				mkdir -p /root/var/lib/pulseaudio
-				touch /root/var/lib/pulseaudio/.pulse_a11y_nostart
-				chroot /root chown root.root /var/lib/pulseaudio/.pulse_a11y_nostart
+				touch /root/var/lib/pulseaudio/pulse_a11y_nostart
+				chroot /root chown root.root /var/lib/pulseaudio/pulse_a11y_nostart
 				mkdir -p /root/home/$USERNAME/.pulse
 				echo "autospawn = no" > /root/home/$USERNAME/.pulse/client.conf
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.pulse
@@ -130,8 +130,8 @@ for x in $(cat /proc/cmdline); do
                         sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /root/etc/sudoers
 			if [ -x /root/usr/bin/pulse-session ]; then
 				mkdir -p /root/var/lib/pulseaudio
-				touch /root/var/lib/pulseaudio/.pulse_a11y_nostart
-				chroot /root chown root.root /var/lib/pulseaudio/.pulse_a11y_nostart
+				touch /root/var/lib/pulseaudio/pulse_a11y_nostart
+				chroot /root chown root.root /var/lib/pulseaudio/pulse_a11y_nostart
 				mkdir -p /root/home/$USERNAME/.pulse
 				echo "autospawn = no" > /root/home/$USERNAME/.pulse/client.conf
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.pulse

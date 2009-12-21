@@ -22,14 +22,21 @@ log_begin_msg "$DESCRIPTION"
 
 if [ -d /root/etc/gdm ]; then
     # Configure GDM autologin
-    cat > /root/etc/gdm/custom.conf <<EOF
-[daemon]
-AutomaticLoginEnable=true
-AutomaticLogin=$USERNAME
-TimedLoginEnable=true
-TimedLogin=$USERNAME
-TimedLoginDelay=10
-EOF
+    GDMCustomFile=/root/etc/gdm/custom.conf
+    AutologinParameters="AutomaticLoginEnable=true\n\
+AutomaticLogin=$USERNAME\n\
+TimedLoginEnable=true\n\
+TimedLogin=$USERNAME\n\
+TimedLoginDelay=10"
+
+    # Prevent from updating if parameters already present (persistent usb key)
+    if ! `grep -qs 'AutomaticLoginEnable' $GDMCustomFile` ; then
+        if `grep -qs '\[daemon\]' $GDMCustomFile` ; then
+            sed -i "s/\[daemon\]/\[daemon\]\n$AutologinParameters/" $GDMCustomFile
+        else
+            echo "[daemon]\n$AutologinParameters" >> $GDMCustomFile
+        fi
+    fi
 fi
 
 if [ -f /root/etc/kde4/kdm/kdmrc ]; then

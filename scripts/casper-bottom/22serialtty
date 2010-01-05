@@ -3,8 +3,6 @@
 PREREQ=""
 DESCRIPTION="Setting up a serial tty..."
 
-. /scripts/casper-functions
-
 prereqs()
 {
        echo "$PREREQ"
@@ -17,6 +15,8 @@ prereqs)
        exit 0
        ;;
 esac
+
+. /scripts/casper-functions
 
 for x in $(cat /proc/cmdline); do
     case $x in

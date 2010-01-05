@@ -1,8 +1,6 @@
 #!/bin/sh
 
 PREREQ=""
-. /scripts/casper-functions
-. /scripts/casper-helpers
 
 prereqs()
 {
@@ -16,6 +14,9 @@ prereqs)
        exit 0
        ;;
 esac
+
+. /scripts/casper-functions
+. /scripts/casper-helpers
 
 mountpoint=/cdrom
 

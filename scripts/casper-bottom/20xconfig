@@ -2,8 +2,6 @@
 
 PREREQ=""
 
-. /scripts/casper-functions
-
 prereqs()
 {
        echo "$PREREQ"
@@ -16,6 +14,8 @@ prereqs)
        exit 0
        ;;
 esac
+
+. /scripts/casper-functions
 
 if grep -q xforcevesa /proc/cmdline 2>&1 >/dev/null; then
 	cat > /root/etc/X11/xorg.conf << EOF

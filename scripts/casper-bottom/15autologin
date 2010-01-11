@@ -34,7 +34,7 @@ TimedLoginDelay=10"
         if `grep -qs '\[daemon\]' $GDMCustomFile` ; then
             sed -i "s/\[daemon\]/\[daemon\]\n$AutologinParameters/" $GDMCustomFile
         else
-            printf '[daemon]\n%s' "$AutologinParameters" >> $GDMCustomFile
+            printf "[daemon]\n$AutologinParameters" >> $GDMCustomFile
         fi
     fi
 fi

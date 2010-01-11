@@ -1,3 +1,9 @@
+casper (1.213) lucid; urgency=low
+
+  * printf does not evaluate escape characters in the argument string.
+
+ -- Evan Dandrea <evand@ubuntu.com>  Mon, 11 Jan 2010 11:02:12 +0000
+
 casper (1.212) lucid; urgency=low
 
   [ Martin Pitt ]
@@ -13,7 +19,7 @@ casper (1.212) lucid; urgency=low
     2.3.1+bzr1312-0ubuntu3 and ifupdown 0.6.8ubuntu26 now no-op when
     they detect the live CD environment.
 
- -- Evan Dandrea <evand@ubuntu.com>  Fri, 08 Jan 2010 19:56:27 +0000
+ -- Evan Dandrea <evand@ubuntu.com>  Fri, 08 Jan 2010 20:31:26 +0000
 
 casper (1.211) lucid; urgency=low
 

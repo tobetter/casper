@@ -24,28 +24,28 @@ if [ -e /preseed.cfg ]; then
 	chroot /root debconf-set-selections < /preseed.cfg
 fi
 
-location=
+locations=
 for x in $(cat /proc/cmdline); do
 	case $x in
 		preseed/file=*)
-			location="${x#preseed/file=}"
+			locations="${x#preseed/file=} $locations"
 			;;
 		file=*)
-			location="${x#file=}"
+			locations="${x#file=} $locations"
 			;;
 		url=*)
-			location="${x#url=}"
+			url_location="${x#url=}"
 			mount -n -o bind /sys /root/sys
 			mount -n -o bind /proc /root/proc
 			mount -n -o bind /dev /root/dev
 			mkdir -p /root/var/run/network
 			[ "$NETBOOT" ] || chroot /root dhclient eth0
-			chroot /root wget -P /tmp "$location"
+			chroot /root wget -P /tmp "$url_location"
 			[ "$NETBOOT" ] || chroot /root ifconfig eth0 down
 			umount /root/sys
 			umount /root/proc
 			umount /root/dev
-			location="/tmp/$(basename "$location")"
+			locations="/tmp/$(basename "$url_location") $locations"
 			;;
 		*/*\?=*)
 			question="${x%%\?=*}"
@@ -64,8 +64,10 @@ for x in $(cat /proc/cmdline); do
 	esac
 done
 
-if [ "$location" ]; then
-	chroot /root debconf-set-selections < "/root$location"
+if [ "$locations" ]; then
+	for item in $locations; do
+		chroot /root debconf-set-selections < "/root$item"
+	done
 fi
 
 reply="$(echo "GET preseed/early_command" | chroot /root debconf-communicate -fnoninteractive casper)"

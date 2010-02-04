@@ -17,6 +17,7 @@ prereqs)
 esac
 
 . /scripts/casper-functions
+load_confmodule
 
 log_begin_msg "$DESCRIPTION"
 

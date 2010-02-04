@@ -17,11 +17,12 @@ prereqs)
 esac
 
 . /scripts/casper-functions
+load_confmodule
 
 log_begin_msg "$DESCRIPTION"
 
 if [ -e /preseed.cfg ]; then
-	chroot /root debconf-set-selections < /preseed.cfg
+	casper-set-selections /preseed.cfg
 fi
 
 locations=
@@ -66,14 +67,12 @@ done
 
 if [ "$locations" ]; then
 	for item in $locations; do
-		chroot /root debconf-set-selections < "/root$item"
+		casper-set-selections "/root$item"
 	done
 fi
 
-reply="$(echo "GET preseed/early_command" | chroot /root debconf-communicate -fnoninteractive casper)"
-if [ "${reply#0 }" != "$reply" ]; then
-	reply="${reply#0 }"
-	sh -c "$reply"
+if db_get preseed/early_command && [ "$RET" ]; then
+	sh -c "$RET"
 fi
 
 # Clear out debconf database backup files to save memory.

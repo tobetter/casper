@@ -3,6 +3,7 @@ bin/casper-login		sbin
 bin/casper-new-uuid		sbin
 bin/casper-preseed		usr/share/casper
 bin/casper-reconfigure		usr/share/casper
+bin/casper-set-selections	usr/share/casper
 bin/casper-snapshot		sbin
 hooks				usr/share/initramfs-tools
 scripts				usr/share/initramfs-tools

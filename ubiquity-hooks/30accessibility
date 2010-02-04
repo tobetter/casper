@@ -91,15 +91,8 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
+                        gct -s -t string /apps/empathy/conversation/theme classic                        
                         remove_applet fast_user_switch
-			if [ -x /target/usr/bin/pulse-session ]; then
-				mkdir -p /target/var/lib/pulseaudio
-				touch /target/var/lib/pulseaudio/pulse_a11y_nostart
-				chroot /target chown root.root /var/lib/pulseaudio/pulse_a11y_nostart
-				mkdir -p /target/home/$TARGET_USERNAME/.pulse
-				echo "autospawn = no" > /target/home/$TARGET_USERNAME/.pulse/client.conf
-				chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.pulse
-			fi
                         sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
 			if [ -x /target/usr/bin/orca ]; then
 				if [ -f /home/$USERNAME/.orca/user-settings.py ]; then
@@ -134,16 +127,9 @@ for x in $(cat /proc/cmdline); do
                         fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
+                        gct -s -t string /apps/empathy/conversation/theme classic                        
                         remove_applet fast_user_switch
                         sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
-			if [ -x /target/usr/bin/pulse-session ]; then
-				mkdir -p /target/var/lib/pulseaudio
-				touch /target/var/lib/pulseaudio/pulse_a11y_nostart
-				chroot /target chown root.root /var/lib/pulseaudio/pulse_a11y_nostart
-				mkdir -p /target/home/$TARGET_USERNAME/.pulse
-				echo "autospawn = no" > /target/home/$TARGET_USERNAME/.pulse/client.conf
-				chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.pulse
-			fi
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

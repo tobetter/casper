@@ -20,6 +20,6 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-chroot /root dpkg -P gdm-guest-session || true
+chroot /root rm -rf /usr/share/gdm/guest-session
 
 log_end_msg

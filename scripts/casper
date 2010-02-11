@@ -125,7 +125,7 @@ mount_images_in_directory() {
 
 is_nice_device() {
     sysfs_path="${1#/sys}"
-    if /lib/udev/path_id "${sysfs_path}" | grep -E -q "ID_PATH=(usb|pci-[^-]*-(ide|scsi|usb)|platform-orion-ehci|platform-mmc|platform-mxsdhci)"; then
+    if /lib/udev/path_id "${sysfs_path}" | egrep -q "ID_PATH=(usb|pci-[^-]*-(ide|scsi|usb)|platform-orion-ehci|platform-mmc|platform-mxsdhci)"; then
         return 0
     fi
     if echo ${sysfs_path} | grep -q "^/block/dm-"; then
@@ -545,7 +545,7 @@ find_livefs() {
         fi
     fi
     # or do the scan of block devices
-    for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -vE "/(loop|ram|fd)"); do
+    for sysblock in $(echo /sys/block/* | tr ' ' '\n' | egrep -v "/(loop|ram|fd)"); do
         devname=$(sys2dev "${sysblock}")
         [ -e "$devname" ] || continue
         fstype=$(get_fstype "${devname}")
@@ -682,9 +682,7 @@ mountroot() {
         umount "${rootmnt}/dev"
     fi
 
-    # Kill the debconf-communicate instance and close fd's associated with 
-    # debconf-communicate.
-    kill $DEBCONF_COMMUNICATE_PID
+    # Close the fd's associated with debconf-communicate.
     exec 3>&- 4<&-
     rm -f /tmp/debconf-in.fifo
     rm -f /tmp/debconf-out.fifo

@@ -13,6 +13,10 @@ gct() {
     chroot /target sudo -u "$TARGET_USERNAME" gconftool-2 "$@"
 }
 
+gct_gdm() {
+    chroot /target sudo -u gdm gconftool-2 "$@"
+}
+
 kderc_addtoprefixes() {
     if [ -e "/target/etc/kde4rc" ]; then
         sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /target/etc/kde4rc
@@ -92,6 +96,10 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct -s -t string /apps/empathy/conversation/theme classic                        
+                        gct_gdm -s -t bool /desktop/gnome/interface/accessibility true
+                        gct_gdm -s -t bool /desktop/gnome/applications/at/visual/startup true
+                        gct_gdm -s -t string /desktop/gnome/applications/at/visual/exec orca 
+                        gct_gdm -s -t bool /desktop/gnome/applications/at/screen_reader_enabled true
                         remove_applet fast_user_switch
                         sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
 			if [ -x /target/usr/bin/orca ]; then
@@ -128,6 +136,10 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         gct -s -t string /apps/empathy/conversation/theme classic                        
+                        gct_gdm -s -t bool /desktop/gnome/interface/accessibility true
+                        gct_gdm -s -t bool /desktop/gnome/applications/at/visual/startup true
+                        gct_gdm -s -t string /desktop/gnome/applications/at/visual/exec orca 
+                        gct_gdm -s -t bool /desktop/gnome/applications/at/screen_reader_enabled true
                         remove_applet fast_user_switch
                         sed -i -e 's/# Host alias specification/Defaults\tenv_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"\n\n# Host alias specification/g' /target/etc/sudoers
                         ;;

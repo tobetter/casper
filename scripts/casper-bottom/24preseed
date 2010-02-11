@@ -40,7 +40,9 @@ for x in $(cat /proc/cmdline); do
 			mount -n -o bind /proc /root/proc
 			mount -n -o bind /dev /root/dev
 			mkdir -p /root/var/run/network
-			[ "$NETBOOT" ] || chroot /root dhclient eth0
+			# Close inherited fd's to prevent debconf-communicate
+			# from continuing to run post-casper.
+			[ "$NETBOOT" ] || chroot /root dhclient eth0 3>&- 4<&-
 			chroot /root wget -P /tmp "$url_location"
 			[ "$NETBOOT" ] || chroot /root ifconfig eth0 down
 			umount /root/sys

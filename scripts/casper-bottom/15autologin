@@ -47,4 +47,22 @@ if [ -f /root/etc/kde4/kdm/kdmrc ]; then
         /root/etc/kde4/kdm/kdmrc
 fi
 
+if [ -f /root/etc/lxdm/lxdm.conf ]; then
+    # Configure LXDM autologin with LXDE session
+   sed -i -r \
+        -e "s/^# autologin=dgod/autologin=$USERNAME/" \
+        -e "s/^# session/session/" \
+        -e "s/startlxde/startlubuntu/" \
+        /root/etc/lxdm/lxdm.conf
+fi
+
+if [ -f /root/etc/xdg/lubuntu/lxdm/lxdm.conf ]; then
+    # Configure LXDM autologin with Lubuntu session
+   sed -i -r \
+        -e "s/^# autologin=dgod/autologin=$USERNAME/" \
+        -e "s/^# session/session/" \
+        -e "s/startlxde/startlubuntu/" \
+        /root/etc/xdg/lubuntu/lxdm/lxdm.conf
+fi
+
 log_end_msg

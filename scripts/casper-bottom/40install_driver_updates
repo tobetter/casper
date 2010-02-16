@@ -34,7 +34,14 @@ cp -a /tmp/driver-updates/*.deb "/root$install_dir/"
 for deb in "/root$install_dir"/*; do
 	[ -f "$deb" ] || continue
 	debbase="${deb##*/}"
-	if ! chroot /root dpkg -i "$install_dir/$debbase"; then
+	DEBIAN_FRONTEND=passthrough \
+	DEBCONF_READFD=3 \
+	DEBCONF_WRITEFD=4 \
+	DEBCONF_DB_REPLACE=configdb \
+	DEBCONF_DB_OVERRIDE='Pipe{infd:none outfd:none}' \
+	chroot /root dpkg -i "$install_dir/$debbase"
+	ret=$?
+	if [ $ret != 0 ]; then
 		chroot /root dpkg -P "${debbase%%_*}"
 	fi
 done

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Set ubiquity favourite for UNR..."
+DESCRIPTION="Set ubiquity favourite for UNE..."
 
 prereqs()
 {
@@ -24,7 +24,7 @@ gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gc
 
 gct() {
     if [ "$gconf_version" ]; then
-        chroot /root sudo -u "$USERNAME" gconftool-2 "$@"
+        chroot /root sudo -u "$USERNAME" DEFAULTS_PATH=/usr/share/gconf/une.default.path gconftool-2 "$@"
     fi
 }
 

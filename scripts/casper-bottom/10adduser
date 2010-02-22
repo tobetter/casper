@@ -94,15 +94,4 @@ if [ -f "/root/usr/lib/hildon-desktop/kourou.py" ]; then
   fi
 fi
 
-#Mythbuntu
-if [ -d "/root/usr/share/mythbuntu" ]; then
-  if [ -f "/root/usr/share/applications/mythbuntu-live-frontend.desktop" ]; then
-    chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
-    chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/applications/mythbuntu-live-frontend.desktop /home/$USERNAME/Desktop/mythbuntu-live-frontend.desktop
-  fi
-  if [ -f "/root/etc/xdg/mythbuntu/xfce4/mcs_settings/desktop.xml" ]; then
-    sed -i "s/<\/mcs/\t<option\ name=\"showremovable\"\ type=\"int\"\ value=\"0\"\/>\n<\/mcs/" /root/etc/xdg/mythbuntu/xfce4/mcs_settings/desktop.xml 
-  fi
-fi
-
 log_end_msg

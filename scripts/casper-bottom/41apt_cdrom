@@ -18,4 +18,10 @@ esac
 
 . /scripts/casper-functions
 
+mount -n -o bind /sys /root/sys
+mount -n -o bind /proc /root/proc
+mount -n -o bind /dev /root/dev
 chroot /root apt-cdrom -m add
+umount /root/dev
+umount /root/proc
+umount /root/sys

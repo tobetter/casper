@@ -1,8 +1,0 @@
-#! /bin/sh
-set -e
-
-if [ -e "/target/usr/share/autostart/plasma-netbook.desktop" ]; then
-    sed -i "s,Hidden=true,," /target/usr/share/autostart/plasma-netbook.desktop
-fi
-
-exit 0

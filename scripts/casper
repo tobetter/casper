@@ -375,9 +375,7 @@ setup_unionfs() {
     # Let's just mount the read-only file systems first
     rofsstring=""
     rofslist=""
-    if [ "${NETBOOT}" = "nfs" ] ; then
-        roopt="nfsro" # work around a bug in nfs-unionfs locking
-    elif [ "${UNIONFS}" = "aufs" ]; then
+    if [ "${UNIONFS}" = "aufs" ]; then
         roopt="rr"
     elif [ "${UNIONFS}" = "unionfs-fuse" ]; then
         roopt="RO"

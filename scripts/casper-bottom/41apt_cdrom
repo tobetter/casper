@@ -21,7 +21,7 @@ esac
 mount -n -o bind /sys /root/sys
 mount -n -o bind /proc /root/proc
 mount -n -o bind /dev /root/dev
-chroot /root apt-cdrom -m add
+chroot /root apt-cdrom -o Acquire::cdrom::AutoDetect=false -m add
 umount /root/dev
 umount /root/proc
 umount /root/sys

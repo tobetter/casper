@@ -52,6 +52,10 @@ parse_cmdline() {
                 LIVE_MEDIA_PATH="${x#live-media-path=}"
                 export LIVE_MEDIA_PATH
                 echo "export LIVE_MEDIA_PATH=\"$LIVE_MEDIA_PATH\"" >> /etc/casper.conf ;;
+            toram)
+                export TORAM="Yes" ;;
+            todisk=*)
+                export TODISK="${x#todisk=}" ;;
         esac
     done
     if [ "${UNIONFS}" = "" ]; then

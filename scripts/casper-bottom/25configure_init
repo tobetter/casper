@@ -54,7 +54,7 @@ fi
 rm -f /root/etc/rc?.d/[SK]??postfix
 
 # Avoid clobbering the user's clock
-rm -f /root/etc/rc?.d/K??hwclock.sh
+rm -f /root/etc/rc?.d/K??hwclock.sh /root/etc/init/hwclock-save.conf
 
 # Disable readahead since it doesn't play well with squashfs + unionfs
 # use chmod instead of mv to not trigger unionfs bugs.

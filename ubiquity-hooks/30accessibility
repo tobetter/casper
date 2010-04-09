@@ -106,6 +106,8 @@ for x in $(cat /proc/cmdline); do
 				if [ -f /home/$USERNAME/.orca/user-settings.py ]; then
 					cp -r /home/$USERNAME/.orca /target/home/$TARGET_USERNAME/
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.orca
+					cp -r /home/$USERNAME/.orca /target/var/lib/gdm
+					chroot /target chown -R gdm.gdm /var/lib/gdm/.orca
 				else
 					mkdir -p /target/home/$TARGET_USERNAME/.orca
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.orca
@@ -125,12 +127,16 @@ for x in $(cat /proc/cmdline); do
 				if [ -f /home/$USERNAME/.orca/user-settings.py ]; then
 					cp -r /home/$USERNAME/.orca /target/home/$TARGET_USERNAME/
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.orca
+					cp -r /home/$USERNAME/.orca /target/var/lib/gdm
+					chroot /target chown -R gdm.gdm /var/lib/gdm/.orca
 				else
 	                                mkdir -p /target/home/$TARGET_USERNAME/.orca
 					echo "import orca.settings" >> /target/home/$TARGET_USERNAME/.orca/user-settings.py
 	                                echo "orca.settings.enableSpeech = False" >> /target/home/$TARGET_USERNAME/.orca/user-settings.py
 	                                echo "orca.settings.enableBraille = True" >> /target/home/$TARGET_USERNAME/.orca/user-settings.py
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.orca
+					cp -r /home/$TARGET_USERNAME/.orca /target/var/lib/gdm
+					chroot /target chown -R gdm.gdm /var/lib/gdm/.orca
 				fi
                         fi
                         gct -s -t bool /apps/gksu/disable-grab true

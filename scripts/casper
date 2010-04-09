@@ -173,7 +173,10 @@ copy_live_to() {
     mkdir "${copyto}"
     echo "mount -t ${fstype} ${mount_options} ${dev} ${copyto}"
     mount -t "${fstype}" ${mount_options} "${dev}" "${copyto}"
-    cp -a ${copyfrom}/* ${copyto} # "cp -a" from busybox also copies hidden files
+    cp -a ${copyfrom}/* ${copyto}
+    if [ -e ${copyfrom}/.disk ]; then
+        cp -a ${copyfrom}/.disk ${copyto}
+    fi
     umount ${copyfrom}
     mount -r -o move ${copyto} ${copyfrom}
     rmdir ${copyto}

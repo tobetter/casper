@@ -66,6 +66,10 @@ Adding this parameter, casper will try to copy the whole read-only media to the 
 .BI "{preseed/file|file}=" FILE
 A path to a file present on the rootfs could be used to preseed debconf database.
 .TP
+.B preseed/allow-network=true
+Bring up the network while running
+.BR preseed/early_command .
+.TP
 .BI "package/question=" VALUE
 All debian installed packages could be preseeded from command-line that way, beware of blanks spaces, they will interfere with parsing, use a preseed file in this case.
 .TP

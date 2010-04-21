@@ -52,7 +52,11 @@ fi
 # XXX - awful hack to stop xscreensaver locking the screen (#7150)
 echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
-RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null)" || RELEASE=""
+LTS="$(cut -d' ' -f3 /root/cdrom/.disk/info 2>/dev/null)" || LTS=
+RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null)" || RELEASE=
+if [ "$LTS" = "LTS" ] && [ -n "$RELEASE" ]; then
+	RELEASE="$RELEASE LTS"
+fi
 for file in /usr/share/applications/ubiquity-gtkui.desktop /usr/share/applications/kde4/ubiquity-kdeui.desktop; do
     if [ -f "/root/$file" ]; then
         sed -i "s/RELEASE/$RELEASE/" "/root$file"

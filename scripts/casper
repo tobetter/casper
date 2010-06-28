@@ -40,7 +40,7 @@ parse_cmdline() {
                 export PERSISTENT="" ;;
             union=*)
                 export UNIONFS="${x#union=}";;
-            ip*)
+            ip=*)
                 STATICIP=${x#ip=}
                 if [ "${STATICIP}" = "" ]; then
                     STATICIP="frommedia"
@@ -567,7 +567,8 @@ find_livefs() {
         elif [ "${fstype}" = "squashfs" -o \
                 "${fstype}" = "ext4" -o \
                 "${fstype}" = "ext3" -o \
-                "${fstype}" = "ext2" ]; then
+                "${fstype}" = "ext2" -o \
+                "${fstype}" = "btrfs" ]; then
             # This is an ugly hack situation, the block device has
             # an image directly on it.  It's hopefully
             # casper, so take it and run with it.

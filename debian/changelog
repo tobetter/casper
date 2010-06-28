@@ -1,3 +1,23 @@
+casper (1.237) maverick; urgency=low
+
+  [ Colin Watson ]
+  * Add btrfs support.
+  * Make ip=* command-line parsing more precise (thanks, Bill Nickless;
+    LP: #586553).
+  * Make the USB update-initramfs shim cope with vmlinuz and initrd.img
+    being in /boot rather than / (LP: #591207).
+  * Depend on file for /etc/init.d/casper (thanks, Alon Swartz;
+    LP: #591213).
+  * Conflict with live-initramfs, as they overlap and people can pick one or
+    the other (LP: #453476).
+
+  [ Martin Pitt ]
+  * debian/casper.init: Change shutdown splash message to refer to
+    "installation media" instead of "disc"; a lot of installs happen
+    from USB sticks these days. Thanks to Debbie Beliveau for the idea.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 28 Jun 2010 16:53:17 +0100
+
 casper (1.236) lucid; urgency=low
 
   * Check for LTS in the release name (LP: #558488).

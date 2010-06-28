@@ -1,3 +1,10 @@
+casper (1.236.1) lucid-proposed; urgency=low
+
+  * Make the USB update-initramfs shim cope with vmlinuz and initrd.img
+    being in /boot rather than / (LP: #591207).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 28 Jun 2010 16:57:36 +0100
+
 casper (1.236) lucid; urgency=low
 
   * Check for LTS in the release name (LP: #558488).

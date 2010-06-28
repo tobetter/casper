@@ -31,14 +31,19 @@ if [ -w /root/cdrom ] && \
 #! /bin/sh
 set -e
 update-initramfs.distrib "$@"
+if [ -e /initrd.img ]; then
+    bootdir=
+else
+    bootdir=/boot
+fi
 if [ -e /cdrom/casper/initrd.lz ]; then
-    zcat /initrd.img | lzma -9c >/cdrom/casper/initrd.lz.new
+    zcat "$bootdir/initrd.img" | lzma -9c >/cdrom/casper/initrd.lz.new
     mv /cdrom/casper/initrd.lz.new /cdrom/casper/initrd.lz
 else
-    cp /initrd.img /cdrom/casper/initrd.gz.new
+    cp "$bootdir/initrd.img" /cdrom/casper/initrd.gz.new
     mv /cdrom/casper/initrd.gz.new /cdrom/casper/initrd.gz
 fi
-cp /vmlinuz /cdrom/casper/vmlinuz.new
+cp "$bootdir/vmlinuz" /cdrom/casper/vmlinuz.new
 mv /cdrom/casper/vmlinuz.new /cdrom/casper/vmlinuz
 exit 0
 EOF

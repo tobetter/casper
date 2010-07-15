@@ -1,3 +1,10 @@
+casper (1.238) maverick; urgency=low
+
+  [ Alex Chiang ]
+  * Disable ureadahead-other job as well as ureadahead (LP: #605695).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 15 Jul 2010 11:49:36 +0100
+
 casper (1.237) maverick; urgency=low
 
   [ Colin Watson ]

@@ -1,3 +1,11 @@
+casper (1.239) maverick; urgency=low
+
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Instead of mangling the main sudoers file, create a new file in
+      /etc/sudoers.d and set permissions appropriately
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 11 Aug 2010 13:46:03 +1000
+
 casper (1.238) maverick; urgency=low
 
   [ Alex Chiang ]

@@ -1,3 +1,11 @@
+casper (1.240) maverick; urgency=high
+
+  * scripts/casper
+    - Added platform-sata_mv to is_nice_device() to allow Marvell
+      Dove A0 and AVD1 to properly boot live media (LP: #618489)
+
+ -- Michael Casadevall <mcasadevall@ubuntu.com>  Mon, 16 Aug 2010 19:36:56 +0800
+
 casper (1.239) maverick; urgency=low
 
   * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:

@@ -191,7 +191,8 @@ do_netmount() {
     /sbin/udevadm trigger
     /sbin/udevadm settle
 
-    ipconfig ${DEVICE} /tmp/net-${DEVICE}.conf | tee /netboot.config
+    configure_networking
+    export DEVICE
 
     if [ "${NFSROOT}" = "auto" ]; then
         NFSROOT=${ROOTSERVER}:${ROOTPATH}

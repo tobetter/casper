@@ -1,3 +1,16 @@
+casper (1.241) maverick; urgency=low
+
+  [ Mathieu Trudel-Lapierre ]
+  * Use configure_networking at do_netmount; it's at least more resilient
+    than a simple ipconfig call since it retries, and it properly parses
+    BOOTIF to know which devices to configure. (LP: #602273)
+
+  [ Colin Watson ]
+  * Parse the machine-readable file written out by ipconfig rather than
+    trying to parse its human-readable output.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 20 Aug 2010 13:37:56 +0100
+
 casper (1.240) maverick; urgency=high
 
   * scripts/casper

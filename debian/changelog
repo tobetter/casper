@@ -1,3 +1,10 @@
+casper (1.242) maverick; urgency=low
+
+  * Update scripts/casper-bottom/34disable_kde_services to stop some new
+    akonadi services
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 06 Sep 2010 14:20:54 +0100
+
 casper (1.241) maverick; urgency=low
 
   [ Mathieu Trudel-Lapierre ]

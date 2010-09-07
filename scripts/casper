@@ -38,6 +38,8 @@ parse_cmdline() {
                 export PERSISTENT="Yes" ;;
             nopersistent)
                 export PERSISTENT="" ;;
+            persistent-path=*)
+                export PERSISTENT_PATH="${x#persistent-path=}" ;;
             union=*)
                 export UNIONFS="${x#union=}";;
             ip=*)

@@ -1,3 +1,13 @@
+casper (1.243) maverick; urgency=low
+
+  * Backport from live-initramfs 1.154.6-1:
+    - Adding patch from Thierry Walrant <debian.tgc@walrant.net> to allow
+      setting a path for the persistence files through persistent-path boot
+      parameter (Closes: #512661).
+  * Follow symlinks when checking for dynamically linked files at reboot.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 07 Sep 2010 10:53:32 +0100
+
 casper (1.242) maverick; urgency=low
 
   * Update scripts/casper-bottom/34disable_kde_services to stop some new

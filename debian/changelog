@@ -1,3 +1,11 @@
+casper (1.244) maverick; urgency=low
+
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Use orca's new settings location in ~/.local/share, as orca is now
+      more XDG compliant
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Thu, 16 Sep 2010 09:38:21 +1000
+
 casper (1.243) maverick; urgency=low
 
   * Backport from live-initramfs 1.154.6-1:

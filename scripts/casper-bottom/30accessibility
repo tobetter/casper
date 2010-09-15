@@ -88,11 +88,11 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
 			if [ -x /root/usr/bin/orca ]; then
-				mkdir -p /root/home/$USERNAME/.orca
-				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
-				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.orca/user-settings.py
-				echo "orca.settings.enableMagnifier = True" >> /root/home/$USERNAME/.orca/user-settings.py
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
+				mkdir -p /root/home/$USERNAME/.local/share/orca
+				echo "import orca.settings" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				echo "orca.settings.enableMagnifier = True" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
@@ -110,8 +110,8 @@ for x in $(cat /proc/cmdline); do
                         remove_applet fast_user_switch
                         add_sudoers_file
 			if [ -x /root/usr/bin/orca ]; then
-				mkdir -p /root/home/$USERNAME/.orca
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
+				mkdir -p /root/home/$USERNAME/.local/share/orca
+				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         ;;
                         # Braille
@@ -120,11 +120,11 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
 			if [ -x /root/usr/bin/orca ]; then
-				mkdir -p /root/home/$USERNAME/.orca
-				echo "import orca.settings" >> /root/home/$USERNAME/.orca/user-settings.py
-				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.orca/user-settings.py
-				echo "orca.settings.enableBraille = True" >> /root/home/$USERNAME/.orca/user-settings.py
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.orca
+				mkdir -p /root/home/$USERNAME/.local/share/orca
+				echo "import orca.settings" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				echo "orca.settings.enableBraille = True" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity

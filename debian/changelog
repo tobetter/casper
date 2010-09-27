@@ -1,3 +1,17 @@
+casper (1.246) maverick; urgency=low
+
+    * Added scripts/casper-bottom/07remove_oem_config
+    - Added new script to remove oem-config if installed on the image on ARM,
+      as it should never be installed on a non-preinstalled image. This is 
+      necessary because we can't exclude oem-config on the seed on a 
+      per-subarchitecture basis
+  * scripts/casper/47une_ubiquity
+    - Cause gconf changes to be made to both the 2D & 3D UNE launchers so 
+      ubiquity properly shows up in favorites regardless of which launcher is
+      used (LP: #643791)
+
+ -- Michael Casadevall <mcasadevall@ubuntu.com>  Mon, 27 Sep 2010 17:52:50 -0400
+
 casper (1.245) maverick; urgency=low
 
   * Add scripts/casper-bottom/49disable_kubuntu_restart_notify for a more

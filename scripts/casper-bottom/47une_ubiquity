@@ -24,7 +24,9 @@ gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gc
 
 gct() {
     if [ "$gconf_version" ]; then
+	# Apply config changes to both 2D & 3D launchers
         chroot /root sudo -u "$USERNAME" DEFAULTS_PATH=/usr/share/gconf/une.default.path gconftool-2 "$@"
+        chroot /root sudo -u "$USERNAME" DEFAULTS_PATH=/usr/share/gconf/une-efl.default.path gconftool-2 "$@"
     fi
 }
 

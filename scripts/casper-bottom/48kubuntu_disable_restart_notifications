@@ -1,0 +1,3 @@
+#! /bin/sh
+
+echo -e "[Event]\nhideRestartNotifier=true" >> /root/usr/share/kubuntu-default-settings/kde-profile/default/share/config/notificationhelper

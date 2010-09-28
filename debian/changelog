@@ -1,3 +1,11 @@
+casper (1.245) maverick; urgency=low
+
+  * Add scripts/casper-bottom/49disable_kubuntu_restart_notify for a more
+    surgical solution at disabling restart notifications on the Live CD
+  * Don't remove the notificationhelper.desktop file in 34disable_kde_services
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Tue, 28 Sep 2010 19:20:26 -0400
+
 casper (1.244) maverick; urgency=low
 
   * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:

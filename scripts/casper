@@ -6,6 +6,7 @@ export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 mountpoint=/cdrom
 LIVE_MEDIA_PATH=casper
+[ -f /conf/uuid.conf ] && UUID="$(cat /conf/uuid.conf)"
 
 root_persistence="casper-rw"
 home_persistence="home-rw"
@@ -48,8 +49,10 @@ parse_cmdline() {
                     STATICIP="frommedia"
                 fi
                 export STATICIP ;;
+            uuid=*)
+                UUID=${x#uuid=} ;;
             ignore_uuid)
-                IGNORE_UUID="Yes" ;;
+                UUID="" ;;
             live-media-path=*)
                 LIVE_MEDIA_PATH="${x#live-media-path=}"
                 export LIVE_MEDIA_PATH
@@ -78,15 +81,14 @@ is_casper_path() {
 }
 
 matches_uuid() {
-    if [ "$IGNORE_UUID" ] || [ ! -e /conf/uuid.conf ]; then
+    if [ -z "$UUID" ]; then
         return 0
     fi
     path="$1"
-    uuid="$(cat /conf/uuid.conf)"
     for try_uuid_file in "$path/.disk/casper-uuid"*; do
         [ -e "$try_uuid_file" ] || continue
         try_uuid="$(cat "$try_uuid_file")"
-        if [ "$uuid" = "$try_uuid" ]; then
+        if [ "$UUID" = "$try_uuid" ]; then
             return 0
         fi
     done

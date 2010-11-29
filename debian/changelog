@@ -1,3 +1,23 @@
+casper (1.249) natty; urgency=low
+
+  [ arky ]
+  * Add universal access preferences taskbar icon in all accessibility
+    profiles (LP: #621561).
+
+  [ Serge Hallyn ]
+  * change scripts/casper-helpers:try_mount() to not panic when regular
+    mounts fail.  Instead, return an error code so the caller can decide.
+    (LP: #624632)
+
+  [ Evan Broder ]
+  * scripts/casper: Check for uuid= command line parameter in addition to
+    /conf/uuid.conf file in initrd. (LP: #671786)
+
+  [ Colin Watson ]
+  * Document new uuid= option in casper(7).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 29 Nov 2010 12:49:36 +0000
+
 casper (1.248) maverick; urgency=low
 
   * ubiquity-hooks/30accessibility: Create .local/share subdirectory structure

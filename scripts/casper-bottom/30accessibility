@@ -76,6 +76,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/background/color_shading_type solid
                         gct -s -t int /desktop/gnome/peripherals/mouse/cursor_size 48
                         gct -s -t string /desktop/gnome/peripherals/mouse/cursor_theme whiteglass
+                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/
                         if [ -d /root/usr/share/xubuntu-default-settings/accessibility ]; then
@@ -96,6 +97,7 @@ for x in $(cat /proc/cmdline); do
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
+                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         add_sudoers_file
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
                         ;;
@@ -106,7 +108,8 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
-                        gct -s -t string /apps/empathy/conversation/theme classic                        
+                        gct -s -t string /apps/empathy/conversation/theme classic
+                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         remove_applet fast_user_switch
                         add_sudoers_file
 			if [ -x /root/usr/bin/orca ]; then
@@ -119,6 +122,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/interface/accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
+                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.local/share/orca
 				echo "import orca.settings" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
@@ -143,6 +147,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t int /desktop/gnome/peripherals/keyboard/delay 700
                         gct -s -t int /desktop/gnome/peripherals/keyboard/rate 10
                         gct -s -t bool /apps/gksu/disable-grab true
+                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/
                         if [ -e /root/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
                             sed -i 's/0/1/' /root/etc/xdg/xfce4/mcs_settings/keyboard.xml
@@ -157,7 +162,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
                         gct -s -t bool /desktop/gnome/applications/at/mobility/startup true
                         gct -s -t string /desktop/gnome/applications/at/mobility/exec onboard
-
+                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/,/usr/share/kubuntu-default-settings/kde-profile/motor-difficulties-pointing-devices/
                         if [ -e /root/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
                             sed -i '/Sticky/ s/0/1/' /root/etc/xdg/xfce4/mcs_settings/keyboard.xml

@@ -215,7 +215,7 @@ Mount_device ()
 		fi
 	else
 		if [ -b "${dev}" ] ; then
-			try_mount "${dev}" "${MOUNTP}" rw
+			try_mount "${dev}" "${MOUNTP}" rw || panic "failed to mount ${dev}"
 		fi
 	fi
 }

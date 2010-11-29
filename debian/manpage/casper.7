@@ -76,6 +76,11 @@ Bring up the network while running
 .BI "package/question=" VALUE
 All debian installed packages could be preseeded from command-line that way, beware of blanks spaces, they will interfere with parsing, use a preseed file in this case.
 .TP
+.BI "uuid=" UUID
+Check that the discovered medium matches
+.I UUID
+rather than the default UUID embedded in the initramfs.
+.TP
 .BI ignore_uuid
 Do not check that any UUID embedded in the initramfs matches the discovered medium.
 .B casper

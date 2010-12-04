@@ -1,3 +1,11 @@
+casper (1.251) natty; urgency=low
+
+  * scripts/casper-bottom/44pk_allow_ubuntu: Tweak the default PolicyKit
+    policy to avoid dropping wireless connections when a user switches to
+    another VT (LP: #656757)
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Sat, 04 Dec 2010 13:11:23 +0000
+
 casper (1.250) natty; urgency=low
 
   * Use LDLIBS rather than LDFLAGS for 'pkg-config --libs ply-boot-client',

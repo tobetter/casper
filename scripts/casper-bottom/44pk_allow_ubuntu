@@ -49,7 +49,7 @@ cat << EOF > /root/var/lib/polkit-1/localauthority/10-vendor.d/10-live-cd.pkla
 Identity=unix-user:$USERNAME
 Action=*
 ResultAny=no
-ResultInactive=no
+ResultInactive=yes
 ResultActive=yes
 EOF
 

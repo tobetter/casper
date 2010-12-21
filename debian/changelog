@@ -1,3 +1,11 @@
+casper (1.252) natty; urgency=low
+
+  * Cope with forthcoming console-setup changes: handle
+    /etc/default/keyboard if present, and in that case preseed
+    keyboard-configuration/* templates.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 21 Dec 2010 16:44:54 +0000
+
 casper (1.251) natty; urgency=low
 
   * scripts/casper-bottom/44pk_allow_ubuntu: Tweak the default PolicyKit

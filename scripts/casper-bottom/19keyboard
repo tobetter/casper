@@ -48,6 +48,24 @@ for x in $(cat /proc/cmdline); do
                 console-setup/modelcode\?=*)
                         csmodel=${x#console-setup/modelcode\?=}
                         ;;
+                keyboard-configuration/layoutcode=*)
+                        cslayout=${x#keyboard-configuration/layoutcode=}
+                        ;;
+                keyboard-configuration/layoutcode\?=*)
+                        cslayout=${x#keyboard-configuration/layoutcode\?=}
+                        ;;
+                keyboard-configuration/variantcode=*)
+                        csvariant=${x#keyboard-configuration/variantcode=}
+                        ;;
+                keyboard-configuration/variantcode\?=*)
+                        csvariant=${x#keyboard-configuration/variantcode\?=}
+                        ;;
+                keyboard-configuration/modelcode=*)
+                        csmodel=${x#keyboard-configuration/modelcode=}
+                        ;;
+                keyboard-configuration/modelcode\?=*)
+                        csmodel=${x#keyboard-configuration/modelcode\?=}
+                        ;;
         esac
 done
 
@@ -151,35 +169,45 @@ adjust_console_setup () {
         fi
 }
 
-if [ -x /root/bin/setupcon ] && [ -f /root/etc/default/console-setup ]; then
+PREFIX=
+CONFIGFILE=
+if [ -f /root/etc/default/keyboard ]; then
+        PREFIX=keyboard-configuration
+        CONFIGFILE=/etc/default/keyboard
+elif [ -f /root/etc/default/console-setup ]; then
+        PREFIX=console-setup
+        CONFIGFILE=/etc/default/console-setup
+fi
+if [ -x /root/bin/setupcon ] && [ "$PREFIX" ] && [ "$CONFIGFILE" ]; then
         if [ "$cslayout" ]; then
                 csoptions=
                 adjust_console_setup
 
                 chroot /root sed -i "s/^XKBLAYOUT=.*/XKBLAYOUT=\"$cslayout\"/" \
-                        /etc/default/console-setup
+                        "$CONFIGFILE"
                 if [ "$csvariant" ]; then
                         chroot /root sed -i "s/^XKBVARIANT=.*/XKBVARIANT=\"$csvariant\"/" \
-                                /etc/default/console-setup
+                                "$CONFIGFILE"
                 else
-                        casper-preseed /root console-setup/variantcode '' false
+                        casper-preseed /root "$PREFIX/variantcode" '' false
                 fi
                 if [ "$csmodel" ]; then
                         chroot /root sed -i "s/^XKBMODEL=.*/XKBMODEL=\"$csmodel\"/" \
-                                /etc/default/console-setup
+                                "$CONFIGFILE"
                 else
-                        casper-preseed /root console-setup/modelcode '' false
+                        casper-preseed /root "$PREFIX/modelcode" '' false
                 fi
                 if [ "$csoptions" ]; then
                         chroot /root sed -i "s/^XKBOPTIONS=.*/XKBOPTIONS=\"$csoptions\"/" \
-                                /etc/default/console-setup
+                                "$CONFIGFILE"
                 fi
         else
-                casper-preseed /root console-setup/layoutcode '' false
-                casper-preseed /root console-setup/variantcode '' false
-                casper-preseed /root console-setup/modelcode '' false
+                casper-preseed /root "$PREFIX/layoutcode" '' false
+                casper-preseed /root "$PREFIX/variantcode" '' false
+                casper-preseed /root "$PREFIX/modelcode" '' false
         fi
-        casper-preseed /root console-setup/optionscode '' false
+        casper-preseed /root "$PREFIX/optionscode" '' false
+        # prefix remains console-setup even with keyboard-configuration
         casper-preseed /root console-setup/codesetcode '' false
 
         if [ -f /root/etc/init.d/usplash ]; then

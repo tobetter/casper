@@ -1,3 +1,10 @@
+casper (1.253) natty; urgency=low
+
+  * Don't try to process the initramfs and kernel if the real update-
+    initramfs hasn't generated anything (LP: #557023).
+
+ -- Evan Dandrea <ev@ubuntu.com>  Wed, 05 Jan 2011 12:07:47 +0000
+
 casper (1.252) natty; urgency=low
 
   * Cope with forthcoming console-setup changes: handle

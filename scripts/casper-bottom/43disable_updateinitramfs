@@ -36,15 +36,17 @@ if [ -e /initrd.img ]; then
 else
     bootdir=/boot
 fi
-if [ -e /cdrom/casper/initrd.lz ]; then
-    zcat "$bootdir/initrd.img" | lzma -9c >/cdrom/casper/initrd.lz.new
-    mv /cdrom/casper/initrd.lz.new /cdrom/casper/initrd.lz
-else
-    cp "$bootdir/initrd.img" /cdrom/casper/initrd.gz.new
-    mv /cdrom/casper/initrd.gz.new /cdrom/casper/initrd.gz
+if [ -e "$bootdir/initrd.img" ] && [ -e "$bootdir/vmlinuz" ]; then
+    if [ -e /cdrom/casper/initrd.lz ]; then
+        zcat "$bootdir/initrd.img" | lzma -9c >/cdrom/casper/initrd.lz.new
+        mv /cdrom/casper/initrd.lz.new /cdrom/casper/initrd.lz
+    else
+        cp "$bootdir/initrd.img" /cdrom/casper/initrd.gz.new
+        mv /cdrom/casper/initrd.gz.new /cdrom/casper/initrd.gz
+    fi
+    cp "$bootdir/vmlinuz" /cdrom/casper/vmlinuz.new
+    mv /cdrom/casper/vmlinuz.new /cdrom/casper/vmlinuz
 fi
-cp "$bootdir/vmlinuz" /cdrom/casper/vmlinuz.new
-mv /cdrom/casper/vmlinuz.new /cdrom/casper/vmlinuz
 exit 0
 EOF
 else

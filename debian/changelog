@@ -1,3 +1,16 @@
+casper (1.254) natty; urgency=low
+
+  * More fixes to the USB update-initramfs shim (LP: #591207):
+    - Make the shim a proper executable in
+      /usr/share/casper/casper-update-initramfs and symlink to it if
+      necessary at boot time, so that new versions of this shim are
+      automatically installed when casper is upgraded.
+    - $bootdir/initrd.img may exist when $bootdir/vmlinuz doesn't; for
+      example, if we're running off a fresh live USB stick and the kernel
+      hasn't yet been upgraded.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 20 Jan 2011 14:18:59 +0000
+
 casper (1.253) natty; urgency=low
 
   * Don't try to process the initramfs and kernel if the real update-

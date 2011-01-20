@@ -1,3 +1,18 @@
+casper (1.248.1) maverick-proposed; urgency=low
+
+  * More fixes to the USB update-initramfs shim (thanks, Evan Dandrea;
+    LP: #557023, #591207):
+    - Make the shim a proper executable in
+      /usr/share/casper/casper-update-initramfs and symlink to it if
+      necessary at boot time, so that new versions of this shim are
+      automatically installed when casper is upgraded.
+    - Only copy each of $bootdir/initrd.img and $bootdir/vmlinuz if they
+      exist (for example, initrd.img may exist without vmlinuz if we're
+      running off a fresh live USB stick and the kernel hasn't yet been
+      upgraded).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 20 Jan 2011 14:34:15 +0000
+
 casper (1.248) maverick; urgency=low
 
   * ubiquity-hooks/30accessibility: Create .local/share subdirectory structure

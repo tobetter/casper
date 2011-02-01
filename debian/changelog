@@ -1,3 +1,15 @@
+casper (1.255) natty; urgency=low
+
+  [ Evan Dandrea ]
+  * Don't disable the free space notifier if using persistent storage.
+
+  [ Daniel Manrique ]
+  * scripts/casper-bottom/23networking: Strip quotes from DNSDOMAIN as
+    returned by ipconfig, and sanitize the domain entry to ensure the
+    generated /etc/resolv.conf is formatted correctly (LP: #709364).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 01 Feb 2011 11:05:13 +0000
+
 casper (1.254) natty; urgency=low
 
   * More fixes to the USB update-initramfs shim (LP: #591207):

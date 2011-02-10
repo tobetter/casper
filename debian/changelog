@@ -1,3 +1,10 @@
+casper (1.256) natty; urgency=low
+
+  * Add scripts/casper-bottom/49kubuntu_mobile_session to run Kubuntu
+    mobile session
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Feb 2011 17:42:34 +0000
+
 casper (1.255) natty; urgency=low
 
   [ Evan Dandrea ]

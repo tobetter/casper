@@ -196,9 +196,9 @@ find_cow_device() {
     cow_backing="/${pers_label}-backing"
 
     if [ -z "${PERSISTENT_PATH}" ]; then
-        pers_fpath=${cow_backing}/${pers_label}
+        pers_fpath=${pers_label}
     else
-        pers_fpath=${cow_backing}/${PERSISTENT_PATH}/${pers_label}
+        pers_fpath=${PERSISTENT_PATH}/${pers_label}
     fi
 
     for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -v loop); do
@@ -214,11 +214,12 @@ find_cow_device() {
             elif [ "$(get_fstype ${devname})" = "vfat" ]; then
                 mkdir -p "${cow_backing}"
                 try_mount "${devname}" "${cow_backing}" "rw" || continue
-                if [ -e "${pers_fpath}" ]; then
-                    echo $(setup_loop "${pers_fpath}" "loop" "/sys/block/loop*")
+                cow_backing_mp=$(where_is_mounted "${devname}")
+                if [ -e "${cow_backing_mp}/${pers_fpath}" ]; then
+                    echo $(setup_loop "${cow_backing_mp}/${pers_fpath}" "loop" "/sys/block/loop*")
                     return 0
                 else
-                    umount ${cow_backing}
+                    umount ${cow_backing_mp}
                 fi
             fi
         done

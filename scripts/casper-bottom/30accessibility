@@ -22,6 +22,7 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || gconf_version=""
+glibbin_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' libglib2.0-bin 2>/dev/null) || glibbin_version=""
 
 gct() {
     if [ "$gconf_version" ]; then
@@ -29,26 +30,16 @@ gct() {
     fi
 }
 
+gset() {
+    if [ "$glibbin_version" ]; then
+        chroot /root sudo -u "$USERNAME" gsettings "$@"
+    fi
+}
+
 kderc_addtoprefixes() {
     if [ -e "/root/etc/kde4rc" ]; then
         sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /root/etc/kde4rc
     fi
-}
-
-# Code to remove an applet from the default panel setup
-# This is rather hacky, but I can't think of a one or two line regular
-# expression to do this any more efficiently. Patches welcome.
-# In addition, setting these via gconf also doesn't work for some reason.
-remove_applet()
-{
-	local line_no prior_line next_line
-
-	line_no=$(grep -n "<string>$1</string>" /root/usr/share/gconf/defaults/05_panel-default-setup.entries | cut -f 1 -d :)
-	[ "$line_no" ] || return
-	prior_line=$((line_no-1))
-	next_line=$((line_no+1))
-	sed -i -n "${prior_line},${next_line}!p" /root/usr/share/gconf/defaults/05_panel-default-setup.entries
-	chroot /root update-gconf-defaults
 }
 
 add_sudoers_file()
@@ -60,6 +51,187 @@ EOF
 	chmod 0440 /root/etc/sudoers.d/a11y-sudo
 }
 
+# Unfortunately this bloats this script somewhat, but orca doesn't seem to want
+# to deal with individual settings/a small config fragment. Yet another reason to
+# unify the 2 scripts.
+# Arguments: $1 = /path/to/config-file $2 = speech/magnifier/braille (which
+# accessibility feature to turn on)
+set_orca_config() {
+	cat <<EOF > "$1"
+{
+    "pronunciations": {}, 
+    "keybindings": {}, 
+    "profiles": {
+        "default": {
+            "profile": [
+                "Default", 
+                "default"
+            ], 
+            "pronunciations": {}, 
+            "keybindings": {}
+        }
+    }, 
+    "general": {
+        "speakCellHeaders": true, 
+        "magEdgeMargin": 0, 
+        "brailleContractionTable": "", 
+        "magPointerFollowsFocus": false, 
+        "magTextTrackingMode": 2, 
+        "magZoomerBorderSize": 1, 
+        "brailleAlignmentStyle": 0, 
+        "enableEchoByWord": false, 
+        "enableMagZoomerColorInversion": false, 
+        "magCursorSize": 32, 
+        "magSmoothingMode": 0, 
+        "magZoomerLeft": 840, 
+        "showMainWindow": true, 
+        "sayAllStyle": 1, 
+        "brailleSelectorIndicator": 192, 
+        "presentDateFormat": "%x", 
+        "magContrastLevel": 0, 
+        "magMouseTrackingMode": 0, 
+        "speakCellSpan": true, 
+        "progressBarUpdateInterval": 10, 
+        "speakCellCoordinates": true, 
+        "enablePauseBreaks": true, 
+        "brailleEOLIndicator": " $l", 
+        "verbalizePunctuationStyle": 1, 
+        "progressBarVerbosity": 1, 
+        "enableSpeech": false, 
+        "enableBraille": false, 
+        "chatAnnounceBuddyTyping": false, 
+        "speakMultiCaseStringsAsWords": false, 
+        "enableBrailleGrouping": false, 
+        "readTableCellRow": true, 
+        "speechServerFactory": "speechdispatcherfactory", 
+        "textAttributesBrailleIndicator": 0, 
+        "enableMagCursorExplicitSize": false, 
+        "messageVerbosityLevel": 1, 
+        "enableMagLiveUpdating": true, 
+        "enableSpeechIndentation": false, 
+        "enableKeyEcho": true, 
+        "magHideCursor": false, 
+        "magZoomerBorderColor": "#000000", 
+        "magPointerFollowsZoomer": true, 
+        "mouseDwellDelay": 0, 
+        "magBrightnessLevelRed": 0, 
+        "enableMagnifier": false, 
+        "magZoomFactor": 4.0, 
+        "activeProfile": [
+            "Default", 
+            "default"
+        ], 
+        "enableMagZoomerBorder": false, 
+        "flashVerbosityLevel": 1, 
+        "enableFlashMessages": true, 
+        "speechServerInfo": null, 
+        "presentToolTips": false, 
+        "flashIsPersistent": false, 
+        "skipBlankCells": false, 
+        "firstStart": false, 
+        "largeObjectTextLength": 75, 
+        "enableEchoBySentence": false, 
+        "magContrastLevelBlue": 0, 
+        "magContrastLevelRed": 0, 
+        "enableContractedBraille": false, 
+        "orcaModifierKeys": [
+            "Insert", 
+            "KP_Insert"
+        ], 
+        "enableMagCursor": true, 
+        "speechRequiredStateString": "required", 
+        "quitOrcaNoConfirmation": false, 
+        "brailleRequiredStateString": "required", 
+        "magCursorColor": "#000000", 
+        "enablePositionSpeaking": false, 
+        "magZoomerType": 0, 
+        "onlySpeakDisplayedText": false, 
+        "enableProgressBarUpdates": true, 
+        "wrappedStructuralNavigation": true, 
+        "chatRoomHistories": false, 
+        "brailleVerbosityLevel": 1, 
+        "enableFunctionKeys": true, 
+        "enableModifierKeys": true, 
+        "magCrossHairColor": "#000000", 
+        "enableTutorialMessages": false, 
+        "enableActionKeys": true, 
+        "speakBlankLines": true, 
+        "magColorFilteringMode": 0, 
+        "magZoomerRight": 1680, 
+        "keyboardLayout": 1, 
+        "magTargetDisplay": "", 
+        "disableBrailleEOL": false, 
+        "magZoomerTop": 0, 
+        "magSourceDisplay": "", 
+        "enableDiacriticalKeys": false, 
+        "enableMnemonicSpeaking": false, 
+        "enabledBrailledTextAttributes": "size:; family-name:; weight:400; indent:0; underline:none; strikethrough:false; justification:left; style:normal; text-spelling:none;", 
+        "speechVerbosityLevel": 1, 
+        "enableMagCrossHair": true, 
+        "enableBrailleMonitor": false, 
+        "voices": {
+            "default": {
+                "established": false
+            }, 
+            "uppercase": {
+                "average-pitch": 5.6
+            }, 
+            "system": {
+                "established": false
+            }, 
+            "hyperlink": {
+                "established": false
+            }
+        }, 
+        "magContrastLevelGreen": 0, 
+        "brailleFlashTime": 5000, 
+        "magCrossHairSize": 16, 
+        "enableMouseReview": false, 
+        "enableNavigationKeys": false, 
+        "magBrightnessLevelGreen": 0, 
+        "chatSpeakRoomName": false, 
+        "startingProfile": [
+            "Default", 
+            "default"
+        ], 
+        "enableLockingKeys": true, 
+        "profile": [
+            "Default", 
+            "default"
+        ], 
+        "brailleRolenameStyle": 1, 
+        "brailleLinkIndicator": 192, 
+        "enableEchoByCharacter": false, 
+        "magBrightnessLevelBlue": 0, 
+        "enableBrailleContext": true, 
+        "magControlTrackingMode": 2, 
+        "magZoomerBottom": 1050, 
+        "enablePrintableKeys": true, 
+        "enabledSpokenTextAttributes": "size:; family-name:; weight:400; indent:0; underline:none; strikethrough:false; justification:left; style:normal; paragraph-style:; text-spelling:none;", 
+        "chatMessageVerbosity": 0, 
+        "presentTimeFormat": "%X", 
+        "magBrightnessLevel": 0, 
+        "presentRequiredState": false, 
+        "enableMagCrossHairClip": false
+    }
+}
+EOF
+
+	case $2 in
+		magnifier)
+			sed -i -e 's/\"enableMagnifier\": false/\"enableMagnifier\": true/' "$1"
+			;;
+		speech)
+			sed -i -e 's/\"enableSpeech\": false/\"enableSpeech\": true/' "$1"
+			;;
+		braille)
+			sed -i -e 's/\"enableBraille\": false/\"enableBraille\": true/' "$1"
+			;;
+		*)
+			;;
+	esac
+}
+
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
@@ -68,7 +240,6 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
                         gct -s -t string /desktop/gnome/interface/monospace_font_name "monospace 18"
                         gct -s -t string /desktop/gnome/interface/font_name "sans 18"
-                        gct -s -t string /apps/metacity/general/theme Atlanta
                         gct -s -t string /desktop/gnome/background/picture_filename ""
                         gct -s -t string /desktop/gnome/background/picture_options none
                         gct -s -t string /desktop/gnome/background/primary_color \#666666
@@ -86,17 +257,15 @@ for x in $(cat /proc/cmdline); do
                         # Moderate Visual Impairment
                         access=v2)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
+                        gset set org.gnome.desktop.interface accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.local/share/orca
-				echo "import orca.settings" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
-				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
-				echo "orca.settings.enableMagnifier = True" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf magnifier
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         add_sudoers_file
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
@@ -104,36 +273,35 @@ for x in $(cat /proc/cmdline); do
                         # Blindness
                         access=v3)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
+                        gset set org.gnome.desktop.interface accessibility true
                         gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct -s -t string /apps/empathy/conversation/theme classic
+                        gset set org.gnome.Empathy.conversation theme classic
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-                        remove_applet fast_user_switch
                         add_sudoers_file
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.local/share/orca
+				set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf speech
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         ;;
                         # Braille
                         braille=ask)
                         gct -s -t bool /desktop/gnome/interface/accessibility true
+                        gset set org.gnome.desktop.interface accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.local/share/orca
-				echo "import orca.settings" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
-				echo "orca.settings.enableSpeech = False" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
-				echo "orca.settings.enableBraille = True" >> /root/home/$USERNAME/.local/share/orca/user-settings.py
+				set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf braille
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t string /desktop/gnome/applications/window_manager/default /usr/bin/metacity
-                        gct -s -t string /apps/empathy/conversation/theme classic                        
-                        remove_applet fast_user_switch
+                        gct -s -t string /apps/empathy/conversation/theme classic
+                        gset set org.gnome.Empathy.conversation theme classic
                         add_sudoers_file
                         ;;
                         # Minor Motor Difficulties
@@ -157,6 +325,7 @@ for x in $(cat /proc/cmdline); do
                         access=m2)
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 			gct -s -t bool /desktop/gnome/interface/accessibility true
+                        gset set org.gnome.desktop.interface accessibility true
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
                         gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
                         gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false

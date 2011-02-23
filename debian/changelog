@@ -1,3 +1,16 @@
+casper (1.258) natty; urgency=low
+
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Remove code that removes applets from the panel. Indicators are the
+      way forward, and we have unity, which works differently.
+    - Write orca configuration in json format
+    - Set some settings in gsettings parallel to gconf, next cycle there
+      will be a full migration to gsettings.
+    - Do not change the default window manager setting, this will be done
+      according to what is detected with unity/compiz et al.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 23 Feb 2011 15:18:23 +1100
+
 casper (1.257) natty; urgency=low
 
   * Handle $cow_backing already being mounted elsewhere (LP: #683260).

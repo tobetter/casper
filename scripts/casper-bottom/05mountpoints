@@ -24,4 +24,8 @@ log_begin_msg "$DESCRIPTION"
 mkdir -p /root/cdrom
 mount -n -o move /cdrom /root/cdrom
 
+# temporary hack for LP#727783
+mkdir -p /root/media
+ln -s /cdrom /root/media/cdrom
+
 log_end_msg

@@ -1,3 +1,11 @@
+casper (1.259) natty; urgency=low
+
+  * scripts/casper-bottom/05mountpoints: Create a /media/cdrom -> /cdrom
+    symlink, to work around apt's changed default mount point for Alpha-3.
+    (LP: #727783)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Thu, 03 Mar 2011 11:52:38 +0100
+
 casper (1.258) natty; urgency=low
 
   * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:

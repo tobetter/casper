@@ -232,6 +232,13 @@ EOF
 	esac
 }
 
+use_classic_gnome()
+{
+	if [ -x /root/usr/lib/gdm/gdm-set-default-session ] ; then
+		chroot /root /usr/lib/gdm/gdm-set-default-session gnome-2d || true
+	fi
+}
+
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
@@ -247,7 +254,6 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/background/color_shading_type solid
                         gct -s -t int /desktop/gnome/peripherals/mouse/cursor_size 48
                         gct -s -t string /desktop/gnome/peripherals/mouse/cursor_theme whiteglass
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/
                         if [ -d /root/usr/share/xubuntu-default-settings/accessibility ]; then
@@ -266,8 +272,8 @@ for x in $(cat /proc/cmdline); do
 				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 			fi
                         gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         add_sudoers_file
+                        use_classic_gnome
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
                         ;;
                         # Blindness
@@ -279,8 +285,8 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct -s -t string /apps/empathy/conversation/theme classic
                         gset set org.gnome.Empathy.conversation theme classic
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         add_sudoers_file
+                        use_classic_gnome
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.local/share/orca
 				set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf speech
@@ -293,7 +299,6 @@ for x in $(cat /proc/cmdline); do
                         gset set org.gnome.desktop.interface accessibility true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 			if [ -x /root/usr/bin/orca ]; then
 				mkdir -p /root/home/$USERNAME/.local/share/orca
 				set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf braille
@@ -303,6 +308,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /apps/empathy/conversation/theme classic
                         gset set org.gnome.Empathy.conversation theme classic
                         add_sudoers_file
+                        use_classic_gnome
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

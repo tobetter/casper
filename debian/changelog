@@ -1,3 +1,20 @@
+casper (1.260) natty; urgency=low
+
+  [ Colin Watson ]
+  * Force apt-cdrom's mount point to /cdrom (LP: #723357).  I've left the
+    /media/cdrom symlink introduced in 1.259 in place anyway, as it's
+    harmless on the live CD and may save some effort elsewhere.
+
+  [ Luke Yelavich ]
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Set the default session to classic GNOME for moderate visual
+      impairement, blindness, and braille accessibility profiles (LP: #734659)
+    - Fix a few dangling references to user-settings.py (LP: #744214)
+    - Don't set /desktop/gnome/accessibility/keyboard/enable for vision
+      related profiles (LP: #711131)
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 01 Apr 2011 16:13:07 +1100
+
 casper (1.259) natty; urgency=low
 
   * scripts/casper-bottom/05mountpoints: Create a /media/cdrom -> /cdrom

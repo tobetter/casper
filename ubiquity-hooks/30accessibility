@@ -221,6 +221,13 @@ EOF
 	esac
 }
 
+use_classic_gnome()
+{
+        if [ -x /target/usr/lib/gdm/gdm-set-default-session ] ; then
+                chroot /target /usr/lib/gdm/gdm-set-default-session gnome-2d || true
+        fi
+}
+
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
@@ -236,7 +243,6 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/background/color_shading_type solid
                         gct -s -t int /desktop/gnome/peripherals/mouse/cursor_size 48
                         gct -s -t string /desktop/gnome/peripherals/mouse/cursor_theme whiteglass
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/
                         if [ -d /target/usr/share/xubuntu-default-settings/accessibility ]; then
                             cp -a /target/usr/share/xubuntu-default-settings/accessibility/* /target/etc/xdg/
@@ -248,14 +254,13 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca gnome-mag
                         fi
 
 			if [ -x /target/usr/bin/orca ]; then
-				if [ -f /home/$USERNAME/.local/share/orca/user-settings.py ]; then
+				if [ -f /home/$USERNAME/.local/share/orca/user-settings.conf ]; then
 					mkdir -p /target/home/$TARGET_USERNAME/.local/share
 					cp -r /home/$USERNAME/.local/share/orca /target/home/$TARGET_USERNAME/.local/share/
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.local/share/orca
@@ -266,7 +271,7 @@ for x in $(cat /proc/cmdline); do
 				fi
 			fi
                         add_sudoers_file
-
+                        use_classic_gnome
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
                         ;;
                         # Blindness
@@ -283,10 +288,9 @@ for x in $(cat /proc/cmdline); do
                         gct_gdm -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct_gdm -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct_gdm -s -t bool /desktop/gnome/applications/at/screen_reader_enabled true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         add_sudoers_file
 			if [ -x /target/usr/bin/orca ]; then
-				if [ -f /home/$USERNAME/.local/share/orca/user-settings.py ]; then
+				if [ -f /home/$USERNAME/.local/share/orca/user-settings.conf ]; then
 					mkdir -p /target/home/$TARGET_USERNAME/.local/share
 					mkdir -p /target/var/lib/gdm/.local/share
 					cp -r /home/$USERNAME/.local/share/orca /target/home/$TARGET_USERNAME/.local/share/
@@ -303,6 +307,7 @@ for x in $(cat /proc/cmdline); do
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca
                         fi
+                        use_classic_gnome
                         ;;
                         # Braille
                         braille=ask)
@@ -310,7 +315,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         if [ -x /target/usr/bin/orca ]; then
-				if [ -f /home/$USERNAME/.local/share/orca/user-settings.py ]; then
+				if [ -f /home/$USERNAME/.local/share/orca/user-settings.conf ]; then
 	                                mkdir -p /target/home/$TARGET_USERNAME/.local/share
 					mkdir -p /target/var/lib/gdm/.local/share
 					cp -r /home/$USERNAME/.local/share/orca /target/home/$TARGET_USERNAME/.local/share/
@@ -334,8 +339,8 @@ for x in $(cat /proc/cmdline); do
                         gct_gdm -s -t bool /desktop/gnome/applications/at/visual/startup true
                         gct_gdm -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct_gdm -s -t bool /desktop/gnome/applications/at/screen_reader_enabled true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
                         add_sudoers_file
+                        use_classic_gnome
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

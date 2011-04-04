@@ -1,3 +1,11 @@
+casper (1.261) natty; urgency=low
+
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Also use classic GNOME for the "motor difficulties, pointing devices"
+      profile, due to issues with on-screen keyboards and unity search
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Mon, 04 Apr 2011 16:15:59 +1000
+
 casper (1.260) natty; urgency=low
 
   [ Colin Watson ]

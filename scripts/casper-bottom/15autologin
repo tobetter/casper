@@ -35,6 +35,8 @@ TimedLoginDelay=10"
             echo '[daemon]' >> $GDMCustomFile
         fi
         sed -i "s/\[daemon\]/\[daemon\]\n$AutologinParameters/" $GDMCustomFile
+        chroot /root sudo -u "$USERNAME" gconftool-2 -s -t bool \
+            /apps/indicator-session/suppress_logout_menuitem true
     fi
 fi
 

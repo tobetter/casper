@@ -1,3 +1,13 @@
+casper (1.262) natty; urgency=low
+
+  * scripts/casper-bottom/30accessibility:
+    - Don't blindly assume that there are no orca config files/directories in
+      the created user's home directory. A derivative may have placed something
+      in /etc/skel as part of the live filesystem, and we shouldn't be
+      clobbering it, thanks to Attila Hammer for the pointer (LP: #744227)
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Mon, 04 Apr 2011 17:32:40 +1000
+
 casper (1.261) natty; urgency=low
 
   * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:

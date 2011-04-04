@@ -1,3 +1,18 @@
+casper (1.263) natty; urgency=low
+
+  [ Evan Dandrea ]
+  * Suppress Log Out item in the live session (LP: #750140).
+
+  [ Martin Pitt ]
+  * scripts/casper-helpers, find_cow_device(): Do not ever probe floppy
+    devices. There are lots of computers which still have a floppy controller
+    (and thus a /dev/fd0), but no actual floppy. Trying to send anything to
+    /dev/fd0 will result in very long timeouts. Here this causes booting the
+    live CD to take more than 30 minutes. (See also LP #539515 for the
+    corresponding bug in udev/udisks). (LP: #739774)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Mon, 04 Apr 2011 16:12:34 +0200
+
 casper (1.262) natty; urgency=low
 
   * scripts/casper-bottom/30accessibility:

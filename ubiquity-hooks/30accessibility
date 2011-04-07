@@ -270,6 +270,11 @@ for x in $(cat /proc/cmdline); do
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.local/share/orca
 				fi
 			fi
+			if [ -d /home/$USERNAME/.config/yelp ]; then
+				mkdir -p /target/home/$TARGET_USERNAME/.config
+				cp -r /home/$USERNAME/.config/yelp /target/home/$TARGET_USERNAME/.config
+				chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.config/yelp
+			fi
                         add_sudoers_file
                         use_classic_gnome
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
@@ -303,6 +308,11 @@ for x in $(cat /proc/cmdline); do
 					chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.local/share/orca
 				fi
 			fi
+			if [ -d /home/$USERNAME/.config/yelp ]; then
+				mkdir -p /target/home/$TARGET_USERNAME/.config
+				cp -r /home/$USERNAME/.config/yelp /target/home/$TARGET_USERNAME/.config
+				chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.config/yelp
+			fi
 
                         if [ -d /usr/share/xubuntu-default-settings ]; then
                           apt-install gnome-orca
@@ -331,6 +341,11 @@ for x in $(cat /proc/cmdline); do
 					chroot /target chown -R gdm.gdm /var/lib/gdm/.local/share/orca
 				fi
                         fi
+			if [ -d /home/$USERNAME/.config/yelp ]; then
+				mkdir -p /target/home/$TARGET_USERNAME/.config
+				cp -r /home/$USERNAME/.config/yelp /target/home/$TARGET_USERNAME/.config
+				chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.config/yelp
+			fi
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /apps/empathy/conversation/theme classic
                         gset set org.gnome.Empathy.conversation theme classic

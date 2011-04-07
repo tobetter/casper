@@ -1,3 +1,12 @@
+casper (1.264) natty; urgency=low
+
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Enable yelp carrot navigation by default in the moderate visual
+      impairment, blindness, and Braille profiles, thanks to Attila Hammer
+      for the patch (LP: #752503)
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Thu, 07 Apr 2011 10:17:52 +1000
+
 casper (1.263) natty; urgency=low
 
   [ Evan Dandrea ]

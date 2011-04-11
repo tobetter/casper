@@ -239,17 +239,6 @@ use_classic_gnome()
 	fi
 }
 
-# Enable carrot navigation for yelp by default.
-# Arguments: $1: THe filename to write the configuration to.
-enable_caret_navigation()
-{
-	cat <<EOF > "$1"
-
-[yelp]
-show-cursor=true
-EOF
-}
-
 for x in $(cat /proc/cmdline); do
                 case $x in
                         # Lesser Visual Impairment
@@ -284,12 +273,8 @@ for x in $(cat /proc/cmdline); do
 					chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 				fi
 			fi
-			if ! [ -d /root/home/$USERNAME/.config/yelp ]; then
-				mkdir -p /root/home/$USERNAME/.config/yelp
-				enable_caret_navigation /root/home/$USERNAME/.config/yelp/yelp.cfg
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config/yelp
-			fi
                         gct -s -t bool /apps/gksu/disable-grab true
+                        gset set org.gnome.yelp show-cursor true
                         add_sudoers_file
                         use_classic_gnome
                         kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
@@ -303,6 +288,7 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t string /desktop/gnome/applications/at/visual/exec orca
                         gct -s -t string /apps/empathy/conversation/theme classic
                         gset set org.gnome.Empathy.conversation theme classic
+                        gset set org.gnome.yelp show-cursor true
                         add_sudoers_file
                         use_classic_gnome
 			if [ -x /root/usr/bin/orca ]; then
@@ -311,11 +297,6 @@ for x in $(cat /proc/cmdline); do
 					set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf speech
 					chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
 				fi
-			fi
-			if ! [ -d /root/home/$USERNAME/.config/yelp ]; then
-				mkdir -p /root/home/$USERNAME/.config/yelp
-				enable_caret_navigation /root/home/$USERNAME/.config/yelp/yelp.cfg
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config/yelp
 			fi
                         ;;
                         # Braille
@@ -334,13 +315,9 @@ for x in $(cat /proc/cmdline); do
                         gct -s -t bool /apps/gksu/disable-grab true
                         gct -s -t string /apps/empathy/conversation/theme classic
                         gset set org.gnome.Empathy.conversation theme classic
+                        gset set org.gnome.yelp show-cursor true
                         add_sudoers_file
                         use_classic_gnome
-			if ! [ -d /root/home/$USERNAME/.config/yelp ]; then
-				mkdir -p /root/home/$USERNAME/.config/yelp
-				enable_caret_navigation /root/home/$USERNAME/.config/yelp/yelp.cfg
-				chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config/yelp
-			fi
                         ;;
                         # Minor Motor Difficulties
                         access=m1)

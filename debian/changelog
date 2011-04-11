@@ -1,3 +1,13 @@
+casper (1.265) natty; urgency=low
+
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Use gsettings to adjust yelp caret navigation, as properly fixed in
+      yelp 3.0.1
+  * ubiquity-hooks/30accessibility: Fix the gset function to set settings for
+    the target username, and not the username of the live user
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Mon, 11 Apr 2011 16:47:46 +1000
+
 casper (1.264) natty; urgency=low
 
   * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:

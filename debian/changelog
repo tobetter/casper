@@ -1,3 +1,9 @@
+casper (1.236.3) lucid-proposed; urgency=low
+
+  * Disable release-upgrade prompts in the live session (LP: #777759).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 05 May 2011 12:31:54 +0100
+
 casper (1.236.2) lucid-proposed; urgency=low
 
   * More fixes to the USB update-initramfs shim (thanks, Evan Dandrea;

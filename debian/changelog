@@ -1,3 +1,27 @@
+casper (1.268) oneiric; urgency=low
+
+  The big accessibility profile code refactor:
+  * debian/copyright: Update Canonical copyright years to include 2011
+  * bin/casper-a11y-helper: Create a new script that will be callable from
+    casper/the initramfs, ubiquity at the maybe-ubiquity screen, and ubiquity
+    when running through ubiquity-hooks during the installation process.
+    - Copy accessibility profile settings from both
+      scripts/casper-bottom/30accessibility and ubiquity-hooks/30accessibility
+    - Refactor profile settings into groups of common settings for low vision
+      and motor profiles, with the rest of the settings broken up into
+      individual methods for each profile
+    - Add options to allow for calling the script from within the initramfs
+    - Do a few more package checks to make sure the target environment has the
+      commands we need to set things up
+  * scripts/casper-bottom/30accessibility && ubiquity-hooks/30accessibility:
+    - Remove old profile settings and support code, and make use of the new
+      a11y helper script
+    - Call the helper with debugging enabled for now, to help with testing
+      to make sure the new helper is executing properly
+  * debian/casper.install: Add casper-a11y-helper
+ 
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 08 Jun 2011 15:35:39 +1000
+
 casper (1.267) oneiric; urgency=low
 
   * scripts/casper-bottom/32disable_hibernation: Drop obsolete

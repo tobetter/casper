@@ -1,359 +1,52 @@
 #!/bin/sh
-# If you change this, please also change the copy in ubiquity-hooks/30accessibility.
+# If you are looking to change accessibility profile settings, plesae look in
+# bin/casper-a11y-enable.
 
 PREREQ=""
 DESCRIPTION="Configuring accessibility options..."
 
 prereqs()
 {
-       echo "$PREREQ"
+	echo "$PREREQ"
 }
 
 case $1 in
 # get pre-requisites
-prereqs)
-       prereqs
-       exit 0
-       ;;
+	prereqs)
+		prereqs
+	       exit 0
+	       ;;
 esac
 
 . /scripts/casper-functions
 
 log_begin_msg "$DESCRIPTION"
 
-gconf_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || gconf_version=""
-glibbin_version=$(chroot /root /usr/bin/dpkg-query -W --showformat='${Version}' libglib2.0-bin 2>/dev/null) || glibbin_version=""
-
-gct() {
-    if [ "$gconf_version" ]; then
-        chroot /root sudo -u "$USERNAME" gconftool-2 "$@"
-    fi
-}
-
-gset() {
-    if [ "$glibbin_version" ]; then
-        chroot /root sudo -u "$USERNAME" gsettings "$@"
-    fi
-}
-
-kderc_addtoprefixes() {
-    if [ -e "/root/etc/kde4rc" ]; then
-        sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" /root/etc/kde4rc
-    fi
-}
-
-add_sudoers_file()
-{
-	cat <<EOF > /root/etc/sudoers.d/a11y-sudo
-# TO allow accessibility in GTK to work with sudo.
-Defaults        env_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"
-EOF
-	chmod 0440 /root/etc/sudoers.d/a11y-sudo
-}
-
-# Unfortunately this bloats this script somewhat, but orca doesn't seem to want
-# to deal with individual settings/a small config fragment. Yet another reason to
-# unify the 2 scripts.
-# Arguments: $1 = /path/to/config-file $2 = speech/magnifier/braille (which
-# accessibility feature to turn on)
-set_orca_config() {
-	cat <<EOF > "$1"
-{
-    "pronunciations": {}, 
-    "keybindings": {}, 
-    "profiles": {
-        "default": {
-            "profile": [
-                "Default", 
-                "default"
-            ], 
-            "pronunciations": {}, 
-            "keybindings": {}
-        }
-    }, 
-    "general": {
-        "speakCellHeaders": true, 
-        "magEdgeMargin": 0, 
-        "brailleContractionTable": "", 
-        "magPointerFollowsFocus": false, 
-        "magTextTrackingMode": 2, 
-        "magZoomerBorderSize": 1, 
-        "brailleAlignmentStyle": 0, 
-        "enableEchoByWord": false, 
-        "enableMagZoomerColorInversion": false, 
-        "magCursorSize": 32, 
-        "magSmoothingMode": 0, 
-        "magZoomerLeft": 840, 
-        "showMainWindow": true, 
-        "sayAllStyle": 1, 
-        "brailleSelectorIndicator": 192, 
-        "presentDateFormat": "%x", 
-        "magContrastLevel": 0, 
-        "magMouseTrackingMode": 0, 
-        "speakCellSpan": true, 
-        "progressBarUpdateInterval": 10, 
-        "speakCellCoordinates": true, 
-        "enablePauseBreaks": true, 
-        "brailleEOLIndicator": " $l", 
-        "verbalizePunctuationStyle": 1, 
-        "progressBarVerbosity": 1, 
-        "enableSpeech": false, 
-        "enableBraille": false, 
-        "chatAnnounceBuddyTyping": false, 
-        "speakMultiCaseStringsAsWords": false, 
-        "enableBrailleGrouping": false, 
-        "readTableCellRow": true, 
-        "speechServerFactory": "speechdispatcherfactory", 
-        "textAttributesBrailleIndicator": 0, 
-        "enableMagCursorExplicitSize": false, 
-        "messageVerbosityLevel": 1, 
-        "enableMagLiveUpdating": true, 
-        "enableSpeechIndentation": false, 
-        "enableKeyEcho": true, 
-        "magHideCursor": false, 
-        "magZoomerBorderColor": "#000000", 
-        "magPointerFollowsZoomer": true, 
-        "mouseDwellDelay": 0, 
-        "magBrightnessLevelRed": 0, 
-        "enableMagnifier": false, 
-        "magZoomFactor": 4.0, 
-        "activeProfile": [
-            "Default", 
-            "default"
-        ], 
-        "enableMagZoomerBorder": false, 
-        "flashVerbosityLevel": 1, 
-        "enableFlashMessages": true, 
-        "speechServerInfo": null, 
-        "presentToolTips": false, 
-        "flashIsPersistent": false, 
-        "skipBlankCells": false, 
-        "firstStart": false, 
-        "largeObjectTextLength": 75, 
-        "enableEchoBySentence": false, 
-        "magContrastLevelBlue": 0, 
-        "magContrastLevelRed": 0, 
-        "enableContractedBraille": false, 
-        "orcaModifierKeys": [
-            "Insert", 
-            "KP_Insert"
-        ], 
-        "enableMagCursor": true, 
-        "speechRequiredStateString": "required", 
-        "quitOrcaNoConfirmation": false, 
-        "brailleRequiredStateString": "required", 
-        "magCursorColor": "#000000", 
-        "enablePositionSpeaking": false, 
-        "magZoomerType": 0, 
-        "onlySpeakDisplayedText": false, 
-        "enableProgressBarUpdates": true, 
-        "wrappedStructuralNavigation": true, 
-        "chatRoomHistories": false, 
-        "brailleVerbosityLevel": 1, 
-        "enableFunctionKeys": true, 
-        "enableModifierKeys": true, 
-        "magCrossHairColor": "#000000", 
-        "enableTutorialMessages": false, 
-        "enableActionKeys": true, 
-        "speakBlankLines": true, 
-        "magColorFilteringMode": 0, 
-        "magZoomerRight": 1680, 
-        "keyboardLayout": 1, 
-        "magTargetDisplay": "", 
-        "disableBrailleEOL": false, 
-        "magZoomerTop": 0, 
-        "magSourceDisplay": "", 
-        "enableDiacriticalKeys": false, 
-        "enableMnemonicSpeaking": false, 
-        "enabledBrailledTextAttributes": "size:; family-name:; weight:400; indent:0; underline:none; strikethrough:false; justification:left; style:normal; text-spelling:none;", 
-        "speechVerbosityLevel": 1, 
-        "enableMagCrossHair": true, 
-        "enableBrailleMonitor": false, 
-        "voices": {
-            "default": {
-                "established": false
-            }, 
-            "uppercase": {
-                "average-pitch": 5.6
-            }, 
-            "system": {
-                "established": false
-            }, 
-            "hyperlink": {
-                "established": false
-            }
-        }, 
-        "magContrastLevelGreen": 0, 
-        "brailleFlashTime": 5000, 
-        "magCrossHairSize": 16, 
-        "enableMouseReview": false, 
-        "enableNavigationKeys": false, 
-        "magBrightnessLevelGreen": 0, 
-        "chatSpeakRoomName": false, 
-        "startingProfile": [
-            "Default", 
-            "default"
-        ], 
-        "enableLockingKeys": true, 
-        "profile": [
-            "Default", 
-            "default"
-        ], 
-        "brailleRolenameStyle": 1, 
-        "brailleLinkIndicator": 192, 
-        "enableEchoByCharacter": false, 
-        "magBrightnessLevelBlue": 0, 
-        "enableBrailleContext": true, 
-        "magControlTrackingMode": 2, 
-        "magZoomerBottom": 1050, 
-        "enablePrintableKeys": true, 
-        "enabledSpokenTextAttributes": "size:; family-name:; weight:400; indent:0; underline:none; strikethrough:false; justification:left; style:normal; paragraph-style:; text-spelling:none;", 
-        "chatMessageVerbosity": 0, 
-        "presentTimeFormat": "%X", 
-        "magBrightnessLevel": 0, 
-        "presentRequiredState": false, 
-        "enableMagCrossHairClip": false
-    }
-}
-EOF
-
-	case $2 in
-		magnifier)
-			sed -i -e 's/\"enableMagnifier\": false/\"enableMagnifier\": true/' "$1"
-			;;
-		speech)
-			sed -i -e 's/\"enableSpeech\": false/\"enableSpeech\": true/' "$1"
-			;;
-		braille)
-			sed -i -e 's/\"enableBraille\": false/\"enableBraille\": true/' "$1"
-			;;
-		*)
-			;;
-	esac
-}
-
-use_classic_gnome()
-{
-	if [ -x /root/usr/lib/gdm/gdm-set-default-session ] ; then
-		chroot /root /usr/lib/gdm/gdm-set-default-session gnome-2d || true
-	fi
-}
-
 for x in $(cat /proc/cmdline); do
-                case $x in
-                        # Lesser Visual Impairment
-                        access=v1)
-                        gct -s -t string /desktop/gnome/interface/gtk_theme HighContrastLargePrint
-                        gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
-                        gct -s -t string /desktop/gnome/interface/monospace_font_name "monospace 18"
-                        gct -s -t string /desktop/gnome/interface/font_name "sans 18"
-                        gct -s -t string /desktop/gnome/background/picture_filename ""
-                        gct -s -t string /desktop/gnome/background/picture_options none
-                        gct -s -t string /desktop/gnome/background/primary_color \#666666
-                        gct -s -t string /desktop/gnome/background/secondary_color \#7F7F7F
-                        gct -s -t string /desktop/gnome/background/color_shading_type solid
-                        gct -s -t int /desktop/gnome/peripherals/mouse/cursor_size 48
-                        gct -s -t string /desktop/gnome/peripherals/mouse/cursor_theme whiteglass
-
-                        kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/
-                        if [ -d /root/usr/share/xubuntu-default-settings/accessibility ]; then
-                            cp -a /root/usr/share/xubuntu-default-settings/accessibility/* /root/etc/xdg/
-                        fi
+	case $x in
+		# Lesser Visual Impairment
+		access=v1)
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug high-contrast
                         ;;
-                        # Moderate Visual Impairment
-                        access=v2)
-                        gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gset set org.gnome.desktop.interface accessibility true
-                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-                        gct -s -t string /desktop/gnome/applications/at/visual/exec orca
-			if [ -x /root/usr/bin/orca ]; then
-				if ! [ -d /root/home/$USERNAME/.local/share/orca ]; then
-					mkdir -p /root/home/$USERNAME/.local/share/orca
-					set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf magnifier
-					chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
-				fi
-			fi
-                        gct -s -t bool /apps/gksu/disable-grab true
-                        gset set org.gnome.yelp show-cursor true
-                        add_sudoers_file
-                        use_classic_gnome
-                        kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/,/usr/share/kubuntu-default-settings/kde-profile/moderate-visual-impairment/
+		# Moderate Visual Impairment
+		access=v2)
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug magnifier
                         ;;
-                        # Blindness
-                        access=v3)
-                        gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gset set org.gnome.desktop.interface accessibility true
-                        gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-                        gct -s -t string /desktop/gnome/applications/at/visual/exec orca
-                        gct -s -t string /apps/empathy/conversation/theme classic
-                        gset set org.gnome.Empathy.conversation theme classic
-                        gset set org.gnome.yelp show-cursor true
-                        add_sudoers_file
-                        use_classic_gnome
-			if [ -x /root/usr/bin/orca ]; then
-				if ! [ -d /root/home/$USERNAME/.local/share/orca ]; then
-					mkdir -p /root/home/$USERNAME/.local/share/orca
-					set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf speech
-					chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
-				fi
-			fi
+		# Blindness
+		access=v3)
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug blindness
                         ;;
-                        # Braille
-                        braille=ask)
-                        gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gset set org.gnome.desktop.interface accessibility true
-                        gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-                        gct -s -t string /desktop/gnome/applications/at/visual/exec orca
-			if [ -x /root/usr/bin/orca ]; then
-				if ! [ -d /root/home/$USERNAME/.local/share/orca ]; then
-					mkdir -p /root/home/$USERNAME/.local/share/orca
-					set_orca_config /root/home/$USERNAME/.local/share/orca/user-settings.conf braille
-					chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.local/share/orca
-				fi
-			fi
-                        gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t string /apps/empathy/conversation/theme classic
-                        gset set org.gnome.Empathy.conversation theme classic
-                        gset set org.gnome.yelp show-cursor true
-                        add_sudoers_file
-                        use_classic_gnome
+		# Braille
+		braille=ask)
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug braille
                         ;;
-                        # Minor Motor Difficulties
-                        access=m1)
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep true
-                        gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
-                        gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
-                        gct -s -t int /desktop/gnome/peripherals/keyboard/delay 700
-                        gct -s -t int /desktop/gnome/peripherals/keyboard/rate 10
-                        gct -s -t bool /apps/gksu/disable-grab true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-                        kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/
-                        if [ -e /root/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
-                            sed -i 's/0/1/' /root/etc/xdg/xfce4/mcs_settings/keyboard.xml
-                        fi 
+		# Minor Motor Difficulties
+		access=m1)
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug keyboard-modifiers
                         ;;
-                        # Motor Difficulties - pointing devices
-                        access=m2)
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-			gct -s -t bool /desktop/gnome/interface/accessibility true
-                        gset set org.gnome.desktop.interface accessibility true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
-                        gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
-                        gct -s -t bool /desktop/gnome/applications/at/mobility/startup true
-                        gct -s -t string /desktop/gnome/applications/at/mobility/exec onboard
-                        gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
-                        if [ -x /root/usr/lib/gdm/gdm-set-default-session ] ; then
-                            chroot /root /usr/lib/gdm/gdm-set-default-session gnome-classic || true
-                        fi
-                        kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/,/usr/share/kubuntu-default-settings/kde-profile/motor-difficulties-pointing-devices/
-                        if [ -e /root/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
-                            sed -i '/Sticky/ s/0/1/' /root/etc/xdg/xfce4/mcs_settings/keyboard.xml
-                        fi 
+		# Motor Difficulties - pointing devices
+		access=m2)
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug onscreen-keyboard
                         ;;
 		esac
 done

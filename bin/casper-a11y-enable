@@ -38,10 +38,7 @@ set -e
 # all low vision profiles, for both the user session and login manager.
 set_common_lowvis()
 {
-	gct -s -t bool /desktop/gnome/interface/accessibility true
-	gset set org.gnome.desktop.interface accessibility true
-	gct -s -t bool /desktop/gnome/applications/at/visual/startup true
-	gct -s -t string /desktop/gnome/applications/at/visual/exec orca
+	gset set org.gnome.desktop.interface toolkit-accessibility true
 	gct -s -t bool /apps/gksu/disable-grab true
 	gset set org.gnome.yelp show-cursor true
 	add_sudoers_file
@@ -88,29 +85,20 @@ set_magnifier()
 
 set_blindness()
 {
-	gct -s -t string /apps/empathy/conversation/theme classic
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config speech
 
 	if [ "$SET_LOGIN" -eq 1 ]; then
-		gct_gdm -s -t bool /desktop/gnome/interface/accessibility true
-		gset_gdm set org.gnome.desktop.interface accessibility true
-		gct_gdm -s -t bool /desktop/gnome/applications/at/visual/startup true
-		gct_gdm -s -t string /desktop/gnome/applications/at/visual/exec orca
-		gct_gdm -s -t bool /desktop/gnome/applications/at/screen_reader_enabled true
+		gset_gdm set org.gnome.desktop.interface toolkit-accessibility true
 	fi
 }
 
 set_braille()
 {
-	gct -s -t string /apps/empathy/conversation/theme classic
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config braille
 	if [ "$SET_LOGIN" -eq 1 ]; then
-		gct_gdm -s -t bool /desktop/gnome/interface/accessibility true
-		gct_gdm -s -t bool /desktop/gnome/applications/at/visual/startup true
-		gct_gdm -s -t string /desktop/gnome/applications/at/visual/exec orca
-		gct_gdm -s -t bool /desktop/gnome/applications/at/screen_reader_enabled true
+		gset_gdm set org.gnome.desktop.interface toolkit-accessibility true
 	fi
 }
 

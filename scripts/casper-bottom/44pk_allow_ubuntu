@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Grant administrative PolicyKit pivilieges to default user..."
+DESCRIPTION="Grant administrative PolicyKit privileges to default user..."
 
 prereqs()
 {

@@ -1,3 +1,9 @@
+casper (1.270) oneiric; urgency=low
+
+  * Depend on lzma for our diverted update-initramfs (LP: #790794).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 30 Jun 2011 10:30:49 +0100
+
 casper (1.269) oneiric; urgency=low
 
   [ Luke Yelavich ]

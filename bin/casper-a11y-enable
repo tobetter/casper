@@ -421,33 +421,33 @@ do
 			CHROOT_DIR="${1#-chroot=}"
 			DO_CHROOT="chroot $CHROOT_DIR"
 			shift
-			break
+			continue
 		;;
 		-user=*)
 			USER_NAME="${1#-user=}"
 			DO_SUDO="sudo -u $USER_NAME"
 			shift
-			break
+			continue
 		;;
 		-l|-login)
 			SET_LOGIN=1
 			shift
-			break
+			continue
 		;;
 		-i|-initramfs)
 			IN_INITRAMFS=1
 			shift
-			break
+			continue
 		;;
 		-d|-debug)
-			set +x
+			set -x
 			shift
-			break
+			continue
 		;;
 		*)
 			PROFILE_NAME="$1"
 			shift
-			break
+			continue
 		;;
 	esac
 done
@@ -496,9 +496,9 @@ fi
 
 # Check to see if a few necessary packages are present in the target
 # environment.
-GCONF_VERSION=$("$DO_CHROOT" /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || GCONF_VERSION=""
-GLIBBIN_VERSION=$("$DO_CHROOT" /usr/bin/dpkg-query -W --showformat='${Version}' libglib2.0-bin 2>/dev/null) || GLIBBIN_VERSION=""
-ORCA_VERSION=$("$DO_CHROOT" /usr/bin/dpkg-query -W --showformat='${Version}' gnome-orca 2>/dev/null) || ORCA_VERSION=""
+GCONF_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || GCONF_VERSION=""
+GLIBBIN_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' libglib2.0-bin 2>/dev/null) || GLIBBIN_VERSION=""
+ORCA_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' gnome-orca 2>/dev/null) || ORCA_VERSION=""
 
 case $PROFILE_NAME in
 	high-contrast)

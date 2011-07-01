@@ -1,3 +1,13 @@
+casper (1.271) oneiric; urgency=low
+
+  * bin/casper-a11y-enable:
+    - Use -x when enabling debug mode
+    - Adjust some variable quoting when checking for package versions
+    - Do not break out of the command-line checking loop at all, let it run its
+      course until there are no command-line values left to parse
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 01 Jul 2011 11:47:31 +0100
+
 casper (1.270) oneiric; urgency=low
 
   * Depend on lzma for our diverted update-initramfs (LP: #790794).

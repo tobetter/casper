@@ -39,6 +39,7 @@ set -e
 set_common_lowvis()
 {
 	gset set org.gnome.desktop.interface toolkit-accessibility true
+	gct -s -t bool /desktop/gnome/interface/accessibility true
 	gct -s -t bool /apps/gksu/disable-grab true
 	gset set org.gnome.yelp show-cursor true
 	add_sudoers_file
@@ -48,26 +49,25 @@ set_common_lowvis()
 # all motor profiles, for both the user session and login manager.
 set_common_motor()
 {
-	gct -s -t bool /desktop/gnome/accessibility/keyboard/enable true
+	gset set org.gnome.desktop.a11y.keyboard enable true
 	gct -s -t bool /apps/gksu/disable-grab true
-	gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
-	gct -s -t bool /desktop/accessibility/gnome/keyboard/stickykeys_two_key_off false
-
+	gset set org.gnome.desktop.a11y.keyboard stickykeys-enable true
+	gset set org.gnome.desktop.a11y.keyboard stickykeys-two-key-off false
 }
 
 # Settings for the high-contrast profile.
 set_high_contrast()
 {
-	gct -s -t string /desktop/gnome/interface/icon_theme HighContrast
-	gct -s -t string /desktop/gnome/interface/monospace_font_name "monospace 18"
-	gct -s -t string /desktop/gnome/interface/font_name "sans 18"
-	gct -s -t string /desktop/gnome/background/picture_filename ""
-	gct -s -t string /desktop/gnome/background/picture_options none
-	gct -s -t string /desktop/gnome/background/primary_color \#666666
-	gct -s -t string /desktop/gnome/background/secondary_color \#7F7F7F
-	gct -s -t string /desktop/gnome/background/color_shading_type solid
-	gct -s -t int /desktop/gnome/peripherals/mouse/cursor_size 48
-	gct -s -t string /desktop/gnome/peripherals/mouse/cursor_theme whiteglass
+	gset set org.gnome.desktop.interface icon-theme HighContrast
+	gset set org.gnome.desktop.interface monospace-font-name "monospace 18"
+	gset set org.gnome.desktop.interface font-name "sans 18"
+	gset set org.gnome.desktop.background picture-uri ""
+	gset set org.gnome.desktop.background picture-options none
+	gset set org.gnome.desktop.background primary-color \#666666
+	gset set org.gnome.desktop.background secondary-color \#7F7F7F
+	gset set org.gnome.desktop.background color-shading-type solid
+	gset set org.gnome.desktop.interface cursor-size 48
+	gset set org.gnome.desktop.interface cursor-theme whiteglass
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/
 	if [ -d $CHROOT_DIR/usr/share/xubuntu-default-settings/accessibility ]; then
 		cp -a $CHROOT_DIR/usr/share/xubuntu-default-settings/accessibility/* $CHROOT_DIR/etc/xdg/
@@ -77,6 +77,7 @@ set_high_contrast()
 set_magnifier()
 {
 	# Ubuntu
+	gset set org.gnome.desktop.a11y.applications screen-magnifier-enabled true
 	set_orca_config magnifier
 
 	# Kubuntu
@@ -85,31 +86,32 @@ set_magnifier()
 
 set_blindness()
 {
+	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config speech
 
-	if [ "$SET_LOGIN" -eq 1 ]; then
+	if [ -n "$SET_LOGIN" ]; then
 		gset_gdm set org.gnome.desktop.interface toolkit-accessibility true
 	fi
 }
 
 set_braille()
 {
+	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config braille
-	if [ "$SET_LOGIN" -eq 1 ]; then
+	if [ -n "$SET_LOGIN" ]; then
 		gset_gdm set org.gnome.desktop.interface toolkit-accessibility true
 	fi
 }
 
 set_keyboard_modifiers()
 {
-	gct -s -t bool /desktop/gnome/accessibility/keyboard/mousekeys_enable true
-	gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_enable true
-	gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep true
-	gct -s -t bool /desktop/gnome/peripherals/keyboard/repeat true
-	gct -s -t int /desktop/gnome/peripherals/keyboard/delay 700
-	gct -s -t int /desktop/gnome/peripherals/keyboard/rate 10
+	gset set org.gnome.desktop.a11y.keyboard mousekeys-enable true
+	gset set org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep true
+	gset set org.gnome.settings-daemon.peripherals.keyboard repeat true
+	gset set org.gnome.settings-daemon.peripherals.keyboard delay 700
+	gset set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 10
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/
 	if [ -e $CHROOT_DIR/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
 		sed -i 's/0/1/' $CHROOT_DIR/etc/xdg/xfce4/mcs_settings/keyboard.xml
@@ -118,11 +120,10 @@ set_keyboard_modifiers()
 
 set_onscreen_keyboard()
 {
-	gct -s -t bool /desktop/gnome/interface/accessibility true
-	gset set org.gnome.desktop.interface accessibility true
-	gct -s -t bool /desktop/gnome/accessibility/keyboard/stickykeys_modifier_beep false
-	gct -s -t bool /desktop/gnome/applications/at/mobility/startup true
-	gct -s -t string /desktop/gnome/applications/at/mobility/exec onboard
+	gset set org.gnome.desktop.interface toolkit-accessibility true
+	gset set org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep false
+	gset set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
+
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/,/usr/share/kubuntu-default-settings/kde-profile/motor-difficulties-pointing-devices/
 	if [ -e $CHROOT_DIR/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
 		sed -i '/Sticky/ s/0/1/' $CHROOT_DIR/etc/xdg/xfce4/mcs_settings/keyboard.xml
@@ -491,7 +492,11 @@ fi
 # If no username was entered on the command line, grab the name of the current
 # user, so we can write files to their home directory.
 if [ -z "$USER_NAME" ]; then
-	USER_NAME="$USER"
+	if [ -z "$USER" ]; then
+		USER_NAME="${HOME#/home/}"
+	else
+		USER_NAME="$USER"
+	fi
 fi
 
 # Check to see if a few necessary packages are present in the target

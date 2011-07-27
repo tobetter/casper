@@ -64,7 +64,7 @@ parse_cmdline() {
         esac
     done
     if [ "${UNIONFS}" = "" ]; then
-        export UNIONFS="aufs"
+        export UNIONFS="DEFAULT"
     fi
 }
 
@@ -367,15 +367,23 @@ setup_unionfs() {
     image_directory="$1"
     rootmnt="$2"
 
-    case ${UNIONFS} in
-        aufs|unionfs)
-            modprobe "${MP_QUIET}" -b ${UNIONFS} || true
-            if ! cut -f2 /proc/filesystems | grep -q "^${UNIONFS}\$" && \
-               [ -x /bin/unionfs-fuse ]; then
-                UNIONFS="unionfs-fuse"
-            fi
-            ;;
-    esac
+    if [ "${UNIONFS}" = 'DEFAULT' ]; then
+	for union in 'overlayfs' 'aufs' 'unionfs'
+	do
+            modprobe "${MP_QUIET}" -b ${union} || true
+            if cut -f2 /proc/filesystems | grep -q "^${union}\$"; then
+		UNIONFS="${union}"
+		break
+	    fi
+	done
+    fi
+    if [ "${UNIONFS}" = 'DEFAULT' -a -x /bin/unionfs-fuse ]; then
+	UNIONFS="unionfs-fuse"
+    fi
+    # If all else fails fall back to aufs.
+    if [ "${UNIONFS}" = 'DEFAULT' ]; then
+	UNIONFS='aufs'
+    fi
 
     # run-init can't deal with images in a subdir, but we're going to
     # move all of these away before it runs anyway.  No, we're not,
@@ -441,9 +449,29 @@ setup_unionfs() {
             mkdir -p /dev/.initramfs/varrun
             pidof unionfs-fuse >> /dev/.initramfs/varrun/sendsigs.omit || true
             ;;
-        *)
+        aufs|unionfs)
             mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
             ;;
+	overlayfs)
+	    # Mount the layers pairwise from the bottom onto rootmnt,
+	    # for the second and later layers rootmnt forms the lower layer.
+	    mounts=""
+	    for mount in /cow $rofslist
+	    do
+		mounts="$mount $mounts"
+	    done
+	    lower=""
+	    for mount in $mounts
+	    do
+		if [ "$lower" = "" ]; then
+		    lower="$mount"
+		    continue
+		fi
+		mount -t overlayfs -o "upperdir=$mount,lowerdir=$lower" \
+		    "$mount" "$rootmnt"
+		lower="$rootmnt"
+	    done
+	    ;;
     esac
 
     # Adding other custom mounts

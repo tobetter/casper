@@ -1,3 +1,17 @@
+casper (1.272) oneiric; urgency=low
+
+  [ Andy Whitcroft ]
+  * scripts/casper: add support for overlayfs for union mounts of the liveCD
+
+  [ Luke Yelavich ]
+  * Port the rest of the accessibility profile settings to gsettings, except
+    where gconf settings are required, eg firefox and gksu
+  * bin/casper-a11y-enable: Extract the username from the $HOME environment
+    variable, as $USER is not set when ubiquity calls the script, even with
+    all privileges dropped
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 27 Jul 2011 15:20:11 +1000
+
 casper (1.271) oneiric; urgency=low
 
   * bin/casper-a11y-enable:

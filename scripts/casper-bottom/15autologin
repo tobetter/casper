@@ -67,14 +67,27 @@ if [ -f /root/etc/xdg/lubuntu/lxdm/lxdm.conf ]; then
         /root/etc/xdg/lubuntu/lxdm/lxdm.conf
 fi
 
-if [ -f /root/etc/lightdm/lightdm.conf ]; then
-    # Configure LightDM autologin
-    if ! grep -q ^default-user /root/etc/lightdm/lightdm.conf; then
-        sed -i -r \
-            -e "s/^#default-user=.*/default-user=$USERNAME/" \
-            -e "s/^#default-user-timeout=.*/default-user-timeout=0/" \
-            -e "s/^#pam-service=.*/pam-service=lightdm-autologin/" \
-            /root/etc/lightdm/lightdm.conf
+if [ -d /root/etc/lightdm ]; then
+    if [ -f /root/etc/lightdm/lightdm.conf ]; then
+        # Configure LightDM autologin
+        if ! grep -q ^default-user /root/etc/lightdm/lightdm.conf; then
+            sed -i -r \
+                -e "s/^#default-user=.*/default-user=$USERNAME/" \
+                -e "s/^#default-user-timeout=.*/default-user-timeout=0/" \
+                -e "s/^#pam-service=.*/pam-service=lightdm-autologin/" \
+                /root/etc/lightdm/lightdm.conf
+        fi
+    else
+        (
+        cat << EOF
+[SeatDefaults]
+allow-guest=false
+autologin-guest=false
+autologin-user=$USERNAME
+autologin-user-timeout=0
+autologin-session=lightdm-autologin
+EOF
+        ) > /root/etc/lightdm/lightdm.conf
     fi
 fi
 

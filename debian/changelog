@@ -1,3 +1,15 @@
+casper (1.273) oneiric; urgency=low
+
+  [ Mario Limonciello ]
+  * scripts/casper: Add support for SAS controllers now that 575297 is fixed.
+    (LP: #819564)
+
+  [ Stéphane Graber ]
+  * lightdm no longer ships with /etc/lightdm/lightdm.conf in its package.
+    Updating 15autologin casper hook to create one when missing. (LP: #819609)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 02 Aug 2011 17:47:10 -0400
+
 casper (1.272) oneiric; urgency=low
 
   [ Andy Whitcroft ]

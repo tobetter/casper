@@ -38,4 +38,3 @@ for x in $(cat /proc/cmdline); do
                         ;;
 		esac
 done
-log_end_msg

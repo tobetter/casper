@@ -1,3 +1,11 @@
+casper (1.275) oneiric; urgency=low
+
+  * Update 15autologin to overwrite any existing lightdm configuration.
+    This should fix lightdm autologin for everyone.
+    Any custom lightdm configuration won't apply to the live environment.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 03 Aug 2011 10:10:48 -0400
+
 casper (1.274) oneiric; urgency=low
 
   * Remove log_end_message call (LP: #820284).

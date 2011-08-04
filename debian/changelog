@@ -1,3 +1,9 @@
+casper (1.276) oneiric; urgency=low
+
+  * If lightdm.conf exists, remove it first to avoid issues with symlinks.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Thu, 04 Aug 2011 12:26:08 -0400
+
 casper (1.275) oneiric; urgency=low
 
   * Update 15autologin to overwrite any existing lightdm configuration.

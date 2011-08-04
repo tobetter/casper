@@ -69,6 +69,11 @@ fi
 
 if [ -d /root/etc/lightdm ]; then
     # Configure LightDM autologin (overwrite any existing configuration)
+    if [ -f /root/etc/lightdm/lightdm.conf ]; then
+        # FIXME: We'll want to do some sed here instead
+        # for now, just remove any existing file to avoid issues with symlinks
+        rm /root/etc/lightdm/lightdm.conf
+    fi
     (
     cat << EOF
 [SeatDefaults]

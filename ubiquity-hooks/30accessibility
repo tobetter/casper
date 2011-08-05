@@ -14,27 +14,55 @@ for x in $(cat /proc/cmdline); do
 	case $x in
 		# Lesser Visual Impairment
 		access=v1)
-			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -debug high-contrast
+			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script high-contrast
                         ;;
 		# Moderate Visual Impairment
 		access=v2)
-			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -debug magnifier
+			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script magnifier
                         ;;
 		# Blindness
 		access=v3)
-			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -debug blindness
+			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script blindness
                         ;;
 		# Braille
 		braille=ask)
-			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -debug braille
+			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script braille
                         ;;
 		# Minor Motor Difficulties
 		access=m1)
-			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -debug keyboard-modifiers
+			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script keyboard-modifiers
                         ;;
 		# Motor Difficulties - pointing devices
 		access=m2)
-			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -debug onscreen-keyboard
+			/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script onscreen-keyboard
                         ;;
 		esac
 done
+
+case "$UBIQUITY_A11Y_PROFILE" in
+	# Lesser Visual Impairment
+	high-contrast)
+		/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script high-contrast
+		;;
+	# Moderate Visual Impairment
+	magnifier)
+		/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script magnifier
+		;;
+	# Blindness
+	screen-reader)
+		/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script blindness
+		;;
+	# Braille
+	braille)
+		/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script braille
+		;;
+	# Minor Motor Difficulties
+	keyboard-modifiers)
+		/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script keyboard-modifiers
+		;;
+	# Motor Difficulties - pointing devices
+	onscreen-keyboard)
+		/usr/bin/casper-a11y-enable -login -user="$TARGET_USERNAME" -chroot=/target -script onscreen-keyboard
+		;;
+esac
+

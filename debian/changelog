@@ -1,3 +1,20 @@
+casper (1.277) oneiric; urgency=low
+
+  * Add an extra command-line argument to casper-a11y-helper which will
+    create a startup script that will be executed either on first boot after
+    install, or once we switch out of the initramfs to boot the live
+    session. This is needed to work around gsettings not working when
+    chrooting to the target environment with no dbus running.
+  * Add extra checks to the ubiquity accessibility target-config hook to
+    determine whether accessibility was enabled during the running of
+    ubiquity, and act accordingly.
+  * Call the casper a11y helper script with the newly added -script argument
+    as per above.
+  * Determine whether we are root by checking the $HOME variable.
+  * Do not call the a11y profile script in debug mode
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 05 Aug 2011 15:22:27 +1000
+
 casper (1.276) oneiric; urgency=low
 
   * If lightdm.conf exists, remove it first to avoid issues with symlinks.

@@ -26,27 +26,27 @@ for x in $(cat /proc/cmdline); do
 	case $x in
 		# Lesser Visual Impairment
 		access=v1)
-			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug high-contrast
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -script high-contrast
                         ;;
 		# Moderate Visual Impairment
 		access=v2)
-			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug magnifier
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -script magnifier
                         ;;
 		# Blindness
 		access=v3)
-			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug blindness
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -script blindness
                         ;;
 		# Braille
 		braille=ask)
-			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug braille
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -script braille
                         ;;
 		# Minor Motor Difficulties
 		access=m1)
-			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug keyboard-modifiers
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -script keyboard-modifiers
                         ;;
 		# Motor Difficulties - pointing devices
 		access=m2)
-			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -debug onscreen-keyboard
+			/root/usr/bin/casper-a11y-enable -initramfs -user="$USERNAME" -chroot=/root -script onscreen-keyboard
                         ;;
 		esac
 done

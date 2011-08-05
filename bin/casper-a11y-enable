@@ -152,6 +152,11 @@ Usage: $0 		[-chroot=<root>] [-user=<username>] [-l|-login]
 			that can not otherwise be easily determined in an
 			initramfs environment. Requires that a chroot dir and
 			user name are specified. See above.
+-script			Create a script to be run at system boot that will
+			apply all settings for the specified user and for
+			login. This script will then remove itself. This is
+			needed to work around gsettings not working in a chroot
+			environment with no dconf service running.
 -d|-debug		Enable debugging output.
 <profilename>		The name of the profile you wish to apply, see below.
 
@@ -176,14 +181,22 @@ EOF
 gset()
 {
 	if [ -n "$GLIBBIN_VERSION" ]; then
-		$DO_CHROOT $DO_SUDO gsettings "$@"
+		if [ -n "$STARTUP_SCRIPT" ]; then
+			echo "gsettings" "$@" >> "$CHROOT_DIR"/usr/bin/a11y-profile-settings
+		else
+			$DO_CHROOT $DO_SUDO gsettings "$@"
+		fi
 	fi
 }
 
 gset_gdm()
 {
 	if [ -n "$GLIBBIN_VERSION" ]; then
-		$DO_CHROOT sudo -u gdm gsettings "$@"
+		if [ -n "$STARTUP_SCRIPT" ]; then
+			echo "gsettings" "$@" >> "$CHROOT_DIR"/usr/bin/a11y-profile-settings-lightdm
+		else
+			$DO_CHROOT sudo -u gdm gsettings "$@"
+		fi
 	fi
 }
 
@@ -191,14 +204,22 @@ gset_gdm()
 gct()
 {
 	if [ -n "$GCONF_VERSION" ]; then
-		$DO_CHROOT $DO_SUDO gconftool-2 "$@"
+		if [ -n "$STARTUP_SCRIPT" ]; then
+			echo "gconftool-2" "$@" >> "$CHROOT_DIR"/usr/bin/a11y-profile-settings
+		else
+			$DO_CHROOT $DO_SUDO gconftool-2 "$@"
+		fi
 	fi
 }
 
 gct_gdm()
 {
 	if [ -n "$GCONF_VERSION" ]; then
-		$DO_CHROOT sudo -u gdm gconftool-2 "$@"
+		if [ -n "$STARTUP_SCRIPT" ]; then
+			echo "gconftool-2" "$@" >> "$CHROOT_DIR"/usr/bin/a11y-profile-settings-lightdm
+		else
+			$DO_CHROOT sudo -u gdm gconftool-2 "$@"
+		fi
 	fi
 }
 
@@ -211,7 +232,7 @@ kderc_addtoprefixes()
 
 add_sudoers_file()
 {
-	if [ "$USER" = "root" ] || [ -n "$IN_INITRAMFS" ]; then
+	if [ "$HOME" = "/root" ] || [ -n "$IN_INITRAMFS" ]; then
 	        cat <<EOF > $CHROOT_DIR/etc/sudoers.d/a11y-sudo
 # To allow accessibility in GTK to work with sudo.
 Defaults        env_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"
@@ -445,6 +466,11 @@ do
 			shift
 			continue
 		;;
+		-script)
+			STARTUP_SCRIPT=1
+			shift
+			continue
+		;;
 		*)
 			PROFILE_NAME="$1"
 			shift
@@ -463,7 +489,7 @@ elif [ -n "$IN_INITRAMFS" ] && [ -z "$USER_NAME" ]; then
 	exit 1
 fi
 
-if [ -n "$SET_LOGIN" ] && [ "$USER" != "root" ] && [ -z "$IN_INITRAMFS" ]; then
+if [ -n "$SET_LOGIN" ] && [ "$HOME" != "/root" ] && [ -z "$IN_INITRAMFS" ]; then
 	echo "Error: Setting up accessibility for login requires root privileges."
 	help
 	exit 1
@@ -471,7 +497,7 @@ fi
 
 
 if [ -n "$CHROOT_DIR" ] || [ -n "$USER_NAME" ]; then
-	if [ "$USER" != "root" ] && [ -z "$IN_INITRAMFS" ]; then
+	if [ "$HOME" != "/root" ] && [ -z "$IN_INITRAMFS" ]; then
 		echo "Error: You are not running as root."
 		help
 		exit 1
@@ -485,6 +511,23 @@ if [ -n "$CHROOT_DIR" ]; then
 	fi
 	if [ -z "$IN_INITRAMFS" ] && ! type chroot >/dev/null 2>&1 ; then
 		echo "Error: Chroot command not available in running environment."
+		exit 1
+	fi
+fi
+
+if [ -n "$STARTUP_SCRIPT" ]; then
+	if [ -z "$USER_NAME" ]; then
+		echo "Error: You have requested to create a startup script, but no user was specified."
+		exit 1
+	fi
+	if [ "$HOME" != "/root" ]; then
+		echo "Error: You have requested to create a startup script, but you do not have root"
+		echo "privileges."
+		exit 1
+	fi
+	if [ -z "$CHROOT_DIR" ]; then
+		echo "Error: You have requested to create a startup script, but you did not specify"
+		echo "a target directory to chroot to."
 		exit 1
 	fi
 fi
@@ -504,6 +547,43 @@ fi
 GCONF_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || GCONF_VERSION=""
 GLIBBIN_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' libglib2.0-bin 2>/dev/null) || GLIBBIN_VERSION=""
 ORCA_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' gnome-orca 2>/dev/null) || ORCA_VERSION=""
+
+if [ -n "$STARTUP_SCRIPT" ]; then
+	cat <<EOF > "$CHROOT_DIR"/etc/init/a11y-profile-settings.conf
+# a11y-profile-settings - A job to set up accessibility settings
+
+description     "Accessib ility profile settings"
+
+start on runlevel [2345]
+
+umask 022
+
+script
+    sudo -u $USER_NAME /usr/bin/dbus-launch --exit-with-session /usr/bin/a11y-profile-settings
+    sudo -u lightdm /usr/bin/dbus-launch --exit-with-session /usr/bin/a11y-profile-settings-lightdm
+    rm /usr/bin/a11y-profile-settings /usr/bin/a11y-profile-settings-lightdm
+    rm /etc/init/a11y-profile-settings.conf
+end script
+EOF
+	cat <<EOF > "$CHROOT_DIR"/usr/bin/a11y-profile-settings
+#!/bin/sh
+
+# Created by the casper accessibility profile settings script on
+# $(date).
+
+# This script deletes itself once run.
+
+EOF
+	cat <<EOF > "$CHROOT_DIR"/usr/bin/a11y-profile-settings-lightdm
+#!/bin/sh
+
+# Created by the casper accessibility profile settings script on
+# $(date).
+
+# This script deletes itself once run.
+
+EOF
+fi
 
 case $PROFILE_NAME in
 	high-contrast)
@@ -531,3 +611,7 @@ case $PROFILE_NAME in
 		set_onscreen_keyboard
 	;;
 esac
+
+if [ -n "$STARTUP_SCRIPT" ]; then
+	chmod 755 "$CHROOT_DIR"/usr/bin/a11y-profile-settings*
+fi

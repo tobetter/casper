@@ -1,3 +1,14 @@
+casper (1.278) oneiric; urgency=low
+
+  * scripts/casper-bottom/15autologin:
+    - handling lightdm.conf in the case we already have a configuration file (to
+      avoid overwriting it on the cd if we don't have the default gtk greeter
+      installed if greeter not specified). Flavors should now use
+      set-lightdm-defaults to set the default session and greeter, even if
+      this still works with current alternatives method.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 02:17:51 +0200
+
 casper (1.277) oneiric; urgency=low
 
   * Add an extra command-line argument to casper-a11y-helper which will

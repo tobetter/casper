@@ -68,22 +68,21 @@ if [ -f /root/etc/xdg/lubuntu/lxdm/lxdm.conf ]; then
 fi
 
 if [ -d /root/etc/lightdm ]; then
-    # Configure LightDM autologin (overwrite any existing configuration)
-    if [ -f /root/etc/lightdm/lightdm.conf ]; then
-        # FIXME: We'll want to do some sed here instead
-        # for now, just remove any existing file to avoid issues with symlinks
-        rm /root/etc/lightdm/lightdm.conf
+    # Configure LightDM autologin
+    LightDMCustomFile=/root/etc/lightdm/lightdm.conf
+    AutologinParameters="allow-guest=false\n\
+autologin-guest=false\n\
+autologin-user=$USERNAME\n\
+autologin-user-timeout=0\n\
+autologin-session=lightdm-autologin"
+
+    # Prevent from updating if parameters already present (persistent usb key)
+    if ! `grep -qs 'autologin-user' $LightDMCustomFile` ; then
+        if ! `grep -qs '\[SeatDefaults\]' $LightDMCustomFile` ; then
+            echo '[SeatDefaults]' >> $LightDMCustomFile
+        fi
+        sed -i "s/\[SeatDefaults\]/\[SeatDefaults\]\n$AutologinParameters/" $LightDMCustomFile
     fi
-    (
-    cat << EOF
-[SeatDefaults]
-allow-guest=false
-autologin-guest=false
-autologin-user=$USERNAME
-autologin-user-timeout=0
-autologin-session=lightdm-autologin
-EOF
-    ) > /root/etc/lightdm/lightdm.conf
 fi
 
 log_end_msg

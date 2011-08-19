@@ -1,3 +1,10 @@
+casper (1.279) oneiric; urgency=low
+
+  * hooks/casper: pull in overlayfs kernel module to allow use of overlayfs
+    as the union mount during install.
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 19 Aug 2011 13:03:27 +0100
+
 casper (1.278) oneiric; urgency=low
 
   * scripts/casper-bottom/15autologin:
@@ -7,7 +14,7 @@ casper (1.278) oneiric; urgency=low
       set-lightdm-defaults to set the default session and greeter, even if
       this still works with current alternatives method.
 
- -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 02:17:51 +0200
+ -- Didier Roche <didrocks@ubuntu.com>  Thu, 11 Aug 2011 09:05:43 +0200
 
 casper (1.277) oneiric; urgency=low
 

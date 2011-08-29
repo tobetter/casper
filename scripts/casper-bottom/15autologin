@@ -77,7 +77,7 @@ autologin-user-timeout=0\n\
 autologin-session=lightdm-autologin"
 
     # Prevent from updating if parameters already present (persistent usb key)
-    if ! `grep -qs 'autologin-user' $LightDMCustomFile` ; then
+    if ! `grep -qs '^autologin-user' $LightDMCustomFile` ; then
         if ! `grep -qs '\[SeatDefaults\]' $LightDMCustomFile` ; then
             echo '[SeatDefaults]' >> $LightDMCustomFile
         fi

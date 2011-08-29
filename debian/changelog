@@ -1,3 +1,10 @@
+casper (1.280) oneiric; urgency=low
+
+  * Don't fail to set up autologin on a commented out autologin-user line
+    in lightdm custom conf. (LP: #836727)
+
+ -- Mario Limonciello <Mario_Limonciello@Dell.com>  Mon, 29 Aug 2011 09:16:00 -0500
+
 casper (1.279) oneiric; urgency=low
 
   * hooks/casper: pull in overlayfs kernel module to allow use of overlayfs

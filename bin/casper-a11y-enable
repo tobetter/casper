@@ -89,9 +89,10 @@ set_blindness()
 	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config speech
+	set_session ubuntu-2d
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_gdm set org.gnome.desktop.interface toolkit-accessibility true
+		gset_lightdm set org.gnome.desktop.interface toolkit-accessibility true
 	fi
 }
 
@@ -100,8 +101,10 @@ set_braille()
 	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config braille
+	set_session ubuntu-2d
+
 	if [ -n "$SET_LOGIN" ]; then
-		gset_gdm set org.gnome.desktop.interface toolkit-accessibility true
+		gset_lightdm set org.gnome.desktop.interface toolkit-accessibility true
 	fi
 }
 
@@ -145,7 +148,7 @@ Usage: $0 		[-chroot=<root>] [-user=<username>] [-l|-login]
 			is assumed that you wish to apply profile settings for
 			the current user.
 -l, -login		Apply some of the selected profile settings to the
-			login manager. Currently this is hard-coded to gdm.
+			login manager. Currently this is hard-coded to lightdm.
 			This requires root privileges.
 -i, -initramfs		Indicate that the script is being called from the
 			initramfs. Allows the script to assume some values
@@ -189,13 +192,13 @@ gset()
 	fi
 }
 
-gset_gdm()
+gset_lightdm()
 {
 	if [ -n "$GLIBBIN_VERSION" ]; then
 		if [ -n "$STARTUP_SCRIPT" ]; then
 			echo "gsettings" "$@" >> "$CHROOT_DIR"/usr/bin/a11y-profile-settings-lightdm
 		else
-			$DO_CHROOT sudo -u gdm gsettings "$@"
+			$DO_CHROOT sudo -u lightdm gsettings "$@"
 		fi
 	fi
 }
@@ -212,13 +215,13 @@ gct()
 	fi
 }
 
-gct_gdm()
+gct_lightdm()
 {
 	if [ -n "$GCONF_VERSION" ]; then
 		if [ -n "$STARTUP_SCRIPT" ]; then
 			echo "gconftool-2" "$@" >> "$CHROOT_DIR"/usr/bin/a11y-profile-settings-lightdm
 		else
-			$DO_CHROOT sudo -u gdm gconftool-2 "$@"
+			$DO_CHROOT sudo -u lightdm gconftool-2 "$@"
 		fi
 	fi
 }
@@ -428,6 +431,13 @@ EOF
 			*)
 			;;
 		esac
+	fi
+}
+
+set_session()
+{
+	if -x $CHROOT_DIR/usr/lib/lightdm/lightdm-set-defaults ]; then
+		$DO_CHROOT /usr/lib/lightdm/lightdm-set-defaults --session="$1"
 	fi
 }
 

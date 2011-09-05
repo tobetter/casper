@@ -1,3 +1,13 @@
+casper (1.281) oneiric; urgency=low
+
+  * bin/casper-a11y-enable:
+    - Change all remaining references of gdm to lightdm, particularly in the
+      usage help text, and the username of the login manager
+    - Set the default login session to ubuntu-2d for screen reader and braille
+      profiles
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Mon, 05 Sep 2011 15:02:31 +1000
+
 casper (1.280) oneiric; urgency=low
 
   * Don't fail to set up autologin on a commented out autologin-user line

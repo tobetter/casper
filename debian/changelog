@@ -1,3 +1,17 @@
+casper (1.283) oneiric; urgency=low
+
+  * scripts/casper-bottom/22screensaver: Set gsettings key instead of gconf.
+  * scripts/casper-bottom/44pk_allow_ubuntu: Drop old PolicyKit stuff, it's
+    gone for a long time.
+  * Drop scripts/casper-bottom/45disable_guest_account: We are not using gdm
+    any more, and lightdm implements that differently.
+  * Drop scripts/casper-bottom/47une_ubiquity, UNE/netbook-launcher are
+    history.
+  * Add scripts/casper-bottom/26disable_user_menu: Disable the user indicator
+    menu. (LP: #834137)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed, 07 Sep 2011 12:33:57 +0200
+
 casper (1.282) oneiric; urgency=low
 
   * bin/casper-a11y-enable: Fix typo/syntax error in the set_session function

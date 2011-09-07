@@ -1,3 +1,9 @@
+casper (1.282) oneiric; urgency=low
+
+  * bin/casper-a11y-enable: Fix typo/syntax error in the set_session function
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 07 Sep 2011 15:20:05 +1000
+
 casper (1.281) oneiric; urgency=low
 
   * bin/casper-a11y-enable:

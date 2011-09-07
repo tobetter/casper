@@ -436,7 +436,7 @@ EOF
 
 set_session()
 {
-	if -x $CHROOT_DIR/usr/lib/lightdm/lightdm-set-defaults ]; then
+	if [ -x $CHROOT_DIR/usr/lib/lightdm/lightdm-set-defaults ]; then
 		$DO_CHROOT /usr/lib/lightdm/lightdm-set-defaults --session="$1"
 	fi
 }

@@ -1,3 +1,25 @@
+casper (1.284) oneiric; urgency=low
+
+  * bin/casper-a11y-enable:
+    - Set the session by calling AccountService via dbus instead of using
+      lightdm commands, as we cannot run lightdm-set-defaults as a user
+    - Add some extra spaces to make sure the startup scripts used to set a11y
+      settings are syntactically correct
+    - Add some other needed settings for various profiles for use in the login
+      manager
+    - Set correct permissions for the orca config directory once the config
+      files have been created
+    - Make sure the startup script checks take into account the ability to be
+      run from the initramfs
+  * ubiquity-hooks/30accessibility:
+    - Make sure that accessibility profile settings are properly applied at
+      install time, even if the user decided to try Ubuntu first, and then
+      run the install from the desktop
+    - Copy any existing orca configuration to the target system
+    - Make sure profile settings are not set up twice
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 14 Sep 2011 16:19:59 +1000
+
 casper (1.283) oneiric; urgency=low
 
   * scripts/casper-bottom/22screensaver: Set gsettings key instead of gconf.

@@ -21,8 +21,9 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 indicator_session_version=$(chroot /root dpkg-query -W --showformat='${Version}' indicator-session 2>/dev/null) || indicator_session_version=""
-if [ -n "$indicator_session_version=" ]; then
-    chroot /root sudo -u "$USERNAME" gsettings set com.canonical.indicator.session user-show-menu  false
+if [ -n "$indicator_session_version" ]; then
+    printf "[com.canonical.indicator.session]\nuser-show-menu=false\n" >> /root/usr/share/glib-2.0/schemas/casper.gschema.override
+    chroot /root glib-compile-schemas /usr/share/glib-2.0/schemas/
 fi
 
 log_end_msg

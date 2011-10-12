@@ -1,3 +1,10 @@
+casper (1.286) oneiric; urgency=low
+
+  * Convert the gsettings calls to using the gsettings override files
+    because we don't have DBUS in casper.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 12 Oct 2011 13:38:53 +0100
+
 casper (1.285) oneiric; urgency=low
 
   * scripts/casper:

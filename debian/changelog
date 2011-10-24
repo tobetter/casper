@@ -1,3 +1,9 @@
+casper (1.288) precise; urgency=low
+
+  * Ignore lines in md5sum.txt that aren't md5sum output (LP: #873401).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 24 Oct 2011 17:05:55 +0100
+
 casper (1.287) oneiric; urgency=low
 
   * Remove typo from 26disable_user_menu that led the script to

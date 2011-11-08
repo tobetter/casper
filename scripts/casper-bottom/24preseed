@@ -76,8 +76,9 @@ for x in $(cat /proc/cmdline); do
 			value="${x#*=}"
 			casper-preseed /root "$question" "$value"
 			;;
-		locale=*)
+		debian-installer/locale=*|locale=*)
 			value="${x#*=}"
+			value="$(grep "^$value" /root/usr/share/i18n/SUPPORTED | grep UTF-8 | sed -e 's, .*,,' -e q)"
 			casper-preseed /root debian-installer/locale "$value"
 			;;
 	esac

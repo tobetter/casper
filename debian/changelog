@@ -1,3 +1,11 @@
+casper (1.291) precise; urgency=low
+
+  * Just add the live username to /etc/sudoers rather than relying on it to
+    be in the admin group, which is no longer the case as of user-setup
+    1.39ubuntu1 (LP: #893060).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 21 Nov 2011 18:06:13 +0000
+
 casper (1.290) precise; urgency=low
 
   [ Mario Limonciello ]

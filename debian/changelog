@@ -1,3 +1,10 @@
+casper (1.292) precise; urgency=low
+
+  * Do not let single quotes get into resolv.conf, otherwise DNS lookups
+    will fail.
+
+ -- Evan Dandrea <ev@ubuntu.com>  Fri, 25 Nov 2011 17:00:58 +0000
+
 casper (1.291) precise; urgency=low
 
   * Just add the live username to /etc/sudoers rather than relying on it to

@@ -1,3 +1,10 @@
+casper (1.293) precise; urgency=low
+
+  * Change KDE path profile for disable_restart_notifications.  Thanks to
+    Enrique Hernández Bello for the patch (LP: #898721).
+
+ -- Brian Murray <brian@ubuntu.com>  Wed, 07 Dec 2011 16:35:53 -0800
+
 casper (1.292) precise; urgency=low
 
   * Do not let single quotes get into resolv.conf, otherwise DNS lookups

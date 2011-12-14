@@ -684,6 +684,17 @@ mountroot() {
 
     log_end_msg
 
+    # Allow to override USERNAME and HOST based on media information
+    # make it skipable by setting FLAVOUR= in casper.conf
+    if [ -f /cdrom/.disk/info ] && [ -z "$FLAVOUR" ]; then
+        FLAVOUR="$(cut -d' ' -f1 "/cdrom/.disk/info" 2>/dev/null | tr '[A-Z]' '[a-z]')" || FLAVOUR=
+        if [ -n "$FLAVOUR" ]; then
+            HOST=$FLAVOUR
+            USERNAME=$FLAVOUR
+            export HOST USERNAME
+        fi
+    fi
+
     # unionfs-fuse needs /dev to be bind-mounted for the duration of
     # casper-bottom; udev's init script will take care of things after that
     if [ "${UNIONFS}" = unionfs-fuse ]; then

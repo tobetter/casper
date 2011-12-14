@@ -76,22 +76,30 @@ do_stop ()
     # (archdetect), but since this is mostly only relevant for
     # installations, who cares ...
     if type archdetect >/dev/null 2>&1; then
-	subarch="$(archdetect)"
-	case $subarch in
-	    arm*/imx51)
-		return 0
-		;;
-	esac
+        subarch="$(archdetect)"
+        case $subarch in
+            arm*/imx51)
+                return 0
+                ;;
+        esac
     fi
 
     prompt=1
     if grep -qs noprompt /proc/cmdline; then
-	prompt=
+        prompt=
     fi
 
     for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth /sbin/usplash_write; do
         cache_path "$path"
     done
+
+    # If the device isn't marked as removable, skip the prompt
+    if which udisks > /dev/null; then
+        device="$(grep " /cdrom " /proc/mounts | cut -d' ' -f1)" || device=
+        if [ -n "$device" ] && [ "$(udisks --show-info $device | grep removable | awk '{print $NF}')" = "0" ]; then
+            return 0
+        fi
+    fi
 
     eject -p -m /cdrom >/dev/null 2>&1
 

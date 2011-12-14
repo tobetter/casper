@@ -1,3 +1,15 @@
+casper (1.295) precise; urgency=low
+
+  * Convert keys from gconf to gsettings:
+    - 22gnome_panel_data: disable_lock_screen (LP: #610345)
+    - 15autologin: suppress-logout-menuitem (indicator)
+  * Syntax cleanup in debian/casper.init (replacing tabs by spaces)
+  * Base the hostname and username on the media name (LP: #290351)
+  * If udisks is present and considers a device has non-removable
+    then don't call eject and don't show the prompt. (LP: #600740)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 14 Dec 2011 15:50:44 -0500
+
 casper (1.294) precise; urgency=low
 
   * scripts/casper:

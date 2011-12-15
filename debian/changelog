@@ -1,3 +1,10 @@
+casper (1.296) precise; urgency=low
+
+  * Rework the reboot logic to not use udisks (doesn't work without dbus)
+    and try to handle any kind of install media. (LP: #600740)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Thu, 15 Dec 2011 12:28:08 -0500
+
 casper (1.295) precise; urgency=low
 
   * Convert keys from gconf to gsettings:

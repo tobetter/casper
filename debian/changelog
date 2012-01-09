@@ -1,3 +1,10 @@
+casper (1.297) precise; urgency=low
+
+  * scripts/casper:
+     look for live image on AC100/Tegra2 specific eMMC block device too.
+
+ -- Jani Monoses <jani@ubuntu.com>  Mon, 09 Jan 2012 18:56:57 +0200
+
 casper (1.296) precise; urgency=low
 
   * Rework the reboot logic to not use udisks (doesn't work without dbus)

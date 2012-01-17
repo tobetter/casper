@@ -692,6 +692,7 @@ mountroot() {
             HOST=$FLAVOUR
             USERNAME=$FLAVOUR
             export HOST USERNAME
+            sed  -i "s,USERNAME=.*,USERNAME=\"mythbuntu\",g; s,HOST=.*,HOST=\"mythbuntu\",g" /etc/casper.conf
         fi
     fi
 

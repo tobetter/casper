@@ -1,3 +1,12 @@
+casper (1.298) precise; urgency=low
+
+  * Write out a new casper.conf with derivative values if they've been changed.
+    - Fixes applications that parse /etc/casper.conf from breaking.
+    - This can be reverted after the livecd-rootfs task from LP: #904482 is
+      fixed.
+
+ -- Mario Limonciello <Mario_Limonciello@Dell.com>  Mon, 16 Jan 2012 22:30:47 -0600
+
 casper (1.297) precise; urgency=low
 
   * scripts/casper:

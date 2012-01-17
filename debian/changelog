@@ -1,3 +1,9 @@
+casper (1.299) precise; urgency=low
+
+  * Fix the variable to be $FLAVOUR.
+
+ -- Mario Limonciello <Mario_Limonciello@Dell.com>  Tue, 17 Jan 2012 16:36:24 -0600
+
 casper (1.298) precise; urgency=low
 
   * Write out a new casper.conf with derivative values if they've been changed.

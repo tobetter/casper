@@ -1,3 +1,12 @@
+casper (1.300) precise; urgency=low
+
+  * 33enable_apport_crashes: If enabling apport (i. e. on a released Ubuntu
+    versions), only report crashes for Ubiquity. Do not report general
+    desktop-ish crashes, for the same reasons why we disable them for
+    Ubuntu releases after installation. (LP: #593606)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 24 Jan 2012 10:12:26 +0100
+
 casper (1.299) precise; urgency=low
 
   * Fix the variable to be $FLAVOUR.

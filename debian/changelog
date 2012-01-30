@@ -1,3 +1,10 @@
+casper (1.302) precise; urgency=low
+
+  * Move adduser script to run after preseed so that preseeding
+    passwd/user-default-groups is useful in the live session (LP: #923810).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 30 Jan 2012 22:13:04 +0000
+
 casper (1.301) precise; urgency=low
 
   * 41apt_cdrom: use standard logging to facilitate debugging thanks to cleary

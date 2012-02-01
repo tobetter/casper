@@ -1,3 +1,10 @@
+casper (1.304) precise; urgency=low
+
+  * 25adduser: Back up and restore passwd/{root,user}-password{,-again} as
+    well (LP: #924535).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 01 Feb 2012 22:44:38 +0000
+
 casper (1.303) precise; urgency=low
 
   * 25adduser: Restore previous contents of the debconf questions we set,

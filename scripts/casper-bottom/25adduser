@@ -46,7 +46,10 @@ debconf_restore () {
 }
 
 debconf_backup \
-    passwd/root-password-crypted passwd/user-password-crypted \
+    passwd/root-password-crypted \
+    passwd/root-password passwd/root-password-again \
+    passwd/user-password-crypted \
+    passwd/user-password passwd/user-password-again \
     passwd/user-fullname passwd/username passwd/user-uid
 
 # U6aMy0wojraho is just a blank password
@@ -60,7 +63,10 @@ chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
 
 # Clear out debconf database again to avoid confusing ubiquity later.
 debconf_restore \
-    passwd/root-password-crypted passwd/user-password-crypted \
+    passwd/root-password-crypted \
+    passwd/root-password passwd/root-password-again \
+    passwd/user-password-crypted \
+    passwd/user-password passwd/user-password-again \
     passwd/user-fullname passwd/username passwd/user-uid
 
 if [ -f /root/etc/sudoers ]; then

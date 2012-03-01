@@ -719,6 +719,7 @@ mountroot() {
 Readonly: true" /root/etc/debconf.conf >"/root$DEBCONF_TMPDIR/debconf.conf"
 
     DEBCONF_SYSTEMRC="$DEBCONF_TMPDIR/debconf.conf" chroot /root debconf-communicate -fnoninteractive casper > /tmp/debconf-out.fifo < /tmp/debconf-in.fifo &
+    debconfpid="$!"
 
     if [ ! -p /tmp/debconf-in.fifo ] || [ ! -p /tmp/debconf-out.fifo ]; then
         log_warning_msg "failed to setup debconf-communicate channel"
@@ -744,6 +745,7 @@ Readonly: true" /root/etc/debconf.conf >"/root$DEBCONF_TMPDIR/debconf.conf"
     exec 3>&- 4<&-
     rm -f /tmp/debconf-in.fifo
     rm -f /tmp/debconf-out.fifo
+    wait $debconfpid
 
     # Copy config database changes back to the master files.
     chroot /root debconf-copydb tmpdb config \

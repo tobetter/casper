@@ -1,3 +1,10 @@
+casper (1.305) precise; urgency=low
+
+  * Wait for debconf-communicate to exit before trying to copy the
+    database. (LP: #940908)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 29 Feb 2012 21:48:39 -0500
+
 casper (1.304) precise; urgency=low
 
   * 25adduser: Back up and restore passwd/{root,user}-password{,-again} as

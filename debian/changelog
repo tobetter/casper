@@ -1,3 +1,14 @@
+casper (1.306) precise; urgency=low
+
+  [ Sergey "Shnatsel" Davidoff ]
+  * Comment on the recently-introduced FLAVOUR variable in casper.conf.
+
+  [ Stéphane Graber ]
+  * in 23networking, when writing resolv.conf detect resolvconf and write
+    to /run/resolvconf/interfaces/casper instead. (LP: #946215)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Mon, 05 Mar 2012 15:38:23 -0500
+
 casper (1.305) precise; urgency=low
 
   * Wait for debconf-communicate to exit before trying to copy the

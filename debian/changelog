@@ -1,3 +1,11 @@
+casper (1.307) precise; urgency=low
+
+  * Add 50ubiquity-bluetooth-agent to detect ubiquity-bluetooth-agent and
+    make bluetooth-applet call it instead (using dpkg-divert + ln).
+    (LP: #644198)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Fri, 09 Mar 2012 11:56:44 -0500
+
 casper (1.306) precise; urgency=low
 
   [ Sergey "Shnatsel" Davidoff ]

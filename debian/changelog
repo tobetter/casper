@@ -1,3 +1,16 @@
+casper (1.309) precise; urgency=low
+
+  * scripts/casper-bottom/14locales:
+    - Stop dealing with /etc/environment
+    - Always overwrite /etc/default/locale at boot time
+    - Use /root/rofs/etc/default/locale as the base locale (LP: #951397)
+  * scripts/casper-bottom/19keyboard
+    - Reset /etc/default/keyboard if present in the overlay (LP: #953999)
+  * scripts/casper-bottom/50ubiquity-bluetooth-agent
+    - Only do the diversion the first time around
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 13 Mar 2012 17:00:58 -0400
+
 casper (1.308) precise; urgency=low
 
   * Reconfigure jackd2 if jackd/tweak_rt_limits has been preseeded

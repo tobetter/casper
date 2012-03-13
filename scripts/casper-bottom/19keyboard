@@ -178,6 +178,13 @@ elif [ -f /root/etc/default/console-setup ]; then
         PREFIX=console-setup
         CONFIGFILE=/etc/default/console-setup
 fi
+
+# Reset the config for persistent medias
+if [ -f /cow$CONFIGFILE ]; then
+    echo "Resetting $CONFIGFILE"
+    cp /root/rofs$CONFIGFILE /root$CONFIGFILE
+fi
+
 if [ -x /root/bin/setupcon ] && [ "$PREFIX" ] && [ "$CONFIGFILE" ]; then
         if [ "$cslayout" ]; then
                 csoptions=

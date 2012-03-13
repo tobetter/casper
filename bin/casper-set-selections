@@ -51,6 +51,7 @@ for line in $(grep -v '^#\|^[[:space:]]*$' "$file" | sed "s/$CR//g"); do
 		line="$multiline $line"
 		multiline=""
 	fi
+	echo "$line" >>/tmp/casper-preseed.log
 	
 	package=""
 	var=""

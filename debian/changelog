@@ -1,3 +1,10 @@
+casper (1.308) precise; urgency=low
+
+  * Reconfigure jackd2 if jackd/tweak_rt_limits has been preseeded
+    (LP: #923810).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 13 Mar 2012 10:33:24 +0000
+
 casper (1.307) precise; urgency=low
 
   * Add 50ubiquity-bluetooth-agent to detect ubiquity-bluetooth-agent and

@@ -1,3 +1,14 @@
+casper (1.310) precise; urgency=low
+
+  * bin/casper-a11y-enable:
+    - Use the unity-greeter gsettings keys for accessibility settings.
+    - Enable high contrast in unity-greeter when the high contrast profile
+      is selected.
+    - Remove functionality to set gconf values for the login manager,
+      unity-greeter uses gsettings.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Thu, 15 Mar 2012 14:41:29 +1100
+
 casper (1.309) precise; urgency=low
 
   * scripts/casper-bottom/14locales:

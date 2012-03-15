@@ -83,6 +83,11 @@ autologin-session=lightdm-autologin"
         fi
         sed -i "s/\[SeatDefaults\]/\[SeatDefaults\]\n$AutologinParameters/" $LightDMCustomFile
     fi
+
+    # LightDM on kubuntu-active wants to start ubuntu.desktop, workaround here for now jriddell 2012-03-15
+    if [ -e /root/usr/share/xsessions/plasma-active.desktop ]; then
+        cp /root/usr/share/xsessions/plasma-active.desktop /root/usr/share/xsessions/ubuntu.desktop
+    fi
 fi
 
 log_end_msg

@@ -1,3 +1,10 @@
+casper (1.311) precise; urgency=low
+
+  * LightDM on kubuntu-active wants to start ubuntu.desktop,
+    workaround in 15autologin for now
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Mar 2012 11:56:25 +0000
+
 casper (1.310) precise; urgency=low
 
   * bin/casper-a11y-enable:

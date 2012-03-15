@@ -72,6 +72,10 @@ set_high_contrast()
 	if [ -d $CHROOT_DIR/usr/share/xubuntu-default-settings/accessibility ]; then
 		cp -a $CHROOT_DIR/usr/share/xubuntu-default-settings/accessibility/* $CHROOT_DIR/etc/xdg/
 	fi
+
+	if [ -n "$SET_LOGIN" ]; then
+		gset_lightdm set com.canonical.unity-greeter high-contrast true
+	fi
 }
 
 set_magnifier()
@@ -92,8 +96,7 @@ set_blindness()
 	set_session ubuntu-2d
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set org.gnome.desktop.interface toolkit-accessibility true
-		gset_lightdm set org.gnome.desktop.a11y.applications screen-reader-enabled true
+		gset_lightdm set com.canonical.unity-greeter screen-reader true
 	fi
 }
 
@@ -105,8 +108,7 @@ set_braille()
 	set_session ubuntu-2d
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set org.gnome.desktop.interface toolkit-accessibility true
-		gset_lightdm set org.gnome.desktop.a11y.applications screen-reader-enabled true
+		gset_lightdm set com.canonical.unity-greeter screen-reader true
 	fi
 }
 
@@ -130,8 +132,7 @@ set_onscreen_keyboard()
 	gset set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set org.gnome.desktop.interface toolkit-accessibility true
-		gset_lightdm set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
+		gset_lightdm set com.canonical.unity-greeter onscreen-keyboard true
 	fi
 
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/,/usr/share/kubuntu-default-settings/kde-profile/motor-difficulties-pointing-devices/
@@ -218,17 +219,6 @@ gct()
 			echo "gconftool-2 " "$@" >> $CHROOT_DIR/usr/bin/a11y-profile-settings
 		else
 			$DO_CHROOT $DO_SUDO gconftool-2 "$@"
-		fi
-	fi
-}
-
-gct_lightdm()
-{
-	if [ -n "$GCONF_VERSION" ]; then
-		if [ -n "$STARTUP_SCRIPT" ]; then
-			echo "gconftool-2 " "$@" >> $CHROOT_DIR/usr/bin/a11y-profile-settings-lightdm
-		else
-			$DO_CHROOT sudo -u lightdm gconftool-2 "$@"
 		fi
 	fi
 }

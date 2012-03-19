@@ -47,6 +47,9 @@ if [ -z "$version" ]; then
     exit 0
 fi
 
+unset DEBIAN_HAS_FRONTEND
+unset DEBIAN_FRONTEND
+unset DEBCONF_REDIR
 runcommandinroot "$root" dpkg-reconfigure -fnoninteractive --no-reload "$package"
 
 exit 0

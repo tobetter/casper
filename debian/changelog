@@ -1,3 +1,12 @@
+casper (1.312) precise; urgency=low
+
+  * bin/casper-reconfigure: Unset DEBIAN_HAS_FRONTEND, DEBIAN_FRONTEND, and
+    DEBCONF_REDIR so that casper-reconfigure properly uses the
+    noninteractive frontend when invoked from a ubiquity target-config hook
+    (LP: #955617).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 19 Mar 2012 22:06:38 +0000
+
 casper (1.311) precise; urgency=low
 
   * LightDM on kubuntu-active wants to start ubuntu.desktop,

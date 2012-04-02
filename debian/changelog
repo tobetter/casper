@@ -1,3 +1,19 @@
+casper (1.313) precise; urgency=low
+
+  * bin/casper-a11y-enable:
+    - Remove code to create a sudoers config file that is no longer needed
+      in the at-spi dbus world we now live in, thanks to Attila Hammer for
+      the patch. (LP: #964985)
+    - Disable the calendar in all low vision accessibility profiles as it has
+      issues with keyboard navigation, thanks to Attila Hammer for the patch.
+      (LP: #965015)
+    - Do not hard code the ubuntu-2d session name in the set_session method.
+  * ubiquity-hooks/30accessibility:
+    - Use the orca settings from the live session for unity-greeter on the
+      installed system, thanks to Attila Hammer for the patch. (LP: #968929)
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Mon, 02 Apr 2012 16:39:26 +1000
+
 casper (1.312) precise; urgency=low
 
   * bin/casper-reconfigure: Unset DEBIAN_HAS_FRONTEND, DEBIAN_FRONTEND, and

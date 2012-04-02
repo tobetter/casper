@@ -38,11 +38,11 @@ set -e
 # all low vision profiles, for both the user session and login manager.
 set_common_lowvis()
 {
+	gset set com.canonical.indicator.datetime show-calendar false
 	gset set org.gnome.desktop.interface toolkit-accessibility true
 	gct -s -t bool /desktop/gnome/interface/accessibility true
 	gct -s -t bool /apps/gksu/disable-grab true
 	gset set org.gnome.yelp show-cursor true
-	add_sudoers_file
 }
 
 # Common settings for motor profiles. Any change you make here will affect
@@ -227,19 +227,6 @@ kderc_addtoprefixes()
 {
 	if [ -e $CHROOT_DIR/etc/kde4rc ]; then
 		sed -i "s|\\(prefixes=/usr/share/kubuntu-default-settings/kde-profile/default/\\)|\\1,$1|" $CHROOT_DIR/etc/kde4rc
-	fi
-}
-
-add_sudoers_file()
-{
-	if [ "$HOME" = "/root" ] || [ -n "$IN_INITRAMFS" ]; then
-	        cat <<EOF > $CHROOT_DIR/etc/sudoers.d/a11y-sudo
-# To allow accessibility in GTK to work with sudo.
-Defaults        env_keep = "ORBIT_SOCKETDIR XDG_SESSION_COOKIE GTK_MODULES"
-EOF
-		chmod 0440 $CHROOT_DIR/etc/sudoers.d/a11y-sudo
-	else
-		echo "Warning: Could not create sudoers file due to no root privileges."
 	fi
 }
 
@@ -450,7 +437,7 @@ set_session()
 		cat <<EOF > $CHROOT_DIR/var/lib/AccountsService/users/$USER_NAME
 
 [User]
-XSession=ubuntu-2d
+XSession=$1
 EOF
 	else
 		dbus-send --type=method_call --system --dest=org.freedesktop.Accounts /org/freedesktop/Accounts org.freedesktop.Accounts.FindUserByName string:$USER_NAME

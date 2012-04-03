@@ -440,9 +440,9 @@ set_session()
 XSession=$1
 EOF
 	else
-		dbus-send --type=method_call --system --dest=org.freedesktop.Accounts /org/freedesktop/Accounts org.freedesktop.Accounts.FindUserByName string:$USER_NAME
+		dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.Accounts /org/freedesktop/Accounts org.freedesktop.Accounts.FindUserByName string:$USER_NAME > /dev/null 2>&1
 		sleep 1
-		dbus-send --type=method_call --system --reply-timeout=1000 --dest=org.freedesktop.Accounts /org/freedesktop/Accounts/User$uid org.freedesktop.Accounts.User.SetXSession string:$1
+		dbus-send --print-reply --type=method_call --system --reply-timeout=1000 --dest=org.freedesktop.Accounts /org/freedesktop/Accounts/User$uid org.freedesktop.Accounts.User.SetXSession string:$1 > /dev/null 2>&1
 	fi
 }
 

@@ -1,3 +1,11 @@
+casper (1.314) precise; urgency=low
+
+  * bin/casper-a11y-enable: Call dbus-send with the --print-reply command-line
+    argument, and send the output to null, as we don't need it. For some
+    reason dbus-send only executes our commands when --print-reply is given.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Tue, 03 Apr 2012 11:36:32 +1000
+
 casper (1.313) precise; urgency=low
 
   * bin/casper-a11y-enable:

@@ -1,3 +1,10 @@
+casper (1.315) precise; urgency=low
+
+  * Fix sed call for rc_domain (LP: #973794)
+  * Ensure resulting resolv.conf is always clean and valid.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 18 Apr 2012 11:33:49 +0200
+
 casper (1.314) precise; urgency=low
 
   * bin/casper-a11y-enable: Call dbus-send with the --print-reply command-line

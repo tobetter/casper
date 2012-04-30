@@ -1,3 +1,11 @@
+casper (1.316) quantal; urgency=low
+
+  * Add dependency on cifs-utils for cifs NETBOOT support of desktop images.
+  * Disable network-manager when installing from NETBOOT, otherwise we
+    loose access to the media when NM starts, causing the system to freeze.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Mon, 30 Apr 2012 15:39:32 +0200
+
 casper (1.315) precise; urgency=low
 
   * Fix sed call for rc_domain (LP: #973794)

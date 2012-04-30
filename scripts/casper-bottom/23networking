@@ -73,6 +73,12 @@ iface $i inet $method
 EOF
         done
     fi
+
+    if [ -n "${NETBOOT}" ] && [ -x /root/usr/sbin/NetworkManager ]; then
+        # Disable Network Manager on netboot to avoid loosing connectivity to the media
+        echo "manual" > /root/etc/init/network-manager.override
+    fi
+
     if [ ! -f /root/etc/resolv.conf ] || [ -z "$(cat /root/etc/resolv.conf)" ]; then
         if [ -n "${DEVICE}" ] && [ -e /tmp/net-"${DEVICE}".conf ]; then
             # create a resolv.conf if it is not present

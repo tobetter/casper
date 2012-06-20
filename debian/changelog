@@ -1,3 +1,10 @@
+casper (1.318) quantal; urgency=low
+
+  * Move the casper-a11y script from casper to ubiquity-casper so the script
+    is available for use in OEM config mode.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Wed, 20 Jun 2012 16:15:53 +1000
+
 casper (1.317) quantal; urgency=low
 
   * scripts/casper-bottom/44pk_allow_ubuntu: grant admin polkit privileges

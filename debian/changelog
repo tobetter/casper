@@ -1,3 +1,15 @@
+casper (1.319) quantal; urgency=low
+
+  * Remove conf.d/compcache as compcache doesn't exist anymore.
+    A possible replacement would be zram.
+  * Add md4 and des_generic to the initramfs, required by cifs.
+  * Revert my previous change as the network-manager override isn't actually
+    needed when the /e/n/i logic works (and marks the interface as manual).
+  * Update paths to net-$INTERFACE.conf to /run/ as it now lives there instead
+    of /tmp. (LP: #1013843)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 03 Jul 2012 22:36:16 -0400
+
 casper (1.318) quantal; urgency=low
 
   * Move the casper-a11y script from casper to ubiquity-casper so the script

@@ -1,3 +1,11 @@
+casper (1.320) quantal; urgency=low
+
+  * scripts/casper: Add match for platform-tegra-ehci USB controllers to
+    allow for finding live filesystems on external USB media on tegra
+    platforms.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Sat, 21 Jul 2012 17:41:31 +1000
+
 casper (1.319) quantal; urgency=low
 
   * Remove conf.d/compcache as compcache doesn't exist anymore.

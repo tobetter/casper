@@ -1,3 +1,11 @@
+casper (1.321) quantal; urgency=low
+
+  * bin/casper-a11y-enable: Remove session setting code. Now that Unity 2D
+    is no longer available, setting the session to Ubuntu 2D causes a login
+    loop until the session is changed.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Thu, 16 Aug 2012 13:35:29 +1000
+
 casper (1.320) quantal; urgency=low
 
   * scripts/casper: Add match for platform-tegra-ehci USB controllers to

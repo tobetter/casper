@@ -93,7 +93,6 @@ set_blindness()
 	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config speech
-	set_session ubuntu-2d
 
 	if [ -n "$SET_LOGIN" ]; then
 		gset_lightdm set com.canonical.unity-greeter screen-reader true
@@ -105,7 +104,6 @@ set_braille()
 	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
 	gset set org.gnome.Empathy.conversation theme classic
 	set_orca_config braille
-	set_session ubuntu-2d
 
 	if [ -n "$SET_LOGIN" ]; then
 		gset_lightdm set com.canonical.unity-greeter screen-reader true
@@ -420,29 +418,6 @@ EOF
 			chmod 755 "$CHROOT_DIR/home/$USER_NAME/.local/share/orca"
 			$DO_CHROOT chown $USER_NAME.$USER_NAME -R "/home/$USER_NAME/.local"
 		fi
-	fi
-}
-
-set_session()
-{
-	local uid=$($DO_CHROOT getent passwd $USER_NAME | awk -F: '{print $3}')
-
-	# We need to start the accounts daemon somehow and wait for a half second
-	# for it to get ready. Calling on AccountsService to set the X session with
-	# only one call seems to error out, so querying the user by name seems to get
-	# the daemon going.
-	if [ -n "$STARTUP_SCRIPT" ]; then
-		# I don't like having to write the file manually, but during testing I was
-		# unable to get calls via dbus-send to work.
-		cat <<EOF > $CHROOT_DIR/var/lib/AccountsService/users/$USER_NAME
-
-[User]
-XSession=$1
-EOF
-	else
-		dbus-send --print-reply --type=method_call --system --dest=org.freedesktop.Accounts /org/freedesktop/Accounts org.freedesktop.Accounts.FindUserByName string:$USER_NAME > /dev/null 2>&1
-		sleep 1
-		dbus-send --print-reply --type=method_call --system --reply-timeout=1000 --dest=org.freedesktop.Accounts /org/freedesktop/Accounts/User$uid org.freedesktop.Accounts.User.SetXSession string:$1 > /dev/null 2>&1
 	fi
 }
 

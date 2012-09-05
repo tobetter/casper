@@ -549,7 +549,7 @@ if [ -n "$STARTUP_SCRIPT" ]; then
 	cat <<EOF > $CHROOT_DIR/etc/init/a11y-profile-settings.conf
 # a11y-profile-settings - A job to set up accessibility settings
 
-description     "Accessib ility profile settings"
+description     "Accessibility profile settings"
 
 start on runlevel [2345]
 

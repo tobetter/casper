@@ -1,3 +1,11 @@
+casper (1.322) quantal; urgency=low
+
+  * Fix typo in a11y-profile-settings job description.
+  * Update paths used to divert away check-new-release and
+    check-new-release-gtk.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Wed, 05 Sep 2012 17:47:07 +0100
+
 casper (1.321) quantal; urgency=low
 
   * bin/casper-a11y-enable: Remove session setting code. Now that Unity 2D

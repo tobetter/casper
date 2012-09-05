@@ -33,10 +33,10 @@ rm -f /root/usr/share/autostart/adept_notifier_auto.desktop
 
 # Upgrading the live CD to new releases is probably not a great plan.
 chroot /root dpkg-divert --add --rename --quiet \
-	/usr/lib/update-manager/check-new-release
-ln -sf /bin/true /root/usr/lib/update-manager/check-new-release
+	/usr/lib/ubuntu-release-upgrader/check-new-release
+ln -sf /bin/true /root/usr/lib/ubuntu-release-upgrader/check-new-release
 chroot /root dpkg-divert --add --rename --quiet \
-	/usr/lib/update-manager/check-new-release-gtk
-ln -sf /bin/true /root/usr/lib/update-manager/check-new-release-gtk
+	/usr/lib/ubuntu-release-upgrader/check-new-release-gtk
+ln -sf /bin/true /root/usr/lib/ubuntu-release-upgrader/check-new-release-gtk
 
 log_end_msg

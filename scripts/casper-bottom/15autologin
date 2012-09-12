@@ -20,24 +20,18 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-if [ -d /root/etc/gdm ]; then
-    # Configure GDM autologin
-    GDMCustomFile=/root/etc/gdm/custom.conf
-    AutologinParameters="AutomaticLoginEnable=true\n\
-AutomaticLogin=$USERNAME\n\
-TimedLoginEnable=true\n\
-TimedLogin=$USERNAME\n\
-TimedLoginDelay=10"
+GDMCustomFile=/root/etc/gdm/custom.conf
 
-    # Prevent from updating if parameters already present (persistent usb key)
-    if ! `grep -qs 'AutomaticLoginEnable' $GDMCustomFile` ; then
-        if ! `grep -qs '\[daemon\]' $GDMCustomFile` ; then
-            echo '[daemon]' >> $GDMCustomFile
-        fi
-        sed -i "s/\[daemon\]/\[daemon\]\n$AutologinParameters/" $GDMCustomFile
-        printf "[com.canonical.indicator.session]\nsuppress-logout-menuitem=true\n" >> /root/usr/share/glib-2.0/schemas/casper.gschema.override
-        chroot /root glib-compile-schemas /usr/share/glib-2.0/schemas/
-    fi
+if [ -f $GDMCustomFile ]; then
+    # Configure GDM autologin
+    sed -i -r \
+        -e "s/^#[ ]*AutomaticLoginEnable =.*\$/AutomaticLoginEnable=true/" \
+        -e "s/^#[ ]*AutomaticLogin =.*\$/AutomaticLogin=$USERNAME/" \
+        $GDMCustomFile
+
+    printf "[com.canonical.indicator.session]\nsuppress-logout-menuitem=true\n" >> /root/usr/share/glib-2.0/schemas/casper.gschema.override
+    printf "[org.gnome.desktop.lockdown]\ndisable-log-out=true\n" >> /root/usr/share/glib-2.0/schemas/casper.gschema.override    
+    chroot /root glib-compile-schemas /usr/share/glib-2.0/schemas/
 fi
 
 if [ -f /root/etc/kde4/kdm/kdmrc ]; then

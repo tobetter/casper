@@ -100,6 +100,11 @@ if [ -f /root/home/$USERNAME/examples.desktop ]; then
     mv /root/home/$USERNAME/examples.desktop /root/home/$USERNAME/Desktop/
 fi
 
+#GDM
+if [ -d /root/etc/gdm ]; then
+    sed -i '/^[UG]ID_MIN/s/\<1000$/ 999/' /root/etc/login.defs
+fi
+
 #Kubuntu
 if [ -f "/root/usr/bin/plasma" ]; then
     if [ -f "/root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop" ]; then

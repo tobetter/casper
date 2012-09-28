@@ -1,3 +1,17 @@
+casper (1.325) quantal; urgency=low
+
+  [ Logan Rosen ]
+  * Remove 26disable_user_menu script, as it is obsolete (LP: #1057234)
+
+  [ Tim Lunn ]
+  * Patch [UG]ID_MIN in login.defs so that live user shows
+    up in GDM.
+
+  [ Didier Roche ]
+  * Remove more obsolete gsettings indicator value set
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 28 Sep 2012 09:37:34 +0200
+
 casper (1.324) quantal; urgency=low
 
   [ Tim L ]

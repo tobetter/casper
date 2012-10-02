@@ -28,9 +28,9 @@ if [ "${STATICIP}" = "frommedia" -a -e  "$IFFILE" ] ; then
 fi
 
 cat > "$IFFILE" <<EOF
+# interfaces(5) file used by ifup(8) and ifdown(8)
 auto lo
 iface lo inet loopback
-
 EOF
 
 /sbin/udevadm trigger

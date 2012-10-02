@@ -69,12 +69,9 @@ debconf_restore \
     passwd/user-password passwd/user-password-again \
     passwd/user-fullname passwd/username passwd/user-uid
 
-if [ -f /root/etc/sudoers ]; then
-    echo "${USERNAME}  ALL=(ALL) NOPASSWD: ALL" >> /root/etc/sudoers
+if [ -d /root/etc/sudoers.d/ ]; then
+    echo "${USERNAME}  ALL=(ALL) NOPASSWD: ALL" > /root/etc/sudoers.d/casper
 fi
-
-# XXX - awful hack to stop xscreensaver locking the screen (#7150)
-echo 'RUNNING_UNDER_GDM="yes"' >> /root/etc/environment
 
 LTS="$(cut -d' ' -f3 /root/cdrom/.disk/info 2>/dev/null)" || LTS=
 RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null)" || RELEASE=

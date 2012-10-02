@@ -89,7 +89,7 @@ do_stop ()
         prompt=
     fi
 
-    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth /sbin/usplash_write; do
+    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth; do
         cache_path "$path"
     done
 
@@ -127,11 +127,6 @@ do_stop ()
         stty sane < /dev/console
 
         echo $MSG > /dev/console
-        if [ -x /sbin/usplash_write ]; then
-            /sbin/usplash_write "TIMEOUT 86400"
-            /sbin/usplash_write "TEXT-URGENT Please remove installation media, close the tray"
-            /sbin/usplash_write "TEXT-URGENT (if any) and press ENTER to continue"
-        fi
         read x < /dev/console
     fi
 }

@@ -179,6 +179,9 @@ elif [ -f /root/etc/default/console-setup ]; then
         CONFIGFILE=/etc/default/console-setup
 fi
 
+# Make a temporary copy of the current file for later diff
+cp /root$CONFIGFILE /tmp/keyboard.orig
+
 # Reset the config for persistent medias
 if [ -f /cow$CONFIGFILE ]; then
     echo "Resetting $CONFIGFILE"
@@ -216,15 +219,19 @@ if [ -x /root/bin/setupcon ] && [ "$PREFIX" ] && [ "$CONFIGFILE" ]; then
         casper-preseed /root "$PREFIX/optionscode" '' false
         # prefix remains console-setup even with keyboard-configuration
         casper-preseed /root console-setup/codesetcode '' false
-
-        if [ -f /root/etc/init.d/usplash ]; then
-                sed -i 's/CONSOLE_SCREEN=$/CONSOLE_SCREEN=setupcon/; t END; b; : END; n; b END' /root/etc/init.d/usplash
-        elif [ -f /root/etc/init/usplash.conf ]; then
-                sed -i '/^post-stop script/a\
-    setupcon' /root/etc/init/usplash.conf
-        fi
 else
         chroot /root /usr/sbin/install-keymap $kbd
         casper-preseed /root debian-installer/keymap "$kbd"
 fi
+
+if [ "$(cat /root$CONFIGFILE)" != "$(cat /tmp/keyboard.orig)" ]; then
+    # The keyboard settings have changed, gsettings needs to be flushed
+    if [ -f /root/home/$USERNAME/.config/dconf/user ]; then
+        chroot /root sudo -u $USERNAME dbus-launch --exit-with-session gsettings reset-recursively org.gnome.libgnomekbd.keyboard
+        mount -n -o bind /proc /root/proc
+        chroot /root killall dbus-launch
+        umount /root/proc
+    fi
+fi
+
 log_end_msg

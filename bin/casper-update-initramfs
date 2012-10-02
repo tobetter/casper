@@ -1,5 +1,14 @@
 #! /bin/sh
 set -e
+
+if [ -f /cdrom/casper/vmlinuz ]; then
+    # If /cdrom is mounted but not writable, just exit
+    : >> "/cdrom/casper/vmlinuz" > /dev/null 2>&1 || exit 0
+
+    # If UBIQUITY_ONLY is set in the environment, also exit
+    [ -n "$UBIQUITY_ONLY" ] && exit 0
+fi
+
 update-initramfs.distrib "$@"
 if [ -e /initrd.img ]; then
     bootdir=

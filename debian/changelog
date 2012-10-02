@@ -1,3 +1,54 @@
+casper (1.326) quantal; urgency=low
+
+  * 22desktop_settings:
+    - Rename 22screensaver to 22desktop_settings
+    - Move 22gnome_panel_data's content to 22desktop_settings
+    - Flush overrides in 22desktop_settings to avoid getting duplicate keys
+      when using persistence.
+    - Check for gsettings-desktop-schemas instead of gnome-panel-data
+  * 35fix_language_selector:
+    - Use sed against the original file (from rofs) instead of the target file.
+      This avoids another case where the change is re-applied at every boot
+      when using persistence.
+  * 25adduser:
+    - Remove RUNNING_UNDER_GDM from /etc/environment which was a big hack
+      for back when we still used xscreensaver and was getting appended with
+      every single boot.
+    - Use /etc/sudoers.d instead of appending to /etc/sudoers, avoid getting
+      duplicate lines with every reboot.
+  * 23networking:
+    - Change default /etc/network/interfaces to match that in /rofs, makes it
+      easier to diff /etc when debugging casper.
+  * casper-init, casper, 19-keyboard, casper-functions:
+    - Remove any remaining reference to usplash as it's been deprecated for a
+      long long time and just makes things harder to read.
+  * casper-update-initramfs:
+    - Exit when called from a non-writable media (cdrom) or when called from
+      ubiquity. This fixes a > 1 minute wait when clicking "Try Ubuntu".
+  * 19keyboard:
+    - Add code to detect that the keyboard layout changed from the previous
+      value and flush the gsettings key so that the indicator is properly
+      reset. (LP: #946406)
+  * 43disable_updateinitramfs:
+    - Don't try to chmod a dangling symlink.
+    - Only write /usr/sbin/update-initramfs if it doesn't already exist.
+  * postinst:
+    - Remove code generating symlink for /usr/sbin/update-initramfs to
+      /usr/share/casper/casper-update-iniramfs as the diversion and symlinking
+      is done in the initramfs and that code was only useful when the shim was
+      first introduced. (LP: #984276)
+  * scripts/casper:
+    - Allow specifying live-media on the command line, helps when booting
+      computers that are unable to boot a CD/USB disk. (LP: #423616)
+    - Fix NFSOPTS handling by adding the needed comma and sticking it to the
+      existing "ro" option of nfsmount (LP: #476208)
+  * 22serialtty:
+    - Move 22serialtty to 26serialtty to avoid overriding the newly generated
+      upstart jobs. Note that this will spawn getty instead of login, but
+      it's probably for the best as we need a specific baudrate. (LP: #747888)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 02 Oct 2012 18:11:44 -0400
+
 casper (1.325) quantal; urgency=low
 
   [ Logan Rosen ]

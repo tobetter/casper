@@ -17,6 +17,10 @@ prereqs)
 esac
 
 . /scripts/casper-functions
+load_confmodule
+
+# Reset oem-config/enable to false (for persistent installs)
+db_set oem-config/enable false
 
 # Only do this on ARM
 if ! uname -m | grep -q arm; then exit 0; fi

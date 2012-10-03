@@ -1,3 +1,30 @@
+casper (1.327) quantal; urgency=low
+
+  [ Tim Lunn ]
+  * add gnome-shell favorites tweak to 25adduser
+  * Add 16gdmnopasswd script, removes gdm password dialog for live user.
+
+  [ Stéphane Graber ]
+  * Fix casper when running on some RAID systems. (LP: #1047316, LP: #965735)
+  * Apply patch by Tyler Gates to try and better handle dm devices, should help
+    with the above change too. (LP: #865529)
+  * Use /sys/class/net/ instead of hardcoded eth* devices.
+    (LP: #905828, LP: #962546)
+  * Allow overriding username/userfullname/hostname on the boot command line
+    as is mentioned in the manpage but was never implemented.
+    Note that when using persistence, those used for the first boot will be
+    remembered through /etc/casper.conf (LP: #907482)
+  * Reset oem-config/enable to false every boot. (LP: #838680)
+  * Add Breaks/Replaces to ubiquity-casper to properly upgrade when both
+    casper and ubiquity-casper are installed. (LP: #1046300)
+  * Apply patch by cleary to avoid hang in 41apt_cdrom when .disk/info doesn't
+    exist. (LP: #909919)
+  * Eject by block device instead of mountpoint, this should avoid ejecting
+    the cdrom on USB installations. (LP: #869238)
+  * Add 'check' target to debian/rules based on ubiquity's (LP: #570243)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Wed, 03 Oct 2012 17:46:39 -0400
+
 casper (1.326) quantal; urgency=low
 
   * 22desktop_settings:

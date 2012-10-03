@@ -113,7 +113,7 @@ do_stop ()
         return 0
     fi
 
-    eject -p -m /cdrom >/dev/null 2>&1
+    eject -p -m $device >/dev/null 2>&1
 
     [ "$prompt" ] || return 0
 

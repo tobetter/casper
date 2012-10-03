@@ -19,9 +19,9 @@ Description: Run a "live" preinstalled system from read-only media
 Package: ubiquity-casper
 Architecture: all
 Depends: laptop-detect, sudo, ${misc:Depends}
-Conflicts: espresso-casper
-Replaces: espresso-casper
 Enhances: ubiquity
+Replaces: casper (<< 1.318)
+Breaks: casper (<< 1.318)
 Tag: admin::boot, admin::filesystem, implemented-in::shell, protocol::smb, role::plugin, scope::utility, special::completely-tagged, works-with-format::iso9660
 Description: Configuration hooks for live installer
  This package provides hook scripts for the Ubiquity live installer that

@@ -65,6 +65,12 @@ parse_cmdline() {
                 export TORAM="Yes" ;;
             todisk=*)
                 export TODISK="${x#todisk=}" ;;
+            hostname=*)
+                export CMD_HOST="${x#hostname=}" ;;
+            userfullname=*)
+                export CMD_USERFULLNAME="${x#userfullname=}" ;;
+            username=*)
+                export CMD_USERNAME="${x#username=}" ;;
         esac
     done
     if [ "${UNIONFS}" = "" ]; then
@@ -574,6 +580,20 @@ check_dev ()
     return 1
 }
 
+is_mapper() {
+    dev="$1"
+    # we don't consider control a mapper device
+    echo "$dev" |grep "/dev/mapper/control" >/dev/null && return 1
+    echo "$dev" |grep "/dev/mapper/.\+" >/dev/null && return 0
+    return 1
+}
+
+is_md() {
+    dev="$1"
+    echo "$dev" |grep "/dev/md[0-9]" >/dev/null && return 0
+    return 1
+}
+
 find_livefs() {
     timeout="${1}"
     # first look at the one specified in the command line
@@ -589,7 +609,7 @@ find_livefs() {
         fi
     fi
     # or do the scan of block devices
-    for sysblock in $(echo /sys/block/* | tr ' ' '\n' | egrep -v "/(loop|ram|fd)"); do
+    for sysblock in $(echo /sys/block/* | tr ' ' '\n' | egrep -v "/(loop|ram|fd|md)"); do
         devname=$(sys2dev "${sysblock}")
         [ -e "$devname" ] || continue
         fstype=$(get_fstype "${devname}")
@@ -603,6 +623,10 @@ find_livefs() {
                     return 0
                 fi
             done
+        elif is_md "${devname}" || is_mapper "${devname}" ; then
+            if check_dev "null" "${devname}" ; then
+                return 0
+            fi
         elif [ "${fstype}" = "squashfs" -o \
                 "${fstype}" = "ext4" -o \
                 "${fstype}" = "ext3" -o \
@@ -679,8 +703,16 @@ mountroot() {
             HOST=$FLAVOUR
             USERNAME=$FLAVOUR
             export HOST USERNAME
-            sed  -i "s,USERNAME=.*,USERNAME=\"$FLAVOUR\",g; s,HOST=.*,HOST=\"$FLAVOUR\",g" /etc/casper.conf
+            sed -i "s,USERNAME=.*,USERNAME=\"$FLAVOUR\",g; s,HOST=.*,HOST=\"$FLAVOUR\",g" /etc/casper.conf
         fi
+    fi
+
+    # Apply command lines override of HOST, USERNAME and USERFULLNAME
+    [ -n "$CMD_HOST" ] && HOST=$CMD_HOST && export HOST
+    [ -n "$CMD_USERNAME" ] && USERNAME=$CMD_USERNAME && export USERNAME
+    [ -n "$CMD_USERFULLNAME" ] && USERFULLNAME=$CMD_USERFULLNAME && export USERFULLNAME
+    if [ -n "$CMD_HOST" ] || [ -n "$CMD_USERNAME" ] || [ -n "$CMD_USERFULLNAME" ]; then
+        sed -i "s,USERNAME=.*,USERNAME=\"$USERNAME\",g; s,USERFULLNAME=.*,USERFULLNAME=\"$USERFULLNAME\",g; s,HOST=.*,HOST=\"$HOST\",g" /etc/casper.conf
     fi
 
     # unionfs-fuse needs /dev to be bind-mounted for the duration of

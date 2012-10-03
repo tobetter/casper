@@ -37,7 +37,10 @@ start_network () {
 	mkdir -p /root/var/run/network
 	# Close inherited fd's to prevent debconf-communicate from
 	# continuing to run post-casper.
-	chroot /root dhclient eth0 3>&- 4<&-
+	for device in /sys/class/net/*/device; do
+		name=$(basename ${device%*/device})
+		chroot /root dhclient $name 3>&- 4<&-
+	done
 
 	network_started=1
 }
@@ -45,7 +48,10 @@ start_network () {
 stop_network () {
 	[ "$network_started" ] || return
 
-	chroot /root ifconfig eth0 down
+	for device in /sys/class/net/*/device; do
+		name=$(basename ${device%*/device})
+		chroot /root ifconfig $name down
+	done
 	umount /root/sys
 	umount /root/proc
 	umount /root/dev

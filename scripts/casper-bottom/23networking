@@ -63,7 +63,8 @@ else
     fi
     # iterate the physical interfaces and add them to the interfaces list
     if [ "$method" != dhcp ] || [ ! -x /root/usr/sbin/NetworkManager ]; then
-        for interface in /sys/class/net/eth* /sys/class/net/ath* /sys/class/net/wlan*; do
+        for device in /sys/class/net/*/device; do
+            interface="${device%*/device}"
             [ -e $interface ] || continue
             i="$(basename $interface)"
             cat >> "$IFFILE" <<EOF
@@ -108,11 +109,13 @@ EOF
 fi
 
 if [ ! -x /root/usr/sbin/NetworkManager ]; then
-    for i in eth0 eth1 eth2 ath0 wlan0; do
-        grep -q "iface $i" $IFFILE && continue
+    for device in /sys/class/net/*/device; do
+        name=$(basename ${device%*/device})
+
+        grep -q "iface $name" $IFFILE && continue
         cat >> "$IFFILE" <<EOF
-auto $i
-iface $i inet dhcp
+auto $name
+iface $name inet dhcp
 
 EOF
     done

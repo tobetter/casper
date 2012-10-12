@@ -21,7 +21,7 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 # apt-cdrom would fail otherwise
-if [ ! -s /.disk/info ]; then
+if [ ! -s /root/cdrom/.disk/info ]; then
     exit 0
 fi
 

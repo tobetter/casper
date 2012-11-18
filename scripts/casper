@@ -380,21 +380,21 @@ setup_unionfs() {
     rootmnt="$2"
 
     if [ "${UNIONFS}" = 'DEFAULT' ]; then
-	for union in 'overlayfs' 'aufs' 'unionfs'
-	do
+        for union in 'overlayfs' 'aufs' 'unionfs'
+        do
             modprobe "${MP_QUIET}" -b ${union} || true
             if cut -f2 /proc/filesystems | grep -q "^${union}\$"; then
-		UNIONFS="${union}"
-		break
-	    fi
-	done
+                UNIONFS="${union}"
+                break
+            fi
+        done
     fi
     if [ "${UNIONFS}" = 'DEFAULT' -a -x /bin/unionfs-fuse ]; then
-	UNIONFS="unionfs-fuse"
+        UNIONFS="unionfs-fuse"
     fi
     # If all else fails fall back to aufs.
     if [ "${UNIONFS}" = 'DEFAULT' ]; then
-	UNIONFS='aufs'
+        UNIONFS='aufs'
     fi
 
     # run-init can't deal with images in a subdir, but we're going to
@@ -419,6 +419,13 @@ setup_unionfs() {
     for image_type in "ext2" "squashfs" "dir" ; do
         for image in "${image_directory}"/*."${image_type}"; do
             imagename=$(basename "${image}")
+
+            # Skip Edubuntu's extra squashfs
+            if [ "$imagename" = "ltsp.squashfs" ] ||
+               [ "$imagename" = "server.squashfs" ]; then
+                continue
+            fi
+
             if [ -d "${image}" ]; then
                 # it is a plain directory: do nothing
                 rofsstring="${image}=${roopt}:${rofsstring}"
@@ -447,7 +454,7 @@ setup_unionfs() {
         if [ -b "${cowprobe}" ]; then
             cowdevice=${cowprobe}
             cow_fstype=$(get_fstype "${cowprobe}")
-	    cow_mountopt="rw,noatime"
+            cow_mountopt="rw,noatime"
         else
             [ "$quiet" != "y" ] && log_warning_msg "Unable to find the persistent medium"
         fi
@@ -464,26 +471,26 @@ setup_unionfs() {
         aufs|unionfs)
             mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
             ;;
-	overlayfs)
-	    # Mount the layers pairwise from the bottom onto rootmnt,
-	    # for the second and later layers rootmnt forms the lower layer.
-	    mounts=""
-	    for mount in /cow $rofslist
-	    do
-		mounts="$mount $mounts"
-	    done
-	    lower=""
-	    for mount in $mounts
-	    do
-		if [ "$lower" = "" ]; then
-		    lower="$mount"
-		    continue
-		fi
-		mount -t overlayfs -o "upperdir=$mount,lowerdir=$lower" \
-		    "$mount" "$rootmnt"
-		lower="$rootmnt"
-	    done
-	    ;;
+        overlayfs)
+            # Mount the layers pairwise from the bottom onto rootmnt,
+            # for the second and later layers rootmnt forms the lower layer.
+            mounts=""
+            for mount in /cow $rofslist
+            do
+                mounts="$mount $mounts"
+            done
+            lower=""
+            for mount in $mounts
+            do
+                if [ "$lower" = "" ]; then
+                    lower="$mount"
+                    continue
+                fi
+                mount -t overlayfs -o "upperdir=$mount,lowerdir=$lower" \
+                    "$mount" "$rootmnt"
+                lower="$rootmnt"
+            done
+            ;;
     esac
 
     # Adding other custom mounts
@@ -768,11 +775,11 @@ Readonly: true" /root/etc/debconf.conf >"/root$DEBCONF_TMPDIR/debconf.conf"
 
     # Copy config database changes back to the master files.
     chroot /root debconf-copydb tmpdb config \
-	--config=Name:tmpdb --config=Driver:File \
-	--config="Filename:$DEBCONF_TMPDIR/config.dat"
+        --config=Name:tmpdb --config=Driver:File \
+        --config="Filename:$DEBCONF_TMPDIR/config.dat"
     chroot /root debconf-copydb tmpdb passwords \
-	--config=Name:tmpdb --config=Driver:File \
-	--config="Filename:$DEBCONF_TMPDIR/passwords.dat"
+        --config=Name:tmpdb --config=Driver:File \
+        --config="Filename:$DEBCONF_TMPDIR/passwords.dat"
     rm -rf "$DEBCONF_TMPDIR"
 
     exec 1>&6 6>&-

@@ -1,3 +1,14 @@
+casper (1.329) raring; urgency=low
+
+  * Skip images called ltsp.squashfs or server.squashfs as those are shipped
+    on the Edubuntu images but aren't intended to be used for the live
+    environment.
+  * Cleanup mixed tabs/spaces in the main casper script.
+  * Bump standards, no change required.
+  * Set a valid Vcs-Bzr URL.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Sun, 18 Nov 2012 18:18:22 -0500
+
 casper (1.328) quantal; urgency=low
 
   * Fix path to .disk/info in 41apt_cdrom (LP: #1065827).

@@ -1,7 +1,7 @@
-
 CC=gcc
-CFLAGS := $(shell getconf LFS_CFLAGS) -Wall -O2 -g $(shell pkg-config --cflags ply-boot-client)
-LDLIBS=$(shell pkg-config --libs ply-boot-client)
+PKG_CONFIG=pkg-config
+CFLAGS := $(shell getconf LFS_CFLAGS) -Wall -O2 -g $(shell $(PKG_CONFIG) --cflags ply-boot-client)
+LDLIBS=$(shell $(PKG_CONFIG) --libs ply-boot-client)
 
 casper-md5check: casper-md5check.c md5.c
 

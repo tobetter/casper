@@ -21,8 +21,6 @@ esac
 manual_add_modules unionfs
 manual_add_modules aufs
 manual_add_modules overlayfs
-manual_add_modules md4
-manual_add_modules des_generic
 
 # unionfs-fuse, if available
 if [ -x /usr/bin/unionfs-fuse ]; then
@@ -46,7 +44,7 @@ copy_exec /usr/bin/eject /bin
 # cifs boot
 if [ -x /sbin/mount.cifs ]; then
     copy_exec /sbin/mount.cifs /sbin
-    for x in cifs; do
+    for x in cifs md4 des_generic; do
         manual_add_modules ${x}
     done
 fi

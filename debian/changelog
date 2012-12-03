@@ -1,3 +1,13 @@
+casper (1.330) raring; urgency=low
+
+  [ Stéphane Graber ]
+  * Move cifs related modules to the right place.
+
+  [ Colin Watson ]
+  * Use correct compiler and pkg-config when cross-building.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 03 Dec 2012 15:56:49 +0000
+
 casper (1.329) raring; urgency=low
 
   * Skip images called ltsp.squashfs or server.squashfs as those are shipped

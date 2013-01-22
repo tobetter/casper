@@ -1,3 +1,13 @@
+casper (1.315.1) precise-proposed; urgency=low
+
+  * postinst:
+    - Remove code generating symlink for /usr/sbin/update-initramfs to
+      /usr/share/casper/casper-update-iniramfs as the diversion and symlinking
+      is done in the initramfs and that code was only useful when the shim was
+      first introduced. (LP: #984276)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 22 Jan 2013 18:24:17 -0500
+
 casper (1.315) precise; urgency=low
 
   * Fix sed call for rc_domain (LP: #973794)

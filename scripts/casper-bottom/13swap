@@ -22,7 +22,7 @@ esac
 log_begin_msg "$DESCRIPTION"
 
 devices=""
-for device in /dev/[hs]d[a-z][0-9]*; do
+for device in /dev/[hsv]d[a-z][0-9]*; do
     if ! [ -b "$device" ]; then
         continue
     fi

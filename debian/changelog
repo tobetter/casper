@@ -1,3 +1,12 @@
+casper (1.331) raring; urgency=low
+
+  * Re-order the eject code so that the message is rendered before the eject
+    which should fix the case where fonts or other bits are missing and the
+    message can't be rendered. (LP: #966480)
+  * Also detect swap space on virtio.
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Tue, 23 Apr 2013 19:46:18 +0200
+
 casper (1.330) raring; urgency=low
 
   [ Stéphane Graber ]

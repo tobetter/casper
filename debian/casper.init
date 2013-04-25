@@ -127,6 +127,8 @@ do_stop ()
 
     eject -p -m $device >/dev/null 2>&1
 
+    [ "$prompt" ] || return 0
+
     if [ -x /bin/plymouth ] && plymouth --ping; then
         plymouth watch-keystroke > /dev/null
     else

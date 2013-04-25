@@ -1,3 +1,10 @@
+casper (1.332) raring; urgency=low
+
+  * Don't wait for keystroke when prompt != 1 (preseeded reboots).
+    (LP: #1172653)
+
+ -- Stéphane Graber <stgraber@ubuntu.com>  Thu, 25 Apr 2013 12:05:02 +0200
+
 casper (1.331) raring; urgency=low
 
   * Re-order the eject code so that the message is rendered before the eject

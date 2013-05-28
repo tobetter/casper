@@ -1,3 +1,9 @@
+casper (1.333) saucy; urgency=low
+
+  * Remove hardcoded paths to udevadm (LP: #1184066).
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Tue, 28 May 2013 11:19:12 +0100
+
 casper (1.332) raring; urgency=low
 
   * Don't wait for keystroke when prompt != 1 (preseeded reboots).

@@ -1,3 +1,10 @@
+casper (1.334) saucy; urgency=low
+
+  * Use spaces instead of hyphens for the Name field of ubiquity's .desktop
+    (LP: #651098)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 24 Jun 2013 12:08:44 +0200
+
 casper (1.333) saucy; urgency=low
 
   * Remove hardcoded paths to udevadm (LP: #1184066).

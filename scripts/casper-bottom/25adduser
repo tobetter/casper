@@ -74,7 +74,7 @@ if [ -d /root/etc/sudoers.d/ ]; then
 fi
 
 LTS="$(cut -d' ' -f3 /root/cdrom/.disk/info 2>/dev/null)" || LTS=
-RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null)" || RELEASE=
+RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null | sed 's/-/ /')" || RELEASE=
 if [ "$LTS" = "LTS" ] && [ -n "$RELEASE" ]; then
 	RELEASE="$RELEASE LTS"
 fi

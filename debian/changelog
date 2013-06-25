@@ -1,3 +1,13 @@
+casper (1.335) saucy; urgency=low
+
+  * 22desktop_settings:
+    - Don't require gnome-screensaver to disable the lock screen since
+      Ubuntu GNOME no longer includes gnome-screensaver
+    - Don't override the gnome-shell favorites since that's already
+      handled in ubuntu-gnome-default-settings
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Mon, 24 Jun 2013 21:57:59 -0400
+
 casper (1.334) saucy; urgency=low
 
   * Use spaces instead of hyphens for the Name field of ubiquity's .desktop

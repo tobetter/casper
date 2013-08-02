@@ -78,7 +78,7 @@ RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null | sed 's/-/ /')" |
 if [ "$LTS" = "LTS" ] && [ -n "$RELEASE" ]; then
 	RELEASE="$RELEASE LTS"
 fi
-for file in /usr/share/applications/ubiquity-gtkui.desktop /usr/share/applications/kde4/ubiquity-kdeui.desktop; do
+for file in /usr/share/applications/ubiquity.desktop /usr/share/applications/kde4/ubiquity-kdeui.desktop; do
     if [ -f "/root/$file" ]; then
         sed -i "s/RELEASE/$RELEASE/" "/root$file"
         chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
@@ -112,15 +112,15 @@ fi
 
 #Ubuntu MID wants to be installed with --automatic
 if [ -f "/root/usr/share/ubuntu-mid-default-settings/mid-gui-start" ]; then
-  if [ -f "/root/usr/share/applications/ubiquity-gtkui.desktop" ]; then
-    sed -i 's/--desktop/--automatic --desktop/' "/root/usr/share/applications/ubiquity-gtkui.desktop"
+  if [ -f "/root/usr/share/applications/ubiquity.desktop" ]; then
+    sed -i 's/--desktop/--automatic --desktop/' "/root/usr/share/applications/ubiquity.desktop"
   fi
 fi
 
 #Ubuntu MID uses kourou, and the ubiquity icon should be easy to find
 if [ -f "/root/usr/lib/hildon-desktop/kourou.py" ]; then
   if [ -f "/root/etc/xdg/menus/home.menu" ]; then
-    sed -i '/<\/Include>/i\		<Filename>ubiquity-gtkui.desktop</Filename>' "/root/etc/xdg/menus/home.menu"
+    sed -i '/<\/Include>/i\		<Filename>ubiquity.desktop</Filename>' "/root/etc/xdg/menus/home.menu"
   fi
 fi
 

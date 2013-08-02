@@ -1,3 +1,9 @@
+casper (1.336) saucy; urgency=low
+
+  * 25adduser: Adjust to rename of ubiquity-gtkui.desktop to ubiquity.desktop
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Fri, 02 Aug 2013 10:04:11 +0100
+
 casper (1.335) saucy; urgency=low
 
   * 22desktop_settings:

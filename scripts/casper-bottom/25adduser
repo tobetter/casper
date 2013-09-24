@@ -103,10 +103,10 @@ if [ -d /root/etc/gdm ]; then
 fi
 
 #Kubuntu
-if [ -f "/root/usr/bin/plasma" ]; then
-    if [ -f "/root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop" ]; then
+if [ -f "/root/usr/bin/plasma-desktop" ]; then
+    if [ -f "/root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/a_welcome.desktop" ]; then
       chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
-      chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/kde4/apps/khelpcenter/plugins/kubuntu/about-kubuntu.desktop /home/$USERNAME/Desktop/about-kubuntu.desktop
+      chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/kde4/apps/khelpcenter/plugins/kubuntu/a_welcome.desktop /home/$USERNAME/Desktop/a_welcome.desktop
     fi
 fi
 

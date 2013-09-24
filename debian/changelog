@@ -1,3 +1,9 @@
+casper (1.336ubuntu1) saucy; urgency=low
+
+  * Update link to Kubuntu docs in scripts/casper-bottom/25adduser
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 24 Sep 2013 16:16:38 +0100
+
 casper (1.336) saucy; urgency=low
 
   * 25adduser: Adjust to rename of ubiquity-gtkui.desktop to ubiquity.desktop

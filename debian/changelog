@@ -1,3 +1,9 @@
+casper (1.337) trusty; urgency=low
+
+  * 25adduser: add ubiquity-kdeui.desktop to plasma-netbook init template
+
+ -- Harald Sitter <apachelogger@kubuntu.org>  Tue, 04 Feb 2014 11:23:26 +0100
+
 casper (1.336ubuntu1) saucy; urgency=low
 
   * Update link to Kubuntu docs in scripts/casper-bottom/25adduser

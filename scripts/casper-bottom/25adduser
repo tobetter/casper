@@ -102,11 +102,20 @@ if [ -d /root/etc/gdm ]; then
     sed -i '/^[UG]ID_MIN/s/\<1000$/ 999/' /root/etc/login.defs
 fi
 
-#Kubuntu
+# Kubuntu
 if [ -f "/root/usr/bin/plasma-desktop" ]; then
     if [ -f "/root/usr/share/kde4/apps/khelpcenter/plugins/kubuntu/a_welcome.desktop" ]; then
       chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
       chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/kde4/apps/khelpcenter/plugins/kubuntu/a_welcome.desktop /home/$USERNAME/Desktop/a_welcome.desktop
+    fi
+fi
+
+# Kubuntu Netbook
+if [ -f "/root/usr/bin/plasma-netbook" ]; then
+    config="/root/usr/share/kubuntu-netbook-default-settings/share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents/layout.js"
+    escaped_desktop="\/usr\/share\/applications\/kde4\/ubiquity-kdeui.desktop"
+    if [ -f $config ]; then
+      sed -i "s/\/\/__UBIQUITY_PLACEHOLDER__\/\//\"$escaped_desktop\"/" $config
     fi
 fi
 

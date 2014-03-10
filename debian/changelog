@@ -1,3 +1,18 @@
+casper (1.338) trusty; urgency=medium
+
+  * scripts/casper-bottom/30accessibility: If the user boots to the desktop,
+    write a desktop file to /etc/xdg/autostart to set up the screen reader
+    profile if the user launches Orca with a shortcut key. Gnome/Unity
+    settings daemon takes priority over ubiquity with keygrabs, such
+    that the profile setting code in ubiquity does not get executed when
+    the shortcut is entered. Temporarily disabling the shortcut key also
+    doesn't work, as Gnome/Unity settings daemon doesn't appear to notice
+    the change when the gsettings key is changed on the command-line. As
+    such, this is a cludge, until a better mechanism for handling
+    accessibility profiles is implemented.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Mon, 10 Mar 2014 14:59:02 +1100
+
 casper (1.337) trusty; urgency=low
 
   * 25adduser: add ubiquity-kdeui.desktop to plasma-netbook init template

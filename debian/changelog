@@ -1,3 +1,9 @@
+casper (1.340build1) utopic; urgency=high
+
+  * No change rebuild against libplymouth4.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 14 Jul 2014 10:15:16 +0100
+
 casper (1.340) trusty; urgency=medium
 
   * Remove 23etc_modules which does more harm than good (LP: #1296386)

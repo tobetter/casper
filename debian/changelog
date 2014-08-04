@@ -1,3 +1,10 @@
+casper (1.341) utopic; urgency=medium
+
+  [ Rohan Garg ]
+  * Add SDDM autologin config in casper hooks.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Mon, 04 Aug 2014 16:16:23 +0200
+
 casper (1.340build1) utopic; urgency=high
 
   * No change rebuild against libplymouth4.

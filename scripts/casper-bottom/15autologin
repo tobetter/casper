@@ -81,4 +81,15 @@ autologin-session=lightdm-autologin"
     fi
 fi
 
+if [ -f /root/usr/bin/sddm ]; then
+    cat >>/root/etc/sddm.conf <<EOF
+[Users]
+MinimumUid=999
+
+[Autologin]
+User=$USERNAME
+Session=plasma.desktop
+EOF
+fi
+
 log_end_msg

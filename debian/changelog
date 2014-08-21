@@ -1,3 +1,9 @@
+casper (1.342) utopic; urgency=medium
+
+  * Add wildcard for SDDM when booting in noninteractive/text mode
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 21 Aug 2014 16:55:19 +0100
+
 casper (1.341) utopic; urgency=medium
 
   [ Rohan Garg ]

@@ -1,3 +1,14 @@
+casper (1.343) utopic; urgency=medium
+
+  * scripts/casper-bottom/30accessibility: Rework the logic for writing out
+    the autostart desktop file for blindness profile enablement with a
+    keyboard shortcut. We want the file written out if the user boots into
+    either the desktop, or the try/install Ubuntu screen. This will ensure
+    that the blindness profile settings are applied to the installed system.
+    Also fix some spelling errors in the process.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 22 Aug 2014 12:54:58 +1000
+
 casper (1.342) utopic; urgency=medium
 
   * Add wildcard for SDDM when booting in noninteractive/text mode

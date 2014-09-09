@@ -556,8 +556,8 @@ start on runlevel [2345]
 umask 022
 
 script
-    sudo -u $USER_NAME /usr/bin/dbus-launch --exit-with-session /usr/bin/a11y-profile-settings
-    sudo -u lightdm /usr/bin/dbus-launch --exit-with-session /usr/bin/a11y-profile-settings-lightdm
+    su -s /bin/bash - $USER_NAME -c '/usr/bin/dbus-run-session /usr/bin/a11y-profile-settings'
+    su -s /bin/bash - lightdm -c '/usr/bin/dbus-run-session /usr/bin/a11y-profile-settings-lightdm'
     rm /usr/bin/a11y-profile-settings /usr/bin/a11y-profile-settings-lightdm
     rm /etc/init/a11y-profile-settings.conf
 end script

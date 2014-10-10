@@ -1,3 +1,10 @@
+casper (1.345) utopic; urgency=medium
+
+  * In scripts/casper-bottom/25adduser Kubuntu copy over setup script
+    for live CD to display folderview with Ubiquity icon
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 10 Oct 2014 11:05:10 +0200
+
 casper (1.344) utopic; urgency=medium
 
   * bin/casper-a11y-enable:

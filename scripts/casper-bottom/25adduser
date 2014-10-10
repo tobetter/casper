@@ -110,6 +110,13 @@ if [ -f "/root/usr/bin/plasma-desktop" ]; then
     fi
 fi
 
+#Kubuntu Plasma 5, turn on folderview
+if [ -f "/root/usr/bin/plasmashell" ]; then
+    if [ -f "/root/usr/share/kubuntu-default-settings/layout.js" ]; then
+      chroot /root install -D -o $USERNAME -g $USERNAME /usr/share/kubuntu-default-settings/layout.js /usr/share/plasma/shells/org.kde.plasma.desktop/contents/layout.js
+    fi
+fi
+
 # Kubuntu Netbook
 if [ -f "/root/usr/bin/plasma-netbook" ]; then
     config="/root/usr/share/kubuntu-netbook-default-settings/share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents/layout.js"

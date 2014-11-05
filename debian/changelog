@@ -1,3 +1,11 @@
+casper (1.346) vivid; urgency=medium
+
+  * scripts/casper: touch and remove a file in /var/crash so that inotify
+    works for the /var/crash directory, thereby allowing update-notifier to
+    notice crashes in /var/crash and for the crashes to be reported.
+
+ -- Brian Murray <brian@ubuntu.com>  Wed, 05 Nov 2014 11:22:01 -0800
+
 casper (1.345) utopic; urgency=medium
 
   * In scripts/casper-bottom/25adduser Kubuntu copy over setup script

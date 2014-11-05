@@ -700,6 +700,11 @@ mountroot() {
 
     mount_images_in_directory "${livefs_root}" "${rootmnt}"
 
+    # initialize the /var/crash directory in overlayfs so that inotify for
+    # /var/crash works and update-notifier will notify of crashes
+    touch /root/var/crash/crash.init
+    rm /root/var/crash/crash.init
+
     log_end_msg
 
     # Allow to override USERNAME and HOST based on media information

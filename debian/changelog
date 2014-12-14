@@ -1,3 +1,13 @@
+casper (1.347) vivid; urgency=low
+
+  * scripts/casper: move union content into a subdirectory of the /cow
+    device, to allow us to create a workdir where that is needed for
+    overlayfs.  Also attempt to mount overlayfs with and without the
+    workdir= to cope with the semantic change in newer kernels.
+    (LP: #1401620)
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Sun, 14 Dec 2014 11:21:49 +0000
+
 casper (1.346) vivid; urgency=medium
 
   * scripts/casper: touch and remove a file in /var/crash so that inotify

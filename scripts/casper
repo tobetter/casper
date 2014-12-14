@@ -461,15 +461,16 @@ setup_unionfs() {
     fi
 
     mount -t ${cow_fstype} -o ${cow_mountopt} ${cowdevice} /cow || panic "Can not mount $cowdevice on /cow"
+    mkdir -p /cow/upper /cow/work
 
     case ${UNIONFS} in
         unionfs-fuse)
-            (ulimit -n 16384; unionfs-fuse -o cow -o noinitgroups -o default_permissions -o allow_other -o use_ino -o suid /cow=RW:$rofsstring "$rootmnt" || panic "${UNIONFS} mount failed")
+            (ulimit -n 16384; unionfs-fuse -o cow -o noinitgroups -o default_permissions -o allow_other -o use_ino -o suid /cow/upper=RW:$rofsstring "$rootmnt" || panic "${UNIONFS} mount failed")
             mkdir -p /dev/.initramfs/varrun
             pidof unionfs-fuse >> /dev/.initramfs/varrun/sendsigs.omit || true
             ;;
         aufs|unionfs)
-            mount -t ${UNIONFS} -o noatime,dirs=/cow=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
+            mount -t ${UNIONFS} -o noatime,dirs=/cow/upper=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
             ;;
         overlayfs)
             # Mount the layers pairwise from the bottom onto rootmnt,
@@ -486,8 +487,10 @@ setup_unionfs() {
                     lower="$mount"
                     continue
                 fi
-                mount -t overlayfs -o "upperdir=$mount,lowerdir=$lower" \
-                    "$mount" "$rootmnt"
+                mount -t overlayfs -o "upperdir=$mount/upper,lowerdir=$lower,workdir=$mount/work" \
+                    "$mount" "$rootmnt" || \
+                  mount -t overlayfs -o "upperdir=$mount/upper,lowerdir=$lower" \
+                      "$mount" "$rootmnt"
                 lower="$rootmnt"
             done
             ;;

@@ -1,3 +1,10 @@
+casper (1.348) vivid; urgency=low
+
+  * scripts/casper: switch up to overlayfs V2 format (overlay filesystem
+    type) when available.  (LP: #1412411)
+
+ -- Andy Whitcroft <apw@ubuntu.com>  Mon, 19 Jan 2015 11:58:16 +0000
+
 casper (1.347) vivid; urgency=low
 
   * scripts/casper: move union content into a subdirectory of the /cow

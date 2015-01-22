@@ -1,9 +1,16 @@
+casper (1.349) vivid; urgency=medium
+
+  * scripts/casper-bottom/51unity8-wizard: disable unity8's first run wizard,
+    users want to try unity8, not to configure their system
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 22 Jan 2015 11:04:50 +0100
+
 casper (1.348) vivid; urgency=low
 
   * scripts/casper: switch up to overlayfs V2 format (overlay filesystem
     type) when available.  (LP: #1412411)
 
- -- Andy Whitcroft <apw@ubuntu.com>  Mon, 19 Jan 2015 11:58:16 +0000
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 21 Jan 2015 16:15:21 +0000
 
 casper (1.347) vivid; urgency=low
 

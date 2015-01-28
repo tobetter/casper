@@ -1,3 +1,10 @@
+casper (1.350) vivid; urgency=medium
+
+  * scripts/casper-bottom/51unity8-wizard: chown the directory, it 
+    needs to be owned by the user
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 28 Jan 2015 10:19:01 +0100
+
 casper (1.349) vivid; urgency=medium
 
   * scripts/casper-bottom/51unity8-wizard: disable unity8's first run wizard,

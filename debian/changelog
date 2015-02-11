@@ -1,3 +1,10 @@
+casper (1.351) vivid; urgency=medium
+
+  * scripts/casper-bottom/51unity8-wizard: do the chown in the target
+    environment otherwise the user doesn't exist (lp: #1420602)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 11 Feb 2015 10:02:52 +0100
+
 casper (1.350) vivid; urgency=medium
 
   * scripts/casper-bottom/51unity8-wizard: chown the directory, it 

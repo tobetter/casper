@@ -23,6 +23,6 @@ log_begin_msg "$DESCRIPTION"
 # Users want to try unity8, not to configure their system
 mkdir -p /root/home/$USERNAME/.config/ubuntu-system-settings
 touch /root/home/$USERNAME/.config/ubuntu-system-settings/wizard-has-run
-chown -R $USERNAME.$USERNAME /root/home/$USERNAME/.config
+chroot /root chown -R $USERNAME.$USERNAME /home/$USERNAME/.config
 
 log_end_msg

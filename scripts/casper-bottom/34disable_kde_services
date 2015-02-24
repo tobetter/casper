@@ -33,4 +33,9 @@ fi
 rm -f /root/usr/share/kde4/services/plasma-runner-contacts.desktop  # starts akonadi
 rm -f /root/usr/share/kde4/services/plasma-dataengine-calendar.desktop  # starts akonadi
 
+
+if [ -d /root/usr/share/kubuntu-default-settings/kf5-settings/ ]; then
+    printf "[Daemon]\nTimeout=0\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/kscreenlockerrc
+fi
+
 log_end_msg

@@ -1,3 +1,10 @@
+casper (1.352) vivid; urgency=medium
+
+  * Fix screen locker launches during install of Kubuntu 15.04 in
+    34disable_kde_services LP: #1398363
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 24 Feb 2015 17:28:37 +0100
+
 casper (1.351) vivid; urgency=medium
 
   * scripts/casper-bottom/51unity8-wizard: do the chown in the target

@@ -26,6 +26,7 @@ rm -f /root/usr/share/autostart/korgac.desktop
 rm -f /root/usr/share/autostart/printer-applet.desktop
 rm -f /root/usr/share/autostart/nepomukserver.desktop
 rm -f /root/usr/share/kde4/services/kwalletd.desktop
+rm -f /root/usr/share/kservices5/kwalletd5.desktop
 rm -f /root/usr/share/kde4/services/kded/kpackagekitd.desktop
 if [ -z "${PERSISTENT}" ]; then
 	rm -f /root/usr/share/kde4/services/kded/freespacenotifier.desktop

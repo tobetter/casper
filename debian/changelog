@@ -1,3 +1,11 @@
+casper (1.354) vivid; urgency=medium
+
+  * Update 34disable_kde_services to really disable kf5 kwallet and baloo
+   - LP: #1430426
+   - LP: #1431587
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Mar 2015 12:34:06 +0100
+
 casper (1.353) vivid; urgency=medium
 
   * Update 34disable_kde_services to disable kf5 kwallet

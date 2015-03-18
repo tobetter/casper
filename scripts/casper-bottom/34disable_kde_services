@@ -27,6 +27,8 @@ rm -f /root/usr/share/autostart/printer-applet.desktop
 rm -f /root/usr/share/autostart/nepomukserver.desktop
 rm -f /root/usr/share/kde4/services/kwalletd.desktop
 rm -f /root/usr/share/kservices5/kwalletd5.desktop
+rm -f /root/usr/share/dbus-1/services/org.kde.kwalletd5.service
+rm -f /root/usr/share/dbus-1/services/org.kde.kwalletd.service
 rm -f /root/usr/share/kde4/services/kded/kpackagekitd.desktop
 if [ -z "${PERSISTENT}" ]; then
 	rm -f /root/usr/share/kde4/services/kded/freespacenotifier.desktop
@@ -34,9 +36,9 @@ fi
 rm -f /root/usr/share/kde4/services/plasma-runner-contacts.desktop  # starts akonadi
 rm -f /root/usr/share/kde4/services/plasma-dataengine-calendar.desktop  # starts akonadi
 
-
 if [ -d /root/usr/share/kubuntu-default-settings/kf5-settings/ ]; then
     printf "[Daemon]\nTimeout=0\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/kscreenlockerrc
+    printf "[Basic Settings]\nIndexing-Enabled=false\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/baloofilerc
 fi
 
 log_end_msg

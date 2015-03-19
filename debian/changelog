@@ -1,3 +1,9 @@
+casper (1.355) vivid; urgency=medium
+
+  * Revert change to 15autologin, it broke login
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 19 Mar 2015 19:09:10 +0100
+
 casper (1.354) vivid; urgency=medium
 
   * Update 34disable_kde_services to really disable kf5 kwallet and baloo

@@ -1,3 +1,16 @@
+casper (1.356) vivid; urgency=medium
+
+  * Replace the casper init script with a systemd service which starts a new
+    /sbin/casper-stop script; maintains the current behavior of caching data
+    and prompting before ejecting a possible CD-ROM. (LP: #1432285)
+  * debian/control: add dh-systemd to Build-Depends.
+  * debian/rules:
+    - don't apply postinst scripts from installinit; also don't start the
+      systemd units on install.
+    - run debhelper with systemd support.
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Wed, 25 Mar 2015 23:16:27 -0400
+
 casper (1.355) vivid; urgency=medium
 
   * Revert change to 15autologin, it broke login

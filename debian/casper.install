@@ -1,3 +1,4 @@
+bin/casper-stop			sbin
 bin/casper-getty		sbin
 bin/casper-login		sbin
 bin/casper-new-uuid		sbin

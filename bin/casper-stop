@@ -1,21 +1,10 @@
 #! /bin/sh
-### BEGIN INIT INFO
-# Provides:          casper
-# Required-Start:    $syslog
-# Required-Stop:
-# Should-Start:      $local_fs
-# Should-Stop:       halt reboot
-# X-Stop-After:      umountroot
-# Default-Start:
-# Default-Stop:      0 6
-# Short-Description: Casper init script
-# Description:       Resyncs snapshots, evantually caches files in order
-#                    to let remove the media.
-### END INIT INFO
 
-# Author: Tollef Fog Heen <tfheen@canonical.com>
+# Author: Mathieu Trudel-Lapierre <mathieu.trudel-lapierre@canonical.com>
+#         Tollef Fog Heen <tfheen@canonical.com>
 #         Marco Amadori <marco.amadori@gmail.com>
 #
+
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
 NAME=casper
 SCRIPTNAME=/etc/init.d/${NAME}
@@ -29,13 +18,6 @@ grep -qs find_iso= /proc/cmdline && exit 0
 
 # Read configuration variable file if it is present
 [ -r /etc/$NAME.conf ] && . /etc/$NAME.conf
-
-# Load the VERBOSE setting and other rcS variables
-[ -f /etc/default/rcS ] && . /etc/default/rcS
-
-# Define LSB log_* functions.
-# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
-. /lib/lsb/init-functions
 
 # Try to cache everything we're likely to need after ejecting.  This
 # is fragile and simple-minded, but our options are limited.
@@ -58,6 +40,8 @@ cache_path() {
 
 do_stop ()
 {
+    logger -t ${NAME} "resyncing snapshots and caching reboot files..."
+
     if [ ! -z "${ROOTSNAP}" ]; then
         $DO_SNAPSHOT --resync-string="${ROOTSNAP}"
     fi
@@ -136,21 +120,5 @@ do_stop ()
     fi
 }
 
-case "$1" in
-    restart|reload|force-reload|status)
-        [ "$VERBOSE" != no ] && log_end_msg 0
-        ;;
-    # We normally run on start; stop is just for backwards compatibility.
-    start|stop)
-        log_begin_msg "${NAME} is resyncing snapshots and caching reboot files..."
-        do_stop
-        case "$?" in
-            0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-            2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
-        esac
-        ;;
-    *)
-        log_success_msg "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
-        exit 3
-        ;;
-esac
+do_stop
+

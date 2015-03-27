@@ -37,7 +37,7 @@ rm -f /root/usr/share/kde4/services/plasma-runner-contacts.desktop  # starts ako
 rm -f /root/usr/share/kde4/services/plasma-dataengine-calendar.desktop  # starts akonadi
 
 if [ -d /root/usr/share/kubuntu-default-settings/kf5-settings/ ]; then
-    printf "[Daemon]\nTimeout=0\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/kscreenlockerrc
+    printf "[Daemon]\nTimeout=0\nAutolock=false\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/kscreenlockerrc
     printf "[Basic Settings]\nIndexing-Enabled=false\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/baloofilerc
 fi
 

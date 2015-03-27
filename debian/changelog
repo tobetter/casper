@@ -1,3 +1,13 @@
+casper (1.357) vivid; urgency=medium
+
+  * Adjust screenlocker disabling for Kubuntu with Plasma 5.3 the locking
+    config changed while causing unwanted side effects with our existing 5.2
+    setting of lowering the timeout to 0 (gets auto-corrected to 1). So, set
+    the timeout to 0 and the new autolock=false to force both Plasma 5.2 and
+    5.3 to behave correctly and disable locking.
+
+ -- Harald Sitter <sitter@kde.org>  Fri, 27 Mar 2015 11:49:53 +0100
+
 casper (1.356) vivid; urgency=medium
 
   * Replace the casper init script with a systemd service which starts a new

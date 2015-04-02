@@ -39,6 +39,9 @@ rm -f /root/usr/share/kde4/services/plasma-dataengine-calendar.desktop  # starts
 if [ -d /root/usr/share/kubuntu-default-settings/kf5-settings/ ]; then
     printf "[Daemon]\nTimeout=0\nAutolock=false\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/kscreenlockerrc
     printf "[Basic Settings]\nIndexing-Enabled=false\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/baloofilerc
+    printf "[Module-notificationhelper]\nautoload=false\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/kded5rc
+    printf "[Event/Update]\nAction=\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/muonabstractnotifier.notifyrc
+    printf "[Event/Update]\nAction=\n" >> /root/usr/share/kubuntu-default-settings/kf5-settings/muonapplicationnotifier.notifyrc
 fi
 
 log_end_msg

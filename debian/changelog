@@ -1,3 +1,10 @@
+casper (1.358) vivid; urgency=medium
+
+  * In 34disable_kde_services disable kubuntu-notification-helper and
+    muon notifications on live system
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Apr 2015 15:09:31 +0200
+
 casper (1.357) vivid; urgency=medium
 
   * Adjust screenlocker disabling for Kubuntu with Plasma 5.3 the locking

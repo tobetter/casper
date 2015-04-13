@@ -1,11 +1,12 @@
 [Unit]
 Description=Shuts down the "live" preinstalled system cleanly
 DefaultDependencies=no
-Before=shutdown.target
+Before=final.target
+After=shutdown.target umount.target
 
 [Service]
 Type=oneshot
 ExecStart=/sbin/casper-stop
 
 [Install]
-WantedBy=shutdown.target
+WantedBy=final.target

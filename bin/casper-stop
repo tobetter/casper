@@ -25,8 +25,10 @@ cache_path() {
     path="$1"
 
     if [ -d "$path" ]; then
-        find "$path" -type f | xargs cat > /dev/null 2>&1
-    elif [ -f "$path" ]; then
+        for f in $(find "$path" -type f); do
+            cache_path "$f"
+        done
+    elif [ -f "$path" ] && [ ! -L "$path" ]; then
         if [ -x "$path" ]; then
             if file -L "$path" | grep -q 'dynamically linked'; then
                 for lib in $(ldd "$path" | awk '{ print $3 }'); do
@@ -34,7 +36,7 @@ cache_path() {
                 done
             fi
         fi
-        cat "$path" >/dev/null 2>&1
+        echo -n >> "$path"
     fi
 }
 
@@ -73,7 +75,7 @@ do_stop ()
         prompt=
     fi
 
-    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth; do
+    for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth /lib/plymouth /lib/*/plymouth /lib/systemd /etc/systemd /lib/*/libnss_files* /etc/nsswitch.conf /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf /etc/fonts/fonts.conf /etc/fonts/conf.d/60-latin.conf; do
         cache_path "$path"
     done
 

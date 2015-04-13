@@ -1,3 +1,15 @@
+casper (1.359) vivid; urgency=medium
+
+  * Do a better job at caching files we might need for plymouth and systemd
+    on shutdown. (LP: #1436656)
+  * debian/casper.service: Order the casper service just before final.target
+    so it's running at a better point in time on shutdown.
+  * scripts/casper-bottom/25disable_cdrom.mount: mask the cdrom.mount task,
+    so it doesn't unncessarily spin trying to unmount the cdrom, which casper
+    will do. (LP: #1436715)
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Mon, 13 Apr 2015 14:50:24 -0500
+
 casper (1.358) vivid; urgency=medium
 
   * In 34disable_kde_services disable kubuntu-notification-helper and

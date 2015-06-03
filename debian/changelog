@@ -1,3 +1,11 @@
+casper (1.361) wily; urgency=medium
+
+  * debian/control: bump localechooser-data Depends to (>= 2.65ubuntu1).
+  * scripts/casper-functions: update to new localechooser-data languagelist
+    format.
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Wed, 03 Jun 2015 15:38:24 -0400
+
 casper (1.360) vivid; urgency=medium
 
   * casper.service: Allocate a terminal so that the non-plymouth fallback can

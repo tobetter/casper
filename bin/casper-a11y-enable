@@ -38,50 +38,47 @@ set -e
 # all low vision profiles, for both the user session and login manager.
 set_common_lowvis()
 {
-	gset set com.canonical.indicator.datetime show-calendar false
-	gset set org.gnome.desktop.interface toolkit-accessibility true
-	gct -s -t bool /desktop/gnome/interface/accessibility true
-	gct -s -t bool /apps/gksu/disable-grab true
-	gset set org.gnome.yelp show-cursor true
+	gset com.canonical.indicator.datetime show-calendar false
+	gset org.gnome.desktop.interface toolkit-accessibility true
+	gset org.gnome.yelp show-cursor true
 }
 
 # Common settings for motor profiles. Any change you make here will affect
 # all motor profiles, for both the user session and login manager.
 set_common_motor()
 {
-	gset set org.gnome.desktop.a11y.keyboard enable true
-	gct -s -t bool /apps/gksu/disable-grab true
-	gset set org.gnome.desktop.a11y.keyboard stickykeys-enable true
-	gset set org.gnome.desktop.a11y.keyboard stickykeys-two-key-off false
+	gset org.gnome.desktop.a11y.keyboard enable true
+	gset org.gnome.desktop.a11y.keyboard stickykeys-enable true
+	gset org.gnome.desktop.a11y.keyboard stickykeys-two-key-off false
 }
 
 # Settings for the high-contrast profile.
 set_high_contrast()
 {
-	gset set org.gnome.desktop.interface icon-theme HighContrast
-	gset set org.gnome.desktop.interface monospace-font-name "monospace 18"
-	gset set org.gnome.desktop.interface font-name "sans 18"
-	gset set org.gnome.desktop.background picture-uri ""
-	gset set org.gnome.desktop.background picture-options none
-	gset set org.gnome.desktop.background primary-color \#666666
-	gset set org.gnome.desktop.background secondary-color \#7F7F7F
-	gset set org.gnome.desktop.background color-shading-type solid
-	gset set org.gnome.desktop.interface cursor-size 48
-	gset set org.gnome.desktop.interface cursor-theme whiteglass
+	gset org.gnome.desktop.interface icon-theme HighContrast
+	gset org.gnome.desktop.interface monospace-font-name \"monospace 18\"
+	gset org.gnome.desktop.interface font-name "\"sans 18\""
+	gset org.gnome.desktop.background picture-uri ""
+	gset org.gnome.desktop.background picture-options none
+	gset org.gnome.desktop.background primary-color \#666666
+	gset org.gnome.desktop.background secondary-color \#7F7F7F
+	gset org.gnome.desktop.background color-shading-type solid
+	gset org.gnome.desktop.interface cursor-size 48
+	gset org.gnome.desktop.interface cursor-theme whiteglass
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/lesser-visual-impairment/
 	if [ -d $CHROOT_DIR/usr/share/xubuntu-default-settings/accessibility ]; then
 		cp -a $CHROOT_DIR/usr/share/xubuntu-default-settings/accessibility/* $CHROOT_DIR/etc/xdg/
 	fi
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set com.canonical.unity-greeter high-contrast true
+		gset_lightdm com.canonical.unity-greeter high-contrast true
 	fi
 }
 
 set_magnifier()
 {
 	# Ubuntu
-	gset set org.gnome.desktop.a11y.applications screen-magnifier-enabled true
+	gset org.gnome.desktop.a11y.applications screen-magnifier-enabled true
 	set_orca_config magnifier
 
 	# Kubuntu
@@ -90,33 +87,33 @@ set_magnifier()
 
 set_blindness()
 {
-	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
-	gset set org.gnome.Empathy.conversation theme classic
+	gset org.gnome.desktop.a11y.applications screen-reader-enabled true
+	gset org.gnome.empathy.conversation theme \"classic\"
 	set_orca_config speech
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set com.canonical.unity-greeter screen-reader true
+		gset_lightdm com.canonical.unity-greeter screen-reader true
 	fi
 }
 
 set_braille()
 {
-	gset set org.gnome.desktop.a11y.applications screen-reader-enabled true
-	gset set org.gnome.Empathy.conversation theme classic
+	gset org.gnome.desktop.a11y.applications screen-reader-enabled true
+	gset org.gnome.empathy.conversation theme \"classic\"
 	set_orca_config braille
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set com.canonical.unity-greeter screen-reader true
+		gset_lightdm com.canonical.unity-greeter screen-reader true
 	fi
 }
 
 set_keyboard_modifiers()
 {
-	gset set org.gnome.desktop.a11y.keyboard mousekeys-enable true
-	gset set org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep true
-	gset set org.gnome.settings-daemon.peripherals.keyboard repeat true
-	gset set org.gnome.settings-daemon.peripherals.keyboard delay 700
-	gset set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 10
+	gset org.gnome.desktop.a11y.keyboard mousekeys-enable true
+	gset org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep true
+	gset org.gnome.settings-daemon.peripherals.keyboard repeat true
+	gset org.gnome.settings-daemon.peripherals.keyboard delay 700
+	gset org.gnome.settings-daemon.peripherals.keyboard repeat-interval 10
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/
 	if [ -e $CHROOT_DIR/etc/xdg/xfce4/mcs_settings/keyboard.xml ]; then
 		sed -i 's/0/1/' $CHROOT_DIR/etc/xdg/xfce4/mcs_settings/keyboard.xml
@@ -125,12 +122,12 @@ set_keyboard_modifiers()
 
 set_onscreen_keyboard()
 {
-	gset set org.gnome.desktop.interface toolkit-accessibility true
-	gset set org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep false
-	gset set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
+	gset org.gnome.desktop.interface toolkit-accessibility true
+	gset org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep false
+	gset org.gnome.desktop.a11y.applications screen-keyboard-enabled true
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm set com.canonical.unity-greeter onscreen-keyboard true
+		gset_lightdm com.canonical.unity-greeter onscreen-keyboard true
 	fi
 
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/,/usr/share/kubuntu-default-settings/kde-profile/motor-difficulties-pointing-devices/
@@ -161,11 +158,9 @@ Usage: $0 		[-chroot=<root>] [-user=<username>] [-l|-login]
 			that can not otherwise be easily determined in an
 			initramfs environment. Requires that a chroot dir and
 			user name are specified. See above.
--script			Create a script to be run at system boot that will
-			apply all settings for the specified user and for
-			login. This script will then remove itself. This is
-			needed to work around gsettings not working in a chroot
-			environment with no dconf service running.
+-dconf			Create a dconf key file that will be loaded into the
+			user's dconf database. This works around the dconf
+			service not running in a chroot.
 -d|-debug		Enable debugging output.
 <profilename>		The name of the profile you wish to apply, see below.
 
@@ -189,34 +184,58 @@ EOF
 
 gset()
 {
+	local schema="$1"
+	local key="$2"
+	shift 2
+	local value="$@"
+
 	if [ -n "$GLIBBIN_VERSION" ]; then
-		if [ -n "$STARTUP_SCRIPT" ]; then
-			echo "gsettings " "$@" >> $CHROOT_DIR/usr/bin/a11y-profile-settings
+		if [ -n "$DCONF" ]; then
+			case "$schema" in
+				*:*)
+					local schema_path=$(echo $schema | cut -f2 -d:)
+					break
+				;;
+				*)
+					local schema_path=$(echo "$schema" | sed -e 's@\.@/@g')
+					break
+				;;
+			esac
+
+			echo "[$schema_path]" >> $CHROOT_DIR//tmp/casper-a11y-dconf-user.d/00-user
+			echo "${key}=${value}" >> $CHROOT_DIR//tmp/casper-a11y-dconf-user.d/00-user
+			echo >> $CHROOT_DIR/tmp/casper-a11y-dconf-user.d/00-user
 		else
-			$DO_CHROOT $DO_SUDO gsettings "$@"
+			$DO_CHROOT $DO_SUDO gsettings set "$@"
 		fi
 	fi
 }
 
 gset_lightdm()
 {
-	if [ -n "$GLIBBIN_VERSION" ]; then
-		if [ -n "$STARTUP_SCRIPT" ]; then
-			echo "gsettings " "$@" >> $CHROOT_DIR/usr/bin/a11y-profile-settings-lightdm
-		else
-			$DO_CHROOT sudo -u lightdm gsettings "$@"
-		fi
-	fi
-}
+	local schema="$1"
+	local key="$2"
+	shift 2
+	local value="$@"
 
-# Soon to be deprecated
-gct()
-{
-	if [ -n "$GCONF_VERSION" ]; then
-		if [ -n "$STARTUP_SCRIPT" ]; then
-			echo "gconftool-2 " "$@" >> $CHROOT_DIR/usr/bin/a11y-profile-settings
+	if [ -n "$GLIBBIN_VERSION" ]; then
+		if [ -n "$DCONF" ]; then
+			case "$schema" in
+				*:*)
+					local schema_path=$(echo $schema | cut -f2 -d:)
+					break
+				;;
+				*)
+					local schema_path=$(echo "$schema" | sed -e 's@\.@/@g')
+					break
+				;;
+			esac
+
+			echo "[$schema_path]" >> $CHROOT_DIR//tmp/casper-a11y-dconf-lightdm.d/00-lightdm
+			echo "${key}=${value}" >> $CHROOT_DIR//tmp/casper-a11y-dconf-lightdm.d/00-lightdm
+			echo >> $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d/00-lightdm
 		else
-			$DO_CHROOT $DO_SUDO gconftool-2 "$@"
+			$DO_CHROOT sudo -u lightdm gsettings set "$@"
 		fi
 	fi
 }
@@ -401,9 +420,6 @@ set_orca_config()
 EOF
 
 		case "$1" in
-			magnifier)
-				sed -i -e 's/\"enableMagnifier\": false/\"enableMagnifier\": true/' "$CHROOT_DIR/home/$USER_NAME/.local/share/orca/user-settings.conf"
-			;;
 			speech)
 				sed -i -e 's/\"enableSpeech\": false/\"enableSpeech\": true/' "$CHROOT_DIR/home/$USER_NAME/.local/share/orca/user-settings.conf"
 			;;
@@ -423,7 +439,7 @@ EOF
 
 create_conf()
 {
-	cat <<EOF > /tmp/casper-a11y.conf
+	cat <<EOF > $CHROOT_DIR/tmp/casper-a11y.conf
 UBIQUITY_A11Y_PROFILE=$1
 EOF
 }
@@ -463,8 +479,8 @@ do
 			shift
 			continue
 		;;
-		-script)
-			STARTUP_SCRIPT=1
+		-dconf)
+			DCONF=1
 			shift
 			continue
 		;;
@@ -492,7 +508,6 @@ if [ -n "$SET_LOGIN" ] && [ "$HOME" != "/root" ] && [ -z "$IN_INITRAMFS" ]; then
 	exit 1
 fi
 
-
 if [ -n "$CHROOT_DIR" ] || [ -n "$USER_NAME" ]; then
 	if [ "$HOME" != "/root" ] && [ -z "$IN_INITRAMFS" ]; then
 		echo "Error: You are not running as root."
@@ -512,18 +527,18 @@ if [ -n "$CHROOT_DIR" ]; then
 	fi
 fi
 
-if [ -n "$STARTUP_SCRIPT" ]; then
+if [ -n "$DCONF" ]; then
 	if [ -z "$USER_NAME" ]; then
-		echo "Error: You have requested to create a startup script, but no user was specified."
+		echo "Error: You have requested to write to a user's dconf database, but no user was specified."
 		exit 1
 	fi
 	if [ "$HOME" != "/root" ] && [ -z "$IN_INITRAMFS" ]; then
-		echo "Error: You have requested to create a startup script, but you do not have root"
+		echo "Error: You have requested to write to a user's dconf database, but you do not have root"
 		echo "privileges."
 		exit 1
 	fi
 	if [ -z "$CHROOT_DIR" ]; then
-		echo "Error: You have requested to create a startup script, but you did not specify"
+		echo "Error: You have requested to write to a user's dconf database, but you did not specify"
 		echo "a target directory to chroot to."
 		exit 1
 	fi
@@ -541,45 +556,24 @@ fi
 
 # Check to see if a few necessary packages are present in the target
 # environment.
-GCONF_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' gconf2 2>/dev/null) || GCONF_VERSION=""
 GLIBBIN_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' libglib2.0-bin 2>/dev/null) || GLIBBIN_VERSION=""
 ORCA_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' gnome-orca 2>/dev/null) || ORCA_VERSION=""
+DCONFCLI_VERSION=$($DO_CHROOT /usr/bin/dpkg-query -W --showformat='${Version}' dconf-cli 2>/dev/null) || DCONFCLI_VERSION=""
 
-if [ -n "$STARTUP_SCRIPT" ]; then
-	cat <<EOF > $CHROOT_DIR/etc/init/a11y-profile-settings.conf
-# a11y-profile-settings - A job to set up accessibility settings
+if [ -z "$DCONFCLI_VERSION" ]; then
+	unset DCONF
+fi
 
-description     "Accessibility profile settings"
+if [ -n "$DCONF" ]; then
+	rm -r -f $CHROOT_DIR/tmp/casper-a11y-dconf-user.d
+	mkdir -p $CHROOT_DIR/tmp/casper-a11y-dconf-user.d
+	touch $CHROOT_DIR/tmp/casper-a11y-dconf-user.d/00-user
 
-start on runlevel [2345]
-
-umask 022
-
-script
-    su -s /bin/bash - $USER_NAME -c '/usr/bin/dbus-run-session /usr/bin/a11y-profile-settings'
-    su -s /bin/bash - lightdm -c '/usr/bin/dbus-run-session /usr/bin/a11y-profile-settings-lightdm'
-    rm /usr/bin/a11y-profile-settings /usr/bin/a11y-profile-settings-lightdm
-    rm /etc/init/a11y-profile-settings.conf
-end script
-EOF
-	cat <<EOF > $CHROOT_DIR/usr/bin/a11y-profile-settings
-#!/bin/sh
-
-# Created by the casper accessibility profile settings script on
-# $(date).
-
-# This script deletes itself once run.
-
-EOF
-	cat <<EOF > $CHROOT_DIR/usr/bin/a11y-profile-settings-lightdm
-#!/bin/sh
-
-# Created by the casper accessibility profile settings script on
-# $(date).
-
-# This script deletes itself once run.
-
-EOF
+	if [ -n "$SET_LOGIN" ]; then
+		rm -r -f $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm
+		mkdir -p $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d
+		touch $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d/00-lightdm
+	fi
 fi
 
 case $PROFILE_NAME in
@@ -615,6 +609,18 @@ case $PROFILE_NAME in
 	;;
 esac
 
-if [ -n "$STARTUP_SCRIPT" ]; then
-	chmod 755 $CHROOT_DIR/usr/bin/a11y-profile-settings*
+if [ -n "$DCONF" ]; then
+	if [ -d $CHROOT_DIR/tmp/casper-a11y-dconf-user.d ]; then
+		mkdir -p $CHROOT_DIR/home/$USER_NAME/.config/dconf
+		$DO_CHROOT dconf compile /tmp/$USER_NAME.dconf /tmp/casper-a11y-dconf-user.d
+		mv $CHROOT_DIR/tmp/$USER_NAME.dconf $CHROOT_DIR/home/$USER_NAME/.config/dconf/user
+		$DO_CHROOT chown $USER_NAME.$USER_NAME -R "/home/$USER_NAME/.config"
+
+		if [ -d $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d ]; then
+			mkdir -p $CHROOT_DIR/var/lib/lightdm/.config/dconf
+			$DO_CHROOT dconf compile /tmp/lightdm.dconf /tmp/casper-a11y-dconf-lightdm.d
+			mv $CHROOT_DIR/tmp/lightdm.dconf $CHROOT_DIR/var/lib/lightdm/.config/dconf/user
+			$DO_CHROOT chown lightdm.lightdm -R "/var/lib/lightdm/.config"
+		fi
+	fi
 fi

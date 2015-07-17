@@ -1,3 +1,17 @@
+casper (1.362) wily; urgency=medium
+
+  * bin/casper-a11y-enable:
+    - Remove all references and settings to gconf, nothing a11y that we
+      set uses gconf any more
+    - Change how the gset function is called, as the method name is
+      self-explanetory
+    - Remove the startup script hack, as we now use systemd, and its cleaner
+      to create dconf key files directly, and load into the user's dconf
+      database
+    - Escape quotation marks
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Fri, 17 Jul 2015 10:54:40 +1000
+
 casper (1.361) wily; urgency=medium
 
   * debian/control: bump localechooser-data Depends to (>= 2.65ubuntu1).

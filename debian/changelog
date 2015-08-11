@@ -1,3 +1,11 @@
+casper (1.364) wily; urgency=medium
+
+  * scripts/casper-bottom/15autologin: don't set autologin-session for lightdm,
+    it's not actually existing as a valid session and lightdm properly does
+    autologin in Ubuntu and Xubuntu without it.
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Tue, 11 Aug 2015 16:03:37 -0400
+
 casper (1.363) wily; urgency=low
 
   * scripts/casper: migrate existing persistent disk images to the

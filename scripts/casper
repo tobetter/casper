@@ -179,7 +179,7 @@ copy_live_to() {
         fi
     fi
     if [ "${freespace}" -lt "${size}" ] ; then
-        [ "$quiet" != "y" ] && log_warning_msg "Not enough free ${free_string} (${freespace}k > ${size}k) to copy live media in ${copytodev}."
+        [ "$quiet" != "y" ] && log_warning_msg "Not enough free ${free_string} (${freespace}k < ${size}k) to copy live media in ${copytodev}."
         return 1
     fi
 

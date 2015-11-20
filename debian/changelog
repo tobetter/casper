@@ -1,3 +1,12 @@
+casper (1.366) xenial; urgency=medium
+
+  * scripts/casper-bottom/15autologin, 25adduser: Update paths to gdm3 (LP: #1518478)
+  * scripts/casper-bottom/16gdmnopasswd: Dropped, this does nothing anymore
+    since JS code lives in a gresource these days
+  * scripts/casper-premount/10driver_updates: Drop obsolete gdm snippet
+
+ -- Tim Lunn <tim@feathertop.org>  Sat, 21 Nov 2015 10:01:49 +1100
+
 casper (1.365) wily; urgency=medium
 
   * Add prereqs handling to several scripts that lacked it (LP: #1495873).

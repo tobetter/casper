@@ -98,7 +98,7 @@ if [ -f /root/home/$USERNAME/examples.desktop ]; then
 fi
 
 #GDM
-if [ -d /root/etc/gdm ]; then
+if [ -d /root/etc/gdm3 ]; then
     sed -i '/^[UG]ID_MIN/s/\<1000$/ 999/' /root/etc/login.defs
 fi
 

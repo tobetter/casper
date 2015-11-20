@@ -20,7 +20,7 @@ esac
 
 log_begin_msg "$DESCRIPTION"
 
-GDMCustomFile=/root/etc/gdm/custom.conf
+GDMCustomFile=/root/etc/gdm3/custom.conf
 
 if [ -f $GDMCustomFile ]; then
     # Configure GDM autologin

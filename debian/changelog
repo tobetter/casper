@@ -1,3 +1,12 @@
+casper (1.377) yakkety; urgency=medium
+
+  * ubiquity-hooks/30accessibility && scripts/casper-bottom/30accessibility:
+    - Add the -i command-line flag to a11y-profile-manager to toggle the
+      state of the indicator, now that it is no longer enabled by the
+      profiles themselves.
+
+ -- Luke Yelavich <themuso@ubuntu.com>  Thu, 18 Aug 2016 09:36:37 +1000
+
 casper (1.376) xenial; urgency=medium
 
   * scripts/casper-bottom/13swap: Don't add detected swap partitions to the

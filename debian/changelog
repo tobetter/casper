@@ -1,3 +1,10 @@
+casper (1.378) yakkety; urgency=medium
+
+  * scripts/casper-bottom/52gnome_initial_setup:
+    - Disable gnome-initial-setup in Try Ubuntu mode (LP: 1614778)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 18 Aug 2016 19:23:20 -0400
+
 casper (1.377) yakkety; urgency=medium
 
   * ubiquity-hooks/30accessibility && scripts/casper-bottom/30accessibility:

@@ -1,3 +1,11 @@
+casper (1.379) yakkety; urgency=medium
+
+  * scripts/casper-bottom/53disable_unattended_upgrades:
+    - Disable the security allowed origin as it can fill a live environment.
+      (LP: #1619188)
+
+ -- Brian Murray <brian@ubuntu.com>  Fri, 30 Sep 2016 13:57:37 -0700
+
 casper (1.378) yakkety; urgency=medium
 
   * scripts/casper-bottom/52gnome_initial_setup:

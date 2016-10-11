@@ -1,3 +1,10 @@
+casper (1.376.2) xenial-proposed; urgency=medium
+
+  * Make scripts/casper-bottom/53disable_unattended_upgrades executable.
+    (LP: #1619188)
+
+ -- Brian Murray <brian@ubuntu.com>  Tue, 11 Oct 2016 09:32:27 -0700
+
 casper (1.376.1) xenial-proposed; urgency=medium
 
   * scripts/casper-bottom/53disable_unattended_upgrades:

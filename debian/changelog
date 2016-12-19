@@ -1,3 +1,11 @@
+casper (1.380) zesty; urgency=medium
+
+  * scripts/casper-bottom/15autologin: Add support for Lubuntu and
+    QLubuntu in sddm.conf. Based on patch from Julien Lavergne LP:
+    #1582270
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 19 Dec 2016 13:05:56 +0000
+
 casper (1.379) yakkety; urgency=medium
 
   * scripts/casper-bottom/53disable_unattended_upgrades:

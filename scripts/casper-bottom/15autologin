@@ -81,13 +81,20 @@ autologin-user-timeout=0"
 fi
 
 if [ -f /root/usr/bin/sddm ]; then
+    sddm_session=plasma.desktop
+    if [ -f /root/usr/share/xsessions/Lubuntu.desktop ]; then
+        sddm_session=Lubuntu.desktop
+    fi
+    if [ -f /root/usr/share/xsessions/QLubuntu.desktop ]; then
+        sddm_session=QLubuntu.desktop
+    fi
     cat >>/root/etc/sddm.conf <<EOF
 [Users]
 MinimumUid=999
 
 [Autologin]
 User=$USERNAME
-Session=plasma.desktop
+Session=$sddm_session
 EOF
 fi
 

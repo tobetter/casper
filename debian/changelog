@@ -1,3 +1,11 @@
+casper (1.381) artful; urgency=medium
+
+  * scripts/casper: Do overlay stacking properly. (LP: #1561606)
+  * hooks/casper: Switch from overlayfs to overlay, to make sure we properly
+    enable using overlay rather than aufs on images.
+
+ -- Mathieu Trudel-Lapierre <cyphermox@ubuntu.com>  Wed, 26 Apr 2017 15:10:57 -0400
+
 casper (1.380) zesty; urgency=medium
 
   * scripts/casper-bottom/15autologin: Add support for Lubuntu and

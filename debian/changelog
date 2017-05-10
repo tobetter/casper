@@ -1,3 +1,11 @@
+casper (1.382) artful; urgency=medium
+
+  * scripts/casper-bottom/25adduser: Mark the .desktop files as "trusted" by
+    gio, so that nautilus will let us execute them without further
+    confirmation.
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Wed, 10 May 2017 13:40:01 +0100
+
 casper (1.381) artful; urgency=medium
 
   * scripts/casper: Do overlay stacking properly. (LP: #1561606)

@@ -83,6 +83,9 @@ for file in /usr/share/applications/ubiquity.desktop /usr/share/applications/kde
         sed -i "s/RELEASE/$RELEASE/" "/root$file"
         chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop
         chroot /root install -D -o $USERNAME -g $USERNAME $file /home/$USERNAME/Desktop/$(basename "$file")
+        if [ -x "/root/usr/bin/dbus-run-session" ] && [ -x "/root/usr/bin/gio" ]; then
+            chroot /root sudo -i -u $USERNAME dbus-run-session -- gio set /home/$USERNAME/Desktop/$(basename "$file") metadata::trusted true
+        fi
         break
     fi
 done

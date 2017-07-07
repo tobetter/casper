@@ -1,3 +1,12 @@
+casper (1.384) artful; urgency=medium
+
+  * scripts/casper-bottom/15autologin:
+    force gdm to start on the live a X session as ubiquity is currently
+    crashing with it (LP: #1702904). We also want to ensure we are using
+    X anyway until we are ready to switch to wayland.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Fri, 07 Jul 2017 15:40:40 +0200
+
 casper (1.383) artful; urgency=medium
 
   * Drop path from one udevadm call to adjust for movement (LP: #1690580)

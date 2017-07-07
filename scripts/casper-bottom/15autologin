@@ -28,6 +28,7 @@ if [ -f $GDMCustomFile ]; then
         -e "s/^#[ ]*AutomaticLoginEnable =.*\$/AutomaticLoginEnable=true/" \
         -e "s/^#[ ]*AutomaticLogin =.*\$/AutomaticLogin=$USERNAME/" \
 	-e "s/^#[ ]*TimedLoginEnable =.*\$/TimedLoginEnable=false/" \
+        -e "s/^#[ ]*WaylandEnable=false\$/WaylandEnable=false/" \
         $GDMCustomFile
 fi
 

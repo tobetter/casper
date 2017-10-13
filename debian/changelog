@@ -1,3 +1,9 @@
+casper (1.386) artful; urgency=medium
+
+  * Fix handling of the default locale case.  LP: #1723404.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 13 Oct 2017 08:01:16 -0400
+
 casper (1.385) artful; urgency=medium
 
   * scripts/casper-bottom/14locales: default locale should always be

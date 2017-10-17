@@ -1,3 +1,11 @@
+casper (1.387) artful; urgency=medium
+
+  * Prior to version 1.386, we were unconditionally setting the default
+    locale even if the file already existed in the read-only fs.  Restore
+    this behavior, since our livefs may have a stub file.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 16 Oct 2017 23:05:46 -0700
+
 casper (1.386) artful; urgency=medium
 
   * Fix handling of the default locale case.  LP: #1723404.

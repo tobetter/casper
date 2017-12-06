@@ -71,7 +71,7 @@ do_stop ()
     fi
 
     prompt=1
-    if grep -qs noprompt /proc/cmdline; then
+    if grep -qs noprompt /proc/cmdline || [ -e /run/casper-no-prompt ]; then
         prompt=
     fi
 

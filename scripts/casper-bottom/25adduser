@@ -90,16 +90,6 @@ for file in /usr/share/applications/ubiquity.desktop /usr/share/applications/kde
     fi
 done
 
-if [ -L /root/home/$USERNAME/Examples ]; then
-    chroot /root install -o $USERNAME -g $USERNAME -d /home/$USERNAME/Desktop/
-    mv /root/home/$USERNAME/Examples /root/home/$USERNAME/Desktop/
-fi
-
-if [ -f /root/home/$USERNAME/examples.desktop ]; then
-    chroot /root install -o $USERNAME -g $USERNAME -d /home/$USERNAME/Desktop/
-    mv /root/home/$USERNAME/examples.desktop /root/home/$USERNAME/Desktop/
-fi
-
 #GDM
 if [ -d /root/etc/gdm3 ]; then
     sed -i '/^[UG]ID_MIN/s/\<1000$/ 999/' /root/etc/login.defs

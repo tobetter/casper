@@ -1,3 +1,14 @@
+casper (1.389) bionic; urgency=medium
+
+  * scripts/casper-bottom/22desktop_settings:
+    - don't display the Trash icon on the desktop in the live session 
+  * scripts/casper-bottom/25adduser:
+    - remove the "Example" icon from the desktop but keep it in the user
+      directory. It easy enough to find there as well and it gives a
+      cleaner desktop view by default.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 02 Mar 2018 13:32:50 +0100
+
 casper (1.388) bionic; urgency=medium
 
   * bin/casper-stop: do not prompt for removal of installation medium if

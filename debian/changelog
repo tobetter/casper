@@ -1,3 +1,14 @@
+casper (1.390) bionic; urgency=medium
+
+  * scripts/casper-bottom/34disable_kde_services:
+    - stop disabling kwallet in Kubuntu live session by removing it's
+      desktop and service files, and instead write a 'kwalletrc' config
+      file disabling it. Allows plasma-nm to recognise it is disabled,
+      and not try to use it initially. Fixes repeated wi-fi password
+      prompt. (LP: #1572244)      
+
+ -- Rik Mills <rikmills@kubuntu.org>  Mon, 12 Mar 2018 11:45:09 +0000
+
 casper (1.389) bionic; urgency=medium
 
   * scripts/casper-bottom/22desktop_settings:

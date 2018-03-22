@@ -1,3 +1,18 @@
+casper (1.391) bionic; urgency=medium
+
+  [ Jean-Baptiste Lallement ]
+  * scripts/casper-bottom/55disable_snap_refresh:
+    - Set refresh timer of snapd to 60 days on live session (LP: #1723094)
+
+  [ Iain Lane ]
+  * Modify the script a bit
+    - Install in /run as a transient directory
+    - Be WantedBy snapd.service, instead of Requires snapd.service & WantedBy
+      multi-user.target, and update the symlink to match. It makes sense for
+      us to order ourself to start right after snapd does.
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@canonical.com>  Thu, 22 Mar 2018 09:49:54 +0100
+
 casper (1.390) bionic; urgency=medium
 
   * scripts/casper-bottom/34disable_kde_services:
@@ -5,7 +20,7 @@ casper (1.390) bionic; urgency=medium
       desktop and service files, and instead write a 'kwalletrc' config
       file disabling it. Allows plasma-nm to recognise it is disabled,
       and not try to use it initially. Fixes repeated wi-fi password
-      prompt. (LP: #1572244)      
+      prompt. (LP: #1572244)
 
  -- Rik Mills <rikmills@kubuntu.org>  Mon, 12 Mar 2018 11:45:09 +0000
 

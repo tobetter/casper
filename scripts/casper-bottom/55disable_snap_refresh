@@ -30,6 +30,9 @@ After=snapd.service
 [Service]
 Type=oneshot
 ExecStart=/bin/sh -c "snap set core refresh.hold=$(date --date=now+60days --iso-8601=seconds)"
+# Only run once. If snapd restarts result in the setting being reset, remove
+# this line and we will be started each time snapd.service starts.
+RemainAfterExit=yes
 
 [Install]
 WantedBy=snapd.service

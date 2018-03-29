@@ -1,3 +1,22 @@
+casper (1.392) bionic; urgency=medium
+
+  [ Jean-Baptiste Lallement ]
+  * scripts/casper-bottom/31disable_update_notifier:
+    - Do not activate gnome-software session service in the live session by
+      disabling gnome-software shell search provider (LP: #1758920)
+
+  [ Iain Lane ]
+  * scripts/casper-bottom/55disable_snap_refresh: Add RemainAfterExit=yes, so
+    that we only run once.
+  * Move the gnome-software GSettings override to
+    scripts/casper-bottom/22desktop_settings and add it to the pre-existing
+    casper override - we need to call glib-compile-schemas to get it to work
+    and this script already does that.
+  * Check if gnome-software's search provider is there before writing to it,
+    so that we don't do anything if it isn't.
+
+ -- Jean-Baptiste Lallement <jean-baptiste.lallement@ubuntu.com>  Thu, 29 Mar 2018 16:45:29 +0100
+
 casper (1.391) bionic; urgency=medium
 
   [ Jean-Baptiste Lallement ]

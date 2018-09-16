@@ -60,7 +60,6 @@ db_set passwd/username "$USERNAME"
 db_set passwd/user-uid 999
 
 chroot /root /usr/lib/user-setup/user-setup-apply > /dev/null
-chroot /root passwd -d "$USERNAME"
 
 # Clear out debconf database again to avoid confusing ubiquity later.
 debconf_restore \
@@ -91,9 +90,14 @@ for file in /usr/share/applications/ubiquity.desktop /usr/share/applications/kde
     fi
 done
 
-#GDM
+# GDM
 if [ -d /root/etc/gdm3 ]; then
     sed -i '/^[UG]ID_MIN/s/\<1000$/ 999/' /root/etc/login.defs
+fi
+
+if [ ! -f /root/usr/bin/sddm ]; then
+    ln -s /lib/systemd/system/passwd-del.service \
+        /root/etc/systemd/system/display-manager.service.wants/
 fi
 
 # Kubuntu

@@ -1,3 +1,10 @@
+casper (1.396) cosmic; urgency=medium
+
+  * On systems with SDDM, do not delete the password, because SDDM does not
+    have support for passwordless login yet.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 16 Sep 2018 15:44:32 -0500
+
 casper (1.395) cosmic; urgency=medium
 
   * scripts/casper-bottom/25adduser:

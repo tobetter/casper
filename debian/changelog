@@ -1,3 +1,13 @@
+casper (1.397) cosmic; urgency=medium
+
+  [ Steve Langasek ]
+  * debian/casper.service: order this after plymouth on shutdown, so that if
+    plymouth is present we are reliably talking to it, rather than possibly
+    racing by writing to console and then having plymouth start behind our
+    back.  LP: #1795882.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 10 Oct 2018 16:47:59 +0100
+
 casper (1.396) cosmic; urgency=medium
 
   * On systems with SDDM, do not delete the password, because SDDM does not

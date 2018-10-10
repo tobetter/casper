@@ -2,7 +2,7 @@
 Description=Shuts down the "live" preinstalled system cleanly
 DefaultDependencies=no
 Before=final.target
-After=shutdown.target umount.target
+After=shutdown.target umount.target plymouth-halt.service plymouth-poweroff.service plymouth-reboot.service
 
 [Service]
 Type=oneshot

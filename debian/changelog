@@ -1,3 +1,10 @@
+casper (1.399) cosmic; urgency=medium
+
+  * Switch vt to where plymouth-shutdown will show-splash, if not
+    already have.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 15 Oct 2018 16:03:41 +0100
+
 casper (1.398) cosmic; urgency=medium
 
   * Set Lubuntu installer as a trusted executable.

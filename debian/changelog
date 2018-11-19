@@ -1,3 +1,9 @@
+casper (1.400) disco; urgency=medium
+
+  * Add hmcdrv support for s390x ISO booting.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 19 Nov 2018 15:42:56 +0000
+
 casper (1.399) cosmic; urgency=medium
 
   * Switch vt to where plymouth-shutdown will show-splash, if not

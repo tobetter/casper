@@ -50,6 +50,13 @@ if [ -x /sbin/mount.cifs ]; then
     done
 fi
 
+# HMC s390x boot
+if [ -x /usr/bin/hmcdrvfs ]; then
+    mkdir -p ${DESTDIR}/usr/bin
+    copy_exec /usr/bin/hmcdrvfs /usr/bin
+    manual_add_modules hmcdrv
+fi
+
 # squashfs
 manual_add_modules squashfs
 manual_add_modules loop

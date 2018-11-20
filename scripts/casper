@@ -683,6 +683,17 @@ find_livefs() {
             return 0
         fi
     done
+    # s390x HMC dvd/usb support
+    if [ -x /usr/bin/hmcdrvfs ]; then
+        if modprobe hmcdrv; then
+            hmcdrvfs $mountpoint || true
+            if is_casper_path $mountpoint && \
+                    ([ "$skip_uuid_check" ] || matches_uuid $mountpoint); then
+                echo $mountpoint
+                return 0
+            fi
+        fi
+    fi
     return 1
 }
 

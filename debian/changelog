@@ -1,3 +1,9 @@
+casper (1.401) disco; urgency=medium
+
+  * Start to attempt to use hmcdrvfs.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 20 Nov 2018 15:35:43 +0000
+
 casper (1.400) disco; urgency=medium
 
   * Add hmcdrv support for s390x ISO booting.

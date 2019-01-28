@@ -1,3 +1,18 @@
+casper (1.402) disco; urgency=medium
+
+  * Support multi-layered fsimage:
+    Add a layerfs-path kernel parameter pointing at the leaf to the leaf
+    layer of an overlay-compatible multi-layer live filesystem
+    on the medium.
+    By default, it is not set and multi layer is disabled and falls back
+    to the default behaviour of casper.
+    A relative path uses "live-mediate-path" as root directory. All the
+    layer images of the same hierarchy must be in the same directory.
+    Manpage is updated.
+    Co-work with Jean-Baptiste.
+
+ -- Didier Roche <didrocks@ubuntu.com>  Mon, 28 Jan 2019 14:46:17 +0100
+
 casper (1.401) disco; urgency=medium
 
   * Start to attempt to use hmcdrvfs.

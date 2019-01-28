@@ -6,6 +6,7 @@ export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 
 mountpoint=/cdrom
 LIVE_MEDIA_PATH=casper
+LAYERFS_PATH=""
 [ -f /conf/uuid.conf ] && UUID="$(cat /conf/uuid.conf)"
 
 root_persistence="casper-rw"
@@ -61,6 +62,9 @@ parse_cmdline() {
                 LIVE_MEDIA_PATH="${x#live-media-path=}"
                 export LIVE_MEDIA_PATH
                 echo "export LIVE_MEDIA_PATH=\"$LIVE_MEDIA_PATH\"" >> /etc/casper.conf ;;
+            layerfs-path=*)
+                export LAYERFS_PATH="${x#layerfs-path=}"
+                echo "export LAYERFS_PATH=\"$LAYERFS_PATH\"" >> /etc/casper.conf ;;
             toram)
                 export TORAM="Yes" ;;
             todisk=*)
@@ -480,31 +484,80 @@ setup_unionfs() {
     fi
 
     mkdir -p "${croot}"
-    for image_type in "ext2" "squashfs" "dir" ; do
-        for image in "${image_directory}"/*."${image_type}"; do
-            imagename=$(basename "${image}")
 
-            # Skip Edubuntu's extra squashfs
-            if [ "$imagename" = "ltsp.squashfs" ] ||
-               [ "$imagename" = "server.squashfs" ]; then
-                continue
+    # Multi-layer filesystem
+    if [ -n "$LAYERFS_PATH" ]; then
+        if [ "$LAYERFS_PATH" = "${LAYERFS_PATH#/}" ]; then
+            # Relative path
+            LAYERFS_PATH="${image_directory}/${LAYERFS_PATH}"
+        fi
+
+        layer_dir=${LAYERFS_PATH%/*}
+        layer_name=$(basename ${LAYERFS_PATH%.*})
+        layer_ext=${LAYERFS_PATH##*.}
+        layer_err=""
+        layers=""
+        # compute list of depending layers
+        while :; do
+            layer_cur="${layer_dir}/${layer_name}.${layer_ext}"
+            if [ ! -f "${layer_cur}" ]; then
+                layer_err="${layer_err}\n '${layer_cur}' doesn't exist."
             fi
 
-            if [ -d "${image}" ]; then
-                # it is a plain directory: do nothing
-                rofsstring="${image}=${roopt}:${rofsstring}"
-                rofslist="${image} ${rofslist}"
-            elif [ -f "${image}" ]; then
-                backdev=$(get_backing_device "$image")
-                fstype=$(get_fstype "${backdev}")
-                if [ "${fstype}" = "unknown" ]; then
-                    panic "Unknown file system type on ${backdev} (${image})"
-                fi
-                mkdir -p "${croot}/${imagename}"
-                mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}/${imagename}" || panic "Can not mount $backdev ($image) on ${croot}/${imagename}" && rofsstring="${croot}/${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}/${imagename} ${rofslist}"
+            layers="${layer_dir}/${layer_name} ${layers}"
+
+            parent_layer_name=${layer_name%.*}
+            if [ "${parent_layer_name}" = "${layer_name}" ]; then
+                break
             fi
+            layer_name=${parent_layer_name}
         done
-    done
+
+        # Exit with error if a layer is missing
+        if [ -n "${layer_err}" ]; then
+            panic "File system layers are missing:${layer_err})"
+        fi
+
+        for image in ${layers}; do
+            image="${image}.${layer_ext}"
+            imagename=$(basename "${image}")
+            backdev=$(get_backing_device "$image")
+            fstype=$(get_fstype "${backdev}")
+            if [ "${fstype}" = "unknown" ]; then
+                panic "Unknown file system type on ${backdev} (${image})"
+            fi
+            mkdir -p "${croot}/${imagename}"
+            mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}/${imagename}" || panic "Can not mount $backdev ($image) on ${croot}/${imagename}" && rofsstring="${croot}/${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}/${imagename} ${rofslist}"
+        done
+
+    # Non multi-layer cases
+    else
+        for image_type in "ext2" "squashfs" "dir" ; do
+            for image in "${image_directory}"/*."${image_type}"; do
+                imagename=$(basename "${image}")
+
+                # Skip Edubuntu's extra squashfs
+                if [ "$imagename" = "ltsp.squashfs" ] ||
+                [ "$imagename" = "server.squashfs" ]; then
+                    continue
+                fi
+
+                if [ -d "${image}" ]; then
+                    # it is a plain directory: do nothing
+                    rofsstring="${image}=${roopt}:${rofsstring}"
+                    rofslist="${image} ${rofslist}"
+                elif [ -f "${image}" ]; then
+                    backdev=$(get_backing_device "$image")
+                    fstype=$(get_fstype "${backdev}")
+                    if [ "${fstype}" = "unknown" ]; then
+                        panic "Unknown file system type on ${backdev} (${image})"
+                    fi
+                    mkdir -p "${croot}/${imagename}"
+                    mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}/${imagename}" || panic "Can not mount $backdev ($image) on ${croot}/${imagename}" && rofsstring="${croot}/${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}/${imagename} ${rofslist}"
+                fi
+            done
+        done
+    fi
     rofsstring=${rofsstring%:}
 
     # Record the format we are using for this mount.

@@ -1,3 +1,13 @@
+casper (1.403) disco; urgency=medium
+
+  * bin/casper-a11y-enable, scripts/casper-bottom/30accessibility,
+    ubiquity-hooks/30accessibility,:
+    - revert the code handling the a11y profiles to its pre-xenial version,
+      the new a11y-profile-manager component which handled that in xenial
+      had been deprecated and is not installed since bionic.
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 10 Apr 2019 16:08:10 +0200
+
 casper (1.402) disco; urgency=medium
 
   * Support multi-layered fsimage:

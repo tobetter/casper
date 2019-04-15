@@ -284,7 +284,7 @@ int main(int argc, char **argv) {
           perror("fopen md5_file");
           exit(1);
   }
-  while (fscanf(md5_file, "%as %a[^\n]", &checksum, &checkfile) == 2) {
+  while (fscanf(md5_file, "%ms %m[^\n]", &checksum, &checkfile) == 2) {
     struct stat statbuf;
 
     if (!is_md5sum(checksum))
@@ -299,7 +299,7 @@ int main(int argc, char **argv) {
   }
 
   rewind(md5_file);
-  while (fscanf(md5_file, "%as %a[^\n]", &checksum, &checkfile) == 2) {
+  while (fscanf(md5_file, "%ms %m[^\n]", &checksum, &checkfile) == 2) {
     char buf[BUFSIZ];
     ssize_t rsize;
     int i;

@@ -138,4 +138,7 @@ if [ -f "/root/usr/lib/hildon-desktop/kourou.py" ]; then
   fi
 fi
 
+#systemd-sysusers.service fails to open /etc/.pwd.lock with kernel errors
+rm -f /root/etc/.pwd.lock
+
 log_end_msg

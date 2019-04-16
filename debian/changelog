@@ -1,3 +1,18 @@
+casper (1.405) disco; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * scripts/casper-bottom/25adduser:
+    - Make boot non-degraded, by clearing the lock. As otherwise
+      systemd-sysusers fails and boots the system degraded on multi-lower
+      subiquity images.
+
+  [ Alberto Milone ]
+  * scripts/casper-bottom/56override_nvidia_udev_rule:
+    - Prevent udev from repeatedly trying to modprobe the nvidia modules
+      and to start the relevant daemons on the live image (LP: #1824177).
+
+ -- Alberto Milone <alberto.milone@canonical.com>  Tue, 16 Apr 2019 15:13:07 +0200
+
 casper (1.404) disco; urgency=medium
 
   * casper-md5check/casper-md5check.c: Modernize to make sure we can properly

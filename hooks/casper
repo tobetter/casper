@@ -92,6 +92,11 @@ fi
 
 if [ "$CASPER_GENERATE_UUID" ]; then
     # Unique ID
-    mkdir -p $DESTDIR/conf
+    mkdir -p $DESTDIR/conf $DESTDIR/conf/conf.d
     uuidgen -r > $DESTDIR/conf/uuid.conf
+    cat <<EOF > $DESTDIR/conf/conf.d/default-boot-to-casper.conf
+if [ -z "\$BOOT" ]; then
+    export BOOT=casper
+fi
+EOF
 fi

@@ -1,3 +1,11 @@
+casper (1.406) eoan; urgency=medium
+
+  * When generating casper inird with UUID, also default boot= arg to
+    casper. This way, we can drop boot=casper from all the iso's default
+    cmdline.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 23 Apr 2019 13:00:56 +0100
+
 casper (1.405) disco; urgency=medium
 
   [ Dimitri John Ledkov ]

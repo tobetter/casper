@@ -1,3 +1,14 @@
+casper (1.407) eoan; urgency=medium
+
+  * Upload 1.396 partially reverted 1.395, but it didn't restore the
+    systemd job, thus the net effect is that password was not cleared at
+    all for anyone. Restore 1.395 codepath, but do not clear the password
+    when ssdm is present.
+  * Add a 99casperboot hook, and make casper-stop sensitive to that, since
+    boot=casper is gone from the default kernel cmdline.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 25 Apr 2019 15:54:02 +0100
+
 casper (1.406) eoan; urgency=medium
 
   * When generating casper inird with UUID, also default boot= arg to

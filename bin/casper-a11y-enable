@@ -71,7 +71,14 @@ set_high_contrast()
 	fi
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm com.canonical.unity-greeter high-contrast true
+		if [ -d $CHROOT_DIR/etc/lightdm ]; then
+			gset_lightdm com.canonical.unity-greeter high-contrast true
+		fi
+		if [ -d $CHROOT_DIR/etc/gdm3 ]; then
+			gset_gdm org.gnome.desktop.interface icon-theme HighContrast
+			gset_gdm org.gnome.desktop.interface monospace-font-name \"monospace 18\"
+			gset_gdm org.gnome.desktop.interface font-name "\"sans 18\""
+		fi
 	fi
 }
 
@@ -92,7 +99,12 @@ set_blindness()
 	set_orca_config speech
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm com.canonical.unity-greeter screen-reader true
+		if [ -d $CHROOT_DIR/etc/lightdm ]; then
+			gset_lightdm com.canonical.unity-greeter screen-reader true
+		fi
+		if [ -d $CHROOT_DIR/etc/gdm3 ]; then
+			gset_gdm org.gnome.desktop.a11y.applications screen-reader-enabled true
+		fi
 	fi
 }
 
@@ -103,7 +115,12 @@ set_braille()
 	set_orca_config braille
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm com.canonical.unity-greeter screen-reader true
+		if [ -d $CHROOT_DIR/etc/lightdm ]; then
+			gset_lightdm com.canonical.unity-greeter screen-reader true
+		fi
+		if [ -d $CHROOT_DIR/etc/gdm3 ]; then
+			gset_gdm org.gnome.desktop.a11y.applications screen-reader-enabled true
+		fi
 	fi
 }
 
@@ -127,7 +144,14 @@ set_onscreen_keyboard()
 	gset org.gnome.desktop.a11y.applications screen-keyboard-enabled true
 
 	if [ -n "$SET_LOGIN" ]; then
-		gset_lightdm com.canonical.unity-greeter onscreen-keyboard true
+		if [ -d $CHROOT_DIR/etc/lightdm ]; then
+			gset_lightdm com.canonical.unity-greeter onscreen-keyboard true
+		fi
+		if [ -d $CHROOT_DIR/etc/gdm3 ]; then
+			gset_gdm org.gnome.desktop.interface toolkit-accessibility true
+			gset_gdm org.gnome.desktop.a11y.keyboard stickykeys-modifier-beep false
+			gset_gdm org.gnome.desktop.a11y.applications screen-keyboard-enabled true
+		fi
 	fi
 
 	kderc_addtoprefixes /usr/share/kubuntu-default-settings/kde-profile/minor-motor-difficulties/,/usr/share/kubuntu-default-settings/kde-profile/motor-difficulties-pointing-devices/
@@ -151,7 +175,7 @@ Usage: $0 		[-chroot=<root>] [-user=<username>] [-l|-login]
 			is assumed that you wish to apply profile settings for
 			the current user.
 -l, -login		Apply some of the selected profile settings to the
-			login manager. Currently this is hard-coded to lightdm.
+			login manager. Currently this handle gdm and lightdm.
 			This requires root privileges.
 -i, -initramfs		Indicate that the script is being called from the
 			initramfs. Allows the script to assume some values
@@ -236,6 +260,35 @@ gset_lightdm()
 			echo >> $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d/00-lightdm
 		else
 			$DO_CHROOT sudo -u lightdm gsettings set "$@"
+		fi
+	fi
+}
+
+gset_gdm()
+{
+	local schema="$1"
+	local key="$2"
+	shift 2
+	local value="$@"
+
+	if [ -n "$GLIBBIN_VERSION" ]; then
+		if [ -n "$DCONF" ]; then
+			case "$schema" in
+				*:*)
+					local schema_path=$(echo $schema | cut -f2 -d:)
+					break
+				;;
+				*)
+					local schema_path=$(echo "$schema" | sed -e 's@\.@/@g')
+					break
+				;;
+			esac
+
+			echo "[$schema_path]" >> $CHROOT_DIR//tmp/casper-a11y-dconf-gdm.d/00-gdm
+			echo "${key}=${value}" >> $CHROOT_DIR//tmp/casper-a11y-dconf-gdm.d/00-gdm
+			echo >> $CHROOT_DIR/tmp/casper-a11y-dconf-gdm.d/00-gdm
+		else
+			$DO_CHROOT sudo -u gdm gsettings set "$@"
 		fi
 	fi
 }
@@ -570,9 +623,17 @@ if [ -n "$DCONF" ]; then
 	touch $CHROOT_DIR/tmp/casper-a11y-dconf-user.d/00-user
 
 	if [ -n "$SET_LOGIN" ]; then
-		rm -r -f $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm
-		mkdir -p $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d
-		touch $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d/00-lightdm
+		if [ -d $CHROOT_DIR/etc/lightdm ]; then
+			rm -r -f $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm
+			mkdir -p $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d
+			touch $CHROOT_DIR/tmp/casper-a11y-dconf-lightdm.d/00-lightdm
+		fi
+
+		if [ -d $CHROOT_DIR/etc/gdm3 ]; then
+			rm -r -f $CHROOT_DIR/tmp/casper-a11y-dconf-gdm
+			mkdir -p $CHROOT_DIR/tmp/casper-a11y-dconf-gdm.d
+			touch $CHROOT_DIR/tmp/casper-a11y-dconf-gdm.d/00-gdm
+		fi
 	fi
 fi
 
@@ -621,6 +682,12 @@ if [ -n "$DCONF" ]; then
 			$DO_CHROOT dconf compile /tmp/lightdm.dconf /tmp/casper-a11y-dconf-lightdm.d
 			mv $CHROOT_DIR/tmp/lightdm.dconf $CHROOT_DIR/var/lib/lightdm/.config/dconf/user
 			$DO_CHROOT chown lightdm.lightdm -R "/var/lib/lightdm/.config"
+		fi
+		if [ -d $CHROOT_DIR/tmp/casper-a11y-dconf-gdm.d ]; then
+			mkdir -p $CHROOT_DIR/var/lib/gdm3/.config/dconf
+			$DO_CHROOT dconf compile /tmp/gdm.dconf /tmp/casper-a11y-dconf-gdm.d
+			mv $CHROOT_DIR/tmp/gdm.dconf $CHROOT_DIR/var/lib/gdm3/.config/dconf/user
+			$DO_CHROOT chown gdm.gdm -R "/var/lib/gdm3/.config"
 		fi
 	fi
 fi

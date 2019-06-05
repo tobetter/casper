@@ -14,13 +14,22 @@ copy_orca_config()
 {
 	if [ -f /home/$USERNAME/.local/share/orca/user-settings.conf ]; then
 		mkdir -p /target/home/$TARGET_USERNAME/.local/share
-		mkdir -p /target/var/lib/lightdm/.local/share
 		cp -r /home/$USERNAME/.local/share/orca /target/home/$TARGET_USERNAME/.local/share
-		cp -r /home/$USERNAME/.local/share/orca /target/var/lib/lightdm/.local/share
 		chroot /target chown -R $TARGET_USERNAME.$TARGET_USERNAME /home/$TARGET_USERNAME/.local
-		chroot /target chown -R lightdm.lightdm /var/lib/lightdm/.local
 		chmod 755 /target/home/$TARGET_USERNAME/.local/share/orca
-		chmod 755 /target/var/lib/lightdm/.local/share/orca
+		
+		if [ -d /target/etc/lightdm ]; then
+			mkdir -p /target/var/lib/lightdm/.local/share
+			cp -r /home/$USERNAME/.local/share/orca /target/var/lib/lightdm/.local/share
+			chroot /target chown -R lightdm.lightdm /var/lib/lightdm/.local
+			chmod 755 /target/var/lib/lightdm/.local/share/orca
+		fi
+		if [ -d /root/etc/gdm3 ]; then
+			mkdir -p /target/var/lib/gdm3/.local/share
+			cp -r /home/$USERNAME/.local/share/orca /target/var/lib/gdm3/.local/share
+			chroot /target chown -R gdm.gdm /var/lib/gdm3/.local
+			chmod 755 /target/var/lib/gdm3/.local/share/orca
+		fi
 	fi
 }
 

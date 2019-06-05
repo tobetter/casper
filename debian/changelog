@@ -1,3 +1,11 @@
+casper (1.408) eoan; urgency=medium
+
+  * ubiquity-hooks/30accessibility:
+    - enable accessibility for gdm as well as for lightdm which was still
+      the only option being handled (lp: #1825112)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 05 Jun 2019 23:10:01 +0200
+
 casper (1.407) eoan; urgency=medium
 
   * Upload 1.396 partially reverted 1.395, but it didn't restore the

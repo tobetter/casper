@@ -1,3 +1,10 @@
+casper (1.409) eoan; urgency=medium
+
+  * Reintroduce netboot= => export NETBOOT option parsing in casper, as it
+    was dropped in initramfs-tools.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 20 Jun 2019 13:40:21 +0100
+
 casper (1.408) eoan; urgency=medium
 
   * ubiquity-hooks/30accessibility:

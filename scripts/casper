@@ -206,14 +206,6 @@ copy_live_to() {
 do_netmount() {
     rc=1
 
-    modprobe "${MP_QUIET}" af_packet # For DHCP
-
-    udevadm trigger
-    udevadm settle
-
-    configure_networking
-    export DEVICE
-
     if [ "${NFSROOT}" = "auto" ]; then
         NFSROOT=${ROOTSERVER}:${ROOTPATH}
     fi
@@ -761,6 +753,20 @@ mountroot() {
     tailpid="$!"
 
     parse_cmdline
+
+    # Configure networking here to cover both netboot & static configs
+    # Nothing in live system can parse ip= vlan= property
+    # And we must setup netplan from initramfs
+    # The old casper-bottom only knows how to do eni, which is dead
+    if [ -n "${STATICIP}" -a "${STATICIP}" != "frommedia" ]; then
+        modprobe "${MP_QUIET}" af_packet # For DHCP
+
+        udevadm trigger
+        udevadm settle
+
+        configure_networking
+        export DEVICE
+    fi
 
     [ "$quiet" != "y" ] && log_begin_msg "Running /scripts/casper-premount"
     run_scripts /scripts/casper-premount

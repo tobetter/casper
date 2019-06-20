@@ -1,3 +1,12 @@
+casper (1.410) eoan; urgency=medium
+
+  * Drop casper-bottom/23networking and rely on stock configure_networking
+    only. As that one knows netplan... However this drops ',' separated
+    syntax for ip= command which is very weird. And baked-in networking
+    config on the images should switch to netplan too.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 20 Jun 2019 13:54:01 +0100
+
 casper (1.409) eoan; urgency=medium
 
   * Reintroduce netboot= => export NETBOOT option parsing in casper, as it

@@ -1,3 +1,10 @@
+casper (1.411) eoan; urgency=medium
+
+  * 1.409 only added parsing for NFSROOT, also add parsing for NETBOOT as
+    it was intended.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 01 Jul 2019 13:14:03 +0100
+
 casper (1.410) eoan; urgency=medium
 
   * Drop casper-bottom/23networking and rely on stock configure_networking

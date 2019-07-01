@@ -67,6 +67,8 @@ parse_cmdline() {
                 echo "export LAYERFS_PATH=\"$LAYERFS_PATH\"" >> /etc/casper.conf ;;
             nfsroot=*)
                 export NFSROOT="${x#nfsroot=}" ;;
+            netboot=*)
+                export NETBOOT="${x#netboot=}" ;;
             toram)
                 export TORAM="Yes" ;;
             todisk=*)

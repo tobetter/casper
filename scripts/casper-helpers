@@ -19,7 +19,12 @@ sys2dev() {
 subdevices() {
     sysblock=$1
     r=""
-    for dev in "${sysblock}" "${sysblock}"/*; do
+    # When booting off a "hybrid image" you can mount the whole device
+    # or the first partition (which has offset 0). It's generally
+    # better to mount the partition if we can so that we can mount
+    # other partitions on the device (e.g. the persistence partition),
+    # so try those first.
+    for dev in "${sysblock}"/* "${sysblock}"; do
         if [ -e "${dev}/dev" ]; then
             r="${r} ${dev}"
         fi

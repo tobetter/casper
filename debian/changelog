@@ -1,3 +1,9 @@
+casper (1.413) eoan; urgency=medium
+
+  * Fix ftbfs by restoring empty conf.d missing from git import. 
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 16 Jul 2019 13:40:33 +1200
+
 casper (1.412) eoan; urgency=medium
 
   * Try to mount partitions of a block device before mounting the block device

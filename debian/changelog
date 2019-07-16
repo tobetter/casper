@@ -1,3 +1,10 @@
+casper (1.412) eoan; urgency=medium
+
+  * Try to mount partitions of a block device before mounting the block device
+    itself (if both work, the former is preferable). (LP: #1489855)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 16 Jul 2019 12:12:36 +1200
+
 casper (1.411) eoan; urgency=medium
 
   * 1.409 only added parsing for NFSROOT, also add parsing for NETBOOT as

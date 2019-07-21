@@ -169,35 +169,16 @@ setup_loop() {
     fi
 }
 
-# Returns 0 on success
-# panics if remount- or bind-mount fails
-# returns 1 on failure otherwise
-try_mount ()
-{
-    dev="${1}"
-    mountp="${2}"
-    opts="${3}"
-
-    if where_is_mounted ${dev} > /dev/null; then
-        if [ "${opts}" != "ro" ]; then
-            mount -o remount,"${opts}" ${dev} $(where_is_mounted ${dev}) || panic "Remounting failed"
-            return 0
-        fi
-        mount -o bind $(where_is_mounted ${dev}) ${mountp} || panic "Cannot bind-mount"
-        return 0
-    else
-        mount -t $(get_fstype "${dev}") -o "${opts}" "${dev}" "${mountp}"
-        ret=$?
-        if [ $ret -ne 0 ]; then
-            log_warning_msg "Cannot mount ${dev} on ${mountp}"
-            return 1
-        fi
-        return 0
-    fi
-}
-
 find_cow_device() {
     pers_label="${1}"
+
+    udevadm settle
+
+    if [ -e "/dev/disk/by-label/${pers_label}" ]; then
+        echo /dev/disk/by-label/${pers_label}
+        return 0
+    fi
+
     cow_backing="/${pers_label}-backing"
 
     if [ -z "${PERSISTENT_PATH}" ]; then
@@ -214,22 +195,30 @@ find_cow_device() {
         fi
         for dev in $(subdevices "${sysblock}"); do
             devname=$(sys2dev "${dev}")
-            if [ "$(/sbin/blkid -s LABEL -o value $devname 2>/dev/null)" = "${pers_label}" ]; then
-                echo "$devname"
-                return
             # Do not add any filesystem types here that might be able to
             # mount a journalled filesystem and replay the journal. Doing so
             # will cause data loss when a live CD is booted on a system
             # where filesystems are in use by hibernated operating systems.
-            elif [ "$(get_fstype ${devname})" = "vfat" ]; then
+            case "$(get_fstype ${devname})" in
+                vfat)
+                    :;;
+                *)
+                    continue;;
+            esac
+            where_mounted=$(where_is_mounted "${devname}")
+            if [ $? -eq 0 ]; then
+                if [ -e "${where_mounted}/${pers_fpath}" ]; then
+                    mount -o remount,rw ${devname} ${where_mounted} || continue
+                    echo $(setup_loop "${where_mounted}/${pers_fpath}" "loop" "/sys/block/loop*")
+                fi
+            else
                 mkdir -p "${cow_backing}"
-                try_mount "${devname}" "${cow_backing}" "rw" || continue
-                cow_backing_mp=$(where_is_mounted "${devname}")
-                if [ -e "${cow_backing_mp}/${pers_fpath}" ]; then
-                    echo $(setup_loop "${cow_backing_mp}/${pers_fpath}" "loop" "/sys/block/loop*")
+                mount -w "${devname}" "${cow_backing}" || continue
+                if [ -e "${cow_backing}/${pers_fpath}" ]; then
+                    echo $(setup_loop "${cow_backing}/${pers_fpath}" "loop" "/sys/block/loop*")
                     return 0
                 else
-                    umount ${cow_backing_mp}
+                    umount ${cow_backing}
                 fi
             fi
         done
@@ -241,21 +230,31 @@ find_files()
 # FIXME: merge with above function
 {
     filenames="${1}"
-    snap_backing="/snap-backing"
     for sysblock in $(echo /sys/block/* | tr ' ' '\n' | grep -v loop); do
         for dev in $(subdevices "${sysblock}"); do
             devname=$(sys2dev "${dev}")
-            devfstype="$(get_fstype ${devname})"
-            if [ "${devfstype}" = "vfat" ] ||  [ "${devfstype}" = "ext2" ] ; then # FIXME: all supported block devices should be scanned
-                mkdir -p "${snap_backing}"
-                try_mount "${devname}" "${snap_backing}" "ro" || continue
-                for filename in ${filenames}; do
-                    if [ -e "${snap_backing}/${filename}" ]; then
-                        echo "${devname} ${snap_backing} ${filename}"
-                        return 0
-                    fi
-                done
-                umount ${snap_backing}
+            case "$(get_fstype ${devname})" in
+                vfat|ext2)
+                    :;;
+                *)
+                    continue;;
+            esac
+            doumount=
+            mntpoint=$(where_is_mounted "${devname}")
+            if [ $? -ne 0 ]; then
+                doumount=1
+                mntpoint="/snap-backing"
+                mkdir -p "${mntpoint}"
+                mount -o ro "${devname}" "${mntpoint}"
+            fi
+            for filename in ${filenames}; do
+                if [ -e "${mntpoint}/${filename}" ]; then
+                    echo "${devname} ${mntpoint} ${filename}"
+                    return 0
+                fi
+            done
+            if [ -n "${doumount}" ]; then
+                umount "${mntpoint}"
             fi
         done
     done

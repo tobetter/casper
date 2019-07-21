@@ -1,3 +1,11 @@
+casper (1.414) eoan; urgency=medium
+
+  * Use udev-created symlinks to find filesystems by label.
+  * Fix find_cow_device and find_files to not unmount filesystems that were
+    already mounted (LP: #1489855)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 22 Jul 2019 10:29:08 +1200
+
 casper (1.413) eoan; urgency=medium
 
   * Fix ftbfs by restoring empty conf.d missing from git import. 

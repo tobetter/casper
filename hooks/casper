@@ -27,8 +27,10 @@ if [ -x /usr/bin/unionfs-fuse ]; then
     copy_exec /usr/bin/unionfs-fuse /bin
 fi
 
-# We need losetup
+# We need losetup, mkfs.ext4 & sfdisk
 copy_exec /sbin/losetup /sbin
+copy_exec /sbin/mkfs.ext4 /sbin
+copy_exec /sbin/sfdisk /sbin
 
 # Casper hooks
 mkdir -p ${DESTDIR}/lib/casper

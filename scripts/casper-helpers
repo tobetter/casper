@@ -225,6 +225,38 @@ find_cow_device() {
     done
 }
 
+# find_or_create_persistent_partition $dev looks for a partition with the
+# label $root_persistence (i.e. casper-rw). If it does not find one, and there
+# is at least 100MiB space on $dev, it creates one there.
+find_or_create_persistent_partition () {
+    local DEVICE newpartno maxend start sectorsize size
+    DEVICE=$1
+
+    udevadm settle
+
+    if [ -e "/dev/disk/by-label/${root_persistence}" ]; then
+        return
+    fi
+    newpartno=$(sfdisk -l $DEVICE -q | wc -l)
+    maxend=$(sfdisk $DEVICE -l -q -o end | tail -n +2 | sort -n | tail -n1)
+    start=$(((maxend + 1 + 0xfff) & ~0xfff))
+    sectorsize=$(blockdev --getss $DEVICE)
+    size=$(blockdev --getsize64 $DEVICE)
+    # Do not bother creating a partition less than 100MiB
+    if [ $((size - start*sectorsize)) -lt $((100*1024*1024)) ]; then
+        return
+    fi
+    echo "start=$start" | sfdisk -q $DEVICE -a || return
+    for d in ${DEVICE}$newpartno ${DEVICE}p$newpartno ${DEVICE}-part$newpartno; do
+        if [ -e $d ]; then
+            mkfs.ext4 -q -L "$root_persistence" -F $d
+            break
+        fi
+    done
+    udevadm trigger
+    udevadm settle
+}
+
 find_files()
 # return the first of $filenames found on vfat and ext2 devices
 # FIXME: merge with above function

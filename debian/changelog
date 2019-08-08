@@ -1,3 +1,15 @@
+casper (1.415) eoan; urgency=medium
+
+  * Persist logs on the install media by default:
+    - Try to auto create a casper-rw filesystem on the install media if there
+      appears to be at least 100MiB free on it.
+    - Use a casper-rw filesystem for /var/log if it is not being used for
+      persistence.
+  * Fix some '|| continue's that got missed when check_dev got refactored into
+    a function.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 08 Aug 2019 16:26:41 +1200
+
 casper (1.414) eoan; urgency=medium
 
   * Use udev-created symlinks to find filesystems by label.

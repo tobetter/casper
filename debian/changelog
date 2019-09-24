@@ -1,3 +1,16 @@
+casper (1.416) eoan; urgency=medium
+
+  * Change the automatic log persistence to store the logs in the 'log'
+    directory of the casper-rw filesystem.
+  * When using full live session persistence, ignore a 'log' directory in the
+    casper-rw filesystem, otherwise booting without and then with full
+    persistence breaks.
+    - Possibly the whole block of code scanning the casper-rw filesystem
+      before using it should be deleted, but one thing at a time.
+  * Add autopkgtests for various persistence scenarios, including the above.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 24 Sep 2019 13:12:54 +1200
+
 casper (1.415) eoan; urgency=medium
 
   * Persist logs on the install media by default:

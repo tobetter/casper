@@ -112,7 +112,7 @@ test_basic () {
 test_auto_log_persistence () {
     echo "### Testing auto log persistence"
 
-    ./debian/tests/prep-image image.img "touch /var/log/hello"
+    ./debian/tests/prep-image image.img "touch /var/log/hello /var/crash/report.crash"
 
     expand_image image.img
 
@@ -135,7 +135,7 @@ test_auto_log_persistence () {
     fi
 
     do_mount "${dev}p${partsafter}" mnt
-    check_files_exist mnt log/hello
+    check_files_exist mnt log/hello crash/report.crash
 }
 
 

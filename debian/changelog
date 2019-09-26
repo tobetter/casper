@@ -1,3 +1,9 @@
+casper (1.419) eoan; urgency=medium
+
+  * scripts/casper: Fix shell syntax error introduced in the 1.417 upload.
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Thu, 26 Sep 2019 11:34:29 -0600
+
 casper (1.418) eoan; urgency=medium
 
   * scripts/casper-helpers: Reintroduce try_mount() function, which was in

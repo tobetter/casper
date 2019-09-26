@@ -823,7 +823,7 @@ mountroot() {
         mount -w "/dev/disk/by-label/${root_persistence}" /log-persistence && \
             mkdir -p /log-persistence/log /log-persistence/crash && \
             mount --bind /log-persistence/log "${rootmnt}/var/log" && \
-            mount --bind /log-persistence/crash "${rootmnt}/var/crash" && \
+            mount --bind /log-persistence/crash "${rootmnt}/var/crash"
     fi
 
     # initialize the /var/crash directory in overlayfs so that inotify for

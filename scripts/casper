@@ -414,7 +414,7 @@ setup_unionfs() {
         for cow_content in /cow/*
         do
             case "$cow_content" in
-            /cow/lost+found|/cow/upper|/cow/log)     continue ;;
+            /cow/lost+found|/cow/upper|/cow/log|/cow/crash)     continue ;;
             esac
 
             mv "$cow_content" /cow/upper
@@ -818,11 +818,12 @@ mountroot() {
 
     if [ -z "$PERSISTENT" ] && [ -e "/dev/disk/by-label/${root_persistence}" ]; then
         # If there is a casper-rw filesystem and we're not using it
-        # for persistence, use it for logs.
+        # for persistence, use it for logs and crash reports.
         mkdir /log-persistence
         mount -w "/dev/disk/by-label/${root_persistence}" /log-persistence && \
-            mkdir -p /log-persistence/log && \
-            mount --bind /log-persistence/log "${rootmnt}/var/log"
+            mkdir -p /log-persistence/log /log-persistence/crash && \
+            mount --bind /log-persistence/log "${rootmnt}/var/log" && \
+            mount --bind /log-persistence/crash "${rootmnt}/var/crash" && \
     fi
 
     # initialize the /var/crash directory in overlayfs so that inotify for

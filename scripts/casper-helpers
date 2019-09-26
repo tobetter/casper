@@ -169,6 +169,36 @@ setup_loop() {
     fi
 }
 
+# casper itself no longer uses this function, but it's used by third parties
+# in installers: https://bugs.launchpad.net/ubuntu/+source/casper/+bug/1845535
+#
+# Returns 0 on success
+# panics if remount- or bind-mount fails
+# returns 1 on failure otherwise
+try_mount ()
+{
+    dev="${1}"
+    mountp="${2}"
+    opts="${3}"
+
+    if where_is_mounted ${dev} > /dev/null; then
+        if [ "${opts}" != "ro" ]; then
+            mount -o remount,"${opts}" ${dev} $(where_is_mounted ${dev}) || panic "Remounting failed"
+            return 0
+        fi
+        mount -o bind $(where_is_mounted ${dev}) ${mountp} || panic "Cannot bind-mount"
+        return 0
+    else
+        mount -t $(get_fstype "${dev}") -o "${opts}" "${dev}" "${mountp}"
+        ret=$?
+        if [ $ret -ne 0 ]; then
+            log_warning_msg "Cannot mount ${dev} on ${mountp}"
+            return 1
+        fi
+        return 0
+    fi
+}
+
 find_cow_device() {
     pers_label="${1}"
 

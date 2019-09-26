@@ -1,3 +1,16 @@
+casper (1.418) eoan; urgency=medium
+
+  * scripts/casper-helpers: Reintroduce try_mount() function, which was in
+    use by (at least) VMWare in a custom installer scenario (LP: #1845535)
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Thu, 26 Sep 2019 11:00:40 -0600
+
+casper (1.417) eoan; urgency=medium
+
+  * Persist crash reports as well as logs by default.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 26 Sep 2019 14:18:38 +1200
+
 casper (1.416) eoan; urgency=medium
 
   * Change the automatic log persistence to store the logs in the 'log'

@@ -50,6 +50,9 @@ parse_cmdline() {
                     STATICIP="frommedia"
                 fi
                 export STATICIP ;;
+            url=*)
+                export NETBOOT=url
+                export URL="${x#url=}" ;;
             uuid=*)
                 UUID=${x#uuid=} ;;
             ignore_uuid)
@@ -214,7 +217,11 @@ do_netmount() {
 
     [ "$quiet" != "y" ] && log_begin_msg "Trying netboot from ${NFSROOT}"
 
-    if [ "${NETBOOT}" != "nfs" ] && do_cifsmount ; then
+    if [ "${NETBOOT}" = "url" ] ; then
+        if do_urlmount; then
+            rc=0
+        fi
+    elif [ "${NETBOOT}" != "nfs" ] && do_cifsmount ; then
         rc=0
     elif do_nfsmount ; then
         NETBOOT="nfs"
@@ -243,6 +250,21 @@ do_nfsmount() {
         sleep 1
         i="$(($i + 1))"
     done
+    return ${rc}
+}
+
+do_urlmount() {
+    rc=1
+    modprobe "${MP_QUIET}" isofs
+
+    [ "$quiet" != "y" ] && log_begin_msg "Trying to download and mount ${URL}"
+
+    target=$(basename "${URL}")
+
+    if wget "${URL}" -O "${target}"; then
+        mount -o ro "${target}" "${mountpoint}" && rc=0
+    fi
+
     return ${rc}
 }
 

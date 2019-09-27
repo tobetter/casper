@@ -1,3 +1,15 @@
+casper (1.422) eoan; urgency=medium
+
+  * Add support for url=protocol://path/to/installer.iso netboot
+    option. Using this, one can netboot and complete installations using
+    kernel and initrd from the new Ubuntu Server Installer using `ip=dhcp
+    url=http://..../ubuntu-19.10-live-server-arch.iso' cmdline paratemers.
+    This is not specific to Server installer, and should work for Ubuntu
+    Desktop images too. Using this patch, successfully completed netboot
+    installation with dhcp networking over vlan on a POWER9 machine.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 27 Sep 2019 13:09:57 +0100
+
 casper (1.421) eoan; urgency=medium
 
   * Drop empty directory (doesn't track well in git)

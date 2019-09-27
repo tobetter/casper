@@ -45,8 +45,11 @@ Sets the path to the leaf layer of an overlay-compatible multi-layer live filesy
 .BI "locale=" LOCALE " | debian-installer/locale=" LOCALE
 Configure the running locale as specified, if not present the live-media rootfs configured locale will be used and if also this one misses casper behave as "locale=en_US.UTF-8" was specified. If only 2 lowercase letter are specified (like "it"), the "maybe wanted" locale is generated (like it:IT.UTF-8), in this case if also "keyb=" is unspecified is set with those 2 lowercase letters (keyb=it).
 .TP
-.BR "netboot[=" nfs "|" cifs ]
-This tells casper to perform a network mount. The parameter "nfsroot=" (with optional "nfsopts="), should specify where is the location of the root filesystem.  With no args, will try cifs first, and if it fails nfs.
+.BR "netboot[=" nfs "|" cifs "|" url ]
+This tells casper to perform a network mount. The parameter "nfsroot=" (with optional "nfsopts="), should specify where is the location of the root filesystem.  With no args, will try cifs first, and if it fails nfs. If url method is chosen, "url=" parameter should point to the location of the ".iso" that will be downloaded and mounted. Note "url=" on the commandline alone, by default sets "netboot=url" method too.
+.TP
+.BR "url=" URL
+This tells casper the download location of the installer ISO. The ISO will be downloaded and mounted. Networking is required for this option to work, which can be configured with "ip=" option. Note, setting this option, will also set "netboot=url" method.
 .TP
 .B persistent
 Casper will look for persistent and snapshot partitions or files labeled "casper-rw", "home-rw", and files called "casper-sn*", "home-sn*" and will try to, in order: mount as /cow the first, mount the second in /home, and just copy the contents of the latter in appropriate locations (snapshots). Snapshots will be tried to be updated on reboot/shutdown. Look at casper-snapshot(1) for more informations.

@@ -1,3 +1,10 @@
+casper (1.421) eoan; urgency=medium
+
+  * Drop empty directory (doesn't track well in git)
+  * Use debian/casper.dirs to install conf.d
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 01 Oct 2019 13:05:51 +0100
+
 casper (1.420) eoan; urgency=medium
 
   * Add dependency on finalrd for reliable live-session shutdown. Casper

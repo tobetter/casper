@@ -1,3 +1,15 @@
+casper (1.420) eoan; urgency=medium
+
+  * Add dependency on finalrd for reliable live-session shutdown. Casper
+    setup live systems do have layering violations (/ actually depends on
+    /cdrom) and it appears that (although masked) the system manages to
+    rip it out, resulting in filesystem errors preventing completing the
+    shutdown. That's where pivot to finalrd comes in, to save the day and
+    blast the running system into oblivion and complete the shutdown. LP:
+    #1840122
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 01 Oct 2019 11:00:12 +0100
+
 casper (1.419) eoan; urgency=medium
 
   * scripts/casper: Fix shell syntax error introduced in the 1.417 upload.

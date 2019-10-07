@@ -39,7 +39,7 @@ parse_cmdline() {
             persistent)
                 export PERSISTENT="Yes" ;;
             nopersistent)
-                export PERSISTENT="" ;;
+                export PERSISTENT="" NOPERSISTENT="Yes" ;;
             persistent-path=*)
                 export PERSISTENT_PATH="${x#persistent-path=}" ;;
             union=*)
@@ -682,7 +682,7 @@ check_dev ()
         [ -n "$devuid" ] && echo "$devuid" >> $tried
         if is_casper_path $mountpoint && \
            ([ "$skip_uuid_check" ] || [ "$UUID" = "$devuid" ] || matches_uuid $mountpoint); then
-            if [ -n "$parentdev" ]; then
+            if [ -n "$parentdev" ] && [ -z "$NOPERSISTENT" ]; then
                 umount $mountpoint
                 find_or_create_persistent_partition $parentdev 1>&2
                 mount -t ${fstype} -o ro,noatime "${devname}" $mountpoint || return 1
@@ -838,7 +838,7 @@ mountroot() {
 
     mount_images_in_directory "${livefs_root}" "${rootmnt}"
 
-    if [ -z "$PERSISTENT" ] && [ -e "/dev/disk/by-label/${root_persistence}" ]; then
+    if [ -z "$PERSISTENT" ] && [ -z "$NOPERSISTENT" ] && [ -e "/dev/disk/by-label/${root_persistence}" ]; then
         # If there is a casper-rw filesystem and we're not using it
         # for persistence, use it for logs and crash reports.
         mkdir /log-persistence

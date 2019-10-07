@@ -1,3 +1,15 @@
+casper (1.423) eoan; urgency=medium
+
+  [ Dimitri John Ledkov ]
+  * Pacify systemd about cdrom.mount on boot, and order it correctly to be
+    the last one on shutdown.
+
+  [ Michael Hudson-Doyle ]
+  * Have 'nopersistent' on the command line suppress the automatic
+    creation of the casper-rw partition added in 1.416. (LP: #1846762)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 07 Oct 2019 13:13:12 +0100
+
 casper (1.422) eoan; urgency=medium
 
   * Add support for url=protocol://path/to/installer.iso netboot

@@ -12,4 +12,3 @@ scripts				usr/share/initramfs-tools
 conf-hooks.d			usr/share/initramfs-tools
 casper-md5check/casper-md5check	usr/lib/casper
 casper.conf			etc
-system                          lib/systemd/

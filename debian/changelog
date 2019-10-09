@@ -1,3 +1,11 @@
+casper (1.424) eoan; urgency=medium
+
+  * Revert the cdrom changes from the previous upload, they seem to lead
+    to an empty /cdrom on the live session and to have no kernel on the
+    installed system as a result (lp: #1847457)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 09 Oct 2019 12:17:08 +0200
+
 casper (1.423) eoan; urgency=medium
 
   [ Dimitri John Ledkov ]

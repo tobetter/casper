@@ -90,7 +90,8 @@ do_stop ()
     if [ -b "$device" ] && [ ! -f "/sys/block/$(basename $device)/removable" ]; then
         umount -l $device >/dev/null 2>&1
         sync
-        return 0
+        # from now on operate on the partition's block device
+        device=/dev/$(basename "$(readlink -f /sys/class/block/$(basename $device)/..)")
     fi
 
     # If we're still there, then we're probably a cdrom or other media

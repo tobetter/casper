@@ -1,3 +1,10 @@
+casper (1.425) eoan; urgency=medium
+
+  * Ask for removing the block device when installing from a partition
+    (LP: #1837934)
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Mon, 14 Oct 2019 17:29:05 +0200
+
 casper (1.424) eoan; urgency=medium
 
   * Revert the cdrom changes from the previous upload, they seem to lead

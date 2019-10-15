@@ -138,5 +138,6 @@ fi
 
 #systemd-sysusers.service fails to open /etc/.pwd.lock with kernel errors
 rm -f /root/etc/.pwd.lock
+rm -f /root/etc/machine-id
 
 log_end_msg

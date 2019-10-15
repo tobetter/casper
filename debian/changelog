@@ -1,3 +1,12 @@
+casper (1.426) eoan; urgency=medium
+
+  * Just like in Disco, overlayfs squashfs is tripped up with an empty
+    file, this time it's machine-id. Maybe we should finally dig into
+    what's wrong in the kernel/systemd when trying to edit overlayfs
+    multi-lowerdir squashfs readonly files. LP: #1848190
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 15 Oct 2019 15:08:34 +0100
+
 casper (1.425) eoan; urgency=medium
 
   * Ask for removing the block device when installing from a partition

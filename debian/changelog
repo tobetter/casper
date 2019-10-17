@@ -1,3 +1,10 @@
+casper (1.427) eoan; urgency=medium
+
+  * Setup machine-id, because without it it seems like machine-id setup is
+    racy. LP: #1848404
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 17 Oct 2019 10:38:07 +0100
+
 casper (1.426) eoan; urgency=medium
 
   * Just like in Disco, overlayfs squashfs is tripped up with an empty

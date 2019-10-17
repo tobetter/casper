@@ -138,6 +138,18 @@ fi
 
 #systemd-sysusers.service fails to open /etc/.pwd.lock with kernel errors
 rm -f /root/etc/.pwd.lock
+
+# Ends up being corrupted on subiquity
 rm -f /root/etc/machine-id
+# it seems like without machine-id, machine-id setup is racy and
+# breaks dbus and hence the world and we need proc & sys, to setup KVM
+# based machine-id otherwise dhcp client-id will be unstable and will
+# break in CI
+mount -o bind /proc /root/proc
+mount -o bind /sys /root/sys
+chroot /root systemd-machine-id-setup
+ln -s /etc/machine-id /root/var/lib/dbus/machine-id
+umount /root/proc
+umount /root/sys
 
 log_end_msg

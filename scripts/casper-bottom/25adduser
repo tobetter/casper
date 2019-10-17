@@ -136,6 +136,11 @@ if [ -f "/root/usr/lib/hildon-desktop/kourou.py" ]; then
   fi
 fi
 
+if grep -q 'bebroken' /proc/cmdline; then
+  log_end_msg
+  exit 0
+fi
+
 #systemd-sysusers.service fails to open /etc/.pwd.lock with kernel errors
 rm -f /root/etc/.pwd.lock
 

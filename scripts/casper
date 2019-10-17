@@ -42,8 +42,6 @@ parse_cmdline() {
                 export PERSISTENT="" NOPERSISTENT="Yes" ;;
             persistent-path=*)
                 export PERSISTENT_PATH="${x#persistent-path=}" ;;
-            union=*)
-                export UNIONFS="${x#union=}";;
             ip=*)
                 STATICIP=${x#ip=}
                 if [ "${STATICIP}" = "" ]; then
@@ -84,9 +82,6 @@ parse_cmdline() {
                 export CMD_USERNAME="${x#username=}" ;;
         esac
     done
-    if [ "${UNIONFS}" = "" ]; then
-        export UNIONFS="DEFAULT"
-    fi
 }
 
 is_casper_path() {
@@ -146,7 +141,7 @@ mount_images_in_directory() {
     if match_files_in_dir "$directory/$LIVE_MEDIA_PATH/*.squashfs" ||
         match_files_in_dir "$directory/$LIVE_MEDIA_PATH/*.ext2" ||
         match_files_in_dir "$directory/$LIVE_MEDIA_PATH/*.dir"; then
-        setup_unionfs "$directory/$LIVE_MEDIA_PATH" "$rootmnt"
+        setup_overlay "$directory/$LIVE_MEDIA_PATH" "$rootmnt"
     else
         :
     fi
@@ -246,7 +241,14 @@ do_nfsmount() {
     # FIXME: This while loop is an ugly HACK round an nfs bug
     i=0
     while [ "$i" -lt 60 ]; do
-        nfsmount -o nolock -o ro${NFSOPTS} "${NFSROOT}" "${mountpoint}" && rc=0 && break
+        if nfsmount -o nolock -o ro${NFSOPTS} "${NFSROOT}" "${mountpoint}"; then
+            if is_casper_path $mountpoint && matches_uuid $mountpoint; then
+                rc=0
+            else
+                umount $mountpoint
+            fi
+            break
+        fi
         sleep 1
         i="$(($i + 1))"
     done
@@ -262,7 +264,13 @@ do_urlmount() {
     target=$(basename "${URL}")
 
     if wget "${URL}" -O "${target}"; then
-        mount -o ro "${target}" "${mountpoint}" && rc=0
+        if mount -o ro "${target}" "${mountpoint}"; then
+            if is_casper_path $mountpoint && matches_uuid $mountpoint; then
+                rc=0
+            else
+                umount $mountpoint
+            fi
+        fi
     fi
 
     return ${rc}
@@ -281,7 +289,11 @@ do_cifsmount() {
         modprobe "${MP_QUIET}" cifs
 
         if mount.cifs "${NFSROOT}" "${mountpoint}" "${CIFSOPTS}" ; then
-            rc=0
+            if is_casper_path $mountpoint && matches_uuid $mountpoint; then
+                rc=0
+            else
+                umount $mountpoint
+            fi
         fi
     fi
     return ${rc}
@@ -397,14 +409,7 @@ try_snap ()
     return 0
 }
 
-cow_write_format() {
-    {
-        echo "# This records the union filesystem format used for this cow medium; do not delete or alter."
-        echo "UNIONFS=$1"
-    } >"$2"
-}
-
-setup_unionfs() {
+setup_overlay() {
     image_directory="$1"
     rootmnt="$2"
 
@@ -440,66 +445,24 @@ setup_unionfs() {
             esac
 
             mv "$cow_content" /cow/upper
-
-            # We have no format information, so fake some up.  If they
-            # have not specified any then we simply assume it was
-            # overlayfs (V1 format).
-            cow_write_format "overlayfs" /cow/format
         done
     fi
     mkdir -p /cow/work
 
-    # Look and see if we have a current format, it is essential we use
-    # a compatible format.  Relies on the recovery above having cleaned
-    # out the top level.
-    [ -f /cow/format ] && . /cow/format
-
-    # See if we have the appropriate format, pick the first one if
-    # unspecified.
-    if [ "${UNIONFS}" = 'DEFAULT' ]; then
-        for union in 'overlay' 'overlayfs' 'aufs' 'unionfs'
-        do
-            modprobe "${MP_QUIET}" -b ${union} || true
-            if cut -f2 /proc/filesystems | grep -q "^${union}\$"; then
-                UNIONFS="${union}"
-                break
-            fi
-        done
-    fi
-    if [ "${UNIONFS}" = 'DEFAULT' -a -x /bin/unionfs-fuse ]; then
-        UNIONFS="unionfs-fuse"
-    fi
-    # If all else fails fall back to aufs.
-    if [ "${UNIONFS}" = 'DEFAULT' ]; then
-        UNIONFS='aufs'
-    fi
-    # Confirm the final format was valid.
-    if [ "${UNIONFS}" != "unionfs-fuse" ]; then
-        modprobe "${MP_QUIET}" -b "${UNIONFS}" || true
-        if cut -f2 /proc/filesystems | grep -q "^${UNIONFS}\$"; then
-            :
-        else
-            panic "/cow format specified as ${UNIONFS} and no support found"
-        fi
-    fi 
+    modprobe "${MP_QUIET}" -b overlay || panic "/cow format specified as 'overlay' and no support found"
 
     # run-init can't deal with images in a subdir, but we're going to
     # move all of these away before it runs anyway.  No, we're not,
     # put them in / since move-mounting them into / breaks mono and
     # some other apps.
 
+    # Must end in /, as otherthings are concatenated to it
     croot="/"
 
     # Let's just mount the read-only file systems first
     rofsstring=""
     rofslist=""
-    if [ "${UNIONFS}" = "aufs" ]; then
-        roopt="rr"
-    elif [ "${UNIONFS}" = "unionfs-fuse" ]; then
-        roopt="RO"
-    else
-        roopt="ro"
-    fi
+    roopt="ro"
 
     mkdir -p "${croot}"
 
@@ -544,8 +507,8 @@ setup_unionfs() {
             if [ "${fstype}" = "unknown" ]; then
                 panic "Unknown file system type on ${backdev} (${image})"
             fi
-            mkdir -p "${croot}/${imagename}"
-            mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}/${imagename}" || panic "Can not mount $backdev ($image) on ${croot}/${imagename}" && rofsstring="${croot}/${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}/${imagename} ${rofslist}"
+            mkdir -p "${croot}${imagename}"
+            mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}${imagename}" || panic "Can not mount $backdev ($image) on ${croot}${imagename}" && rofsstring="${croot}${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}${imagename} ${rofslist}"
         done
 
     # Non multi-layer cases
@@ -570,35 +533,21 @@ setup_unionfs() {
                     if [ "${fstype}" = "unknown" ]; then
                         panic "Unknown file system type on ${backdev} (${image})"
                     fi
-                    mkdir -p "${croot}/${imagename}"
-                    mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}/${imagename}" || panic "Can not mount $backdev ($image) on ${croot}/${imagename}" && rofsstring="${croot}/${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}/${imagename} ${rofslist}"
+                    mkdir -p "${croot}${imagename}"
+                    mount -t "${fstype}" -o ro,noatime "${backdev}" "${croot}${imagename}" || panic "Can not mount $backdev ($image) on ${croot}${imagename}" && rofsstring="${croot}${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}${imagename} ${rofslist}"
                 fi
             done
         done
     fi
     rofsstring=${rofsstring%:}
 
-    # Record the format we are using for this mount.
-    [ ! -f /cow/format ] && cow_write_format "${UNIONFS}" /cow/format
-    case ${UNIONFS} in
-        unionfs-fuse)
-            (ulimit -n 16384; unionfs-fuse -o cow -o noinitgroups -o default_permissions -o allow_other -o use_ino -o suid /cow/upper=RW:$rofsstring "$rootmnt" || panic "${UNIONFS} mount failed")
-            mkdir -p /dev/.initramfs/varrun
-            pidof unionfs-fuse >> /dev/.initramfs/varrun/sendsigs.omit || true
-            ;;
-        aufs|unionfs)
-            mount -t ${UNIONFS} -o noatime,dirs=/cow/upper=rw:$rofsstring ${UNIONFS} "$rootmnt" || panic "${UNIONFS} mount failed"
-            ;;
-        overlay|overlayfs)
-            mounts=""
-            for mount in $rofslist
-            do
-                mounts="$mounts:$mount"
-            done
-            mounts="${mounts#:}"
-            mount -t ${UNIONFS} -o "upperdir=/cow/upper,lowerdir=$mounts,workdir=/cow/work" "/cow" "$rootmnt" || panic "${UNIONFS} mount failed"
-            ;;
-    esac
+    mounts=""
+    for mount in $rofslist
+    do
+        mounts="$mounts:$mount"
+    done
+    mounts="${mounts#:}"
+    mount -t overlay -o "upperdir=/cow/upper,lowerdir=$mounts,workdir=/cow/work" "/cow" "$rootmnt" || panic "overlay mount failed"
 
     # Adding other custom mounts
     if [ -n "${PERSISTENT}" ]; then
@@ -623,29 +572,21 @@ setup_unionfs() {
                 *.dir) # do nothing # mount -o bind "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
                     ;;
                 *)
-                    if [ "${UNIONFS}" = unionfs-fuse ]; then
-                        mount -o bind "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
-                    else
-                        mount -o move "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
-                    fi
+                    mount -o move "${d}" "${rootmnt}/${LIVE_MEDIA_PATH}/${d##*/}"
                     ;;
             esac
         done
-        # shows cow fs on /cow for use by casper-snapshot
-        mkdir -p "${rootmnt}/cow"
-        mount -o bind /cow "${rootmnt}/cow"
     fi
 
     # move the first mount; no head in busybox-initramfs
     for d in $(mount -t squashfs | cut -d\  -f 3); do
         mkdir -p "${rootmnt}/rofs"
-        if [ "${UNIONFS}" = unionfs-fuse ]; then
-            mount -o bind "${d}" "${rootmnt}/rofs"
-        else
-            mount -o move "${d}" "${rootmnt}/rofs"
-        fi
+        mount -o move "${d}" "${rootmnt}/rofs"
         break
     done
+
+    # move /cow such that live-system can poke & debug the overlayfs layers
+    mount -o move /cow "${rootmnt}/cow"
 }
 
 check_dev ()
@@ -875,12 +816,6 @@ mountroot() {
         sed -i "s,USERNAME=.*,USERNAME=\"$USERNAME\",g; s,USERFULLNAME=.*,USERFULLNAME=\"$USERFULLNAME\",g; s,HOST=.*,HOST=\"$HOST\",g" /etc/casper.conf
     fi
 
-    # unionfs-fuse needs /dev to be bind-mounted for the duration of
-    # casper-bottom; udev's init script will take care of things after that
-    if [ "${UNIONFS}" = unionfs-fuse ]; then
-        mount -n -o bind /dev "${rootmnt}/dev"
-    fi
-
     # Open up two fifo's fd's for debconf-communicate to use. Speeds up
     # the Casper process considerably.
     log_begin_msg "Creating debconf-communicate fifo mechanism"
@@ -915,10 +850,6 @@ Readonly: true" /root/etc/debconf.conf >"/root$DEBCONF_TMPDIR/debconf.conf"
 
     run_scripts /scripts/casper-bottom
     [ "$quiet" != "y" ] && log_end_msg
-
-    if [ "${UNIONFS}" = unionfs-fuse ]; then
-        umount "${rootmnt}/dev"
-    fi
 
     # Close the fd's associated with debconf-communicate.
     exec 3>&- 4<&-

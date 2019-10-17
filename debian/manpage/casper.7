@@ -8,7 +8,7 @@ casper \- a hook for initramfs-tools to boot live systems.
 As kernel parameter boot prompt.
 
 .SH DESCRIPTION
-Casper is a hook for initramfs-tools used to generate an initramfs capable to boot live systems as those created by make-live. This includes the Debian-Live isos, netboot tarballs, and usb stick images and Ubuntu live cds. At boot time it will look for a (read-only) media containing a "/casper" directory where a root filesystems (often a compressed squashfs) is stored. If found, it will create a writable environment, using unionfs, for debian like systems to boot from.
+Casper is a hook for initramfs-tools used to generate an initramfs capable to boot live systems as those created by make-live. This includes the Debian-Live isos, netboot tarballs, and usb stick images and Ubuntu live cds. At boot time it will look for a (read-only) media containing a "/casper" directory where a root filesystems (often a compressed squashfs) is stored. If found, it will create a writable environment, using overlay, for debian like systems to boot from.
 
 .SH RECOGNIZED BOOT OPTIONS
 .TP

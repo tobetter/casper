@@ -1,3 +1,13 @@
+casper (1.428) focal; urgency=medium
+
+  * Add UUID verification to netboot mounts. LP: #1847076
+  * Stop doing //filesystem.squashfs everywhere
+  * Always expose /cow
+  * Allow booting broken
+  * Drop support for non-overlay union= option
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 17 Oct 2019 17:58:05 +0100
+
 casper (1.427) eoan; urgency=medium
 
   * Setup machine-id, because without it it seems like machine-id setup is

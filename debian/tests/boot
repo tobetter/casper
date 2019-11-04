@@ -101,6 +101,16 @@ check_files_exist () {
 
 ## Tests
 
+# Casper creates log directories with paths based on the current
+# day. If we roll over into another day while these tests are running
+# they might fail spuriously. So if it's within half an hour of
+# midnight, wait until tomorrow!
+secs_til_tomorrow=$(( $(date -ud "tomorrow 0:00" +%s) - $(date +%s) ))
+if [ $secs_til_tomorrow -le 1800 ]; then
+    sleep $((secs_til_tomorrow + 10))
+fi
+D=$(date -uIdate)
+
 test_basic () {
     echo "### Running basic test"
 
@@ -135,9 +145,45 @@ test_auto_log_persistence () {
     fi
 
     do_mount "${dev}p${partsafter}" mnt
-    check_files_exist mnt log/hello crash/report.crash
+    check_files_exist mnt install-logs-$D.0/log/hello install-logs-$D.0/crash/report.crash
 }
 
+test_clean_log_directory_each_boot () {
+    echo "### Testing that changes to /var/log do not persist into next boot"
+
+    ./debian/tests/prep-image image.img "
+if [ -e /var/log/hello ];
+then
+    o result.txt echo 'hello exists'
+else:
+    o result.txt echo 'hello does not exist'
+fi
+touch /var/log/hello
+"
+
+    expand_image image.img
+
+    run image.img ""
+    partsafter=$(partcount image.img)
+
+    if [ "$(cat result/result.txt)" != "hello does not exist" ]; then
+        echo "/var/log/hello existed on first boot??"
+    fi
+
+    dev="$(setup_image image.img)"
+    do_mount "${dev}p${partsafter}" mnt
+    check_files_exist mnt install-logs-$D.0/log/hello
+    cleanup_mounts_and_devices
+
+    run image.img ""
+
+    if [ "$(cat result/result.txt)" != "hello does not exist" ]; then
+        echo "/var/log/hello existed on second boot"
+    fi
+    dev="$(setup_image image.img)"
+    do_mount "${dev}p${partsafter}" mnt
+    check_files_exist mnt install-logs-$D.0/log/hello install-logs-$D.1/log/hello
+}
 
 test_explicit_persistence () {
     echo "### Testing explicit persistence "
@@ -172,7 +218,7 @@ test_implicit_then_explicit_persistence () {
     partsafter=$(partcount image.img)
     dev="$(setup_image image.img)"
     do_mount "${dev}p${partsafter}" mnt
-    check_files_exist mnt log/hello
+    check_files_exist mnt install-logs-$D.0/log/hello
     cleanup_mounts_and_devices
 
     run image.img "persistent"
@@ -180,7 +226,7 @@ test_implicit_then_explicit_persistence () {
     partsafter=$(partcount image.img)
     dev="$(setup_image image.img)"
     do_mount "${dev}p${partsafter}" mnt
-    check_files_exist mnt log/hello upper/hello upper/var/log/hello
+    check_files_exist mnt install-logs-$D.0/log/hello upper/hello upper/var/log/hello
 }
 
 test_no_persistence () {
@@ -212,13 +258,14 @@ test_no_persistence () {
     partsafter=$(partcount image.img)
     dev="$(setup_image image.img)"
     do_mount "${dev}p${partsafter}" mnt
-    if [ -e mnt/log/hello ]; then
+    if [ -e install-logs-$D.0/log/hello ]; then
         echo "nopersistent did not suppress use of casper-rw partition"
     fi
 }
 
-TESTS="test_basic test_auto_log_persistence test_explicit_persistence
-       test_implicit_then_explicit_persistence test_no_persistence"
+TESTS="test_basic test_auto_log_persistence test_clean_log_directory_each_boot
+       test_explicit_persistence test_implicit_then_explicit_persistence
+       test_no_persistence"
 
 for f in $TESTS; do
     eval $f

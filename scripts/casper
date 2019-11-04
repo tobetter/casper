@@ -441,7 +441,7 @@ setup_overlay() {
         for cow_content in /cow/*
         do
             case "$cow_content" in
-            /cow/lost+found|/cow/upper|/cow/log|/cow/crash)     continue ;;
+            /cow/lost+found|/cow/upper|/cow/log|/cow/crash|/cow/install-logs-*)     continue ;;
             esac
 
             mv "$cow_content" /cow/upper
@@ -783,10 +783,19 @@ mountroot() {
         # If there is a casper-rw filesystem and we're not using it
         # for persistence, use it for logs and crash reports.
         mkdir /log-persistence
-        mount -w "/dev/disk/by-label/${root_persistence}" /log-persistence && \
-            mkdir -p /log-persistence/log /log-persistence/crash && \
-            mount --bind /log-persistence/log "${rootmnt}/var/log" && \
-            mount --bind /log-persistence/crash "${rootmnt}/var/crash"
+        if mount -w "/dev/disk/by-label/${root_persistence}" /log-persistence; then
+            local i=0 d=$(date -uIdate) pdir
+            while :; do
+                pdir=/log-persistence/install-logs-$d.$i
+                if [ ! -e $pdir ]; then
+                    mkdir -p $pdir/log $pdir/crash
+                    mount --bind $pdir/log "${rootmnt}/var/log"
+                    mount --bind $pdir/crash "${rootmnt}/var/crash"
+                    break
+                fi
+                i=$((i+1))
+            done
+        fi
     fi
 
     # initialize the /var/crash directory in overlayfs so that inotify for

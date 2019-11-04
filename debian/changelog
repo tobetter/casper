@@ -1,3 +1,11 @@
+casper (1.429) focal; urgency=medium
+
+  * When automatically persisting logs, give each boot a clean /var/log and
+    /var/crash directory to avoid e.g. syslog becoming unwieldy and confusing
+    on a USB stick used to install many machines.
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 04 Nov 2019 16:11:07 +1300
+
 casper (1.428) focal; urgency=medium
 
   * Add UUID verification to netboot mounts. LP: #1847076

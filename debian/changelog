@@ -1,3 +1,17 @@
+casper (1.430) focal; urgency=medium
+
+  * d/tests/run-image: attach disk as usb storage.
+  * d/test/boot:
+    - fix some mistakes in test_clean_log_directory_each_boot
+    - add test that booting with toram on command line allows the disk to be
+      ejected.
+  * scripts/casper: have toram disable automatic persistence. (LP: #1851123)
+  * scripts/casper-bottom/55disable_snap_refresh: delay computation of the
+    date to refresh to until the service runs as busybox date does not support
+    --iso-8601=seconds. (LP: #1852022)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Mon, 11 Nov 2019 10:25:42 +1300
+
 casper (1.429) focal; urgency=medium
 
   * When automatically persisting logs, give each boot a clean /var/log and

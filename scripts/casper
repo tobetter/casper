@@ -743,6 +743,15 @@ mountroot() {
     run_scripts /scripts/casper-premount
     [ "$quiet" != "y" ] && log_end_msg
 
+    if [ "${TORAM}" ]; then
+        live_dest="ram"
+    elif [ "${TODISK}" ]; then
+        live_dest="${TODISK}"
+    fi
+    if [ "${live_dest}" ] && [ -z "$PERSISTENT" ]; then
+        NOPERSISTENT="Yes"
+    fi
+
     if [ ! -z "${NETBOOT}" ]; then
         if do_netmount ; then
             livefs_root="${mountpoint}"
@@ -766,11 +775,6 @@ mountroot() {
         panic "Unable to find a medium containing a live file system"
     fi
 
-    if [ "${TORAM}" ]; then
-        live_dest="ram"
-    elif [ "${TODISK}" ]; then
-        live_dest="${TODISK}"
-    fi
     if [ "${live_dest}" ]; then
         log_begin_msg "Copying live_media to ${live_dest}"
         copy_live_to "${livefs_root}" "${live_dest}"

@@ -36,9 +36,13 @@ kernel=$(echo /boot/vmlinu*-"$(uname -r)")
 ## Helper functions
 
 run () {
+    image=$1
+    shift
+    cmdline="$basecmdline ${1-}"
+    shift
     ./debian/tests/run-image kernel=$kernel initrd=casper-initrd \
-                             image=$1 cmdline="$basecmdline ${2-}" \
-                             output=result
+                             image="$image" cmdline="$cmdline" \
+                             output=result "$@"
 }
 
 partcount () {
@@ -152,10 +156,9 @@ test_clean_log_directory_each_boot () {
     echo "### Testing that changes to /var/log do not persist into next boot"
 
     ./debian/tests/prep-image image.img "
-if [ -e /var/log/hello ];
-then
+if [ -e /var/log/hello ]; then
     o result.txt echo 'hello exists'
-else:
+else
     o result.txt echo 'hello does not exist'
 fi
 touch /var/log/hello
@@ -168,6 +171,7 @@ touch /var/log/hello
 
     if [ "$(cat result/result.txt)" != "hello does not exist" ]; then
         echo "/var/log/hello existed on first boot??"
+        exit 1
     fi
 
     dev="$(setup_image image.img)"
@@ -179,6 +183,7 @@ touch /var/log/hello
 
     if [ "$(cat result/result.txt)" != "hello does not exist" ]; then
         echo "/var/log/hello existed on second boot"
+        exit 1
     fi
     dev="$(setup_image image.img)"
     do_mount "${dev}p${partsafter}" mnt
@@ -253,19 +258,76 @@ test_no_persistence () {
     mkfs.ext4 -L "casper-rw" -F "${dev}p$((partsafter+1))"
     cleanup_mounts_and_devices
 
-    run image.img "nopersistent debug"
+    run image.img "nopersistent"
 
     partsafter=$(partcount image.img)
     dev="$(setup_image image.img)"
     do_mount "${dev}p${partsafter}" mnt
     if [ -e install-logs-$D.0/log/hello ]; then
         echo "nopersistent did not suppress use of casper-rw partition"
+        exit 1
     fi
+}
+
+test_toram () {
+    echo "### toram has /cdrom on a tmpfs and allows /dev/sda to be ejected"
+
+    ./debian/tests/prep-image image.img '
+o cdrom-fstype.txt findmnt -no fstype /cdrom
+eject /dev/disk/by-id/usb-*installmedia-0\:0
+o eject-result.txt echo $?
+touch /hello
+'
+
+    expand_image image.img
+
+    partsbefore=$(partcount image.img)
+
+    # toram suppresses the default log/crash file persistence
+
+    run image.img "toram" mem=2G
+
+    partsafter=$(partcount image.img)
+    if [ $partsafter -ne $partsbefore ]; then
+            echo "toram did not suppress creation of partition"
+            exit 1
+    fi
+
+    if [ ! -e result/cdrom-fstype.txt ] || [ ! -e result/eject-result.txt ]; then
+        echo "test did not produce expected file"
+        exit 1
+    fi
+
+    if [ `cat result/cdrom-fstype.txt` != tmpfs ]; then
+        echo "/cdrom not tmpfs with toram"
+        exit 1
+    fi
+
+    if [ `cat result/eject-result.txt` != "0" ]; then
+        echo "could not eject boot media"
+        exit 1
+    fi
+
+    # but explicit persistence is still honoured
+
+    dev="$(setup_image image.img)"
+    maxend=$(sfdisk $dev -l -q -o end | tail -n +2 | sort -n | tail -n1)
+    start=$(((maxend + 1 + 0xfff) & ~0xfff))
+    echo "start=$start" | sfdisk $dev -a
+    mkfs.ext4 -L "casper-rw" -F "${dev}p$((partsafter+1))"
+    cleanup_mounts_and_devices
+
+    run image.img "persistent toram" mem=2G
+
+    partsafter=$(partcount image.img)
+    dev="$(setup_image image.img)"
+    do_mount "${dev}p${partsafter}" mnt
+    check_files_exist mnt upper/hello
 }
 
 TESTS="test_basic test_auto_log_persistence test_clean_log_directory_each_boot
        test_explicit_persistence test_implicit_then_explicit_persistence
-       test_no_persistence"
+       test_no_persistence test_toram"
 
 for f in $TESTS; do
     eval $f

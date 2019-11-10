@@ -22,7 +22,10 @@ log_begin_msg "$DESCRIPTION"
 
 mkdir -p /run/systemd/system/snapd.service.wants/
 
-cat > /run/systemd/system/snapd.hold.service << EOF
+# Quoting EOF below suppresses command expansion as the here document is read,
+# so that the date computation happens when the service runs (and with
+# coreutils date, which suports --iso-8601=seconds).
+cat > /run/systemd/system/snapd.hold.service << \EOF
 [Unit]
 Description=Holds Snappy daemon refresh
 After=snapd.service

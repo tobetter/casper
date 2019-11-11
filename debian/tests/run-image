@@ -2,16 +2,13 @@
 
 set -eux
 
-MEM=512m
-
 while [ $# -gt 0 ]; do
         case $1 in
-        kernel=*)  KERNEL="${1#kernel=}"   ;;
-        initrd=*)  INITRD="${1#initrd=}"   ;;
-        image=*)   IMAGE="${1#image=}"     ;;
+        kernel=*)  KERNEL="${1#kernel=}" ;;
+        initrd=*)  INITRD="${1#initrd=}" ;;
+        image=*)   IMAGES="${IMAGES+${IMAGES} }${1#image=}" ;;
         cmdline=*) CMDLINE="${1#cmdline=}" ;;
-        output=*)  OUTPUT="${1#output=}"   ;;
-        mem=*)     MEM="${1#mem=}"   ;;
+        output=*)  OUTPUT="${1#output=}" ;;
         esac
         shift
 done
@@ -34,13 +31,18 @@ aarch64)
         qemu=qemu-system-$(uname -m)
 esac
 
+devices=
+id=0
+for IMG in $IMAGES; do
+    devices="${devices} -drive if=none,file=$IMG,format=raw,id=stick$id -device usb-storage,bus=xhci.0,drive=stick$id"
+    id=$((id+1))
+done
+
 timeout --foreground 10m \
-        "$qemu" "${archopts[@]}" -m $MEM \
+        "$qemu" "${archopts[@]}" -m 512m \
         -kernel "$KERNEL" -initrd "$INITRD" \
         -append "$CMDLINE" \
-        -drive if=none,file="$IMAGE",format=raw,id=stick \
-        -device nec-usb-xhci,id=xhci \
-        -device usb-storage,bus=xhci.0,drive=stick,serial=installmedia \
+        -device nec-usb-xhci,id=xhci $devices \
         -nographic -monitor none | tr -d '\r' | tee qemu-output.txt
 
 rm -rf $OUTPUT
@@ -48,6 +50,11 @@ mkdir $OUTPUT
 set -x
 # Parse the output of qemu for things marked up by the "o" shell
 # function in /sbin/init.
+grep -e '^--FILE .* FILE--$' qemu-output.txt |
+    while read LINE; do
+        filename=$(echo $LINE | sed -e 's/--FILE \(.*\) FILE--.*/\1/')
+        touch "$OUTPUT/$filename"
+    done
 grep -e '^--OUT .* BEGIN-- .* --END--$' qemu-output.txt |
     while read LINE; do
         filename=$(echo $LINE | sed -e 's/--OUT \(.*\) BEGIN--.*/\1/')

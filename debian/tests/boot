@@ -269,65 +269,77 @@ test_no_persistence () {
     fi
 }
 
-test_toram () {
-    echo "### toram has /cdrom on a tmpfs and allows /dev/sda to be ejected"
+test_todisk () {
+    echo "### todisk does not mount any part of the boot media"
+    # We test todisk rather than toram because the latter requires
+    # more RAM that the default autopkgtest runner has.
 
     ./debian/tests/prep-image image.img '
 o cdrom-fstype.txt findmnt -no fstype /cdrom
-eject /dev/disk/by-id/usb-*installmedia-0\:0
-o eject-result.txt echo $?
+dev=$(readlink -f /dev/disk/by-label/rootfs)
+dev=${dev%%[0-9]*}
+# lsblk -no mountpoints $dev will output a line for each partition of $dev
+# use grep . to filter out the empty lines
+lsblk -no mountpoint $dev | grep . > mountpoints.txt
+o mountpoints.txt cat mountpoints.txt
 touch /hello
 '
 
     expand_image image.img
 
+    # Create a disk image with a partition to use as a todisk target
+    truncate -s1G image2.img
+    parted --script --align optimal "image2.img" -- mklabel gpt mkpart primary ext4 1MiB -2048s
+    dev="$(setup_image image2.img)"
+    mkfs -t ext4 -L scratch -q "${dev}p1"
+    cleanup_mounts_and_devices
+
     partsbefore=$(partcount image.img)
 
-    # toram suppresses the default log/crash file persistence
+    # todisk suppresses the default log/crash file persistence
 
-    run image.img "toram" mem=2G
+    run image.img "todisk=/dev/disk/by-label/scratch" image="image2.img"
 
     partsafter=$(partcount image.img)
     if [ $partsafter -ne $partsbefore ]; then
-            echo "toram did not suppress creation of partition"
+            echo "todisk did not suppress creation of partition"
             exit 1
     fi
 
-    if [ ! -e result/cdrom-fstype.txt ] || [ ! -e result/eject-result.txt ]; then
-        echo "test did not produce expected file"
+    check_files_exist result cdrom-fstype.txt mountpoints.txt
+
+    if [ `cat result/cdrom-fstype.txt` != ext4 ]; then
+        echo "/cdrom not ext4 with todisk"
         exit 1
     fi
 
-    if [ `cat result/cdrom-fstype.txt` != tmpfs ]; then
-        echo "/cdrom not tmpfs with toram"
+    if [ `cat result/mountpoints.txt` != '' ]; then
+        echo "install media still mounted"
         exit 1
     fi
 
-    if [ `cat result/eject-result.txt` != "0" ]; then
-        echo "could not eject boot media"
-        exit 1
-    fi
-
-    # but explicit persistence is still honoured
-
-    dev="$(setup_image image.img)"
-    maxend=$(sfdisk $dev -l -q -o end | tail -n +2 | sort -n | tail -n1)
-    start=$(((maxend + 1 + 0xfff) & ~0xfff))
-    echo "start=$start" | sfdisk $dev -a
-    mkfs.ext4 -L "casper-rw" -F "${dev}p$((partsafter+1))"
+    # Create a disk image with a partition to use as a todisk target
+    # (again) but also a casper-rw partition.
+    rm image2.img
+    truncate -s2G image2.img
+    parted --script --align optimal "image2.img" -- mklabel gpt mkpart primary ext4 1MiB 1GiB mkpart primary ext4 1GiB -2048s
+    dev="$(setup_image image2.img)"
+    mkfs -t ext4 -L scratch -q "${dev}p1"
+    mkfs -t ext4 -L casper-rw -q "${dev}p2"
     cleanup_mounts_and_devices
 
-    run image.img "persistent toram" mem=2G
+    # explicit persistence is still honoured
 
-    partsafter=$(partcount image.img)
-    dev="$(setup_image image.img)"
-    do_mount "${dev}p${partsafter}" mnt
+    run image.img "persistent todisk=/dev/disk/by-label/scratch" image="image2.img"
+
+    dev="$(setup_image image2.img)"
+    do_mount "${dev}p2" mnt
     check_files_exist mnt upper/hello
 }
 
 TESTS="test_basic test_auto_log_persistence test_clean_log_directory_each_boot
        test_explicit_persistence test_implicit_then_explicit_persistence
-       test_no_persistence test_toram"
+       test_no_persistence test_todisk"
 
 for f in $TESTS; do
     eval $f

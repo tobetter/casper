@@ -34,6 +34,7 @@ set -x
 o () {
   f=$1
   shift
+  echo '--FILE '"${f}"' FILE--'
   eval "$@" | sed -e 's/^/--OUT '"${f}"' BEGIN-- /g' -e 's/$/ --END--/g'
 }
 EOF
@@ -52,7 +53,7 @@ truncate -s 1G "$IMAGE"
 parted --script --align optimal "$IMAGE" -- mklabel gpt mkpart primary ext4 1MiB -2048s
 
 dev="$(losetup -Pf --show "$IMAGE")"
-mke2fs -q "${dev}p1"
+mke2fs -L rootfs -q "${dev}p1"
 mkdir -p tmp/mnt
 mount "${dev}p1" tmp/mnt
 mkdir tmp/mnt/casper

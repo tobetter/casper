@@ -1,3 +1,10 @@
+casper (1.434) focal; urgency=medium
+
+  * Only netboot with url=*.iso too (the inverse fix of the previous
+    upload, ie. desktop preseed without url.iso netboot)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 04 Dec 2019 15:36:46 +0000
+
 casper (1.433) focal; urgency=medium
 
   * Support preseed/url= key in addition to url= key in preseed script.

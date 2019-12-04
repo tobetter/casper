@@ -48,7 +48,7 @@ parse_cmdline() {
                     STATICIP="frommedia"
                 fi
                 export STATICIP ;;
-            url=*)
+            url=*.iso)
                 export NETBOOT=url
                 export URL="${x#url=}" ;;
             uuid=*)

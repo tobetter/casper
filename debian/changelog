@@ -1,3 +1,10 @@
+casper (1.435) focal; urgency=medium
+
+  * Kernel team says, 512M is not enough to boot v5.4 kernel. Bump to 768M
+    in the autopkgtest.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 11 Dec 2019 12:47:46 +0000
+
 casper (1.434) focal; urgency=medium
 
   * Only netboot with url=*.iso too (the inverse fix of the previous

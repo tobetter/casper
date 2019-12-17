@@ -1,3 +1,10 @@
+casper (1.436) focal; urgency=medium
+
+  * Configure pollinate, if installed, in the live session to include image
+    serial in the user agent. (LP: #1853912)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Wed, 18 Dec 2019 09:53:24 +1300
+
 casper (1.435) focal; urgency=medium
 
   * Kernel team says, 512M is not enough to boot v5.4 kernel. Bump to 768M

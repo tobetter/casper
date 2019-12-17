@@ -56,6 +56,9 @@ dev="$(losetup -Pf --show "$IMAGE")"
 mke2fs -L rootfs -q "${dev}p1"
 mkdir -p tmp/mnt
 mount "${dev}p1" tmp/mnt
+if [ -n "${3-}" ]; then
+    (cd tmp/mnt; eval "$3")
+fi
 mkdir tmp/mnt/casper
 cp images/root.squashfs tmp/mnt/casper/0_root.squashfs
 cp tmp/overlay.squashfs tmp/mnt/casper/1_overlay.squashfs

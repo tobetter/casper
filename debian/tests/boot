@@ -118,9 +118,15 @@ D=$(date -uIdate)
 test_basic () {
     echo "### Running basic test"
 
-    ./debian/tests/prep-image image.img "o lsblk.txt lsblk"
+    ./debian/tests/prep-image image.img "
+o lsblk.txt lsblk
+o add-user-agent.txt cat /etc/pollinate/add-user-agent" "
+mkdir -p .disk
+echo -n 'Ubuntu-Server 19.10 \"Eoan Ermine\" - Alpha amd64 (20190829)' > .disk/info
+"
     run image.img ""
     grep -q /rofs result/lsblk.txt
+    grep -q '^live/20190829$' result/add-user-agent.txt
 }
 
 test_auto_log_persistence () {

@@ -1,3 +1,9 @@
+casper (1.438) focal; urgency=medium
+
+  * No change rebuild for the new libplymouth soname
+
+ -- Sebastien Bacher <seb128@debian.org>  Fri, 10 Jan 2020 13:38:11 +0100
+
 casper (1.437) focal; urgency=medium
 
   * Drop bebroken boot time option, and stop working around the broken

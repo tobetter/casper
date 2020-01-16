@@ -1,3 +1,11 @@
+casper (1.394.1) bionic; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Configure pollinate, if installed, in the live session to include image
+    serial in the user agent. (LP: #1853912)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Thu, 16 Jan 2020 10:39:32 +0000
+
 casper (1.394) bionic; urgency=medium
 
   * Echo a fallback message to nudge users to reboot, in the case when

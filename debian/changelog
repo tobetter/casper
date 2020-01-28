@@ -1,3 +1,15 @@
+casper (1.394.3) bionic; urgency=medium
+
+  * Cherrypick from eoan: Add dependency on finalrd for reliable
+    live-session shutdown. Casper setup live systems do have layering
+    violations (/ actually depends on /cdrom) and it appears that
+    (although masked) the system manages to rip it out, resulting in
+    filesystem errors preventing completing the shutdown. That's where
+    pivot to finalrd comes in, to save the day and blast the running
+    system into oblivion and complete the shutdown. LP: #1840122
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 28 Jan 2020 11:09:52 +0000
+
 casper (1.394.2) bionic; urgency=medium
 
   * Add +x bit to scripts/casper-bottom/57pollinate. 

@@ -1,3 +1,9 @@
+casper (1.438build1) focal; urgency=medium
+
+  * No-change rebuild with fixed binutils on arm64.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 08 Feb 2020 10:56:43 +0000
+
 casper (1.438) focal; urgency=medium
 
   * No change rebuild for the new libplymouth soname

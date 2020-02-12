@@ -9,7 +9,7 @@ LIVE_MEDIA_PATH=casper
 LAYERFS_PATH=""
 [ -f /conf/uuid.conf ] && UUID="$(cat /conf/uuid.conf)"
 
-root_persistence="casper-rw"
+root_persistence="writable"
 home_persistence="home-rw"
 root_snapshot_label="casper-sn"
 home_snapshot_label="home-sn"
@@ -724,6 +724,10 @@ mountroot() {
     tailpid="$!"
 
     parse_cmdline
+
+    if [ ! -e "/dev/disk/by-label/${root_persistence}" ] && [ -e "/dev/disk/by-label/casper-rw" ]; then
+        root_persistence=casper-rw
+    fi
 
     # Configure networking here to cover both netboot & static configs
     # Nothing in live system can parse ip= vlan= property

@@ -256,7 +256,7 @@ find_cow_device() {
 }
 
 # find_or_create_persistent_partition $dev looks for a partition with the
-# label $root_persistence (i.e. casper-rw). If it does not find one, and there
+# label $root_persistence (i.e. writable). If it does not find one, and there
 # is at least 100MiB space on $dev, it creates one there.
 find_or_create_persistent_partition () {
     local DEVICE newpartno maxend start sectorsize size

@@ -149,13 +149,62 @@ test_auto_log_persistence () {
     dev="$(setup_image image.img)"
     lsblk "${dev}p${partsafter}"
     label=$(lsblk -no label "${dev}p${partsafter}")
-    if [ "$label" != casper-rw ]; then
+    if [ "$label" != writable ]; then
             echo "created filesystem does not have correct label"
             exit 1
     fi
 
     do_mount "${dev}p${partsafter}" mnt
     check_files_exist mnt install-logs-$D.0/log/hello install-logs-$D.0/crash/report.crash
+}
+
+test_uses_casper_rw_partition () {
+    echo "### casper will use an existing casper-rw filesystem even though"
+    echo "### it creates filesystems with the label writable now"
+
+    ./debian/tests/prep-image image.img "touch /var/log/hello"
+
+    expand_image image.img
+    parts=$(partcount image.img)
+    casperrwpart=$((parts + 1))
+    dev="$(setup_image image.img)"
+    maxend=$(sfdisk $dev -l -q -o end | tail -n +2 | sort -n | tail -n1)
+    start=$(((maxend + 1 + 0xfff) & ~0xfff))
+    echo "start=$start,size=100MiB" | sfdisk $dev -a
+    mkfs.ext4 -L "casper-rw" -F "${dev}p${casperrwpart}"
+    cleanup_mounts_and_devices
+
+    run image.img ""
+
+    if [ "$(partcount image.img)" -ne $casperrwpart ]; then
+       echo "casper created partition even though casper-rw was there"
+       exit 1
+    fi
+
+    dev="$(setup_image image.img)"
+    do_mount "${dev}p${casperrwpart}" mnt
+    check_files_exist mnt install-logs-$D.0/log/hello
+    rm -rf mnt/*
+    cleanup_mounts_and_devices
+
+    dev="$(setup_image image.img)"
+    maxend=$(sfdisk $dev -l -q -o end | tail -n +2 | sort -n | tail -n1)
+    writablepart=$((parts + 2))
+    start=$(((maxend + 1 + 0xfff) & ~0xfff))
+    echo "start=$start,size=100MiB" | sfdisk $dev -a
+    mkfs.ext4 -L "writable" -F "${dev}p${writablepart}"
+    cleanup_mounts_and_devices
+
+    run image.img ""
+
+    dev="$(setup_image image.img)"
+    do_mount "${dev}p${casperrwpart}" mnt1
+    if [ "$(ls mnt | wc -l)" -ne "0" ]; then
+        echo "files created in casper-rw when writable was present"
+        exit 1
+    fi
+    do_mount "${dev}p${writablepart}" mnt2
+    check_files_exist mnt2 install-logs-$D.0/log/hello
 }
 
 test_clean_log_directory_each_boot () {
@@ -261,7 +310,7 @@ test_no_persistence () {
     maxend=$(sfdisk $dev -l -q -o end | tail -n +2 | sort -n | tail -n1)
     start=$(((maxend + 1 + 0xfff) & ~0xfff))
     echo "start=$start" | sfdisk $dev -a
-    mkfs.ext4 -L "casper-rw" -F "${dev}p$((partsafter+1))"
+    mkfs.ext4 -L "writable" -F "${dev}p$((partsafter+1))"
     cleanup_mounts_and_devices
 
     run image.img "nopersistent"
@@ -270,7 +319,7 @@ test_no_persistence () {
     dev="$(setup_image image.img)"
     do_mount "${dev}p${partsafter}" mnt
     if [ -e install-logs-$D.0/log/hello ]; then
-        echo "nopersistent did not suppress use of casper-rw partition"
+        echo "nopersistent did not suppress use of writable partition"
         exit 1
     fi
 }
@@ -325,13 +374,13 @@ touch /hello
     fi
 
     # Create a disk image with a partition to use as a todisk target
-    # (again) but also a casper-rw partition.
+    # (again) but also a writable partition.
     rm image2.img
     truncate -s2G image2.img
     parted --script --align optimal "image2.img" -- mklabel gpt mkpart primary ext4 1MiB 1GiB mkpart primary ext4 1GiB -2048s
     dev="$(setup_image image2.img)"
     mkfs -t ext4 -L scratch -q "${dev}p1"
-    mkfs -t ext4 -L casper-rw -q "${dev}p2"
+    mkfs -t ext4 -L writable -q "${dev}p2"
     cleanup_mounts_and_devices
 
     # explicit persistence is still honoured
@@ -345,7 +394,7 @@ touch /hello
 
 TESTS="test_basic test_auto_log_persistence test_clean_log_directory_each_boot
        test_explicit_persistence test_implicit_then_explicit_persistence
-       test_no_persistence test_todisk"
+       test_no_persistence test_todisk test_uses_casper_rw_partition"
 
 for f in $TESTS; do
     eval $f

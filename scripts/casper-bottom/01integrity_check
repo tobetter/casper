@@ -15,8 +15,4 @@ prereqs)
        ;;
 esac
 
-if grep -q integrity-check /proc/cmdline; then
-	casper-md5check /cdrom /cdrom/md5sum.txt < /dev/tty1 > /dev/tty1
-	reboot
-	while :; do sleep 60; done
-fi
+casper-md5check /cdrom /cdrom/md5sum.txt < /dev/tty1 > /dev/tty1

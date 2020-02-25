@@ -102,6 +102,15 @@ void plymouth_failure(ply_boot_client_t *client, char *format, ...) {
   free(s);
 }
 
+void plymouth_pause(ply_boot_client_t *client) {
+  if (got_plymouth) {
+    ply_boot_client_tell_daemon_to_progress_pause (client,
+                                                   plymouth_response,
+                                                   plymouth_response, NULL);
+    ply_event_loop_process_pending_events(ply_event_loop);
+  }
+}
+
 void plymouth_text(ply_boot_client_t *client, char *format, ...) {
   char *s;
   va_list argp;
@@ -201,7 +210,7 @@ void plymouth_progress(ply_boot_client_t *client, int progress) {
   prevprogress = progress;
 
   if (got_plymouth) {
-    asprintf(&s, "md5check:verifying:%d", progress);
+    asprintf(&s, "fsck:md5sums:%d", progress);
     ply_boot_client_update_daemon(client, s, plymouth_response,
                                   plymouth_response, NULL);
     ply_event_loop_process_pending_events(ply_event_loop);
@@ -343,15 +352,14 @@ int main(int argc, char **argv) {
     free(checkfile);
   }
   fclose(md5_file);
+  plymouth_pause(client);
   if (failed) {
     plymouth_urgent(client, "Check finished: errors found in %d files!", failed);
+    plymouth_prompt(client, "Press any key to continue booting. You might encounter errors.");
   } else {
     plymouth_urgent(client, "Check finished: no errors found");
   }
 
-  plymouth_prompt(client, "Press any key to reboot your system");
-
-  reboot(LINUX_REBOOT_CMD_RESTART);
   return 0;
   
 }

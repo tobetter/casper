@@ -1,3 +1,12 @@
+casper (1.440) focal; urgency=medium
+
+  * casper-md5check:
+    + Use fsck progress text, whilst verifying the disk.
+    + Do not reboot, but simply continue booting after the integrity check.
+    + Perform integrity check on every boot (TODO allow skipping the check)
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 25 Feb 2020 23:32:22 +0000
+
 casper (1.439) focal; urgency=medium
 
   * Create partitions with label "writable" rather than "casper-rw" (but still

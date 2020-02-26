@@ -1,3 +1,18 @@
+casper (1.441) focal; urgency=medium
+
+  * casper-md5check:
+    + flush pending events for actually fluid progress updates
+    + drop reboot includes
+    + watch for s keystroke to skip checks
+    + always finish on 100% update, to remove the progress message
+    + always drop the keystrokes message
+    + always display the result of the checks, with a slight delay
+    + make the failed message linger for longer
+    + clear all messages before quiting
+    + ignore unused-result warnings during compilation
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 26 Feb 2020 14:35:46 +0000
+
 casper (1.440) focal; urgency=medium
 
   * casper-md5check:

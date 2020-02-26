@@ -21,8 +21,6 @@
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/reboot.h>
-#include <linux/reboot.h>
 #include <string.h>
 #include <errno.h>
 #include <stdarg.h>
@@ -43,9 +41,12 @@
 
 static int verbose = 1;
 static int got_plymouth = 0;
+static int skip_and_exit = 0;
 static ply_event_loop_t *ply_event_loop = NULL;
 
 int set_nocanonical_tty(int fd);
+
+void plymouth_keystruck(void *user_data, const char *keys, ply_boot_client_t *client);
 
 void parse_cmdline(void) {
   FILE *cmdline = fopen("/proc/cmdline", "r");
@@ -95,7 +96,7 @@ void plymouth_failure(ply_boot_client_t *client, char *format, ...) {
     ply_boot_client_tell_daemon_to_display_message(client, s,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-    ply_event_loop_process_pending_events(ply_event_loop);
+    ply_boot_client_flush(client);
   } else if (verbose)
     printf("%s\n", s);
 
@@ -107,7 +108,7 @@ void plymouth_pause(ply_boot_client_t *client) {
     ply_boot_client_tell_daemon_to_progress_pause (client,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-    ply_event_loop_process_pending_events(ply_event_loop);
+    ply_boot_client_flush(client);
   }
 }
 
@@ -123,7 +124,7 @@ void plymouth_text(ply_boot_client_t *client, char *format, ...) {
     ply_boot_client_tell_daemon_to_display_message(client, s,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-    ply_event_loop_process_pending_events(ply_event_loop);
+    ply_boot_client_flush(client);
   } else if (verbose) {
     printf("%s...", s);
     fflush(stdout);
@@ -132,7 +133,7 @@ void plymouth_text(ply_boot_client_t *client, char *format, ...) {
   free(s);
 }
 
-void plymouth_prompt(ply_boot_client_t *client, char *format, ...) {
+void plymouth_keystrokes(ply_boot_client_t *client, char* keystrokes, char *format, ...) {
   char *s, *s1;
   va_list argp;
 
@@ -145,19 +146,10 @@ void plymouth_prompt(ply_boot_client_t *client, char *format, ...) {
     ply_boot_client_tell_daemon_to_display_message(client, s1,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-
     ply_boot_client_ask_daemon_to_watch_for_keystroke(client, NULL,
-                                                      plymouth_answer,
-                                                      (ply_boot_client_response_handler_t)plymouth_answer, NULL);
-    ply_event_loop_run(ply_event_loop);
-    ply_boot_client_attach_to_event_loop(client, ply_event_loop);
-    ply_boot_client_tell_daemon_to_quit(client, 1, plymouth_response,
-                                        plymouth_response, NULL);
-    ply_event_loop_run(ply_event_loop);
-  } else {
-    printf("%s\n", s);
-    set_nocanonical_tty(0);
-    getchar();
+                                                      plymouth_keystruck,
+                                                      plymouth_response, NULL);
+    ply_boot_client_flush(client);
   }
   free(s);
 }
@@ -174,7 +166,7 @@ void plymouth_urgent(ply_boot_client_t *client, char *format, ...) {
     ply_boot_client_tell_daemon_to_display_message(client, s,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-    ply_event_loop_process_pending_events(ply_event_loop);
+    ply_boot_client_flush(client);
   } else
     printf("%s\n", s);
 
@@ -194,7 +186,7 @@ void plymouth_success(ply_boot_client_t *client, char *format, ...) {
     ply_boot_client_tell_daemon_to_display_message(client, s,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-    ply_event_loop_process_pending_events(ply_event_loop);
+    ply_boot_client_flush(client);
   } else if (verbose)
     printf("%s\n", s);
 
@@ -213,12 +205,25 @@ void plymouth_progress(ply_boot_client_t *client, int progress) {
     asprintf(&s, "fsck:md5sums:%d", progress);
     ply_boot_client_update_daemon(client, s, plymouth_response,
                                   plymouth_response, NULL);
-    ply_event_loop_process_pending_events(ply_event_loop);
+    ply_boot_client_flush(client);
     free(s);
   } else {
     printf("%d%%...", progress);
     fflush(stdout);
   }
+}
+
+void plymouth_keystruck(void *user_data, const char *keys,
+                        ply_boot_client_t *client)
+{
+        if (! keys)
+                return;
+        switch (keys[0]) {
+        case 's':
+        case 'S':
+                skip_and_exit = 1;
+                break;
+        }
 }
 
 int set_nocanonical_tty(int fd) {
@@ -288,6 +293,7 @@ int main(int argc, char **argv) {
 
   plymouth_progress(client, 0);
   plymouth_urgent(client, "Checking integrity, this may take some time");
+  plymouth_keystrokes(client, "Ss", "Continue to wait, or Press S to skip checking integrity");
   md5_file = fopen(argv[2], "r");
   if (!md5_file) {
           perror("fopen md5_file");
@@ -312,7 +318,7 @@ int main(int argc, char **argv) {
     char buf[BUFSIZ];
     ssize_t rsize;
     int i;
-    
+
     if (!is_md5sum(checksum))
       continue;
 
@@ -334,6 +340,9 @@ int main(int argc, char **argv) {
 
       md5_append(&state, (const md5_byte_t *)buf, rsize);
       rsize = read(check_fd, buf, sizeof(buf));
+      if (skip_and_exit) {
+              break;
+      }
     }
     
     close(check_fd);
@@ -350,16 +359,23 @@ int main(int argc, char **argv) {
     }
     free(checksum);
     free(checkfile);
+    if (skip_and_exit) {
+            break;
+    }
   }
   fclose(md5_file);
-  plymouth_pause(client);
-  if (failed) {
-    plymouth_urgent(client, "Check finished: errors found in %d files!", failed);
-    plymouth_prompt(client, "Press any key to continue booting. You might encounter errors.");
+  plymouth_text(client, "keys:");
+  plymouth_progress(client, 100);
+  plymouth_text(client, "");
+  if (skip_and_exit) {
+    plymouth_urgent(client, "Check skipped.");
+  } else if (failed) {
+    plymouth_urgent(client, "Check finished: errors found in %d files! You might encounter errors.", failed);
+    sleep(5);
   } else {
-    plymouth_urgent(client, "Check finished: no errors found");
+    plymouth_urgent(client, "Check finished: no errors found.");
   }
-
+  sleep(2);
+  plymouth_urgent(client, "");
   return 0;
-  
 }

@@ -1,3 +1,11 @@
+casper (1.442) focal; urgency=medium
+
+  * casper-md5check:
+    + change progress messages to fsckd compatible ones
+    + use Ctrl+C to cancel them
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 30 Mar 2020 11:26:12 +0100
+
 casper (1.441) focal; urgency=medium
 
   * casper-md5check:

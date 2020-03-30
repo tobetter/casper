@@ -134,7 +134,7 @@ void plymouth_text(ply_boot_client_t *client, char *format, ...) {
 }
 
 void plymouth_keystrokes(ply_boot_client_t *client, char* keystrokes, char *format, ...) {
-  char *s, *s1;
+  char *s;
   va_list argp;
 
   va_start(argp, format);
@@ -142,11 +142,10 @@ void plymouth_keystrokes(ply_boot_client_t *client, char* keystrokes, char *form
   va_end(argp);
 
   if (got_plymouth) {
-    asprintf(&s1, "keys:%s", s);
-    ply_boot_client_tell_daemon_to_display_message(client, s1,
+    ply_boot_client_tell_daemon_to_display_message(client, s,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
-    ply_boot_client_ask_daemon_to_watch_for_keystroke(client, NULL,
+    ply_boot_client_ask_daemon_to_watch_for_keystroke(client, keystrokes,
                                                       plymouth_keystruck,
                                                       plymouth_response, NULL);
     ply_boot_client_flush(client);
@@ -202,7 +201,7 @@ void plymouth_progress(ply_boot_client_t *client, int progress) {
   prevprogress = progress;
 
   if (got_plymouth) {
-    asprintf(&s, "fsck:md5sums:%d", progress);
+    asprintf(&s, "fsckd:1:%d:Checking in progress on 1 disk (%d%% complete)", progress, progress);
     ply_boot_client_update_daemon(client, s, plymouth_response,
                                   plymouth_response, NULL);
     ply_boot_client_flush(client);
@@ -218,12 +217,7 @@ void plymouth_keystruck(void *user_data, const char *keys,
 {
         if (! keys)
                 return;
-        switch (keys[0]) {
-        case 's':
-        case 'S':
-                skip_and_exit = 1;
-                break;
-        }
+        skip_and_exit = 1;
 }
 
 int set_nocanonical_tty(int fd) {
@@ -293,7 +287,7 @@ int main(int argc, char **argv) {
 
   plymouth_progress(client, 0);
   plymouth_urgent(client, "Checking integrity, this may take some time");
-  plymouth_keystrokes(client, "Ss", "Continue to wait, or Press S to skip checking integrity");
+  plymouth_keystrokes(client, "\x03", "fsckd-cancel-msg:Press Ctrl+C to cancel all filesystem checks in progress");
   md5_file = fopen(argv[2], "r");
   if (!md5_file) {
           perror("fopen md5_file");

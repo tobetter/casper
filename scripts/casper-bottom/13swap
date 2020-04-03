@@ -18,6 +18,12 @@ esac
 
 . /scripts/casper-functions
 
+case "$USERNAME" in
+    ubuntu-server)
+        exit 0
+        ;;
+esac
+
 log_begin_msg "$DESCRIPTION"
 
 devices=""

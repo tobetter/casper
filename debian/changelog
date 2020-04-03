@@ -1,3 +1,17 @@
+casper (1.443) focal; urgency=medium
+
+  * Make fsckd under spinner/logo themes produce consistent output
+  * Make plymouth-less progress output less bad
+  * Use theme-specific keys: or fsckd-cancel-msg: for Ctrl+C message LP:
+    #1870018
+  * Add fsck.mode=skip sensitivity to casper-md5check
+  * ubuntu-server: skip mounting swap (as hacked by livecd-rootfs currently)
+  * Leave fsck result as a json /run/casper-md5check.json file.
+  * ubuntu-server: adapt runtime netplan into cloud-config cloud.cfg
+  * Fix cmdline parsing, it was always broken
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 03 Apr 2020 13:04:38 +0100
+
 casper (1.442) focal; urgency=medium
 
   * casper-md5check:

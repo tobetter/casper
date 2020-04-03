@@ -39,9 +39,16 @@
 
 #define MD5_LEN 16
 
+#define RESULT_FILE "/run/casper-md5check.json"
+#define BROKEN_FILE "  \"checksum_missmatch\": [ "
+#define RESULT_PASS "  \"result\": \"pass\"\n}\n"
+#define RESULT_FAIL "  \"result\": \"fail\"\n}\n"
+#define RESULT_SKIP "  \"result\": \"skip\"\n}\n"
+
 static int verbose = 1;
 static int got_plymouth = 0;
 static int skip_and_exit = 0;
+static int spinner_theme = 0;
 static ply_event_loop_t *ply_event_loop = NULL;
 
 int set_nocanonical_tty(int fd);
@@ -51,21 +58,29 @@ void plymouth_keystruck(void *user_data, const char *keys, ply_boot_client_t *cl
 void parse_cmdline(void) {
   FILE *cmdline = fopen("/proc/cmdline", "r");
   char buf[1024];
-  size_t len;
   char *bufp = buf, *tok;
+  char *theme;
 
   if (!cmdline)
     return;
 
-  len = fread(buf, 1023, 1, cmdline);
-  buf[len] = '\0';
+  fread(buf, 1023, 1, cmdline);
+  buf[strlen(buf)] = '\0';
 
   while ((tok = strsep(&bufp, " ")) != NULL) {
     if (strncmp(tok, "quiet", 5) == 0)
       verbose = 0;
+    if (strncmp(tok, "fsck.mode=skip", sizeof("fsck.mode=skip")) == 0)
+      skip_and_exit = 1;
   }
 
   fclose(cmdline);
+
+  theme = realpath("/usr/share/plymouth/themes/default.plymouth", NULL);
+  if (strcmp(theme, "/usr/share/plymouth/themes/bgrt/bgrt.plymouth") == 0)
+    spinner_theme = 1;
+  if (theme != NULL)
+    free(theme);
 }
 
 void plymouth_disconnected(void *user_data, ply_boot_client_t *client) {
@@ -134,7 +149,7 @@ void plymouth_text(ply_boot_client_t *client, char *format, ...) {
 }
 
 void plymouth_keystrokes(ply_boot_client_t *client, char* keystrokes, char *format, ...) {
-  char *s;
+  char *s, *s1;
   va_list argp;
 
   va_start(argp, format);
@@ -142,7 +157,11 @@ void plymouth_keystrokes(ply_boot_client_t *client, char* keystrokes, char *form
   va_end(argp);
 
   if (got_plymouth) {
-    ply_boot_client_tell_daemon_to_display_message(client, s,
+    if (spinner_theme)
+            asprintf(&s1, "fsckd-cancel-msg:%s", s);
+    else
+            asprintf(&s1, "keys:%s", s);
+    ply_boot_client_tell_daemon_to_display_message(client, s1,
                                                    plymouth_response,
                                                    plymouth_response, NULL);
     ply_boot_client_ask_daemon_to_watch_for_keystroke(client, keystrokes,
@@ -192,7 +211,7 @@ void plymouth_success(ply_boot_client_t *client, char *format, ...) {
   free(s);
 }
 
-void plymouth_progress(ply_boot_client_t *client, int progress) {
+void plymouth_progress(ply_boot_client_t *client, int progress, char *checkfile) {
   static int prevprogress = -1;
   char *s;
 
@@ -201,13 +220,23 @@ void plymouth_progress(ply_boot_client_t *client, int progress) {
   prevprogress = progress;
 
   if (got_plymouth) {
-    asprintf(&s, "fsckd:1:%d:Checking in progress on 1 disk (%d%% complete)", progress, progress);
+    if (checkfile) {
+      if (spinner_theme)
+        asprintf(&s, "fsckd:1:%d:Checking %s", progress, checkfile);
+      else
+        asprintf(&s, "fsck:md5sums:%d", progress);
+    } else {
+      if (spinner_theme)
+        asprintf(&s, "fsckd:1:%d: ", progress);
+      else
+        asprintf(&s, "fsck:md5sums:%d", progress);
+    }
     ply_boot_client_update_daemon(client, s, plymouth_response,
                                   plymouth_response, NULL);
     ply_boot_client_flush(client);
     free(s);
   } else {
-    printf("%d%%...", progress);
+    printf(".");
     fflush(stdout);
   }
 }
@@ -245,8 +274,10 @@ int main(int argc, char **argv) {
   
   int check_fd;
   int failed = 0;
+  char *result = RESULT_SKIP;
   
   FILE *md5_file;
+  FILE *result_file;
   md5_state_t state;
   md5_byte_t digest[MD5_LEN];
   char hex_output[MD5_LEN * 2 + 1];
@@ -285,9 +316,20 @@ int main(int argc, char **argv) {
     got_plymouth = 1;
 
 
-  plymouth_progress(client, 0);
+  result_file = fopen(RESULT_FILE, "w");
+  if (!result_file) {
+          perror("fopen result_file");
+          exit(1);
+  }
+  fprintf(result_file, "{\n");
+
+  plymouth_progress(client, 0, NULL);
+
+  if (skip_and_exit)
+    goto cmdline_skip;
+
   plymouth_urgent(client, "Checking integrity, this may take some time");
-  plymouth_keystrokes(client, "\x03", "fsckd-cancel-msg:Press Ctrl+C to cancel all filesystem checks in progress");
+  plymouth_keystrokes(client, "\x03", "Press Ctrl+C to cancel all filesystem checks in progress");
   md5_file = fopen(argv[2], "r");
   if (!md5_file) {
           perror("fopen md5_file");
@@ -308,6 +350,7 @@ int main(int argc, char **argv) {
   }
 
   rewind(md5_file);
+  fprintf(result_file, BROKEN_FILE);
   while (fscanf(md5_file, "%ms %m[^\n]", &checksum, &checkfile) == 2) {
     char buf[BUFSIZ];
     ssize_t rsize;
@@ -330,7 +373,7 @@ int main(int argc, char **argv) {
 
     while (rsize > 0) {
       csize += rsize;
-      plymouth_progress(client, 100*((long double)csize)/tsize);
+      plymouth_progress(client, 100*((long double)csize)/tsize, checkfile);
 
       md5_append(&state, (const md5_byte_t *)buf, rsize);
       rsize = read(check_fd, buf, sizeof(buf));
@@ -349,6 +392,7 @@ int main(int argc, char **argv) {
       plymouth_success(client, "%s: OK", checkfile);
     } else {
       plymouth_failure(client, "%s: mismatch", checkfile);
+      fprintf(result_file, "\n    \"%s\",", checkfile);
       failed++;
     }
     free(checksum);
@@ -358,17 +402,30 @@ int main(int argc, char **argv) {
     }
   }
   fclose(md5_file);
-  plymouth_text(client, "keys:");
-  plymouth_progress(client, 100);
-  plymouth_text(client, "");
+  fseek(result_file, -1, SEEK_CUR);
+  fprintf(result_file, "\n],\n");
+  if (got_plymouth) {
+    if (spinner_theme)
+      plymouth_text(client, "fsckd-cancel-msg:");
+    else
+      plymouth_text(client, "keys:");
+    plymouth_progress(client, 100, NULL);
+    plymouth_text(client, "");
+  }
+cmdline_skip:
   if (skip_and_exit) {
+    result = RESULT_SKIP;
     plymouth_urgent(client, "Check skipped.");
   } else if (failed) {
+    result = RESULT_FAIL;
     plymouth_urgent(client, "Check finished: errors found in %d files! You might encounter errors.", failed);
     sleep(5);
   } else {
+    result = RESULT_PASS;
     plymouth_urgent(client, "Check finished: no errors found.");
   }
+  fprintf(result_file, "%s", result);
+  fclose(result_file);
   sleep(2);
   plymouth_urgent(client, "");
   return 0;

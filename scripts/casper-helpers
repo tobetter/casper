@@ -255,16 +255,37 @@ find_cow_device() {
     done
 }
 
-# find_or_create_persistent_partition $dev looks for a partition with the
-# label $root_persistence (i.e. writable). If it does not find one, and there
-# is at least 100MiB space on $dev, it creates one there.
+root_persistence=
+
+# The default persistence label in 20.04+ is 'writable' but if there
+# is no filesystem with that label and there is one with the old
+# 'casper-rw' label, we use that instead.
+#
+# We delay checking for the writable/casper-rw partitions for as long
+# as possible as it can take a long time for the block devices to show
+# up.
+root_persistence_label () {
+    if [ -z "$root_persistence" ]; then
+        if [ ! -e "/dev/disk/by-label/writable" ] && [ -e "/dev/disk/by-label/casper-rw" ]; then
+            root_persistence=casper-rw
+        else
+            root_persistence=writable
+        fi
+    fi
+    echo $root_persistence
+}
+
+# find_or_create_persistent_partition $dev looks for a partition with
+# the label $(root_persistence_label) (usually writable). If it does
+# not find one, and there is at least 100MiB space on $dev, it creates
+# one there.
 find_or_create_persistent_partition () {
     local DEVICE newpartno maxend start sectorsize size
     DEVICE=$1
 
     udevadm settle
 
-    if [ -e "/dev/disk/by-label/${root_persistence}" ]; then
+    if [ -e "/dev/disk/by-label/$(root_persistence_label)" ]; then
         return
     fi
     newpartno=$(sfdisk -l $DEVICE -q | wc -l)
@@ -279,7 +300,7 @@ find_or_create_persistent_partition () {
     echo "start=$start" | sfdisk --no-reread -q $DEVICE -a || return
     for d in ${DEVICE}$newpartno ${DEVICE}p$newpartno ${DEVICE}-part$newpartno; do
         if [ -e $d ]; then
-            mkfs.ext4 -q -L "$root_persistence" -F $d
+            mkfs.ext4 -q -L "$(root_persistence_label)" -F $d
             break
         fi
     done

@@ -1,3 +1,11 @@
+casper (1.444) focal; urgency=medium
+
+  * Move check for fallback persistent filesystem label (casper-rw) later as
+    it seems sometimes it takes time for block devices to appear and be
+    processed by udev. (LP: #1863672)
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Tue, 07 Apr 2020 11:43:02 +1200
+
 casper (1.443) focal; urgency=medium
 
   * Make fsckd under spinner/logo themes produce consistent output

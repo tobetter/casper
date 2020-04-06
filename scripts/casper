@@ -9,7 +9,6 @@ LIVE_MEDIA_PATH=casper
 LAYERFS_PATH=""
 [ -f /conf/uuid.conf ] && UUID="$(cat /conf/uuid.conf)"
 
-root_persistence="writable"
 home_persistence="home-rw"
 root_snapshot_label="casper-sn"
 home_snapshot_label="home-sn"
@@ -420,9 +419,9 @@ setup_overlay() {
     cow_fstype="tmpfs"
     cow_mountopt="rw,noatime,mode=755"
 
-    # Looking for "${root_persistence}" device or file
+    # Looking for "$(root_persistence_label)" device or file
     if [ -n "${PERSISTENT}" ]; then
-        cowprobe=$(find_cow_device "${root_persistence}")
+        cowprobe=$(find_cow_device "$(root_persistence_label)")
         if [ -b "${cowprobe}" ]; then
             cowdevice=${cowprobe}
             cow_fstype=$(get_fstype "${cowprobe}")
@@ -725,10 +724,6 @@ mountroot() {
 
     parse_cmdline
 
-    if [ ! -e "/dev/disk/by-label/${root_persistence}" ] && [ -e "/dev/disk/by-label/casper-rw" ]; then
-        root_persistence=casper-rw
-    fi
-
     # Configure networking here to cover both netboot & static configs
     # Nothing in live system can parse ip= vlan= property
     # And we must setup netplan from initramfs
@@ -787,11 +782,11 @@ mountroot() {
 
     mount_images_in_directory "${livefs_root}" "${rootmnt}"
 
-    if [ -z "$PERSISTENT" ] && [ -z "$NOPERSISTENT" ] && [ -e "/dev/disk/by-label/${root_persistence}" ]; then
+    if [ -z "$PERSISTENT" ] && [ -z "$NOPERSISTENT" ] && [ -e "/dev/disk/by-label/$(root_persistence_label)" ]; then
         # If there is a casper-rw filesystem and we're not using it
         # for persistence, use it for logs and crash reports.
         mkdir /log-persistence
-        if mount -w "/dev/disk/by-label/${root_persistence}" /log-persistence; then
+        if mount -w "/dev/disk/by-label/$(root_persistence_label)" /log-persistence; then
             local i=0 d=$(date -uIdate) pdir
             while :; do
                 pdir=/log-persistence/install-logs-$d.$i

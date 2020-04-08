@@ -1,3 +1,10 @@
+casper (1.445) focal; urgency=medium
+
+  * Fix segfault in casper-md5check when plymouth is not installed (i.e.
+    Ubuntu Server).
+
+ -- Michael Hudson-Doyle <michael.hudson@ubuntu.com>  Thu, 09 Apr 2020 10:48:20 +1200
+
 casper (1.444) focal; urgency=medium
 
   * Move check for fallback persistent filesystem label (casper-rw) later as

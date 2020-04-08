@@ -77,10 +77,11 @@ void parse_cmdline(void) {
   fclose(cmdline);
 
   theme = realpath("/usr/share/plymouth/themes/default.plymouth", NULL);
-  if (strcmp(theme, "/usr/share/plymouth/themes/bgrt/bgrt.plymouth") == 0)
-    spinner_theme = 1;
-  if (theme != NULL)
+  if (theme != NULL) {
+    if (strcmp(theme, "/usr/share/plymouth/themes/bgrt/bgrt.plymouth") == 0)
+      spinner_theme = 1;
     free(theme);
+  }
 }
 
 void plymouth_disconnected(void *user_data, ply_boot_client_t *client) {

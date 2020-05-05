@@ -1,3 +1,9 @@
+casper (1.446) groovy; urgency=medium
+
+  * control: add fdisk dependency
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 05 May 2020 19:27:17 +0100
+
 casper (1.445) focal; urgency=medium
 
   * Fix segfault in casper-md5check when plymouth is not installed (i.e.

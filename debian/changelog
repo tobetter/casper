@@ -1,3 +1,21 @@
+casper (1.447) groovy; urgency=medium
+
+  [ Matthieu Clemenceau ]
+  * Updated cmdline options in casper manpage documentation. LP: #1875548
+
+  [ Michael Hudson-Doyle ]
+  * Add interactive network configuration.
+
+  [ Dimitri John Ledkov ]
+  * Fix up interactive network configuration default ISO urls to be more
+    dynamic.
+  * In groovy, live-cds now have ssl support in busybox
+
+  [ Erich Eickmeyer ]
+  * Add Ubuntu Studio Calamares Installer as trusted
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Sat, 23 May 2020 03:57:20 +0100
+
 casper (1.446) groovy; urgency=medium
 
   * control: add fdisk dependency

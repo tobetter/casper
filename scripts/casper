@@ -298,6 +298,126 @@ do_cifsmount() {
     return ${rc}
 }
 
+do_interactive_netmount() {
+    rc=1
+    if [ -x /bin/plymouth ] && plymouth --ping; then
+        plymouth hide-splash
+        sleep 1
+    fi
+    echo "Unable to find a medium container a live file system"
+    echo "Attempt interactive netboot from a URL?"
+    read -p "yes no (default yes): " RET
+    if [ "$RET" = "no" ]; then
+        return ${rc}
+    fi
+
+    # zdev
+    if type lszdev 2>/dev/null 1>/dev/null; then
+        echo "Available qeth devices:"
+        # shellcheck disable=SC2005 disable=SC2046
+        echo $(lszdev qeth --offline --columns id --no-headings | sed 's/:.*//') | fold -s -w 79
+        read -p "zdev to activate (comma separated, optional): " zdev
+        if [ -n "$zdev" ]; then
+            chzdev -e $zdev
+        fi
+    fi
+
+    # dhcp vs static
+    echo "Two methods available for IP configuration:"
+    echo "  * static: for static IP configuration"
+    echo "  * dhcp: for automatic IP configuration"
+    read -p "static dhcp (default 'dhcp'): " proto
+    # Yet support all the things linux kernel does
+    case $proto in
+        static|off|none)
+            proto=none
+            read -p "ip: " ipaddr
+            read -p "gateway: " gateway
+            read -p "dns: " dns
+            ;;
+        dhcp|on|any|"")
+            export IP=dhcp ;;
+        *)
+            echo invalid option ;;
+    esac
+
+    # vlan
+    read -p "vlan id (optional): " vlanid
+
+    # pick interface
+    interfaces=$(ls /sys/class/net | grep -v lo)
+    count=$(echo $interfaces | wc -w)
+    default_device=$(echo ${interfaces} | cut -d " " -f1)
+    if [ "$count" -gt 1 ]; then
+        if [ -n "$vlanid" ] || [ "$proto" = "none" ]; then
+            echo "Available interfaces:"
+            echo $interfaces | fold -s -w 79
+            read -p "device (default $default_device): " DEVICE
+            if [ -z "$DEVICE" ]; then
+                DEVICE=$default_device
+            fi
+        fi
+    fi
+
+    if [ "$proto" = "none" ]; then
+       export IP=:$ipaddr:$gateway:::$DEVICE:$proto:$dns
+    fi
+
+    . /etc/os-release
+    # TODO: not sure how to get flavour information
+    # maybe make livecd-rootfs embed something in the casper initrd?
+    case $PRETTY_NAME in
+        *development*)
+            server_url=http://cdimage.ubuntu.com/ubuntu-server/daily-live/current/$UBUNTU_CODENAME-live-server-$DPKG_ARCH.iso
+            desktop_url=http://cdimage.ubuntu.com/daily-live/current/$UBUNTU_CODENAME-desktop-$DPKG_ARCH.iso
+            ;;
+        *)
+            case $DPKG_ARCH in
+                amd64)
+                    server_url=https://releases.ubuntu.com/$UBUNTU_CODENAME/ubuntu-$VERSION_ID-live-server-$DPKG_ARCH.iso
+                    desktop_url=https://releases.ubuntu.com/$UBUNTU_CODENAME/ubuntu-$VERSION_ID-desktop-$DPKG_ARCH.iso
+                    ;;
+                *)
+                    server_url=http://cdimage.ubuntu.com/releases/$UBUNTU_CODENAME/release/ubuntu-$VERSION_ID-live-server-$DPKG_ARCH.iso
+                    desktop_url=http://cdimage.ubuntu.com/releases/$UBUNTU_CODENAME/release/ubuntu-$VERSION_ID-desktop-$DPKG_ARCH.iso
+                    ;;
+            esac
+            ;;
+    esac
+
+    # Currently only arm64 & amd64 produce desktop images
+    case $DPKG_ARCH in
+        amd64|arm64) ;;
+        *) desktop_url="" ;;
+    esac
+
+    echo " $server_url (default)"
+    [ "$desktop_url" ] && echo " $desktop_url"
+
+    read -p "url: " url
+    if [ -z "$url" ]; then
+        url=$server_url
+    fi
+    read -p "http_proxy (optional): " http_proxy
+    if [ -n "$http_proxy" ]; then
+        export http_proxy=$http_proxy
+    fi
+
+    if [ -n "$vlanid" ]; then
+        export VLAN=$DEVICE.$vlanid:$DEVICE
+        DEVICE=$DEVICE.$vlanid
+        export VLAN=$vlan
+    fi
+
+    echo Configuring networking...
+
+    configure_networking
+
+    export NETBOOT=url
+    export URL=$url
+    do_netmount
+}
+
 do_snap_copy ()
 {
     fromdev="${1}"
@@ -768,6 +888,12 @@ mountroot() {
             sleep 1
             i="$(($i + 1))"
         done
+
+        if [ -z "${livefs_root}" ]; then
+            if do_interactive_netmount ; then
+                livefs_root="${mountpoint}"
+            fi
+        fi
     fi
 
     if [ -z "${livefs_root}" ]; then

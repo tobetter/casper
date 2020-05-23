@@ -81,7 +81,7 @@ RELEASE="$(cut -d' ' -f1-2 /root/cdrom/.disk/info 2>/dev/null | sed 's/-/ /')" |
 if [ "$LTS" = "LTS" ] && [ -n "$RELEASE" ]; then
 	RELEASE="$RELEASE LTS"
 fi
-for file in /usr/share/applications/ubiquity.desktop /usr/share/applications/kde4/ubiquity-kdeui.desktop /usr/share/applications/lubuntu-calamares.desktop; do
+for file in /usr/share/applications/ubiquity.desktop /usr/share/applications/kde4/ubiquity-kdeui.desktop /usr/share/applications/lubuntu-calamares.desktop /usr/share/applications/ubuntustudio-calamares.desktop; do
     if [ -f "/root/$file" ]; then
         sed -i "s/RELEASE/$RELEASE/" "/root$file"
         chroot /root install -d -o $USERNAME -g $USERNAME /home/$USERNAME/Desktop

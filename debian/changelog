@@ -1,3 +1,15 @@
+casper (1.448) groovy; urgency=medium
+
+  * Fix static IP configuration.
+  * mountroot: break out quicker
+  * interactive_netmount: sort interfaces
+  * interactive_netmount: export static IP= after vlan
+  * interactive_netmount: correct VLAN export
+  * Drop exposing /cow tree
+  * Set a sensible netmask
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 27 May 2020 10:38:01 +0100
+
 casper (1.447) groovy; urgency=medium
 
   [ Matthieu Clemenceau ]

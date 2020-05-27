@@ -345,7 +345,7 @@ do_interactive_netmount() {
     read -p "vlan id (optional): " vlanid
 
     # pick interface
-    interfaces=$(ls /sys/class/net | grep -v lo)
+    interfaces=$(ls /sys/class/net | grep -v lo | sort)
     count=$(echo $interfaces | wc -w)
     default_device=$(echo ${interfaces} | cut -d " " -f1)
     if [ "$count" -gt 1 ]; then
@@ -357,10 +357,6 @@ do_interactive_netmount() {
                 DEVICE=$default_device
             fi
         fi
-    fi
-
-    if [ "$proto" = "none" ]; then
-       export IP=:$ipaddr:$gateway:::$DEVICE:$proto:$dns
     fi
 
     . /etc/os-release
@@ -406,7 +402,19 @@ do_interactive_netmount() {
     if [ -n "$vlanid" ]; then
         export VLAN=$DEVICE.$vlanid:$DEVICE
         DEVICE=$DEVICE.$vlanid
-        export VLAN=$vlan
+    fi
+
+    if [ "$proto" = "none" ]; then
+        case $ipaddr in
+            *.*)
+                netmask=255.255.255.0
+                ;;
+            *:*)
+                # I don't think we support static ipv6
+                netmask=
+                ;;
+        esac
+        export IP=$ipaddr::$gateway:$netmask::$DEVICE:$proto:$dns
     fi
 
     echo Configuring networking...
@@ -703,9 +711,6 @@ setup_overlay() {
         mount -o move "${d}" "${rootmnt}/rofs"
         break
     done
-
-    # move /cow such that live-system can poke & debug the overlayfs layers
-    mount -o move /cow "${rootmnt}/cow"
 }
 
 check_dev ()
@@ -883,6 +888,10 @@ mountroot() {
         while [ "$i" -lt 60 ]; do
             livefs_root=$(find_livefs $i)
             if [ "${livefs_root}" ]; then
+                break
+            fi
+            # No more udev events, no more devices, nothing to wait for
+            if udevadm settle --timeout 0 2>/dev/null; then
                 break
             fi
             sleep 1

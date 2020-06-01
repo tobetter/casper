@@ -332,8 +332,16 @@ do_interactive_netmount() {
         static|off|none)
             proto=none
             read -p "ip: " ipaddr
-            read -p "gateway: " gateway
-            read -p "dns: " dns
+            default_gw=${ipaddr%.*}.1
+            read -p "gateway (default $default_gw): " gateway
+            if [ -z "$gateway" ]; then
+                gateway=$default_gw
+            fi
+            default_dns=$gateway
+            read -p "dns (default $default_dns): " dns
+            if [ -z "$dns" ]; then
+                dns=$default_dns
+            fi
             ;;
         dhcp|on|any|"")
             export IP=dhcp ;;
@@ -348,14 +356,14 @@ do_interactive_netmount() {
     interfaces=$(ls /sys/class/net | grep -v lo | sort)
     count=$(echo $interfaces | wc -w)
     default_device=$(echo ${interfaces} | cut -d " " -f1)
-    if [ "$count" -gt 1 ]; then
-        if [ -n "$vlanid" ] || [ "$proto" = "none" ]; then
+    if [ -n "$vlanid" ] || [ "$proto" = "none" ]; then
+        if [ "$count" -gt 1 ]; then
             echo "Available interfaces:"
             echo $interfaces | fold -s -w 79
             read -p "device (default $default_device): " DEVICE
-            if [ -z "$DEVICE" ]; then
-                DEVICE=$default_device
-            fi
+        fi
+        if [ -z "$DEVICE" ]; then
+            DEVICE=$default_device
         fi
     fi
 

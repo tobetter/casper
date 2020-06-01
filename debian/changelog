@@ -1,3 +1,12 @@
+casper (1.449) groovy; urgency=medium
+
+  * interactive_netmount: fix logic setting DEVICE
+  * interactive_netmount: implement default gateway & dns
+  * casper-md5check: drop error about connecting to plymouth
+  * casper-md5check: separate messages in text output mode
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Mon, 01 Jun 2020 10:34:28 +0100
+
 casper (1.448) groovy; urgency=medium
 
   * Fix static IP configuration.

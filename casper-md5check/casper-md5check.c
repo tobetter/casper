@@ -187,7 +187,7 @@ void plymouth_urgent(ply_boot_client_t *client, char *format, ...) {
                                                    plymouth_response, NULL);
     ply_boot_client_flush(client);
   } else
-    printf("%s\n", s);
+    printf("\n%s\n", s);
 
   free(s);
 }
@@ -310,8 +310,6 @@ int main(int argc, char **argv) {
 
   if (!client || !ply_event_loop || !ply_boot_client_connect(client, plymouth_disconnected, NULL))
   {
-    /* Fall back to text output */
-    perror("Connecting to plymouth");
     got_plymouth = 0;
   } else
     got_plymouth = 1;

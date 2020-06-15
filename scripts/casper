@@ -898,9 +898,11 @@ mountroot() {
             if [ "${livefs_root}" ]; then
                 break
             fi
-            # No more udev events, no more devices, nothing to wait for
-            if udevadm settle --timeout 0 2>/dev/null; then
-                break
+            if [ "$DPKG_ARCH" = "s390x" ]; then
+                # No more udev events, no more devices, nothing to wait for
+                if udevadm settle --timeout 0 2>/dev/null; then
+                    break
+                fi
             fi
             sleep 1
             i="$(($i + 1))"

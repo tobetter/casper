@@ -1,3 +1,9 @@
+casper (1.452) groovy; urgency=medium
+
+  * casper: ask user for netmask, because we lack CIDR notation support
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Tue, 23 Jun 2020 09:24:02 +0100
+
 casper (1.451) groovy; urgency=medium
 
   * caser: revert changes to quick-boot (LP: #1883040)

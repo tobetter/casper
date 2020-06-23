@@ -332,6 +332,11 @@ do_interactive_netmount() {
         static|off|none)
             proto=none
             read -p "ip: " ipaddr
+            default_netmask=255.255.255.0
+            read -p "netmask (default $default_netmask): " netmask
+            if [ -z "$netmask" ]; then
+                netmask=$default_netmask
+            fi
             default_gw=${ipaddr%.*}.1
             read -p "gateway (default $default_gw): " gateway
             if [ -z "$gateway" ]; then
@@ -413,15 +418,6 @@ do_interactive_netmount() {
     fi
 
     if [ "$proto" = "none" ]; then
-        case $ipaddr in
-            *.*)
-                netmask=255.255.255.0
-                ;;
-            *:*)
-                # I don't think we support static ipv6
-                netmask=
-                ;;
-        esac
         export IP=$ipaddr::$gateway:$netmask::$DEVICE:$proto:$dns
     fi
 

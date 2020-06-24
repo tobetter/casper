@@ -1,3 +1,13 @@
+casper (1.445.1) focal; urgency=medium
+
+  * casper SRU for point release LP: #1884933:
+    - casper: Add interactive network configuration
+    - casper-md5check: drop error about connecting to plymouth
+    - casper-md5check: separate messages in text output mode
+    - casper: Drop exposing /cow tree, never worked, and just prints an error.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 24 Jun 2020 12:56:38 +0100
+
 casper (1.445) focal; urgency=medium
 
   * Fix segfault in casper-md5check when plymouth is not installed (i.e.

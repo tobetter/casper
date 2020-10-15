@@ -304,7 +304,7 @@ do_interactive_netmount() {
         plymouth hide-splash
         sleep 1
     fi
-    echo "Unable to find a medium container a live file system"
+    echo "Unable to find a medium containing a live file system"
     echo "Attempt interactive netboot from a URL?"
     read -p "yes no (default yes): " RET
     if [ "$RET" = "no" ]; then

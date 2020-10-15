@@ -1,3 +1,25 @@
+casper (1.454) groovy; urgency=medium
+
+  * Based on feedback from Thomas Schmitt, make the bootable partition a
+    separate partition at sector zero like xorriso does, because some UEFI
+    implementations may wrongly ignore a disk with a protective MBR marked
+    bootable.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 15 Oct 2020 14:28:32 -0700
+
+casper (1.453) groovy; urgency=medium
+
+  * If creating a persistent partition, manually restore a 'bootable' flag
+    on any protective MBR, if present, to ensure compatibility with BIOS
+    implementations which require this.  This is slightly different from
+    the xorriso implementation, because we mark the iso9660 partition as
+    bootable instead of creating a separate empty partition, but anything
+    looking at the MBR should be fine and anything that's GPT-aware should
+    not care.  LP: #1899308
+  * Document the VCS for this package.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Thu, 15 Oct 2020 11:34:23 -0700
+
 casper (1.452) groovy; urgency=medium
 
   * casper: ask user for netmask, because we lack CIDR notation support

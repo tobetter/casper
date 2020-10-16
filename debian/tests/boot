@@ -29,9 +29,10 @@ set -e
 
 basecmdline="boot=casper console=ttyS0"
 
-mkinitramfs -o casper-initrd
+kvers="$(dpkg -l linux-image-generic | awk '/^ii/ { print $3 }' | sed -e 's/\.[0-9]\+$//; s/\.\([0-9]\+\)$/-\1/')"-generic
+kernel=$(echo /boot/vmlinu*-"$kvers")
 
-kernel=$(echo /boot/vmlinu*-"$(uname -r)")
+mkinitramfs -o casper-initrd "$kvers"
 
 ## Helper functions
 

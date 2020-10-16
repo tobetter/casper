@@ -305,8 +305,14 @@ find_or_create_persistent_partition () {
     # compatibility. (GRUB doesn't actually care which partition is marked
     # bootable, but some BIOSes care that it exists).
     if sfdisk -d $DEVICE | grep -q 'label: gpt'; then
-        echo -n '\0200\00\01\00\00\00\01\00\00\00\00\00\01\00\00\00' \
-        | dd of=$DEVICE bs=1 seek=462 conv=notrunc
+        # detection of dash vs busybox/bash
+        if [ "$(echo -e foo)" = "-e foo" ]; then
+            escape_arg=""
+        else
+            escape_arg=-e
+        fi
+        echo $escape_arg -n '\0200\00\01\00\00\00\01\00\00\00\00\00\01\00\00\00' \
+        | dd of=$DEVICE bs=1 seek=462 conv=notrunc count=16
     fi
     for d in ${DEVICE}$newpartno ${DEVICE}p$newpartno ${DEVICE}-part$newpartno; do
         if [ -e $d ]; then

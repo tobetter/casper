@@ -1,3 +1,13 @@
+casper (1.455) groovy; urgency=medium
+
+  * Use a tmpfs in tests; overlay is not compatible with zfs.
+  * Make tests work when host kernel does not match that in the test env.
+  * Properly handle echo -e for dash vs busybox in initramfs.
+  * Limit our dd to only change 16 bytes in the MBR regardless of input,
+    to avoid major damage from any future shell bugs.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 16 Oct 2020 09:51:20 -0700
+
 casper (1.454) groovy; urgency=medium
 
   * Based on feedback from Thomas Schmitt, make the bootable partition a

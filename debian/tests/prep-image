@@ -24,6 +24,8 @@
 set -eux
 IMAGE="$1"
 rm -rf tmp
+mkdir -p tmp
+mount -t tmpfs none tmp/
 mkdir -p tmp/{overlay,work,root,mnt}
 mount -t squashfs images/root.squashfs tmp/root
 mount -t overlay overlay -o lowerdir=tmp/root,upperdir=tmp/overlay,workdir=tmp/work tmp/mnt
@@ -63,4 +65,5 @@ mkdir tmp/mnt/casper
 cp images/root.squashfs tmp/mnt/casper/0_root.squashfs
 cp tmp/overlay.squashfs tmp/mnt/casper/1_overlay.squashfs
 umount tmp/mnt
+umount tmp
 losetup -d "$dev"

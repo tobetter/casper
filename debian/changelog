@@ -1,3 +1,9 @@
+casper (1.456) hirsute; urgency=medium
+
+  * Support kernels with "+" in the version string (LP: #1905357).
+
+ -- Andrea Righi <andrea.righi@canonical.com>  Wed, 02 Dec 2020 12:04:34 +0000
+
 casper (1.455) groovy; urgency=medium
 
   * Use a tmpfs in tests; overlay is not compatible with zfs.

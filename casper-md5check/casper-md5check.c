@@ -68,8 +68,6 @@ void parse_cmdline(void) {
   buf[strlen(buf)] = '\0';
 
   while ((tok = strsep(&bufp, " ")) != NULL) {
-    if (strncmp(tok, "quiet", 5) == 0)
-      verbose = 0;
     if (strncmp(tok, "fsck.mode=skip", sizeof("fsck.mode=skip")) == 0)
       skip_and_exit = 1;
   }
@@ -302,7 +300,7 @@ int main(int argc, char **argv) {
   
   parse_cmdline();
 
-  client = ply_boot_client_new();
+  //client = ply_boot_client_new();
   if (client)
     ply_event_loop = ply_event_loop_new();
   if (ply_event_loop)
@@ -425,7 +423,6 @@ cmdline_skip:
   }
   fprintf(result_file, "%s", result);
   fclose(result_file);
-  sleep(2);
   plymouth_urgent(client, "");
   return 0;
 }

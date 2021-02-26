@@ -1,3 +1,21 @@
+casper (1.457) hirsute; urgency=medium
+
+  [ Michael Hudson-Doyle ]
+  * Do not run apt-cdrom on a live-server ISO.
+
+  [ Dimitri John Ledkov ]
+  * casper-md5check: stop blocking boot on completing the check. Instead
+    run it from the runtime system, as people are trying to configure the
+    installer. By the time they start to install, the check should be done
+    and will generate journal logs with details of broken files in
+    addition to the json state file. Run without plymouth connection and
+    always verbose.
+  * Booting is actually fast these days, and since casper-md5check is now
+    in the runtime system, no need to force framebuffer into the
+    initrd. Should make server initrd smaller and faster.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Fri, 26 Feb 2021 20:58:22 +0000
+
 casper (1.456) hirsute; urgency=medium
 
   * Support kernels with "+" in the version string (LP: #1905357).

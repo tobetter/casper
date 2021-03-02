@@ -1,3 +1,9 @@
+casper (1.458) hirsute; urgency=medium
+
+  * Drop build-dependency on obsolete dh-systemd
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 02 Mar 2021 14:44:09 -0800
+
 casper (1.457) hirsute; urgency=medium
 
   [ Michael Hudson-Doyle ]

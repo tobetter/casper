@@ -1,3 +1,9 @@
+casper (1.459) hirsute; urgency=medium
+
+  * Make cdrom.mount not be bound and stop unmounting on shutdown.
+
+ -- Dimitri John Ledkov <xnox@ubuntu.com>  Wed, 03 Mar 2021 14:13:16 +0000
+
 casper (1.458) hirsute; urgency=medium
 
   * Drop build-dependency on obsolete dh-systemd

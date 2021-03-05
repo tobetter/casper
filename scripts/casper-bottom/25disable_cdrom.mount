@@ -22,23 +22,25 @@ esac
 sed -i '/SYSTEMD_MOUNT_DEVICE_BOUND/d' /lib/udev/rules.d/60-cdrom_id.rules /root/lib/udev/rules.d/60-cdrom_id.rules
 
 # Correct udevadm settings
-udevadm trigger /dev/sr0 || :
-
+[ -e /dev/sr0 ] && udevadm trigger /dev/sr0
 # Make cdrom.mount not have defaultdependencies, thus it should not be
 # unmounted on shutdown. And make sure that it is ordered after
 # casper.service, to not be unmounted before casper service shows the
 # RIM & Reboot message.
 
+## Seems to fail autopkgtests, revert back to ln -s /dev/null for now.
 # And we specify BindsTo= to nothing, again, despite udev rule, as it
 # is not enough on the server iso for some reason. Weird.
-cat <<EOF >/root/lib/systemd/system/cdrom.mount
-[Unit]
-DefaultDependencies=no
-After=casper.service
-BindsTo=
+#cat <<EOF >/root/lib/systemd/system/cdrom.mount
+#[Unit]
+#DefaultDependencies=no
+#After=casper.service
+#BindsTo=
 
-[Mount]
-Where=/cdrom
-What=/dev/sr0
-LazyUnmount=yes
-EOF
+#[Mount]
+#Where=/cdrom
+#What=/dev/sr0
+#LazyUnmount=yes
+#EOF
+
+ln -s /dev/null /root/lib/systemd/system/cdrom.mount

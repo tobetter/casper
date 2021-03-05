@@ -347,6 +347,7 @@ touch /hello
     truncate -s1G image2.img
     parted --script --align optimal "image2.img" -- mklabel gpt mkpart primary ext4 1MiB -2048s
     dev="$(setup_image image2.img)"
+    wipefs -a "${dev}p1"
     mkfs -t ext4 -L scratch -q "${dev}p1"
     cleanup_mounts_and_devices
 
@@ -380,6 +381,7 @@ touch /hello
     truncate -s2G image2.img
     parted --script --align optimal "image2.img" -- mklabel gpt mkpart primary ext4 1MiB 1GiB mkpart primary ext4 1GiB -2048s
     dev="$(setup_image image2.img)"
+    wipefs -a "${dev}p1"
     mkfs -t ext4 -L scratch -q "${dev}p1"
     mkfs -t ext4 -L writable -q "${dev}p2"
     cleanup_mounts_and_devices

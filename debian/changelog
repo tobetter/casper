@@ -1,3 +1,15 @@
+casper (1.461) hirsute; urgency=medium
+
+  [ Gunnar Hjalmarsson ]
+  * scripts/casper-bottom/59disable_mozc_autosetup:
+    - Don't set up ibus-mozc automatically in non-Japanese sessions
+      (LP: #1919455)
+
+  [ Iain Lane ]
+  * Add a gbp.conf so --git-tag{,-only} works
+
+ -- Gunnar Hjalmarsson <gunnarhj@ubuntu.com>  Mon, 22 Mar 2021 12:21:02 +0000
+
 casper (1.460) hirsute; urgency=medium
 
   * Tests fail, so revert cdrom.mount unit changes.

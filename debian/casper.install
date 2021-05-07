@@ -7,6 +7,7 @@ bin/casper-reconfigure		usr/share/casper
 bin/casper-set-selections	usr/share/casper
 bin/casper-snapshot		sbin
 bin/casper-update-initramfs	usr/share/casper
+bin/overlay-backup		sbin
 hooks				usr/share/initramfs-tools
 scripts				usr/share/initramfs-tools
 conf-hooks.d			usr/share/initramfs-tools

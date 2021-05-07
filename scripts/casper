@@ -18,6 +18,8 @@ USERFULLNAME="Live session user"
 HOST=live
 BUILD_SYSTEM=Custom
 
+ODROID_OVERLAYS="/etc/default/overlayroot"
+
 mkdir -p $mountpoint
 tried=/tmp/tried
 
@@ -588,7 +590,7 @@ setup_overlay() {
     # some other apps.
 
     # Must end in /, as otherthings are concatenated to it
-    croot="/"
+    croot="/overlay/"
 
     # Let's just mount the read-only file systems first
     rofsstring=""
@@ -670,6 +672,15 @@ setup_overlay() {
             done
         done
     fi
+
+    if [ -f "$ODROID_OVERLAYS" ]; then
+	    backdev=$(cat "$ODROID_OVERLAYS")
+	    imagename=$(basename "${backdev}")
+
+	    mkdir -p "${croot}${imagename}"
+	    mount -o ro,noatime "${backdev}" "${croot}${imagename}" || panic "Can not mount $backdev on ${croot}${imagename}" && rofsstring="${croot}${imagename}=${roopt}:${rofsstring}" && rofslist="${croot}${imagename} ${rofslist}"
+    fi
+
     rofsstring=${rofsstring%:}
 
     mounts=""
@@ -715,6 +726,11 @@ setup_overlay() {
         mount -o move "${d}" "${rootmnt}/rofs"
         break
     done
+
+    if [ -f "$ODROID_OVERLAYS" ]; then
+	    mkdir -p "${rootmnt}/overlay"
+	    mount -o rbind "${croot}" "${rootmnt}/overlay"
+    fi
 }
 
 check_dev ()

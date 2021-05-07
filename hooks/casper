@@ -95,3 +95,8 @@ if [ -z "\$BOOT" ]; then
 fi
 EOF
 fi
+
+if [ -e /etc/default/overlayroot ]; then
+	mkdir -p ${DESTDIR}/etc/default
+	cp /etc/default/overlayroot ${DESTDIR}/etc/default
+fi

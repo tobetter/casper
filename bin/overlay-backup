@@ -1,0 +1,41 @@
+#!/bin/sh
+
+panic()
+{
+        echo ${1}
+        exit 1
+}
+
+backup()
+{
+	local dest=$dir${1}
+
+	echo \'${1}\' - \'$dest\'
+	mkdir -p $(dirname $dest)
+	rsync -az --delete-before ${1} $(dirname $dest)
+}
+
+[ -z ${1} ] && exit 1
+
+target=${1}
+dir="/overlay/$target"
+
+[ -d $dir ] || panic "No directory"
+
+mount -o remount,rw $dir
+
+if [ -e $dir/.filesystem ]; then
+        while read line; do
+                backup $line
+        done < $dir/.filesystem
+else
+        list=$(find $dir \( ! -name lost+found \) -type f)
+        [ "x$list" = "x" ] && exit 0
+
+        for file in $list; do
+                backup ${file##$dir}
+        done
+fi
+
+mount -o remount,ro $dir
+sync
